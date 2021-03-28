@@ -1,0 +1,29 @@
+[DesignChecker]
+sbus_uart_lib = C:\Users\Yoshi\OneDrive - FH JOANNEUM\FH\02_Master\1. Semester\01_DCD\OneDrive_1_26.11.2020\DCD_workspace\ip_repo\sbus_uart_lib\designcheck
+[ModelSim]
+common_lib = $HDS_PROJECT_DIR/common_lib/work
+sbus_uart_lib = C:\Users\Yoshi\OneDrive - FH JOANNEUM\FH\02_Master\1. Semester\01_DCD\OneDrive_1_26.11.2020\DCD_workspace\ip_repo\sbus_uart_lib\work
+tutorial_lib = $HDS_PROJECT_DIR/tutorial_lib/work
+[XilinxVivado]
+common_lib = $HDS_PROJECT_DIR/common_lib/vivado
+tutorial_lib = $HDS_PROJECT_DIR/tutorial_lib/vivado
+[hdl]
+common_lib = $HDS_PROJECT_DIR/common_lib/hdl
+sbus_uart_lib = C:/Users/Yoshi/OneDrive - FH JOANNEUM/FH/02_Master/1. Semester/01_DCD/OneDrive_1_26.11.2020/DCD_workspace/ip_repo/sbus_uart_lib/hdl
+tutorial_lib = $HDS_PROJECT_DIR/tutorial_lib/hdl
+[hds]
+common_lib = $HDS_PROJECT_DIR/common_lib/hds
+sbus_uart_lib = C:/Users/Yoshi/OneDrive - FH JOANNEUM/FH/02_Master/1. Semester/01_DCD/OneDrive_1_26.11.2020/DCD_workspace/ip_repo/sbus_uart_lib/hds
+tutorial_lib = $HDS_PROJECT_DIR/tutorial_lib/hds
+[hds_settings]
+default_library = common_lib
+version = 2
+[library_files_inclusion]
+common_lib = specify
+sbus_uart_lib = all
+[library_type]
+common_lib = regular
+sbus_uart_lib = regular
+tutorial_lib = regular
+[shared]
+others = $HDS_TEAM_HOME/shared.hdp

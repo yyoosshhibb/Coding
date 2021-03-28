@@ -1,0 +1,257 @@
+#-----------------------------------------------------------
+# Vivado v2019.1 (64-bit)
+# SW Build 2552052 on Fri May 24 14:49:42 MDT 2019
+# IP Build 2548770 on Fri May 24 18:01:18 MDT 2019
+# Start of session at: Thu Oct 22 18:13:28 2020
+# Process ID: 18968
+# Current directory: C:/Users/Yoshi/OneDrive - FH JOANNEUM/FH/02_Master/1. Semester/01_DCD/01_HDS/ip_repo/tutorial_lib/vivado/top_counter
+# Command line: vivado.exe -mode gui -journal ./top_counter_Flow.jou -log ./top_counter_Flow.log -source ./HDS_Scripts/top_counter_Flow.tcl
+# Log file: C:/Users/Yoshi/OneDrive - FH JOANNEUM/FH/02_Master/1. Semester/01_DCD/01_HDS/ip_repo/tutorial_lib/vivado/top_counter/./top_counter_Flow.log
+# Journal file: C:/Users/Yoshi/OneDrive - FH JOANNEUM/FH/02_Master/1. Semester/01_DCD/01_HDS/ip_repo/tutorial_lib/vivado/top_counter\./top_counter_Flow.jou
+#-----------------------------------------------------------
+start_gui
+source ./HDS_Scripts/top_counter_Flow.tcl
+# lappend ::auto_path "$::env(HDS_HOME)/resources/tcl/tcllib1.4"
+# set ::hdsDebug 0
+# proc ::hdsDebugPuts {msg} {
+#    if {$::hdsDebug} {
+#       puts $msg
+#    }
+# }
+# set normVars {HDS_PROJECT_DIR HDS_TEAM_HOME HDS_HOME XILINX_VIVADO}
+# foreach varName $normVars {
+#    if {[info exists ::env($varName)]} {
+#       set ::env($varName) [file normalize [subst -nobackslash {$::env($varName)}]]
+#    }
+# }
+# puts "## HDS #Running Vivado Project Creation/Update#"
+## HDS #Running Vivado Project Creation/Update#
+# set ::errorCount 0
+# if {[catch {source ./HDS_Scripts/top_counter_Create.tcl} errMsg]} {
+#    if {[regexp "(?q)$errMsg" $errorInfo]} {
+#       puts "Error: $errorInfo"
+#    } else {
+#       puts "Error: $errMsg"
+#    }
+#    return
+# }
+Opening project ./top_counter.xpr
+INFO: [ProjectBase 1-489] The host OS only allows 260 characters in a normal path. The project is stored in a path with more than 80 characters. If you experience issues with IP, Block Designs, or files not being found, please consider moving the project to a location with a shorter path. Alternately consider using the OS subst command to map part of the path to a drive letter.
+Current project path is 'C:/Users/Yoshi/OneDrive - FH JOANNEUM/FH/02_Master/1. Semester/01_DCD/01_HDS/ip_repo/tutorial_lib/vivado/top_counter'
+Scanning sources...
+Finished scanning sources
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/Xilinx/Vivado/2019.1/data/ip'.
+open_project: Time (s): cpu = 00:00:15 ; elapsed = 00:00:06 . Memory (MB): peak = 1038.852 ; gain = 186.059
+## get_filesets
+## get_property DEFAULT_LIB [current_project]
+## current_project
+## current_project
+## current_project
+## current_project
+Project HDL files to add stored in:
+   ./HDS_Scripts/top_counter_fileList.tcl
+## list
+## list
+## list
+## join $vivadoCoresExtList "|"
+## get_files -all -quiet
+## join $nonIpFiles \n
+## join $ipFiles \n
+## join $coreIpFiles \n
+### list
+### list
+### list
+### list
+# if {$::errorCount == 0} {
+#    puts "Note: \"source ./HDS_Scripts/top_counter_Create.tcl\" completed successfully\n"
+# } else {
+#    puts "Error: \"source ./HDS_Scripts/top_counter_Create.tcl\" completed with errors\n"
+# }
+Note: "source ./HDS_Scripts/top_counter_Create.tcl" completed successfully
+
+update_compile_order -fileset sources_1
+synth_design -rtl -name rtl_1
+Command: synth_design -rtl -name rtl_1
+Starting synth_design
+Using part: xc7z010clg400-1
+Top: top_counter
+INFO: [Device 21-403] Loading part xc7z010clg400-1
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:04 ; elapsed = 00:00:04 . Memory (MB): peak = 1136.770 ; gain = 93.430
+---------------------------------------------------------------------------------
+INFO: [Synth 8-638] synthesizing module 'top_counter' [C:/Users/Yoshi/OneDrive - FH JOANNEUM/FH/02_Master/1. Semester/01_DCD/01_HDS/ip_repo/tutorial_lib/hdl/top_counter_struct.vhd:41]
+	Parameter nbits_g bound to: 32 - type: integer 
+INFO: [Synth 8-3491] module 'binary_counter' declared at 'C:/Users/Yoshi/OneDrive - FH JOANNEUM/FH/02_Master/1. Semester/01_DCD/01_HDS/ip_repo/tutorial_lib/hdl/binary_counter_rtl.vhd:15' bound to instance 'U_0' of component 'binary_counter' [C:/Users/Yoshi/OneDrive - FH JOANNEUM/FH/02_Master/1. Semester/01_DCD/01_HDS/ip_repo/tutorial_lib/hdl/top_counter_struct.vhd:84]
+INFO: [Synth 8-638] synthesizing module 'binary_counter' [C:/Users/Yoshi/OneDrive - FH JOANNEUM/FH/02_Master/1. Semester/01_DCD/01_HDS/ip_repo/tutorial_lib/hdl/binary_counter_rtl.vhd:32]
+	Parameter nbits_g bound to: 32 - type: integer 
+INFO: [Synth 8-256] done synthesizing module 'binary_counter' (1#1) [C:/Users/Yoshi/OneDrive - FH JOANNEUM/FH/02_Master/1. Semester/01_DCD/01_HDS/ip_repo/tutorial_lib/hdl/binary_counter_rtl.vhd:32]
+INFO: [Synth 8-256] done synthesizing module 'top_counter' (2#1) [C:/Users/Yoshi/OneDrive - FH JOANNEUM/FH/02_Master/1. Semester/01_DCD/01_HDS/ip_repo/tutorial_lib/hdl/top_counter_struct.vhd:41]
+WARNING: [Synth 8-3331] design top_counter has unconnected port buttons[3]
+WARNING: [Synth 8-3331] design top_counter has unconnected port buttons[2]
+WARNING: [Synth 8-3331] design top_counter has unconnected port buttons[1]
+WARNING: [Synth 8-3331] design top_counter has unconnected port buttons[0]
+WARNING: [Synth 8-3331] design top_counter has unconnected port sliders[3]
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 1176.477 ; gain = 133.137
+---------------------------------------------------------------------------------
+
+Report Check Netlist: 
++------+------------------+-------+---------+-------+------------------+
+|      |Item              |Errors |Warnings |Status |Description       |
++------+------------------+-------+---------+-------+------------------+
+|1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
++------+------------------+-------+---------+-------+------------------+
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 1176.477 ; gain = 133.137
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 1176.477 ; gain = 133.137
+---------------------------------------------------------------------------------
+INFO: [Project 1-570] Preparing netlist for logic optimization
+
+Processing XDC Constraints
+Initializing timing engine
+Parsing XDC File [C:/Users/Yoshi/OneDrive - FH JOANNEUM/FH/02_Master/1. Semester/01_DCD/01_HDS/ip_repo/tutorial_lib/vivado/top_counter/top_counter.srcs/constrs_1/new/top_counter.xdc]
+INFO: [Constraints 18-483] create_clock: no pin(s)/port(s)/net(s) specified as objects, only virtual clock 'clk' will be created. If you don't want this, please specify pin(s)/ports(s)/net(s) as objects to the command. [C:/Users/Yoshi/OneDrive - FH JOANNEUM/FH/02_Master/1. Semester/01_DCD/01_HDS/ip_repo/tutorial_lib/vivado/top_counter/top_counter.srcs/constrs_1/new/top_counter.xdc:27]
+Finished Parsing XDC File [C:/Users/Yoshi/OneDrive - FH JOANNEUM/FH/02_Master/1. Semester/01_DCD/01_HDS/ip_repo/tutorial_lib/vivado/top_counter/top_counter.srcs/constrs_1/new/top_counter.xdc]
+Completed Processing XDC Constraints
+
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1292.246 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+RTL Elaboration Complete:  : Time (s): cpu = 00:00:19 ; elapsed = 00:00:10 . Memory (MB): peak = 1368.004 ; gain = 324.664
+10 Infos, 5 Warnings, 0 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:00:27 ; elapsed = 00:00:18 . Memory (MB): peak = 1368.004 ; gain = 324.664
+set_property IOSTANDARD LVCMOS33 [get_ports {buttons[3]}]
+set_property IOSTANDARD LVCMOS33 [get_ports {buttons[2]}]
+set_property IOSTANDARD LVCMOS33 [get_ports {buttons[1]}]
+set_property IOSTANDARD LVCMOS33 [get_ports {buttons[0]}]
+set_property IOSTANDARD LVCMOS33 [get_ports {leds[3]}]
+set_property IOSTANDARD LVCMOS33 [get_ports {leds[2]}]
+set_property IOSTANDARD LVCMOS33 [get_ports {leds[1]}]
+set_property IOSTANDARD LVCMOS33 [get_ports {leds[0]}]
+set_property IOSTANDARD LVCMOS33 [get_ports {sliders[3]}]
+set_property IOSTANDARD LVCMOS33 [get_ports {sliders[2]}]
+set_property IOSTANDARD LVCMOS33 [get_ports {sliders[1]}]
+set_property IOSTANDARD LVCMOS33 [get_ports {sliders[0]}]
+set_property PACKAGE_PIN Y16 [get_ports {buttons[3]}]
+set_property PACKAGE_PIN V16 [get_ports {buttons[2]}]
+set_property PACKAGE_PIN P16 [get_ports {buttons[1]}]
+set_property PACKAGE_PIN R18 [get_ports {buttons[0]}]
+set_property PACKAGE_PIN D18 [get_ports {leds[3]}]
+set_property PACKAGE_PIN G14 [get_ports {leds[2]}]
+set_property PACKAGE_PIN M15 [get_ports {leds[1]}]
+set_property PACKAGE_PIN M14 [get_ports {leds[0]}]
+set_property PACKAGE_PIN T16 [get_ports {sliders[3]}]
+set_property PACKAGE_PIN W13 [get_ports {sliders[2]}]
+set_property PACKAGE_PIN P15 [get_ports {sliders[1]}]
+set_property PACKAGE_PIN G15 [get_ports {sliders[0]}]
+set_property IOSTANDARD LVCMOS33 [get_ports clk]
+set_property PACKAGE_PIN L16 [get_ports clk]
+save_constraints
+reset_run synth_1
+launch_runs synth_1
+[Thu Oct 22 18:18:58 2020] Launched synth_1...
+Run output will be captured here: C:/Users/Yoshi/OneDrive - FH JOANNEUM/FH/02_Master/1. Semester/01_DCD/01_HDS/ip_repo/tutorial_lib/vivado/top_counter/top_counter.runs/synth_1/runme.log
+launch_runs impl_1 -jobs 4
+[Thu Oct 22 18:20:30 2020] Launched impl_1...
+Run output will be captured here: C:/Users/Yoshi/OneDrive - FH JOANNEUM/FH/02_Master/1. Semester/01_DCD/01_HDS/ip_repo/tutorial_lib/vivado/top_counter/top_counter.runs/impl_1/runme.log
+open_run synth_1 -name synth_1
+Design is defaulting to impl run constrset: constrs_1
+Design is defaulting to synth run part: xc7z010clg400-1
+INFO: [Netlist 29-17] Analyzing 8 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-479] Netlist was created with Vivado 2019.1
+INFO: [Project 1-570] Preparing netlist for logic optimization
+Parsing XDC File [C:/Users/Yoshi/OneDrive - FH JOANNEUM/FH/02_Master/1. Semester/01_DCD/01_HDS/ip_repo/tutorial_lib/vivado/top_counter/top_counter.srcs/constrs_1/new/top_counter.xdc]
+INFO: [Constraints 18-483] create_clock: no pin(s)/port(s)/net(s) specified as objects, only virtual clock 'clk' will be created. If you don't want this, please specify pin(s)/ports(s)/net(s) as objects to the command. [C:/Users/Yoshi/OneDrive - FH JOANNEUM/FH/02_Master/1. Semester/01_DCD/01_HDS/ip_repo/tutorial_lib/vivado/top_counter/top_counter.srcs/constrs_1/new/top_counter.xdc:27]
+Finished Parsing XDC File [C:/Users/Yoshi/OneDrive - FH JOANNEUM/FH/02_Master/1. Semester/01_DCD/01_HDS/ip_repo/tutorial_lib/vivado/top_counter/top_counter.srcs/constrs_1/new/top_counter.xdc]
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1453.098 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+INFO: [Constraints 18-483] create_clock: no pin(s)/port(s)/net(s) specified as objects, only virtual clock 'clk' will be created. If you don't want this, please specify pin(s)/ports(s)/net(s) as objects to the command. [C:/Users/Yoshi/OneDrive - FH JOANNEUM/FH/02_Master/1. Semester/01_DCD/01_HDS/ip_repo/tutorial_lib/vivado/top_counter/top_counter.srcs/constrs_1/new/top_counter.xdc:27]
+save_constraints
+close_design
+open_run impl_1
+INFO: [Netlist 29-17] Analyzing 8 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-479] Netlist was created with Vivado 2019.1
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Timing 38-478] Restoring timing data from binary archive.
+INFO: [Timing 38-479] Binary timing data restore complete.
+INFO: [Project 1-856] Restoring constraints from binary archive.
+INFO: [Project 1-853] Binary constraint restore complete.
+Reading XDEF placement.
+Reading placer database...
+Reading XDEF routing.
+Read XDEF File: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.074 . Memory (MB): peak = 2031.547 ; gain = 0.000
+Restored from archive | CPU: 0.000000 secs | Memory: 0.000000 MB |
+Finished XDEF File Restore: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.075 . Memory (MB): peak = 2031.547 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2031.547 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+reset_run synth_1
+launch_runs synth_1 -jobs 4
+[Thu Oct 22 18:23:20 2020] Launched synth_1...
+Run output will be captured here: C:/Users/Yoshi/OneDrive - FH JOANNEUM/FH/02_Master/1. Semester/01_DCD/01_HDS/ip_repo/tutorial_lib/vivado/top_counter/top_counter.runs/synth_1/runme.log
+launch_runs impl_1 -jobs 4
+[Thu Oct 22 18:24:35 2020] Launched impl_1...
+Run output will be captured here: C:/Users/Yoshi/OneDrive - FH JOANNEUM/FH/02_Master/1. Semester/01_DCD/01_HDS/ip_repo/tutorial_lib/vivado/top_counter/top_counter.runs/impl_1/runme.log
+refresh_design
+INFO: [Netlist 29-17] Analyzing 8 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-479] Netlist was created with Vivado 2019.1
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Timing 38-478] Restoring timing data from binary archive.
+INFO: [Timing 38-479] Binary timing data restore complete.
+INFO: [Project 1-856] Restoring constraints from binary archive.
+INFO: [Project 1-853] Binary constraint restore complete.
+Reading XDEF placement.
+Reading placer database...
+Reading XDEF routing.
+Read XDEF File: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.055 . Memory (MB): peak = 2270.926 ; gain = 0.000
+Restored from archive | CPU: 0.000000 secs | Memory: 0.000000 MB |
+Finished XDEF File Restore: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.055 . Memory (MB): peak = 2270.926 ; gain = 0.000
+launch_runs impl_1 -to_step write_bitstream -jobs 4
+[Thu Oct 22 18:25:50 2020] Launched impl_1...
+Run output will be captured here: C:/Users/Yoshi/OneDrive - FH JOANNEUM/FH/02_Master/1. Semester/01_DCD/01_HDS/ip_repo/tutorial_lib/vivado/top_counter/top_counter.runs/impl_1/runme.log
+open_hw
+connect_hw_server
+INFO: [Labtools 27-2285] Connecting to hw_server url TCP:localhost:3121
+INFO: [Labtools 27-2222] Launching hw_server...
+INFO: [Labtools 27-2221] Launch Output:
+
+****** Xilinx hw_server v2019.1
+  **** Build date : May 24 2019 at 15:13:31
+    ** Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+
+
+connect_hw_server: Time (s): cpu = 00:00:01 ; elapsed = 00:00:05 . Memory (MB): peak = 2349.730 ; gain = 15.398
+open_hw_target
+INFO: [Labtoolstcl 44-466] Opening hw_target localhost:3121/xilinx_tcf/Digilent/210279786719A
+open_hw_target: Time (s): cpu = 00:00:05 ; elapsed = 00:00:12 . Memory (MB): peak = 3418.707 ; gain = 1068.977
+current_hw_device [get_hw_devices xc7z010_1]
+refresh_hw_device -update_hw_probes false [lindex [get_hw_devices xc7z010_1] 0]
+INFO: [Labtools 27-1434] Device xc7z010 (JTAG device index = 1) is programmed with a design that has no supported debug core(s) in it.
+set_property PROBES.FILE {} [get_hw_devices xc7z010_1]
+set_property FULL_PROBES.FILE {} [get_hw_devices xc7z010_1]
+set_property PROGRAM.FILE {C:/Users/Yoshi/OneDrive - FH JOANNEUM/FH/02_Master/1. Semester/01_DCD/01_HDS/ip_repo/tutorial_lib/vivado/top_counter/top_counter.runs/impl_1/top_counter.bit} [get_hw_devices xc7z010_1]
+program_hw_devices [get_hw_devices xc7z010_1]
+INFO: [Labtools 27-3164] End of startup status: HIGH
+refresh_hw_device [lindex [get_hw_devices xc7z010_1] 0]
+INFO: [Labtools 27-1434] Device xc7z010 (JTAG device index = 1) is programmed with a design that has no supported debug core(s) in it.
+refresh_hw_device [lindex [get_hw_devices xc7z010_1] 0]
+INFO: [Labtools 27-1434] Device xc7z010 (JTAG device index = 1) is programmed with a design that has no supported debug core(s) in it.
+exit
+INFO: [Common 17-206] Exiting Vivado at Thu Oct 22 18:38:50 2020...

@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GenRun Id="impl_1" LaunchPart="xc7z010clg400-1" LaunchTime="1616702109">
+  <File Type="BITSTR-BMM" Name="SoundGen_bd.bmm"/>
+  <File Type="OPT-METHODOLOGY-DRC" Name="SoundGen_methodology_drc_opted.rpt"/>
+  <File Type="INIT-TIMING" Name="SoundGen_timing_summary_init.rpt"/>
+  <File Type="ROUTE-PWR" Name="SoundGen_power_routed.rpt"/>
+  <File Type="PA-TCL" Name="SoundGen.tcl"/>
+  <File Type="OPT-TIMING" Name="SoundGen_timing_summary_opted.rpt"/>
+  <File Type="OPT-DCP" Name="SoundGen_opt.dcp"/>
+  <File Type="ROUTE-PWR-SUM" Name="SoundGen_power_summary_routed.pb"/>
+  <File Type="REPORTS-TCL" Name="SoundGen_reports.tcl"/>
+  <File Type="OPT-DRC" Name="SoundGen_drc_opted.rpt"/>
+  <File Type="OPT-HWDEF" Name="SoundGen.hwdef"/>
+  <File Type="PWROPT-DCP" Name="SoundGen_pwropt.dcp"/>
+  <File Type="PWROPT-DRC" Name="SoundGen_drc_pwropted.rpt"/>
+  <File Type="PWROPT-TIMING" Name="SoundGen_timing_summary_pwropted.rpt"/>
+  <File Type="PLACE-DCP" Name="SoundGen_placed.dcp"/>
+  <File Type="PLACE-IO" Name="SoundGen_io_placed.rpt"/>
+  <File Type="PLACE-CLK" Name="SoundGen_clock_utilization_placed.rpt"/>
+  <File Type="PLACE-UTIL" Name="SoundGen_utilization_placed.rpt"/>
+  <File Type="PLACE-UTIL-PB" Name="SoundGen_utilization_placed.pb"/>
+  <File Type="PLACE-CTRL" Name="SoundGen_control_sets_placed.rpt"/>
+  <File Type="PLACE-SIMILARITY" Name="SoundGen_incremental_reuse_placed.rpt"/>
+  <File Type="PLACE-PRE-SIMILARITY" Name="SoundGen_incremental_reuse_pre_placed.rpt"/>
+  <File Type="PLACE-TIMING" Name="SoundGen_timing_summary_placed.rpt"/>
+  <File Type="POSTPLACE-PWROPT-DCP" Name="SoundGen_postplace_pwropt.dcp"/>
+  <File Type="BG-BIN" Name="SoundGen.bin"/>
+  <File Type="POSTPLACE-PWROPT-TIMING" Name="SoundGen_timing_summary_postplace_pwropted.rpt"/>
+  <File Type="PHYSOPT-DCP" Name="SoundGen_physopt.dcp"/>
+  <File Type="PHYSOPT-DRC" Name="SoundGen_drc_physopted.rpt"/>
+  <File Type="BITSTR-MSK" Name="SoundGen.msk"/>
+  <File Type="PHYSOPT-TIMING" Name="SoundGen_timing_summary_physopted.rpt"/>
+  <File Type="ROUTE-ERROR-DCP" Name="SoundGen_routed_error.dcp"/>
+  <File Type="ROUTE-DCP" Name="SoundGen_routed.dcp"/>
+  <File Type="ROUTE-BLACKBOX-DCP" Name="SoundGen_routed_bb.dcp"/>
+  <File Type="ROUTE-DRC" Name="SoundGen_drc_routed.rpt"/>
+  <File Type="ROUTE-DRC-PB" Name="SoundGen_drc_routed.pb"/>
+  <File Type="ROUTE-DRC-RPX" Name="SoundGen_drc_routed.rpx"/>
+  <File Type="BITSTR-MMI" Name="SoundGen.mmi"/>
+  <File Type="ROUTE-METHODOLOGY-DRC" Name="SoundGen_methodology_drc_routed.rpt"/>
+  <File Type="ROUTE-METHODOLOGY-DRC-RPX" Name="SoundGen_methodology_drc_routed.rpx"/>
+  <File Type="ROUTE-METHODOLOGY-DRC-PB" Name="SoundGen_methodology_drc_routed.pb"/>
+  <File Type="ROUTE-PWR-RPX" Name="SoundGen_power_routed.rpx"/>
+  <File Type="ROUTE-STATUS" Name="SoundGen_route_status.rpt"/>
+  <File Type="ROUTE-STATUS-PB" Name="SoundGen_route_status.pb"/>
+  <File Type="ROUTE-TIMINGSUMMARY" Name="SoundGen_timing_summary_routed.rpt"/>
+  <File Type="ROUTE-TIMING-PB" Name="SoundGen_timing_summary_routed.pb"/>
+  <File Type="ROUTE-TIMING-RPX" Name="SoundGen_timing_summary_routed.rpx"/>
+  <File Type="ROUTE-SIMILARITY" Name="SoundGen_incremental_reuse_routed.rpt"/>
+  <File Type="ROUTE-CLK" Name="SoundGen_clock_utilization_routed.rpt"/>
+  <File Type="ROUTE-BUS-SKEW" Name="SoundGen_bus_skew_routed.rpt"/>
+  <File Type="ROUTE-BUS-SKEW-PB" Name="SoundGen_bus_skew_routed.pb"/>
+  <File Type="ROUTE-BUS-SKEW-RPX" Name="SoundGen_bus_skew_routed.rpx"/>
+  <File Type="POSTROUTE-PHYSOPT-DCP" Name="SoundGen_postroute_physopt.dcp"/>
+  <File Type="POSTROUTE-PHYSOPT-BLACKBOX-DCP" Name="SoundGen_postroute_physopt_bb.dcp"/>
+  <File Type="POSTROUTE-PHYSOPT-TIMING" Name="SoundGen_timing_summary_postroute_physopted.rpt"/>
+  <File Type="POSTROUTE-PHYSOPT-TIMING-PB" Name="SoundGen_timing_summary_postroute_physopted.pb"/>
+  <File Type="POSTROUTE-PHYSOPT-TIMING-RPX" Name="SoundGen_timing_summary_postroute_physopted.rpx"/>
+  <File Type="POSTROUTE-PHYSOPT-BUS-SKEW" Name="SoundGen_bus_skew_postroute_physopted.rpt"/>
+  <File Type="POSTROUTE-PHYSOPT-BUS-SKEW-PB" Name="SoundGen_bus_skew_postroute_physopted.pb"/>
+  <File Type="BG-BIT" Name="SoundGen.bit"/>
+  <File Type="POSTROUTE-PHYSOPT-BUS-SKEW-RPX" Name="SoundGen_bus_skew_postroute_physopted.rpx"/>
+  <File Type="BITSTR-RBT" Name="SoundGen.rbt"/>
+  <File Type="BITSTR-NKY" Name="SoundGen.nky"/>
+  <File Type="PDI-FILE" Name="SoundGen.pdi"/>
+  <File Type="RCFI_FILE" Name="SoundGen.rcfi"/>
+  <File Type="CFI_FILE" Name="SoundGen.cfi"/>
+  <File Type="RNPI_FILE" Name="SoundGen.rnpi"/>
+  <File Type="NPI_FILE" Name="SoundGen.npi"/>
+  <File Type="RBD_FILE" Name="SoundGen.rbd"/>
+  <File Type="BITSTR-LTX" Name="debug_nets.ltx"/>
+  <File Type="BITSTR-LTX" Name="SoundGen.ltx"/>
+  <File Type="BITSTR-SYSDEF" Name="SoundGen.sysdef"/>
+  <File Type="BG-BGN" Name="SoundGen.bgn"/>
+  <File Type="BG-DRC" Name="SoundGen.drc"/>
+  <File Type="RDI-RDI" Name="SoundGen.vdi"/>
+  <File Type="WBT-USG" Name="usage_statistics_webtalk.html"/>
+  <FileSet Name="sources" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1" RelGenDir="$PSRCDIR/sources_1">
+    <Filter Type="Srcs"/>
+    <File Path="$PPRDIR/../../../../../../../../OneDrive - FH JOANNEUM/FH/02_Master/1. Semester/01_DCD/01_HDS/ip_repo/common_lib/hdl/D_FlipFlop_rtl.vhd">
+      <FileInfo SFType="VHDL2008">
+        <Attr Name="Library" Val="common_lib"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/../../../../../../../../OneDrive - FH JOANNEUM/FH/02_Master/1. Semester/01_DCD/01_HDS/ip_repo/common_lib/hdl/EdgeDetection_rtl.vhd">
+      <FileInfo SFType="VHDL2008">
+        <Attr Name="Library" Val="common_lib"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/../../hdl/SquareGen_rtl.vhd">
+      <FileInfo SFType="VHDL2008">
+        <Attr Name="Library" Val="common_lib_new"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/../../hdl/debouncer_edgedetection_struct.vhd">
+      <FileInfo SFType="VHDL2008">
+        <Attr Name="Library" Val="common_lib_new"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/../../hdl/toggle_rtl.vhd">
+      <FileInfo SFType="VHDL2008">
+        <Attr Name="Library" Val="common_lib_new"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/../../hdl/soundgen_struct.vhd">
+      <FileInfo SFType="VHDL2008">
+        <Attr Name="Library" Val="common_lib_new"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <Config>
+      <Option Name="DesignMode" Val="RTL"/>
+      <Option Name="TopModule" Val="SoundGen"/>
+      <Option Name="TopLib" Val="common_lib_new"/>
+      <Option Name="TopArchitecture" Val="struct"/>
+      <Option Name="TopRTLFile" Val="$PPRDIR/../../hdl/soundgen_struct.vhd"/>
+    </Config>
+  </FileSet>
+  <FileSet Name="constrs_in" Type="Constrs" RelSrcDir="$PSRCDIR/constrs_1">
+    <Filter Type="Constrs"/>
+    <File Path="$PSRCDIR/constrs_1/new/constraints.xdc">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+      </FileInfo>
+    </File>
+    <Config>
+      <Option Name="TargetConstrsFile" Val="$PSRCDIR/constrs_1/new/constraints.xdc"/>
+      <Option Name="ConstrsType" Val="XDC"/>
+    </Config>
+  </FileSet>
+  <FileSet Name="utils" Type="Utils" RelSrcDir="$PSRCDIR/utils_1">
+    <Filter Type="Utils"/>
+    <Config>
+      <Option Name="TopAutoSet" Val="TRUE"/>
+    </Config>
+  </FileSet>
+  <Strategy Version="1" Minor="2">
+    <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2019"/>
+    <Step Id="init_design"/>
+    <Step Id="opt_design"/>
+    <Step Id="power_opt_design"/>
+    <Step Id="place_design"/>
+    <Step Id="post_place_power_opt_design"/>
+    <Step Id="phys_opt_design"/>
+    <Step Id="route_design"/>
+    <Step Id="post_route_phys_opt_design"/>
+    <Step Id="write_bitstream"/>
+  </Strategy>
+</GenRun>

@@ -1,0 +1,48 @@
+10:59:48 **** Incremental Build of configuration Release for project CacheTest ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/Matrix_Mul_Cache.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O2 -c -fmessage-length=0 -MT"src/Matrix_Mul_Cache.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../CacheTest_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/Matrix_Mul_Cache.d" -MT"src/Matrix_Mul_Cache.o" -o "src/Matrix_Mul_Cache.o" "../src/Matrix_Mul_Cache.c"
+In file included from ../src/Matrix_Mul_Cache.c:47:
+../../CacheTest_bsp/ps7_cortexa9_0/include/xtime_l.h:87:9: note: #pragma message: For the sleep routines, Global timer is being used
+ #pragma message ("For the sleep routines, Global timer is being used")
+         ^~~~~~~
+../src/Matrix_Mul_Cache.c:65:25: warning: missing braces around initializer [-Wmissing-braces]
+ int A[SIZE_N][SIZE_M] = {2};
+                         ^
+                          {}
+../src/Matrix_Mul_Cache.c:66:25: warning: missing braces around initializer [-Wmissing-braces]
+ int B[SIZE_M][SIZE_P] = {3};
+                         ^
+                          {}
+../src/Matrix_Mul_Cache.c:67:25: warning: missing braces around initializer [-Wmissing-braces]
+ int C[SIZE_N][SIZE_P] = {4};
+                         ^
+                          {}
+'Finished building: ../src/Matrix_Mul_Cache.c'
+' '
+'Building file: ../src/memory_config_g.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O2 -c -fmessage-length=0 -MT"src/memory_config_g.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../CacheTest_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/memory_config_g.d" -MT"src/memory_config_g.o" -o "src/memory_config_g.o" "../src/memory_config_g.c"
+'Finished building: ../src/memory_config_g.c'
+' '
+'Building file: ../src/platform.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O2 -c -fmessage-length=0 -MT"src/platform.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../CacheTest_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/platform.d" -MT"src/platform.o" -o "src/platform.o" "../src/platform.c"
+'Finished building: ../src/platform.c'
+' '
+'Building target: CacheTest.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../CacheTest_bsp/ps7_cortexa9_0/lib -o "CacheTest.elf"  ./src/Matrix_Mul_Cache.o ./src/memory_config_g.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+c:/xilinx/sdk/2019.1/gnu/aarch32/nt/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/8.2.0/../../../../arm-none-eabi/bin/ld.exe: CacheTest.elf section `.data' will not fit in region `ps7_ram_0'
+c:/xilinx/sdk/2019.1/gnu/aarch32/nt/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/8.2.0/../../../../arm-none-eabi/bin/ld.exe: address 0xd0000 of CacheTest.elf section `.mmu_tbl' is not within region `ps7_ram_0'
+c:/xilinx/sdk/2019.1/gnu/aarch32/nt/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/8.2.0/../../../../arm-none-eabi/bin/ld.exe: address 0xd0000 of CacheTest.elf section `.mmu_tbl' is not within region `ps7_ram_0'
+c:/xilinx/sdk/2019.1/gnu/aarch32/nt/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/8.2.0/../../../../arm-none-eabi/bin/ld.exe: address 0xd0000 of CacheTest.elf section `.mmu_tbl' is not within region `ps7_ram_0'
+c:/xilinx/sdk/2019.1/gnu/aarch32/nt/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/8.2.0/../../../../arm-none-eabi/bin/ld.exe: region `ps7_ram_0' overflowed by 670512 bytes
+collect2.exe: error: ld returned 1 exit status
+make: *** [makefile:41: CacheTest.elf] Error 1
+
+10:59:50 Build Finished (took 2s.161ms)
+

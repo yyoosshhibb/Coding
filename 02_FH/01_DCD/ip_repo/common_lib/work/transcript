@@ -1,0 +1,32 @@
+# //  ModelSim SE-64 10.2c Jul 19 2013 
+# //
+# //  Copyright 1991-2013 Mentor Graphics Corporation
+# //  All Rights Reserved.
+# //
+# //  THIS WORK CONTAINS TRADE SECRET AND PROPRIETARY INFORMATION
+# //  WHICH IS THE PROPERTY OF MENTOR GRAPHICS CORPORATION OR ITS
+# //  LICENSORS AND IS SUBJECT TO LICENSE TERMS.
+# //
+# vsim -L common_lib -i -foreign {hdsInit C:/MentorGraphics/HDS_2017.1a/resources/downstream/modelsim/ModelSim_64Bit.dll} -pli {"C:/MentorGraphics/HDS_2017.1a/resources/downstream/modelsim/ModelSim_64Bit.dll"} common_lib.EncoderBD(struct) 
+# Loading C:/MentorGraphics/HDS_2017.1a/resources/downstream/modelsim/ModelSim_64Bit.dll
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.std_logic_arith(body)
+# Loading ieee.std_logic_unsigned(body)
+# Loading work.encoderbd(struct)#1
+# Loading work.encoder(rtl)#1
+log - r *
+# ambiguous option "-": must be -class, -depth, -drivers, -flush, -howmany, -in, -inout, -internals, -mvcall, -mvcovm, -mvcreccomplete, -noflush, -optcells, -out, -ports, -recursive, -type, or -wdbwave
+# Usage: log -flush <object> | {[-class <classtype>] [-howmany] {[-in] [-inout] [-out] | [-ports]} [-internal] [-mvcall] [-mvcovm] [-mvcreccomplete] [-optcells] [-recursive [-depth <level>]] <object_name> ...}
+log - r*
+# ambiguous option "-": must be -class, -depth, -drivers, -flush, -howmany, -in, -inout, -internals, -mvcall, -mvcovm, -mvcreccomplete, -noflush, -optcells, -out, -ports, -recursive, -type, or -wdbwave
+# Usage: log -flush <object> | {[-class <classtype>] [-howmany] {[-in] [-inout] [-out] | [-ports]} [-internal] [-mvcall] [-mvcovm] [-mvcreccomplete] [-optcells] [-recursive [-depth <level>]] <object_name> ...}
+log -r *
+run 10 us
+add wave -position insertpoint sim:/encoderbd/*
+add wave -position insertpoint sim:/encoderbd/*
+add wave -position insertpoint sim:/encoderbd/*
+# Break key hit 
+# 0
+# Break in Process line__28 at D:/ECM_DCD/bauerjoh17/ip_repo/common_lib/hdl/Encoder_rtl.vhd line 34

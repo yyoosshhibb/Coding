@@ -1,0 +1,1099 @@
+13:08:50 **** Incremental Build of configuration Debug for project Cache_Test2 ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+make: Nothing to be done for 'main-build'.
+13:08:52 **** Incremental Build of configuration Debug for project Cache_Test2 ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+make: Nothing to be done for 'main-build'.
+13:10:11 **** Auto Build of configuration Debug for project Cache_Test2 ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/helloworld.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/helloworld.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../Cache_Test2_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/helloworld.d" -MT"src/helloworld.o" -o "src/helloworld.o" "../src/helloworld.c"
+In file included from ../src/helloworld.c:47:
+../../Cache_Test2_bsp/ps7_cortexa9_0/include/xtime_l.h:87:9: note: #pragma message: For the sleep routines, Global timer is being used
+ #pragma message ("For the sleep routines, Global timer is being used")
+         ^~~~~~~
+../src/helloworld.c:65:25: warning: missing braces around initializer [-Wmissing-braces]
+ int A[SIZE_N][SIZE_M] = {2};
+                         ^
+                          {}
+../src/helloworld.c:66:25: warning: missing braces around initializer [-Wmissing-braces]
+ int B[SIZE_M][SIZE_P] = {3};
+                         ^
+                          {}
+../src/helloworld.c:67:25: warning: missing braces around initializer [-Wmissing-braces]
+ int C[SIZE_N][SIZE_P] = {4};
+                         ^
+                          {}
+'Finished building: ../src/helloworld.c'
+' '
+'Building target: Cache_Test2.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../Cache_Test2_bsp/ps7_cortexa9_0/lib -o "Cache_Test2.elf"  ./src/helloworld.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: Cache_Test2.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size Cache_Test2.elf  |tee "Cache_Test2.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  62612	   6048	  23328	  91988	  16754	Cache_Test2.elf
+'Finished building: Cache_Test2.elf.size'
+' '
+13:10:13 **** Incremental Build of configuration Debug for project Cache_Test2 ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+make: Nothing to be done for 'main-build'.
+13:10:46 **** Auto Build of configuration Debug for project Cache_Test2 ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/helloworld.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/helloworld.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../Cache_Test2_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/helloworld.d" -MT"src/helloworld.o" -o "src/helloworld.o" "../src/helloworld.c"
+In file included from ../src/helloworld.c:47:
+../../Cache_Test2_bsp/ps7_cortexa9_0/include/xtime_l.h:87:9: note: #pragma message: For the sleep routines, Global timer is being used
+ #pragma message ("For the sleep routines, Global timer is being used")
+         ^~~~~~~
+../src/helloworld.c:65:25: warning: missing braces around initializer [-Wmissing-braces]
+ int A[SIZE_N][SIZE_M] = {2};
+                         ^
+                          {}
+../src/helloworld.c:66:25: warning: missing braces around initializer [-Wmissing-braces]
+ int B[SIZE_M][SIZE_P] = {3};
+                         ^
+                          {}
+../src/helloworld.c:67:25: warning: missing braces around initializer [-Wmissing-braces]
+ int C[SIZE_N][SIZE_P] = {4};
+                         ^
+                          {}
+'Finished building: ../src/helloworld.c'
+' '
+'Building target: Cache_Test2.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../Cache_Test2_bsp/ps7_cortexa9_0/lib -o "Cache_Test2.elf"  ./src/helloworld.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: Cache_Test2.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size Cache_Test2.elf  |tee "Cache_Test2.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  62612	  15648	  23328	 101588	  18cd4	Cache_Test2.elf
+'Finished building: Cache_Test2.elf.size'
+' '
+13:10:49 **** Incremental Build of configuration Debug for project Cache_Test2 ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+make: Nothing to be done for 'main-build'.
+13:11:19 **** Incremental Build of configuration Debug for project Cache_Test2 ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/helloworld.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/helloworld.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../Cache_Test2_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/helloworld.d" -MT"src/helloworld.o" -o "src/helloworld.o" "../src/helloworld.c"
+In file included from ../src/helloworld.c:47:
+../../Cache_Test2_bsp/ps7_cortexa9_0/include/xtime_l.h:87:9: note: #pragma message: For the sleep routines, Global timer is being used
+ #pragma message ("For the sleep routines, Global timer is being used")
+         ^~~~~~~
+../src/helloworld.c:65:25: warning: missing braces around initializer [-Wmissing-braces]
+ int A[SIZE_N][SIZE_M] = {2};
+                         ^
+                          {}
+../src/helloworld.c:66:25: warning: missing braces around initializer [-Wmissing-braces]
+ int B[SIZE_M][SIZE_P] = {3};
+                         ^
+                          {}
+../src/helloworld.c:67:25: warning: missing braces around initializer [-Wmissing-braces]
+ int C[SIZE_N][SIZE_P] = {4};
+                         ^
+                          {}
+'Finished building: ../src/helloworld.c'
+' '
+'Building target: Cache_Test2.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../Cache_Test2_bsp/ps7_cortexa9_0/lib -o "Cache_Test2.elf"  ./src/helloworld.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: Cache_Test2.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size Cache_Test2.elf  |tee "Cache_Test2.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  62612	  53280	  23328	 139220	  21fd4	Cache_Test2.elf
+'Finished building: Cache_Test2.elf.size'
+' '
+13:12:06 **** Auto Build of configuration Debug for project Cache_Test2 ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/helloworld.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/helloworld.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../Cache_Test2_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/helloworld.d" -MT"src/helloworld.o" -o "src/helloworld.o" "../src/helloworld.c"
+In file included from ../src/helloworld.c:47:
+../../Cache_Test2_bsp/ps7_cortexa9_0/include/xtime_l.h:87:9: note: #pragma message: For the sleep routines, Global timer is being used
+ #pragma message ("For the sleep routines, Global timer is being used")
+         ^~~~~~~
+../src/helloworld.c:65:25: warning: missing braces around initializer [-Wmissing-braces]
+ int A[SIZE_N][SIZE_M] = {2};
+                         ^
+                          {}
+../src/helloworld.c:66:25: warning: missing braces around initializer [-Wmissing-braces]
+ int B[SIZE_M][SIZE_P] = {3};
+                         ^
+                          {}
+../src/helloworld.c:67:25: warning: missing braces around initializer [-Wmissing-braces]
+ int C[SIZE_N][SIZE_P] = {4};
+                         ^
+                          {}
+'Finished building: ../src/helloworld.c'
+' '
+'Building target: Cache_Test2.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../Cache_Test2_bsp/ps7_cortexa9_0/lib -o "Cache_Test2.elf"  ./src/helloworld.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: Cache_Test2.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size Cache_Test2.elf  |tee "Cache_Test2.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  62612	 202272	  23328	 288212	  465d4	Cache_Test2.elf
+'Finished building: Cache_Test2.elf.size'
+' '
+13:12:09 **** Incremental Build of configuration Debug for project Cache_Test2 ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+make: Nothing to be done for 'main-build'.
+13:12:53 **** Incremental Build of configuration Debug for project Cache_Test2 ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/helloworld.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/helloworld.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../Cache_Test2_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/helloworld.d" -MT"src/helloworld.o" -o "src/helloworld.o" "../src/helloworld.c"
+In file included from ../src/helloworld.c:47:
+../../Cache_Test2_bsp/ps7_cortexa9_0/include/xtime_l.h:87:9: note: #pragma message: For the sleep routines, Global timer is being used
+ #pragma message ("For the sleep routines, Global timer is being used")
+         ^~~~~~~
+../src/helloworld.c:65:25: warning: missing braces around initializer [-Wmissing-braces]
+ int A[SIZE_N][SIZE_M] = {2};
+                         ^
+                          {}
+../src/helloworld.c:66:25: warning: missing braces around initializer [-Wmissing-braces]
+ int B[SIZE_M][SIZE_P] = {3};
+                         ^
+                          {}
+../src/helloworld.c:67:25: warning: missing braces around initializer [-Wmissing-braces]
+ int C[SIZE_N][SIZE_P] = {4};
+                         ^
+                          {}
+'Finished building: ../src/helloworld.c'
+' '
+'Building target: Cache_Test2.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../Cache_Test2_bsp/ps7_cortexa9_0/lib -o "Cache_Test2.elf"  ./src/helloworld.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: Cache_Test2.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size Cache_Test2.elf  |tee "Cache_Test2.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  62612	 795168	  23328	 881108	  d71d4	Cache_Test2.elf
+'Finished building: Cache_Test2.elf.size'
+' '
+13:13:56 **** Incremental Build of configuration Debug for project Cache_Test2 ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/helloworld.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/helloworld.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../Cache_Test2_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/helloworld.d" -MT"src/helloworld.o" -o "src/helloworld.o" "../src/helloworld.c"
+In file included from ../src/helloworld.c:47:
+../../Cache_Test2_bsp/ps7_cortexa9_0/include/xtime_l.h:87:9: note: #pragma message: For the sleep routines, Global timer is being used
+ #pragma message ("For the sleep routines, Global timer is being used")
+         ^~~~~~~
+../src/helloworld.c:65:25: warning: missing braces around initializer [-Wmissing-braces]
+ int A[SIZE_N][SIZE_M] = {2};
+                         ^
+                          {}
+../src/helloworld.c:66:25: warning: missing braces around initializer [-Wmissing-braces]
+ int B[SIZE_M][SIZE_P] = {3};
+                         ^
+                          {}
+../src/helloworld.c:67:25: warning: missing braces around initializer [-Wmissing-braces]
+ int C[SIZE_N][SIZE_P] = {4};
+                         ^
+                          {}
+'Finished building: ../src/helloworld.c'
+' '
+'Building target: Cache_Test2.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../Cache_Test2_bsp/ps7_cortexa9_0/lib -o "Cache_Test2.elf"  ./src/helloworld.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: Cache_Test2.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size Cache_Test2.elf  |tee "Cache_Test2.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  62612	3160608	  23328	3246548	 3189d4	Cache_Test2.elf
+'Finished building: Cache_Test2.elf.size'
+' '
+14:02:58 **** Incremental Build of configuration Debug for project Cache_Test2 ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/helloworld.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/helloworld.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../Cache_Test2_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/helloworld.d" -MT"src/helloworld.o" -o "src/helloworld.o" "../src/helloworld.c"
+In file included from ../src/helloworld.c:47:
+../../Cache_Test2_bsp/ps7_cortexa9_0/include/xtime_l.h:87:9: note: #pragma message: For the sleep routines, Global timer is being used
+ #pragma message ("For the sleep routines, Global timer is being used")
+         ^~~~~~~
+../src/helloworld.c:65:27: warning: missing braces around initializer [-Wmissing-braces]
+ float A[SIZE_N][SIZE_M] = {2};
+                           ^
+                            {}
+../src/helloworld.c:66:27: warning: missing braces around initializer [-Wmissing-braces]
+ float B[SIZE_M][SIZE_P] = {3};
+                           ^
+                            {}
+../src/helloworld.c:67:27: warning: missing braces around initializer [-Wmissing-braces]
+ float C[SIZE_N][SIZE_P] = {4};
+                           ^
+                            {}
+../src/helloworld.c: In function 'main':
+../src/helloworld.c:108:17: warning: passing argument 1 of 'init_matrix' from incompatible pointer type [-Wincompatible-pointer-types]
+     init_matrix(&A[0][0], SIZE_N, SIZE_M, 0, 2);
+                 ^~~~~~~~
+../src/helloworld.c:72:23: note: expected 'int *' but argument is of type 'float *'
+ void init_matrix(int *M, int row_size, int column_size, int first_val, int increment)
+                  ~~~~~^
+../src/helloworld.c:109:17: warning: passing argument 1 of 'init_matrix' from incompatible pointer type [-Wincompatible-pointer-types]
+     init_matrix(&B[0][0], SIZE_M, SIZE_P, 1, 2);
+                 ^~~~~~~~
+../src/helloworld.c:72:23: note: expected 'int *' but argument is of type 'float *'
+ void init_matrix(int *M, int row_size, int column_size, int first_val, int increment)
+                  ~~~~~^
+../src/helloworld.c:110:17: warning: passing argument 1 of 'init_matrix' from incompatible pointer type [-Wincompatible-pointer-types]
+     init_matrix(&C[0][0], SIZE_M, SIZE_M, 0, 0);
+                 ^~~~~~~~
+../src/helloworld.c:72:23: note: expected 'int *' but argument is of type 'float *'
+ void init_matrix(int *M, int row_size, int column_size, int first_val, int increment)
+                  ~~~~~^
+'Finished building: ../src/helloworld.c'
+' '
+'Building target: Cache_Test2.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../Cache_Test2_bsp/ps7_cortexa9_0/lib -o "Cache_Test2.elf"  ./src/helloworld.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: Cache_Test2.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size Cache_Test2.elf  |tee "Cache_Test2.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  62612	 789016	  23328	 874956	  d59cc	Cache_Test2.elf
+'Finished building: Cache_Test2.elf.size'
+' '
+14:17:33 **** Incremental Build of configuration Debug for project Cache_Test2 ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/helloworld.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/helloworld.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../Cache_Test2_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/helloworld.d" -MT"src/helloworld.o" -o "src/helloworld.o" "../src/helloworld.c"
+In file included from ../src/helloworld.c:47:
+../../Cache_Test2_bsp/ps7_cortexa9_0/include/xtime_l.h:87:9: note: #pragma message: For the sleep routines, Global timer is being used
+ #pragma message ("For the sleep routines, Global timer is being used")
+         ^~~~~~~
+../src/helloworld.c:65:27: warning: missing braces around initializer [-Wmissing-braces]
+ float A[SIZE_N][SIZE_M] = {2};
+                           ^
+                            {}
+../src/helloworld.c:66:27: warning: missing braces around initializer [-Wmissing-braces]
+ float B[SIZE_M][SIZE_P] = {3};
+                           ^
+                            {}
+../src/helloworld.c:67:27: warning: missing braces around initializer [-Wmissing-braces]
+ float C[SIZE_N][SIZE_P] = {4};
+                           ^
+                            {}
+../src/helloworld.c: In function 'main':
+../src/helloworld.c:108:17: warning: passing argument 1 of 'init_matrix' from incompatible pointer type [-Wincompatible-pointer-types]
+     init_matrix(&A[0][0], SIZE_N, SIZE_M, 0, 2);
+                 ^~~~~~~~
+../src/helloworld.c:72:23: note: expected 'int *' but argument is of type 'float *'
+ void init_matrix(int *M, int row_size, int column_size, int first_val, int increment)
+                  ~~~~~^
+../src/helloworld.c:109:17: warning: passing argument 1 of 'init_matrix' from incompatible pointer type [-Wincompatible-pointer-types]
+     init_matrix(&B[0][0], SIZE_M, SIZE_P, 1, 2);
+                 ^~~~~~~~
+../src/helloworld.c:72:23: note: expected 'int *' but argument is of type 'float *'
+ void init_matrix(int *M, int row_size, int column_size, int first_val, int increment)
+                  ~~~~~^
+../src/helloworld.c:110:17: warning: passing argument 1 of 'init_matrix' from incompatible pointer type [-Wincompatible-pointer-types]
+     init_matrix(&C[0][0], SIZE_M, SIZE_M, 0, 0);
+                 ^~~~~~~~
+../src/helloworld.c:72:23: note: expected 'int *' but argument is of type 'float *'
+ void init_matrix(int *M, int row_size, int column_size, int first_val, int increment)
+                  ~~~~~^
+'Finished building: ../src/helloworld.c'
+' '
+'Building target: Cache_Test2.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../Cache_Test2_bsp/ps7_cortexa9_0/lib -o "Cache_Test2.elf"  ./src/helloworld.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: Cache_Test2.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size Cache_Test2.elf  |tee "Cache_Test2.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  62740	 795168	  23328	 881236	  d7254	Cache_Test2.elf
+'Finished building: Cache_Test2.elf.size'
+' '
+14:34:11 **** Incremental Build of configuration Debug for project Cache_Test2 ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/helloworld.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/helloworld.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../Cache_Test2_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/helloworld.d" -MT"src/helloworld.o" -o "src/helloworld.o" "../src/helloworld.c"
+In file included from ../src/helloworld.c:47:
+../../Cache_Test2_bsp/ps7_cortexa9_0/include/xtime_l.h:87:9: note: #pragma message: For the sleep routines, Global timer is being used
+ #pragma message ("For the sleep routines, Global timer is being used")
+         ^~~~~~~
+../src/helloworld.c:65:27: warning: missing braces around initializer [-Wmissing-braces]
+ float A[SIZE_N][SIZE_M] = {2};
+                           ^
+                            {}
+../src/helloworld.c:66:27: warning: missing braces around initializer [-Wmissing-braces]
+ float B[SIZE_M][SIZE_P] = {3};
+                           ^
+                            {}
+../src/helloworld.c:67:27: warning: missing braces around initializer [-Wmissing-braces]
+ float C[SIZE_N][SIZE_P] = {4};
+                           ^
+                            {}
+../src/helloworld.c: In function 'main':
+../src/helloworld.c:108:17: warning: passing argument 1 of 'init_matrix' from incompatible pointer type [-Wincompatible-pointer-types]
+     init_matrix(&A[0][0], SIZE_N, SIZE_M, 0, 2);
+                 ^~~~~~~~
+../src/helloworld.c:72:23: note: expected 'int *' but argument is of type 'float *'
+ void init_matrix(int *M, int row_size, int column_size, int first_val, int increment)
+                  ~~~~~^
+../src/helloworld.c:109:17: warning: passing argument 1 of 'init_matrix' from incompatible pointer type [-Wincompatible-pointer-types]
+     init_matrix(&B[0][0], SIZE_M, SIZE_P, 1, 2);
+                 ^~~~~~~~
+../src/helloworld.c:72:23: note: expected 'int *' but argument is of type 'float *'
+ void init_matrix(int *M, int row_size, int column_size, int first_val, int increment)
+                  ~~~~~^
+../src/helloworld.c:110:17: warning: passing argument 1 of 'init_matrix' from incompatible pointer type [-Wincompatible-pointer-types]
+     init_matrix(&C[0][0], SIZE_M, SIZE_M, 0, 0);
+                 ^~~~~~~~
+../src/helloworld.c:72:23: note: expected 'int *' but argument is of type 'float *'
+ void init_matrix(int *M, int row_size, int column_size, int first_val, int increment)
+                  ~~~~~^
+'Finished building: ../src/helloworld.c'
+' '
+'Building target: Cache_Test2.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../Cache_Test2_bsp/ps7_cortexa9_0/lib -o "Cache_Test2.elf"  ./src/helloworld.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: Cache_Test2.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size Cache_Test2.elf  |tee "Cache_Test2.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  62612	3148312	  23328	3234252	 3159cc	Cache_Test2.elf
+'Finished building: Cache_Test2.elf.size'
+' '
+15:33:49 **** Incremental Build of configuration Debug for project Cache_Test2 ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/helloworld.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/helloworld.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../Cache_Test2_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/helloworld.d" -MT"src/helloworld.o" -o "src/helloworld.o" "../src/helloworld.c"
+In file included from ../src/helloworld.c:47:
+../../Cache_Test2_bsp/ps7_cortexa9_0/include/xtime_l.h:87:9: note: #pragma message: For the sleep routines, Global timer is being used
+ #pragma message ("For the sleep routines, Global timer is being used")
+         ^~~~~~~
+../src/helloworld.c:65:27: warning: missing braces around initializer [-Wmissing-braces]
+ float A[SIZE_N][SIZE_M] = {2};
+                           ^
+                            {}
+../src/helloworld.c:66:27: warning: missing braces around initializer [-Wmissing-braces]
+ float B[SIZE_M][SIZE_P] = {3};
+                           ^
+                            {}
+../src/helloworld.c:67:27: warning: missing braces around initializer [-Wmissing-braces]
+ float C[SIZE_N][SIZE_P] = {4};
+                           ^
+                            {}
+../src/helloworld.c: In function 'main':
+../src/helloworld.c:108:17: warning: passing argument 1 of 'init_matrix' from incompatible pointer type [-Wincompatible-pointer-types]
+     init_matrix(&A[0][0], SIZE_N, SIZE_M, 0, 2);
+                 ^~~~~~~~
+../src/helloworld.c:72:23: note: expected 'int *' but argument is of type 'float *'
+ void init_matrix(int *M, int row_size, int column_size, int first_val, int increment)
+                  ~~~~~^
+../src/helloworld.c:109:17: warning: passing argument 1 of 'init_matrix' from incompatible pointer type [-Wincompatible-pointer-types]
+     init_matrix(&B[0][0], SIZE_M, SIZE_P, 1, 2);
+                 ^~~~~~~~
+../src/helloworld.c:72:23: note: expected 'int *' but argument is of type 'float *'
+ void init_matrix(int *M, int row_size, int column_size, int first_val, int increment)
+                  ~~~~~^
+../src/helloworld.c:110:17: warning: passing argument 1 of 'init_matrix' from incompatible pointer type [-Wincompatible-pointer-types]
+     init_matrix(&C[0][0], SIZE_M, SIZE_M, 0, 0);
+                 ^~~~~~~~
+../src/helloworld.c:72:23: note: expected 'int *' but argument is of type 'float *'
+ void init_matrix(int *M, int row_size, int column_size, int first_val, int increment)
+                  ~~~~~^
+'Finished building: ../src/helloworld.c'
+' '
+'Building target: Cache_Test2.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../Cache_Test2_bsp/ps7_cortexa9_0/lib -o "Cache_Test2.elf"  ./src/helloworld.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: Cache_Test2.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size Cache_Test2.elf  |tee "Cache_Test2.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  62740	3160608	  23328	3246676	 318a54	Cache_Test2.elf
+'Finished building: Cache_Test2.elf.size'
+' '
+15:54:23 **** Clean-only build of configuration Debug for project Cache_Test2 ****
+make clean 
+rm -rf  ./src/helloworld.o ./src/platform.o  ./src/helloworld.d ./src/platform.d  Cache_Test2.elf.size  Cache_Test2.elf
+' '
+15:54:23 **** Auto Build of configuration Debug for project Cache_Test2 ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/helloworld.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O3 -g3 -c -fmessage-length=0 -MT"src/helloworld.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../Cache_Test2_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/helloworld.d" -MT"src/helloworld.o" -o "src/helloworld.o" "../src/helloworld.c"
+In file included from ../src/helloworld.c:47:
+../../Cache_Test2_bsp/ps7_cortexa9_0/include/xtime_l.h:87:9: note: #pragma message: For the sleep routines, Global timer is being used
+ #pragma message ("For the sleep routines, Global timer is being used")
+         ^~~~~~~
+../src/helloworld.c:65:27: warning: missing braces around initializer [-Wmissing-braces]
+ float A[SIZE_N][SIZE_M] = {2};
+                           ^
+                            {}
+../src/helloworld.c:66:27: warning: missing braces around initializer [-Wmissing-braces]
+ float B[SIZE_M][SIZE_P] = {3};
+                           ^
+                            {}
+../src/helloworld.c:67:27: warning: missing braces around initializer [-Wmissing-braces]
+ float C[SIZE_N][SIZE_P] = {4};
+                           ^
+                            {}
+../src/helloworld.c: In function 'main':
+../src/helloworld.c:108:17: warning: passing argument 1 of 'init_matrix' from incompatible pointer type [-Wincompatible-pointer-types]
+     init_matrix(&A[0][0], SIZE_N, SIZE_M, 0, 2);
+                 ^~~~~~~~
+../src/helloworld.c:72:23: note: expected 'int *' but argument is of type 'float *'
+ void init_matrix(int *M, int row_size, int column_size, int first_val, int increment)
+                  ~~~~~^
+../src/helloworld.c:109:17: warning: passing argument 1 of 'init_matrix' from incompatible pointer type [-Wincompatible-pointer-types]
+     init_matrix(&B[0][0], SIZE_M, SIZE_P, 1, 2);
+                 ^~~~~~~~
+../src/helloworld.c:72:23: note: expected 'int *' but argument is of type 'float *'
+ void init_matrix(int *M, int row_size, int column_size, int first_val, int increment)
+                  ~~~~~^
+../src/helloworld.c:110:17: warning: passing argument 1 of 'init_matrix' from incompatible pointer type [-Wincompatible-pointer-types]
+     init_matrix(&C[0][0], SIZE_M, SIZE_M, 0, 0);
+                 ^~~~~~~~
+../src/helloworld.c:72:23: note: expected 'int *' but argument is of type 'float *'
+ void init_matrix(int *M, int row_size, int column_size, int first_val, int increment)
+                  ~~~~~^
+'Finished building: ../src/helloworld.c'
+' '
+'Building file: ../src/platform.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O3 -g3 -c -fmessage-length=0 -MT"src/platform.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../Cache_Test2_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/platform.d" -MT"src/platform.o" -o "src/platform.o" "../src/platform.c"
+'Finished building: ../src/platform.c'
+' '
+'Building target: Cache_Test2.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../Cache_Test2_bsp/ps7_cortexa9_0/lib -o "Cache_Test2.elf"  ./src/helloworld.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: Cache_Test2.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size Cache_Test2.elf  |tee "Cache_Test2.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  62180	3160608	  23328	3246116	 318824	Cache_Test2.elf
+'Finished building: Cache_Test2.elf.size'
+' '
+15:54:39 **** Auto Build of configuration Debug for project Cache_Test2 ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/helloworld.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O3 -g3 -c -fmessage-length=0 -MT"src/helloworld.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../Cache_Test2_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/helloworld.d" -MT"src/helloworld.o" -o "src/helloworld.o" "../src/helloworld.c"
+In file included from ../src/helloworld.c:47:
+../../Cache_Test2_bsp/ps7_cortexa9_0/include/xtime_l.h:87:9: note: #pragma message: For the sleep routines, Global timer is being used
+ #pragma message ("For the sleep routines, Global timer is being used")
+         ^~~~~~~
+../src/helloworld.c:65:27: warning: missing braces around initializer [-Wmissing-braces]
+ float A[SIZE_N][SIZE_M] = {2};
+                           ^
+                            {}
+../src/helloworld.c:66:27: warning: missing braces around initializer [-Wmissing-braces]
+ float B[SIZE_M][SIZE_P] = {3};
+                           ^
+                            {}
+../src/helloworld.c:67:27: warning: missing braces around initializer [-Wmissing-braces]
+ float C[SIZE_N][SIZE_P] = {4};
+                           ^
+                            {}
+../src/helloworld.c: In function 'main':
+../src/helloworld.c:108:17: warning: passing argument 1 of 'init_matrix' from incompatible pointer type [-Wincompatible-pointer-types]
+     init_matrix(&A[0][0], SIZE_N, SIZE_M, 0, 2);
+                 ^~~~~~~~
+../src/helloworld.c:72:23: note: expected 'int *' but argument is of type 'float *'
+ void init_matrix(int *M, int row_size, int column_size, int first_val, int increment)
+                  ~~~~~^
+../src/helloworld.c:109:17: warning: passing argument 1 of 'init_matrix' from incompatible pointer type [-Wincompatible-pointer-types]
+     init_matrix(&B[0][0], SIZE_M, SIZE_P, 1, 2);
+                 ^~~~~~~~
+../src/helloworld.c:72:23: note: expected 'int *' but argument is of type 'float *'
+ void init_matrix(int *M, int row_size, int column_size, int first_val, int increment)
+                  ~~~~~^
+../src/helloworld.c:110:17: warning: passing argument 1 of 'init_matrix' from incompatible pointer type [-Wincompatible-pointer-types]
+     init_matrix(&C[0][0], SIZE_M, SIZE_M, 0, 0);
+                 ^~~~~~~~
+../src/helloworld.c:72:23: note: expected 'int *' but argument is of type 'float *'
+ void init_matrix(int *M, int row_size, int column_size, int first_val, int increment)
+                  ~~~~~^
+'Finished building: ../src/helloworld.c'
+' '
+'Building target: Cache_Test2.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../Cache_Test2_bsp/ps7_cortexa9_0/lib -o "Cache_Test2.elf"  ./src/helloworld.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: Cache_Test2.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size Cache_Test2.elf  |tee "Cache_Test2.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  61996	 199192	  23328	 284516	  45764	Cache_Test2.elf
+'Finished building: Cache_Test2.elf.size'
+' '
+15:54:41 **** Incremental Build of configuration Debug for project Cache_Test2 ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+make: Nothing to be done for 'main-build'.
+16:59:27 **** Incremental Build of configuration Debug for project Cache_Test2 ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/helloworld.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O3 -g3 -c -fmessage-length=0 -MT"src/helloworld.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../Cache_Test2_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/helloworld.d" -MT"src/helloworld.o" -o "src/helloworld.o" "../src/helloworld.c"
+In file included from ../src/helloworld.c:47:
+../../Cache_Test2_bsp/ps7_cortexa9_0/include/xtime_l.h:87:9: note: #pragma message: For the sleep routines, Global timer is being used
+ #pragma message ("For the sleep routines, Global timer is being used")
+         ^~~~~~~
+../src/helloworld.c:65:27: warning: missing braces around initializer [-Wmissing-braces]
+ float A[SIZE_N][SIZE_M] = {2};
+                           ^
+                            {}
+../src/helloworld.c:66:27: warning: missing braces around initializer [-Wmissing-braces]
+ float B[SIZE_M][SIZE_P] = {3};
+                           ^
+                            {}
+../src/helloworld.c:67:27: warning: missing braces around initializer [-Wmissing-braces]
+ float C[SIZE_N][SIZE_P] = {4};
+                           ^
+                            {}
+../src/helloworld.c: In function 'main':
+../src/helloworld.c:108:17: warning: passing argument 1 of 'init_matrix' from incompatible pointer type [-Wincompatible-pointer-types]
+     init_matrix(&A[0][0], SIZE_N, SIZE_M, 0, 2);
+                 ^~~~~~~~
+../src/helloworld.c:72:23: note: expected 'int *' but argument is of type 'float *'
+ void init_matrix(int *M, int row_size, int column_size, int first_val, int increment)
+                  ~~~~~^
+../src/helloworld.c:109:17: warning: passing argument 1 of 'init_matrix' from incompatible pointer type [-Wincompatible-pointer-types]
+     init_matrix(&B[0][0], SIZE_M, SIZE_P, 1, 2);
+                 ^~~~~~~~
+../src/helloworld.c:72:23: note: expected 'int *' but argument is of type 'float *'
+ void init_matrix(int *M, int row_size, int column_size, int first_val, int increment)
+                  ~~~~~^
+../src/helloworld.c:110:17: warning: passing argument 1 of 'init_matrix' from incompatible pointer type [-Wincompatible-pointer-types]
+     init_matrix(&C[0][0], SIZE_M, SIZE_M, 0, 0);
+                 ^~~~~~~~
+../src/helloworld.c:72:23: note: expected 'int *' but argument is of type 'float *'
+ void init_matrix(int *M, int row_size, int column_size, int first_val, int increment)
+                  ~~~~~^
+'Finished building: ../src/helloworld.c'
+' '
+'Building target: Cache_Test2.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../Cache_Test2_bsp/ps7_cortexa9_0/lib -o "Cache_Test2.elf"  ./src/helloworld.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: Cache_Test2.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size Cache_Test2.elf  |tee "Cache_Test2.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  61996	 202272	  23328	 287596	  4636c	Cache_Test2.elf
+'Finished building: Cache_Test2.elf.size'
+' '
+17:13:28 **** Incremental Build of configuration Debug for project Cache_Test2 ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/helloworld.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O3 -g3 -c -fmessage-length=0 -MT"src/helloworld.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../Cache_Test2_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/helloworld.d" -MT"src/helloworld.o" -o "src/helloworld.o" "../src/helloworld.c"
+In file included from ../src/helloworld.c:47:
+../../Cache_Test2_bsp/ps7_cortexa9_0/include/xtime_l.h:87:9: note: #pragma message: For the sleep routines, Global timer is being used
+ #pragma message ("For the sleep routines, Global timer is being used")
+         ^~~~~~~
+../src/helloworld.c:65:27: warning: missing braces around initializer [-Wmissing-braces]
+ float A[SIZE_N][SIZE_M] = {2};
+                           ^
+                            {}
+../src/helloworld.c:66:27: warning: missing braces around initializer [-Wmissing-braces]
+ float B[SIZE_M][SIZE_P] = {3};
+                           ^
+                            {}
+../src/helloworld.c:67:27: warning: missing braces around initializer [-Wmissing-braces]
+ float C[SIZE_N][SIZE_P] = {4};
+                           ^
+                            {}
+../src/helloworld.c: In function 'main':
+../src/helloworld.c:108:17: warning: passing argument 1 of 'init_matrix' from incompatible pointer type [-Wincompatible-pointer-types]
+     init_matrix(&A[0][0], SIZE_N, SIZE_M, 0, 2);
+                 ^~~~~~~~
+../src/helloworld.c:72:23: note: expected 'int *' but argument is of type 'float *'
+ void init_matrix(int *M, int row_size, int column_size, int first_val, int increment)
+                  ~~~~~^
+../src/helloworld.c:109:17: warning: passing argument 1 of 'init_matrix' from incompatible pointer type [-Wincompatible-pointer-types]
+     init_matrix(&B[0][0], SIZE_M, SIZE_P, 1, 2);
+                 ^~~~~~~~
+../src/helloworld.c:72:23: note: expected 'int *' but argument is of type 'float *'
+ void init_matrix(int *M, int row_size, int column_size, int first_val, int increment)
+                  ~~~~~^
+../src/helloworld.c:110:17: warning: passing argument 1 of 'init_matrix' from incompatible pointer type [-Wincompatible-pointer-types]
+     init_matrix(&C[0][0], SIZE_M, SIZE_M, 0, 0);
+                 ^~~~~~~~
+../src/helloworld.c:72:23: note: expected 'int *' but argument is of type 'float *'
+ void init_matrix(int *M, int row_size, int column_size, int first_val, int increment)
+                  ~~~~~^
+'Finished building: ../src/helloworld.c'
+' '
+'Building target: Cache_Test2.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../Cache_Test2_bsp/ps7_cortexa9_0/lib -o "Cache_Test2.elf"  ./src/helloworld.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: Cache_Test2.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size Cache_Test2.elf  |tee "Cache_Test2.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  62148	 789016	  23328	 874492	  d57fc	Cache_Test2.elf
+'Finished building: Cache_Test2.elf.size'
+' '
+17:19:39 **** Incremental Build of configuration Debug for project Cache_Test2 ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/helloworld.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O3 -g3 -c -fmessage-length=0 -MT"src/helloworld.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../Cache_Test2_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/helloworld.d" -MT"src/helloworld.o" -o "src/helloworld.o" "../src/helloworld.c"
+In file included from ../src/helloworld.c:47:
+../../Cache_Test2_bsp/ps7_cortexa9_0/include/xtime_l.h:87:9: note: #pragma message: For the sleep routines, Global timer is being used
+ #pragma message ("For the sleep routines, Global timer is being used")
+         ^~~~~~~
+../src/helloworld.c:65:27: warning: missing braces around initializer [-Wmissing-braces]
+ float A[SIZE_N][SIZE_M] = {2};
+                           ^
+                            {}
+../src/helloworld.c:66:27: warning: missing braces around initializer [-Wmissing-braces]
+ float B[SIZE_M][SIZE_P] = {3};
+                           ^
+                            {}
+../src/helloworld.c:67:27: warning: missing braces around initializer [-Wmissing-braces]
+ float C[SIZE_N][SIZE_P] = {4};
+                           ^
+                            {}
+../src/helloworld.c: In function 'main':
+../src/helloworld.c:108:17: warning: passing argument 1 of 'init_matrix' from incompatible pointer type [-Wincompatible-pointer-types]
+     init_matrix(&A[0][0], SIZE_N, SIZE_M, 0, 2);
+                 ^~~~~~~~
+../src/helloworld.c:72:23: note: expected 'int *' but argument is of type 'float *'
+ void init_matrix(int *M, int row_size, int column_size, int first_val, int increment)
+                  ~~~~~^
+../src/helloworld.c:109:17: warning: passing argument 1 of 'init_matrix' from incompatible pointer type [-Wincompatible-pointer-types]
+     init_matrix(&B[0][0], SIZE_M, SIZE_P, 1, 2);
+                 ^~~~~~~~
+../src/helloworld.c:72:23: note: expected 'int *' but argument is of type 'float *'
+ void init_matrix(int *M, int row_size, int column_size, int first_val, int increment)
+                  ~~~~~^
+../src/helloworld.c:110:17: warning: passing argument 1 of 'init_matrix' from incompatible pointer type [-Wincompatible-pointer-types]
+     init_matrix(&C[0][0], SIZE_M, SIZE_M, 0, 0);
+                 ^~~~~~~~
+../src/helloworld.c:72:23: note: expected 'int *' but argument is of type 'float *'
+ void init_matrix(int *M, int row_size, int column_size, int first_val, int increment)
+                  ~~~~~^
+'Finished building: ../src/helloworld.c'
+' '
+'Building target: Cache_Test2.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../Cache_Test2_bsp/ps7_cortexa9_0/lib -o "Cache_Test2.elf"  ./src/helloworld.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: Cache_Test2.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size Cache_Test2.elf  |tee "Cache_Test2.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  62180	 795168	  23328	 880676	  d7024	Cache_Test2.elf
+'Finished building: Cache_Test2.elf.size'
+' '
+17:20:24 **** Auto Build of configuration Debug for project Cache_Test2 ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/helloworld.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O3 -g3 -c -fmessage-length=0 -MT"src/helloworld.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../Cache_Test2_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/helloworld.d" -MT"src/helloworld.o" -o "src/helloworld.o" "../src/helloworld.c"
+In file included from ../src/helloworld.c:47:
+../../Cache_Test2_bsp/ps7_cortexa9_0/include/xtime_l.h:87:9: note: #pragma message: For the sleep routines, Global timer is being used
+ #pragma message ("For the sleep routines, Global timer is being used")
+         ^~~~~~~
+../src/helloworld.c:65:27: warning: missing braces around initializer [-Wmissing-braces]
+ float A[SIZE_N][SIZE_M] = {2};
+                           ^
+                            {}
+../src/helloworld.c:66:27: warning: missing braces around initializer [-Wmissing-braces]
+ float B[SIZE_M][SIZE_P] = {3};
+                           ^
+                            {}
+../src/helloworld.c:67:27: warning: missing braces around initializer [-Wmissing-braces]
+ float C[SIZE_N][SIZE_P] = {4};
+                           ^
+                            {}
+../src/helloworld.c: In function 'main':
+../src/helloworld.c:108:17: warning: passing argument 1 of 'init_matrix' from incompatible pointer type [-Wincompatible-pointer-types]
+     init_matrix(&A[0][0], SIZE_N, SIZE_M, 0, 2);
+                 ^~~~~~~~
+../src/helloworld.c:72:23: note: expected 'int *' but argument is of type 'float *'
+ void init_matrix(int *M, int row_size, int column_size, int first_val, int increment)
+                  ~~~~~^
+../src/helloworld.c:109:17: warning: passing argument 1 of 'init_matrix' from incompatible pointer type [-Wincompatible-pointer-types]
+     init_matrix(&B[0][0], SIZE_M, SIZE_P, 1, 2);
+                 ^~~~~~~~
+../src/helloworld.c:72:23: note: expected 'int *' but argument is of type 'float *'
+ void init_matrix(int *M, int row_size, int column_size, int first_val, int increment)
+                  ~~~~~^
+../src/helloworld.c:110:17: warning: passing argument 1 of 'init_matrix' from incompatible pointer type [-Wincompatible-pointer-types]
+     init_matrix(&C[0][0], SIZE_M, SIZE_M, 0, 0);
+                 ^~~~~~~~
+../src/helloworld.c:72:23: note: expected 'int *' but argument is of type 'float *'
+ void init_matrix(int *M, int row_size, int column_size, int first_val, int increment)
+                  ~~~~~^
+'Finished building: ../src/helloworld.c'
+' '
+'Building target: Cache_Test2.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../Cache_Test2_bsp/ps7_cortexa9_0/lib -o "Cache_Test2.elf"  ./src/helloworld.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: Cache_Test2.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size Cache_Test2.elf  |tee "Cache_Test2.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  62148	3148312	  23328	3233788	 3157fc	Cache_Test2.elf
+'Finished building: Cache_Test2.elf.size'
+' '
+17:20:29 **** Incremental Build of configuration Debug for project Cache_Test2 ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+make: Nothing to be done for 'main-build'.
+17:21:34 **** Auto Build of configuration Debug for project Cache_Test2 ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/helloworld.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O3 -g3 -c -fmessage-length=0 -MT"src/helloworld.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../Cache_Test2_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/helloworld.d" -MT"src/helloworld.o" -o "src/helloworld.o" "../src/helloworld.c"
+In file included from ../src/helloworld.c:47:
+../../Cache_Test2_bsp/ps7_cortexa9_0/include/xtime_l.h:87:9: note: #pragma message: For the sleep routines, Global timer is being used
+ #pragma message ("For the sleep routines, Global timer is being used")
+         ^~~~~~~
+../src/helloworld.c:65:27: warning: missing braces around initializer [-Wmissing-braces]
+ float A[SIZE_N][SIZE_M] = {2};
+                           ^
+                            {}
+../src/helloworld.c:66:27: warning: missing braces around initializer [-Wmissing-braces]
+ float B[SIZE_M][SIZE_P] = {3};
+                           ^
+                            {}
+../src/helloworld.c:67:27: warning: missing braces around initializer [-Wmissing-braces]
+ float C[SIZE_N][SIZE_P] = {4};
+                           ^
+                            {}
+../src/helloworld.c: In function 'main':
+../src/helloworld.c:108:17: warning: passing argument 1 of 'init_matrix' from incompatible pointer type [-Wincompatible-pointer-types]
+     init_matrix(&A[0][0], SIZE_N, SIZE_M, 0, 2);
+                 ^~~~~~~~
+../src/helloworld.c:72:23: note: expected 'int *' but argument is of type 'float *'
+ void init_matrix(int *M, int row_size, int column_size, int first_val, int increment)
+                  ~~~~~^
+../src/helloworld.c:109:17: warning: passing argument 1 of 'init_matrix' from incompatible pointer type [-Wincompatible-pointer-types]
+     init_matrix(&B[0][0], SIZE_M, SIZE_P, 1, 2);
+                 ^~~~~~~~
+../src/helloworld.c:72:23: note: expected 'int *' but argument is of type 'float *'
+ void init_matrix(int *M, int row_size, int column_size, int first_val, int increment)
+                  ~~~~~^
+../src/helloworld.c:110:17: warning: passing argument 1 of 'init_matrix' from incompatible pointer type [-Wincompatible-pointer-types]
+     init_matrix(&C[0][0], SIZE_M, SIZE_M, 0, 0);
+                 ^~~~~~~~
+../src/helloworld.c:72:23: note: expected 'int *' but argument is of type 'float *'
+ void init_matrix(int *M, int row_size, int column_size, int first_val, int increment)
+                  ~~~~~^
+'Finished building: ../src/helloworld.c'
+' '
+'Building target: Cache_Test2.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../Cache_Test2_bsp/ps7_cortexa9_0/lib -o "Cache_Test2.elf"  ./src/helloworld.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: Cache_Test2.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size Cache_Test2.elf  |tee "Cache_Test2.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  62180	3160608	  23328	3246116	 318824	Cache_Test2.elf
+'Finished building: Cache_Test2.elf.size'
+' '
+17:21:37 **** Incremental Build of configuration Debug for project Cache_Test2 ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+make: Nothing to be done for 'main-build'.
+17:22:28 **** Incremental Build of configuration Debug for project Cache_Test2 ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+make: Nothing to be done for 'main-build'.
+17:23:14 **** Incremental Build of configuration Debug for project Cache_Test2 ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/helloworld.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O3 -g3 -c -fmessage-length=0 -MT"src/helloworld.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../Cache_Test2_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/helloworld.d" -MT"src/helloworld.o" -o "src/helloworld.o" "../src/helloworld.c"
+In file included from ../src/helloworld.c:47:
+../../Cache_Test2_bsp/ps7_cortexa9_0/include/xtime_l.h:87:9: note: #pragma message: For the sleep routines, Global timer is being used
+ #pragma message ("For the sleep routines, Global timer is being used")
+         ^~~~~~~
+../src/helloworld.c:65:27: warning: missing braces around initializer [-Wmissing-braces]
+ float A[SIZE_N][SIZE_M] = {2};
+                           ^
+                            {}
+../src/helloworld.c:66:27: warning: missing braces around initializer [-Wmissing-braces]
+ float B[SIZE_M][SIZE_P] = {3};
+                           ^
+                            {}
+../src/helloworld.c:67:27: warning: missing braces around initializer [-Wmissing-braces]
+ float C[SIZE_N][SIZE_P] = {4};
+                           ^
+                            {}
+../src/helloworld.c: In function 'main':
+../src/helloworld.c:108:17: warning: passing argument 1 of 'init_matrix' from incompatible pointer type [-Wincompatible-pointer-types]
+     init_matrix(&A[0][0], SIZE_N, SIZE_M, 0, 2);
+                 ^~~~~~~~
+../src/helloworld.c:72:23: note: expected 'int *' but argument is of type 'float *'
+ void init_matrix(int *M, int row_size, int column_size, int first_val, int increment)
+                  ~~~~~^
+../src/helloworld.c:109:17: warning: passing argument 1 of 'init_matrix' from incompatible pointer type [-Wincompatible-pointer-types]
+     init_matrix(&B[0][0], SIZE_M, SIZE_P, 1, 2);
+                 ^~~~~~~~
+../src/helloworld.c:72:23: note: expected 'int *' but argument is of type 'float *'
+ void init_matrix(int *M, int row_size, int column_size, int first_val, int increment)
+                  ~~~~~^
+../src/helloworld.c:110:17: warning: passing argument 1 of 'init_matrix' from incompatible pointer type [-Wincompatible-pointer-types]
+     init_matrix(&C[0][0], SIZE_M, SIZE_M, 0, 0);
+                 ^~~~~~~~
+../src/helloworld.c:72:23: note: expected 'int *' but argument is of type 'float *'
+ void init_matrix(int *M, int row_size, int column_size, int first_val, int increment)
+                  ~~~~~^
+'Finished building: ../src/helloworld.c'
+' '
+'Building target: Cache_Test2.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../Cache_Test2_bsp/ps7_cortexa9_0/lib -o "Cache_Test2.elf"  ./src/helloworld.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: Cache_Test2.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size Cache_Test2.elf  |tee "Cache_Test2.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  62148	3148312	  23328	3233788	 3157fc	Cache_Test2.elf
+'Finished building: Cache_Test2.elf.size'
+' '
+17:23:52 **** Incremental Build of configuration Debug for project Cache_Test2 ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/helloworld.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O3 -g3 -c -fmessage-length=0 -MT"src/helloworld.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../Cache_Test2_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/helloworld.d" -MT"src/helloworld.o" -o "src/helloworld.o" "../src/helloworld.c"
+In file included from ../src/helloworld.c:47:
+../../Cache_Test2_bsp/ps7_cortexa9_0/include/xtime_l.h:87:9: note: #pragma message: For the sleep routines, Global timer is being used
+ #pragma message ("For the sleep routines, Global timer is being used")
+         ^~~~~~~
+../src/helloworld.c:65:25: warning: missing braces around initializer [-Wmissing-braces]
+ int A[SIZE_N][SIZE_M] = {2};
+                         ^
+                          {}
+../src/helloworld.c:66:25: warning: missing braces around initializer [-Wmissing-braces]
+ int B[SIZE_M][SIZE_P] = {3};
+                         ^
+                          {}
+../src/helloworld.c:67:25: warning: missing braces around initializer [-Wmissing-braces]
+ int C[SIZE_N][SIZE_P] = {4};
+                         ^
+                          {}
+'Finished building: ../src/helloworld.c'
+' '
+'Building target: Cache_Test2.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../Cache_Test2_bsp/ps7_cortexa9_0/lib -o "Cache_Test2.elf"  ./src/helloworld.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: Cache_Test2.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size Cache_Test2.elf  |tee "Cache_Test2.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  62124	3148312	  23328	3233764	 3157e4	Cache_Test2.elf
+'Finished building: Cache_Test2.elf.size'
+' '
+17:25:18 **** Incremental Build of configuration Debug for project Cache_Test2 ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/helloworld.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O3 -g3 -c -fmessage-length=0 -MT"src/helloworld.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../Cache_Test2_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/helloworld.d" -MT"src/helloworld.o" -o "src/helloworld.o" "../src/helloworld.c"
+In file included from ../src/helloworld.c:47:
+../../Cache_Test2_bsp/ps7_cortexa9_0/include/xtime_l.h:87:9: note: #pragma message: For the sleep routines, Global timer is being used
+ #pragma message ("For the sleep routines, Global timer is being used")
+         ^~~~~~~
+../src/helloworld.c:65:25: warning: missing braces around initializer [-Wmissing-braces]
+ int A[SIZE_N][SIZE_M] = {2};
+                         ^
+                          {}
+../src/helloworld.c:66:25: warning: missing braces around initializer [-Wmissing-braces]
+ int B[SIZE_M][SIZE_P] = {3};
+                         ^
+                          {}
+../src/helloworld.c:67:25: warning: missing braces around initializer [-Wmissing-braces]
+ int C[SIZE_N][SIZE_P] = {4};
+                         ^
+                          {}
+'Finished building: ../src/helloworld.c'
+' '
+'Building target: Cache_Test2.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../Cache_Test2_bsp/ps7_cortexa9_0/lib -o "Cache_Test2.elf"  ./src/helloworld.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: Cache_Test2.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size Cache_Test2.elf  |tee "Cache_Test2.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  62172	3160608	  23328	3246108	 31881c	Cache_Test2.elf
+'Finished building: Cache_Test2.elf.size'
+' '
+17:27:02 **** Auto Build of configuration Debug for project Cache_Test2 ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/helloworld.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O3 -g3 -c -fmessage-length=0 -MT"src/helloworld.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../Cache_Test2_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/helloworld.d" -MT"src/helloworld.o" -o "src/helloworld.o" "../src/helloworld.c"
+In file included from ../src/helloworld.c:47:
+../../Cache_Test2_bsp/ps7_cortexa9_0/include/xtime_l.h:87:9: note: #pragma message: For the sleep routines, Global timer is being used
+ #pragma message ("For the sleep routines, Global timer is being used")
+         ^~~~~~~
+../src/helloworld.c:65:25: warning: missing braces around initializer [-Wmissing-braces]
+ int A[SIZE_N][SIZE_M] = {2};
+                         ^
+                          {}
+../src/helloworld.c:66:25: warning: missing braces around initializer [-Wmissing-braces]
+ int B[SIZE_M][SIZE_P] = {3};
+                         ^
+                          {}
+../src/helloworld.c:67:25: warning: missing braces around initializer [-Wmissing-braces]
+ int C[SIZE_N][SIZE_P] = {4};
+                         ^
+                          {}
+'Finished building: ../src/helloworld.c'
+' '
+'Building target: Cache_Test2.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../Cache_Test2_bsp/ps7_cortexa9_0/lib -o "Cache_Test2.elf"  ./src/helloworld.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: Cache_Test2.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size Cache_Test2.elf  |tee "Cache_Test2.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  62092	 789016	  23328	 874436	  d57c4	Cache_Test2.elf
+'Finished building: Cache_Test2.elf.size'
+' '
+17:27:04 **** Incremental Build of configuration Debug for project Cache_Test2 ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+make: Nothing to be done for 'main-build'.
+17:27:52 **** Incremental Build of configuration Debug for project Cache_Test2 ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/helloworld.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O3 -g3 -c -fmessage-length=0 -MT"src/helloworld.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../Cache_Test2_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/helloworld.d" -MT"src/helloworld.o" -o "src/helloworld.o" "../src/helloworld.c"
+In file included from ../src/helloworld.c:47:
+../../Cache_Test2_bsp/ps7_cortexa9_0/include/xtime_l.h:87:9: note: #pragma message: For the sleep routines, Global timer is being used
+ #pragma message ("For the sleep routines, Global timer is being used")
+         ^~~~~~~
+../src/helloworld.c:65:25: warning: missing braces around initializer [-Wmissing-braces]
+ int A[SIZE_N][SIZE_M] = {2};
+                         ^
+                          {}
+../src/helloworld.c:66:25: warning: missing braces around initializer [-Wmissing-braces]
+ int B[SIZE_M][SIZE_P] = {3};
+                         ^
+                          {}
+../src/helloworld.c:67:25: warning: missing braces around initializer [-Wmissing-braces]
+ int C[SIZE_N][SIZE_P] = {4};
+                         ^
+                          {}
+'Finished building: ../src/helloworld.c'
+' '
+'Building target: Cache_Test2.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../Cache_Test2_bsp/ps7_cortexa9_0/lib -o "Cache_Test2.elf"  ./src/helloworld.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: Cache_Test2.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size Cache_Test2.elf  |tee "Cache_Test2.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  62204	 795168	  23328	 880700	  d703c	Cache_Test2.elf
+'Finished building: Cache_Test2.elf.size'
+' '
+19:18:12 **** Auto Build of configuration Debug for project Interrups_bsp_xgpiops_intr_example_1 ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/xgpiops_intr_example.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/xgpiops_intr_example.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../Interrups_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/xgpiops_intr_example.d" -MT"src/xgpiops_intr_example.o" -o "src/xgpiops_intr_example.o" "../src/xgpiops_intr_example.c"
+'Finished building: ../src/xgpiops_intr_example.c'
+' '
+'Building target: Interrups_bsp_xgpiops_intr_example_1.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../Interrups_bsp/ps7_cortexa9_0/lib -o "Interrups_bsp_xgpiops_intr_example_1.elf"  ./src/xgpiops_intr_example.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: Interrups_bsp_xgpiops_intr_example_1.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size Interrups_bsp_xgpiops_intr_example_1.elf  |tee "Interrups_bsp_xgpiops_intr_example_1.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  40944	   2328	  23336	  66608	  10430	Interrups_bsp_xgpiops_intr_example_1.elf
+'Finished building: Interrups_bsp_xgpiops_intr_example_1.elf.size'
+' '

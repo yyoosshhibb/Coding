@@ -1,0 +1,191 @@
+#-----------------------------------------------------------
+# Vivado v2019.1 (64-bit)
+# SW Build 2552052 on Fri May 24 14:49:42 MDT 2019
+# IP Build 2548770 on Fri May 24 18:01:18 MDT 2019
+# Start of session at: Fri Nov 13 10:33:17 2020
+# Process ID: 5700
+# Current directory: D:/ECM_DCD/bauerjoh17/ip_repo/common_lib/vivado/TopLevelEncoder
+# Command line: vivado.exe -mode gui -journal ./TopLevelEncoder_Flow.jou -log ./TopLevelEncoder_Flow.log -source ./HDS_Scripts/TopLevelEncoder_Flow.tcl
+# Log file: D:/ECM_DCD/bauerjoh17/ip_repo/common_lib/vivado/TopLevelEncoder/./TopLevelEncoder_Flow.log
+# Journal file: D:/ECM_DCD/bauerjoh17/ip_repo/common_lib/vivado/TopLevelEncoder\./TopLevelEncoder_Flow.jou
+#-----------------------------------------------------------
+start_gui
+source ./HDS_Scripts/TopLevelEncoder_Flow.tcl
+# lappend ::auto_path "$::env(HDS_HOME)/resources/tcl/tcllib1.4"
+# set ::hdsDebug 0
+# proc ::hdsDebugPuts {msg} {
+#    if {$::hdsDebug} {
+#       puts $msg
+#    }
+# }
+# set normVars {HDS_PROJECT_DIR HDS_TEAM_HOME HDS_HOME XILINX_VIVADO}
+# foreach varName $normVars {
+#    if {[info exists ::env($varName)]} {
+#       set ::env($varName) [file normalize [subst -nobackslash {$::env($varName)}]]
+#    }
+# }
+# puts "## HDS #Running Vivado Project Creation/Update#"
+## HDS #Running Vivado Project Creation/Update#
+# set ::errorCount 0
+# if {[catch {source ./HDS_Scripts/TopLevelEncoder_Create.tcl} errMsg]} {
+#    if {[regexp "(?q)$errMsg" $errorInfo]} {
+#       puts "Error: $errorInfo"
+#    } else {
+#       puts "Error: $errMsg"
+#    }
+#    return
+# }
+Opening project ./TopLevelEncoder.xpr
+Scanning sources...
+Finished scanning sources
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/XILINX~1/Vivado/2019.1/data/ip'.
+## get_filesets
+## get_property DEFAULT_LIB [current_project]
+## current_project
+## current_project
+## current_project
+## current_project
+Project HDL files to add stored in:
+   ./HDS_Scripts/TopLevelEncoder_fileList.tcl
+## list
+## list
+## list
+## join $vivadoCoresExtList "|"
+## get_files -all -quiet
+## join $nonIpFiles \n
+## join $ipFiles \n
+## join $coreIpFiles \n
+### list
+### list
+### list
+### list
+# if {$::errorCount == 0} {
+#    puts "Note: \"source ./HDS_Scripts/TopLevelEncoder_Create.tcl\" completed successfully\n"
+# } else {
+#    puts "Error: \"source ./HDS_Scripts/TopLevelEncoder_Create.tcl\" completed with errors\n"
+# }
+Note: "source ./HDS_Scripts/TopLevelEncoder_Create.tcl" completed successfully
+
+update_compile_order -fileset sources_1
+synth_design -rtl -name rtl_1
+Command: synth_design -rtl -name rtl_1
+Starting synth_design
+Using part: xc7z010clg400-1
+Top: TopLevelEncoder
+INFO: [Device 21-403] Loading part xc7z010clg400-1
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:03 ; elapsed = 00:00:03 . Memory (MB): peak = 1068.805 ; gain = 170.844
+---------------------------------------------------------------------------------
+INFO: [Synth 8-638] synthesizing module 'TopLevelEncoder' [D:/ECM_DCD/bauerjoh17/ip_repo/common_lib/hdl/toplevelencoder_struct.vhd:40]
+INFO: [Synth 8-3491] module 'Encoder' declared at 'D:/ECM_DCD/bauerjoh17/ip_repo/common_lib/hdl/Encoder_rtl.vhd:15' bound to instance 'U_0' of component 'Encoder' [D:/ECM_DCD/bauerjoh17/ip_repo/common_lib/hdl/toplevelencoder_struct.vhd:65]
+INFO: [Synth 8-638] synthesizing module 'Encoder' [D:/ECM_DCD/bauerjoh17/ip_repo/common_lib/hdl/Encoder_rtl.vhd:24]
+INFO: [Synth 8-256] done synthesizing module 'Encoder' (1#1) [D:/ECM_DCD/bauerjoh17/ip_repo/common_lib/hdl/Encoder_rtl.vhd:24]
+INFO: [Synth 8-256] done synthesizing module 'TopLevelEncoder' (2#1) [D:/ECM_DCD/bauerjoh17/ip_repo/common_lib/hdl/toplevelencoder_struct.vhd:40]
+WARNING: [Synth 8-3331] design Encoder has unconnected port inb[1]
+WARNING: [Synth 8-3331] design Encoder has unconnected port inb[0]
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:00:04 ; elapsed = 00:00:04 . Memory (MB): peak = 1139.691 ; gain = 241.730
+---------------------------------------------------------------------------------
+
+Report Check Netlist: 
++------+------------------+-------+---------+-------+------------------+
+|      |Item              |Errors |Warnings |Status |Description       |
++------+------------------+-------+---------+-------+------------------+
+|1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
++------+------------------+-------+---------+-------+------------------+
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:04 ; elapsed = 00:00:05 . Memory (MB): peak = 1139.691 ; gain = 241.730
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:04 ; elapsed = 00:00:05 . Memory (MB): peak = 1139.691 ; gain = 241.730
+---------------------------------------------------------------------------------
+INFO: [Project 1-570] Preparing netlist for logic optimization
+
+Processing XDC Constraints
+Initializing timing engine
+Completed Processing XDC Constraints
+
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1211.629 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+RTL Elaboration Complete:  : Time (s): cpu = 00:00:14 ; elapsed = 00:00:09 . Memory (MB): peak = 1261.391 ; gain = 363.430
+9 Infos, 2 Warnings, 0 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:00:19 ; elapsed = 00:00:14 . Memory (MB): peak = 1261.391 ; gain = 550.711
+launch_runs synth_1 -jobs 2
+[Fri Nov 13 10:35:29 2020] Launched synth_1...
+Run output will be captured here: D:/ECM_DCD/bauerjoh17/ip_repo/common_lib/vivado/TopLevelEncoder/TopLevelEncoder.runs/synth_1/runme.log
+set_property package_pin "" [get_ports [list  {ina[1]}]]
+place_ports {ina[0]} W14
+place_ports {ina[0]} Y14
+place_ports {ina[1]} W14
+set_property IOSTANDARD LVCMOS33 [get_ports [list {ina[1]}]]
+set_property IOSTANDARD LVCMOS33 [get_ports [list {ina[0]}]]
+set_property OFFCHIP_TERM NONE [get_ports [list {ina[1]} {ina[0]}]]
+set_property PULLTYPE PULLUP [get_ports [list {ina[1]} {ina[0]}]]
+set_property IOSTANDARD LVCMOS33 [get_ports [list {inb[1]} {inb[0]}]]
+set_property PULLTYPE PULLUP [get_ports [list {inb[1]} {inb[0]}]]
+place_ports {inb[1]} T12
+place_ports {inb[0]} U12
+set_property IOSTANDARD LVCMOS33 [get_ports [list {cnt[3]} {cnt[2]} {cnt[1]} {cnt[0]}]]
+place_ports {cnt[0]} M14
+place_ports {cnt[1]} M15
+place_ports {cnt[2]} G14
+place_ports {cnt[3]} D18
+file mkdir D:/ECM_DCD/bauerjoh17/ip_repo/common_lib/vivado/TopLevelEncoder/TopLevelEncoder.srcs/constrs_1/new
+close [ open D:/ECM_DCD/bauerjoh17/ip_repo/common_lib/vivado/TopLevelEncoder/TopLevelEncoder.srcs/constrs_1/new/Constraints.xdc w ]
+add_files -fileset constrs_1 D:/ECM_DCD/bauerjoh17/ip_repo/common_lib/vivado/TopLevelEncoder/TopLevelEncoder.srcs/constrs_1/new/Constraints.xdc
+set_property target_constrs_file D:/ECM_DCD/bauerjoh17/ip_repo/common_lib/vivado/TopLevelEncoder/TopLevelEncoder.srcs/constrs_1/new/Constraints.xdc [current_fileset -constrset]
+save_constraints -force
+open_run synth_1 -name synth_1
+Design is defaulting to impl run constrset: constrs_1
+Design is defaulting to synth run part: xc7z010clg400-1
+INFO: [Project 1-479] Netlist was created with Vivado 2019.1
+INFO: [Project 1-570] Preparing netlist for logic optimization
+Parsing XDC File [D:/ECM_DCD/bauerjoh17/ip_repo/common_lib/vivado/TopLevelEncoder/TopLevelEncoder.srcs/constrs_1/new/Constraints.xdc]
+Finished Parsing XDC File [D:/ECM_DCD/bauerjoh17/ip_repo/common_lib/vivado/TopLevelEncoder/TopLevelEncoder.srcs/constrs_1/new/Constraints.xdc]
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1342.039 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+INFO: [Constraints 18-483] create_clock: no pin(s)/port(s)/net(s) specified as objects, only virtual clock 'clk' will be created. If you don't want this, please specify pin(s)/ports(s)/net(s) as objects to the command.
+create_clock -period 8.000 -name clk -waveform {0.000 4.000}
+INFO: [Constraints 18-483] create_clock: no pin(s)/port(s)/net(s) specified as objects, only virtual clock 'clk' will be created. If you don't want this, please specify pin(s)/ports(s)/net(s) as objects to the command.
+save_constraints
+reset_run synth_1
+launch_runs synth_1 -jobs 2
+[Fri Nov 13 10:43:28 2020] Launched synth_1...
+Run output will be captured here: D:/ECM_DCD/bauerjoh17/ip_repo/common_lib/vivado/TopLevelEncoder/TopLevelEncoder.runs/synth_1/runme.log
+launch_runs impl_1 -jobs 2
+WARNING: [Project 1-478] Design 'synth_1' is stale and will not be used when launching 'impl_1'
+[Fri Nov 13 10:44:08 2020] Launched impl_1...
+Run output will be captured here: D:/ECM_DCD/bauerjoh17/ip_repo/common_lib/vivado/TopLevelEncoder/TopLevelEncoder.runs/impl_1/runme.log
+place_ports {ina[1]} Y18
+place_ports {ina[0]} Y19
+place_ports {inb[1]} W18
+place_ports {inb[0]} W19
+save_constraints -force
+reset_run impl_1
+launch_runs impl_1 -jobs 2
+WARNING: [Project 1-478] Design 'synth_1' is stale and will not be used when launching 'impl_1'
+[Fri Nov 13 10:49:01 2020] Launched impl_1...
+Run output will be captured here: D:/ECM_DCD/bauerjoh17/ip_repo/common_lib/vivado/TopLevelEncoder/TopLevelEncoder.runs/impl_1/runme.log
+save_constraints -force
+reset_run synth_1
+reset_run impl_1
+launch_runs impl_1 -jobs 2
+WARNING: [Project 1-478] Design 'synth_1' is stale and will not be used when launching 'impl_1'
+[Fri Nov 13 10:59:33 2020] Launched synth_1...
+Run output will be captured here: D:/ECM_DCD/bauerjoh17/ip_repo/common_lib/vivado/TopLevelEncoder/TopLevelEncoder.runs/synth_1/runme.log
+[Fri Nov 13 10:59:33 2020] Launched impl_1...
+Run output will be captured here: D:/ECM_DCD/bauerjoh17/ip_repo/common_lib/vivado/TopLevelEncoder/TopLevelEncoder.runs/impl_1/runme.log
+exit
+INFO: [Common 17-206] Exiting Vivado at Fri Nov 13 11:01:00 2020...

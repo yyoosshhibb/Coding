@@ -1,0 +1,189 @@
+#-----------------------------------------------------------
+# Vivado v2019.1 (64-bit)
+# SW Build 2552052 on Fri May 24 14:49:42 MDT 2019
+# IP Build 2548770 on Fri May 24 18:01:18 MDT 2019
+# Start of session at: Tue Oct 27 12:49:58 2020
+# Process ID: 20232
+# Current directory: C:/Users/Yoshi/OneDrive - FH JOANNEUM/FH/02_Master/1. Semester/01_DCD/01_HDS/ip_repo/common_lib/vivado/connectionEncoderLEDs
+# Command line: vivado.exe -mode gui -journal ./connectionEncoderLEDs_Flow.jou -log ./connectionEncoderLEDs_Flow.log -source ./HDS_Scripts/connectionEncoderLEDs_Flow.tcl
+# Log file: C:/Users/Yoshi/OneDrive - FH JOANNEUM/FH/02_Master/1. Semester/01_DCD/01_HDS/ip_repo/common_lib/vivado/connectionEncoderLEDs/./connectionEncoderLEDs_Flow.log
+# Journal file: C:/Users/Yoshi/OneDrive - FH JOANNEUM/FH/02_Master/1. Semester/01_DCD/01_HDS/ip_repo/common_lib/vivado/connectionEncoderLEDs\./connectionEncoderLEDs_Flow.jou
+#-----------------------------------------------------------
+start_gui
+source ./HDS_Scripts/connectionEncoderLEDs_Flow.tcl
+# lappend ::auto_path "$::env(HDS_HOME)/resources/tcl/tcllib1.4"
+# set ::hdsDebug 0
+# proc ::hdsDebugPuts {msg} {
+#    if {$::hdsDebug} {
+#       puts $msg
+#    }
+# }
+# set normVars {HDS_PROJECT_DIR HDS_TEAM_HOME HDS_HOME XILINX_VIVADO}
+# foreach varName $normVars {
+#    if {[info exists ::env($varName)]} {
+#       set ::env($varName) [file normalize [subst -nobackslash {$::env($varName)}]]
+#    }
+# }
+# puts "## HDS #Running Vivado Project Creation/Update#"
+## HDS #Running Vivado Project Creation/Update#
+# set ::errorCount 0
+# if {[catch {source ./HDS_Scripts/connectionEncoderLEDs_Create.tcl} errMsg]} {
+#    if {[regexp "(?q)$errMsg" $errorInfo]} {
+#       puts "Error: $errorInfo"
+#    } else {
+#       puts "Error: $errMsg"
+#    }
+#    return
+# }
+Opening project ./connectionEncoderLEDs.xpr
+INFO: [ProjectBase 1-489] The host OS only allows 260 characters in a normal path. The project is stored in a path with more than 80 characters. If you experience issues with IP, Block Designs, or files not being found, please consider moving the project to a location with a shorter path. Alternately consider using the OS subst command to map part of the path to a drive letter.
+Current project path is 'C:/Users/Yoshi/OneDrive - FH JOANNEUM/FH/02_Master/1. Semester/01_DCD/01_HDS/ip_repo/common_lib/vivado/connectionEncoderLEDs'
+Scanning sources...
+Finished scanning sources
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/Xilinx/Vivado/2019.1/data/ip'.
+open_project: Time (s): cpu = 00:00:14 ; elapsed = 00:00:05 . Memory (MB): peak = 756.430 ; gain = 106.164
+## get_filesets
+## get_property DEFAULT_LIB [current_project]
+## current_project
+## current_project
+## current_project
+## current_project
+Project HDL files to add stored in:
+   ./HDS_Scripts/connectionEncoderLEDs_fileList.tcl
+## list
+## list
+## list
+## join $vivadoCoresExtList "|"
+## get_files -all -quiet
+## join $nonIpFiles \n
+## join $ipFiles \n
+## join $coreIpFiles \n
+### list
+### list
+### list
+### list
+# if {$::errorCount == 0} {
+#    puts "Note: \"source ./HDS_Scripts/connectionEncoderLEDs_Create.tcl\" completed successfully\n"
+# } else {
+#    puts "Error: \"source ./HDS_Scripts/connectionEncoderLEDs_Create.tcl\" completed with errors\n"
+# }
+Note: "source ./HDS_Scripts/connectionEncoderLEDs_Create.tcl" completed successfully
+
+update_compile_order -fileset sources_1
+reset_run synth_1
+launch_runs synth_1 -jobs 4
+[Tue Oct 27 12:50:38 2020] Launched synth_1...
+Run output will be captured here: C:/Users/Yoshi/OneDrive - FH JOANNEUM/FH/02_Master/1. Semester/01_DCD/01_HDS/ip_repo/common_lib/vivado/connectionEncoderLEDs/connectionEncoderLEDs.runs/synth_1/runme.log
+synth_design -rtl -name rtl_1
+Command: synth_design -rtl -name rtl_1
+Starting synth_design
+Using part: xc7z010clg400-1
+Top: connectionEncoderLEDs
+INFO: [Device 21-403] Loading part xc7z010clg400-1
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:05 ; elapsed = 00:00:04 . Memory (MB): peak = 1169.730 ; gain = 178.973
+---------------------------------------------------------------------------------
+INFO: [Synth 8-638] synthesizing module 'connectionEncoderLEDs' [C:/Users/Yoshi/OneDrive - FH JOANNEUM/FH/02_Master/1. Semester/01_DCD/01_HDS/ip_repo/common_lib/hdl/connectionencoderleds_struct.vhd:44]
+INFO: [Synth 8-3491] module 'Connection' declared at 'C:/Users/Yoshi/OneDrive - FH JOANNEUM/FH/02_Master/1. Semester/01_DCD/01_HDS/ip_repo/common_lib/hdl/Connection_rtl.vhd:14' bound to instance 'U_0' of component 'Connection' [C:/Users/Yoshi/OneDrive - FH JOANNEUM/FH/02_Master/1. Semester/01_DCD/01_HDS/ip_repo/common_lib/hdl/connectionencoderleds_struct.vhd:74]
+INFO: [Synth 8-638] synthesizing module 'Connection' [C:/Users/Yoshi/OneDrive - FH JOANNEUM/FH/02_Master/1. Semester/01_DCD/01_HDS/ip_repo/common_lib/hdl/Connection_rtl.vhd:29]
+INFO: [Synth 8-256] done synthesizing module 'Connection' (1#1) [C:/Users/Yoshi/OneDrive - FH JOANNEUM/FH/02_Master/1. Semester/01_DCD/01_HDS/ip_repo/common_lib/hdl/Connection_rtl.vhd:29]
+INFO: [Synth 8-256] done synthesizing module 'connectionEncoderLEDs' (2#1) [C:/Users/Yoshi/OneDrive - FH JOANNEUM/FH/02_Master/1. Semester/01_DCD/01_HDS/ip_repo/common_lib/hdl/connectionencoderleds_struct.vhd:44]
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:00:06 ; elapsed = 00:00:05 . Memory (MB): peak = 1212.996 ; gain = 222.238
+---------------------------------------------------------------------------------
+
+Report Check Netlist: 
++------+------------------+-------+---------+-------+------------------+
+|      |Item              |Errors |Warnings |Status |Description       |
++------+------------------+-------+---------+-------+------------------+
+|1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
++------+------------------+-------+---------+-------+------------------+
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:06 ; elapsed = 00:00:05 . Memory (MB): peak = 1212.996 ; gain = 222.238
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:06 ; elapsed = 00:00:05 . Memory (MB): peak = 1212.996 ; gain = 222.238
+---------------------------------------------------------------------------------
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-141] Inserted 4 OBUFs to IO ports without IO buffers.
+
+Processing XDC Constraints
+Initializing timing engine
+Parsing XDC File [C:/Users/Yoshi/OneDrive - FH JOANNEUM/FH/02_Master/1. Semester/01_DCD/01_HDS/ip_repo/common_lib/vivado/connectionEncoderLEDs/connectionEncoderLEDs.srcs/constrs_1/new/constraints.xdc]
+CRITICAL WARNING: [Vivado 12-1411] Cannot set LOC property of ports, Terminal inA1 cannot be placed on W14 (IOB_X0Y34) because the pad is already occupied by terminal outA1 possibly due to user constraint [C:/Users/Yoshi/OneDrive - FH JOANNEUM/FH/02_Master/1. Semester/01_DCD/01_HDS/ip_repo/common_lib/vivado/connectionEncoderLEDs/connectionEncoderLEDs.srcs/constrs_1/new/constraints.xdc:1]
+CRITICAL WARNING: [Vivado 12-1411] Cannot set LOC property of ports, Terminal inA2 cannot be placed on Y14 (IOB_X0Y33) because the pad is already occupied by terminal outA2 possibly due to user constraint [C:/Users/Yoshi/OneDrive - FH JOANNEUM/FH/02_Master/1. Semester/01_DCD/01_HDS/ip_repo/common_lib/vivado/connectionEncoderLEDs/connectionEncoderLEDs.srcs/constrs_1/new/constraints.xdc:2]
+CRITICAL WARNING: [Vivado 12-1411] Cannot set LOC property of ports, Terminal inB1 cannot be placed on T12 (IOB_X0Y46) because the pad is already occupied by terminal outB1 possibly due to user constraint [C:/Users/Yoshi/OneDrive - FH JOANNEUM/FH/02_Master/1. Semester/01_DCD/01_HDS/ip_repo/common_lib/vivado/connectionEncoderLEDs/connectionEncoderLEDs.srcs/constrs_1/new/constraints.xdc:3]
+CRITICAL WARNING: [Vivado 12-1411] Cannot set LOC property of ports, Terminal inB2 cannot be placed on U12 (IOB_X0Y45) because the pad is already occupied by terminal outB2 possibly due to user constraint [C:/Users/Yoshi/OneDrive - FH JOANNEUM/FH/02_Master/1. Semester/01_DCD/01_HDS/ip_repo/common_lib/vivado/connectionEncoderLEDs/connectionEncoderLEDs.srcs/constrs_1/new/constraints.xdc:4]
+INFO: [Constraints 18-483] create_clock: no pin(s)/port(s)/net(s) specified as objects, only virtual clock 'clk' will be created. If you don't want this, please specify pin(s)/ports(s)/net(s) as objects to the command. [C:/Users/Yoshi/OneDrive - FH JOANNEUM/FH/02_Master/1. Semester/01_DCD/01_HDS/ip_repo/common_lib/vivado/connectionEncoderLEDs/connectionEncoderLEDs.srcs/constrs_1/new/constraints.xdc:22]
+Finished Parsing XDC File [C:/Users/Yoshi/OneDrive - FH JOANNEUM/FH/02_Master/1. Semester/01_DCD/01_HDS/ip_repo/common_lib/vivado/connectionEncoderLEDs/connectionEncoderLEDs.srcs/constrs_1/new/constraints.xdc]
+Completed Processing XDC Constraints
+
+INFO: [Opt 31-140] Inserted 4 IBUFs to IO ports without IO buffers.
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1290.344 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+RTL Elaboration Complete:  : Time (s): cpu = 00:00:24 ; elapsed = 00:00:12 . Memory (MB): peak = 1395.590 ; gain = 404.832
+12 Infos, 0 Warnings, 4 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:00:30 ; elapsed = 00:00:20 . Memory (MB): peak = 1395.590 ; gain = 575.645
+place_ports inA1 W14
+place_ports inA2 Y14
+place_ports inB1 T12
+place_ports inB2 U12
+save_constraints
+open_run synth_1 -name synth_1
+Design is defaulting to impl run constrset: constrs_1
+Design is defaulting to synth run part: xc7z010clg400-1
+INFO: [Project 1-479] Netlist was created with Vivado 2019.1
+INFO: [Project 1-570] Preparing netlist for logic optimization
+Parsing XDC File [C:/Users/Yoshi/OneDrive - FH JOANNEUM/FH/02_Master/1. Semester/01_DCD/01_HDS/ip_repo/common_lib/vivado/connectionEncoderLEDs/connectionEncoderLEDs.srcs/constrs_1/new/constraints.xdc]
+INFO: [Constraints 18-483] create_clock: no pin(s)/port(s)/net(s) specified as objects, only virtual clock 'clk' will be created. If you don't want this, please specify pin(s)/ports(s)/net(s) as objects to the command. [C:/Users/Yoshi/OneDrive - FH JOANNEUM/FH/02_Master/1. Semester/01_DCD/01_HDS/ip_repo/common_lib/vivado/connectionEncoderLEDs/connectionEncoderLEDs.srcs/constrs_1/new/constraints.xdc:22]
+Finished Parsing XDC File [C:/Users/Yoshi/OneDrive - FH JOANNEUM/FH/02_Master/1. Semester/01_DCD/01_HDS/ip_repo/common_lib/vivado/connectionEncoderLEDs/connectionEncoderLEDs.srcs/constrs_1/new/constraints.xdc]
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1423.973 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+reset_run synth_1
+launch_runs synth_1 -jobs 4
+[Tue Oct 27 12:53:37 2020] Launched synth_1...
+Run output will be captured here: C:/Users/Yoshi/OneDrive - FH JOANNEUM/FH/02_Master/1. Semester/01_DCD/01_HDS/ip_repo/common_lib/vivado/connectionEncoderLEDs/connectionEncoderLEDs.runs/synth_1/runme.log
+launch_runs impl_1 -jobs 4
+WARNING: [Project 1-478] Design 'synth_1' is stale and will not be used when launching 'impl_1'
+[Tue Oct 27 12:54:55 2020] Launched impl_1...
+Run output will be captured here: C:/Users/Yoshi/OneDrive - FH JOANNEUM/FH/02_Master/1. Semester/01_DCD/01_HDS/ip_repo/common_lib/vivado/connectionEncoderLEDs/connectionEncoderLEDs.runs/impl_1/runme.log
+launch_runs impl_1 -to_step write_bitstream -jobs 4
+[Tue Oct 27 12:56:22 2020] Launched impl_1...
+Run output will be captured here: C:/Users/Yoshi/OneDrive - FH JOANNEUM/FH/02_Master/1. Semester/01_DCD/01_HDS/ip_repo/common_lib/vivado/connectionEncoderLEDs/connectionEncoderLEDs.runs/impl_1/runme.log
+open_hw
+connect_hw_server
+INFO: [Labtools 27-2285] Connecting to hw_server url TCP:localhost:3121
+INFO: [Labtools 27-2222] Launching hw_server...
+INFO: [Labtools 27-2221] Launch Output:
+
+****** Xilinx hw_server v2019.1
+  **** Build date : May 24 2019 at 15:13:31
+    ** Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+
+
+connect_hw_server: Time (s): cpu = 00:00:00 ; elapsed = 00:00:05 . Memory (MB): peak = 1990.332 ; gain = 14.203
+open_hw_target
+INFO: [Labtoolstcl 44-466] Opening hw_target localhost:3121/xilinx_tcf/Digilent/210279786719A
+open_hw_target: Time (s): cpu = 00:00:06 ; elapsed = 00:00:09 . Memory (MB): peak = 3115.824 ; gain = 1125.492
+current_hw_device [get_hw_devices xc7z010_1]
+refresh_hw_device -update_hw_probes false [lindex [get_hw_devices xc7z010_1] 0]
+INFO: [Labtools 27-1435] Device xc7z010 (JTAG device index = 1) is not programmed (DONE status = 0).
+set_property PROBES.FILE {} [get_hw_devices xc7z010_1]
+set_property FULL_PROBES.FILE {} [get_hw_devices xc7z010_1]
+set_property PROGRAM.FILE {C:/Users/Yoshi/OneDrive - FH JOANNEUM/FH/02_Master/1. Semester/01_DCD/01_HDS/ip_repo/common_lib/vivado/connectionEncoderLEDs/connectionEncoderLEDs.runs/impl_1/connectionEncoderLEDs.bit} [get_hw_devices xc7z010_1]
+program_hw_devices [get_hw_devices xc7z010_1]
+INFO: [Labtools 27-3164] End of startup status: HIGH
+refresh_hw_device [lindex [get_hw_devices xc7z010_1] 0]
+INFO: [Labtools 27-1434] Device xc7z010 (JTAG device index = 1) is programmed with a design that has no supported debug core(s) in it.

@@ -1,0 +1,60 @@
+#-----------------------------------------------------------
+# Vivado v2019.1 (64-bit)
+# SW Build 2552052 on Fri May 24 14:49:42 MDT 2019
+# IP Build 2548770 on Fri May 24 18:01:18 MDT 2019
+# Start of session at: Fri Nov 13 10:33:17 2020
+# Process ID: 5700
+# Current directory: D:/ECM_DCD/bauerjoh17/ip_repo/common_lib/vivado/TopLevelEncoder
+# Command line: vivado.exe -mode gui -journal ./TopLevelEncoder_Flow.jou -log ./TopLevelEncoder_Flow.log -source ./HDS_Scripts/TopLevelEncoder_Flow.tcl
+# Log file: D:/ECM_DCD/bauerjoh17/ip_repo/common_lib/vivado/TopLevelEncoder/./TopLevelEncoder_Flow.log
+# Journal file: D:/ECM_DCD/bauerjoh17/ip_repo/common_lib/vivado/TopLevelEncoder\./TopLevelEncoder_Flow.jou
+#-----------------------------------------------------------
+start_gui
+source ./HDS_Scripts/TopLevelEncoder_Flow.tcl
+update_compile_order -fileset sources_1
+synth_design -rtl -name rtl_1
+launch_runs synth_1 -jobs 2
+wait_on_run synth_1
+set_property package_pin "" [get_ports [list  {ina[1]}]]
+place_ports {ina[0]} W14
+place_ports {ina[0]} Y14
+place_ports {ina[1]} W14
+set_property IOSTANDARD LVCMOS33 [get_ports [list {ina[1]}]]
+set_property IOSTANDARD LVCMOS33 [get_ports [list {ina[0]}]]
+set_property OFFCHIP_TERM NONE [get_ports [list {ina[1]} {ina[0]}]]
+set_property PULLTYPE PULLUP [get_ports [list {ina[1]} {ina[0]}]]
+set_property IOSTANDARD LVCMOS33 [get_ports [list {inb[1]} {inb[0]}]]
+set_property PULLTYPE PULLUP [get_ports [list {inb[1]} {inb[0]}]]
+place_ports {inb[1]} T12
+place_ports {inb[0]} U12
+set_property IOSTANDARD LVCMOS33 [get_ports [list {cnt[3]} {cnt[2]} {cnt[1]} {cnt[0]}]]
+place_ports {cnt[0]} M14
+place_ports {cnt[1]} M15
+place_ports {cnt[2]} G14
+place_ports {cnt[3]} D18
+file mkdir D:/ECM_DCD/bauerjoh17/ip_repo/common_lib/vivado/TopLevelEncoder/TopLevelEncoder.srcs/constrs_1/new
+close [ open D:/ECM_DCD/bauerjoh17/ip_repo/common_lib/vivado/TopLevelEncoder/TopLevelEncoder.srcs/constrs_1/new/Constraints.xdc w ]
+add_files -fileset constrs_1 D:/ECM_DCD/bauerjoh17/ip_repo/common_lib/vivado/TopLevelEncoder/TopLevelEncoder.srcs/constrs_1/new/Constraints.xdc
+set_property target_constrs_file D:/ECM_DCD/bauerjoh17/ip_repo/common_lib/vivado/TopLevelEncoder/TopLevelEncoder.srcs/constrs_1/new/Constraints.xdc [current_fileset -constrset]
+save_constraints -force
+open_run synth_1 -name synth_1
+create_clock -period 8.000 -name clk -waveform {0.000 4.000}
+save_constraints
+reset_run synth_1
+launch_runs synth_1 -jobs 2
+wait_on_run synth_1
+launch_runs impl_1 -jobs 2
+wait_on_run impl_1
+place_ports {ina[1]} Y18
+place_ports {ina[0]} Y19
+place_ports {inb[1]} W18
+place_ports {inb[0]} W19
+save_constraints -force
+reset_run impl_1
+launch_runs impl_1 -jobs 2
+wait_on_run impl_1
+save_constraints -force
+reset_run synth_1
+reset_run impl_1
+launch_runs impl_1 -jobs 2
+wait_on_run impl_1

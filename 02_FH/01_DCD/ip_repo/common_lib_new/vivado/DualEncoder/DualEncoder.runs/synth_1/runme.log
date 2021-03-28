@@ -1,0 +1,242 @@
+
+*** Running vivado
+    with args -log DualEncoder.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source DualEncoder.tcl
+
+
+
+****** Vivado v2020.2 (64-bit)
+  **** SW Build 3064766 on Wed Nov 18 09:12:45 MST 2020
+  **** IP Build 3064653 on Wed Nov 18 14:17:31 MST 2020
+    ** Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
+
+source DualEncoder.tcl -notrace
+Command: synth_design -top DualEncoder -part xc7z010clg400-1
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7z010'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7z010'
+INFO: [Device 21-403] Loading part xc7z010clg400-1
+INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 2 processes.
+INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
+INFO: [Synth 8-7075] Helper process launched with PID 4172
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:06 ; elapsed = 00:00:07 . Memory (MB): peak = 1101.070 ; gain = 12.449
+---------------------------------------------------------------------------------
+INFO: [Synth 8-638] synthesizing module 'DualEncoder' [C:/Users/Yoshi/Documents/FH/02_Master/01_DCD/ip_repo/common_lib_new/hdl/dualencoder_struct.vhd:46]
+	Parameter nbits_g bound to: 4 - type: integer 
+INFO: [Synth 8-3491] module 'Debouncer_EdgeDetection' declared at 'C:/Users/Yoshi/Documents/FH/02_Master/01_DCD/ip_repo/common_lib_new/hdl/debouncer_edgedetection_struct.vhd:13' bound to instance 'U_2' of component 'Debouncer_EdgeDetection' [C:/Users/Yoshi/Documents/FH/02_Master/01_DCD/ip_repo/common_lib_new/hdl/dualencoder_struct.vhd:94]
+INFO: [Synth 8-638] synthesizing module 'Debouncer_EdgeDetection' [C:/Users/Yoshi/Documents/FH/02_Master/01_DCD/ip_repo/common_lib_new/hdl/debouncer_edgedetection_struct.vhd:42]
+INFO: [Synth 8-3491] module 'D_FlipFlop' declared at 'C:/Users/Yoshi/OneDrive - FH JOANNEUM/FH/02_Master/1. Semester/01_DCD/01_HDS/ip_repo/common_lib/hdl/D_FlipFlop_rtl.vhd:14' bound to instance 'U_0' of component 'D_FlipFlop' [C:/Users/Yoshi/Documents/FH/02_Master/01_DCD/ip_repo/common_lib_new/hdl/debouncer_edgedetection_struct.vhd:82]
+INFO: [Synth 8-638] synthesizing module 'D_FlipFlop' [C:/Users/Yoshi/OneDrive - FH JOANNEUM/FH/02_Master/1. Semester/01_DCD/01_HDS/ip_repo/common_lib/hdl/D_FlipFlop_rtl.vhd:26]
+INFO: [Synth 8-256] done synthesizing module 'D_FlipFlop' (1#1) [C:/Users/Yoshi/OneDrive - FH JOANNEUM/FH/02_Master/1. Semester/01_DCD/01_HDS/ip_repo/common_lib/hdl/D_FlipFlop_rtl.vhd:26]
+INFO: [Synth 8-3491] module 'D_FlipFlop' declared at 'C:/Users/Yoshi/OneDrive - FH JOANNEUM/FH/02_Master/1. Semester/01_DCD/01_HDS/ip_repo/common_lib/hdl/D_FlipFlop_rtl.vhd:14' bound to instance 'U_1' of component 'D_FlipFlop' [C:/Users/Yoshi/Documents/FH/02_Master/01_DCD/ip_repo/common_lib_new/hdl/debouncer_edgedetection_struct.vhd:88]
+INFO: [Synth 8-3491] module 'D_FlipFlop' declared at 'C:/Users/Yoshi/OneDrive - FH JOANNEUM/FH/02_Master/1. Semester/01_DCD/01_HDS/ip_repo/common_lib/hdl/D_FlipFlop_rtl.vhd:14' bound to instance 'U_3' of component 'D_FlipFlop' [C:/Users/Yoshi/Documents/FH/02_Master/01_DCD/ip_repo/common_lib_new/hdl/debouncer_edgedetection_struct.vhd:94]
+INFO: [Synth 8-3491] module 'EdgeDetection' declared at 'C:/Users/Yoshi/OneDrive - FH JOANNEUM/FH/02_Master/1. Semester/01_DCD/01_HDS/ip_repo/common_lib/hdl/EdgeDetection_rtl.vhd:14' bound to instance 'U_2' of component 'EdgeDetection' [C:/Users/Yoshi/Documents/FH/02_Master/01_DCD/ip_repo/common_lib_new/hdl/debouncer_edgedetection_struct.vhd:100]
+INFO: [Synth 8-638] synthesizing module 'EdgeDetection' [C:/Users/Yoshi/OneDrive - FH JOANNEUM/FH/02_Master/1. Semester/01_DCD/01_HDS/ip_repo/common_lib/hdl/EdgeDetection_rtl.vhd:28]
+INFO: [Synth 8-256] done synthesizing module 'EdgeDetection' (2#1) [C:/Users/Yoshi/OneDrive - FH JOANNEUM/FH/02_Master/1. Semester/01_DCD/01_HDS/ip_repo/common_lib/hdl/EdgeDetection_rtl.vhd:28]
+INFO: [Synth 8-256] done synthesizing module 'Debouncer_EdgeDetection' (3#1) [C:/Users/Yoshi/Documents/FH/02_Master/01_DCD/ip_repo/common_lib_new/hdl/debouncer_edgedetection_struct.vhd:42]
+	Parameter nbits_g bound to: 4 - type: integer 
+INFO: [Synth 8-3491] module 'Encoder' declared at 'C:/Users/Yoshi/Documents/FH/02_Master/01_DCD/ip_repo/common_lib_new/hdl/encoder_struct.vhd:13' bound to instance 'U_0' of component 'Encoder' [C:/Users/Yoshi/Documents/FH/02_Master/01_DCD/ip_repo/common_lib_new/hdl/dualencoder_struct.vhd:102]
+INFO: [Synth 8-638] synthesizing module 'Encoder' [C:/Users/Yoshi/Documents/FH/02_Master/01_DCD/ip_repo/common_lib_new/hdl/encoder_struct.vhd:45]
+	Parameter nbits_g bound to: 4 - type: integer 
+	Parameter nbits_g bound to: 4 - type: integer 
+INFO: [Synth 8-3491] module 'Counter' declared at 'C:/Users/Yoshi/Documents/FH/02_Master/01_DCD/ip_repo/common_lib_new/hdl/Counter_rtl.vhd:15' bound to instance 'U_6' of component 'Counter' [C:/Users/Yoshi/Documents/FH/02_Master/01_DCD/ip_repo/common_lib_new/hdl/encoder_struct.vhd:103]
+INFO: [Synth 8-638] synthesizing module 'Counter' [C:/Users/Yoshi/Documents/FH/02_Master/01_DCD/ip_repo/common_lib_new/hdl/Counter_rtl.vhd:32]
+	Parameter nbits_g bound to: 4 - type: integer 
+INFO: [Synth 8-256] done synthesizing module 'Counter' (4#1) [C:/Users/Yoshi/Documents/FH/02_Master/01_DCD/ip_repo/common_lib_new/hdl/Counter_rtl.vhd:32]
+INFO: [Synth 8-3491] module 'Debouncer_EdgeDetection' declared at 'C:/Users/Yoshi/Documents/FH/02_Master/01_DCD/ip_repo/common_lib_new/hdl/debouncer_edgedetection_struct.vhd:13' bound to instance 'U_3' of component 'Debouncer_EdgeDetection' [C:/Users/Yoshi/Documents/FH/02_Master/01_DCD/ip_repo/common_lib_new/hdl/encoder_struct.vhd:114]
+INFO: [Synth 8-3491] module 'Debouncer_EdgeDetection' declared at 'C:/Users/Yoshi/Documents/FH/02_Master/01_DCD/ip_repo/common_lib_new/hdl/debouncer_edgedetection_struct.vhd:13' bound to instance 'U_4' of component 'Debouncer_EdgeDetection' [C:/Users/Yoshi/Documents/FH/02_Master/01_DCD/ip_repo/common_lib_new/hdl/encoder_struct.vhd:122]
+INFO: [Synth 8-3491] module 'Encoding' declared at 'C:/Users/Yoshi/Documents/FH/02_Master/01_DCD/ip_repo/common_lib_new/hdl/Encoding_rtl.vhd:15' bound to instance 'U_5' of component 'Encoding' [C:/Users/Yoshi/Documents/FH/02_Master/01_DCD/ip_repo/common_lib_new/hdl/encoder_struct.vhd:130]
+INFO: [Synth 8-638] synthesizing module 'Encoding' [C:/Users/Yoshi/Documents/FH/02_Master/01_DCD/ip_repo/common_lib_new/hdl/Encoding_rtl.vhd:31]
+INFO: [Synth 8-256] done synthesizing module 'Encoding' (5#1) [C:/Users/Yoshi/Documents/FH/02_Master/01_DCD/ip_repo/common_lib_new/hdl/Encoding_rtl.vhd:31]
+INFO: [Synth 8-256] done synthesizing module 'Encoder' (6#1) [C:/Users/Yoshi/Documents/FH/02_Master/01_DCD/ip_repo/common_lib_new/hdl/encoder_struct.vhd:45]
+	Parameter nbits_g bound to: 4 - type: integer 
+INFO: [Synth 8-3491] module 'Encoder' declared at 'C:/Users/Yoshi/Documents/FH/02_Master/01_DCD/ip_repo/common_lib_new/hdl/encoder_struct.vhd:13' bound to instance 'U_1' of component 'Encoder' [C:/Users/Yoshi/Documents/FH/02_Master/01_DCD/ip_repo/common_lib_new/hdl/dualencoder_struct.vhd:113]
+INFO: [Synth 8-256] done synthesizing module 'DualEncoder' (7#1) [C:/Users/Yoshi/Documents/FH/02_Master/01_DCD/ip_repo/common_lib_new/hdl/dualencoder_struct.vhd:46]
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:00:08 ; elapsed = 00:00:08 . Memory (MB): peak = 1155.324 ; gain = 66.703
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:08 ; elapsed = 00:00:09 . Memory (MB): peak = 1155.324 ; gain = 66.703
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:08 ; elapsed = 00:00:09 . Memory (MB): peak = 1155.324 ; gain = 66.703
+---------------------------------------------------------------------------------
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1155.324 ; gain = 0.000
+INFO: [Project 1-570] Preparing netlist for logic optimization
+
+Processing XDC Constraints
+Initializing timing engine
+Parsing XDC File [C:/Users/Yoshi/Documents/FH/02_Master/01_DCD/ip_repo/common_lib_new/vivado/DualEncoder/DualEncoder.srcs/constrs_1/new/constraints.xdc]
+Finished Parsing XDC File [C:/Users/Yoshi/Documents/FH/02_Master/01_DCD/ip_repo/common_lib_new/vivado/DualEncoder/DualEncoder.srcs/constrs_1/new/constraints.xdc]
+INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [C:/Users/Yoshi/Documents/FH/02_Master/01_DCD/ip_repo/common_lib_new/vivado/DualEncoder/DualEncoder.srcs/constrs_1/new/constraints.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/DualEncoder_propImpl.xdc].
+Resolution: To avoid this warning, move constraints listed in [.Xil/DualEncoder_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
+Completed Processing XDC Constraints
+
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1265.816 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.002 . Memory (MB): peak = 1265.816 ; gain = 0.000
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:17 ; elapsed = 00:00:22 . Memory (MB): peak = 1265.816 ; gain = 177.195
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xc7z010clg400-1
+---------------------------------------------------------------------------------
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:17 ; elapsed = 00:00:22 . Memory (MB): peak = 1265.816 ; gain = 177.195
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying 'set_property' XDC Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:17 ; elapsed = 00:00:22 . Memory (MB): peak = 1265.816 ; gain = 177.195
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:18 ; elapsed = 00:00:22 . Memory (MB): peak = 1265.816 ; gain = 177.195
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input    4 Bit       Adders := 2     
++---Registers : 
+	                4 Bit    Registers := 2     
+	                1 Bit    Registers := 29    
++---Muxes : 
+	   2 Input    2 Bit        Muxes := 2     
+	   2 Input    1 Bit        Muxes := 2     
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 80 (col length:40)
+BRAMs: 120 (col length: RAMB18 40 RAMB36 20)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Cross Boundary and Area Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:20 ; elapsed = 00:00:24 . Memory (MB): peak = 1265.816 ; gain = 177.195
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying XDC Timing Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:28 ; elapsed = 00:00:33 . Memory (MB): peak = 1265.816 ; gain = 177.195
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:00:28 ; elapsed = 00:00:33 . Memory (MB): peak = 1265.816 ; gain = 177.195
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:00:29 ; elapsed = 00:00:33 . Memory (MB): peak = 1271.195 ; gain = 182.574
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:00:34 ; elapsed = 00:00:38 . Memory (MB): peak = 1277.000 ; gain = 188.379
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:34 ; elapsed = 00:00:38 . Memory (MB): peak = 1277.000 ; gain = 188.379
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:34 ; elapsed = 00:00:38 . Memory (MB): peak = 1277.000 ; gain = 188.379
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Ports
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:34 ; elapsed = 00:00:38 . Memory (MB): peak = 1277.000 ; gain = 188.379
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:34 ; elapsed = 00:00:38 . Memory (MB): peak = 1277.000 ; gain = 188.379
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Nets
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:34 ; elapsed = 00:00:38 . Memory (MB): peak = 1277.000 ; gain = 188.379
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+Report BlackBoxes: 
++-+--------------+----------+
+| |BlackBox name |Instances |
++-+--------------+----------+
++-+--------------+----------+
+
+Report Cell Usage: 
++------+-----+------+
+|      |Cell |Count |
++------+-----+------+
+|1     |BUFG |     1|
+|2     |LUT1 |     2|
+|3     |LUT2 |    12|
+|4     |LUT3 |     2|
+|5     |LUT4 |     4|
+|6     |LUT5 |     2|
+|7     |FDRE |    31|
+|8     |IBUF |     6|
+|9     |OBUF |     4|
++------+-----+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:34 ; elapsed = 00:00:38 . Memory (MB): peak = 1277.000 ; gain = 188.379
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 0 critical warnings and 0 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:23 ; elapsed = 00:00:33 . Memory (MB): peak = 1277.000 ; gain = 77.887
+Synthesis Optimization Complete : Time (s): cpu = 00:00:34 ; elapsed = 00:00:39 . Memory (MB): peak = 1277.000 ; gain = 188.379
+INFO: [Project 1-571] Translating synthesized netlist
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1288.000 ; gain = 0.000
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1296.000 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+INFO: [Common 17-83] Releasing license: Synthesis
+38 Infos, 0 Warnings, 0 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:00:41 ; elapsed = 00:00:51 . Memory (MB): peak = 1296.000 ; gain = 207.379
+INFO: [Common 17-1381] The checkpoint 'C:/Users/Yoshi/Documents/FH/02_Master/01_DCD/ip_repo/common_lib_new/vivado/DualEncoder/DualEncoder.runs/synth_1/DualEncoder.dcp' has been generated.
+INFO: [runtcl-4] Executing : report_utilization -file DualEncoder_utilization_synth.rpt -pb DualEncoder_utilization_synth.pb
+INFO: [Common 17-206] Exiting Vivado at Wed Mar 24 14:59:16 2021...

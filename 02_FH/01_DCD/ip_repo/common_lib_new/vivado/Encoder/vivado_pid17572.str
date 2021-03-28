@@ -1,0 +1,712 @@
+/*
+
+Xilinx Vivado v2019.1 (64-bit) [Major: 2019, Minor: 1]
+SW Build: 2552052 on Fri May 24 14:49:42 MDT 2019
+IP Build: 2548770 on Fri May 24 18:01:18 MDT 2019
+
+Process ID (PID): 17572
+License: Customer
+
+Current time: 	Mon Mar 22 16:42:44 CET 2021
+Time zone: 	Central European Standard Time (Europe/Berlin)
+
+OS: Windows 10
+OS Version: 10.0
+OS Architecture: amd64
+Available processors (cores): 8
+
+Screen size: 1920x1080
+Screen resolution (DPI): 100
+Available screens: 1
+Available disk space: 389 GB
+Default font: family=Dialog,name=Dialog,style=plain,size=12
+
+Java version: 	9.0.4 64-bit
+Java home: 	C:/Xilinx/Vivado/2019.1/tps/win64/jre9.0.4
+Java executable location: 	C:/Xilinx/Vivado/2019.1/tps/win64/jre9.0.4/bin/java.exe
+Java initial memory (-Xms): 	128 MB
+Java maximum memory (-Xmx):	 3 GB
+
+
+User name: 	Yoshi
+User home directory: C:/Users/Yoshi
+User working directory: C:/Users/Yoshi/OneDrive - FH JOANNEUM/FH/02_Master/1. Semester/01_DCD/01_HDS/ip_repo/common_lib/vivado/Encoder
+User country: 	AT
+User language: 	de
+User locale: 	de_AT
+
+RDI_BASEROOT: C:/Xilinx/Vivado
+HDI_APPROOT: C:/Xilinx/Vivado/2019.1
+RDI_DATADIR: C:/Xilinx/Vivado/2019.1/data
+RDI_BINDIR: C:/Xilinx/Vivado/2019.1/bin
+
+Vivado preferences file location: C:/Users/Yoshi/AppData/Roaming/Xilinx/Vivado/2019.1/vivado.xml
+Vivado preferences directory: C:/Users/Yoshi/AppData/Roaming/Xilinx/Vivado/2019.1/
+Vivado layouts directory: C:/Users/Yoshi/AppData/Roaming/Xilinx/Vivado/2019.1/layouts
+PlanAhead jar file location: 	C:/Xilinx/Vivado/2019.1/lib/classes/planAhead.jar
+Vivado log file location: 	C:/Users/Yoshi/OneDrive - FH JOANNEUM/FH/02_Master/1. Semester/01_DCD/01_HDS/ip_repo/common_lib/vivado/Encoder/./Encoder_Flow.log
+Vivado journal file location: 	C:/Users/Yoshi/OneDrive - FH JOANNEUM/FH/02_Master/1. Semester/01_DCD/01_HDS/ip_repo/common_lib/vivado/Encoder/./Encoder_Flow.jou
+Engine tmp dir: 	C:/Users/Yoshi/OneDrive - FH JOANNEUM/FH/02_Master/1. Semester/01_DCD/01_HDS/ip_repo/common_lib/vivado/Encoder/.Xil/Vivado-17572-Yoshis-Laptop
+
+Xilinx Environment Variables
+----------------------------
+XILINX: C:/Xilinx/Vivado/2019.1/ids_lite/ISE
+XILINX_DSP: C:/Xilinx/Vivado/2019.1/ids_lite/ISE
+XILINX_PLANAHEAD: C:/Xilinx/Vivado/2019.1
+XILINX_SDK: C:/Xilinx/SDK/2019.1
+XILINX_VIVADO: C:/Xilinx/Vivado/2019.1
+XILINX_VIVADO_HLS: C:/Xilinx/Vivado/2019.1
+
+
+GUI allocated memory:	128 MB
+GUI max memory:		3,072 MB
+Engine allocated memory: 588 MB
+
+Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+
+*/
+
+// TclEventType: START_GUI
+// Tcl Message: start_gui 
+// TclEventType: START_PROGRESS_DIALOG
+// by (cl):  Sourcing Tcl script './HDS_Scripts/Encoder_Flow.tcl' : addNotify
+// TclEventType: DEBUG_PROBE_SET_CHANGE
+// Tcl Message: source ./HDS_Scripts/Encoder_Flow.tcl 
+// Tcl Message: # lappend ::auto_path "$::env(HDS_HOME)/resources/tcl/tcllib1.4" # set ::hdsDebug 0 # proc ::hdsDebugPuts {msg} { #    if {$::hdsDebug} { #       puts $msg #    } # } # set normVars {HDS_PROJECT_DIR HDS_TEAM_HOME HDS_HOME XILINX_VIVADO} # foreach varName $normVars { #    if {[info exists ::env($varName)]} { #       set ::env($varName) [file normalize [subst -nobackslash {$::env($varName)}]] #    } # } # puts "## HDS #Running Vivado Project Creation/Update#" 
+// Tcl Message: ## HDS #Running Vivado Project Creation/Update# 
+// Tcl Message: # set ::errorCount 0 # if {[catch {source ./HDS_Scripts/Encoder_Create.tcl} errMsg]} { #    if {[regexp "(?q)$errMsg" $errorInfo]} { #       puts "Error: $errorInfo" #    } else { #       puts "Error: $errMsg" #    } #    return # } 
+// Tcl Message: Opening project ./Encoder.xpr 
+// Tcl Message: INFO: [ProjectBase 1-489] The host OS only allows 260 characters in a normal path. The project is stored in a path with more than 80 characters. If you experience issues with IP, Block Designs, or files not being found, please consider moving the project to a location with a shorter path. Alternately consider using the OS subst command to map part of the path to a drive letter. Current project path is 'C:/Users/Yoshi/OneDrive - FH JOANNEUM/FH/02_Master/1. Semester/01_DCD/01_HDS/ip_repo/common_lib/vivado/Encoder' 
+// TclEventType: MSGMGR_MOVEMSG
+// TclEventType: FILESET_TARGET_UCF_CHANGE
+// TclEventType: FILE_SET_NEW
+// TclEventType: RUN_COMPLETED
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: FILESET_TARGET_UCF_CHANGE
+// TclEventType: RUN_FAILED
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: FILESET_TARGET_UCF_CHANGE
+// TclEventType: RUN_CURRENT
+// TclEventType: PROJECT_DASHBOARD_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_NEW
+// Tcl Message: source ./HDS_Scripts/Encoder_Flow.tcl 
+// Tcl Message: # lappend ::auto_path "$::env(HDS_HOME)/resources/tcl/tcllib1.4" # set ::hdsDebug 0 # proc ::hdsDebugPuts {msg} { #    if {$::hdsDebug} { #       puts $msg #    } # } # set normVars {HDS_PROJECT_DIR HDS_TEAM_HOME HDS_HOME XILINX_VIVADO} # foreach varName $normVars { #    if {[info exists ::env($varName)]} { #       set ::env($varName) [file normalize [subst -nobackslash {$::env($varName)}]] #    } # } # puts "## HDS #Running Vivado Project Creation/Update#" 
+// Tcl Message: ## HDS #Running Vivado Project Creation/Update# 
+// Tcl Message: # set ::errorCount 0 # if {[catch {source ./HDS_Scripts/Encoder_Create.tcl} errMsg]} { #    if {[regexp "(?q)$errMsg" $errorInfo]} { #       puts "Error: $errorInfo" #    } else { #       puts "Error: $errMsg" #    } #    return # } 
+// Tcl Message: Opening project ./Encoder.xpr 
+// Tcl Message: INFO: [ProjectBase 1-489] The host OS only allows 260 characters in a normal path. The project is stored in a path with more than 80 characters. If you experience issues with IP, Block Designs, or files not being found, please consider moving the project to a location with a shorter path. Alternately consider using the OS subst command to map part of the path to a drive letter. Current project path is 'C:/Users/Yoshi/OneDrive - FH JOANNEUM/FH/02_Master/1. Semester/01_DCD/01_HDS/ip_repo/common_lib/vivado/Encoder' 
+// Tcl Message: Scanning sources... Finished scanning sources 
+// Tcl Message: INFO: [IP_Flow 19-234] Refreshing IP repositories INFO: [IP_Flow 19-1704] No user IP repositories specified 
+// TclEventType: PROJECT_NEW
+// [GUI Memory]: 77 MB (+78135kb) [00:00:11]
+// [Engine Memory]: 612 MB (+490772kb) [00:00:11]
+// [GUI Memory]: 96 MB (+15866kb) [00:00:12]
+// WARNING: HEventQueue.dispatchEvent() is taking  3073 ms.
+// Tcl Message: INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/Xilinx/Vivado/2019.1/data/ip'. 
+// TclEventType: RUN_MODIFY
+// HMemoryUtils.trashcanNow. Engine heap size: 646 MB. GUI used memory: 53 MB. Current time: 3/22/21, 4:42:49 PM CET
+// TclEventType: RUN_MODIFY
+// Tcl Message: open_project: Time (s): cpu = 00:00:15 ; elapsed = 00:00:07 . Memory (MB): peak = 679.723 ; gain = 86.520 
+// Tcl Message: ## get_filesets ## get_property DEFAULT_LIB [current_project] ## current_project ## current_project 
+// TclEventType: RUN_MODIFY
+// [Engine Memory]: 662 MB (+19708kb) [00:00:15]
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: FILE_SET_OPTIONS_CHANGE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: FILE_SET_OPTIONS_CHANGE
+// Tcl Message: ## current_project ## current_project 
+// Tcl Message: Project HDL files to add stored in:    ./HDS_Scripts/Encoder_fileList.tcl 
+// Tcl Message: ## list ## list ## list ## join $vivadoCoresExtList "|" ## get_files -all -quiet ## join $nonIpFiles \n ## join $ipFiles \n ## join $coreIpFiles \n ### list ### list ### list ### list 
+// TclEventType: FILE_SET_OPTIONS_CHANGE
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: STOP_PROGRESS_DIALOG
+// Tcl Message: # if {$::errorCount == 0} { #    puts "Note: \"source ./HDS_Scripts/Encoder_Create.tcl\" completed successfully\n" # } else { #    puts "Error: \"source ./HDS_Scripts/Encoder_Create.tcl\" completed with errors\n" # } 
+// Tcl Message: Note: "source ./HDS_Scripts/Encoder_Create.tcl" completed successfully  
+dismissDialog("Sourcing Tcl script './HDS_Scripts/Encoder_Flow.tcl'"); // by (cl)
+// TclEventType: STOP_PROGRESS_DIALOG
+// [GUI Memory]: 115 MB (+15158kb) [00:00:21]
+// Tcl Message: update_compile_order -fileset sources_1 
+// Elapsed time: 99 seconds
+selectTree(PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, "[, Synthesis, Run Synthesis]", 14, false); // u (O, cl)
+// Run Command: PAResourceCommand.PACommandNames_RUN_SYNTHESIS
+// by (cl):  Resetting Runs : addNotify
+// TclEventType: RUN_MODIFY
+// TclEventType: RUN_RESET
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_RESET
+// TclEventType: RUN_STATUS_CHANGE
+// Tcl Message: reset_run synth_1 
+// TclEventType: RUN_RESET
+// TclEventType: RUN_MODIFY
+// by (cl):  Starting Design Runs : addNotify
+// TclEventType: FILESET_TARGET_UCF_CHANGE
+// TclEventType: RUN_LAUNCH
+// Tcl Message: launch_runs synth_1 -jobs 4 
+// TclEventType: RUN_MODIFY
+// Tcl Message: [Mon Mar 22 16:44:35 2021] Launched synth_1... Run output will be captured here: C:/Users/Yoshi/OneDrive - FH JOANNEUM/FH/02_Master/1. Semester/01_DCD/01_HDS/ip_repo/common_lib/vivado/Encoder/Encoder.runs/synth_1/runme.log 
+// [Engine Memory]: 698 MB (+3271kb) [00:02:00]
+dismissDialog("Starting Design Runs"); // by (cl)
+// TclEventType: RUN_STATUS_CHANGE
+// WARNING: HTimer (ActiveMsgMonitor Process Messages Timer) is taking 11613ms to process. Increasing delay to 2000 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  11626 ms.
+// Thread: Process Messages
+// 	at java.base@9.0.4/java.lang.Thread.sleep(Native Method)
+// 	at ui.frmwork.d.h.construct(SourceFile:133)
+// 	at ui.frmwork.y.run(SourceFile:205)
+// 	at java.base@9.0.4/java.lang.Thread.run(Unknown Source)
+// Thread: Refresh Filesets Swing Worker
+// 	at java.base@9.0.4/java.lang.Thread.sleep(Native Method)
+// 	at ui.data.design.y.construct(SourceFile:2494)
+// 	at ui.frmwork.y.run(SourceFile:205)
+// 	at java.base@9.0.4/java.lang.Thread.run(Unknown Source)
+// Thread: SyntheticaAnimation 70
+// 	at java.base@9.0.4/java.lang.Thread.sleep(Native Method)
+// 	at de.javasoft.plaf.synthetica.painter.AnimationThreadFactory$AnimationThread.run(AnimationThreadFactory.java:119)
+// Thread: Attach Listener
+// Thread: AWT-EventQueue-1
+// 	at java.base@9.0.4/java.lang.invoke.MethodHandleNatives.resolve(Native Method)
+// 	at java.base@9.0.4/java.lang.invoke.MemberName$Factory.resolve(Unknown Source)
+// 	at java.base@9.0.4/java.lang.invoke.MemberName$Factory.resolveOrFail(Unknown Source)
+// 	at java.base@9.0.4/java.lang.invoke.MethodHandles$Lookup.resolveOrFail(Unknown Source)
+// 	at java.base@9.0.4/java.lang.invoke.MethodHandles$Lookup.linkMethodHandleConstant(Unknown Source)
+// 	at java.base@9.0.4/java.lang.invoke.MethodHandleNatives.linkMethodHandleConstant(Unknown Source)
+// 	at ui.utils.C.actionPerformed(SourceFile:73)
+// 	at java.desktop@9.0.4/javax.swing.Timer.fireActionPerformed(Unknown Source)
+// 	at ui.utils.B.fireActionPerformed(SourceFile:117)
+// 	at java.desktop@9.0.4/javax.swing.Timer$DoPostEvent.run(Unknown Source)
+// 	at java.desktop@9.0.4/java.awt.event.InvocationEvent.dispatch(Unknown Source)
+// 	at java.desktop@9.0.4/java.awt.EventQueue.dispatchEventImpl(Unknown Source)
+// 	at java.desktop@9.0.4/java.awt.EventQueue.access$500(Unknown Source)
+// 	at java.desktop@9.0.4/java.awt.EventQueue$3.run(Unknown Source)
+// 	at java.desktop@9.0.4/java.awt.EventQueue$3.run(Unknown Source)
+// 	at java.base@9.0.4/java.security.AccessController.doPrivileged(Native Method)
+// 	at java.base@9.0.4/java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(Unknown Source)
+// 	at java.desktop@9.0.4/java.awt.EventQueue.dispatchEvent(Unknown Source)
+// 	at ui.frmwork.b.d.dispatchEvent(SourceFile:88)
+// 	at java.desktop@9.0.4/java.awt.EventDispatchThread.pumpOneEventForFilters(Unknown Source)
+// 	at java.desktop@9.0.4/java.awt.EventDispatchThread.pumpEventsForFilter(Unknown Source)
+// 	at java.desktop@9.0.4/java.awt.EventDispatchThread.pumpEventsForHierarchy(Unknown Source)
+// 	at java.desktop@9.0.4/java.awt.EventDispatchThread.pumpEvents(Unknown Source)
+// 	at java.desktop@9.0.4/java.awt.EventDispatchThread.pumpEvents(Unknown Source)
+// 	at java.desktop@9.0.4/java.awt.EventDispatchThread.run(Unknown Source)
+// Thread: Finalizer
+// 	at java.base@9.0.4/java.lang.Object.wait(Native Method)
+// 	at java.base@9.0.4/java.lang.ref.ReferenceQueue.remove(Unknown Source)
+// 	at java.base@9.0.4/java.lang.ref.ReferenceQueue.remove(Unknown Source)
+// 	at java.base@9.0.4/java.lang.ref.Finalizer$FinalizerThread.run(Unknown Source)
+// Thread: SyntheticaAnimation 25
+// 	at java.base@9.0.4/java.lang.Thread.sleep(Native Method)
+// 	at de.javasoft.plaf.synthetica.painter.AnimationThreadFactory$AnimationThread.run(AnimationThreadFactory.java:119)
+// Thread: Thread-1
+// Thread: hw_ila_monitor
+// 	at java.base@9.0.4/java.lang.Object.wait(Native Method)
+// 	at java.base@9.0.4/java.lang.Object.wait(Unknown Source)
+// 	at java.base@9.0.4/java.util.TimerThread.mainLoop(Unknown Source)
+// 	at java.base@9.0.4/java.util.TimerThread.run(Unknown Source)
+// Thread: SyntheticaAnimation 50
+// 	at java.base@9.0.4/java.lang.Thread.sleep(Native Method)
+// 	at de.javasoft.plaf.synthetica.painter.AnimationThreadFactory$AnimationThread.run(AnimationThreadFactory.java:119)
+// Thread: Common-Cleaner
+// 	at java.base@9.0.4/java.lang.Object.wait(Native Method)
+// 	at java.base@9.0.4/java.lang.ref.ReferenceQueue.remove(Unknown Source)
+// 	at java.base@9.0.4/jdk.internal.ref.CleanerImpl.run(Unknown Source)
+// 	at java.base@9.0.4/java.lang.Thread.run(Unknown Source)
+// 	at java.base@9.0.4/jdk.internal.misc.InnocuousThread.run(Unknown Source)
+// Thread: Signal Dispatcher
+// Thread: SyntheticaAnimation 50
+// 	at java.base@9.0.4/java.lang.Thread.sleep(Native Method)
+// 	at ui.utils.lnf.b.run(SourceFile:100)
+// Thread: Batik CleanerThread
+// 	at java.base@9.0.4/java.lang.Object.wait(Native Method)
+// 	at java.base@9.0.4/java.lang.ref.ReferenceQueue.remove(Unknown Source)
+// 	at java.base@9.0.4/java.lang.ref.ReferenceQueue.remove(Unknown Source)
+// 	at org.apache.batik.util.CleanerThread.run(CleanerThread.java:106)
+// Thread: Reference Handler
+// 	at java.base@9.0.4/java.lang.ref.Reference.waitForReferencePendingList(Native Method)
+// 	at java.base@9.0.4/java.lang.ref.Reference.processPendingReferences(Unknown Source)
+// 	at java.base@9.0.4/java.lang.ref.Reference.access$000(Unknown Source)
+// 	at java.base@9.0.4/java.lang.ref.Reference$ReferenceHandler.run(Unknown Source)
+// Thread: Messages View GetMessages
+// Thread: TimerQueue
+// 	at java.base@9.0.4/jdk.internal.misc.Unsafe.park(Native Method)
+// 	at java.base@9.0.4/java.util.concurrent.locks.LockSupport.parkNanos(Unknown Source)
+// 	at java.base@9.0.4/java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.awaitNanos(Unknown Source)
+// 	at java.base@9.0.4/java.util.concurrent.DelayQueue.take(Unknown Source)
+// 	at java.desktop@9.0.4/javax.swing.TimerQueue.run(Unknown Source)
+// 	at java.base@9.0.4/java.lang.Thread.run(Unknown Source)
+// Thread: main
+// 	at java.base@9.0.4/java.lang.Thread.sleep(Native Method)
+// 	at ui.PlanAhead.b(SourceFile:1095)
+// 	at ui.PlanAhead.jswMain(SourceFile:1150)
+// Thread: Update Runs Swing Worker
+// 	at java.base@9.0.4/java.lang.Object.wait(Native Method)
+// 	at java.base@9.0.4/java.lang.Object.wait(Unknown Source)
+// 	at java.desktop@9.0.4/java.awt.EventQueue.invokeAndWait(Unknown Source)
+// 	at java.desktop@9.0.4/java.awt.EventQueue.invokeAndWait(Unknown Source)
+// 	at java.desktop@9.0.4/javax.swing.SwingUtilities.invokeAndWait(Unknown Source)
+// 	at ui.frmwork.HTclEventBroker.fireTclEvent(SourceFile:335)
+// 	at ui.project.projecti.HAPRRunMgr_updateAllRuns(Native Method)
+// 	at ui.data.experiment.y.aKw(SourceFile:190)
+// 	at ui.data.experiment.A.construct(SourceFile:326)
+// 	at ui.frmwork.y.run(SourceFile:205)
+// 	at java.base@9.0.4/java.lang.Thread.run(Unknown Source)
+// Thread: AWT-Windows
+// 	at java.desktop@9.0.4/sun.awt.windows.WToolkit.eventLoop(Native Method)
+// 	at java.desktop@9.0.4/sun.awt.windows.WToolkit.run(Unknown Source)
+// 	at java.base@9.0.4/java.lang.Thread.run(Unknown Source)
+// Thread: SyntheticaCleanerThread
+// 	at java.base@9.0.4/java.lang.Thread.sleep(Native Method)
+// 	at de.javasoft.plaf.synthetica.StyleFactory$ComponentPropertyStore$1.run(StyleFactory.java:1847)
+// Thread: Monitor HEventQueue
+// 	at java.base@9.0.4/java.lang.Thread.dumpThreads(Native Method)
+// 	at java.base@9.0.4/java.lang.Thread.getAllStackTraces(Unknown Source)
+// 	at ui.utils.d.c.eAO(SourceFile:484)
+// 	at ui.frmwork.b.e.construct(SourceFile:140)
+// 	at ui.frmwork.y.run(SourceFile:205)
+// 	at java.base@9.0.4/java.lang.Thread.run(Unknown Source)
+// Thread: AWT-Shutdown
+// 	at java.base@9.0.4/java.lang.Object.wait(Native Method)
+// 	at java.base@9.0.4/java.lang.Object.wait(Unknown Source)
+// 	at java.desktop@9.0.4/sun.awt.AWTAutoShutdown.run(Unknown Source)
+// 	at java.base@9.0.4/java.lang.Thread.run(Unknown Source)
+// Thread: Java2D Disposer
+// 	at java.base@9.0.4/java.lang.Object.wait(Native Method)
+// 	at java.base@9.0.4/java.lang.ref.ReferenceQueue.remove(Unknown Source)
+// 	at java.base@9.0.4/java.lang.ref.ReferenceQueue.remove(Unknown Source)
+// 	at java.desktop@9.0.4/sun.java2d.Disposer.run(Unknown Source)
+// 	at java.base@9.0.4/java.lang.Thread.run(Unknown Source)
+// TclEventType: RUN_STATUS_CHANGE
+// HMemoryUtils.trashcanNow. Engine heap size: 1,551 MB. GUI used memory: 52 MB. Current time: 3/22/21, 4:44:48 PM CET
+// TclEventType: RUN_STATUS_CHANGE
+// WARNING: HSwingWorker (Update Runs Swing Worker) is taking 11746 ms. Increasing delay to 3000 ms.
+// [Engine Memory]: 1,582 MB (+890138kb) [00:02:19]
+// Elapsed time: 21 seconds
+collapseTree(PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, "[, Synthesis, Open Synthesized Design]", 15); // u (O, cl)
+expandTree(PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, "[, Synthesis, Open Synthesized Design]", 15); // u (O, cl)
+// WARNING: HTimer (ActiveMsgMonitor Process Messages Timer) is taking 6414ms to process. Increasing delay to 3000 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  6414 ms.
+selectTab((HResource) null, (HResource) null, "Reports", 3); // aK (aH, cl)
+selectTab((HResource) null, (HResource) null, "Log", 2); // aK (aH, cl)
+selectTab((HResource) null, (HResource) null, "Messages", 1); // aK (aH, cl)
+selectTab((HResource) null, (HResource) null, "Tcl Console", 0); // aK (aH, cl)
+selectTab((HResource) null, (HResource) null, "Design Runs", 4); // aK (aH, cl)
+selectTreeTable(PAResourceEtoH.ExpRunTreePanel_EXP_RUN_TREE_TABLE, "impl_1 ; constrs_1 ; Not started ;  ;  ;  ;  ;  ;  ;  ;  ;  ;  ;  ;  ;  ;  ; Vivado Implementation Defaults (Vivado Implementation 2019) ; Vivado Implementation Default Reports (Vivado Implementation 2019) ; xc7z010clg400-1 ; Default settings for Implementation.", 1, "impl_1", 0, false); // ay (O, cl)
+// PAPropertyPanels.initPanels (impl_1) elapsed time: 0.5s
+// HMemoryUtils.trashcanNow. Engine heap size: 1,602 MB. GUI used memory: 56 MB. Current time: 3/22/21, 4:45:16 PM CET
+selectTreeTable(PAResourceEtoH.ExpRunTreePanel_EXP_RUN_TREE_TABLE, "synth_1 ; constrs_1 ; Running synth_design... ;  ;  ;  ;  ;  ;  ;  ;  ;  ;  ;  ;  ; Mon Mar 22 16:44:54 CET 2021 ; 00:00:20 ; Vivado Synthesis Defaults (Vivado Synthesis 2019) ; Vivado Synthesis Default Reports (Vivado Synthesis 2019) ; xc7z010clg400-1 ; Vivado Synthesis Defaults", 0, "synth_1", 0, true); // ay (O, cl) - Node
+// TclEventType: RUN_COMPLETED
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_STEP_COMPLETED
+// Elapsed time: 62 seconds
+selectTree(PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, "[, Synthesis, Open Synthesized Design]", 15, true); // u (O, cl) - Node
+// Run Command: PAResourceCommand.PACommandNames_GOTO_NETLIST_DESIGN
+// by (cl):  Open Synthesized Design : addNotify
+// Tcl Message: open_run synth_1 -name synth_1 
+// Tcl Message: Design is defaulting to impl run constrset: constrs_1 Design is defaulting to synth run part: xc7z010clg400-1 
+// HMemoryUtils.trashcanNow. Engine heap size: 1,709 MB. GUI used memory: 57 MB. Current time: 3/22/21, 4:46:22 PM CET
+// [Engine Memory]: 1,817 MB (+163081kb) [00:03:48]
+// TclEventType: READ_XDC_FILE_START
+// TclEventType: POWER_CNS_STALE
+// TclEventType: POWER_REPORT_STALE
+// TclEventType: SDC_CONSTRAINT_ADD
+// TclEventType: READ_XDC_FILE_END
+// TclEventType: FLOORPLAN_MODIFY
+// TclEventType: DESIGN_NEW
+// HMemoryUtils.trashcanNow. Engine heap size: 1,955 MB. GUI used memory: 57 MB. Current time: 3/22/21, 4:46:30 PM CET
+// [Engine Memory]: 1,955 MB (+49906kb) [00:03:55]
+// TclEventType: DESIGN_NEW
+// Xgd.load filename: C:/Xilinx/Vivado/2019.1/data/parts/xilinx/zynq/devint/zynq/xc7z010/xc7z010.xgd; ZipEntry: xc7z010_detail.xgd elapsed time: 0.7s
+// TclEventType: HFED_INIT_ROUTE_STORAGE_COMPLETED
+// Package: addNotify
+// Device: addNotify
+// DeviceView Instantiated
+// [GUI Memory]: 128 MB (+7145kb) [00:03:58]
+// PAPropertyPanels.initPanels (synth_1) elapsed time: 0.3s
+// TclEventType: CURR_DESIGN_SET
+// WARNING: HEventQueue.dispatchEvent() is taking  3063 ms.
+// Tcl Message: INFO: [Device 21-403] Loading part xc7z010clg400-1 INFO: [Project 1-479] Netlist was created with Vivado 2019.1 INFO: [Project 1-570] Preparing netlist for logic optimization 
+// Tcl Message: Parsing XDC File [C:/Users/Yoshi/OneDrive - FH JOANNEUM/FH/02_Master/1. Semester/01_DCD/01_HDS/ip_repo/common_lib/vivado/Encoder/Encoder.srcs/constrs_1/new/Constraints.xdc] 
+// Tcl Message: INFO: [Constraints 18-483] create_clock: no pin(s)/port(s)/net(s) specified as objects, only virtual clock 'clk' will be created. If you don't want this, please specify pin(s)/ports(s)/net(s) as objects to the command. [C:/Users/Yoshi/OneDrive - FH JOANNEUM/FH/02_Master/1. Semester/01_DCD/01_HDS/ip_repo/common_lib/vivado/Encoder/Encoder.srcs/constrs_1/new/Constraints.xdc:18] 
+// Tcl Message: Finished Parsing XDC File [C:/Users/Yoshi/OneDrive - FH JOANNEUM/FH/02_Master/1. Semester/01_DCD/01_HDS/ip_repo/common_lib/vivado/Encoder/Encoder.srcs/constrs_1/new/Constraints.xdc] 
+// Tcl Message: INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s). 
+// Tcl Message: Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1075.973 ; gain = 0.000 
+// Tcl Message: INFO: [Project 1-111] Unisim Transformation Summary: No Unisim elements were transformed.  
+// Elapsed time: 14 seconds
+closeView(PAResourceOtoP.PAViews_PROJECT_SUMMARY, "Project Summary"); // v
+// Tcl Message: open_run: Time (s): cpu = 00:00:24 ; elapsed = 00:00:14 . Memory (MB): peak = 1173.508 ; gain = 424.812 
+// [GUI Memory]: 141 MB (+7639kb) [00:04:00]
+// 'dR' command handler elapsed time: 15 seconds
+// S (cl): Critical Messages: addNotify
+dismissDialog("Open Synthesized Design"); // by (cl)
+// [GUI Memory]: 152 MB (+3677kb) [00:04:01]
+selectList(PAResourceAtoD.CmdMsgDialog_MESSAGES, "[Common 17-55] 'set_property' expects at least one object. [C:/Users/Yoshi/OneDrive - FH JOANNEUM/FH/02_Master/1. Semester/01_DCD/01_HDS/ip_repo/common_lib/vivado/Encoder/Encoder.srcs/constrs_1/new/Constraints.xdc:1]. Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.", 0); // b (F, S)
+// HMemoryUtils.trashcanNow. Engine heap size: 2,198 MB. GUI used memory: 142 MB. Current time: 3/22/21, 4:46:46 PM CET
+// RouteApi::initDelayMediator elapsed time: 13.8s
+// RouteApi: Init Delay Mediator Swing Worker Finished
+// Elapsed time: 10 seconds
+selectList(PAResourceAtoD.CmdMsgDialog_MESSAGES, "[Common 17-55] 'set_property' expects at least one object. [C:/Users/Yoshi/OneDrive - FH JOANNEUM/FH/02_Master/1. Semester/01_DCD/01_HDS/ip_repo/common_lib/vivado/Encoder/Encoder.srcs/constrs_1/new/Constraints.xdc:2]. Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.", 1); // b (F, S)
+selectList(PAResourceAtoD.CmdMsgDialog_MESSAGES, "[Common 17-55] 'set_property' expects at least one object. [C:/Users/Yoshi/OneDrive - FH JOANNEUM/FH/02_Master/1. Semester/01_DCD/01_HDS/ip_repo/common_lib/vivado/Encoder/Encoder.srcs/constrs_1/new/Constraints.xdc:3]. Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.", 2); // b (F, S)
+// Elapsed time: 12 seconds
+selectList(PAResourceAtoD.CmdMsgDialog_MESSAGES, "[Common 17-55] 'set_property' expects at least one object. [C:/Users/Yoshi/OneDrive - FH JOANNEUM/FH/02_Master/1. Semester/01_DCD/01_HDS/ip_repo/common_lib/vivado/Encoder/Encoder.srcs/constrs_1/new/Constraints.xdc:3]. Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.", 2); // b (F, S)
+selectList(PAResourceAtoD.CmdMsgDialog_MESSAGES, "[Common 17-55] 'set_property' expects at least one object. [C:/Users/Yoshi/OneDrive - FH JOANNEUM/FH/02_Master/1. Semester/01_DCD/01_HDS/ip_repo/common_lib/vivado/Encoder/Encoder.srcs/constrs_1/new/Constraints.xdc:3]. Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.", 2, false, false, false, false, true); // b (F, S) - Double Click
+// Run Command: PAResourceCommand.PACommandNames_MESSAGE_WINDOW
+// [Engine Memory]: 2,447 MB (+413110kb) [00:04:38]
+dismissDialog("Critical Messages"); // S (cl)
+expandTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, synth_1, General Messages, [Common 17-55] 'set_property' expects at least one object. [C:/Users/Yoshi/OneDrive - FH JOANNEUM/FH/02_Master/1. Semester/01_DCD/01_HDS/ip_repo/common_lib/vivado/Encoder/Encoder.srcs/constrs_1/new/Constraints.xdc:1]. ]", 7); // ah (O, cl)
+collapseTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, synth_1, General Messages, [Common 17-55] 'set_property' expects at least one object. [C:/Users/Yoshi/OneDrive - FH JOANNEUM/FH/02_Master/1. Semester/01_DCD/01_HDS/ip_repo/common_lib/vivado/Encoder/Encoder.srcs/constrs_1/new/Constraints.xdc:1]. ]", 7); // ah (O, cl)
+collapseTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, synth_1]", 5); // ah (O, cl)
+collapseTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, Synthesis]", 3); // ah (O, cl)
+selectTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, Vivado Commands, General Messages, [Project 1-19] Could not find the file 'C:/Users/Yoshi/OneDrive - FH JOANNEUM/FH/02_Master/1. Semester/01_DCD/01_HDS/ip_repo/common_lib/hdl/Encoder_rtl.vhd'.. ]", 2, false); // ah (O, cl)
+collapseTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, Vivado Commands, General Messages]", 1); // ah (O, cl)
+collapseTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, Vivado Commands]", 0); // ah (O, cl)
+selectTab((HResource) null, (HResource) null, "I/O Ports", 6); // aK (aH, cl)
+selectTreeTable(PAResourceQtoS.SignalTreePanel_SIGNAL_TREE_TABLE, "Scalar ports (3) ;  ;  ;  ;  ;  ;  ;  ;  ;  ;  ;  ;  ; ", 2, "Scalar ports (3)", 0, true); // z (O, cl) - Node
+expandTreeTable(PAResourceQtoS.SignalTreePanel_SIGNAL_TREE_TABLE, "Scalar ports (3) ;  ;  ;  ;  ;  ;  ;  ;  ;  ;  ;  ;  ; ", 2); // z (O, cl)
+collapseTreeTable(PAResourceQtoS.SignalTreePanel_SIGNAL_TREE_TABLE, "Scalar ports (3) ;  ;  ;  ;  ;  ;  ;  ;  ;  ;  ;  ;  ; ", 2); // z (O, cl)
+// Elapsed time: 52 seconds
+selectTree(PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, "[, Synthesis, Open Synthesized Design, Edit Timing Constraints]", 17, false); // u (O, cl)
+// Run Command: PAResourceCommand.PACommandNames_TIMING_CONSTRAINTS_WINDOW
+// HMemoryUtils.trashcanNow. Engine heap size: 2,474 MB. GUI used memory: 96 MB. Current time: 3/22/21, 4:48:52 PM CET
+// Elapsed time: 99 seconds
+selectTab((HResource) null, (HResource) null, "Tcl Console", 0); // aK (aH, cl)
+setText(RDIResource.CommandsInput_TYPE_TCL_COMMAND_HERE, (String) null); // aC (Z, cl)
+// Tcl Command: 'set_property PACKAGE_PIN T11 [get_ports seg7_le]; set_property PACKAGE_PIN V15 [get_ports seg7_sdi]; set_property PACKAGE_PIN W15 [get_ports seg7_sclk]; set_property PACKAGE_PIN W14 [get_ports {encoder0[1]}]; set_property PACKAGE_PIN Y14 [get_ports {encoder0[0]}]; set_property PACKAGE_PIN T12 [get_ports {...'
+// Tcl Command: 'set_property PACKAGE_PIN T11 [get_ports seg7_le]'
+// Tcl Message: set_property PACKAGE_PIN T11 [get_ports seg7_le] 
+// Tcl Message: ERROR: [Common 17-55] 'set_property' expects at least one object. Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object. 
+// Elapsed time: 19 seconds
+setText(RDIResource.CommandsInput_TYPE_TCL_COMMAND_HERE, (String) null); // aC (Z, cl)
+// Tcl Command: 'set_property PACKAGE_PIN W14 [get_ports {A}]; set_property PACKAGE_PIN Y14 [get_ports {B}]; set_property IOSTANDARD LVCMOS33 [get_ports {A}]; set_property IOSTANDARD LVCMOS33 [get_ports {B}]; set_property PULLUP true [get_ports {A}]; set_property PULLUP true [get_ports {B}]'
+// Tcl Command: 'set_property PACKAGE_PIN W14 [get_ports {A}]'
+// Tcl Message: set_property PACKAGE_PIN W14 [get_ports {A}] 
+// Tcl Message: ERROR: [Common 17-55] 'set_property' expects at least one object. Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object. 
+// Elapsed time: 100 seconds
+selectTab((HResource) null, (HResource) null, "I/O Ports", 6); // aK (aH, cl)
+expandTreeTable(PAResourceQtoS.SignalTreePanel_SIGNAL_TREE_TABLE, "count (4) ; OUT ;  ;  ;  ;  ; default (LVCMOS18) ; 1.8 ;  ; 12 ; SLOW ; NONE ; FP_VTT_50 ; ", 1); // z (O, cl)
+collapseTreeTable(PAResourceQtoS.SignalTreePanel_SIGNAL_TREE_TABLE, "count (4) ; OUT ;  ;  ;  ;  ; default (LVCMOS18) ; 1.8 ;  ; 12 ; SLOW ; NONE ; FP_VTT_50 ; ", 1); // z (O, cl)
+expandTreeTable(PAResourceQtoS.SignalTreePanel_SIGNAL_TREE_TABLE, "Scalar ports (3) ;  ;  ;  ;  ;  ;  ;  ;  ;  ;  ;  ;  ; ", 2); // z (O, cl)
+selectTreeTable(PAResourceQtoS.SignalTreePanel_SIGNAL_TREE_TABLE, "A_in ; IN ;  ;  ;  ;  ; default (LVCMOS18) ; 1.8 ;  ;  ;  ; NONE ; NONE ; ", 3, (String) null, 3, false); // z (O, cl)
+// TclEventType: LOC_CONSTRAINT_ADD
+// Tcl Message: place_ports A_in W14 
+// Elapsed time: 10 seconds
+selectTreeTable(PAResourceQtoS.SignalTreePanel_SIGNAL_TREE_TABLE, "B_in ; IN ;  ;  ;  ;  ; default (LVCMOS18) ; 1.8 ;  ;  ;  ; NONE ; NONE ; ", 4, (String) null, 3, false); // z (O, cl)
+// TclEventType: LOC_CONSTRAINT_ADD
+// Tcl Message: place_ports B_in Y14 
+// Elapsed time: 12 seconds
+selectTreeTable(PAResourceQtoS.SignalTreePanel_SIGNAL_TREE_TABLE, "clk ; IN ;  ;  ;  ;  ; default (LVCMOS18) ; 1.8 ;  ;  ;  ; NONE ; NONE ; ", 5, (String) null, 3, false); // z (O, cl)
+// TclEventType: LOC_CONSTRAINT_ADD
+// Tcl Message: place_ports clk L16 
+// Run Command: PAResourceCommand.PACommandNames_SAVE_DESIGN
+// by (cl):  Save Constraints : addNotify
+// TclEventType: DESIGN_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DESIGN_SAVE
+// TclEventType: FILESET_TARGET_UCF_CHANGE
+// Tcl Message: save_constraints 
+// Elapsed time: 36 seconds
+dismissDialog("Save Constraints"); // by (cl)
+collapseTreeTable(PAResourceQtoS.SignalTreePanel_SIGNAL_TREE_TABLE, "Scalar ports (3) ;  ;  ;  ;  ;  ;  ;  ;  ;  ;  ;  ;  ; ", 2); // z (O, cl)
+expandTreeTable(PAResourceQtoS.SignalTreePanel_SIGNAL_TREE_TABLE, "count (4) ; OUT ;  ;  ;  ;  ; default (LVCMOS18) ; 1.8 ;  ; 12 ; SLOW ; NONE ; FP_VTT_50 ; ", 1); // z (O, cl)
+selectTreeTable(PAResourceQtoS.SignalTreePanel_SIGNAL_TREE_TABLE, "count[3] ; OUT ;  ;  ;  ;  ; default (LVCMOS18) ; 1.8 ;  ; 12 ; SLOW ; NONE ; FP_VTT_50 ; ", 2, (String) null, 3, false); // z (O, cl)
+// TclEventType: PLACEDB_MODIFIY_PRE
+// TclEventType: LOC_CONSTRAINT_ADD
+// Tcl Message: place_ports {count[3]} D18 
+// Elapsed time: 54 seconds
+selectTreeTable(PAResourceQtoS.SignalTreePanel_SIGNAL_TREE_TABLE, "count[2] ; OUT ;  ;  ;  ;  ; default (LVCMOS18) ; 1.8 ;  ; 12 ; SLOW ; NONE ; FP_VTT_50 ; ", 3, (String) null, 3, false); // z (O, cl)
+// TclEventType: PLACEDB_MODIFIY_PRE
+// TclEventType: LOC_CONSTRAINT_ADD
+// Tcl Message: place_ports {count[2]} G14 
+selectTreeTable(PAResourceQtoS.SignalTreePanel_SIGNAL_TREE_TABLE, "count[1] ; OUT ;  ;  ;  ;  ; default (LVCMOS18) ; 1.8 ;  ; 12 ; SLOW ; NONE ; FP_VTT_50 ; ", 4, (String) null, 3, false); // z (O, cl)
+// TclEventType: PLACEDB_MODIFIY_PRE
+// TclEventType: LOC_CONSTRAINT_ADD
+// Tcl Message: place_ports {count[1]} M15 
+selectTreeTable(PAResourceQtoS.SignalTreePanel_SIGNAL_TREE_TABLE, "count[0] ; OUT ;  ;  ;  ;  ; default (LVCMOS18) ; 1.8 ;  ; 12 ; SLOW ; NONE ; FP_VTT_50 ; ", 5, (String) null, 3, false); // z (O, cl)
+// TclEventType: PLACEDB_MODIFIY_PRE
+// TclEventType: LOC_CONSTRAINT_ADD
+// Tcl Message: place_ports {count[0]} M14 
+// Schematic: addNotify
+// PAPropertyPanels.initPanels (count) elapsed time: 0.3s
+selectTreeTable(PAResourceQtoS.SignalTreePanel_SIGNAL_TREE_TABLE, "count (4) ; OUT ;  ;  ; true ; 35 ; default (LVCMOS18) ; 1.8 ;  ; 12 ; SLOW ; NONE ; FP_VTT_50 ; ", 1, "default (LVCMOS18)", 6, true); // z (O, cl) - Node
+selectTreeTable(PAResourceQtoS.SignalTreePanel_SIGNAL_TREE_TABLE, "count (4) ; OUT ;  ;  ; true ; 35 ; default (LVCMOS18) ; 1.8 ;  ; 12 ; SLOW ; NONE ; FP_VTT_50 ; ", 1, "default (LVCMOS18)", 6, true); // z (O, cl) - Node
+// TclEventType: SIGNAL_MODIFY
+// Tcl Message: set_property IOSTANDARD LVCMOS33 [get_ports [list {count[3]} {count[2]} {count[1]} {count[0]}]] 
+// Run Command: PAResourceCommand.PACommandNames_SAVE_DESIGN
+// by (cl):  Save Constraints : addNotify
+// TclEventType: DESIGN_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DESIGN_SAVE
+// TclEventType: FILESET_TARGET_UCF_CHANGE
+// Tcl Message: save_constraints 
+dismissDialog("Save Constraints"); // by (cl)
+// HMemoryUtils.trashcanNow. Engine heap size: 2,494 MB. GUI used memory: 100 MB. Current time: 3/22/21, 4:55:12 PM CET
+collapseTreeTable(PAResourceQtoS.SignalTreePanel_SIGNAL_TREE_TABLE, "count (4) ; OUT ;  ;  ; true ; 35 ; LVCMOS33 ; 3.3 ;  ; 12 ; SLOW ; NONE ; FP_VTT_50 ; ", 1); // z (O, cl)
+expandTreeTable(PAResourceQtoS.SignalTreePanel_SIGNAL_TREE_TABLE, "Scalar ports (3) ;  ;  ;  ;  ;  ;  ;  ;  ;  ;  ;  ;  ; ", 2); // z (O, cl)
+// Elapsed time: 17 seconds
+selectTreeTable(PAResourceQtoS.SignalTreePanel_SIGNAL_TREE_TABLE, "A_in ; IN ;  ; W14 ; true ; 34 ; default (LVCMOS18) ; 1.8 ;  ;  ;  ; NONE ; NONE ; ", 3, "default (LVCMOS18)", 6, false); // z (O, cl)
+// TclEventType: SIGNAL_MODIFY
+// Tcl Message: set_property IOSTANDARD LVCMOS33 [get_ports [list A_in]] 
+selectTreeTable(PAResourceQtoS.SignalTreePanel_SIGNAL_TREE_TABLE, "B_in ; IN ;  ; Y14 ; true ; 34 ; default (LVCMOS18) ; 1.8 ;  ;  ;  ; NONE ; NONE ; ", 4, "default (LVCMOS18)", 6, false); // z (O, cl)
+// TclEventType: SIGNAL_MODIFY
+// Tcl Message: set_property IOSTANDARD LVCMOS33 [get_ports [list B_in]] 
+selectTreeTable(PAResourceQtoS.SignalTreePanel_SIGNAL_TREE_TABLE, "clk ; IN ;  ; L16 ; true ; 35 ; default (LVCMOS18) ; 1.8 ;  ;  ;  ; NONE ; NONE ; ", 5, "default (LVCMOS18)", 6, false); // z (O, cl)
+// Run Command: PAResourceCommand.PACommandNames_SAVE_DESIGN
+// by (cl):  Save Constraints : addNotify
+// TclEventType: DESIGN_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DESIGN_SAVE
+// TclEventType: FILESET_TARGET_UCF_CHANGE
+// Tcl Message: save_constraints 
+// Elapsed time: 30 seconds
+dismissDialog("Save Constraints"); // by (cl)
+collapseTreeTable(PAResourceQtoS.SignalTreePanel_SIGNAL_TREE_TABLE, "Scalar ports (3) ;  ;  ;  ;  ;  ;  ;  ;  ;  ;  ;  ;  ; ", 2); // z (O, cl)
+// Elapsed time: 10 seconds
+selectTree(PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, "[, Implementation, Run Implementation]", 29, false); // u (O, cl)
+// Run Command: PAResourceCommand.PACommandNames_RUN_IMPLEMENTATION
+// by (cl):  Starting Design Runs : addNotify
+// TclEventType: FILESET_TARGET_UCF_CHANGE
+// TclEventType: RUN_LAUNCH
+// Tcl Message: launch_runs impl_1 -jobs 4 
+// Tcl Message: Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1647.871 ; gain = 0.000 
+// Tcl Message: INFO: [Timing 38-480] Writing timing data to binary archive. 
+// Tcl Message: Writing placer database... Writing XDEF routing. Writing XDEF routing logical nets. Writing XDEF routing special nets. 
+// Tcl Message: Write XDEF Complete: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.078 . Memory (MB): peak = 1663.160 ; gain = 15.289 
+// TclEventType: RUN_MODIFY
+// Tcl Message: [Mon Mar 22 16:56:20 2021] Launched impl_1... Run output will be captured here: C:/Users/Yoshi/OneDrive - FH JOANNEUM/FH/02_Master/1. Semester/01_DCD/01_HDS/ip_repo/common_lib/vivado/Encoder/Encoder.runs/impl_1/runme.log 
+dismissDialog("Starting Design Runs"); // by (cl)
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_STEP_COMPLETED
+// TclEventType: RUN_FAILED
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_STEP_COMPLETED
+// ah (cl): Implementation Failed: addNotify
+// Elapsed time: 41 seconds
+selectButton(RDIResource.BaseDialog_OK, "OK"); // a (ah)
+// Run Command: PAResourceCommand.PACommandNames_MESSAGE_WINDOW
+dismissDialog("Implementation Failed"); // ah (cl)
+selectTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, synth_1, General Messages, [Common 17-55] 'set_property' expects at least one object. [C:/Users/Yoshi/OneDrive - FH JOANNEUM/FH/02_Master/1. Semester/01_DCD/01_HDS/ip_repo/common_lib/vivado/Encoder/Encoder.srcs/constrs_1/new/Constraints.xdc:1]. ]", 7, true); // ah (O, cl) - Node
+expandTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, synth_1, General Messages, [Common 17-55] 'set_property' expects at least one object. [C:/Users/Yoshi/OneDrive - FH JOANNEUM/FH/02_Master/1. Semester/01_DCD/01_HDS/ip_repo/common_lib/vivado/Encoder/Encoder.srcs/constrs_1/new/Constraints.xdc:1]. ]", 7); // ah (O, cl)
+selectTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, synth_1, General Messages, [Common 17-55] 'set_property' expects at least one object. [C:/Users/Yoshi/OneDrive - FH JOANNEUM/FH/02_Master/1. Semester/01_DCD/01_HDS/ip_repo/common_lib/vivado/Encoder/Encoder.srcs/constrs_1/new/Constraints.xdc:1]. , [Common 17-55] 'set_property' expects at least one object. [C:/Users/Yoshi/OneDrive - FH JOANNEUM/FH/02_Master/1. Semester/01_DCD/01_HDS/ip_repo/common_lib/vivado/Encoder/Encoder.srcs/constrs_1/new/Constraints.xdc:2]. ]", 8, false); // ah (O, cl)
+selectTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, synth_1, General Messages, [Common 17-55] 'set_property' expects at least one object. [C:/Users/Yoshi/OneDrive - FH JOANNEUM/FH/02_Master/1. Semester/01_DCD/01_HDS/ip_repo/common_lib/vivado/Encoder/Encoder.srcs/constrs_1/new/Constraints.xdc:1]. , [Common 17-55] 'set_property' expects at least one object. [C:/Users/Yoshi/OneDrive - FH JOANNEUM/FH/02_Master/1. Semester/01_DCD/01_HDS/ip_repo/common_lib/vivado/Encoder/Encoder.srcs/constrs_1/new/Constraints.xdc:2]. ]", 8, false); // ah (O, cl)
+selectTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, synth_1, General Messages, [Common 17-55] 'set_property' expects at least one object. [C:/Users/Yoshi/OneDrive - FH JOANNEUM/FH/02_Master/1. Semester/01_DCD/01_HDS/ip_repo/common_lib/vivado/Encoder/Encoder.srcs/constrs_1/new/Constraints.xdc:1]. , [Common 17-55] 'set_property' expects at least one object. [C:/Users/Yoshi/OneDrive - FH JOANNEUM/FH/02_Master/1. Semester/01_DCD/01_HDS/ip_repo/common_lib/vivado/Encoder/Encoder.srcs/constrs_1/new/Constraints.xdc:2]. ]", 8, false, false, false, false, false, true); // ah (O, cl) - Double Click
+selectTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, synth_1, General Messages, [Common 17-55] 'set_property' expects at least one object. [C:/Users/Yoshi/OneDrive - FH JOANNEUM/FH/02_Master/1. Semester/01_DCD/01_HDS/ip_repo/common_lib/vivado/Encoder/Encoder.srcs/constrs_1/new/Constraints.xdc:1]. , [Common 17-55] 'set_property' expects at least one object. [C:/Users/Yoshi/OneDrive - FH JOANNEUM/FH/02_Master/1. Semester/01_DCD/01_HDS/ip_repo/common_lib/vivado/Encoder/Encoder.srcs/constrs_1/new/Constraints.xdc:2]. ]", 8, false); // ah (O, cl)
+messagesViewCrossProbe(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "src;-;C:\Users\Yoshi\OneDrive - FH JOANNEUM\FH\02_Master\1. Semester\01_DCD\01_HDS\ip_repo\common_lib\vivado\Encoder\Encoder.srcs\constrs_1\new\Constraints.xdc;-;;-;16;-;line;-;2;-;;-;16;-;"); // ah (O, cl)
+// Elapsed time: 17 seconds
+selectCodeEditor("Constraints.xdc", 351, 258); // cl (w, cl)
+selectCodeEditor("Constraints.xdc", 439, 8); // cl (w, cl)
+selectCodeEditor("Constraints.xdc", 399, 295); // cl (w, cl)
+typeControlKey((HResource) null, "Constraints.xdc", 'v'); // cl (w, cl)
+selectCodeEditor("Constraints.xdc", 349, 62); // cl (w, cl)
+selectCodeEditor("Constraints.xdc", 350, 215); // cl (w, cl)
+// TclEventType: DESIGN_STALE
+// TclEventType: FILE_SET_CHANGE
+// Elapsed time: 13 seconds
+selectTree(PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, "[, Synthesis, Run Synthesis]", 14, false); // u (O, cl)
+// Run Command: PAResourceCommand.PACommandNames_RUN_SYNTHESIS
+// by (cl):  Resetting Runs : addNotify
+// TclEventType: RUN_MODIFY
+// TclEventType: RUN_RESET
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_RESET
+// TclEventType: DESIGN_STALE
+// TclEventType: RUN_RESET
+// TclEventType: RUN_STATUS_CHANGE
+// Tcl Message: reset_run synth_1 
+// TclEventType: RUN_RESET
+// TclEventType: RUN_MODIFY
+// PAPropertyPanels.initPanels (synth_1) elapsed time: 0.2s
+// by (cl):  Starting Design Runs : addNotify
+// TclEventType: FILESET_TARGET_UCF_CHANGE
+// TclEventType: DESIGN_STALE
+// TclEventType: RUN_LAUNCH
+// Tcl Message: launch_runs synth_1 -jobs 4 
+// TclEventType: RUN_MODIFY
+// Tcl Message: [Mon Mar 22 16:58:12 2021] Launched synth_1... Run output will be captured here: C:/Users/Yoshi/OneDrive - FH JOANNEUM/FH/02_Master/1. Semester/01_DCD/01_HDS/ip_repo/common_lib/vivado/Encoder/Encoder.runs/synth_1/runme.log 
+dismissDialog("Starting Design Runs"); // by (cl)
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: DESIGN_STALE
+// TclEventType: RUN_COMPLETED
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_STEP_COMPLETED
+// [GUI Memory]: 161 MB (+1716kb) [00:16:19]
+// Elapsed time: 41 seconds
+collapseTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, synth_1, General Messages, [Common 17-55] 'set_property' expects at least one object. [C:/Users/Yoshi/OneDrive - FH JOANNEUM/FH/02_Master/1. Semester/01_DCD/01_HDS/ip_repo/common_lib/vivado/Encoder/Encoder.srcs/constrs_1/new/Constraints.xdc:1]. ]", 5); // ah (O, cl)
+collapseTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, synth_1, General Messages]", 4); // ah (O, cl)
+expandTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, synth_1, General Messages]", 4); // ah (O, cl)
+expandTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, synth_1, General Messages, [Common 17-55] 'set_property' expects at least one object. [C:/Users/Yoshi/OneDrive - FH JOANNEUM/FH/02_Master/1. Semester/01_DCD/01_HDS/ip_repo/common_lib/vivado/Encoder/Encoder.srcs/constrs_1/new/Constraints.xdc:1]. ]", 5); // ah (O, cl)
+selectTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, synth_1, General Messages, [Common 17-55] 'set_property' expects at least one object. [C:/Users/Yoshi/OneDrive - FH JOANNEUM/FH/02_Master/1. Semester/01_DCD/01_HDS/ip_repo/common_lib/vivado/Encoder/Encoder.srcs/constrs_1/new/Constraints.xdc:1]. , [Common 17-55] 'set_property' expects at least one object.. Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.. ]", 25, false); // ah (O, cl)
+selectTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, synth_1, General Messages, [Common 17-55] 'set_property' expects at least one object. [C:/Users/Yoshi/OneDrive - FH JOANNEUM/FH/02_Master/1. Semester/01_DCD/01_HDS/ip_repo/common_lib/vivado/Encoder/Encoder.srcs/constrs_1/new/Constraints.xdc:1]. , [Common 17-55] 'set_property' expects at least one object.. Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.. ]", 25, false); // ah (O, cl)
+selectTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, synth_1, General Messages, [Common 17-55] 'set_property' expects at least one object. [C:/Users/Yoshi/OneDrive - FH JOANNEUM/FH/02_Master/1. Semester/01_DCD/01_HDS/ip_repo/common_lib/vivado/Encoder/Encoder.srcs/constrs_1/new/Constraints.xdc:1]. , [Common 17-55] 'set_property' expects at least one object.. Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.. ]", 25, false, false, false, false, false, true); // ah (O, cl) - Double Click
+collapseTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, synth_1, General Messages, [Common 17-55] 'set_property' expects at least one object. [C:/Users/Yoshi/OneDrive - FH JOANNEUM/FH/02_Master/1. Semester/01_DCD/01_HDS/ip_repo/common_lib/vivado/Encoder/Encoder.srcs/constrs_1/new/Constraints.xdc:1]. ]", 5); // ah (O, cl)
+collapseTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, synth_1, General Messages]", 4); // ah (O, cl)
+collapseTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, synth_1]", 3); // ah (O, cl)
+selectTree(PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, "[, Implementation, Run Implementation]", 29, false); // u (O, cl)
+// Run Command: PAResourceCommand.PACommandNames_RUN_IMPLEMENTATION
+// by (cl):  Starting Design Runs : addNotify
+// TclEventType: FILESET_TARGET_UCF_CHANGE
+// TclEventType: RUN_LAUNCH
+// Tcl Message: launch_runs impl_1 -jobs 4 
+// TclEventType: RUN_MODIFY
+// Tcl Message: [Mon Mar 22 16:59:25 2021] Launched impl_1... Run output will be captured here: C:/Users/Yoshi/OneDrive - FH JOANNEUM/FH/02_Master/1. Semester/01_DCD/01_HDS/ip_repo/common_lib/vivado/Encoder/Encoder.runs/impl_1/runme.log 
+dismissDialog("Starting Design Runs"); // by (cl)
+// TclEventType: RUN_STATUS_CHANGE
+collapseTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, Vivado Commands]", 0); // ah (O, cl)
+// TclEventType: RUN_STEP_COMPLETED
+// TclEventType: RUN_FAILED
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_STEP_COMPLETED
+// ah (cl): Implementation Failed: addNotify
+// Elapsed time: 34 seconds
+selectButton(RDIResource.BaseDialog_OK, "OK"); // a (ah)
+// Run Command: PAResourceCommand.PACommandNames_MESSAGE_WINDOW
+dismissDialog("Implementation Failed"); // ah (cl)
+selectTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, Implementation, Place Design, DRC, Pin Planning, IO Standard, [DRC BIVC-1] Bank IO standard Vcc: Conflicting Vcc voltages in bank 35. For example, the following two ports in this bank have conflicting VCCOs:  . clk (LVCMOS18, requiring VCCO=1.800) and count[0] (LVCMOS33, requiring VCCO=3.300). ]", 11, false); // ah (O, cl)
+selectTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, Implementation, Place Design, DRC, Pin Planning, IO Standard, [DRC BIVC-1] Bank IO standard Vcc: Conflicting Vcc voltages in bank 35. For example, the following two ports in this bank have conflicting VCCOs:  . clk (LVCMOS18, requiring VCCO=1.800) and count[0] (LVCMOS33, requiring VCCO=3.300). ]", 11, false); // ah (O, cl)
+selectTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, Implementation, Place Design, DRC, Pin Planning, IO Standard, [DRC BIVC-1] Bank IO standard Vcc: Conflicting Vcc voltages in bank 35. For example, the following two ports in this bank have conflicting VCCOs:  . clk (LVCMOS18, requiring VCCO=1.800) and count[0] (LVCMOS33, requiring VCCO=3.300). ]", 11, false, false, false, false, false, true); // ah (O, cl) - Double Click
+selectTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, Implementation, Place Design, [Vivado_Tcl 4-23] Error(s) found during DRC. Placer not run.. ]", 12, false); // ah (O, cl)
+selectTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, Implementation, Place Design, [Vivado_Tcl 4-23] Error(s) found during DRC. Placer not run.. ]", 12, false); // ah (O, cl)
+selectTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, Implementation, Place Design, [Vivado_Tcl 4-23] Error(s) found during DRC. Placer not run.. ]", 12, false, false, false, false, false, true); // ah (O, cl) - Double Click
+selectTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, Implementation, Place Design, DRC, Pin Planning, IO Standard, [DRC BIVC-1] Bank IO standard Vcc: Conflicting Vcc voltages in bank 35. For example, the following two ports in this bank have conflicting VCCOs:  . clk (LVCMOS18, requiring VCCO=1.800) and count[0] (LVCMOS33, requiring VCCO=3.300). ]", 11, false); // ah (O, cl)
+selectTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, Implementation, Place Design, DRC, Pin Planning, IO Standard, [DRC BIVC-1] Bank IO standard Vcc: Conflicting Vcc voltages in bank 35. For example, the following two ports in this bank have conflicting VCCOs:  . clk (LVCMOS18, requiring VCCO=1.800) and count[0] (LVCMOS33, requiring VCCO=3.300). ]", 11, false, false, false, false, false, true); // ah (O, cl) - Double Click
+// Elapsed time: 16 seconds
+selectTab((HResource) null, (HResource) null, "I/O Ports", 6); // aK (aH, cl)
+selectTreeTable(PAResourceQtoS.SignalTreePanel_SIGNAL_TREE_TABLE, "Scalar ports (3) ;  ;  ;  ;  ;  ;  ;  ;  ;  ;  ;  ;  ; ", 2, "Scalar ports (3)", 0, true); // z (O, cl) - Node
+expandTreeTable(PAResourceQtoS.SignalTreePanel_SIGNAL_TREE_TABLE, "Scalar ports (3) ;  ;  ;  ;  ;  ;  ;  ;  ;  ;  ;  ;  ; ", 2); // z (O, cl)
+selectTreeTable(PAResourceQtoS.SignalTreePanel_SIGNAL_TREE_TABLE, "clk ; IN ;  ; L16 ; true ; 35 ; default (LVCMOS18) ; 1.8 ;  ;  ;  ; NONE ; NONE ; ", 5, "default (LVCMOS18)", 6, false); // z (O, cl)
+selectTreeTable(PAResourceQtoS.SignalTreePanel_SIGNAL_TREE_TABLE, "clk ; IN ;  ; L16 ; true ; 35 ; default (LVCMOS18) ; 1.8 ;  ;  ;  ; NONE ; NONE ; ", 5, (String) null, 2, false); // z (O, cl)
+selectTreeTable(PAResourceQtoS.SignalTreePanel_SIGNAL_TREE_TABLE, "clk ; IN ;  ; L16 ; true ; 35 ; default (LVCMOS18) ; 1.8 ;  ;  ;  ; NONE ; NONE ; ", 5, "default (LVCMOS18)", 6, false); // z (O, cl)
+// TclEventType: SIGNAL_MODIFY
+// Tcl Message: set_property IOSTANDARD LVCMOS33 [get_ports [list clk]] 
+// Run Command: PAResourceCommand.PACommandNames_SAVE_DESIGN
+// ad (cl): Design Modified on Disk: addNotify
+selectButton(PAResourceQtoS.SaveProjectUtils_RELOAD, "Reload"); // a (ad)
+// by (cl):  Reloading : addNotify
+// TclEventType: DESIGN_REFRESH
+// HMemoryUtils.trashcanNow. Engine heap size: 2,521 MB. GUI used memory: 75 MB. Current time: 3/22/21, 5:01:00 PM CET
+// Engine heap size: 2,521 MB. GUI used memory: 75 MB. Current time: 3/22/21, 5:01:00 PM CET
+// Tcl Message: refresh_design 
+// TclEventType: READ_XDC_FILE_START
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: PLACEDB_MODIFIY_PRE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: PLACEDB_MODIFIY_PRE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: PLACEDB_MODIFIY_PRE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: PLACEDB_MODIFIY_PRE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: SIGNAL_MODIFY
+// TclEventType: POWER_CNS_STALE
+// TclEventType: POWER_REPORT_STALE
+// TclEventType: SDC_CONSTRAINT_ADD
+// TclEventType: READ_XDC_FILE_END
+// TclEventType: FLOORPLAN_MODIFY
+// TclEventType: DESIGN_REFRESH
+// HMemoryUtils.trashcanNow. Engine heap size: 2,521 MB. GUI used memory: 73 MB. Current time: 3/22/21, 5:01:02 PM CET
+// TclEventType: HFED_INIT_ROUTE_STORAGE_COMPLETED
+// Package: addNotify
+// Device: addNotify
+// DeviceView Instantiated
+// WARNING: HEventQueue.dispatchEvent() is taking  2433 ms.
+// Tcl Message: INFO: [Project 1-479] Netlist was created with Vivado 2019.1 INFO: [Project 1-570] Preparing netlist for logic optimization 
+// Tcl Message: Parsing XDC File [C:/Users/Yoshi/OneDrive - FH JOANNEUM/FH/02_Master/1. Semester/01_DCD/01_HDS/ip_repo/common_lib/vivado/Encoder/Encoder.srcs/constrs_1/new/Constraints.xdc] 
+// Tcl Message: INFO: [Constraints 18-483] create_clock: no pin(s)/port(s)/net(s) specified as objects, only virtual clock 'clk' will be created. If you don't want this, please specify pin(s)/ports(s)/net(s) as objects to the command. [C:/Users/Yoshi/OneDrive - FH JOANNEUM/FH/02_Master/1. Semester/01_DCD/01_HDS/ip_repo/common_lib/vivado/Encoder/Encoder.srcs/constrs_1/new/Constraints.xdc:15] 
+// Tcl Message: Finished Parsing XDC File [C:/Users/Yoshi/OneDrive - FH JOANNEUM/FH/02_Master/1. Semester/01_DCD/01_HDS/ip_repo/common_lib/vivado/Encoder/Encoder.srcs/constrs_1/new/Constraints.xdc] 
+// Tcl Message: INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s). 
+closeView(PAResourceOtoP.PAViews_PROJECT_SUMMARY, "Project Summary"); // v
+// RouteApi: Init Delay Mediator Swing Worker Finished
+selectButton(PAResourceQtoS.SaveProjectUtils_RELOAD, "Reload"); // a (ad)
+// 'h' command handler elapsed time: 8 seconds
+dismissDialog("Reloading"); // by (cl)
+dismissDialog("Design Modified on Disk"); // ad (cl)
+selectTreeTable(PAResourceQtoS.SignalTreePanel_SIGNAL_TREE_TABLE, "Scalar ports (3) ;  ;  ;  ;  ;  ;  ;  ;  ;  ;  ;  ;  ; ", 2, "Scalar ports (3)", 0, true); // z (O, cl) - Node
+expandTreeTable(PAResourceQtoS.SignalTreePanel_SIGNAL_TREE_TABLE, "Scalar ports (3) ;  ;  ;  ;  ;  ;  ;  ;  ;  ;  ;  ;  ; ", 2); // z (O, cl)
+closeView(PAResourceOtoP.PAViews_CODE, "Code"); // B
+closeView(PAResourceOtoP.PAViews_TIMING_CONSTRAINTS, "Timing Constraints"); // a
+// Device view-level: 0,0
+selectTreeTable(PAResourceQtoS.SignalTreePanel_SIGNAL_TREE_TABLE, "clk ; IN ;  ; L16 ; true ; 35 ; default (LVCMOS18) ; 1.8 ;  ;  ;  ; NONE ; NONE ; ", 5, "default (LVCMOS18)", 6, false); // z (O, cl)
+// TclEventType: SIGNAL_MODIFY
+// Tcl Message: set_property IOSTANDARD LVCMOS33 [get_ports [list clk]] 
+// Run Command: PAResourceCommand.PACommandNames_SAVE_DESIGN
+// by (cl):  Save Constraints : addNotify
+// TclEventType: DESIGN_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DESIGN_SAVE
+// TclEventType: FILESET_TARGET_UCF_CHANGE
+// HMemoryUtils.trashcanNow. Engine heap size: 2,522 MB. GUI used memory: 124 MB. Current time: 3/22/21, 5:01:18 PM CET
+// Tcl Message: save_constraints 
+dismissDialog("Save Constraints"); // by (cl)
+selectTree(PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, "[, Implementation, Run Implementation]", 29, false); // u (O, cl)
+// Run Command: PAResourceCommand.PACommandNames_RUN_IMPLEMENTATION
+// i (cl): Reset and Re-run: addNotify
+selectButton(RDIResource.BaseDialog_YES, "Reset and Re-run"); // a (i)
+// by (cl):  Resetting Runs : addNotify
+// TclEventType: RUN_MODIFY
+dismissDialog("Reset and Re-run"); // i (cl)
+// TclEventType: RUN_RESET
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_RESET
+// TclEventType: RUN_MODIFY
+// Tcl Message: reset_run impl_1 
+// by (cl):  Starting Design Runs : addNotify
+// TclEventType: FILESET_TARGET_UCF_CHANGE
+// TclEventType: RUN_LAUNCH
+// Tcl Message: launch_runs impl_1 -jobs 4 
+// Tcl Message: Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1690.496 ; gain = 0.000 
+// Tcl Message: INFO: [Timing 38-480] Writing timing data to binary archive. 
+// Tcl Message: Writing placer database... Writing XDEF routing. Writing XDEF routing logical nets. Writing XDEF routing special nets. 
+// Tcl Message: Write XDEF Complete: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.082 . Memory (MB): peak = 1696.535 ; gain = 6.039 
+// TclEventType: RUN_MODIFY
+// Tcl Message: [Mon Mar 22 17:01:27 2021] Launched impl_1... Run output will be captured here: C:/Users/Yoshi/OneDrive - FH JOANNEUM/FH/02_Master/1. Semester/01_DCD/01_HDS/ip_repo/common_lib/vivado/Encoder/Encoder.runs/impl_1/runme.log 
+// 'c' command handler elapsed time: 4 seconds
+// TclEventType: RUN_STATUS_CHANGE
+dismissDialog("Starting Design Runs"); // by (cl)
+// TclEventType: RUN_STEP_COMPLETED
+// TclEventType: RUN_COMPLETED
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_STEP_COMPLETED
+// Elapsed time: 365 seconds
+selectTree(PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, "[, Program and Debug, Generate Bitstream]", 32, false); // u (O, cl)
+// Run Command: PAResourceCommand.PACommandNames_RUN_BITGEN
+// TclEventType: RUN_LAUNCH
+// Tcl Message: launch_runs impl_1 -to_step write_bitstream -jobs 4 
+// by (cl):  Generate Bitstream : addNotify
+// TclEventType: RUN_MODIFY
+// Tcl Message: [Mon Mar 22 17:07:34 2021] Launched impl_1... Run output will be captured here: C:/Users/Yoshi/OneDrive - FH JOANNEUM/FH/02_Master/1. Semester/01_DCD/01_HDS/ip_repo/common_lib/vivado/Encoder/Encoder.runs/impl_1/runme.log 
+dismissDialog("Generate Bitstream"); // by (cl)
+// TclEventType: RUN_STATUS_CHANGE
+selectTree(PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, "[, Program and Debug, Open Hardware Manager]", 33, true); // u (O, cl) - Node
+// Run Command: PAResourceCommand.PACommandNames_OPEN_HARDWARE_MANAGER
+// Tcl Command: 'rdi::info_commands get_hw_probes'
+// Tcl Command: 'load_features labtools'
+// TclEventType: LOAD_FEATURE
+// by (cl):  Open Hardware Manager : addNotify
+// TclEventType: HW_SESSION_OPEN
+// Tcl Message: open_hw 
+dismissDialog("Open Hardware Manager"); // by (cl)
+selectButton(PAResourceOtoP.ProgramDebugTab_OPEN_TARGET, "Open target"); // h (cS, cl)
+selectMenuItem(PAResourceCommand.PACommandNames_AUTO_CONNECT_TARGET, "Auto Connect"); // ah (an, cl)
+// Run Command: PAResourceCommand.PACommandNames_AUTO_CONNECT_TARGET
+// by (cl):  Auto Connect : addNotify
+// Tcl Message: connect_hw_server 
+// Tcl Message: INFO: [Labtools 27-2285] Connecting to hw_server url TCP:localhost:3121 
+// Tcl Message: INFO: [Labtools 27-2222] Launching hw_server... 
+// Tcl Message: INFO: [Labtools 27-2221] Launch Output:  ****** Xilinx hw_server v2019.1   **** Build date : May 24 2019 at 15:13:31     ** Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.   
+// TclEventType: HW_SERVER_UPDATE
+// Tcl Message: connect_hw_server: Time (s): cpu = 00:00:00 ; elapsed = 00:00:06 . Memory (MB): peak = 1706.770 ; gain = 8.504 
+// TclEventType: HW_TARGET_CHANGE
+// TclEventType: HW_TARGET_CLOSE
+// Tcl Message: open_hw_target 
+// Tcl Message: INFO: [Labtoolstcl 44-466] Opening hw_target localhost:3121/xilinx_tcf/Digilent/210279786719A 

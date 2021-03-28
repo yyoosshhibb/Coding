@@ -1,0 +1,70 @@
+#-----------------------------------------------------------
+# Vivado v2019.1 (64-bit)
+# SW Build 2552052 on Fri May 24 14:49:42 MDT 2019
+# IP Build 2548770 on Fri May 24 18:01:18 MDT 2019
+# Start of session at: Thu Oct 22 18:13:28 2020
+# Process ID: 18968
+# Current directory: C:/Users/Yoshi/OneDrive - FH JOANNEUM/FH/02_Master/1. Semester/01_DCD/01_HDS/ip_repo/tutorial_lib/vivado/top_counter
+# Command line: vivado.exe -mode gui -journal ./top_counter_Flow.jou -log ./top_counter_Flow.log -source ./HDS_Scripts/top_counter_Flow.tcl
+# Log file: C:/Users/Yoshi/OneDrive - FH JOANNEUM/FH/02_Master/1. Semester/01_DCD/01_HDS/ip_repo/tutorial_lib/vivado/top_counter/./top_counter_Flow.log
+# Journal file: C:/Users/Yoshi/OneDrive - FH JOANNEUM/FH/02_Master/1. Semester/01_DCD/01_HDS/ip_repo/tutorial_lib/vivado/top_counter\./top_counter_Flow.jou
+#-----------------------------------------------------------
+start_gui
+source ./HDS_Scripts/top_counter_Flow.tcl
+update_compile_order -fileset sources_1
+synth_design -rtl -name rtl_1
+set_property IOSTANDARD LVCMOS33 [get_ports {buttons[3]}]
+set_property IOSTANDARD LVCMOS33 [get_ports {buttons[2]}]
+set_property IOSTANDARD LVCMOS33 [get_ports {buttons[1]}]
+set_property IOSTANDARD LVCMOS33 [get_ports {buttons[0]}]
+set_property IOSTANDARD LVCMOS33 [get_ports {leds[3]}]
+set_property IOSTANDARD LVCMOS33 [get_ports {leds[2]}]
+set_property IOSTANDARD LVCMOS33 [get_ports {leds[1]}]
+set_property IOSTANDARD LVCMOS33 [get_ports {leds[0]}]
+set_property IOSTANDARD LVCMOS33 [get_ports {sliders[3]}]
+set_property IOSTANDARD LVCMOS33 [get_ports {sliders[2]}]
+set_property IOSTANDARD LVCMOS33 [get_ports {sliders[1]}]
+set_property IOSTANDARD LVCMOS33 [get_ports {sliders[0]}]
+set_property PACKAGE_PIN Y16 [get_ports {buttons[3]}]
+set_property PACKAGE_PIN V16 [get_ports {buttons[2]}]
+set_property PACKAGE_PIN P16 [get_ports {buttons[1]}]
+set_property PACKAGE_PIN R18 [get_ports {buttons[0]}]
+set_property PACKAGE_PIN D18 [get_ports {leds[3]}]
+set_property PACKAGE_PIN G14 [get_ports {leds[2]}]
+set_property PACKAGE_PIN M15 [get_ports {leds[1]}]
+set_property PACKAGE_PIN M14 [get_ports {leds[0]}]
+set_property PACKAGE_PIN T16 [get_ports {sliders[3]}]
+set_property PACKAGE_PIN W13 [get_ports {sliders[2]}]
+set_property PACKAGE_PIN P15 [get_ports {sliders[1]}]
+set_property PACKAGE_PIN G15 [get_ports {sliders[0]}]
+set_property IOSTANDARD LVCMOS33 [get_ports clk]
+set_property PACKAGE_PIN L16 [get_ports clk]
+save_constraints
+reset_run synth_1
+launch_runs synth_1
+wait_on_run synth_1
+launch_runs impl_1 -jobs 4
+wait_on_run impl_1
+open_run synth_1 -name synth_1
+save_constraints
+close_design
+open_run impl_1
+reset_run synth_1
+launch_runs synth_1 -jobs 4
+wait_on_run synth_1
+launch_runs impl_1 -jobs 4
+wait_on_run impl_1
+refresh_design
+launch_runs impl_1 -to_step write_bitstream -jobs 4
+wait_on_run impl_1
+open_hw
+connect_hw_server
+open_hw_target
+current_hw_device [get_hw_devices xc7z010_1]
+refresh_hw_device -update_hw_probes false [lindex [get_hw_devices xc7z010_1] 0]
+set_property PROBES.FILE {} [get_hw_devices xc7z010_1]
+set_property FULL_PROBES.FILE {} [get_hw_devices xc7z010_1]
+set_property PROGRAM.FILE {C:/Users/Yoshi/OneDrive - FH JOANNEUM/FH/02_Master/1. Semester/01_DCD/01_HDS/ip_repo/tutorial_lib/vivado/top_counter/top_counter.runs/impl_1/top_counter.bit} [get_hw_devices xc7z010_1]
+program_hw_devices [get_hw_devices xc7z010_1]
+refresh_hw_device [lindex [get_hw_devices xc7z010_1] 0]
+refresh_hw_device [lindex [get_hw_devices xc7z010_1] 0]

@@ -1,0 +1,101 @@
+#-----------------------------------------------------------
+# Vivado v2020.2 (64-bit)
+# SW Build 3064766 on Wed Nov 18 09:12:45 MST 2020
+# IP Build 3064653 on Wed Nov 18 14:17:31 MST 2020
+# Start of session at: Wed Mar 24 14:57:16 2021
+# Process ID: 272
+# Current directory: C:/Users/Yoshi/Documents/FH/02_Master/01_DCD/ip_repo/common_lib_new/vivado/DualEncoder
+# Command line: vivado.exe -mode gui -journal ./DualEncoder_Flow.jou -log ./DualEncoder_Flow.log -source ./HDS_Scripts/DualEncoder_Flow.tcl
+# Log file: C:/Users/Yoshi/Documents/FH/02_Master/01_DCD/ip_repo/common_lib_new/vivado/DualEncoder/./DualEncoder_Flow.log
+# Journal file: C:/Users/Yoshi/Documents/FH/02_Master/01_DCD/ip_repo/common_lib_new/vivado/DualEncoder\./DualEncoder_Flow.jou
+#-----------------------------------------------------------
+start_gui
+source ./HDS_Scripts/DualEncoder_Flow.tcl
+# lappend ::auto_path "$::env(HDS_HOME)/resources/tcl/tcllib1.4"
+# set ::hdsDebug 0
+# proc ::hdsDebugPuts {msg} {
+#    if {$::hdsDebug} {
+#       puts $msg
+#    }
+# }
+# set normVars {HDS_PROJECT_DIR HDS_TEAM_HOME HDS_HOME XILINX_VIVADO}
+# foreach varName $normVars {
+#    if {[info exists ::env($varName)]} {
+#       set ::env($varName) [file normalize [subst -nobackslash {$::env($varName)}]]
+#    }
+# }
+# puts "## HDS #Running Vivado Project Creation/Update#"
+## HDS #Running Vivado Project Creation/Update#
+# set ::errorCount 0
+# if {[catch {source ./HDS_Scripts/DualEncoder_Create.tcl} errMsg]} {
+#    if {[regexp "(?q)$errMsg" $errorInfo]} {
+#       puts "Error: $errorInfo"
+#    } else {
+#       puts "Error: $errMsg"
+#    }
+#    return
+# }
+Opening project ./DualEncoder.xpr
+INFO: [ProjectBase 1-489] The host OS only allows 260 characters in a normal path. The project is stored in a path with more than 80 characters. If you experience issues with IP, Block Designs, or files not being found, please consider moving the project to a location with a shorter path. Alternately consider using the OS subst command to map part of the path to a drive letter.
+Current project path is 'C:/Users/Yoshi/Documents/FH/02_Master/01_DCD/ip_repo/common_lib_new/vivado/DualEncoder'
+Scanning sources...
+Finished scanning sources
+INFO: [Project 1-230] Project 'DualEncoder.xpr' upgraded for this version of Vivado.
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/Xilinx/Vivado/2020.2/data/ip'.
+open_project: Time (s): cpu = 00:00:22 ; elapsed = 00:00:11 . Memory (MB): peak = 1088.996 ; gain = 0.000
+## get_filesets
+## get_property DEFAULT_LIB [current_project]
+## current_project
+## current_project
+## current_project
+## current_project
+Project HDL files to add stored in:
+   ./HDS_Scripts/DualEncoder_fileList.tcl
+## list
+## list
+## list
+## join $vivadoCoresExtList "|"
+## get_files -all -quiet
+## join $nonIpFiles \n
+## join $ipFiles \n
+## join $coreIpFiles \n
+### list
+### list
+### list
+### list
+# if {$::errorCount == 0} {
+#    puts "Note: \"source ./HDS_Scripts/DualEncoder_Create.tcl\" completed successfully\n"
+# } else {
+#    puts "Error: \"source ./HDS_Scripts/DualEncoder_Create.tcl\" completed with errors\n"
+# }
+Note: "source ./HDS_Scripts/DualEncoder_Create.tcl" completed successfully
+
+update_compile_order -fileset sources_1
+reset_run synth_1
+launch_runs impl_1 -jobs 4
+[Wed Mar 24 14:58:12 2021] Launched synth_1...
+Run output will be captured here: C:/Users/Yoshi/Documents/FH/02_Master/01_DCD/ip_repo/common_lib_new/vivado/DualEncoder/DualEncoder.runs/synth_1/runme.log
+[Wed Mar 24 14:58:12 2021] Launched impl_1...
+Run output will be captured here: C:/Users/Yoshi/Documents/FH/02_Master/01_DCD/ip_repo/common_lib_new/vivado/DualEncoder/DualEncoder.runs/impl_1/runme.log
+launch_runs impl_1 -to_step write_bitstream -jobs 4
+[Wed Mar 24 15:00:52 2021] Launched impl_1...
+Run output will be captured here: C:/Users/Yoshi/Documents/FH/02_Master/01_DCD/ip_repo/common_lib_new/vivado/DualEncoder/DualEncoder.runs/impl_1/runme.log
+open_run synth_1 -name synth_1
+Design is defaulting to impl run constrset: constrs_1
+Design is defaulting to synth run part: xc7z010clg400-1
+INFO: [Device 21-403] Loading part xc7z010clg400-1
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1293.418 ; gain = 0.000
+INFO: [Project 1-479] Netlist was created with Vivado 2020.2
+INFO: [Project 1-570] Preparing netlist for logic optimization
+Parsing XDC File [C:/Users/Yoshi/Documents/FH/02_Master/01_DCD/ip_repo/common_lib_new/vivado/DualEncoder/DualEncoder.srcs/constrs_1/new/constraints.xdc]
+Finished Parsing XDC File [C:/Users/Yoshi/Documents/FH/02_Master/01_DCD/ip_repo/common_lib_new/vivado/DualEncoder/DualEncoder.srcs/constrs_1/new/constraints.xdc]
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1389.105 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+open_run: Time (s): cpu = 00:00:29 ; elapsed = 00:00:22 . Memory (MB): peak = 1518.094 ; gain = 429.098
+exit
+INFO: [Common 17-206] Exiting Vivado at Wed Mar 24 15:02:46 2021...

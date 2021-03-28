@@ -1,0 +1,41 @@
+#-----------------------------------------------------------
+# Vivado v2019.1 (64-bit)
+# SW Build 2552052 on Fri May 24 14:49:42 MDT 2019
+# IP Build 2548770 on Fri May 24 18:01:18 MDT 2019
+# Start of session at: Tue Oct 27 12:49:58 2020
+# Process ID: 20232
+# Current directory: C:/Users/Yoshi/OneDrive - FH JOANNEUM/FH/02_Master/1. Semester/01_DCD/01_HDS/ip_repo/common_lib/vivado/connectionEncoderLEDs
+# Command line: vivado.exe -mode gui -journal ./connectionEncoderLEDs_Flow.jou -log ./connectionEncoderLEDs_Flow.log -source ./HDS_Scripts/connectionEncoderLEDs_Flow.tcl
+# Log file: C:/Users/Yoshi/OneDrive - FH JOANNEUM/FH/02_Master/1. Semester/01_DCD/01_HDS/ip_repo/common_lib/vivado/connectionEncoderLEDs/./connectionEncoderLEDs_Flow.log
+# Journal file: C:/Users/Yoshi/OneDrive - FH JOANNEUM/FH/02_Master/1. Semester/01_DCD/01_HDS/ip_repo/common_lib/vivado/connectionEncoderLEDs\./connectionEncoderLEDs_Flow.jou
+#-----------------------------------------------------------
+start_gui
+source ./HDS_Scripts/connectionEncoderLEDs_Flow.tcl
+update_compile_order -fileset sources_1
+reset_run synth_1
+launch_runs synth_1 -jobs 4
+wait_on_run synth_1
+synth_design -rtl -name rtl_1
+place_ports inA1 W14
+place_ports inA2 Y14
+place_ports inB1 T12
+place_ports inB2 U12
+save_constraints
+open_run synth_1 -name synth_1
+reset_run synth_1
+launch_runs synth_1 -jobs 4
+wait_on_run synth_1
+launch_runs impl_1 -jobs 4
+wait_on_run impl_1
+launch_runs impl_1 -to_step write_bitstream -jobs 4
+wait_on_run impl_1
+open_hw
+connect_hw_server
+open_hw_target
+current_hw_device [get_hw_devices xc7z010_1]
+refresh_hw_device -update_hw_probes false [lindex [get_hw_devices xc7z010_1] 0]
+set_property PROBES.FILE {} [get_hw_devices xc7z010_1]
+set_property FULL_PROBES.FILE {} [get_hw_devices xc7z010_1]
+set_property PROGRAM.FILE {C:/Users/Yoshi/OneDrive - FH JOANNEUM/FH/02_Master/1. Semester/01_DCD/01_HDS/ip_repo/common_lib/vivado/connectionEncoderLEDs/connectionEncoderLEDs.runs/impl_1/connectionEncoderLEDs.bit} [get_hw_devices xc7z010_1]
+program_hw_devices [get_hw_devices xc7z010_1]
+refresh_hw_device [lindex [get_hw_devices xc7z010_1] 0]

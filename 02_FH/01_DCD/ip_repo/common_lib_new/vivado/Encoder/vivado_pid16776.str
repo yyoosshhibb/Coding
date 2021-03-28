@@ -1,0 +1,410 @@
+/*
+
+Xilinx Vivado v2019.1 (64-bit) [Major: 2019, Minor: 1]
+SW Build: 2552052 on Fri May 24 14:49:42 MDT 2019
+IP Build: 2548770 on Fri May 24 18:01:18 MDT 2019
+
+Process ID (PID): 16776
+License: Customer
+
+Current time: 	Tue Mar 23 12:40:42 CET 2021
+Time zone: 	Central European Standard Time (Europe/Berlin)
+
+OS: Windows 10
+OS Version: 10.0
+OS Architecture: amd64
+Available processors (cores): 8
+
+Screen size: 1920x1080
+Screen resolution (DPI): 100
+Available screens: 1
+Available disk space: 389 GB
+Default font: family=Dialog,name=Dialog,style=plain,size=12
+
+Java version: 	9.0.4 64-bit
+Java home: 	C:/Xilinx/Vivado/2019.1/tps/win64/jre9.0.4
+Java executable location: 	C:/Xilinx/Vivado/2019.1/tps/win64/jre9.0.4/bin/java.exe
+Java initial memory (-Xms): 	128 MB
+Java maximum memory (-Xmx):	 3 GB
+
+
+User name: 	Yoshi
+User home directory: C:/Users/Yoshi
+User working directory: C:/Users/Yoshi/Documents/FH/02_Master/01_DCD/ip_repo/common_lib_new/vivado/Encoder
+User country: 	AT
+User language: 	de
+User locale: 	de_AT
+
+RDI_BASEROOT: C:/Xilinx/Vivado
+HDI_APPROOT: C:/Xilinx/Vivado/2019.1
+RDI_DATADIR: C:/Xilinx/Vivado/2019.1/data
+RDI_BINDIR: C:/Xilinx/Vivado/2019.1/bin
+
+Vivado preferences file location: C:/Users/Yoshi/AppData/Roaming/Xilinx/Vivado/2019.1/vivado.xml
+Vivado preferences directory: C:/Users/Yoshi/AppData/Roaming/Xilinx/Vivado/2019.1/
+Vivado layouts directory: C:/Users/Yoshi/AppData/Roaming/Xilinx/Vivado/2019.1/layouts
+PlanAhead jar file location: 	C:/Xilinx/Vivado/2019.1/lib/classes/planAhead.jar
+Vivado log file location: 	C:/Users/Yoshi/Documents/FH/02_Master/01_DCD/ip_repo/common_lib_new/vivado/Encoder/./Encoder_Flow.log
+Vivado journal file location: 	C:/Users/Yoshi/Documents/FH/02_Master/01_DCD/ip_repo/common_lib_new/vivado/Encoder/./Encoder_Flow.jou
+Engine tmp dir: 	C:/Users/Yoshi/Documents/FH/02_Master/01_DCD/ip_repo/common_lib_new/vivado/Encoder/.Xil/Vivado-16776-Yoshis-Laptop
+
+Xilinx Environment Variables
+----------------------------
+XILINX: C:/Xilinx/Vivado/2019.1/ids_lite/ISE
+XILINX_DSP: C:/Xilinx/Vivado/2019.1/ids_lite/ISE
+XILINX_PLANAHEAD: C:/Xilinx/Vivado/2019.1
+XILINX_SDK: C:/Xilinx/SDK/2019.1
+XILINX_VIVADO: C:/Xilinx/Vivado/2019.1
+XILINX_VIVADO_HLS: C:/Xilinx/Vivado/2019.1
+
+
+GUI allocated memory:	187 MB
+GUI max memory:		3,072 MB
+Engine allocated memory: 705 MB
+
+Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+
+*/
+
+// TclEventType: START_GUI
+// Tcl Message: start_gui 
+// TclEventType: START_PROGRESS_DIALOG
+// by (cl):  Sourcing Tcl script './HDS_Scripts/Encoder_Flow.tcl' : addNotify
+// TclEventType: DEBUG_PROBE_SET_CHANGE
+// Tcl Message: source ./HDS_Scripts/Encoder_Flow.tcl 
+// Tcl Message: # lappend ::auto_path "$::env(HDS_HOME)/resources/tcl/tcllib1.4" # set ::hdsDebug 0 # proc ::hdsDebugPuts {msg} { #    if {$::hdsDebug} { #       puts $msg #    } # } # set normVars {HDS_PROJECT_DIR HDS_TEAM_HOME HDS_HOME XILINX_VIVADO} # foreach varName $normVars { #    if {[info exists ::env($varName)]} { #       set ::env($varName) [file normalize [subst -nobackslash {$::env($varName)}]] #    } # } # puts "## HDS #Running Vivado Project Creation/Update#" 
+// Tcl Message: ## HDS #Running Vivado Project Creation/Update# 
+// Tcl Message: # set ::errorCount 0 # if {[catch {source ./HDS_Scripts/Encoder_Create.tcl} errMsg]} { #    if {[regexp "(?q)$errMsg" $errorInfo]} { #       puts "Error: $errorInfo" #    } else { #       puts "Error: $errMsg" #    } #    return # } 
+// Tcl Message: Opening project ./Encoder.xpr 
+// Tcl Message: INFO: [ProjectBase 1-489] The host OS only allows 260 characters in a normal path. The project is stored in a path with more than 80 characters. If you experience issues with IP, Block Designs, or files not being found, please consider moving the project to a location with a shorter path. Alternately consider using the OS subst command to map part of the path to a drive letter. Current project path is 'C:/Users/Yoshi/Documents/FH/02_Master/01_DCD/ip_repo/common_lib_new/vivado/Encoder' 
+// TclEventType: MSGMGR_MOVEMSG
+// TclEventType: FILESET_TARGET_UCF_CHANGE
+// TclEventType: FILE_SET_NEW
+// TclEventType: RUN_COMPLETED
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: FILESET_TARGET_UCF_CHANGE
+// TclEventType: RUN_COMPLETED
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: FILESET_TARGET_UCF_CHANGE
+// TclEventType: RUN_CURRENT
+// TclEventType: PROJECT_DASHBOARD_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_NEW
+// Tcl Message: source ./HDS_Scripts/Encoder_Flow.tcl 
+// Tcl Message: # lappend ::auto_path "$::env(HDS_HOME)/resources/tcl/tcllib1.4" # set ::hdsDebug 0 # proc ::hdsDebugPuts {msg} { #    if {$::hdsDebug} { #       puts $msg #    } # } # set normVars {HDS_PROJECT_DIR HDS_TEAM_HOME HDS_HOME XILINX_VIVADO} # foreach varName $normVars { #    if {[info exists ::env($varName)]} { #       set ::env($varName) [file normalize [subst -nobackslash {$::env($varName)}]] #    } # } # puts "## HDS #Running Vivado Project Creation/Update#" 
+// Tcl Message: ## HDS #Running Vivado Project Creation/Update# 
+// Tcl Message: # set ::errorCount 0 # if {[catch {source ./HDS_Scripts/Encoder_Create.tcl} errMsg]} { #    if {[regexp "(?q)$errMsg" $errorInfo]} { #       puts "Error: $errorInfo" #    } else { #       puts "Error: $errMsg" #    } #    return # } 
+// Tcl Message: Opening project ./Encoder.xpr 
+// Tcl Message: INFO: [ProjectBase 1-489] The host OS only allows 260 characters in a normal path. The project is stored in a path with more than 80 characters. If you experience issues with IP, Block Designs, or files not being found, please consider moving the project to a location with a shorter path. Alternately consider using the OS subst command to map part of the path to a drive letter. Current project path is 'C:/Users/Yoshi/Documents/FH/02_Master/01_DCD/ip_repo/common_lib_new/vivado/Encoder' 
+// Tcl Message: Scanning sources... Finished scanning sources 
+// Tcl Message: INFO: [IP_Flow 19-234] Refreshing IP repositories INFO: [IP_Flow 19-1704] No user IP repositories specified 
+// TclEventType: PROJECT_NEW
+// [GUI Memory]: 76 MB (+76966kb) [00:00:09]
+// [Engine Memory]: 688 MB (+569461kb) [00:00:09]
+// [GUI Memory]: 96 MB (+16973kb) [00:00:10]
+// [GUI Memory]: 102 MB (+1881kb) [00:00:11]
+// WARNING: HEventQueue.dispatchEvent() is taking  2935 ms.
+// TclEventType: RUN_MODIFY
+// Tcl Message: INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/Xilinx/Vivado/2019.1/data/ip'. 
+// HMemoryUtils.trashcanNow. Engine heap size: 727 MB. GUI used memory: 53 MB. Current time: 3/23/21, 12:40:42 PM CET
+// TclEventType: RUN_MODIFY
+// Tcl Message: ## get_filesets ## get_property DEFAULT_LIB [current_project] ## current_project ## current_project 
+// TclEventType: RUN_MODIFY
+// [Engine Memory]: 727 MB (+5366kb) [00:00:13]
+// TclEventType: FILE_SET_CHANGE
+// Tcl Message: ## current_project ## current_project 
+// Tcl Message: Project HDL files to add stored in:    ./HDS_Scripts/Encoder_fileList.tcl 
+// Tcl Message: ## list ## list ## list ## join $vivadoCoresExtList "|" ## get_files -all -quiet ## join $nonIpFiles \n ## join $ipFiles \n ## join $coreIpFiles \n ### list ### list ### list ### list 
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: FILE_SET_OPTIONS_CHANGE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: FILE_SET_OPTIONS_CHANGE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: FILE_SET_OPTIONS_CHANGE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: STOP_PROGRESS_DIALOG
+// Tcl Message: # if {$::errorCount == 0} { #    puts "Note: \"source ./HDS_Scripts/Encoder_Create.tcl\" completed successfully\n" # } else { #    puts "Error: \"source ./HDS_Scripts/Encoder_Create.tcl\" completed with errors\n" # } 
+// Tcl Message: Note: "source ./HDS_Scripts/Encoder_Create.tcl" completed successfully  
+// [Engine Memory]: 771 MB (+8041kb) [00:00:16]
+dismissDialog("Sourcing Tcl script './HDS_Scripts/Encoder_Flow.tcl'"); // by (cl)
+// TclEventType: STOP_PROGRESS_DIALOG
+// [GUI Memory]: 108 MB (+509kb) [00:00:18]
+// Tcl Message: update_compile_order -fileset sources_1 
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_GRAPH_STALE
+// Elapsed time: 25 seconds
+selectTree(PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, "[, Synthesis, Run Synthesis]", 14, false); // u (O, cl)
+// Run Command: PAResourceCommand.PACommandNames_RUN_SYNTHESIS
+// by (cl):  Resetting Runs : addNotify
+// TclEventType: RUN_MODIFY
+// TclEventType: RUN_RESET
+// TclEventType: RUN_STATUS_CHANGE
+// Tcl Message: reset_run synth_1 
+// TclEventType: RUN_RESET
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_RESET
+// TclEventType: RUN_MODIFY
+// by (cl):  Starting Design Runs : addNotify
+// TclEventType: FILESET_TARGET_UCF_CHANGE
+// TclEventType: RUN_LAUNCH
+// Tcl Message: launch_runs synth_1 -jobs 4 
+// TclEventType: RUN_MODIFY
+// Tcl Message: [Tue Mar 23 12:41:14 2021] Launched synth_1... Run output will be captured here: C:/Users/Yoshi/Documents/FH/02_Master/01_DCD/ip_repo/common_lib_new/vivado/Encoder/Encoder.runs/synth_1/runme.log 
+// TclEventType: RUN_STATUS_CHANGE
+// [GUI Memory]: 115 MB (+1342kb) [00:00:44]
+// TclEventType: RUN_STATUS_CHANGE
+dismissDialog("Starting Design Runs"); // by (cl)
+// HMemoryUtils.trashcanNow. Engine heap size: 795 MB. GUI used memory: 53 MB. Current time: 3/23/21, 12:41:16 PM CET
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_COMPLETED
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_STEP_COMPLETED
+// Elapsed time: 97 seconds
+selectTree(PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, "[, Synthesis, Open Synthesized Design]", 15, true); // u (O, cl) - Node
+// Run Command: PAResourceCommand.PACommandNames_GOTO_NETLIST_DESIGN
+// by (cl):  Open Synthesized Design : addNotify
+// Tcl Message: open_run synth_1 -name synth_1 
+// Tcl Message: Design is defaulting to impl run constrset: constrs_1 Design is defaulting to synth run part: xc7z010clg400-1 
+// HMemoryUtils.trashcanNow. Engine heap size: 1,060 MB. GUI used memory: 53 MB. Current time: 3/23/21, 12:42:56 PM CET
+// TclEventType: READ_XDC_FILE_START
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: PLACEDB_MODIFIY_PRE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: PLACEDB_MODIFIY_PRE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: PLACEDB_MODIFIY_PRE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: PLACEDB_MODIFIY_PRE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: SIGNAL_MODIFY
+// TclEventType: POWER_CNS_STALE
+// TclEventType: POWER_REPORT_STALE
+// TclEventType: SDC_CONSTRAINT_ADD
+// TclEventType: SIGNAL_MODIFY
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: READ_XDC_FILE_END
+// TclEventType: FLOORPLAN_MODIFY
+// TclEventType: DESIGN_NEW
+// HMemoryUtils.trashcanNow. Engine heap size: 1,076 MB. GUI used memory: 53 MB. Current time: 3/23/21, 12:43:01 PM CET
+// [Engine Memory]: 1,081 MB (+284870kb) [00:02:31]
+// [Engine Memory]: 1,162 MB (+27816kb) [00:02:31]
+// TclEventType: DESIGN_NEW
+// Xgd.load filename: C:/Xilinx/Vivado/2019.1/data/parts/xilinx/zynq/devint/zynq/xc7z010/xc7z010.xgd; ZipEntry: xc7z010_detail.xgd elapsed time: 0.6s
+// TclEventType: HFED_INIT_ROUTE_STORAGE_COMPLETED
+// Package: addNotify
+// Device: addNotify
+// DeviceView Instantiated
+// WARNING: HEventQueue.dispatchEvent() is taking  2441 ms.
+// TclEventType: CURR_DESIGN_SET
+// Tcl Message: INFO: [Device 21-403] Loading part xc7z010clg400-1 INFO: [Project 1-479] Netlist was created with Vivado 2019.1 INFO: [Project 1-570] Preparing netlist for logic optimization 
+// Tcl Message: Parsing XDC File [C:/Users/Yoshi/Documents/FH/02_Master/01_DCD/ip_repo/common_lib_new/vivado/Encoder/Encoder.srcs/constrs_1/new/Constraints.xdc] 
+// Tcl Message: INFO: [Constraints 18-483] create_clock: no pin(s)/port(s)/net(s) specified as objects, only virtual clock 'clk' will be created. If you don't want this, please specify pin(s)/ports(s)/net(s) as objects to the command. [C:/Users/Yoshi/Documents/FH/02_Master/01_DCD/ip_repo/common_lib_new/vivado/Encoder/Encoder.srcs/constrs_1/new/Constraints.xdc:14] 
+// Tcl Message: Finished Parsing XDC File [C:/Users/Yoshi/Documents/FH/02_Master/01_DCD/ip_repo/common_lib_new/vivado/Encoder/Encoder.srcs/constrs_1/new/Constraints.xdc] 
+// Tcl Message: INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s). 
+// Tcl Message: Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1092.570 ; gain = 0.000 
+// Tcl Message: INFO: [Project 1-111] Unisim Transformation Summary: No Unisim elements were transformed.  
+// Elapsed time: 12 seconds
+closeView(PAResourceOtoP.PAViews_PROJECT_SUMMARY, "Project Summary"); // v
+// Tcl Message: open_run: Time (s): cpu = 00:00:20 ; elapsed = 00:00:12 . Memory (MB): peak = 1200.730 ; gain = 363.125 
+// [GUI Memory]: 121 MB (+536kb) [00:02:34]
+// [GUI Memory]: 137 MB (+10540kb) [00:02:35]
+// 'dR' command handler elapsed time: 13 seconds
+dismissDialog("Open Synthesized Design"); // by (cl)
+// [Engine Memory]: 1,224 MB (+4371kb) [00:02:39]
+expandTreeTable(PAResourceQtoS.SignalTreePanel_SIGNAL_TREE_TABLE, "Scalar ports (4) ;  ;  ;  ;  ;  ;  ;  ;  ;  ;  ;  ;  ; ", 2); // z (O, cl)
+// RouteApi::initDelayMediator elapsed time: 10.1s
+// [Engine Memory]: 1,601 MB (+330681kb) [00:02:44]
+// RouteApi: Init Delay Mediator Swing Worker Finished
+// PAPropertyPanels.initPanels (reset) elapsed time: 0.2s
+// Elapsed time: 25 seconds
+selectTreeTable(PAResourceQtoS.SignalTreePanel_SIGNAL_TREE_TABLE, "reset ; IN ;  ;  ;  ;  ; default (LVCMOS18) ; 1.8 ;  ;  ;  ; NONE ; NONE ; ", 6, (String) null, 3, false); // z (O, cl)
+// TclEventType: LOC_CONSTRAINT_ADD
+// Tcl Message: place_ports reset Y16 
+// Elapsed time: 13 seconds
+selectTreeTable(PAResourceQtoS.SignalTreePanel_SIGNAL_TREE_TABLE, "reset ; IN ;  ; Y16 ; true ; 34 ; default (LVCMOS18) ; 1.8 ;  ;  ;  ; NONE ; NONE ; ", 6, "default (LVCMOS18)", 6, false); // z (O, cl)
+// TclEventType: SIGNAL_MODIFY
+// Tcl Message: set_property IOSTANDARD LVCMOS33 [get_ports [list reset]] 
+// [GUI Memory]: 146 MB (+1609kb) [00:03:23]
+selectTreeTable(PAResourceQtoS.SignalTreePanel_SIGNAL_TREE_TABLE, "reset ; IN ;  ; Y16 ; true ; 34 ; LVCMOS33 ; 3.3 ;  ;  ;  ; NONE ; NONE ; ", 6, "NONE", 11, false); // z (O, cl)
+// TclEventType: SIGNAL_MODIFY
+// Tcl Message: set_property PULLTYPE PULLDOWN [get_ports [list reset]] 
+// Run Command: PAResourceCommand.PACommandNames_SAVE_DESIGN
+// by (cl):  Save Constraints : addNotify
+// TclEventType: DESIGN_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DESIGN_SAVE
+// TclEventType: FILESET_TARGET_UCF_CHANGE
+// Tcl Message: save_constraints 
+dismissDialog("Save Constraints"); // by (cl)
+// Elapsed time: 11 seconds
+selectTree(PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, "[, Implementation, Run Implementation]", 29, false); // u (O, cl)
+// Run Command: PAResourceCommand.PACommandNames_RUN_IMPLEMENTATION
+// by (cl):  Starting Design Runs : addNotify
+// TclEventType: FILESET_TARGET_UCF_CHANGE
+// TclEventType: RUN_LAUNCH
+// Tcl Message: launch_runs impl_1 -jobs 4 
+// Tcl Message: Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1646.945 ; gain = 0.000 
+// Tcl Message: INFO: [Timing 38-480] Writing timing data to binary archive. 
+// Tcl Message: Writing placer database... Writing XDEF routing. Writing XDEF routing logical nets. Writing XDEF routing special nets. 
+// Tcl Message: Write XDEF Complete: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.055 . Memory (MB): peak = 1646.945 ; gain = 0.000 
+// TclEventType: RUN_MODIFY
+// Tcl Message: [Tue Mar 23 12:44:11 2021] Launched impl_1... Run output will be captured here: C:/Users/Yoshi/Documents/FH/02_Master/01_DCD/ip_repo/common_lib_new/vivado/Encoder/Encoder.runs/impl_1/runme.log 
+dismissDialog("Starting Design Runs"); // by (cl)
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_STEP_COMPLETED
+// TclEventType: RUN_COMPLETED
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_STEP_COMPLETED
+// Elapsed time: 61 seconds
+selectTree(PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, "[, Program and Debug, Generate Bitstream]", 32, false); // u (O, cl)
+// Run Command: PAResourceCommand.PACommandNames_RUN_BITGEN
+// TclEventType: RUN_LAUNCH
+// Tcl Message: launch_runs impl_1 -to_step write_bitstream -jobs 4 
+// by (cl):  Generate Bitstream : addNotify
+// TclEventType: RUN_MODIFY
+// Tcl Message: [Tue Mar 23 12:45:14 2021] Launched impl_1... Run output will be captured here: C:/Users/Yoshi/Documents/FH/02_Master/01_DCD/ip_repo/common_lib_new/vivado/Encoder/Encoder.runs/impl_1/runme.log 
+dismissDialog("Generate Bitstream"); // by (cl)
+selectTree(PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, "[, Program and Debug, Open Hardware Manager]", 33, true); // u (O, cl) - Node
+// Run Command: PAResourceCommand.PACommandNames_OPEN_HARDWARE_MANAGER
+// Tcl Command: 'rdi::info_commands get_hw_probes'
+// Tcl Command: 'load_features labtools'
+// TclEventType: LOAD_FEATURE
+// by (cl):  Open Hardware Manager : addNotify
+// TclEventType: HW_SESSION_OPEN
+// Tcl Message: open_hw 
+dismissDialog("Open Hardware Manager"); // by (cl)
+// HMemoryUtils.trashcanNow. Engine heap size: 1,622 MB. GUI used memory: 90 MB. Current time: 3/23/21, 12:45:16 PM CET
+// TclEventType: RUN_STATUS_CHANGE
+selectButton(PAResourceOtoP.ProgramDebugTab_OPEN_TARGET, "Open target"); // h (cS, cl)
+selectMenuItem(PAResourceCommand.PACommandNames_AUTO_CONNECT_TARGET, "Auto Connect"); // ah (an, cl)
+// Run Command: PAResourceCommand.PACommandNames_AUTO_CONNECT_TARGET
+// by (cl):  Auto Connect : addNotify
+// Tcl Message: connect_hw_server 
+// Tcl Message: INFO: [Labtools 27-2285] Connecting to hw_server url TCP:localhost:3121 
+// Tcl Message: INFO: [Labtools 27-2222] Launching hw_server... 
+// Tcl Message: INFO: [Labtools 27-2221] Launch Output:  ****** Xilinx hw_server v2019.1   **** Build date : May 24 2019 at 15:13:31     ** Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.   
+// TclEventType: HW_SERVER_UPDATE
+// Tcl Message: connect_hw_server: Time (s): cpu = 00:00:01 ; elapsed = 00:00:06 . Memory (MB): peak = 1666.781 ; gain = 19.836 
+// TclEventType: HW_TARGET_CHANGE
+// TclEventType: HW_TARGET_CLOSE
+// Tcl Message: open_hw_target 
+// Tcl Message: INFO: [Labtoolstcl 44-466] Opening hw_target localhost:3121/xilinx_tcf/Digilent/210279786719A 
+// TclEventType: HW_DEVICE_CHANGE
+// TclEventType: HW_SYSMON_ADD
+// TclEventType: HW_TARGET_UPDATE
+// WARNING: HEventQueue.dispatchEvent() is taking  5432 ms.
+// Tcl Message: open_hw_target: Time (s): cpu = 00:00:06 ; elapsed = 00:00:09 . Memory (MB): peak = 2775.781 ; gain = 1109.000 
+// HMemoryUtils.trashcanNow. Engine heap size: 2,727 MB. GUI used memory: 90 MB. Current time: 3/23/21, 12:45:33 PM CET
+// Tcl Message: current_hw_device [get_hw_devices xc7z010_1] 
+// TclEventType: HW_DEVICE_CHANGE
+// TclEventType: HW_SYSMON_CHANGE
+// TclEventType: HW_DEVICE_UPDATE
+// TclEventType: HW_DEVICE_CHANGE
+// Tcl Message: refresh_hw_device -update_hw_probes false [lindex [get_hw_devices xc7z010_1] 0] 
+// Tcl Message: INFO: [Labtools 27-1434] Device xc7z010 (JTAG device index = 1) is programmed with a design that has no supported debug core(s) in it. 
+// [Engine Memory]: 2,728 MB (+1097942kb) [00:05:03]
+// Elapsed time: 15 seconds
+dismissDialog("Auto Connect"); // by (cl)
+// TclEventType: RUN_COMPLETED
+// TclEventType: RUN_STATUS_CHANGE
+// Elapsed time: 36 seconds
+selectButton(PAResourceOtoP.ProgramDebugTab_PROGRAM_DEVICE, "Program device"); // h (cS, cl)
+// Run Command: PAResourceCommand.PACommandNames_PROGRAM_FPGA
+// bC (cl): Program Device: addNotify
+selectButton(PAResourceOtoP.ProgramFpgaDialog_PROGRAM, "Program"); // a (bC)
+// by (cl):  Program Device : addNotify
+dismissDialog("Program Device"); // bC (cl)
+// TclEventType: HW_DEVICE_CHANGE
+// Tcl Message: set_property PROBES.FILE {} [get_hw_devices xc7z010_1] 
+// Tcl Message: set_property FULL_PROBES.FILE {} [get_hw_devices xc7z010_1] 
+// TclEventType: HW_DEVICE_CHANGE
+// Tcl Message: set_property PROGRAM.FILE {C:/Users/Yoshi/Documents/FH/02_Master/01_DCD/ip_repo/common_lib_new/vivado/Encoder/Encoder.runs/impl_1/Encoder.bit} [get_hw_devices xc7z010_1] 
+// Tcl Message: program_hw_devices [get_hw_devices xc7z010_1] 
+// TclEventType: HW_DEVICE_CHANGE
+// Tcl Message: INFO: [Labtools 27-3164] End of startup status: HIGH 
+// TclEventType: HW_DEVICE_CHANGE
+// TclEventType: HW_SYSMON_CHANGE
+// TclEventType: HW_DEVICE_UPDATE
+// TclEventType: HW_DEVICE_CHANGE
+// TclEventType: HW_DEVICE_PROBES_CHANGE
+// TclEventType: DEBUG_PROBE_SET_CHANGE
+// TclEventType: HW_DEVICE_PROBES_CHANGE
+// Tcl Message: refresh_hw_device [lindex [get_hw_devices xc7z010_1] 0] 
+// Tcl Message: INFO: [Labtools 27-1434] Device xc7z010 (JTAG device index = 1) is programmed with a design that has no supported debug core(s) in it. 
+// 'I' command handler elapsed time: 3 seconds
+dismissDialog("Program Device"); // by (cl)
+// Elapsed time: 10 seconds
+selectButton(PAResourceOtoP.ProgramDebugTab_REFRESH_DEVICE, "Refresh device"); // h (cS, cl)
+selectButton(PAResourceItoN.MainToolbarMgr_RUN, (String) null); // az (f, cl)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Elapsed time: 261 seconds
+selectTree(PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, "[, RTL Analysis, Open Elaborated Design]", 12, true); // u (O, cl) - Node
+// Run Command: PAResourceCommand.PACommandNames_GOTO_RTL_DESIGN
+// by (cl):  Open Elaborated Design : addNotify
+// TclEventType: ELABORATE_START
+// Tcl Message: synth_design -rtl -name rtl_1 
+// Tcl Message: Command: synth_design -rtl -name rtl_1 Starting synth_design Using part: xc7z010clg400-1 Top: Encoder 
+// HMemoryUtils.trashcanNow. Engine heap size: 2,871 MB. GUI used memory: 91 MB. Current time: 3/23/21, 12:50:51 PM CET
+// TclEventType: ELABORATE_FINISH
+// TclEventType: READ_XDC_FILE_START
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: SIGNAL_MODIFY
+// TclEventType: POWER_CNS_STALE
+// TclEventType: POWER_REPORT_STALE
+// TclEventType: SDC_CONSTRAINT_ADD
+// TclEventType: SIGNAL_MODIFY
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: READ_XDC_FILE_END
+// TclEventType: FLOORPLAN_MODIFY
+// TclEventType: DESIGN_NEW
+// HMemoryUtils.trashcanNow. Engine heap size: 2,959 MB. GUI used memory: 91 MB. Current time: 3/23/21, 12:50:54 PM CET
+// [Engine Memory]: 3,005 MB (+147676kb) [00:10:24]
+// TclEventType: DESIGN_NEW
+// TclEventType: HFED_INIT_ROUTE_STORAGE_COMPLETED
+// Package: addNotify
+// Device: addNotify
+// DeviceView Instantiated
+// TclEventType: CURR_DESIGN_SET
+// Tcl Message: --------------------------------------------------------------------------------- 
+// Tcl Message: Starting RTL Elaboration : Time (s): cpu = 00:00:04 ; elapsed = 00:00:04 . Memory (MB): peak = 2986.961 ; gain = 193.895 
+// Tcl Message: --------------------------------------------------------------------------------- 
+// Tcl Message: INFO: [Synth 8-638] synthesizing module 'Encoder' [C:/Users/Yoshi/Documents/FH/02_Master/01_DCD/ip_repo/common_lib_new/hdl/encoder_struct.vhd:45] 
+// Tcl Message: 	Parameter nbits_g bound to: 4 - type: integer  	Parameter nbits_g bound to: 4 - type: integer  
+// Tcl Message: INFO: [Synth 8-3491] module 'Counter' declared at 'C:/Users/Yoshi/Documents/FH/02_Master/01_DCD/ip_repo/common_lib_new/hdl/Counter_rtl.vhd:15' bound to instance 'U_6' of component 'Counter' [C:/Users/Yoshi/Documents/FH/02_Master/01_DCD/ip_repo/common_lib_new/hdl/encoder_struct.vhd:102] INFO: [Synth 8-638] synthesizing module 'Counter' [C:/Users/Yoshi/Documents/FH/02_Master/01_DCD/ip_repo/common_lib_new/hdl/Counter_rtl.vhd:32] 
+// Tcl Message: 	Parameter nbits_g bound to: 4 - type: integer  
+// Tcl Message: --------------------------------------------------------------------------------- 
+// Tcl Message: Finished RTL Elaboration : Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 3023.438 ; gain = 230.371 
+// Tcl Message: --------------------------------------------------------------------------------- 
+// Tcl Message:  Report Check Netlist:  +------+------------------+-------+---------+-------+------------------+ |      |Item              |Errors |Warnings |Status |Description       | +------+------------------+-------+---------+-------+------------------+ |1     |multi_driven_nets |      0|        0|Passed |Multi driven nets | +------+------------------+-------+---------+-------+------------------+ --------------------------------------------------------------------------------- Start Handling Custom Attributes --------------------------------------------------------------------------------- --------------------------------------------------------------------------------- 
+// Tcl Message: Finished Handling Custom Attributes : Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 3044.332 ; gain = 251.266 
+// Tcl Message: --------------------------------------------------------------------------------- --------------------------------------------------------------------------------- 
+// Tcl Message: Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 3044.332 ; gain = 251.266 
+// Tcl Message: --------------------------------------------------------------------------------- 
+// Tcl Message: INFO: [Project 1-570] Preparing netlist for logic optimization 
+// Tcl Message:  Processing XDC Constraints Initializing timing engine Parsing XDC File [C:/Users/Yoshi/Documents/FH/02_Master/01_DCD/ip_repo/common_lib_new/vivado/Encoder/Encoder.srcs/constrs_1/new/Constraints.xdc] 
+// Tcl Message: INFO: [Constraints 18-483] create_clock: no pin(s)/port(s)/net(s) specified as objects, only virtual clock 'clk' will be created. If you don't want this, please specify pin(s)/ports(s)/net(s) as objects to the command. [C:/Users/Yoshi/Documents/FH/02_Master/01_DCD/ip_repo/common_lib_new/vivado/Encoder/Encoder.srcs/constrs_1/new/Constraints.xdc:14] 
+// Tcl Message: Finished Parsing XDC File [C:/Users/Yoshi/Documents/FH/02_Master/01_DCD/ip_repo/common_lib_new/vivado/Encoder/Encoder.srcs/constrs_1/new/Constraints.xdc] Completed Processing XDC Constraints  
+// Tcl Message: INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s). 
+// Tcl Message: Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 3151.582 ; gain = 0.000 
+// Tcl Message: INFO: [Project 1-111] Unisim Transformation Summary: No Unisim elements were transformed.  
+// Tcl Message: RTL Elaboration Complete:  : Time (s): cpu = 00:00:10 ; elapsed = 00:00:08 . Memory (MB): peak = 3156.199 ; gain = 363.133 
+// Tcl Message: 25 Infos, 3 Warnings, 3 Critical Warnings and 0 Errors encountered. synth_design completed successfully 
+// Tcl Message: synth_design: Time (s): cpu = 00:00:10 ; elapsed = 00:00:08 . Memory (MB): peak = 3156.199 ; gain = 363.133 
+// 'dR' command handler elapsed time: 8 seconds
+// S (cl): Critical Messages: addNotify
+dismissDialog("Open Elaborated Design"); // by (cl)
+selectCheckBox(RDIResource.MessageWithOptionDialog_DONT_SHOW_THIS_DIALOG_AGAIN, "Don't show this dialog again", true); // g (Q, S): TRUE
+selectButton(PAResourceAtoD.CmdMsgDialog_OK, "OK"); // f (S)
+dismissDialog("Critical Messages"); // S (cl)

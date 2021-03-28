@@ -1,0 +1,38 @@
+11:03:54 **** Auto Build of configuration Debug for project Cache_Test ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/memorytest.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/memorytest.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../Cache_Test_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/memorytest.d" -MT"src/memorytest.o" -o "src/memorytest.o" "../src/memorytest.c"
+In file included from ../src/memorytest.c:47:
+../../Cache_Test_bsp/ps7_cortexa9_0/include/xtime_l.h:87:9: note: #pragma message: For the sleep routines, Global timer is being used
+ #pragma message ("For the sleep routines, Global timer is being used")
+         ^~~~~~~
+../src/memorytest.c:65:25: warning: missing braces around initializer [-Wmissing-braces]
+ int A[SIZE_N][SIZE_M] = {2};
+                         ^
+                          {}
+../src/memorytest.c:66:25: warning: missing braces around initializer [-Wmissing-braces]
+ int B[SIZE_M][SIZE_P] = {3};
+                         ^
+                          {}
+../src/memorytest.c:67:25: warning: missing braces around initializer [-Wmissing-braces]
+ int C[SIZE_N][SIZE_P] = {4};
+                         ^
+                          {}
+'Finished building: ../src/memorytest.c'
+' '
+'Building target: Cache_Test.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../Cache_Test_bsp/ps7_cortexa9_0/lib -o "Cache_Test.elf"  ./src/memory_config_g.o ./src/memorytest.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+c:/xilinx/sdk/2019.1/gnu/aarch32/nt/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/8.2.0/../../../../arm-none-eabi/bin/ld.exe: Cache_Test.elf section `.data' will not fit in region `ps7_ram_0'
+c:/xilinx/sdk/2019.1/gnu/aarch32/nt/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/8.2.0/../../../../arm-none-eabi/bin/ld.exe: address 0xd0000 of Cache_Test.elf section `.mmu_tbl' is not within region `ps7_ram_0'
+c:/xilinx/sdk/2019.1/gnu/aarch32/nt/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/8.2.0/../../../../arm-none-eabi/bin/ld.exe: address 0xd0000 of Cache_Test.elf section `.mmu_tbl' is not within region `ps7_ram_0'
+c:/xilinx/sdk/2019.1/gnu/aarch32/nt/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/8.2.0/../../../../arm-none-eabi/bin/ld.exe: address 0xd0000 of Cache_Test.elf section `.mmu_tbl' is not within region `ps7_ram_0'
+c:/xilinx/sdk/2019.1/gnu/aarch32/nt/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/8.2.0/../../../../arm-none-eabi/bin/ld.exe: region `ps7_ram_0' overflowed by 670512 bytes
+collect2.exe: error: ld returned 1 exit status
+make: *** [makefile:41: Cache_Test.elf] Error 1
+
+11:03:55 Build Finished (took 1s.97ms)
+

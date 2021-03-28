@@ -1,0 +1,322 @@
+#-----------------------------------------------------------
+# Vivado v2020.2 (64-bit)
+# SW Build 3064766 on Wed Nov 18 09:12:45 MST 2020
+# IP Build 3064653 on Wed Nov 18 14:17:31 MST 2020
+# Start of session at: Thu Mar 25 17:53:01 2021
+# Process ID: 10096
+# Current directory: C:/Users/Yoshi/Documents/FH/02_Master/01_DCD/ip_repo/common_lib_new/vivado/SoundGen
+# Command line: vivado.exe -mode gui -journal ./SoundGen_Flow.jou -log ./SoundGen_Flow.log -source ./HDS_Scripts/SoundGen_Flow.tcl
+# Log file: C:/Users/Yoshi/Documents/FH/02_Master/01_DCD/ip_repo/common_lib_new/vivado/SoundGen/./SoundGen_Flow.log
+# Journal file: C:/Users/Yoshi/Documents/FH/02_Master/01_DCD/ip_repo/common_lib_new/vivado/SoundGen\./SoundGen_Flow.jou
+#-----------------------------------------------------------
+start_gui
+source ./HDS_Scripts/SoundGen_Flow.tcl
+# lappend ::auto_path "$::env(HDS_HOME)/resources/tcl/tcllib1.4"
+# set ::hdsDebug 0
+# proc ::hdsDebugPuts {msg} {
+#    if {$::hdsDebug} {
+#       puts $msg
+#    }
+# }
+# set normVars {HDS_PROJECT_DIR HDS_TEAM_HOME HDS_HOME XILINX_VIVADO}
+# foreach varName $normVars {
+#    if {[info exists ::env($varName)]} {
+#       set ::env($varName) [file normalize [subst -nobackslash {$::env($varName)}]]
+#    }
+# }
+# puts "## HDS #Running Vivado Project Creation/Update#"
+## HDS #Running Vivado Project Creation/Update#
+# set ::errorCount 0
+# if {[catch {source ./HDS_Scripts/SoundGen_Create.tcl} errMsg]} {
+#    if {[regexp "(?q)$errMsg" $errorInfo]} {
+#       puts "Error: $errorInfo"
+#    } else {
+#       puts "Error: $errMsg"
+#    }
+#    return
+# }
+Opening project ./SoundGen.xpr
+INFO: [ProjectBase 1-489] The host OS only allows 260 characters in a normal path. The project is stored in a path with more than 80 characters. If you experience issues with IP, Block Designs, or files not being found, please consider moving the project to a location with a shorter path. Alternately consider using the OS subst command to map part of the path to a drive letter.
+Current project path is 'C:/Users/Yoshi/Documents/FH/02_Master/01_DCD/ip_repo/common_lib_new/vivado/SoundGen'
+Scanning sources...
+Finished scanning sources
+INFO: [Project 1-230] Project 'SoundGen.xpr' upgraded for this version of Vivado.
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/Xilinx/Vivado/2020.2/data/ip'.
+open_project: Time (s): cpu = 00:00:18 ; elapsed = 00:00:11 . Memory (MB): peak = 1075.734 ; gain = 0.000
+## get_filesets
+## get_property DEFAULT_LIB [current_project]
+## current_project
+## current_project
+## current_project
+## current_project
+Project HDL files to add stored in:
+   ./HDS_Scripts/SoundGen_fileList.tcl
+## list
+## list
+## list
+## join $vivadoCoresExtList "|"
+## get_files -all -quiet
+## join $nonIpFiles \n
+## join $ipFiles \n
+## join $coreIpFiles \n
+### list
+### list
+### list
+### list
+# if {$::errorCount == 0} {
+#    puts "Note: \"source ./HDS_Scripts/SoundGen_Create.tcl\" completed successfully\n"
+# } else {
+#    puts "Error: \"source ./HDS_Scripts/SoundGen_Create.tcl\" completed with errors\n"
+# }
+Note: "source ./HDS_Scripts/SoundGen_Create.tcl" completed successfully
+
+update_compile_order -fileset sources_1
+reset_run synth_1
+launch_runs synth_1 -jobs 4
+[Thu Mar 25 17:54:07 2021] Launched synth_1...
+Run output will be captured here: C:/Users/Yoshi/Documents/FH/02_Master/01_DCD/ip_repo/common_lib_new/vivado/SoundGen/SoundGen.runs/synth_1/runme.log
+open_run synth_1 -name synth_1
+Design is defaulting to impl run constrset: constrs_1
+Design is defaulting to synth run part: xc7z010clg400-1
+INFO: [Device 21-403] Loading part xc7z010clg400-1
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1271.609 ; gain = 0.000
+INFO: [Netlist 29-17] Analyzing 4 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-479] Netlist was created with Vivado 2020.2
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1354.746 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+open_run: Time (s): cpu = 00:00:22 ; elapsed = 00:00:13 . Memory (MB): peak = 1494.414 ; gain = 418.680
+place_ports clk L16
+place_ports button Y16
+place_ports outH T20
+place_ports outL U20
+set_property IOSTANDARD LVCMOS33 [get_ports [list button]]
+set_property IOSTANDARD LVCMOS33 [get_ports [list button]]
+set_property IOSTANDARD LVCMOS33 [get_ports [list clk]]
+set_property IOSTANDARD LVCMOS33 [get_ports [list outH]]
+set_property IOSTANDARD LVCMOS33 [get_ports [list outL]]
+file mkdir C:/Users/Yoshi/Documents/FH/02_Master/01_DCD/ip_repo/common_lib_new/vivado/SoundGen/SoundGen.srcs/constrs_1/new
+close [ open C:/Users/Yoshi/Documents/FH/02_Master/01_DCD/ip_repo/common_lib_new/vivado/SoundGen/SoundGen.srcs/constrs_1/new/constraints.xdc w ]
+add_files -fileset constrs_1 C:/Users/Yoshi/Documents/FH/02_Master/01_DCD/ip_repo/common_lib_new/vivado/SoundGen/SoundGen.srcs/constrs_1/new/constraints.xdc
+set_property target_constrs_file C:/Users/Yoshi/Documents/FH/02_Master/01_DCD/ip_repo/common_lib_new/vivado/SoundGen/SoundGen.srcs/constrs_1/new/constraints.xdc [current_fileset -constrset]
+save_constraints -force
+set_property DRIVE 12 [get_ports [list outH]]
+INFO: [Constraints 18-483] create_clock: no pin(s)/port(s)/net(s) specified as objects, only virtual clock 'clk' will be created. If you don't want this, please specify pin(s)/ports(s)/net(s) as objects to the command.
+create_clock -period 8.000 -name clk -waveform {0.000 4.000}
+INFO: [Constraints 18-483] create_clock: no pin(s)/port(s)/net(s) specified as objects, only virtual clock 'clk' will be created. If you don't want this, please specify pin(s)/ports(s)/net(s) as objects to the command.
+save_constraints
+reset_run synth_1
+launch_runs synth_1 -jobs 4
+[Thu Mar 25 18:10:17 2021] Launched synth_1...
+Run output will be captured here: C:/Users/Yoshi/Documents/FH/02_Master/01_DCD/ip_repo/common_lib_new/vivado/SoundGen/SoundGen.runs/synth_1/runme.log
+refresh_design
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2028.312 ; gain = 0.000
+INFO: [Netlist 29-17] Analyzing 4 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-479] Netlist was created with Vivado 2020.2
+INFO: [Project 1-570] Preparing netlist for logic optimization
+Parsing XDC File [C:/Users/Yoshi/Documents/FH/02_Master/01_DCD/ip_repo/common_lib_new/vivado/SoundGen/SoundGen.srcs/constrs_1/new/constraints.xdc]
+INFO: [Constraints 18-483] create_clock: no pin(s)/port(s)/net(s) specified as objects, only virtual clock 'clk' will be created. If you don't want this, please specify pin(s)/ports(s)/net(s) as objects to the command. [C:/Users/Yoshi/Documents/FH/02_Master/01_DCD/ip_repo/common_lib_new/vivado/SoundGen/SoundGen.srcs/constrs_1/new/constraints.xdc:10]
+Finished Parsing XDC File [C:/Users/Yoshi/Documents/FH/02_Master/01_DCD/ip_repo/common_lib_new/vivado/SoundGen/SoundGen.srcs/constrs_1/new/constraints.xdc]
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+refresh_design: Time (s): cpu = 00:00:15 ; elapsed = 00:00:07 . Memory (MB): peak = 2048.441 ; gain = 29.043
+launch_runs impl_1 -jobs 4
+INFO: [Timing 38-480] Writing timing data to binary archive.
+Writing placer database...
+Writing XDEF routing.
+Writing XDEF routing logical nets.
+Writing XDEF routing special nets.
+Write XDEF Complete: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.086 . Memory (MB): peak = 2058.473 ; gain = 10.031
+[Thu Mar 25 18:11:41 2021] Launched impl_1...
+Run output will be captured here: C:/Users/Yoshi/Documents/FH/02_Master/01_DCD/ip_repo/common_lib_new/vivado/SoundGen/SoundGen.runs/impl_1/runme.log
+launch_runs impl_1 -to_step write_bitstream -jobs 4
+[Thu Mar 25 18:12:59 2021] Launched impl_1...
+Run output will be captured here: C:/Users/Yoshi/Documents/FH/02_Master/01_DCD/ip_repo/common_lib_new/vivado/SoundGen/SoundGen.runs/impl_1/runme.log
+open_hw_manager
+connect_hw_server -allow_non_jtag
+INFO: [Labtools 27-2285] Connecting to hw_server url TCP:localhost:3121
+INFO: [Labtools 27-2222] Launching hw_server...
+INFO: [Labtools 27-2221] Launch Output:
+
+****** Xilinx hw_server v2020.2
+  **** Build date : Nov 18 2020 at 10:01:48
+    ** Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
+
+
+INFO: [Labtools 27-3415] Connecting to cs_server url TCP:localhost:3042
+INFO: [Labtools 27-3417] Launching cs_server...
+INFO: [Labtools 27-2221] Launch Output:
+
+
+******** Xilinx cs_server v2020.2
+  ****** Build date   : Nov 03 2020-22:02:56
+    **** Build number : 2020.2.1604437376
+      ** Copyright 2017-2020 Xilinx, Inc. All Rights Reserved.
+
+
+
+connect_hw_server: Time (s): cpu = 00:00:01 ; elapsed = 00:00:20 . Memory (MB): peak = 2058.473 ; gain = 0.000
+open_hw_target
+INFO: [Labtoolstcl 44-466] Opening hw_target localhost:3121/xilinx_tcf/Digilent/210279786719A
+open_hw_target: Time (s): cpu = 00:00:09 ; elapsed = 00:00:12 . Memory (MB): peak = 3587.520 ; gain = 1529.047
+set_property PROGRAM.FILE {C:/Users/Yoshi/Documents/FH/02_Master/01_DCD/ip_repo/common_lib_new/vivado/SoundGen/SoundGen.runs/impl_1/SoundGen.bit} [get_hw_devices xc7z010_1]
+current_hw_device [get_hw_devices xc7z010_1]
+refresh_hw_device -update_hw_probes false [lindex [get_hw_devices xc7z010_1] 0]
+INFO: [Labtools 27-1435] Device xc7z010 (JTAG device index = 1) is not programmed (DONE status = 0).
+set_property PROBES.FILE {} [get_hw_devices xc7z010_1]
+set_property FULL_PROBES.FILE {} [get_hw_devices xc7z010_1]
+set_property PROGRAM.FILE {C:/Users/Yoshi/Documents/FH/02_Master/01_DCD/ip_repo/common_lib_new/vivado/SoundGen/SoundGen.runs/impl_1/SoundGen.bit} [get_hw_devices xc7z010_1]
+program_hw_devices [get_hw_devices xc7z010_1]
+INFO: [Labtools 27-3164] End of startup status: HIGH
+refresh_hw_device [lindex [get_hw_devices xc7z010_1] 0]
+INFO: [Labtools 27-1434] Device xc7z010 (JTAG device index = 1) is programmed with a design that has no supported debug core(s) in it.
+ERROR: [Labtoolstcl 44-513] HW Target shutdown. Closing target: localhost:3121/xilinx_tcf/Digilent/210279786719A
+INFO: [Labtoolstcl 44-466] Opening hw_target localhost:3121/xilinx_tcf/Digilent/210279786719A
+WARNING: [Labtoolstcl 44-129] No matching hw_ila_data was found.
+INFO: [Labtools 27-1435] Device xc7z010 (JTAG device index = 1) is not programmed (DONE status = 0).
+WARNING: [Labtoolstcl 44-129] No matching hw_ila_data was found.
+place_ports outH V20
+save_constraints
+reset_run impl_1
+launch_runs impl_1 -jobs 4
+INFO: [Timing 38-480] Writing timing data to binary archive.
+Writing placer database...
+Writing XDEF routing.
+Writing XDEF routing logical nets.
+Writing XDEF routing special nets.
+Write XDEF Complete: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.072 . Memory (MB): peak = 3639.445 ; gain = 0.867
+[Thu Mar 25 19:55:59 2021] Launched impl_1...
+Run output will be captured here: C:/Users/Yoshi/Documents/FH/02_Master/01_DCD/ip_repo/common_lib_new/vivado/SoundGen/SoundGen.runs/impl_1/runme.log
+launch_runs impl_1 -to_step write_bitstream -jobs 4
+[Thu Mar 25 20:04:01 2021] Launched impl_1...
+Run output will be captured here: C:/Users/Yoshi/Documents/FH/02_Master/01_DCD/ip_repo/common_lib_new/vivado/SoundGen/SoundGen.runs/impl_1/runme.log
+set_property PROBES.FILE {} [get_hw_devices xc7z010_1]
+set_property FULL_PROBES.FILE {} [get_hw_devices xc7z010_1]
+set_property PROGRAM.FILE {C:/Users/Yoshi/Documents/FH/02_Master/01_DCD/ip_repo/common_lib_new/vivado/SoundGen/SoundGen.runs/impl_1/SoundGen.bit} [get_hw_devices xc7z010_1]
+program_hw_devices [get_hw_devices xc7z010_1]
+INFO: [Labtools 27-3164] End of startup status: HIGH
+refresh_hw_device [lindex [get_hw_devices xc7z010_1] 0]
+INFO: [Labtools 27-1434] Device xc7z010 (JTAG device index = 1) is programmed with a design that has no supported debug core(s) in it.
+reset_run synth_1
+WARNING: [Vivado 12-1017] Problems encountered:
+1. Failed to delete one or more files in run directory C:/Users/Yoshi/Documents/FH/02_Master/01_DCD/ip_repo/common_lib_new/vivado/SoundGen/SoundGen.runs/synth_1
+
+launch_runs synth_1 -jobs 4
+[Thu Mar 25 20:34:20 2021] Launched synth_1...
+Run output will be captured here: C:/Users/Yoshi/Documents/FH/02_Master/01_DCD/ip_repo/common_lib_new/vivado/SoundGen/SoundGen.runs/synth_1/runme.log
+reset_run synth_1
+WARNING: [Vivado 12-1017] Problems encountered:
+1. Failed to delete one or more files in run directory C:/Users/Yoshi/Documents/FH/02_Master/01_DCD/ip_repo/common_lib_new/vivado/SoundGen/SoundGen.runs/synth_1
+
+launch_runs synth_1 -jobs 4
+[Thu Mar 25 20:35:24 2021] Launched synth_1...
+Run output will be captured here: C:/Users/Yoshi/Documents/FH/02_Master/01_DCD/ip_repo/common_lib_new/vivado/SoundGen/SoundGen.runs/synth_1/runme.log
+reset_run synth_1
+WARNING: [Vivado 12-1017] Problems encountered:
+1. Failed to delete one or more files in run directory C:/Users/Yoshi/Documents/FH/02_Master/01_DCD/ip_repo/common_lib_new/vivado/SoundGen/SoundGen.runs/synth_1
+
+launch_runs synth_1 -jobs 4
+[Thu Mar 25 20:35:35 2021] Launched synth_1...
+Run output will be captured here: C:/Users/Yoshi/Documents/FH/02_Master/01_DCD/ip_repo/common_lib_new/vivado/SoundGen/SoundGen.runs/synth_1/runme.log
+launch_runs impl_1 -jobs 4
+WARNING: [Project 1-478] Design 'synth_1' is stale and will not be used when launching 'impl_1'
+[Thu Mar 25 20:36:56 2021] Launched impl_1...
+Run output will be captured here: C:/Users/Yoshi/Documents/FH/02_Master/01_DCD/ip_repo/common_lib_new/vivado/SoundGen/SoundGen.runs/impl_1/runme.log
+launch_runs impl_1 -to_step write_bitstream -jobs 4
+[Thu Mar 25 20:38:04 2021] Launched impl_1...
+Run output will be captured here: C:/Users/Yoshi/Documents/FH/02_Master/01_DCD/ip_repo/common_lib_new/vivado/SoundGen/SoundGen.runs/impl_1/runme.log
+set_property PROBES.FILE {} [get_hw_devices xc7z010_1]
+set_property FULL_PROBES.FILE {} [get_hw_devices xc7z010_1]
+set_property PROGRAM.FILE {C:/Users/Yoshi/Documents/FH/02_Master/01_DCD/ip_repo/common_lib_new/vivado/SoundGen/SoundGen.runs/impl_1/SoundGen.bit} [get_hw_devices xc7z010_1]
+program_hw_devices [get_hw_devices xc7z010_1]
+INFO: [Labtools 27-3164] End of startup status: HIGH
+refresh_hw_device [lindex [get_hw_devices xc7z010_1] 0]
+INFO: [Labtools 27-1434] Device xc7z010 (JTAG device index = 1) is programmed with a design that has no supported debug core(s) in it.
+reset_run synth_1
+WARNING: [Vivado 12-1017] Problems encountered:
+1. Failed to delete one or more files in run directory C:/Users/Yoshi/Documents/FH/02_Master/01_DCD/ip_repo/common_lib_new/vivado/SoundGen/SoundGen.runs/synth_1
+
+launch_runs synth_1 -jobs 4
+[Thu Mar 25 20:49:23 2021] Launched synth_1...
+Run output will be captured here: C:/Users/Yoshi/Documents/FH/02_Master/01_DCD/ip_repo/common_lib_new/vivado/SoundGen/SoundGen.runs/synth_1/runme.log
+launch_runs impl_1 -jobs 4
+WARNING: [Project 1-478] Design 'synth_1' is stale and will not be used when launching 'impl_1'
+[Thu Mar 25 20:55:09 2021] Launched impl_1...
+Run output will be captured here: C:/Users/Yoshi/Documents/FH/02_Master/01_DCD/ip_repo/common_lib_new/vivado/SoundGen/SoundGen.runs/impl_1/runme.log
+launch_runs impl_1 -to_step write_bitstream -jobs 4
+[Thu Mar 25 21:09:22 2021] Launched impl_1...
+Run output will be captured here: C:/Users/Yoshi/Documents/FH/02_Master/01_DCD/ip_repo/common_lib_new/vivado/SoundGen/SoundGen.runs/impl_1/runme.log
+set_property PROBES.FILE {} [get_hw_devices xc7z010_1]
+set_property FULL_PROBES.FILE {} [get_hw_devices xc7z010_1]
+set_property PROGRAM.FILE {C:/Users/Yoshi/Documents/FH/02_Master/01_DCD/ip_repo/common_lib_new/vivado/SoundGen/SoundGen.runs/impl_1/SoundGen.bit} [get_hw_devices xc7z010_1]
+program_hw_devices [get_hw_devices xc7z010_1]
+INFO: [Labtools 27-3164] End of startup status: HIGH
+refresh_hw_device [lindex [get_hw_devices xc7z010_1] 0]
+INFO: [Labtools 27-1434] Device xc7z010 (JTAG device index = 1) is programmed with a design that has no supported debug core(s) in it.
+synth_design -rtl -rtl_skip_mlo -name rtl_1
+Command: synth_design -rtl -rtl_skip_mlo -name rtl_1
+Starting synth_design
+Using part: xc7z010clg400-1
+Top: SoundGen
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 3902.598 ; gain = 250.418
+---------------------------------------------------------------------------------
+INFO: [Synth 8-638] synthesizing module 'SoundGen' [C:/Users/Yoshi/Documents/FH/02_Master/01_DCD/ip_repo/common_lib_new/hdl/soundgen_struct.vhd:40]
+INFO: [Synth 8-3491] module 'Debouncer_EdgeDetection' declared at 'C:/Users/Yoshi/Documents/FH/02_Master/01_DCD/ip_repo/common_lib_new/hdl/debouncer_edgedetection_struct.vhd:13' bound to instance 'U_1' of component 'Debouncer_EdgeDetection' [C:/Users/Yoshi/Documents/FH/02_Master/01_DCD/ip_repo/common_lib_new/hdl/soundgen_struct.vhd:89]
+INFO: [Synth 8-638] synthesizing module 'Debouncer_EdgeDetection' [C:/Users/Yoshi/Documents/FH/02_Master/01_DCD/ip_repo/common_lib_new/hdl/debouncer_edgedetection_struct.vhd:42]
+INFO: [Synth 8-3491] module 'D_FlipFlop' declared at 'C:/Users/Yoshi/OneDrive - FH JOANNEUM/FH/02_Master/1. Semester/01_DCD/01_HDS/ip_repo/common_lib/hdl/D_FlipFlop_rtl.vhd:14' bound to instance 'U_0' of component 'D_FlipFlop' [C:/Users/Yoshi/Documents/FH/02_Master/01_DCD/ip_repo/common_lib_new/hdl/debouncer_edgedetection_struct.vhd:82]
+INFO: [Synth 8-638] synthesizing module 'D_FlipFlop' [C:/Users/Yoshi/OneDrive - FH JOANNEUM/FH/02_Master/1. Semester/01_DCD/01_HDS/ip_repo/common_lib/hdl/D_FlipFlop_rtl.vhd:26]
+INFO: [Synth 8-256] done synthesizing module 'D_FlipFlop' (1#1) [C:/Users/Yoshi/OneDrive - FH JOANNEUM/FH/02_Master/1. Semester/01_DCD/01_HDS/ip_repo/common_lib/hdl/D_FlipFlop_rtl.vhd:26]
+INFO: [Synth 8-3491] module 'D_FlipFlop' declared at 'C:/Users/Yoshi/OneDrive - FH JOANNEUM/FH/02_Master/1. Semester/01_DCD/01_HDS/ip_repo/common_lib/hdl/D_FlipFlop_rtl.vhd:14' bound to instance 'U_1' of component 'D_FlipFlop' [C:/Users/Yoshi/Documents/FH/02_Master/01_DCD/ip_repo/common_lib_new/hdl/debouncer_edgedetection_struct.vhd:88]
+INFO: [Synth 8-3491] module 'D_FlipFlop' declared at 'C:/Users/Yoshi/OneDrive - FH JOANNEUM/FH/02_Master/1. Semester/01_DCD/01_HDS/ip_repo/common_lib/hdl/D_FlipFlop_rtl.vhd:14' bound to instance 'U_3' of component 'D_FlipFlop' [C:/Users/Yoshi/Documents/FH/02_Master/01_DCD/ip_repo/common_lib_new/hdl/debouncer_edgedetection_struct.vhd:94]
+INFO: [Synth 8-3491] module 'EdgeDetection' declared at 'C:/Users/Yoshi/OneDrive - FH JOANNEUM/FH/02_Master/1. Semester/01_DCD/01_HDS/ip_repo/common_lib/hdl/EdgeDetection_rtl.vhd:14' bound to instance 'U_2' of component 'EdgeDetection' [C:/Users/Yoshi/Documents/FH/02_Master/01_DCD/ip_repo/common_lib_new/hdl/debouncer_edgedetection_struct.vhd:100]
+INFO: [Synth 8-638] synthesizing module 'EdgeDetection' [C:/Users/Yoshi/OneDrive - FH JOANNEUM/FH/02_Master/1. Semester/01_DCD/01_HDS/ip_repo/common_lib/hdl/EdgeDetection_rtl.vhd:28]
+INFO: [Synth 8-256] done synthesizing module 'EdgeDetection' (2#1) [C:/Users/Yoshi/OneDrive - FH JOANNEUM/FH/02_Master/1. Semester/01_DCD/01_HDS/ip_repo/common_lib/hdl/EdgeDetection_rtl.vhd:28]
+INFO: [Synth 8-256] done synthesizing module 'Debouncer_EdgeDetection' (3#1) [C:/Users/Yoshi/Documents/FH/02_Master/01_DCD/ip_repo/common_lib_new/hdl/debouncer_edgedetection_struct.vhd:42]
+	Parameter scaler bound to: 60000 - type: integer 
+INFO: [Synth 8-3491] module 'SquareGen' declared at 'C:/Users/Yoshi/Documents/FH/02_Master/01_DCD/ip_repo/common_lib_new/hdl/SquareGen_rtl.vhd:16' bound to instance 'U_0' of component 'SquareGen' [C:/Users/Yoshi/Documents/FH/02_Master/01_DCD/ip_repo/common_lib_new/hdl/soundgen_struct.vhd:97]
+INFO: [Synth 8-638] synthesizing module 'SquareGen' [C:/Users/Yoshi/Documents/FH/02_Master/01_DCD/ip_repo/common_lib_new/hdl/SquareGen_rtl.vhd:32]
+	Parameter scaler bound to: 60000 - type: integer 
+INFO: [Synth 8-256] done synthesizing module 'SquareGen' (4#1) [C:/Users/Yoshi/Documents/FH/02_Master/01_DCD/ip_repo/common_lib_new/hdl/SquareGen_rtl.vhd:32]
+INFO: [Synth 8-3491] module 'toggle' declared at 'C:/Users/Yoshi/Documents/FH/02_Master/01_DCD/ip_repo/common_lib_new/hdl/toggle_rtl.vhd:14' bound to instance 'U_2' of component 'toggle' [C:/Users/Yoshi/Documents/FH/02_Master/01_DCD/ip_repo/common_lib_new/hdl/soundgen_struct.vhd:104]
+INFO: [Synth 8-638] synthesizing module 'toggle' [C:/Users/Yoshi/Documents/FH/02_Master/01_DCD/ip_repo/common_lib_new/hdl/toggle_rtl.vhd:26]
+INFO: [Synth 8-256] done synthesizing module 'toggle' (5#1) [C:/Users/Yoshi/Documents/FH/02_Master/01_DCD/ip_repo/common_lib_new/hdl/toggle_rtl.vhd:26]
+INFO: [Synth 8-256] done synthesizing module 'SoundGen' (6#1) [C:/Users/Yoshi/Documents/FH/02_Master/01_DCD/ip_repo/common_lib_new/hdl/soundgen_struct.vhd:40]
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:00:06 ; elapsed = 00:00:06 . Memory (MB): peak = 3947.676 ; gain = 295.496
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:07 ; elapsed = 00:00:07 . Memory (MB): peak = 3965.590 ; gain = 313.410
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:07 ; elapsed = 00:00:07 . Memory (MB): peak = 3965.590 ; gain = 313.410
+---------------------------------------------------------------------------------
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 3965.590 ; gain = 0.000
+INFO: [Project 1-570] Preparing netlist for logic optimization
+
+Processing XDC Constraints
+Initializing timing engine
+Parsing XDC File [C:/Users/Yoshi/Documents/FH/02_Master/01_DCD/ip_repo/common_lib_new/vivado/SoundGen/SoundGen.srcs/constrs_1/new/constraints.xdc]
+INFO: [Constraints 18-483] create_clock: no pin(s)/port(s)/net(s) specified as objects, only virtual clock 'clk' will be created. If you don't want this, please specify pin(s)/ports(s)/net(s) as objects to the command. [C:/Users/Yoshi/Documents/FH/02_Master/01_DCD/ip_repo/common_lib_new/vivado/SoundGen/SoundGen.srcs/constrs_1/new/constraints.xdc:10]
+Finished Parsing XDC File [C:/Users/Yoshi/Documents/FH/02_Master/01_DCD/ip_repo/common_lib_new/vivado/SoundGen/SoundGen.srcs/constrs_1/new/constraints.xdc]
+Completed Processing XDC Constraints
+
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 4073.812 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+RTL Elaboration Complete:  : Time (s): cpu = 00:00:12 ; elapsed = 00:00:10 . Memory (MB): peak = 4081.441 ; gain = 429.262
+22 Infos, 0 Warnings, 0 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:00:12 ; elapsed = 00:00:10 . Memory (MB): peak = 4081.441 ; gain = 429.262
+exit
+INFO: [Common 17-206] Exiting Vivado at Thu Mar 25 21:11:54 2021...

@@ -1,0 +1,39 @@
+17:27:52 **** Incremental Build of configuration Debug for project Cache_Test2 ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/helloworld.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O3 -g3 -c -fmessage-length=0 -MT"src/helloworld.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../Cache_Test2_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/helloworld.d" -MT"src/helloworld.o" -o "src/helloworld.o" "../src/helloworld.c"
+In file included from ../src/helloworld.c:47:
+../../Cache_Test2_bsp/ps7_cortexa9_0/include/xtime_l.h:87:9: note: #pragma message: For the sleep routines, Global timer is being used
+ #pragma message ("For the sleep routines, Global timer is being used")
+         ^~~~~~~
+../src/helloworld.c:65:25: warning: missing braces around initializer [-Wmissing-braces]
+ int A[SIZE_N][SIZE_M] = {2};
+                         ^
+                          {}
+../src/helloworld.c:66:25: warning: missing braces around initializer [-Wmissing-braces]
+ int B[SIZE_M][SIZE_P] = {3};
+                         ^
+                          {}
+../src/helloworld.c:67:25: warning: missing braces around initializer [-Wmissing-braces]
+ int C[SIZE_N][SIZE_P] = {4};
+                         ^
+                          {}
+'Finished building: ../src/helloworld.c'
+' '
+'Building target: Cache_Test2.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../Cache_Test2_bsp/ps7_cortexa9_0/lib -o "Cache_Test2.elf"  ./src/helloworld.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: Cache_Test2.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size Cache_Test2.elf  |tee "Cache_Test2.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  62204	 795168	  23328	 880700	  d703c	Cache_Test2.elf
+'Finished building: Cache_Test2.elf.size'
+' '
+
+17:27:54 Build Finished (took 1s.790ms)
+

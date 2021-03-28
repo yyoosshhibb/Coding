@@ -1,0 +1,230 @@
+#-----------------------------------------------------------
+# Vivado v2019.1 (64-bit)
+# SW Build 2552052 on Fri May 24 14:49:42 MDT 2019
+# IP Build 2548770 on Fri May 24 18:01:18 MDT 2019
+# Start of session at: Fri Nov 27 13:15:27 2020
+# Process ID: 9580
+# Current directory: C:/Users/Yoshi/OneDrive - FH JOANNEUM/FH/02_Master/1. Semester/01_DCD/01_HDS/ip_repo/common_lib/vivado/Encoder
+# Command line: vivado.exe -mode gui -journal ./Encoder_Flow.jou -log ./Encoder_Flow.log -source ./HDS_Scripts/Encoder_Flow.tcl
+# Log file: C:/Users/Yoshi/OneDrive - FH JOANNEUM/FH/02_Master/1. Semester/01_DCD/01_HDS/ip_repo/common_lib/vivado/Encoder/./Encoder_Flow.log
+# Journal file: C:/Users/Yoshi/OneDrive - FH JOANNEUM/FH/02_Master/1. Semester/01_DCD/01_HDS/ip_repo/common_lib/vivado/Encoder\./Encoder_Flow.jou
+#-----------------------------------------------------------
+start_gui
+source ./HDS_Scripts/Encoder_Flow.tcl
+# lappend ::auto_path "$::env(HDS_HOME)/resources/tcl/tcllib1.4"
+# set ::hdsDebug 0
+# proc ::hdsDebugPuts {msg} {
+#    if {$::hdsDebug} {
+#       puts $msg
+#    }
+# }
+# set normVars {HDS_PROJECT_DIR HDS_TEAM_HOME HDS_HOME XILINX_VIVADO}
+# foreach varName $normVars {
+#    if {[info exists ::env($varName)]} {
+#       set ::env($varName) [file normalize [subst -nobackslash {$::env($varName)}]]
+#    }
+# }
+# puts "## HDS #Running Vivado Project Creation/Update#"
+## HDS #Running Vivado Project Creation/Update#
+# set ::errorCount 0
+# if {[catch {source ./HDS_Scripts/Encoder_Create.tcl} errMsg]} {
+#    if {[regexp "(?q)$errMsg" $errorInfo]} {
+#       puts "Error: $errorInfo"
+#    } else {
+#       puts "Error: $errMsg"
+#    }
+#    return
+# }
+Creating project ./Encoder.xpr
+INFO: [ProjectBase 1-489] The host OS only allows 260 characters in a normal path. The project is stored in a path with more than 80 characters. If you experience issues with IP, Block Designs, or files not being found, please consider moving the project to a location with a shorter path. Alternately consider using the OS subst command to map part of the path to a drive letter.
+Current project path is 'C:/Users/Yoshi/OneDrive - FH JOANNEUM/FH/02_Master/1. Semester/01_DCD/01_HDS/ip_repo/common_lib/vivado/Encoder'
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/Xilinx/Vivado/2019.1/data/ip'.
+create_project: Time (s): cpu = 00:00:19 ; elapsed = 00:00:08 . Memory (MB): peak = 671.977 ; gain = 71.250
+## get_filesets
+## get_property DEFAULT_LIB [current_project]
+## current_project
+## current_project
+## current_project
+## current_project
+Project HDL files to add stored in:
+   ./HDS_Scripts/Encoder_fileList.tcl
+## list
+## list
+## list
+## join $vivadoCoresExtList "|"
+## get_files -all -quiet
+## join $nonIpFiles \n
+## join $ipFiles \n
+## join $coreIpFiles \n
+### list
+### list
+### list
+### list
+# if {$::errorCount == 0} {
+#    puts "Note: \"source ./HDS_Scripts/Encoder_Create.tcl\" completed successfully\n"
+# } else {
+#    puts "Error: \"source ./HDS_Scripts/Encoder_Create.tcl\" completed with errors\n"
+# }
+Note: "source ./HDS_Scripts/Encoder_Create.tcl" completed successfully
+
+update_compile_order -fileset sources_1
+synth_design -rtl -name rtl_1
+Command: synth_design -rtl -name rtl_1
+Starting synth_design
+Using part: xc7z010clg400-1
+Top: Encoder
+INFO: [Device 21-403] Loading part xc7z010clg400-1
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:04 ; elapsed = 00:00:05 . Memory (MB): peak = 1103.656 ; gain = 179.684
+---------------------------------------------------------------------------------
+INFO: [Synth 8-638] synthesizing module 'Encoder' [C:/Users/Yoshi/OneDrive - FH JOANNEUM/FH/02_Master/1. Semester/01_DCD/01_HDS/ip_repo/common_lib/hdl/Encoder_rtl.vhd:24]
+INFO: [Synth 8-256] done synthesizing module 'Encoder' (1#1) [C:/Users/Yoshi/OneDrive - FH JOANNEUM/FH/02_Master/1. Semester/01_DCD/01_HDS/ip_repo/common_lib/hdl/Encoder_rtl.vhd:24]
+WARNING: [Synth 8-3331] design Encoder has unconnected port inb[1]
+WARNING: [Synth 8-3331] design Encoder has unconnected port inb[0]
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:00:05 ; elapsed = 00:00:06 . Memory (MB): peak = 1167.109 ; gain = 243.137
+---------------------------------------------------------------------------------
+
+Report Check Netlist: 
++------+------------------+-------+---------+-------+------------------+
+|      |Item              |Errors |Warnings |Status |Description       |
++------+------------------+-------+---------+-------+------------------+
+|1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
++------+------------------+-------+---------+-------+------------------+
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:06 ; elapsed = 00:00:06 . Memory (MB): peak = 1167.109 ; gain = 243.137
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:06 ; elapsed = 00:00:06 . Memory (MB): peak = 1167.109 ; gain = 243.137
+---------------------------------------------------------------------------------
+INFO: [Project 1-570] Preparing netlist for logic optimization
+
+Processing XDC Constraints
+Initializing timing engine
+Completed Processing XDC Constraints
+
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1242.250 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+RTL Elaboration Complete:  : Time (s): cpu = 00:00:25 ; elapsed = 00:00:21 . Memory (MB): peak = 1308.414 ; gain = 384.441
+6 Infos, 2 Warnings, 0 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:00:31 ; elapsed = 00:00:28 . Memory (MB): peak = 1308.414 ; gain = 587.430
+place_ports {cnt[2]} M14
+place_ports {cnt[1]} M15
+place_ports {cnt[0]} G14
+startgroup
+set_property package_pin "" [get_ports [list  {cnt[2]}]]
+place_ports {cnt[0]} M14
+endgroup
+place_ports {cnt[2]} G14
+place_ports {cnt[3]} D18
+set_property IOSTANDARD LVCMOS33 [get_ports [list {cnt[0]}]]
+set_property IOSTANDARD LVCMOS33 [get_ports [list {cnt[1]}]]
+set_property IOSTANDARD LVCMOS33 [get_ports [list {cnt[2]}]]
+set_property IOSTANDARD LVCMOS33 [get_ports [list {cnt[3]}]]
+set_property IOSTANDARD LVCMOS33 [get_ports [list {ina[1]} {ina[0]}]]
+set_property IOSTANDARD LVCMOS33 [get_ports [list {inb[1]} {inb[0]}]]
+file mkdir {C:/Users/Yoshi/OneDrive - FH JOANNEUM/FH/02_Master/1. Semester/01_DCD/01_HDS/ip_repo/common_lib/vivado/Encoder/Encoder.srcs/constrs_1/new}
+close [ open {C:/Users/Yoshi/OneDrive - FH JOANNEUM/FH/02_Master/1. Semester/01_DCD/01_HDS/ip_repo/common_lib/vivado/Encoder/Encoder.srcs/constrs_1/new/Constraints.xdc} w ]
+add_files -fileset constrs_1 {{C:/Users/Yoshi/OneDrive - FH JOANNEUM/FH/02_Master/1. Semester/01_DCD/01_HDS/ip_repo/common_lib/vivado/Encoder/Encoder.srcs/constrs_1/new/Constraints.xdc}}
+set_property target_constrs_file {C:/Users/Yoshi/OneDrive - FH JOANNEUM/FH/02_Master/1. Semester/01_DCD/01_HDS/ip_repo/common_lib/vivado/Encoder/Encoder.srcs/constrs_1/new/Constraints.xdc} [current_fileset -constrset]
+save_constraints -force
+place_ports {ina[1]} Y14
+place_ports {ina[0]} W14
+set_property package_pin "" [get_ports [list  {inb[1]}]]
+startgroup
+set_property package_pin "" [get_ports [list  {ina[0]}]]
+place_ports {ina[1]} W14
+endgroup
+place_ports {ina[0]} Y14
+place_ports {inb[1]} T12
+place_ports {inb[0]} U12
+save_constraints
+launch_runs synth_1 -jobs 4
+[Fri Nov 27 14:53:40 2020] Launched synth_1...
+Run output will be captured here: C:/Users/Yoshi/OneDrive - FH JOANNEUM/FH/02_Master/1. Semester/01_DCD/01_HDS/ip_repo/common_lib/vivado/Encoder/Encoder.runs/synth_1/runme.log
+launch_runs impl_1 -jobs 4
+[Fri Nov 27 14:54:33 2020] Launched impl_1...
+Run output will be captured here: C:/Users/Yoshi/OneDrive - FH JOANNEUM/FH/02_Master/1. Semester/01_DCD/01_HDS/ip_repo/common_lib/vivado/Encoder/Encoder.runs/impl_1/runme.log
+open_run synth_1 -name synth_1
+Design is defaulting to impl run constrset: constrs_1
+Design is defaulting to synth run part: xc7z010clg400-1
+INFO: [Project 1-479] Netlist was created with Vivado 2019.1
+INFO: [Project 1-570] Preparing netlist for logic optimization
+Parsing XDC File [C:/Users/Yoshi/OneDrive - FH JOANNEUM/FH/02_Master/1. Semester/01_DCD/01_HDS/ip_repo/common_lib/vivado/Encoder/Encoder.srcs/constrs_1/new/Constraints.xdc]
+Finished Parsing XDC File [C:/Users/Yoshi/OneDrive - FH JOANNEUM/FH/02_Master/1. Semester/01_DCD/01_HDS/ip_repo/common_lib/vivado/Encoder/Encoder.srcs/constrs_1/new/Constraints.xdc]
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2179.637 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+INFO: [Timing 38-35] Done setting XDC timing constraints.
+INFO: [Constraints 18-483] create_clock: no pin(s)/port(s)/net(s) specified as objects, only virtual clock 'clk' will be created. If you don't want this, please specify pin(s)/ports(s)/net(s) as objects to the command.
+create_clock -period 10.000 -name clk -waveform {0.000 5.000}
+INFO: [Constraints 18-483] create_clock: no pin(s)/port(s)/net(s) specified as objects, only virtual clock 'clk' will be created. If you don't want this, please specify pin(s)/ports(s)/net(s) as objects to the command.
+save_constraints
+reset_run synth_1
+launch_runs synth_1 -jobs 4
+[Fri Nov 27 14:58:50 2020] Launched synth_1...
+Run output will be captured here: C:/Users/Yoshi/OneDrive - FH JOANNEUM/FH/02_Master/1. Semester/01_DCD/01_HDS/ip_repo/common_lib/vivado/Encoder/Encoder.runs/synth_1/runme.log
+launch_runs impl_1 -jobs 4
+WARNING: [Project 1-478] Design 'synth_1' is stale and will not be used when launching 'impl_1'
+[Fri Nov 27 14:59:52 2020] Launched impl_1...
+Run output will be captured here: C:/Users/Yoshi/OneDrive - FH JOANNEUM/FH/02_Master/1. Semester/01_DCD/01_HDS/ip_repo/common_lib/vivado/Encoder/Encoder.runs/impl_1/runme.log
+place_ports {ina[1]} Y18
+place_ports {ina[0]} Y19
+place_ports {inb[1]} W18
+place_ports {inb[0]} W19
+save_constraints -force
+reset_run synth_1
+launch_runs synth_1 -jobs 4
+[Fri Nov 27 15:01:58 2020] Launched synth_1...
+Run output will be captured here: C:/Users/Yoshi/OneDrive - FH JOANNEUM/FH/02_Master/1. Semester/01_DCD/01_HDS/ip_repo/common_lib/vivado/Encoder/Encoder.runs/synth_1/runme.log
+reset_run synth_1
+launch_runs impl_1 -jobs 4
+WARNING: [Project 1-478] Design 'synth_1' is stale and will not be used when launching 'impl_1'
+[Fri Nov 27 15:03:14 2020] Launched synth_1...
+Run output will be captured here: C:/Users/Yoshi/OneDrive - FH JOANNEUM/FH/02_Master/1. Semester/01_DCD/01_HDS/ip_repo/common_lib/vivado/Encoder/Encoder.runs/synth_1/runme.log
+[Fri Nov 27 15:03:14 2020] Launched impl_1...
+Run output will be captured here: C:/Users/Yoshi/OneDrive - FH JOANNEUM/FH/02_Master/1. Semester/01_DCD/01_HDS/ip_repo/common_lib/vivado/Encoder/Encoder.runs/impl_1/runme.log
+set_property PULLTYPE PULLUP [get_ports [list {ina[1]} {ina[0]}]]
+set_property PULLTYPE PULLUP [get_ports [list {inb[1]} {inb[0]}]]
+set_property IOSTANDARD LVCMOS33 [get_ports [list {ina[1]} {ina[0]}]]
+refresh_design
+INFO: [Project 1-479] Netlist was created with Vivado 2019.1
+INFO: [Project 1-570] Preparing netlist for logic optimization
+Parsing XDC File [C:/Users/Yoshi/OneDrive - FH JOANNEUM/FH/02_Master/1. Semester/01_DCD/01_HDS/ip_repo/common_lib/vivado/Encoder/Encoder.srcs/constrs_1/new/Constraints.xdc]
+INFO: [Constraints 18-483] create_clock: no pin(s)/port(s)/net(s) specified as objects, only virtual clock 'clk' will be created. If you don't want this, please specify pin(s)/ports(s)/net(s) as objects to the command. [C:/Users/Yoshi/OneDrive - FH JOANNEUM/FH/02_Master/1. Semester/01_DCD/01_HDS/ip_repo/common_lib/vivado/Encoder/Encoder.srcs/constrs_1/new/Constraints.xdc:18]
+Finished Parsing XDC File [C:/Users/Yoshi/OneDrive - FH JOANNEUM/FH/02_Master/1. Semester/01_DCD/01_HDS/ip_repo/common_lib/vivado/Encoder/Encoder.srcs/constrs_1/new/Constraints.xdc]
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+set_property PULLTYPE PULLUP [get_ports [list {ina[1]} {ina[0]}]]
+set_property PULLTYPE PULLUP [get_ports [list {inb[1]} {inb[0]}]]
+save_constraints
+INFO: [Constraints 18-483] create_clock: no pin(s)/port(s)/net(s) specified as objects, only virtual clock 'clk' will be created. If you don't want this, please specify pin(s)/ports(s)/net(s) as objects to the command. [C:/Users/Yoshi/OneDrive - FH JOANNEUM/FH/02_Master/1. Semester/01_DCD/01_HDS/ip_repo/common_lib/vivado/Encoder/Encoder.srcs/constrs_1/new/Constraints.xdc:18]
+save_constraints
+reset_run synth_1
+reset_run impl_1
+launch_runs impl_1 -jobs 4
+WARNING: [Project 1-478] Design 'synth_1' is stale and will not be used when launching 'impl_1'
+[Fri Nov 27 15:07:31 2020] Launched synth_1...
+Run output will be captured here: C:/Users/Yoshi/OneDrive - FH JOANNEUM/FH/02_Master/1. Semester/01_DCD/01_HDS/ip_repo/common_lib/vivado/Encoder/Encoder.runs/synth_1/runme.log
+[Fri Nov 27 15:07:31 2020] Launched impl_1...
+Run output will be captured here: C:/Users/Yoshi/OneDrive - FH JOANNEUM/FH/02_Master/1. Semester/01_DCD/01_HDS/ip_repo/common_lib/vivado/Encoder/Encoder.runs/impl_1/runme.log
+reset_run synth_1
+launch_runs impl_1 -jobs 4
+WARNING: [Project 1-478] Design 'synth_1' is stale and will not be used when launching 'impl_1'
+[Fri Nov 27 15:09:59 2020] Launched synth_1...
+Run output will be captured here: C:/Users/Yoshi/OneDrive - FH JOANNEUM/FH/02_Master/1. Semester/01_DCD/01_HDS/ip_repo/common_lib/vivado/Encoder/Encoder.runs/synth_1/runme.log
+[Fri Nov 27 15:10:06 2020] Launched impl_1...
+Run output will be captured here: C:/Users/Yoshi/OneDrive - FH JOANNEUM/FH/02_Master/1. Semester/01_DCD/01_HDS/ip_repo/common_lib/vivado/Encoder/Encoder.runs/impl_1/runme.log
+launch_runs: Time (s): cpu = 00:00:01 ; elapsed = 00:00:08 . Memory (MB): peak = 2973.980 ; gain = 0.000
+exit
+INFO: [Common 17-206] Exiting Vivado at Fri Nov 27 15:11:57 2020...

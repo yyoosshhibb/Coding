@@ -1,0 +1,23 @@
+set_property PACKAGE_PIN M15 [get_ports {cnt[1]}]
+set_property PACKAGE_PIN M14 [get_ports {cnt[0]}]
+set_property PACKAGE_PIN G14 [get_ports {cnt[2]}]
+set_property PACKAGE_PIN D18 [get_ports {cnt[3]}]
+set_property IOSTANDARD LVCMOS33 [get_ports {cnt[0]}]
+set_property IOSTANDARD LVCMOS33 [get_ports {cnt[1]}]
+set_property IOSTANDARD LVCMOS33 [get_ports {cnt[2]}]
+set_property IOSTANDARD LVCMOS33 [get_ports {cnt[3]}]
+set_property IOSTANDARD LVCMOS33 [get_ports {ina[1]}]
+set_property IOSTANDARD LVCMOS33 [get_ports {ina[0]}]
+set_property IOSTANDARD LVCMOS33 [get_ports {inb[1]}]
+set_property IOSTANDARD LVCMOS33 [get_ports {inb[0]}]
+set_property PACKAGE_PIN Y18 [get_ports {ina[1]}]
+set_property PACKAGE_PIN Y19 [get_ports {ina[0]}]
+set_property PACKAGE_PIN W18 [get_ports {inb[1]}]
+set_property PACKAGE_PIN W19 [get_ports {inb[0]}]
+
+create_clock -period 8.000 -name clk -waveform {0.000 4.000}
+
+set_property PULLUP true [get_ports {ina[1]}]
+set_property PULLUP true [get_ports {ina[0]}]
+set_property PULLUP true [get_ports {inb[1]}]
+set_property PULLUP true [get_ports {inb[0]}]
