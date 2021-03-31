@@ -56,6 +56,7 @@ static void MX_SPI1_Init(void);
 
 /* Private user code ---------------------------------------------------------*/
 /* USER CODE BEGIN 0 */
+uint8_t spiTxBuf[2], spiRxBuf[2];
 
 /* USER CODE END 0 */
 
@@ -89,7 +90,29 @@ int main(void)
   MX_GPIO_Init();
   MX_SPI1_Init();
   /* USER CODE BEGIN 2 */
-
+	
+	
+	//---------------------------SPI Transmit
+	//1. Set Slave Select Low
+	HAL_GPIO_WritePin(GPIOE, GPIO_PIN_3, GPIO_PIN_RESET);
+	//2. Transmit register & data
+	spiTxBuf[0] = 0x20;
+	spiTxBuf[1] = 0x11;
+	HAL_SPI_Transmit(&hspi1, spiTxBuf, 2, 50);
+	//3. Set Slave Select high
+	HAL_GPIO_WritePin(GPIOE, GPIO_PIN_3, GPIO_PIN_SET);
+	
+	//---------------------------SPI Recieve
+	//1. Set Slave Select Low
+	HAL_GPIO_WritePin(GPIOE, GPIO_PIN_3, GPIO_PIN_RESET);
+	//2. Transmit register + 0x80 (to set MSB high --> read mode)
+	spiTxBuf[0] = 0x20|0x80;
+	HAL_SPI_Transmit(&hspi1, spiTxBuf, 1, 50);
+	//3. Recieve Data
+	HAL_SPI_Receive(&hspi1, spiRxBuf, 1, 50);
+	//4. Set Slave Select High
+	HAL_GPIO_WritePin(GPIOE, GPIO_PIN_3, GPIO_PIN_SET);
+	
   /* USER CODE END 2 */
 
   /* Infinite loop */
@@ -99,7 +122,18 @@ int main(void)
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
-  }
+			//1. Set Slave Select Low
+		HAL_GPIO_WritePin(GPIOE, GPIO_PIN_3, GPIO_PIN_RESET);
+		//2. Transmit register + 0x80 (to set MSB high --> read mode)
+		spiTxBuf[0] = 0x29|0x80;
+		HAL_SPI_Transmit(&hspi1, spiTxBuf, 1, 50);
+		//3. Recieve Data
+		HAL_SPI_Receive(&hspi1, spiRxBuf, 1, 50);
+		//4. Set Slave Select High
+		HAL_GPIO_WritePin(GPIOE, GPIO_PIN_3, GPIO_PIN_SET);
+		
+		HAL_Delay(300);
+		}
   /* USER CODE END 3 */
 }
 
