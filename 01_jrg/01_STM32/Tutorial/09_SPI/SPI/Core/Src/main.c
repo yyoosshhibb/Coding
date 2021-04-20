@@ -97,7 +97,7 @@ int main(void)
 	HAL_GPIO_WritePin(GPIOE, GPIO_PIN_3, GPIO_PIN_RESET);
 	//2. Transmit register & data
 	spiTxBuf[0] = 0x20;
-	spiTxBuf[1] = 0x11;
+	spiTxBuf[1] = 0x31;
 	HAL_SPI_Transmit(&hspi1, spiTxBuf, 2, 50);
 	//3. Set Slave Select high
 	HAL_GPIO_WritePin(GPIOE, GPIO_PIN_3, GPIO_PIN_SET);
@@ -113,6 +113,15 @@ int main(void)
 	//4. Set Slave Select High
 	HAL_GPIO_WritePin(GPIOE, GPIO_PIN_3, GPIO_PIN_SET);
 	
+	//1. Set Slave Select Low
+	HAL_GPIO_WritePin(GPIOE, GPIO_PIN_3, GPIO_PIN_RESET);
+	//2. Transmit register & data
+	spiTxBuf[0] = 0x23;
+	spiTxBuf[1] = 0xC8;
+	HAL_SPI_Transmit(&hspi1, spiTxBuf, 2, 50);
+	//3. Set Slave Select high
+	HAL_GPIO_WritePin(GPIOE, GPIO_PIN_3, GPIO_PIN_SET);
+	
   /* USER CODE END 2 */
 
   /* Infinite loop */
@@ -122,17 +131,7 @@ int main(void)
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
-			//1. Set Slave Select Low
-		HAL_GPIO_WritePin(GPIOE, GPIO_PIN_3, GPIO_PIN_RESET);
-		//2. Transmit register + 0x80 (to set MSB high --> read mode)
-		spiTxBuf[0] = 0x29|0x80;
-		HAL_SPI_Transmit(&hspi1, spiTxBuf, 1, 50);
-		//3. Recieve Data
-		HAL_SPI_Receive(&hspi1, spiRxBuf, 1, 50);
-		//4. Set Slave Select High
-		HAL_GPIO_WritePin(GPIOE, GPIO_PIN_3, GPIO_PIN_SET);
-		
-		HAL_Delay(300);
+
 		}
   /* USER CODE END 3 */
 }
@@ -349,7 +348,25 @@ static void MX_GPIO_Init(void)
 }
 
 /* USER CODE BEGIN 4 */
-
+void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin)
+{
+  /* Prevent unused argument(s) compilation warning */
+  UNUSED(GPIO_Pin);
+  /* NOTE: This function Should not be modified, when the callback is needed,
+           the HAL_GPIO_EXTI_Callback could be implemented in the user file
+   */
+		//1. Set Slave Select Low
+		HAL_GPIO_WritePin(GPIOE, GPIO_PIN_3, GPIO_PIN_RESET);
+		//2. Transmit register + 0x80 (to set MSB high --> read mode)
+		spiTxBuf[0] = 0x29|0x80;
+		HAL_SPI_Transmit(&hspi1, spiTxBuf, 1, 50);
+		//3. Recieve Data
+		HAL_SPI_Receive(&hspi1, spiRxBuf, 1, 50);
+		//4. Set Slave Select High
+		HAL_GPIO_WritePin(GPIOE, GPIO_PIN_3, GPIO_PIN_SET);
+		
+		HAL_GPIO_TogglePin(GPIOD, GPIO_PIN_12);
+}
 /* USER CODE END 4 */
 
 /**

@@ -1,0 +1,26 @@
+--cpu=Cortex-M4.fp.sp
+"cantutorial\startup_stm32f407xx.o"
+"cantutorial\main.o"
+"cantutorial\stm32f4xx_it.o"
+"cantutorial\stm32f4xx_hal_msp.o"
+"cantutorial\stm32f4xx_hal_can.o"
+"cantutorial\stm32f4xx_hal_rcc.o"
+"cantutorial\stm32f4xx_hal_rcc_ex.o"
+"cantutorial\stm32f4xx_hal_flash.o"
+"cantutorial\stm32f4xx_hal_flash_ex.o"
+"cantutorial\stm32f4xx_hal_flash_ramfunc.o"
+"cantutorial\stm32f4xx_hal_gpio.o"
+"cantutorial\stm32f4xx_hal_dma_ex.o"
+"cantutorial\stm32f4xx_hal_dma.o"
+"cantutorial\stm32f4xx_hal_pwr.o"
+"cantutorial\stm32f4xx_hal_pwr_ex.o"
+"cantutorial\stm32f4xx_hal_cortex.o"
+"cantutorial\stm32f4xx_hal.o"
+"cantutorial\stm32f4xx_hal_exti.o"
+"cantutorial\stm32f4xx_hal_tim.o"
+"cantutorial\stm32f4xx_hal_tim_ex.o"
+"cantutorial\system_stm32f4xx.o"
+--library_type=microlib --strict --scatter "CANTutorial\CANTutorial.sct"
+--summary_stderr --info summarysizes --map --load_addr_map_info --xref --callgraph --symbols
+--info sizes --info totals --info unused --info veneers
+--list "CANTutorial.map" -o CANTutorial\CANTutorial.axf
