@@ -1,0 +1,226 @@
+<html>
+<body>
+<pre>
+<h1>µVision Build Log</h1>
+<h2>Tool Versions:</h2>
+IDE-Version: µVision V5.31.0.0
+Copyright (C) 2020 ARM Ltd and ARM Germany GmbH. All rights reserved.
+License Information: Szabolcs Juhasz, Hyundai Motorsport, LIC=----
+ 
+Tool Versions:
+Toolchain:       MDK-Lite  Version: 5.31.0.0
+Toolchain Path:  C:\Keil_v5\ARM\ARMCLANG\Bin
+C Compiler:      ArmClang.exe V6.14
+Assembler:       Armasm.exe V6.14
+Linker/Locator:  ArmLink.exe V6.14
+Library Manager: ArmAr.exe V6.14
+Hex Converter:   FromElf.exe V6.14
+CPU DLL:         SARMCM3.DLL V5.31.0.0
+Dialog DLL:      DCM.DLL V1.17.3.0
+Target DLL:      STLink\ST-LINKIII-KEIL_SWO.dll V3.0.7.0
+Dialog DLL:      TCM.DLL V1.46.0.0
+ 
+<h2>Project:</h2>
+C:\old\Keil\01-Lower_Box\ELB_V2.2.1\ELB_V2.2.1.uvprojx
+Project File Date:  07/30/2020
+
+<h2>Output:</h2>
+*** Using Compiler 'V6.14', folder: 'C:\Keil_v5\ARM\ARMCLANG\Bin'
+Rebuild target 'R5_Lower_Box'
+compiling CAN_RX.c...
+User/CAN_TX.c(235): warning: incompatible pointer types assigning to 'uint16_t *' (aka 'unsigned short *') from 'uint8_t *' (aka 'unsigned char *') [-Wincompatible-pointer-types]
+        SN.CAN_data = &Serial_Number;
+                    ^ ~~~~~~~~~~~~~~
+User/CAN_TX.c(249): warning: assigning to 'uint16_t *' (aka 'unsigned short *') from 'int16_t *' (aka 'short *') converts between pointers to integer types with different sign [-Wpointer-sign]
+        ANA2.CAN_data = &ADC_2.Value_mV;
+                      ^ ~~~~~~~~~~~~~~~
+User/CAN_TX.c(256): warning: incompatible pointer types assigning to 'uint16_t *' (aka 'unsigned short *') from 'uint8_t *' (aka 'unsigned char *') [-Wincompatible-pointer-types]
+        TR_DIAG1.CAN_data = &TR_Water_Fan_R5.Diag.Diag_byte;
+                          ^ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+3 warnings generated.
+compiling CAN_TX.c...
+compiling IWDG.c...
+User/main.c(41): warning: incompatible pointer types passing 'void (TR_t *)' to parameter of type 'osThreadFunc_t' (aka 'void (*)(void *)') [-Wincompatible-pointer-types]
+        id_task_TR_WF = osThreadNew(TASK_TR_FAN,&TR_Water_Fan_R5,NULL);
+                                    ^~~~~~~~~~~
+C:/Users/hmsu0457/AppData/Local/Arm/Packs/ARM/CMSIS/5.7.0/CMSIS/RTOS2/Include\cmsis_os2.h(371): note: passing argument to parameter 'func' here
+osThreadId_t osThreadNew (osThreadFunc_t func, void *argument, const osThreadAttr_t *attr);
+                                         ^
+User/main.c(46): warning: incompatible pointer types passing 'void (TR_t *)' to parameter of type 'osThreadFunc_t' (aka 'void (*)(void *)') [-Wincompatible-pointer-types]
+        id_task_TR_WS = osThreadNew(TASK_TR_WS,&TR_Water_Splash,NULL);
+                                    ^~~~~~~~~~
+C:/Users/hmsu0457/AppData/Local/Arm/Packs/ARM/CMSIS/5.7.0/CMSIS/RTOS2/Include\cmsis_os2.h(371): note: passing argument to parameter 'func' here
+osThreadId_t osThreadNew (osThreadFunc_t func, void *argument, const osThreadAttr_t *attr);
+                                         ^
+2 warnings generated.
+compiling main.c...
+compiling cmsis_os1.c...
+compiling Serial_Number.c...
+compiling GPIO_management.c...
+compiling Timers_management.c...
+compiling Analog_management.c...
+compiling TR_management.c...
+User/CAN_LL_management.c(93): warning: implicitly declaring library function 'memset' with type 'void *(void *, int, unsigned int)' [-Wimplicit-function-declaration]
+        memset(&CAN1_BusInfo,0,sizeof(CAN_BusInfo_t));
+        ^
+User/CAN_LL_management.c(93): note: include the header <string.h> or explicitly provide a declaration for 'memset'
+1 warning generated.
+compiling CAN_LL_management.c...
+compiling rtx_lib.c...
+compiling RTX_Config.c...
+compiling stm32f4xx_hal.c...
+compiling stm32f4xx_hal_cortex.c...
+compiling stm32f4xx_hal_gpio.c...
+compiling stm32f4xx_hal_dma_ex.c...
+compiling stm32f4xx_hal_iwdg.c...
+compiling stm32f4xx_hal_adc_ex.c...
+compiling stm32f4xx_hal_dma.c...
+compiling stm32f4xx_hal_adc.c...
+compiling stm32f4xx_hal_can.c...
+compiling stm32f4xx_hal_pwr.c...
+compiling stm32f4xx_hal_pwr_ex.c...
+assembling startup_stm32f405xx.s...
+compiling stm32f4xx_hal_rcc.c...
+compiling stm32f4xx_hal_rcc_ex.c...
+compiling system_stm32f4xx.c...
+compiling stm32f4xx_hal_tim_ex.c...
+compiling stm32f4xx_hal_spi.c...
+compiling stm32f4xx_hal_tim.c...
+linking...
+Program Size: Code=20520 RO-data=720 RW-data=180 ZI-data=53904  
+FromELF: creating hex file...
+".\Objects\ELB_V2.0" - 0 Error(s), 6 Warning(s).
+
+<h2>Software Packages used:</h2>
+
+Package Vendor: ARM
+                http://www.keil.com/pack/ARM.CMSIS.5.7.0.pack
+                ARM.CMSIS.5.7.0
+                CMSIS (Cortex Microcontroller Software Interface Standard)
+   * Component: RTOS Version: 1.0.0
+   * Component: RTOS2 Version: 2.1.3
+   * Component: CORE Version: 5.4.0
+   * Component: Keil RTX5 Version: 5.5.2
+   * Component: Keil RTX5 Variant: Library Version: 5.5.2
+
+Package Vendor: Keil
+                http://www.keil.com/pack/Keil.STM32F4xx_DFP.2.14.0.pack
+                Keil.STM32F4xx_DFP.2.14.0
+                STMicroelectronics STM32F4 Series Device Support, Drivers and Examples
+   * Component: STM32Cube Framework Version: 1.0.0
+   * Component: Classic Version: 1.7.6
+   * Component: ADC Version: 1.7.6
+   * Component: CAN Version: 1.7.6
+   * Component: Common Version: 1.7.6
+   * Component: Cortex Version: 1.7.6
+   * Component: DMA Version: 1.7.6
+   * Component: GPIO Version: 1.7.6
+   * Component: IWDG Version: 1.7.6
+   * Component: PWR Version: 1.7.6
+   * Component: RCC Version: 1.7.6
+   * Component: SPI Version: 1.7.6
+   * Component: TIM Version: 1.7.6
+   * Component: Startup Version: 2.6.3
+
+<h2>Collection of Component include folders:</h2>
+  .\RTE\CMSIS
+  .\RTE\Device\STM32F405RGTx
+  .\RTE\_R5_Lower_Box
+  C:\Users\hmsu0457\AppData\Local\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include
+  C:\Users\hmsu0457\AppData\Local\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\RTOS2\Include
+  C:\Users\hmsu0457\AppData\Local\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\RTOS2\RTX\Include
+  C:\Users\hmsu0457\AppData\Local\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\RTOS2\RTX\Include1
+  C:\Users\hmsu0457\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.14.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include
+  C:\Users\hmsu0457\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.14.0\Drivers\STM32F4xx_HAL_Driver\Inc
+
+<h2>Collection of Component Files used:</h2>
+
+   * Component: ::CMSIS:RTOS:1.0.0 (API)
+
+   * Component: ::CMSIS:RTOS2:2.1.3 (API)
+      Include file:  CMSIS\RTOS2\Include\cmsis_os2.h
+
+   * Component: ::Device:STM32Cube Framework:1.0.0 (API)
+
+   * Component: ARM::CMSIS:CORE:5.4.0
+
+   * Component: ARM::CMSIS:RTOS:Keil RTX5:5.5.2
+      Source file:   CMSIS\RTOS2\RTX\Library\cmsis_os1.c
+      Include file:  CMSIS\RTOS2\RTX\Include1\cmsis_os.h
+
+   * Component: ARM::CMSIS:RTOS2:Keil RTX5:Library:5.5.2
+      Include file:  CMSIS\RTOS2\RTX\Include\rtx_os.h
+      Source file:   CMSIS\RTOS2\RTX\Config\RTX_Config.c
+      Source file:   CMSIS\RTOS2\RTX\Template\main.c
+      Source file:   CMSIS\RTOS2\RTX\Template\MsgQueue.c
+      Source file:   CMSIS\RTOS2\RTX\Template\MemPool.c
+      Source file:   CMSIS\RTOS2\RTX\Template\Mutex.c
+      Source file:   CMSIS\RTOS2\RTX\Template\Thread.c
+      Source file:   CMSIS\RTOS2\RTX\Template\Events.c
+      Source file:   CMSIS\RTOS2\RTX\Template\Timer.c
+      Source file:   CMSIS\RTOS2\RTX\Template\svc_user.c
+      Source file:   CMSIS\RTOS2\RTX\Template\Semaphore.c
+      Source file:   CMSIS\RTOS2\RTX\Source\rtx_lib.c
+      Include file:  CMSIS\RTOS2\RTX\Config\RTX_Config.h
+      Library file:  CMSIS\RTOS2\RTX\Library\ARM\RTX_CM4F.lib
+
+   * Component: Keil::Device:STM32Cube Framework:Classic:1.7.6
+      Include file:  CMSIS\Driver\Config\RTE_Device.h
+      Include file:  MDK\Templates\Inc\stm32f4xx_hal_conf.h
+      Source file:   MDK\Templates\Src\stm32f4xx_hal_msp.c
+      Source file:   MDK\Templates\Src\stm32f4xx_it.c
+      Source file:   MDK\Templates\Src\main.c
+      Include file:  MDK\Templates\Inc\main.h
+      Include file:  MDK\Templates_LL\Inc\main.h
+      Source file:   MDK\Templates_LL\Src\main.c
+      Include file:  MDK\Templates\Inc\stm32f4xx_it.h
+
+   * Component: Keil::Device:STM32Cube HAL:ADC:1.7.6
+      Source file:   Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_adc.c
+      Source file:   Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_adc_ex.c
+
+   * Component: Keil::Device:STM32Cube HAL:CAN:1.7.6
+      Source file:   Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_can.c
+
+   * Component: Keil::Device:STM32Cube HAL:Common:1.7.6
+      Include file:  Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal.h
+      Source file:   Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal.c
+
+   * Component: Keil::Device:STM32Cube HAL:Cortex:1.7.6
+      Source file:   Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_cortex.c
+
+   * Component: Keil::Device:STM32Cube HAL:DMA:1.7.6
+      Source file:   Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_dma_ex.c
+      Source file:   Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_dma.c
+
+   * Component: Keil::Device:STM32Cube HAL:GPIO:1.7.6
+      Source file:   Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_gpio.c
+
+   * Component: Keil::Device:STM32Cube HAL:IWDG:1.7.6
+      Source file:   Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_iwdg.c
+
+   * Component: Keil::Device:STM32Cube HAL:PWR:1.7.6
+      Source file:   Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_pwr_ex.c
+      Source file:   Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_pwr.c
+
+   * Component: Keil::Device:STM32Cube HAL:RCC:1.7.6
+      Source file:   Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_rcc.c
+      Source file:   Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_rcc_ex.c
+
+   * Component: Keil::Device:STM32Cube HAL:SPI:1.7.6
+      Source file:   Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_spi.c
+
+   * Component: Keil::Device:STM32Cube HAL:TIM:1.7.6
+      Source file:   Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_tim_ex.c
+      Source file:   Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_tim.c
+
+   * Component: Keil::Device:Startup:2.6.3
+      Source file:   MDK\Device\Source\ARM\STM32F40xxx_41xxx_OPT.s
+      Source file:   MDK\Device\Source\ARM\STM32F4xx_OTP.s
+      Include file:  Drivers\CMSIS\Device\ST\STM32F4xx\Include\stm32f4xx.h
+      Source file:   Drivers\CMSIS\Device\ST\STM32F4xx\Source\Templates\arm\startup_stm32f405xx.s
+      Source file:   Drivers\CMSIS\Device\ST\STM32F4xx\Source\Templates\system_stm32f4xx.c
+Build Time Elapsed:  00:00:06
+</pre>
+</body>
+</html>
