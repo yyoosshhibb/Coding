@@ -95,7 +95,7 @@ extern	Switch_t SW6;
 
 #endif
 
-extern GPIO_PinState SW_state[SW_Number];
+//extern GPIO_PinState SW_state[SW_Number];
 
 extern osThreadId_t id_task_switch;
 extern osMessageQueueId_t Switch_Q;

@@ -1,40 +1,45 @@
 /*----------------------------------------------------------------------------
- * CMSIS-RTOS 'main' function template
+ * CMSIS-RTOS 'main' function
  *---------------------------------------------------------------------------*/
  
+ 
+//////////////////////////////////////////////////USER LIBRARY////////////////////////////////////////////////
+
 #include "Hardware_Def.h"
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+/*** Prototypes ***/
 
 void Error_Handler(void);
 void SystemClock_Config(void);
-
  
 /*----------------------------------------------------------------------------
  * Application main thread
  *---------------------------------------------------------------------------*/
-__NO_RETURN static void app_main (void *argument) 
-{
-	(void)argument;
-		IWDG_Init();
-	//Tasks Definition
-	/*
-	id_Task_--- = osThreadNew(<Taskname> ,&<Actuator>, NULL);
-	osThreadSetPriority(id_task_TR1,osPriorityAboveNormal);			//Other Priorities Possible
-	*/
+
+void app_main (void *argument) {
 	
-	id_Task_LED01 = osThreadNew(TASK_LED01 ,&LED01, NULL);
-	osThreadSetPriority(id_task_LED01,osPriorityAboveNormal);
+	IWDG_Init();					//WATCHDOG INITIALISATION BEFORE ALL TO MAKE SURE ALL INITIALISATION ARE CORRECTY SET
 	
-	id_Task_LED02 = osThreadNew(TASK_LED02 ,&LED02, NULL);
-	osThreadSetPriority(id_task_LED02,osPriorityAboveNormal);
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////	
+///////////////////////////////////////////////TASK DEFINITION////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////
 	
-	id_Task_LED03 = osThreadNew(TASK_LED03 ,&LED03, NULL);
-	osThreadSetPriority(id_task_LED03,osPriorityAboveNormal);
 	
-	id_Task_LED04 = osThreadNew(TASK_LED04 ,&LED04, NULL);
-	osThreadSetPriority(id_task_LED04,osPriorityAboveNormal);
-  
-  //CAN 1
-	//-----------------------------------------------------------------------
+	
+
+	id_task_LED1 = osThreadNew(TASK_TR_FAN,&TR_Water_Fan,NULL);
+	osThreadSetPriority(id_task_LED1,osPriorityAboveNormal);
+	
+	id_task_LED2 = osThreadNew(TASK_TR_FAN,&TR_IC_Fan,NULL);
+	osThreadSetPriority(id_task_LED2,osPriorityAboveNormal);
+	
+	id_task_LED3 = osThreadNew(TASK_TR_FAN,&TR_Starter,NULL);
+	osThreadSetPriority(id_task_LED3,osPriorityAboveNormal);
+	
+
+#if USE_CAN1 	//Comment Tx or Rx Parts if not used
 	CAN1_Q = osMessageQueueNew(20,1,NULL);
 	CAN1_RX_Q = osMessageQueueNew(20,sizeof(CanRX_Queue_t),NULL);
 	CAN1_mutex = osMutexNew(NULL);
@@ -43,12 +48,10 @@ __NO_RETURN static void app_main (void *argument)
 	osThreadSetPriority(id_task_CAN1_TX,osPriorityRealtime);
 	id_task_CAN1_RX = osThreadNew(TASK_CAN1_RX,NULL,NULL);
 	osThreadSetPriority(id_task_CAN1_RX,osPriorityHigh1);
-	//-----------------------------------------------------------------------
-	
-	
-	//CAN 2
-	//-----------------------------------------------------------------------
-		CAN2_Q = osMessageQueueNew(10,1,NULL);
+#endif
+
+#if USE_CAN2
+	CAN2_Q = osMessageQueueNew(10,1,NULL);
 	CAN2_RX_Q = osMessageQueueNew(10,sizeof(CanRX_Queue_t),NULL);
 	CAN2_mutex = osMutexNew(NULL);
 	
@@ -56,57 +59,99 @@ __NO_RETURN static void app_main (void *argument)
 	osThreadSetPriority(id_task_CAN2_TX,osPriorityHigh4);
 	id_task_CAN2_RX = osThreadNew(TASK_CAN2_RX,NULL,NULL);
 	osThreadSetPriority(id_task_CAN2_RX,osPriorityHigh1);
-	//-----------------------------------------------------------------------
-	
-	//Analog Inputs
+#endif
+
+#if USE_ANA
 	id_task_Filtering = osThreadNew(TASK_Filtering,NULL,NULL);
 	osThreadSetPriority(id_task_Filtering,osPriorityAboveNormal1);
+#endif
+
+#if USE_SWITCH
+	Switch_Q = osMessageQueueNew(20,1,NULL);
 	
-	//Pushbutton
-	PushB_Q = osMessageQueueNew(20,1,NULL);
 	id_task_switch = osThreadNew(TASK_Switch,NULL,NULL);
 	osThreadSetPriority(id_task_CAN1_TX,osPriorityHigh);
+#endif
+
+#if USE_INCREMENTAL
+	Incremental_Q = osMessageQueueNew(5,1,NULL);
 	
-	//Initialisation of everything needed
-	GPIO_init();						//GPIO Initialisation
-	PWM_TIM4_Init();				//If more/other PWM needed --> Initialise
+	id_task_incremental = osThreadNew(TASK_Incremental,NULL,NULL);
+	osThreadSetPriority(id_task_incremental,osPriorityAboveNormal1);
+#endif
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////CONFIGS///////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+	GPIO_init();						//GPIO INITIALISATION
+#if USE_PWM
+	PWM_TIM4_Init();				//PWM TIMER INITIALISATION
+	#ifdef HW_R5_ELB
+	PWM_TIM12_Init();
+	#endif
+	#if USE_WATER_SPLASH
+		PWM_TIM1_Init();
+	#endif
+#endif
 	
-	CAN_Config();						//CAN INITIALISATION
+#if USE_CAN1 || USE_CAN2
+  CAN_Config();						//CAN INITIALISATION
 	CAN_RX_Init();					//CAN RECEIVE ACTIVATION
+#endif
 	
+#if USE_TR
+		TR_Init();						//OUTPUT TRANSISTORS INITIALISATION
+#endif
+
+#if USE_ANA
 	Analog_init();					//ANALOG READING INITIALISATION
-	
-	Switch_Init();					//Switches on one GPIO
-	
-	
-  for (;;) {}
+	ADC_Timer_Config();
+#endif
+
+#if USE_SWITCH
+	Switch_Init();
+#endif
+
+#if USE_INCREMENTAL
+	Incremental_Init();
+#endif
+
+#if USE_SERIAL_NB
+SN_READ();								//INITIALISALISATION AND READING OF RESISTORS FOR THE SERIAL NUMBER OF R5 ELB
+#endif
+
+  for (;;) { 
+
+		}
 }
  
-int main (void) {
+ int main (void) {
  
-    SystemClock_Config();
+  SystemClock_Config();
 	
 	HAL_NVIC_SetPriorityGrouping(NVIC_PRIORITYGROUP_4);
 		
   TimeBase_Timer_Config ();
-  SystemCoreClockUpdate();
-  // ...
+	SystemCoreClockUpdate();
  
   osKernelInitialize();                 // Initialize CMSIS-RTOS
   osThreadNew(app_main, NULL, NULL);    // Create application main thread
 	osThreadSetPriority(app_main,osPriorityNormal);
   osKernelStart();                      // Start thread execution
-  for (;;) {}
+
+  for (;;) {
+
+  }
 }
 
-__NO_RETURN void Error_Handler(void)
+void Error_Handler(void)
 {
   while(1)
   {
 	 
   }
 }
-
 
 void SystemClock_Config(void)		
 {

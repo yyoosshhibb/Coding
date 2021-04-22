@@ -98,10 +98,10 @@ typedef struct{
 
 #define DATANb 1        //Number of sending messages
 
-#define RX1_DATA_NB 1   //Number of datas received by CAN1
+#define RX1_DATA_NB 0   //Number of datas received by CAN1
 #define RX2_DATA_NB 1   //Number of datas received by CAN2
 
-#define RX1_FRAME_NB 1 //Number of receiving frame in the CAN1
+#define RX1_FRAME_NB 0 //Number of receiving frame in the CAN1
 #define RX2_FRAME_NB 1 //Number of receiving frame in the CAN2
 
 #define CAN_RX_WAIT	1000  //VALUE FOR WAITING BEFOR TR ACTIVATION IN MS
@@ -110,6 +110,9 @@ extern CAN_data_RX_t PotentiometerRx;
 //extern CAN_data_RX_t IC_Fan;
 //extern CAN_data_RX_t Starter;
 
+#if USE_WATER_SPLASH
+extern CAN_data_RX_t Water_Splash;
+#endif
 
 /////////////Definition of can messages sent/////////////////
 
@@ -122,5 +125,3 @@ extern  CAN_data_TX_t PotentiometerTx;
 //extern 	CAN_data_TX_t TR_DIAG1;
 //extern 	CAN_data_TX_t TR_DIAG2;
 //extern 	CAN_data_TX_t TR_DIAG3;
-
-#endif

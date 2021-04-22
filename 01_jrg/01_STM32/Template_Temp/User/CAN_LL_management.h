@@ -51,7 +51,7 @@ typedef struct{
 	
 }Math_factors_t;
 
-
+#ifdef ELB_CPU
 //CAN1
 #define CAN1_RX_PORT		GPIOA
 #define CAN1_RX_PIN			GPIO_PIN_11
@@ -65,7 +65,7 @@ typedef struct{
 
 #define CAN2_TX_PORT		GPIOB
 #define CAN2_TX_PIN			GPIO_PIN_13
-
+#endif
 
 #define TX_Delay				10
 

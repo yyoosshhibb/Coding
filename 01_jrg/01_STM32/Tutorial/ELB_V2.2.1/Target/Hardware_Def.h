@@ -25,8 +25,8 @@
 #define USE_SPI2					0
 #define USE_TR			  		1
 #define USE_PWM						1
-#define USE_SWITCH				0
-#define USE_INCREMENTAL 	0
+#define USE_SWITCH				1
+#define USE_INCREMENTAL 	1
 #define USE_SERIAL_NB			0
 #define USE_WATER_SPLASH 	0
 

@@ -25,83 +25,55 @@ uint32_t						time;
 
 #define TOGGLE_DEBOUNCE 1000
 
-#ifdef HW_SI
 
-#define SW_Number 8
+#define SW_Number 1
 
-#define SW1_PIN 	GPIO_PIN_7
-#define SW1_PORT	GPIOC
+#define PB1_PIN	GPIO_PIN_1
+#define PB1_PORT	GPIOA
 
-#define SW2_PIN 	GPIO_PIN_8
-#define SW2_PORT	GPIOC
+//#define SW1_PIN 	GPIO_PIN_7
+//#define SW1_PORT	GPIOC
+//
+//#define SW2_PIN 	GPIO_PIN_8
+//#define SW2_PORT	GPIOC
+//
+//#define SW3_PIN 	GPIO_PIN_9
+//#define SW3_PORT	GPIOC
+//
+//#define SW4_PIN 	GPIO_PIN_10
+//#define SW4_PORT	GPIOC
+//
+//#define SW5_PIN 	GPIO_PIN_11
+//#define SW5_PORT	GPIOC
+//
+//#define SW6_PIN 	GPIO_PIN_12
+//#define SW6_PORT	GPIOC
+//
+//#define SW7_PIN 	GPIO_PIN_13
+//#define SW7_PORT	GPIOC
+//
+//#define SW8_PIN 	GPIO_PIN_14
+//#define SW8_PORT	GPIOC
 
-#define SW3_PIN 	GPIO_PIN_9
-#define SW3_PORT	GPIOC
+extern Switch_t PB1;
 
-#define SW4_PIN 	GPIO_PIN_10
-#define SW4_PORT	GPIOC
+//extern	Switch_t SW1;
+//extern	Switch_t SW2;
+//extern	Switch_t SW3;
+//extern	Switch_t SW4;
+//extern	Switch_t SW5;
+//extern	Switch_t SW6;
+//extern	Switch_t SW7;
+//extern	Switch_t SW8;
 
-#define SW5_PIN 	GPIO_PIN_11
-#define SW5_PORT	GPIOC
-
-#define SW6_PIN 	GPIO_PIN_12
-#define SW6_PORT	GPIOC
-
-#define SW7_PIN 	GPIO_PIN_13
-#define SW7_PORT	GPIOC
-
-#define SW8_PIN 	GPIO_PIN_14
-#define SW8_PORT	GPIOC
-
-extern	Switch_t SW1;
-extern	Switch_t SW2;
-extern	Switch_t SW3;
-extern	Switch_t SW4;
-extern	Switch_t SW5;
-extern	Switch_t SW6;
-extern	Switch_t SW7;
-extern	Switch_t SW8;
-
-#endif
-
-#ifdef HW_CONSOLE
-
-#define SW_Number 6
-
-#define SW1_PIN 	GPIO_PIN_10
-#define SW1_PORT	GPIOC
-
-#define SW2_PIN 	GPIO_PIN_12
-#define SW2_PORT	GPIOC
-
-#define SW3_PIN 	GPIO_PIN_14
-#define SW3_PORT	GPIOC
-
-#define SW4_PIN 	GPIO_PIN_13
-#define SW4_PORT	GPIOC
-
-#define SW5_PIN 	GPIO_PIN_11
-#define SW5_PORT	GPIOC
-
-#define SW6_PIN 	GPIO_PIN_8
-#define SW6_PORT	GPIOC
-
-extern	Switch_t SW1;
-extern	Switch_t SW2;
-extern	Switch_t SW3;
-extern	Switch_t SW4;
-extern	Switch_t SW5;
-extern	Switch_t SW6;
-
-#endif
 
 extern GPIO_PinState SW_state[SW_Number];
 
 extern osThreadId_t id_task_switch;
-extern osMessageQueueId_t Switch_Q;
+extern osMessageQueueId_t PushB_Q;
 
 void Switch_Init(void);
-void EXTI9_5_IRQHandler(void);
+void EXTI1_IRQHandler(void);
 void TASK_Switch(void);
 
 #endif

@@ -59,4 +59,3 @@ void ADC_factor(void);
 void TASK_Filtering(void* argument);
 
 #endif
-

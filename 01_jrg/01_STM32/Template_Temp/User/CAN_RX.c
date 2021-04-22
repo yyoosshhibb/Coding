@@ -1,11 +1,11 @@
 #include "CAN_Conf.h"
 
 
-static CanRX_Frame_t CAN1_RX_bank[RX1_FRAME_NB]; //defining a databank for can bus number and ID check after receiving
-static CanRX_Frame_t CAN2_RX_bank[RX2_FRAME_NB]; //defining a databank for can bus number and ID check after receiving
- 
-static CAN_data_RX_t *CAN1_data_RX[RX1_DATA_NB];
-static CAN_data_RX_t *CAN2_data_RX[RX2_DATA_NB];
+CanRX_Frame_t CAN1_RX_bank[RX1_FRAME_NB]; //defining a databank for can bus number and ID check after receiving
+CanRX_Frame_t CAN2_RX_bank[RX2_FRAME_NB]; //defining a databank for can bus number and ID check after receiving
+
+CAN_data_RX_t *CAN1_data_RX[RX1_DATA_NB];
+CAN_data_RX_t *CAN2_data_RX[RX2_DATA_NB];
 
 #ifdef HW_ELB
 
