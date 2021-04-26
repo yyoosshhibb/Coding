@@ -96,31 +96,49 @@ typedef struct{
 #define CAN2_FULL_RETRANSMIT 		0
 #define	CAN2_FILTER_RETRANSMIT	1					//DO not activate both full and filter restransmitting 
 
-#define DATANb 1        //Number of sending messages
+#define DATANb 5        //Number of sending messages
 
-#define RX1_DATA_NB 1   //Number of datas received by CAN1
-#define RX2_DATA_NB 1   //Number of datas received by CAN2
+#define RX1_DATA_NB 0   //Number of datas received by CAN1
+#define RX2_DATA_NB 5   //Number of datas received by CAN2
 
-#define RX1_FRAME_NB 1 //Number of receiving frame in the CAN1
+#define RX1_FRAME_NB 0 //Number of receiving frame in the CAN1
 #define RX2_FRAME_NB 1 //Number of receiving frame in the CAN2
 
-#define CAN_RX_WAIT	1000  //VALUE FOR WAITING BEFOR TR ACTIVATION IN MS
-
-extern CAN_data_RX_t PotentiometerRx;
-//extern CAN_data_RX_t IC_Fan;
-//extern CAN_data_RX_t Starter;
+extern CAN_data_RX_t RX_ANA1;
+extern CAN_data_RX_t RX_LED1_DC;
+extern CAN_data_RX_t RX_LED2_DC;
+extern CAN_data_RX_t RX_LED3_DC;
+extern CAN_data_RX_t RX_LED4_DC;
 
 
 /////////////Definition of can messages sent/////////////////
 
-extern  CAN_data_TX_t PotentiometerTx;
-//extern 	CAN_data_TX_t ANA2;
-//extern 	CAN_data_TX_t ANA3;
-//extern 	CAN_data_TX_t ANA4;
-//extern 	CAN_data_TX_t ANA5;
-//extern 	CAN_data_TX_t ANA6;
-//extern 	CAN_data_TX_t TR_DIAG1;
-//extern 	CAN_data_TX_t TR_DIAG2;
-//extern 	CAN_data_TX_t TR_DIAG3;
+extern CAN_data_TX_t TX_ANA1;
+extern CAN_data_TX_t TX_LED1_DC;
+extern CAN_data_TX_t TX_LED2_DC;
+extern CAN_data_TX_t TX_LED3_DC;
+extern CAN_data_TX_t TX_LED4_DC;
+
+
+///////////////////////////////FOR ERROR FRAME/////////////////////////////////////
+
+extern CAN_TxHeaderTypeDef HTX_Diag;
+extern uint8_t Error_Data[8]; //for error diagnostic sending
+
+///////////////////////////////////////////////////////////////////////////////////
+
+extern uint16_t CAN2_FILTER_TR_bank[4];
+extern uint16_t CAN1_FILTER_TR_bank[4];
+
+extern CAN_data_TX_t *CANdata[DATANb];
+
+extern CAN_data_RX_t *CAN1_data_RX[RX1_DATA_NB];
+extern CAN_data_RX_t *CAN2_data_RX[RX2_DATA_NB];
+
+extern CanRX_Frame_t CAN1_RX_bank[RX1_FRAME_NB];
+extern CanRX_Frame_t CAN2_RX_bank[RX2_FRAME_NB];
+
+void CAN_TX_def(void);
+void CAN_RX_def(void);
 
 #endif

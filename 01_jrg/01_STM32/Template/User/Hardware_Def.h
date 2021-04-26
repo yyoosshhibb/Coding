@@ -16,7 +16,7 @@
 #include "Analog_management.h"
 #include "CAN_LL_management.h"
 #include "CAN_Conf.h"
-
+#include "LED_Management.h"
 
 #define USE_ANA						1
 #define USE_CAN1 					1

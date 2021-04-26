@@ -1,5 +1,4 @@
 #include "Analog_management.h"
-
 ADC_HandleTypeDef    AdcHandle;
 
 static void ANA_def(void);
@@ -29,9 +28,9 @@ void Analog_init(){
   /*##-1- Enable peripherals and GPIO Clocks #################################*/
   /* Enable GPIO clock */
 	
-  __HAL_RCC_GPIOB_CLK_ENABLE();
-	__HAL_RCC_GPIOA_CLK_ENABLE();
-	__HAL_RCC_GPIOC_CLK_ENABLE();
+//  __HAL_RCC_GPIOB_CLK_ENABLE();
+//	__HAL_RCC_GPIOA_CLK_ENABLE();
+//	__HAL_RCC_GPIOC_CLK_ENABLE();
 	
   /* ADC1 Periph clock enable */
   __HAL_RCC_ADC1_CLK_ENABLE();
@@ -145,10 +144,10 @@ __HAL_LINKDMA(&AdcHandle, DMA_Handle, hdma_adc);
 
 //Flags sending that says the analog inputs are configured. Used in the transistor tasks to start the current reading after te configuration//
 
- 	osThreadFlagsSet(id_task_LED1,FLAG_ANA_CONFIG_READY);
- 	osThreadFlagsSet(id_task_LED2,FLAG_ANA_CONFIG_READY);
- 	osThreadFlagsSet(id_task_LED3,FLAG_ANA_CONFIG_READY);
-
+ 	osThreadFlagsSet(id_Task_LED01,FLAG_ANA_CONFIG_READY);
+ 	osThreadFlagsSet(id_Task_LED02,FLAG_ANA_CONFIG_READY);
+ 	osThreadFlagsSet(id_Task_LED03,FLAG_ANA_CONFIG_READY);
+ 	osThreadFlagsSet(id_Task_LED04,FLAG_ANA_CONFIG_READY);
 
 }
 void HAL_ADC_MspDeInit(ADC_HandleTypeDef *hadc){
@@ -187,8 +186,10 @@ void ANA_def(){
 	ADC_1.ADC_channel = ADC_CHANNEL_1;
 	ADC_1.ADC_Value = (uint16_t*)&ADC1Buffer[0];
 	ADC_1.Sensor_type = Linear;																				//Potentiometer to read
-	ADC_1.Range_mV = 5000;
+	ADC_1.Range_mV = 3300;
 	ADC_1.Filtered_Value = (uint16_t*)&Filter_Buffer[0][Filter_AV_NB];
+	ADC_1.Factor = 1.0f/33.0f;
+	
 
 //	ADC_2.Pin = GPIO_PIN_2;
 //	ADC_2.Port = GPIOA;

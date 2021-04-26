@@ -1,12 +1,14 @@
 /*----------------------------------------------------------------------------
  * CMSIS-RTOS 'main' function template
  *---------------------------------------------------------------------------*/
+ /*
  
+ 
+*/
 #include "Hardware_Def.h"
 
 void Error_Handler(void);
 void SystemClock_Config(void);
-
  
 /*----------------------------------------------------------------------------
  * Application main thread
@@ -14,26 +16,26 @@ void SystemClock_Config(void);
 __NO_RETURN static void app_main (void *argument) 
 {
 	(void)argument;
-		IWDG_Init();
+		IWDG_Init();					//only use watchdog when you know shit works
 	//Tasks Definition
 	/*
 	id_Task_--- = osThreadNew(<Taskname> ,&<Actuator>, NULL);
 	osThreadSetPriority(id_task_TR1,osPriorityAboveNormal);			//Other Priorities Possible
 	*/
 	
-	id_Task_LED01 = osThreadNew(TASK_LED01 ,&LED01, NULL);
-	osThreadSetPriority(id_task_LED01,osPriorityAboveNormal);
+	id_Task_LED01 = osThreadNew(TASK_LED ,&LED01, NULL);
+	osThreadSetPriority(id_Task_LED01,osPriorityAboveNormal);
 	
-	id_Task_LED02 = osThreadNew(TASK_LED02 ,&LED02, NULL);
-	osThreadSetPriority(id_task_LED02,osPriorityAboveNormal);
+	id_Task_LED02 = osThreadNew(TASK_LED ,&LED02, NULL);
+	osThreadSetPriority(id_Task_LED02,osPriorityAboveNormal);
 	
-	id_Task_LED03 = osThreadNew(TASK_LED03 ,&LED03, NULL);
-	osThreadSetPriority(id_task_LED03,osPriorityAboveNormal);
+	id_Task_LED03 = osThreadNew(TASK_LED ,&LED03, NULL);
+	osThreadSetPriority(id_Task_LED03,osPriorityAboveNormal);
 	
-	id_Task_LED04 = osThreadNew(TASK_LED04 ,&LED04, NULL);
-	osThreadSetPriority(id_task_LED04,osPriorityAboveNormal);
+	id_Task_LED04 = osThreadNew(TASK_LED ,&LED04, NULL);
+	osThreadSetPriority(id_Task_LED04,osPriorityAboveNormal);
   
-  //CAN 1
+  //CAN 1 only sending
 	//-----------------------------------------------------------------------
 	CAN1_Q = osMessageQueueNew(20,1,NULL);
 	CAN1_RX_Q = osMessageQueueNew(20,sizeof(CanRX_Queue_t),NULL);
@@ -41,21 +43,22 @@ __NO_RETURN static void app_main (void *argument)
 	
 	id_task_CAN1_TX = osThreadNew(TASK_CAN1_TX,NULL,NULL);
 	osThreadSetPriority(id_task_CAN1_TX,osPriorityRealtime);
-	id_task_CAN1_RX = osThreadNew(TASK_CAN1_RX,NULL,NULL);
-	osThreadSetPriority(id_task_CAN1_RX,osPriorityHigh1);
+	//id_task_CAN1_RX = osThreadNew(TASK_CAN1_RX,NULL,NULL);
+	//osThreadSetPriority(id_task_CAN1_RX,osPriorityHigh1);
 	//-----------------------------------------------------------------------
 	
 	
-	//CAN 2
+	//CAN 2 only receiving
 	//-----------------------------------------------------------------------
 		CAN2_Q = osMessageQueueNew(10,1,NULL);
 	CAN2_RX_Q = osMessageQueueNew(10,sizeof(CanRX_Queue_t),NULL);
 	CAN2_mutex = osMutexNew(NULL);
 	
-	id_task_CAN2_TX = osThreadNew(TASK_CAN2_TX,NULL,NULL);
-	osThreadSetPriority(id_task_CAN2_TX,osPriorityHigh4);
+	//id_task_CAN2_TX = osThreadNew(TASK_CAN2_TX,NULL,NULL);
+	//osThreadSetPriority(id_task_CAN2_TX,osPriorityHigh4);
 	id_task_CAN2_RX = osThreadNew(TASK_CAN2_RX,NULL,NULL);
 	osThreadSetPriority(id_task_CAN2_RX,osPriorityHigh1);
+	
 	//-----------------------------------------------------------------------
 	
 	//Analog Inputs
@@ -63,20 +66,23 @@ __NO_RETURN static void app_main (void *argument)
 	osThreadSetPriority(id_task_Filtering,osPriorityAboveNormal1);
 	
 	//Pushbutton
-	PushB_Q = osMessageQueueNew(20,1,NULL);
+	PushB_Q = osMessageQueueNew(10,1,NULL);
 	id_task_switch = osThreadNew(TASK_Switch,NULL,NULL);
-	osThreadSetPriority(id_task_CAN1_TX,osPriorityHigh);
+	osThreadSetPriority(id_task_switch,osPriorityHigh);
 	
-	//Initialisation of everything needed
+		//Initialisation of everything needed
+	Switch_Init();					//Switches on one GPIO
+	
 	GPIO_init();						//GPIO Initialisation
 	PWM_TIM4_Init();				//If more/other PWM needed --> Initialise
 	
 	CAN_Config();						//CAN INITIALISATION
 	CAN_RX_Init();					//CAN RECEIVE ACTIVATION
-	
+	LED_Init();
 	Analog_init();					//ANALOG READING INITIALISATION
 	
-	Switch_Init();					//Switches on one GPIO
+
+	
 	
 	
   for (;;) {}
@@ -84,7 +90,7 @@ __NO_RETURN static void app_main (void *argument)
  
 int main (void) {
  
-    SystemClock_Config();
+  SystemClock_Config();
 	
 	HAL_NVIC_SetPriorityGrouping(NVIC_PRIORITYGROUP_4);
 		
@@ -103,7 +109,7 @@ __NO_RETURN void Error_Handler(void)
 {
   while(1)
   {
-	 
+		
   }
 }
 

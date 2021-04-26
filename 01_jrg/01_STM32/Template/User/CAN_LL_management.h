@@ -53,11 +53,11 @@ typedef struct{
 
 
 //CAN1
-#define CAN1_RX_PORT		GPIOA
-#define CAN1_RX_PIN			GPIO_PIN_11
+#define CAN1_RX_PORT		GPIOB
+#define CAN1_RX_PIN			GPIO_PIN_8
 
-#define CAN1_TX_PORT		GPIOA
-#define CAN1_TX_PIN			GPIO_PIN_12
+#define CAN1_TX_PORT		GPIOB
+#define CAN1_TX_PIN			GPIO_PIN_9
 
 //CAN2
 #define CAN2_RX_PORT		GPIOB

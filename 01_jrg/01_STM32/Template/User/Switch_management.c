@@ -32,10 +32,11 @@ void Switch_Init(){
 	
 		GPIO_InitTypeDef GPIO_InitStruct;
 	
-	__GPIOC_CLK_ENABLE();
+	__GPIOA_CLK_ENABLE();		//Enable Clock of GPIO you need
 	
 	//general parameters
-  GPIO_InitStruct.Mode = GPIO_MODE_IT_RISING_FALLING;  //interruption generates for every edge detected
+	GPIO_InitStruct.Mode = GPIO_MODE_IT_RISING;
+  //GPIO_InitStruct.Mode = GPIO_MODE_IT_RISING_FALLING;  //interruption generates for every edge detected
   GPIO_InitStruct.Pull = GPIO_NOPULL;
   GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
 	
@@ -44,13 +45,13 @@ void Switch_Init(){
 	HAL_GPIO_Init(PB1_PORT, &GPIO_InitStruct);
 	
 	//Setup Interrupt
-	HAL_NVIC_SetPriority(EXTI1_IRQn, 5, 0);
+	HAL_NVIC_SetPriority(EXTI0_IRQn, 5, 0);
 	HAL_NVIC_EnableIRQ(EXTI0_IRQn);
 	
   PB1.Pin = PB1_PIN;
-	PB1.Port = PB1_PORT;
+	PB1.Port = GPIOA;
 	PB1.Mode = SINGLE;
-	PB1.Debounce = 10;
+	PB1.Debounce = 100;
 	PB1.time = 0;
 	PB1.State = HAL_GPIO_ReadPin(PB1_PORT,PB1_PIN);	
 	PB1.toggle_state = HAL_GPIO_ReadPin(PB1_PORT,PB1_PIN);
@@ -134,14 +135,18 @@ void Switch_Init(){
 	osThreadFlagsSet(id_task_switch,FLAG_SWITCH_OK);
 }
 
+
 //Handle Interrupts
-void EXTI1_IRQHandler(void)
+void EXTI0_IRQHandler(void)
 {
 	
   if(__HAL_GPIO_EXTI_GET_IT(PB1_PIN) != RESET)
 	{
+		//HAL_Delay(100);
 		selectedLED++;
-		if(selectedLED == 4)selectedLED=0;
+		if(selectedLED == 4){
+			selectedLED=0;
+		}
 		osMessageQueuePut(PushB_Q,&selectedLED,1,0);
 		__HAL_GPIO_EXTI_CLEAR_IT(PB1_PIN);
 	}
@@ -186,33 +191,13 @@ void EXTI1_IRQHandler(void)
 //		}
 //}
 
-void LED_toggle(uint8_t *LEDNumber){
-	switch (LEDNumber){
-	
-		case 0:
-			//LED 0 On others off
-		break;
-		
-		case 1:
-			//LED 1 On others off
-		break;
-		
-		case 2:
-			//LED 2 On others off
-		break;
-		
-		case 3:
-			//LED 3 On others off
-		break;
-	
-	}
-}
+
 
 void TASK_Switch(void){
 	 osStatus_t status;
 	 int send_status;
 	
-	osThreadFlagsWait(FLAG_SWITCH_OK,osFlagsWaitAll,osWaitForever);
+	osThreadFlagsWait(FLAG_SWITCH_OK,osFlagsWaitAll,osWaitForever);				//osWaitForever to not do anything before switch is initialized
 	
 	uint8_t LED_Num = 0;
 	uint8_t priority;
@@ -220,26 +205,22 @@ void TASK_Switch(void){
 	
 	while(1){
 		
-		osMessageQueueGet(PushB_Q,&LED_Num,&priority,osWaitForever);
+		osMessageQueueGet(PushB_Q,&LED_Num,&priority,osWaitForever);				//osWaitForever to not do anything before a message arrives
+//	LED01.dutycycle = 0;		
+//	LED02.dutycycle = 0;
+//	LED03.dutycycle = 0;
+//	LED04.dutycycle = 0;
 		
-		switch (LED_Num){
-			
-			case 0:
-			//Task LED 0 On
-			break;
-			
-			case 1:
-			//Task LED 1 On
-			break;
-			
-			case 2:
-			//Task LED 2 On
-			break;
-			
-			case 3:
-			//Task LED 3 On
-			break;
-		}
+		
+		osDelay(10);
+		
+		if(LED_Num==0)LED01.dutycycle = (uint8_t) (ADC_1.Real_Value);
+		else if(LED_Num==1)LED02.dutycycle = (uint8_t) (ADC_1.Real_Value);
+		else if(LED_Num==2)LED03.dutycycle = (uint8_t) (ADC_1.Real_Value);
+		else if(LED_Num==3)LED04.dutycycle = (uint8_t) (ADC_1.Real_Value);
+		
+		
+	
 	}
 }
 

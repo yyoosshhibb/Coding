@@ -30,7 +30,8 @@
 	
 	TIM_Period = timer_tick_frequency / PWM_frequency - 1
 */
-	
+
+#define PWM20kHz	49
 #define PWM10kHz	99
 #define PWM5kHz		199
 #define PWM2kHz		499
@@ -41,18 +42,18 @@
 #define PWM100Hz	9999
 #define PWM50Hz		19999
 
-extern TIM_HandleTypeDef htim1;
+//extern TIM_HandleTypeDef htim1;
 extern TIM_HandleTypeDef htim4;
-extern TIM_HandleTypeDef htim12;
+//extern TIM_HandleTypeDef htim12;
 
 extern uint16_t CAN_RX_Delay;
 extern uint16_t  Error_Timer;
 extern uint32_t Timer_ms;
 	
 void TimeBase_Timer_Config(void);
-void PWM_TIM1_Init(void);
+//void PWM_TIM1_Init(void);
 void PWM_TIM4_Init(void);
-void PWM_TIM12_Init(void);
+//void PWM_TIM12_Init(void);
 void ADC_Timer_Config(void);
 void osDelay_ms(uint32_t Time_ms);
 

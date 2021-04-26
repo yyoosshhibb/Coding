@@ -57,6 +57,8 @@ void ADC1_DMA_IRQHandler(void);
 void Analog_init(void);
 void ADC_factor(void);
 void TASK_Filtering(void* argument);
+void real_conversion(ADC_input_t *ADC_in);
+void mV_conversion(ADC_input_t *ADC_in);
 
 #endif
 

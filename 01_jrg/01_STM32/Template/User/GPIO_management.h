@@ -9,25 +9,25 @@ defined with a user defined name for a better software understanding. ####*/
 
 //////////////Debug led definition/////////////
 
-#define DEBUG_LED_PORT	GPIOC
-#define DEBUG_LED_PIN		GPIO_PIN_6
+//#define DEBUG_LED_PORT	GPIOC
+//#define DEBUG_LED_PIN		GPIO_PIN_6
 
 ///////////////////////////////////////////////
 
 
 //////////////Mosfet control output////////////
 
-#define LED01_PORT				GPIOD
-#define LED01_PIN 				GPIO_PIN_12
-
-#define LED02_PORT				GPIOD
-#define LED02_PIN 				GPIO_PIN_13
-
-#define LED03_PORT				GPIOD
-#define LED03_PIN 				GPIO_PIN_14
-
-#define LED04_PORT				GPIOD
-#define LED04_PIN 				GPIO_PIN_15
+//#define LED01_PORT				GPIOD
+//#define LED01_PIN 				GPIO_PIN_12
+//
+//#define LED02_PORT				GPIOD
+//#define LED02_PIN 				GPIO_PIN_13
+//
+//#define LED03_PORT				GPIOD
+//#define LED03_PIN 				GPIO_PIN_14
+//
+//#define LED04_PORT				GPIOD
+//#define LED04_PIN 				GPIO_PIN_15
 
 ///////////////////////////////////////////////
 	

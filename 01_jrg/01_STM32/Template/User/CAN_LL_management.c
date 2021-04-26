@@ -652,10 +652,6 @@ int i,j,k;
 
 osThreadFlagsWait(FLAG_CANRX_CONFIG_READY,osFlagsWaitAll,osWaitForever);
 	
-#ifdef HW_ELB
-	osDelayUntil(CAN_RX_WAIT*100);
-	osMessageQueueReset(CAN1_RX_Q);
-#endif
 
 	while(1){
 		
@@ -1248,16 +1244,11 @@ void CAN_CheckError1(CAN_HandleTypeDef* hcan){
 #if USE_ANA
 		 ADC_factor();
 #endif
-		 
+		 //Send the CAN Messages with given IDs on hCAN1/hCAN2 with the frequencies selected from the switch function
 		 switch(frequency){
 			 
 			 case 200:
-#ifdef HW_ELB
-			CAN_Transmit(&hCAN1,0x230);
-#endif
-#ifdef HW_R5_ELB
-			CAN_Transmit(&hCAN1,0x230);
-#endif
+
 			 break;
 			 
 			 case 100:
@@ -1265,13 +1256,7 @@ void CAN_CheckError1(CAN_HandleTypeDef* hcan){
 			 break;
 			 
 			 case 50:
-#ifdef HW_SI
-				CAN_Transmit(&hCAN1,HTX_290h);
-#endif
-#ifdef HW_CONSOLE
-			  CAN_Transmit(&hCAN1,HTX_160h);
-				CAN_Transmit(&hCAN1,HTX_18FF03F1h);
-#endif
+
 			 break;
 			 
 			 case 40:
@@ -1281,16 +1266,11 @@ void CAN_CheckError1(CAN_HandleTypeDef* hcan){
 			 break;
 			 
 			 case 20:
-#ifdef HW_ELB
-				CAN_Transmit(&hCAN2,0x234);
-#endif
+				CAN_Transmit(&hCAN1,0x100);
 				DIAG_Transmit_CAN(&hCAN1);			//Transmitting of diagnostic frame with timer and last reset flag, comment if not used
 			 break;
 			 
 			 case 10:
-#ifdef HW_R5_ELB
-			 CAN_Transmit(&hCAN1,0x100);
-#endif
 			 break;
 			 
 			 case 5:
@@ -1311,3 +1291,5 @@ void CAN_CheckError1(CAN_HandleTypeDef* hcan){
 		 
 	 }
  }
+ 
+ 

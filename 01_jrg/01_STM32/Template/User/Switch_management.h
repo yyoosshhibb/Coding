@@ -28,7 +28,7 @@ uint32_t						time;
 
 #define SW_Number 1
 
-#define PB1_PIN	GPIO_PIN_1
+#define PB1_PIN	GPIO_PIN_0
 #define PB1_PORT	GPIOA
 
 //#define SW1_PIN 	GPIO_PIN_7
@@ -67,13 +67,13 @@ extern Switch_t PB1;
 //extern	Switch_t SW8;
 
 
-extern GPIO_PinState SW_state[SW_Number];
+//extern GPIO_PinState SW_state[SW_Number];
 
 extern osThreadId_t id_task_switch;
 extern osMessageQueueId_t PushB_Q;
 
 void Switch_Init(void);
-void EXTI1_IRQHandler(void);
+void EXTI0_IRQHandler(void);
 void TASK_Switch(void);
 
 #endif

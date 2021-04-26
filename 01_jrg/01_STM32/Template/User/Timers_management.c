@@ -8,10 +8,7 @@ TIM_HandleTypeDef htim5;
 
 #if USE_PWM
 TIM_HandleTypeDef htim4;
-TIM_HandleTypeDef htim12;
-	#if USE_WATER_SPLASH
-	TIM_HandleTypeDef htim1;
-	#endif
+//TIM_HandleTypeDef htim12;
 #endif
 
 uint32_t	Timer_ms = 0;						//this timer is the global clock
@@ -158,7 +155,7 @@ void TIM7_IRQHandler(void)
 // this timer can handle up to 4 output channels
 #if USE_PWM
 
-void PWM_TIM4_Init(void){								//TRANSISTORS TIMER
+void PWM_TIM4_Init(void){								//LED TIMER
 	
 	__HAL_RCC_TIM4_CLK_ENABLE();
 	
@@ -168,7 +165,7 @@ void PWM_TIM4_Init(void){								//TRANSISTORS TIMER
   htim4.Instance = TIM4;
   htim4.Init.Prescaler = 84-1;
   htim4.Init.CounterMode = TIM_COUNTERMODE_UP;
-  htim4.Init.Period = PWM1kHz;
+  htim4.Init.Period = PWM20kHz;
   htim4.Init.ClockDivision = TIM_CLOCKDIVISION_DIV1;
   htim4.Init.AutoReloadPreload = TIM_AUTORELOAD_PRELOAD_DISABLE;
   if (HAL_TIM_PWM_Init(&htim4) != HAL_OK)
@@ -200,11 +197,31 @@ void PWM_TIM4_Init(void){								//TRANSISTORS TIMER
   sConfigOC.OCPolarity = TIM_OCPOLARITY_HIGH;
   sConfigOC.OCFastMode = TIM_OCFAST_DISABLE;
 	
+	//Setup TIM Channels Needed!
+	
   if (HAL_TIM_PWM_ConfigChannel(&htim4, &sConfigOC, TIM_CHANNEL_1) != HAL_OK)
   {
     Error_Handler();
   }
 	HAL_TIM_PWM_Start (&htim4,TIM_CHANNEL_1);
+	
+	if (HAL_TIM_PWM_ConfigChannel(&htim4, &sConfigOC, TIM_CHANNEL_2) != HAL_OK)
+  {
+    Error_Handler();
+  }
+	HAL_TIM_PWM_Start (&htim4,TIM_CHANNEL_2);
+	
+	if (HAL_TIM_PWM_ConfigChannel(&htim4, &sConfigOC, TIM_CHANNEL_3) != HAL_OK)
+  {
+    Error_Handler();
+  }
+	HAL_TIM_PWM_Start (&htim4,TIM_CHANNEL_3);
+	
+	if (HAL_TIM_PWM_ConfigChannel(&htim4, &sConfigOC,TIM_CHANNEL_4) != HAL_OK)
+  {
+    Error_Handler();
+  }
+	HAL_TIM_PWM_Start (&htim4,TIM_CHANNEL_4);
 	
 #ifdef HW_ELB 
   if (HAL_TIM_PWM_ConfigChannel(&htim4, &sConfigOC, TIM_CHANNEL_2) != HAL_OK)
