@@ -36,7 +36,6 @@ void Switch_Init(){
 	
 	//general parameters
 	GPIO_InitStruct.Mode = GPIO_MODE_IT_RISING;
-  //GPIO_InitStruct.Mode = GPIO_MODE_IT_RISING_FALLING;  //interruption generates for every edge detected
   GPIO_InitStruct.Pull = GPIO_NOPULL;
   GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
 	

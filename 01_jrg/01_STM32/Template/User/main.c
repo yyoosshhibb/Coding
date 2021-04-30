@@ -79,7 +79,8 @@ __NO_RETURN static void app_main (void *argument)
 	CAN_Config();						//CAN INITIALISATION
 	CAN_RX_Init();					//CAN RECEIVE ACTIVATION
 	LED_Init();
-	Analog_init();					//ANALOG READING INITIALISATION
+	Analog_init();					//ANALOG Inputs INITIALISATION
+	ADC_Timer_Config();			//Analog Filtering Activation
 	
 
 	

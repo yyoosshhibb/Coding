@@ -21,13 +21,9 @@ void CAN_RX_def()
 
 ///////////////////////////////////DATA STORAGES DEFINITIONS//////////////////////////////////////
 	CAN2_RX_bank[0].CAN_Id = 0x100;
-#ifdef HW_ELB
-	CAN1_RX_bank[0].CAN_Id = 0x303;
-#endif
-#ifdef HW_R5_ELB
-	CAN1_RX_bank[0].CAN_Id = 0x303;
 	//CAN1_RX_bank[1].CAN_Id = 0x403;   //EXAMPLE OF NEW FRAME TO READ
-#endif
+	
+	
 /////////////////////////////////////////DATA DEFINITIONS/////////////////////////////////////////
 	RX_ANA1.CAN_id = 0x100;
 	RX_ANA1.CAN_length = RX_LENGTH16;

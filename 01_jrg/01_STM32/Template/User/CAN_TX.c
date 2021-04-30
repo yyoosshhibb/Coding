@@ -16,22 +16,7 @@ CAN_data_TX_t TX_LED2_DC;
 CAN_data_TX_t TX_LED3_DC;
 CAN_data_TX_t TX_LED4_DC;
 
-#ifdef HW_ELB
-
-  
- 	CAN_data_TX_t ANA2;
- 	CAN_data_TX_t ANA3;
- 	CAN_data_TX_t ANA4;
- 	CAN_data_TX_t ANA5;
- 	CAN_data_TX_t ANA6;
-	CAN_data_TX_t TR_DIAG1;
-	CAN_data_TX_t TR_DIAG2;
-	CAN_data_TX_t TR_DIAG3;
-	
-#endif
-
-#ifdef HW_SI
-
+/*	Can also be called Analog Data or Commands or whatever you think about
 CAN_TxHeaderTypeDef HTX_290h;
 
   CAN_data_t CAN_SW1;
@@ -42,50 +27,21 @@ CAN_TxHeaderTypeDef HTX_290h;
  	CAN_data_t CAN_SW6;
  	CAN_data_t CAN_SW7;
  	CAN_data_t CAN_SW8;
-#endif
+	
+	*/
 
-#ifdef HW_CONSOLE
-CAN_TxHeaderTypeDef HTX_18FF03F1h;
-CAN_TxHeaderTypeDef HTX_160h;
-
-  CAN_data_t CAN_SW1;
- 	CAN_data_t CAN_SW2;
- 	CAN_data_t CAN_SW3;
- 	CAN_data_t CAN_SW4;
- 	CAN_data_t CAN_SW5;
- 	CAN_data_t CAN_SW_Knob;
-	CAN_data_t CAN_Rot_Knob;
-	CAN_data_t ANA1;
-	CAN_data_t ANA2;
-	CAN_data_t ANA3;
-#endif
-
-#ifdef HW_R5_ELB
-  CAN_data_TX_t SN;					//SERIAL NUMBER
-	CAN_data_TX_t ANA1;				//TRANSISTOR CURRENT
-	CAN_data_TX_t ANA2;				//SPARE ANALOG
-	CAN_data_TX_t TR_DIAG1;		//DIAG TRANSISTOR
-#endif
 
 void CAN_TX_def(){
 ///////////////////////////////////////////HEADERS DEFINITION////////////////////////////////////////////
 
-
-#ifdef HW_CONSOLE
-	HTX_160h.StdId = 0x160;
-	HTX_160h.DLC = 8;
-	HTX_160h.ExtId = 0;
-  HTX_160h.IDE = CAN_ID_STD;
-  HTX_160h.RTR = CAN_RTR_DATA;
-  HTX_160h.TransmitGlobalTime = DISABLE;
-	
-	HTX_18FF03F1h.StdId = 0x290;
-	HTX_18FF03F1h.DLC = 8;
-	HTX_18FF03F1h.ExtId = 0x18FF03F1;
-  HTX_18FF03F1h.IDE = CAN_ID_EXT;
-  HTX_18FF03F1h.RTR = CAN_RTR_DATA;
-  HTX_18FF03F1h.TransmitGlobalTime = DISABLE;
-#endif	
+/*		Can also be called Analog Data or Commands or whatever you think about
+		HTX_290h.StdId = 0x290;
+	HTX_290h.DLC = 1;
+	HTX_290h.ExtId = 0;
+  HTX_290h.IDE = CAN_ID_STD;
+  HTX_290h.RTR = CAN_RTR_DATA;
+  HTX_290h.TransmitGlobalTime = DISABLE;
+	*/
 		
 //////////////////////////////////////MESSAGES TO SEND/RETRANSMIT DEFINED HERE//////////////////////////////
 

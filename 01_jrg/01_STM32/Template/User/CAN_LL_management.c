@@ -18,6 +18,8 @@ uint8_t busnum = 0;
 
 /** Prototypes */
 void CAN_CheckError1(CAN_HandleTypeDef* hcan);
+void CAN_ReTransmit(CAN_HandleTypeDef *hcan, CAN_TxHeaderTypeDef HTX, CanRX_Frame_t CAN_RX_Frame);
+void CAN_ReTransmit_Math(CAN_HandleTypeDef *hcan, CAN_TxHeaderTypeDef HTX, CanRX_Frame_t CAN_RX_Frame, CAN_data_RX_t Can_Data, Math_factors_t Math_factors);
 
 CAN_HandleTypeDef hCAN1;
 CAN_HandleTypeDef hCAN2;
@@ -308,7 +310,7 @@ void CAN_Config(void){
 #endif
 }
 
-#define CAN2_START_FILTER 23 //46 id CAN1, 10 id CAN2
+//#define CAN2_START_FILTER 23 //46 id CAN1, 10 id CAN2
 
 
 void CAN_RX_Init(void){
@@ -1210,7 +1212,7 @@ void CAN_CheckError1(CAN_HandleTypeDef* hcan){
   }
  }
  
- void DIAG_Transmit_CAN(CAN_HandleTypeDef *hcan){
+void DIAG_Transmit_CAN(CAN_HandleTypeDef *hcan){
 	 	 uint32_t txmailbox =0;
 //////////////////////////////////////ERROR MESSAGES TRANSMITTING//////////////////////////////////////
 				Error_Data[1] = (uint8_t)Error_Timer;
@@ -1268,6 +1270,72 @@ void CAN_CheckError1(CAN_HandleTypeDef* hcan){
 			 case 20:
 				CAN_Transmit(&hCAN1,0x100);
 				DIAG_Transmit_CAN(&hCAN1);			//Transmitting of diagnostic frame with timer and last reset flag, comment if not used
+			 break;
+			 
+			 case 10:
+			 break;
+			 
+			 case 5:
+			 break;
+			 
+			 case 2:
+			 break;
+			 
+			 case 1:
+			 break;
+			 
+			 default:
+			 break;
+			 
+		 }		 
+		 
+		 HAL_IWDG_Refresh(&hiwdg);
+		 
+	 }
+ }
+ 
+  void TASK_CAN2_TX(void *argument){
+	 osStatus_t status;
+	 int send_status;
+	 
+	 osThreadFlagsWait(FLAG_CANTX_CONFIG_READY,osFlagsWaitAll,osWaitForever);
+	 
+	 uint16_t frequency = 0;
+	 uint8_t priority = 0;
+	 
+	 test_factors.factor = 2;
+	 test_factors.offset =2;
+	 
+	 while(1){
+
+		 osMessageQueueGet(CAN2_Q,&frequency,&priority,osWaitForever);
+
+#if USE_ANA
+		 ADC_factor();
+#endif
+		 //Send the CAN Messages with given IDs on hCAN1/hCAN2 with the frequencies selected from the switch function
+		 switch(frequency){
+			 
+			 case 200:
+
+			 break;
+			 
+			 case 100:
+
+			 break;
+			 
+			 case 50:
+
+			 break;
+			 
+			 case 40:
+			 break;
+			 
+			 case 30:
+			 break;
+			 
+			 case 20:
+				//CAN_Transmit(&hCAN2,0x100);
 			 break;
 			 
 			 case 10:

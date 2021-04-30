@@ -141,4 +141,5 @@ extern CanRX_Frame_t CAN2_RX_bank[RX2_FRAME_NB];
 void CAN_TX_def(void);
 void CAN_RX_def(void);
 
+
 #endif

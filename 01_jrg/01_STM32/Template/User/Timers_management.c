@@ -1,9 +1,9 @@
 #include "Timers_management.h"
 
-TIM_HandleTypeDef htim7;
+static TIM_HandleTypeDef htim7;		//timer7 as timebase timer
 
 #if USE_ANA
-TIM_HandleTypeDef htim5;	
+static TIM_HandleTypeDef htim5;		//
 #endif
 
 #if USE_PWM

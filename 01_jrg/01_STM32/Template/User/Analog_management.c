@@ -1,10 +1,12 @@
 #include "Analog_management.h"
-ADC_HandleTypeDef    AdcHandle;
+static ADC_HandleTypeDef    AdcHandle;
 
 static void ANA_def(void);
 
 osThreadId_t id_task_Filtering;
 
+
+//Declare ADC Inputs
 
   ADC_input_t ADC_1;
  	//ADC_input_t ADC_2;
@@ -14,9 +16,9 @@ osThreadId_t id_task_Filtering;
  	//ADC_input_t ADC_6;
 
 
-uint32_t ADC1Buffer[ADCNb];
+static uint32_t ADC1Buffer[ADCNb];
 
-uint16_t Filter_Buffer[ADCNb][Filter_AV_NB+1];
+static uint16_t Filter_Buffer[ADCNb][Filter_AV_NB+1];
 
 void Analog_init(){
 	

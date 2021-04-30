@@ -73,7 +73,7 @@ void TASK_LED(LED_t *LED){
 	
 	while(1){
 		
-				osThreadFlagsSet(id_task_Filtering, FLAG_ANA_FILTER);
+				//osThreadFlagsSet(id_task_Filtering, FLAG_ANA_FILTER);			//Done with timer activated in main.c
 				real_conversion(&ADC_1);
 
 				Set_DutyCycle(LED->htim, LED->PWM_CHANNEL, LED->dutycycle);

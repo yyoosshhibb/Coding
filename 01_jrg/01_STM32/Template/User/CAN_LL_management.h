@@ -9,6 +9,8 @@
 #define FLAG_CAN1_INIT_OK 0x08
 #define FLAG_CANTX_TRANSMIT 0x10
 
+#define USE_CONTROLLED_CAN_RESISTOR	0x00
+
 typedef enum{
  	S_1Mb=0,
 	S_500kb,
@@ -69,8 +71,8 @@ typedef struct{
 
 #define TX_Delay				10
 
-#define CAN1_RX_ID_NB_MAX 46
-#define CAN2_RX_ID_NB_MAX 10
+//#define CAN1_RX_ID_NB_MAX 46
+//#define CAN2_RX_ID_NB_MAX 10
 
 extern CAN_BusInfo_t CAN1_BusInfo;
 extern osMessageQueueId_t CAN1_Q;
@@ -88,12 +90,12 @@ extern osMutexId_t CAN2_mutex;
 
 /* init */
 void CAN_Config(void);
-void CAN_RX_Init(void); //initialisation des filtres
+void CAN_RX_Init(void); //initialization of receiving filters
 void CAN_Disable_RX(void);
 
 void Error_Handler(void);
 
-/*tache*/
+/*tasks*/
 void TASK_CAN1_TX(void *argument);
 void TASK_CAN2_TX(void *argument);
 void TASK_CAN1_RX(void *argument);
@@ -107,6 +109,16 @@ extern CAN_TxHeaderTypeDef TxHeader;
 extern CAN_RxHeaderTypeDef RxHeader;
 
 void CAN_Transmit(CAN_HandleTypeDef* hCAN, uint32_t CAN_ID);
+
+void CAN1_TX_IRQHandler(void);
+void CAN1_RX0_IRQHandler (void);
+void CAN1_RX1_IRQHandler (void);
+void CAN1_SCE_IRQHandler(void);
+void CAN2_TX_IRQHandler(void);
+void CAN2_RX0_IRQHandler (void);
+void CAN2_RX1_IRQHandler (void);
+void CAN2_SCE_IRQHandler(void);
+void DIAG_Transmit_CAN(CAN_HandleTypeDef *hcan);
 
 #if USE_CONTROLLED_CAN_RESISTOR
 void CAN1_set_TerminationResistor(uint8_t state);
