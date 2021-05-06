@@ -1,0 +1,345 @@
+   1              	 .syntax unified
+   2              	 .cpu cortex-m4
+   3              	 .eabi_attribute 27,3
+   4              	 .fpu fpv4-sp-d16
+   5              	 .eabi_attribute 20,1
+   6              	 .eabi_attribute 21,1
+   7              	 .eabi_attribute 23,3
+   8              	 .eabi_attribute 24,1
+   9              	 .eabi_attribute 25,1
+  10              	 .eabi_attribute 26,1
+  11              	 .eabi_attribute 30,6
+  12              	 .eabi_attribute 34,1
+  13              	 .eabi_attribute 18,4
+  14              	 .thumb
+  15              	 .file "Subsystem_PumpAndFans.c"
+  16              	 .text
+  17              	.Ltext0:
+  18              	 .cfi_sections .debug_frame
+  19              	 .global __aeabi_dcmpge
+  20              	 .global __aeabi_dcmpgt
+  21              	 .global __aeabi_dcmplt
+  22              	 .section .text.FUNC_PumpAndFans,"ax",%progbits
+  23              	 .align 2
+  24              	 .global FUNC_PumpAndFans
+  25              	 .thumb
+  26              	 .thumb_func
+  28              	FUNC_PumpAndFans:
+  29              	.LFB175:
+  30              	 .file 1 "../Simulink/Subsystem_PumpAndFans.c"
+   1:../Simulink/Subsystem_PumpAndFans.c **** /* 
+   2:../Simulink/Subsystem_PumpAndFans.c ****  * Academic License - for use in teaching, academic research, and meeting
+   3:../Simulink/Subsystem_PumpAndFans.c ****  * course requirements at degree granting institutions only.  Not for
+   4:../Simulink/Subsystem_PumpAndFans.c ****  * government, commercial, or other organizational use.
+   5:../Simulink/Subsystem_PumpAndFans.c ****  * 
+   6:../Simulink/Subsystem_PumpAndFans.c ****  * File: Subsystem_PumpAndFans.c
+   7:../Simulink/Subsystem_PumpAndFans.c ****  *  
+   8:../Simulink/Subsystem_PumpAndFans.c ****  * Code generated for Simulink model : VCU.
+   9:../Simulink/Subsystem_PumpAndFans.c ****  * Model version      : 1.300
+  10:../Simulink/Subsystem_PumpAndFans.c ****  * Simulink Coder version    : 8.14 (R2018a) 06-Feb-2018
+  11:../Simulink/Subsystem_PumpAndFans.c ****  * TLC version       : 8.14 (Feb 22 2018)
+  12:../Simulink/Subsystem_PumpAndFans.c ****  * C/C++ source code generated on  : Thu Apr 29 19:26:38 2021
+  13:../Simulink/Subsystem_PumpAndFans.c ****  * 
+  14:../Simulink/Subsystem_PumpAndFans.c ****  * Target selection: Infineon_XMC_Family.tlc
+  15:../Simulink/Subsystem_PumpAndFans.c ****  * Embedded hardware selection: ARM Compatible->ARM Cortex
+  16:../Simulink/Subsystem_PumpAndFans.c ****  * Code generation objectives: Unspecified
+  17:../Simulink/Subsystem_PumpAndFans.c ****  * Validation result: Not run
+  18:../Simulink/Subsystem_PumpAndFans.c ****  */
+  19:../Simulink/Subsystem_PumpAndFans.c **** 
+  20:../Simulink/Subsystem_PumpAndFans.c **** 
+  21:../Simulink/Subsystem_PumpAndFans.c ****     
+  22:../Simulink/Subsystem_PumpAndFans.c **** 
+  23:../Simulink/Subsystem_PumpAndFans.c ****         #include "Subsystem_PumpAndFans.h"
+  24:../Simulink/Subsystem_PumpAndFans.c ****           /* Include model header file for global data */
+  25:../Simulink/Subsystem_PumpAndFans.c ****               #include "VCU.h"
+  26:../Simulink/Subsystem_PumpAndFans.c **** 
+  27:../Simulink/Subsystem_PumpAndFans.c ****             #include "VCU_private.h"
+  28:../Simulink/Subsystem_PumpAndFans.c **** 
+  29:../Simulink/Subsystem_PumpAndFans.c **** 
+  30:../Simulink/Subsystem_PumpAndFans.c **** 
+  31:../Simulink/Subsystem_PumpAndFans.c **** 
+  32:../Simulink/Subsystem_PumpAndFans.c **** 
+  33:../Simulink/Subsystem_PumpAndFans.c ****   
+  34:../Simulink/Subsystem_PumpAndFans.c **** 
+  35:../Simulink/Subsystem_PumpAndFans.c **** 
+  36:../Simulink/Subsystem_PumpAndFans.c ****   
+  37:../Simulink/Subsystem_PumpAndFans.c **** 
+  38:../Simulink/Subsystem_PumpAndFans.c **** 
+  39:../Simulink/Subsystem_PumpAndFans.c ****   
+  40:../Simulink/Subsystem_PumpAndFans.c **** 
+  41:../Simulink/Subsystem_PumpAndFans.c **** 
+  42:../Simulink/Subsystem_PumpAndFans.c ****   
+  43:../Simulink/Subsystem_PumpAndFans.c **** 
+  44:../Simulink/Subsystem_PumpAndFans.c **** 
+  45:../Simulink/Subsystem_PumpAndFans.c ****   
+  46:../Simulink/Subsystem_PumpAndFans.c **** 
+  47:../Simulink/Subsystem_PumpAndFans.c **** 
+  48:../Simulink/Subsystem_PumpAndFans.c ****   
+  49:../Simulink/Subsystem_PumpAndFans.c **** 
+  50:../Simulink/Subsystem_PumpAndFans.c **** 
+  51:../Simulink/Subsystem_PumpAndFans.c ****   
+  52:../Simulink/Subsystem_PumpAndFans.c **** 
+  53:../Simulink/Subsystem_PumpAndFans.c **** 
+  54:../Simulink/Subsystem_PumpAndFans.c ****   
+  55:../Simulink/Subsystem_PumpAndFans.c **** 
+  56:../Simulink/Subsystem_PumpAndFans.c **** 
+  57:../Simulink/Subsystem_PumpAndFans.c ****   
+  58:../Simulink/Subsystem_PumpAndFans.c **** 
+  59:../Simulink/Subsystem_PumpAndFans.c **** 
+  60:../Simulink/Subsystem_PumpAndFans.c ****   
+  61:../Simulink/Subsystem_PumpAndFans.c **** 
+  62:../Simulink/Subsystem_PumpAndFans.c **** 
+  63:../Simulink/Subsystem_PumpAndFans.c ****   
+  64:../Simulink/Subsystem_PumpAndFans.c **** 
+  65:../Simulink/Subsystem_PumpAndFans.c **** 
+  66:../Simulink/Subsystem_PumpAndFans.c ****   
+  67:../Simulink/Subsystem_PumpAndFans.c **** 
+  68:../Simulink/Subsystem_PumpAndFans.c **** 
+  69:../Simulink/Subsystem_PumpAndFans.c ****   
+  70:../Simulink/Subsystem_PumpAndFans.c **** 
+  71:../Simulink/Subsystem_PumpAndFans.c **** 
+  72:../Simulink/Subsystem_PumpAndFans.c ****   
+  73:../Simulink/Subsystem_PumpAndFans.c **** 
+  74:../Simulink/Subsystem_PumpAndFans.c **** 
+  75:../Simulink/Subsystem_PumpAndFans.c ****     
+  76:../Simulink/Subsystem_PumpAndFans.c ****        
+  77:../Simulink/Subsystem_PumpAndFans.c ****     
+  78:../Simulink/Subsystem_PumpAndFans.c ****   
+  79:../Simulink/Subsystem_PumpAndFans.c **** 
+  80:../Simulink/Subsystem_PumpAndFans.c ****           /* Output and update for atomic system: '<Root>/Pump and Fans' */
+  81:../Simulink/Subsystem_PumpAndFans.c ****       
+  82:../Simulink/Subsystem_PumpAndFans.c ****               
+  83:../Simulink/Subsystem_PumpAndFans.c ****   
+  84:../Simulink/Subsystem_PumpAndFans.c ****         void FUNC_PumpAndFans(void)
+  85:../Simulink/Subsystem_PumpAndFans.c ****   {
+  31              	 .loc 1 85 0
+  32              	 .cfi_startproc
+  33              	 
+  34              	 
+  35 0000 90B5     	 push {r4,r7,lr}
+  36              	.LCFI0:
+  37              	 .cfi_def_cfa_offset 12
+  38              	 .cfi_offset 4,-12
+  39              	 .cfi_offset 7,-8
+  40              	 .cfi_offset 14,-4
+  41 0002 87B0     	 sub sp,sp,#28
+  42              	.LCFI1:
+  43              	 .cfi_def_cfa_offset 40
+  44 0004 06AF     	 add r7,sp,#24
+  45              	.LCFI2:
+  46              	 .cfi_def_cfa 7,16
+  86:../Simulink/Subsystem_PumpAndFans.c ****   
+  87:../Simulink/Subsystem_PumpAndFans.c ****                       
+  88:../Simulink/Subsystem_PumpAndFans.c ****       
+  89:../Simulink/Subsystem_PumpAndFans.c ****       
+  90:../Simulink/Subsystem_PumpAndFans.c ****       
+  91:../Simulink/Subsystem_PumpAndFans.c ****   
+  92:../Simulink/Subsystem_PumpAndFans.c **** 
+  93:../Simulink/Subsystem_PumpAndFans.c **** 
+  94:../Simulink/Subsystem_PumpAndFans.c **** 
+  95:../Simulink/Subsystem_PumpAndFans.c ****                           
+  96:../Simulink/Subsystem_PumpAndFans.c ****       
+  97:../Simulink/Subsystem_PumpAndFans.c ****   
+  98:../Simulink/Subsystem_PumpAndFans.c **** 
+  99:../Simulink/Subsystem_PumpAndFans.c **** 
+ 100:../Simulink/Subsystem_PumpAndFans.c **** 
+ 101:../Simulink/Subsystem_PumpAndFans.c ****                                 /* Switch: '<S122>/Switch' incorporates:
+ 102:../Simulink/Subsystem_PumpAndFans.c ****  *  Switch: '<S122>/Switch1'
+ 103:../Simulink/Subsystem_PumpAndFans.c ****  */
+ 104:../Simulink/Subsystem_PumpAndFans.c **** /*@>72e5*/if (/*@>17aac*/VCU_B./*@>17d46*/Fans_dash_bit) {
+  47              	 .loc 1 104 0
+  48 0006 424B     	 ldr r3,.L18+8
+  49 0008 93F80E38 	 ldrb r3,[r3,#2062]
+  50 000c 002B     	 cmp r3,#0
+  51 000e 06D0     	 beq .L2
+ 105:../Simulink/Subsystem_PumpAndFans.c ****     /* Saturate: '<S122>/Saturation' incorporates:
+ 106:../Simulink/Subsystem_PumpAndFans.c ****  *  Constant: '<S122>/Constant'
+ 107:../Simulink/Subsystem_PumpAndFans.c ****  */
+ 108:../Simulink/Subsystem_PumpAndFans.c ****     /*@>17ab8*/VCU_B./*@>17d4c*/Switch_j/*@>72dd*/ = /*@>17620*/1.0;
+  52              	 .loc 1 108 0
+  53 0010 3F49     	 ldr r1,.L18+8
+  54 0012 4FF00002 	 mov r2,#0
+  55 0016 3F4B     	 ldr r3,.L18+12
+  56 0018 C1E9BA23 	 strd r2,[r1,#744]
+  57 001c 3EE0     	 b .L3
+  58              	.L2:
+ 109:../Simulink/Subsystem_PumpAndFans.c **** } else {
+ 110:../Simulink/Subsystem_PumpAndFans.c ****     /*@>7314*/if (/*@>17ab2*/VCU_B./*@>17d49*/TeleActiveBit/*@>7306*/ >= /*@>1761f*/1.0) {
+  59              	 .loc 1 110 0
+  60 001e 3C4B     	 ldr r3,.L18+8
+  61 0020 03F5AC63 	 add r3,r3,#1376
+  62 0024 D3E90023 	 ldrd r2,[r3]
+  63 0028 1046     	 mov r0,r2
+  64 002a 1946     	 mov r1,r3
+  65 002c 4FF00002 	 mov r2,#0
+  66 0030 384B     	 ldr r3,.L18+12
+  67 0032 FFF7FEFF 	 bl __aeabi_dcmpge
+  68 0036 0346     	 mov r3,r0
+  69 0038 002B     	 cmp r3,#0
+  70 003a 08D0     	 beq .L15
+ 111:../Simulink/Subsystem_PumpAndFans.c ****         /* Switch: '<S122>/Switch1' */
+ 112:../Simulink/Subsystem_PumpAndFans.c ****         /*@>17ad0*/VCU_B./*@>17d58*/Switch1_d/*@>730c*/ = /*@>17ad6*/VCU_B./*@>17d5b*/Add1_ik;
+  71              	 .loc 1 112 0
+  72 003c 344B     	 ldr r3,.L18+8
+  73 003e 03F5AB63 	 add r3,r3,#1368
+  74 0042 D3E90023 	 ldrd r2,[r3]
+  75 0046 3249     	 ldr r1,.L18+8
+  76 0048 C1E9BE23 	 strd r2,[r1,#760]
+  77 004c 20E0     	 b .L6
+  78              	.L15:
+ 113:../Simulink/Subsystem_PumpAndFans.c ****     } else {
+ 114:../Simulink/Subsystem_PumpAndFans.c ****         /* Lookup_n-D: '<S122>/2-D Lookup Table' incorporates:
+ 115:../Simulink/Subsystem_PumpAndFans.c ****  *  Switch: '<S122>/Switch1'
+ 116:../Simulink/Subsystem_PumpAndFans.c ****  */
+ 117:../Simulink/Subsystem_PumpAndFans.c ****         /*@>17abe*/VCU_B./*@>17d4f*/uDLookupTable/*@>a0ff*/ = /*@>17863*/look2_binlxpw(/*@>17ac4*/V
+  79              	 .loc 1 117 0
+  80 004e 304B     	 ldr r3,.L18+8
+  81 0050 03F5A863 	 add r3,r3,#1344
+  82 0054 D3E90001 	 ldrd r0,[r3]
+  83 0058 2D4B     	 ldr r3,.L18+8
+  84 005a 03F5A163 	 add r3,r3,#1288
+  85 005e D3E90023 	 ldrd r2,[r3]
+  86 0062 2D4C     	 ldr r4,.L18+16
+  87 0064 0094     	 str r4,[sp]
+  88 0066 2D4C     	 ldr r4,.L18+20
+  89 0068 0194     	 str r4,[sp,#4]
+  90 006a 2D4C     	 ldr r4,.L18+24
+  91 006c 0294     	 str r4,[sp,#8]
+  92 006e 2D4C     	 ldr r4,.L18+28
+  93 0070 0394     	 str r4,[sp,#12]
+  94 0072 0724     	 movs r4,#7
+  95 0074 0494     	 str r4,[sp,#16]
+  96 0076 FFF7FEFF 	 bl look2_binlxpw
+  97 007a 0246     	 mov r2,r0
+  98 007c 0B46     	 mov r3,r1
+  99 007e 2449     	 ldr r1,.L18+8
+ 100 0080 C1E9C023 	 strd r2,[r1,#768]
+ 118:../Simulink/Subsystem_PumpAndFans.c ****         /* Switch: '<S122>/Switch1' */
+ 119:../Simulink/Subsystem_PumpAndFans.c ****         /*@>17adc*/VCU_B./*@>17d5e*/Switch1_d/*@>7312*/ = /*@>17ae2*/VCU_B./*@>17d61*/uDLookupTable
+ 101              	 .loc 1 119 0
+ 102 0084 224B     	 ldr r3,.L18+8
+ 103 0086 D3E9C023 	 ldrd r2,[r3,#768]
+ 104 008a 2149     	 ldr r1,.L18+8
+ 105 008c C1E9BE23 	 strd r2,[r1,#760]
+ 106              	.L6:
+ 120:../Simulink/Subsystem_PumpAndFans.c ****     }
+ 121:../Simulink/Subsystem_PumpAndFans.c ****     /* Saturate: '<S122>/Saturation' */
+ 122:../Simulink/Subsystem_PumpAndFans.c ****     /*@>17aee*/VCU_B./*@>17d67*/Switch_j/*@>72e3*/ = /*@>17af4*/VCU_B./*@>17d6a*/Switch1_d;
+ 107              	 .loc 1 122 0
+ 108 0090 1F4B     	 ldr r3,.L18+8
+ 109 0092 D3E9BE23 	 ldrd r2,[r3,#760]
+ 110 0096 1E49     	 ldr r1,.L18+8
+ 111 0098 C1E9BA23 	 strd r2,[r1,#744]
+ 112              	.L3:
+ 123:../Simulink/Subsystem_PumpAndFans.c **** }
+ 124:../Simulink/Subsystem_PumpAndFans.c **** /* End of Switch: '<S122>/Switch' */
+ 125:../Simulink/Subsystem_PumpAndFans.c **** 
+ 126:../Simulink/Subsystem_PumpAndFans.c **** /* Saturate: '<S122>/Saturation' */
+ 127:../Simulink/Subsystem_PumpAndFans.c **** /*@>176f9*/if (/*@>17ae8*/VCU_B./*@>17d64*/Switch_j/*@>176f4*/ > /*@>17783*/0.9999) {
+ 113              	 .loc 1 127 0
+ 114 009c 1C4B     	 ldr r3,.L18+8
+ 115 009e D3E9BA23 	 ldrd r2,[r3,#744]
+ 116 00a2 1046     	 mov r0,r2
+ 117 00a4 1946     	 mov r1,r3
+ 118 00a6 18A3     	 adr r3,.L18
+ 119 00a8 D3E90023 	 ldrd r2,[r3]
+ 120 00ac FFF7FEFF 	 bl __aeabi_dcmpgt
+ 121 00b0 0346     	 mov r3,r0
+ 122 00b2 002B     	 cmp r3,#0
+ 123 00b4 06D0     	 beq .L16
+ 128:../Simulink/Subsystem_PumpAndFans.c ****     /*@>17b00*/VCU_B./*@>17d70*/Saturation_b/*@>176fb*/ = /*@>17789*/0.9999;
+ 124              	 .loc 1 128 0
+ 125 00b6 1649     	 ldr r1,.L18+8
+ 126 00b8 13A3     	 adr r3,.L18
+ 127 00ba D3E90023 	 ldrd r2,[r3]
+ 128 00be C1E9BC23 	 strd r2,[r1,#752]
+ 129 00c2 1BE0     	 b .L1
+ 130              	.L16:
+ 129:../Simulink/Subsystem_PumpAndFans.c **** } else /*@>176fc*/if (/*@>17afa*/VCU_B./*@>17d6d*/Switch_j/*@>176f1*/ < /*@>17785*/0.0) {
+ 131              	 .loc 1 129 0
+ 132 00c4 124B     	 ldr r3,.L18+8
+ 133 00c6 D3E9BA23 	 ldrd r2,[r3,#744]
+ 134 00ca 1046     	 mov r0,r2
+ 135 00cc 1946     	 mov r1,r3
+ 136 00ce 4FF00002 	 mov r2,#0
+ 137 00d2 4FF00003 	 mov r3,#0
+ 138 00d6 FFF7FEFF 	 bl __aeabi_dcmplt
+ 139 00da 0346     	 mov r3,r0
+ 140 00dc 002B     	 cmp r3,#0
+ 141 00de 07D0     	 beq .L17
+ 130:../Simulink/Subsystem_PumpAndFans.c ****     /*@>17b12*/VCU_B./*@>17d79*/Saturation_b/*@>176fe*/ = /*@>17787*/0.0;
+ 142              	 .loc 1 130 0
+ 143 00e0 0B49     	 ldr r1,.L18+8
+ 144 00e2 4FF00002 	 mov r2,#0
+ 145 00e6 4FF00003 	 mov r3,#0
+ 146 00ea C1E9BC23 	 strd r2,[r1,#752]
+ 147 00ee 05E0     	 b .L1
+ 148              	.L17:
+ 131:../Simulink/Subsystem_PumpAndFans.c **** } else {
+ 132:../Simulink/Subsystem_PumpAndFans.c ****     /*@>17b06*/VCU_B./*@>17d73*/Saturation_b/*@>176f8*/ = /*@>17b0c*/VCU_B./*@>17d76*/Switch_j;
+ 149              	 .loc 1 132 0
+ 150 00f0 074B     	 ldr r3,.L18+8
+ 151 00f2 D3E9BA23 	 ldrd r2,[r3,#744]
+ 152 00f6 0649     	 ldr r1,.L18+8
+ 153 00f8 C1E9BC23 	 strd r2,[r1,#752]
+ 154              	.L1:
+ 133:../Simulink/Subsystem_PumpAndFans.c **** }
+ 134:../Simulink/Subsystem_PumpAndFans.c **** 
+ 135:../Simulink/Subsystem_PumpAndFans.c **** 
+ 136:../Simulink/Subsystem_PumpAndFans.c **** 
+ 137:../Simulink/Subsystem_PumpAndFans.c **** 
+ 138:../Simulink/Subsystem_PumpAndFans.c **** 
+ 139:../Simulink/Subsystem_PumpAndFans.c ****       
+ 140:../Simulink/Subsystem_PumpAndFans.c ****   
+ 141:../Simulink/Subsystem_PumpAndFans.c **** 
+ 142:../Simulink/Subsystem_PumpAndFans.c **** 
+ 143:../Simulink/Subsystem_PumpAndFans.c ****         
+ 144:../Simulink/Subsystem_PumpAndFans.c ****     
+ 145:../Simulink/Subsystem_PumpAndFans.c ****       
+ 146:../Simulink/Subsystem_PumpAndFans.c ****           }
+ 155              	 .loc 1 146 0
+ 156 00fc 0437     	 adds r7,r7,#4
+ 157              	.LCFI3:
+ 158              	 .cfi_def_cfa_offset 12
+ 159 00fe BD46     	 mov sp,r7
+ 160              	.LCFI4:
+ 161              	 .cfi_def_cfa_register 13
+ 162              	 
+ 163 0100 90BD     	 pop {r4,r7,pc}
+ 164              	.L19:
+ 165 0102 00BFAFF3 	 .align 3
+ 165      0080
+ 166              	.L18:
+ 167 0108 1EA7E848 	 .word 1223206686
+ 168 010c 2EFFEF3F 	 .word 1072693038
+ 169 0110 00000000 	 .word VCU_B
+ 170 0114 0000F03F 	 .word 1072693248
+ 171 0118 E8010000 	 .word VCU_ConstP+488
+ 172 011c 20020000 	 .word VCU_ConstP+544
+ 173 0120 40010000 	 .word VCU_ConstP+320
+ 174 0124 28030000 	 .word VCU_ConstP+808
+ 175              	 .cfi_endproc
+ 176              	.LFE175:
+ 178              	 .text
+ 179              	.Letext0:
+ 180              	 .file 2 "../Simulink/rtwtypes.h"
+ 181              	 .file 3 "c:\\dave\\dave-ide-4.4.2-64bit\\eclipse\\arm-gcc-49\\arm-none-eabi\\include\\machine\\_default_types.h"
+ 182              	 .file 4 "c:\\dave\\dave-ide-4.4.2-64bit\\eclipse\\arm-gcc-49\\arm-none-eabi\\include\\stdint.h"
+ 183              	 .file 5 "../Simulink/VCU.h"
+ 184              	 .file 6 "C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_29_VCU_jr20_Source/Libraries/CMSIS/Include/cmsis_gcc.h"
+ 185              	 .file 7 "C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_29_VCU_jr20_Source/Libraries/CMSIS/Include/core_cm4.h"
+ 186              	 .file 8 "C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_29_VCU_jr20_Source/Libraries/CMSIS/Infineon/XMC4500_series/Include/system_XMC4500.h"
+DEFINED SYMBOLS
+                            *ABS*:00000000 Subsystem_PumpAndFans.c
+    {standard input}:23     .text.FUNC_PumpAndFans:00000000 $t
+    {standard input}:28     .text.FUNC_PumpAndFans:00000000 FUNC_PumpAndFans
+    {standard input}:167    .text.FUNC_PumpAndFans:00000108 $d
+                     .debug_frame:00000010 $d
+
+UNDEFINED SYMBOLS
+__aeabi_dcmpge
+__aeabi_dcmpgt
+__aeabi_dcmplt
+look2_binlxpw
+VCU_B
+VCU_ConstP

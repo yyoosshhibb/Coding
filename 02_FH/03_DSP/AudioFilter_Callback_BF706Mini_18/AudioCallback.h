@@ -88,6 +88,9 @@ typedef enum
 #define LED_STATE_SET	1
 #define LED_STATE_TGL	2
 
+#define buffer_size		100
+#define no_coeff		55
+
 /* function prototypes */
 void Init_LEDs(void);
 void ClearSet_LED(const int led, const int bState);

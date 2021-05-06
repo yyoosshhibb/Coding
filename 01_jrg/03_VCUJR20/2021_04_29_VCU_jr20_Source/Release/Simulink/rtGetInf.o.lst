@@ -1,0 +1,89 @@
+   1              	 .syntax unified
+   2              	 .cpu cortex-m4
+   3              	 .eabi_attribute 27,3
+   4              	 .fpu fpv4-sp-d16
+   5              	 .eabi_attribute 20,1
+   6              	 .eabi_attribute 21,1
+   7              	 .eabi_attribute 23,3
+   8              	 .eabi_attribute 24,1
+   9              	 .eabi_attribute 25,1
+  10              	 .eabi_attribute 26,1
+  11              	 .eabi_attribute 30,4
+  12              	 .eabi_attribute 34,1
+  13              	 .eabi_attribute 18,4
+  14              	 .thumb
+  15              	 .file "rtGetInf.c"
+  16              	 .section .text.rtGetInf,"ax",%progbits
+  17              	 .align 1
+  18              	 .global rtGetInf
+  19              	 .thumb
+  20              	 .thumb_func
+  22              	rtGetInf:
+  23              	 
+  24              	 
+  25              	 
+  26 0000 0020     	 movs r0,#0
+  27 0002 0149     	 ldr r1,.L2
+  28 0004 7047     	 bx lr
+  29              	.L3:
+  30 0006 00BF     	 .align 2
+  31              	.L2:
+  32 0008 0000F07F 	 .word 2146435072
+  34              	 .section .text.rtGetInfF,"ax",%progbits
+  35              	 .align 1
+  36              	 .global rtGetInfF
+  37              	 .thumb
+  38              	 .thumb_func
+  40              	rtGetInfF:
+  41              	 
+  42              	 
+  43              	 
+  44 0000 4FF0FF40 	 mov r0,#2139095040
+  45 0004 7047     	 bx lr
+  47              	 .section .text.rtGetMinusInf,"ax",%progbits
+  48              	 .align 1
+  49              	 .global rtGetMinusInf
+  50              	 .thumb
+  51              	 .thumb_func
+  53              	rtGetMinusInf:
+  54              	 
+  55              	 
+  56              	 
+  57 0000 0020     	 movs r0,#0
+  58 0002 0149     	 ldr r1,.L6
+  59 0004 7047     	 bx lr
+  60              	.L7:
+  61 0006 00BF     	 .align 2
+  62              	.L6:
+  63 0008 0000F0FF 	 .word -1048576
+  65              	 .section .text.rtGetMinusInfF,"ax",%progbits
+  66              	 .align 1
+  67              	 .global rtGetMinusInfF
+  68              	 .thumb
+  69              	 .thumb_func
+  71              	rtGetMinusInfF:
+  72              	 
+  73              	 
+  74              	 
+  75 0000 0048     	 ldr r0,.L9
+  76 0002 7047     	 bx lr
+  77              	.L10:
+  78              	 .align 2
+  79              	.L9:
+  80 0004 000080FF 	 .word -8388608
+  82              	 .ident "GCC: (GNU Tools for ARM Embedded Processors) 4.9.3 20141119 (release) [ARM/embedded-4_9-branch revision 218278]"
+DEFINED SYMBOLS
+                            *ABS*:00000000 rtGetInf.c
+    {standard input}:17     .text.rtGetInf:00000000 $t
+    {standard input}:22     .text.rtGetInf:00000000 rtGetInf
+    {standard input}:32     .text.rtGetInf:00000008 $d
+    {standard input}:35     .text.rtGetInfF:00000000 $t
+    {standard input}:40     .text.rtGetInfF:00000000 rtGetInfF
+    {standard input}:48     .text.rtGetMinusInf:00000000 $t
+    {standard input}:53     .text.rtGetMinusInf:00000000 rtGetMinusInf
+    {standard input}:63     .text.rtGetMinusInf:00000008 $d
+    {standard input}:66     .text.rtGetMinusInfF:00000000 $t
+    {standard input}:71     .text.rtGetMinusInfF:00000000 rtGetMinusInfF
+    {standard input}:80     .text.rtGetMinusInfF:00000004 $d
+
+NO UNDEFINED SYMBOLS

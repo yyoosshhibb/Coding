@@ -1,0 +1,63 @@
+   1              	 .syntax unified
+   2              	 .cpu cortex-m4
+   3              	 .eabi_attribute 27,3
+   4              	 .fpu fpv4-sp-d16
+   5              	 .eabi_attribute 20,1
+   6              	 .eabi_attribute 21,1
+   7              	 .eabi_attribute 23,3
+   8              	 .eabi_attribute 24,1
+   9              	 .eabi_attribute 25,1
+  10              	 .eabi_attribute 26,1
+  11              	 .eabi_attribute 30,4
+  12              	 .eabi_attribute 34,1
+  13              	 .eabi_attribute 18,4
+  14              	 .thumb
+  15              	 .file "main.c"
+  16              	 .section .text.startup.main,"ax",%progbits
+  17              	 .align 1
+  18              	 .global main
+  19              	 .thumb
+  20              	 .thumb_func
+  22              	main:
+  23              	 
+  24              	 
+  25 0000 08B5     	 push {r3,lr}
+  26 0002 FFF7FEFF 	 bl DAVE_Init
+  27 0006 FFF7FEFF 	 bl Watchdog_Start
+  28 000a FFF7FEFF 	 bl VCU_initialize
+  29 000e FFF7FEFF 	 bl CAN_1_ini
+  30 0012 FFF7FEFF 	 bl CAN_2_ini
+  31 0016 FFF7FEFF 	 bl IOPort_ini
+  32 001a FFF7FEFF 	 bl RTOS_Handling_ini
+  33 001e 0020     	 movs r0,#0
+  34 0020 08BD     	 pop {r3,pc}
+  36              	 .comm IOportData,116,4
+  37              	 .comm canData,352,8
+  38              	 .comm shiftDownInterrupt,1,1
+  39              	 .comm shiftUpInterrupt,1,1
+  40              	 .comm VAR_TR3_VSense_FAN2,8,8
+  41              	 .comm VAR_TR2_VSense_FAN1,8,8
+  42              	 .comm VAR_TR1_VSense_WP,8,8
+  43              	 .comm VAR_boardTemp,8,8
+  44              	 .ident "GCC: (GNU Tools for ARM Embedded Processors) 4.9.3 20141119 (release) [ARM/embedded-4_9-branch revision 218278]"
+DEFINED SYMBOLS
+                            *ABS*:00000000 main.c
+    {standard input}:17     .text.startup.main:00000000 $t
+    {standard input}:22     .text.startup.main:00000000 main
+                            *COM*:00000074 IOportData
+                            *COM*:00000160 canData
+                            *COM*:00000001 shiftDownInterrupt
+                            *COM*:00000001 shiftUpInterrupt
+                            *COM*:00000008 VAR_TR3_VSense_FAN2
+                            *COM*:00000008 VAR_TR2_VSense_FAN1
+                            *COM*:00000008 VAR_TR1_VSense_WP
+                            *COM*:00000008 VAR_boardTemp
+
+UNDEFINED SYMBOLS
+DAVE_Init
+Watchdog_Start
+VCU_initialize
+CAN_1_ini
+CAN_2_ini
+IOPort_ini
+RTOS_Handling_ini

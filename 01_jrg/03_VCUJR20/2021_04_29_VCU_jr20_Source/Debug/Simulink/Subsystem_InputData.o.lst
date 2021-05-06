@@ -1,0 +1,2124 @@
+   1              	 .syntax unified
+   2              	 .cpu cortex-m4
+   3              	 .eabi_attribute 27,3
+   4              	 .fpu fpv4-sp-d16
+   5              	 .eabi_attribute 20,1
+   6              	 .eabi_attribute 21,1
+   7              	 .eabi_attribute 23,3
+   8              	 .eabi_attribute 24,1
+   9              	 .eabi_attribute 25,1
+  10              	 .eabi_attribute 26,1
+  11              	 .eabi_attribute 30,6
+  12              	 .eabi_attribute 34,1
+  13              	 .eabi_attribute 18,4
+  14              	 .thumb
+  15              	 .file "Subsystem_InputData.c"
+  16              	 .text
+  17              	.Ltext0:
+  18              	 .cfi_sections .debug_frame
+  19              	 .global __aeabi_ui2d
+  20              	 .global __aeabi_dmul
+  21              	 .global __aeabi_dsub
+  22              	 .global __aeabi_dadd
+  23              	 .global __aeabi_dcmpgt
+  24              	 .global __aeabi_dcmplt
+  25              	 .global __aeabi_dcmpeq
+  26              	 .section .text.FUNC_InputData,"ax",%progbits
+  27              	 .align 2
+  28              	 .global FUNC_InputData
+  29              	 .thumb
+  30              	 .thumb_func
+  32              	FUNC_InputData:
+  33              	.LFB175:
+  34              	 .file 1 "../Simulink/Subsystem_InputData.c"
+   1:../Simulink/Subsystem_InputData.c **** /* 
+   2:../Simulink/Subsystem_InputData.c ****  * Academic License - for use in teaching, academic research, and meeting
+   3:../Simulink/Subsystem_InputData.c ****  * course requirements at degree granting institutions only.  Not for
+   4:../Simulink/Subsystem_InputData.c ****  * government, commercial, or other organizational use.
+   5:../Simulink/Subsystem_InputData.c ****  * 
+   6:../Simulink/Subsystem_InputData.c ****  * File: Subsystem_InputData.c
+   7:../Simulink/Subsystem_InputData.c ****  *  
+   8:../Simulink/Subsystem_InputData.c ****  * Code generated for Simulink model : VCU.
+   9:../Simulink/Subsystem_InputData.c ****  * Model version      : 1.300
+  10:../Simulink/Subsystem_InputData.c ****  * Simulink Coder version    : 8.14 (R2018a) 06-Feb-2018
+  11:../Simulink/Subsystem_InputData.c ****  * TLC version       : 8.14 (Feb 22 2018)
+  12:../Simulink/Subsystem_InputData.c ****  * C/C++ source code generated on  : Thu Apr 29 19:26:38 2021
+  13:../Simulink/Subsystem_InputData.c ****  * 
+  14:../Simulink/Subsystem_InputData.c ****  * Target selection: Infineon_XMC_Family.tlc
+  15:../Simulink/Subsystem_InputData.c ****  * Embedded hardware selection: ARM Compatible->ARM Cortex
+  16:../Simulink/Subsystem_InputData.c ****  * Code generation objectives: Unspecified
+  17:../Simulink/Subsystem_InputData.c ****  * Validation result: Not run
+  18:../Simulink/Subsystem_InputData.c ****  */
+  19:../Simulink/Subsystem_InputData.c **** 
+  20:../Simulink/Subsystem_InputData.c **** 
+  21:../Simulink/Subsystem_InputData.c ****     
+  22:../Simulink/Subsystem_InputData.c **** 
+  23:../Simulink/Subsystem_InputData.c ****         #include "Subsystem_InputData.h"
+  24:../Simulink/Subsystem_InputData.c ****           /* Include model header file for global data */
+  25:../Simulink/Subsystem_InputData.c ****               #include "VCU.h"
+  26:../Simulink/Subsystem_InputData.c **** 
+  27:../Simulink/Subsystem_InputData.c ****             #include "VCU_private.h"
+  28:../Simulink/Subsystem_InputData.c **** 
+  29:../Simulink/Subsystem_InputData.c **** 
+  30:../Simulink/Subsystem_InputData.c **** 
+  31:../Simulink/Subsystem_InputData.c **** 
+  32:../Simulink/Subsystem_InputData.c **** 
+  33:../Simulink/Subsystem_InputData.c ****   
+  34:../Simulink/Subsystem_InputData.c **** 
+  35:../Simulink/Subsystem_InputData.c **** 
+  36:../Simulink/Subsystem_InputData.c ****   
+  37:../Simulink/Subsystem_InputData.c **** 
+  38:../Simulink/Subsystem_InputData.c **** 
+  39:../Simulink/Subsystem_InputData.c ****   
+  40:../Simulink/Subsystem_InputData.c **** 
+  41:../Simulink/Subsystem_InputData.c **** 
+  42:../Simulink/Subsystem_InputData.c ****   
+  43:../Simulink/Subsystem_InputData.c **** 
+  44:../Simulink/Subsystem_InputData.c **** 
+  45:../Simulink/Subsystem_InputData.c ****   
+  46:../Simulink/Subsystem_InputData.c **** 
+  47:../Simulink/Subsystem_InputData.c **** 
+  48:../Simulink/Subsystem_InputData.c ****   
+  49:../Simulink/Subsystem_InputData.c **** 
+  50:../Simulink/Subsystem_InputData.c **** 
+  51:../Simulink/Subsystem_InputData.c ****   
+  52:../Simulink/Subsystem_InputData.c **** 
+  53:../Simulink/Subsystem_InputData.c **** 
+  54:../Simulink/Subsystem_InputData.c ****   
+  55:../Simulink/Subsystem_InputData.c **** 
+  56:../Simulink/Subsystem_InputData.c **** 
+  57:../Simulink/Subsystem_InputData.c ****   
+  58:../Simulink/Subsystem_InputData.c **** 
+  59:../Simulink/Subsystem_InputData.c **** 
+  60:../Simulink/Subsystem_InputData.c ****   
+  61:../Simulink/Subsystem_InputData.c **** 
+  62:../Simulink/Subsystem_InputData.c **** 
+  63:../Simulink/Subsystem_InputData.c ****   
+  64:../Simulink/Subsystem_InputData.c **** 
+  65:../Simulink/Subsystem_InputData.c **** 
+  66:../Simulink/Subsystem_InputData.c ****   
+  67:../Simulink/Subsystem_InputData.c **** 
+  68:../Simulink/Subsystem_InputData.c **** 
+  69:../Simulink/Subsystem_InputData.c ****   
+  70:../Simulink/Subsystem_InputData.c **** 
+  71:../Simulink/Subsystem_InputData.c **** 
+  72:../Simulink/Subsystem_InputData.c ****   
+  73:../Simulink/Subsystem_InputData.c **** 
+  74:../Simulink/Subsystem_InputData.c **** 
+  75:../Simulink/Subsystem_InputData.c ****     
+  76:../Simulink/Subsystem_InputData.c ****        
+  77:../Simulink/Subsystem_InputData.c ****     
+  78:../Simulink/Subsystem_InputData.c ****   
+  79:../Simulink/Subsystem_InputData.c **** 
+  80:../Simulink/Subsystem_InputData.c ****           /* Output and update for atomic system: '<Root>/Input Data' */
+  81:../Simulink/Subsystem_InputData.c ****       
+  82:../Simulink/Subsystem_InputData.c ****               
+  83:../Simulink/Subsystem_InputData.c ****   
+  84:../Simulink/Subsystem_InputData.c ****         void FUNC_InputData(void)
+  85:../Simulink/Subsystem_InputData.c ****   {
+  35              	 .loc 1 85 0
+  36              	 .cfi_startproc
+  37              	 
+  38              	 
+  39 0000 90B5     	 push {r4,r7,lr}
+  40              	.LCFI0:
+  41              	 .cfi_def_cfa_offset 12
+  42              	 .cfi_offset 4,-12
+  43              	 .cfi_offset 7,-8
+  44              	 .cfi_offset 14,-4
+  45 0002 83B0     	 sub sp,sp,#12
+  46              	.LCFI1:
+  47              	 .cfi_def_cfa_offset 24
+  48 0004 02AF     	 add r7,sp,#8
+  49              	.LCFI2:
+  50              	 .cfi_def_cfa 7,16
+  86:../Simulink/Subsystem_InputData.c ****   
+  87:../Simulink/Subsystem_InputData.c ****                       
+  88:../Simulink/Subsystem_InputData.c ****       
+  89:../Simulink/Subsystem_InputData.c ****       
+  90:../Simulink/Subsystem_InputData.c ****       
+  91:../Simulink/Subsystem_InputData.c ****   
+  92:../Simulink/Subsystem_InputData.c **** 
+  93:../Simulink/Subsystem_InputData.c **** 
+  94:../Simulink/Subsystem_InputData.c **** 
+  95:../Simulink/Subsystem_InputData.c ****                           
+  96:../Simulink/Subsystem_InputData.c ****       
+  97:../Simulink/Subsystem_InputData.c ****   
+  98:../Simulink/Subsystem_InputData.c **** 
+  99:../Simulink/Subsystem_InputData.c **** 
+ 100:../Simulink/Subsystem_InputData.c **** 
+ 101:../Simulink/Subsystem_InputData.c ****                                 /* DataStoreRead: '<S8>/Data Store Read1' */
+ 102:../Simulink/Subsystem_InputData.c **** /*@>f7d2*/VCU_B./*@>10d04*/DataStoreRead1_d/*@>6a4d*/ = /*@>fef1*/VCU_DW./*@>1101f*/VAR_IN_p_brake_
+  51              	 .loc 1 102 0
+  52 0006 C04B     	 ldr r3,.L67+8
+  53 0008 93F83021 	 ldrb r2,[r3,#304]
+  54 000c BF4B     	 ldr r3,.L67+12
+  55 000e 83F85727 	 strb r2,[r3,#1879]
+ 103:../Simulink/Subsystem_InputData.c **** /* DataStoreRead: '<S8>/Data Store Read4' */
+ 104:../Simulink/Subsystem_InputData.c **** /*@>f7d8*/VCU_B./*@>10d07*/DataStoreRead4_p/*@>6a4f*/ = /*@>fef7*/VCU_DW./*@>11022*/VAR_IN_p_brake_
+  56              	 .loc 1 104 0
+  57 0012 BD4B     	 ldr r3,.L67+8
+  58 0014 93F83321 	 ldrb r2,[r3,#307]
+  59 0018 BC4B     	 ldr r3,.L67+12
+  60 001a 83F85827 	 strb r2,[r3,#1880]
+ 105:../Simulink/Subsystem_InputData.c **** /* Gain: '<S16>/Gain' */
+ 106:../Simulink/Subsystem_InputData.c **** /*@>f7de*/VCU_B./*@>10d0a*/Gain_d/*@>6a57*/ = /*@>e430*/(uint16_T)(/*@>f7e4*/VCU_B./*@>10d0d*/DataS
+  61              	 .loc 1 106 0
+  62 001e BB4B     	 ldr r3,.L67+12
+  63 0020 93F85837 	 ldrb r3,[r3,#1880]
+  64 0024 9BB2     	 uxth r3,r3
+  65 0026 DB01     	 lsls r3,r3,#7
+  66 0028 9AB2     	 uxth r2,r3
+  67 002a B84B     	 ldr r3,.L67+12
+  68 002c A3F82627 	 strh r2,[r3,#1830]
+ 107:../Simulink/Subsystem_InputData.c **** /* Sum: '<S16>/Add' */
+ 108:../Simulink/Subsystem_InputData.c **** /*@>f7ea*/VCU_B./*@>10d10*/Add_a/*@>8810*/ = /*@>e404*/(uint16_T)(((/*@>e435*/(uint32_T)/*@>f7f0*/V
+  69              	 .loc 1 108 0
+  70 0030 B64B     	 ldr r3,.L67+12
+  71 0032 B3F82637 	 ldrh r3,[r3,#1830]
+  72 0036 5B00     	 lsls r3,r3,#1
+  73 0038 B44A     	 ldr r2,.L67+12
+  74 003a 92F85727 	 ldrb r2,[r2,#1879]
+  75 003e 1344     	 add r3,r3,r2
+  76 0040 5B08     	 lsrs r3,r3,#1
+  77 0042 9AB2     	 uxth r2,r3
+  78 0044 B14B     	 ldr r3,.L67+12
+  79 0046 A3F82827 	 strh r2,[r3,#1832]
+ 109:../Simulink/Subsystem_InputData.c **** /* DataTypeConversion: '<S16>/Data Type Conversion' */
+ 110:../Simulink/Subsystem_InputData.c **** /*@>f7fc*/VCU_B./*@>10d19*/DataTypeConversion_h/*@>6a5f*/ = /*@>f326*/(uint16_T)(/*@>f802*/VCU_B./*
+  80              	 .loc 1 110 0
+  81 004a B04B     	 ldr r3,.L67+12
+  82 004c B3F82837 	 ldrh r3,[r3,#1832]
+  83 0050 5B00     	 lsls r3,r3,#1
+  84 0052 9AB2     	 uxth r2,r3
+  85 0054 AD4B     	 ldr r3,.L67+12
+  86 0056 A3F81427 	 strh r2,[r3,#1812]
+ 111:../Simulink/Subsystem_InputData.c **** /* Gain: '<S15>/Factor' */
+ 112:../Simulink/Subsystem_InputData.c **** /*@>f808*/VCU_B./*@>10d1f*/Factor_g/*@>6a67*/ = /*@>e420*/64173U/*@>e3f1*/ * /*@>f80e*/VCU_B./*@>10
+  87              	 .loc 1 112 0
+  88 005a AC4B     	 ldr r3,.L67+12
+  89 005c B3F81437 	 ldrh r3,[r3,#1812]
+  90 0060 1A46     	 mov r2,r3
+  91 0062 4FF6AD23 	 movw r3,#64173
+  92 0066 03FB02F3 	 mul r3,r3,r2
+  93 006a A84A     	 ldr r2,.L67+12
+  94 006c C2F8DC36 	 str r3,[r2,#1756]
+ 113:../Simulink/Subsystem_InputData.c **** /* Sum: '<S15>/Add1' incorporates:
+ 114:../Simulink/Subsystem_InputData.c ****  *  Constant: '<S15>/Offset'
+ 115:../Simulink/Subsystem_InputData.c ****  */
+ 116:../Simulink/Subsystem_InputData.c **** /*@>f814*/VCU_B./*@>10d25*/Add1_m/*@>8817*/ = /*@>e442*/(real_T)/*@>f81a*/VCU_B./*@>10d28*/Factor_g
+  95              	 .loc 1 116 0
+  96 0070 A64B     	 ldr r3,.L67+12
+  97 0072 D3F8DC36 	 ldr r3,[r3,#1756]
+  98 0076 1846     	 mov r0,r3
+  99 0078 FFF7FEFF 	 bl __aeabi_ui2d
+ 100 007c 0246     	 mov r2,r0
+ 101 007e 0B46     	 mov r3,r1
+ 102 0080 1046     	 mov r0,r2
+ 103 0082 1946     	 mov r1,r3
+ 104 0084 4FF00002 	 mov r2,#0
+ 105 0088 A14B     	 ldr r3,.L67+16
+ 106 008a FFF7FEFF 	 bl __aeabi_dmul
+ 107 008e 0246     	 mov r2,r0
+ 108 0090 0B46     	 mov r3,r1
+ 109 0092 1046     	 mov r0,r2
+ 110 0094 1946     	 mov r1,r3
+ 111 0096 4FF00002 	 mov r2,#0
+ 112 009a 9E4B     	 ldr r3,.L67+20
+ 113 009c FFF7FEFF 	 bl __aeabi_dsub
+ 114 00a0 0246     	 mov r2,r0
+ 115 00a2 0B46     	 mov r3,r1
+ 116 00a4 9949     	 ldr r1,.L67+12
+ 117 00a6 01F59861 	 add r1,r1,#1216
+ 118 00aa C1E90023 	 strd r2,[r1]
+ 117:../Simulink/Subsystem_InputData.c **** /* DataStoreRead: '<S8>/Data Store Read2' */
+ 118:../Simulink/Subsystem_InputData.c **** /*@>f820*/VCU_B./*@>10d2b*/DataStoreRead2/*@>6a6e*/ = /*@>fefd*/VCU_DW./*@>11025*/VAR_IN_ABS_BL_swi
+ 119              	 .loc 1 118 0
+ 120 00ae 964B     	 ldr r3,.L67+8
+ 121 00b0 93F83121 	 ldrb r2,[r3,#305]
+ 122 00b4 954B     	 ldr r3,.L67+12
+ 123 00b6 83F85927 	 strb r2,[r3,#1881]
+ 119:../Simulink/Subsystem_InputData.c **** /* DataTypeConversion: '<S8>/Data Type Conversion2' */
+ 120:../Simulink/Subsystem_InputData.c **** /*@>f826*/VCU_B./*@>10d2e*/ABS_BL_switch/*@>6a71*/ = /*@>f82c*/VCU_B./*@>10d31*/DataStoreRead2;
+ 124              	 .loc 1 120 0
+ 125 00ba 944B     	 ldr r3,.L67+12
+ 126 00bc 93F85937 	 ldrb r3,[r3,#1881]
+ 127 00c0 1846     	 mov r0,r3
+ 128 00c2 FFF7FEFF 	 bl __aeabi_ui2d
+ 129 00c6 0246     	 mov r2,r0
+ 130 00c8 0B46     	 mov r3,r1
+ 131 00ca 9049     	 ldr r1,.L67+12
+ 132 00cc 01F59961 	 add r1,r1,#1224
+ 133 00d0 C1E90023 	 strd r2,[r1]
+ 121:../Simulink/Subsystem_InputData.c **** /* DataStoreRead: '<S8>/Data Store Read3' */
+ 122:../Simulink/Subsystem_InputData.c **** /*@>f832*/VCU_B./*@>10d34*/DataStoreRead3_l/*@>6a73*/ = /*@>ff03*/VCU_DW./*@>11028*/VAR_IN_ABS_swit
+ 134              	 .loc 1 122 0
+ 135 00d4 8C4B     	 ldr r3,.L67+8
+ 136 00d6 93F83221 	 ldrb r2,[r3,#306]
+ 137 00da 8C4B     	 ldr r3,.L67+12
+ 138 00dc 83F85A27 	 strb r2,[r3,#1882]
+ 123:../Simulink/Subsystem_InputData.c **** /* DataTypeConversion: '<S8>/Data Type Conversion' */
+ 124:../Simulink/Subsystem_InputData.c **** /*@>f838*/VCU_B./*@>10d37*/ABS_switchstate/*@>6a76*/ = /*@>f83e*/VCU_B./*@>10d3a*/DataStoreRead3_l;
+ 139              	 .loc 1 124 0
+ 140 00e0 8A4B     	 ldr r3,.L67+12
+ 141 00e2 93F85A37 	 ldrb r3,[r3,#1882]
+ 142 00e6 1846     	 mov r0,r3
+ 143 00e8 FFF7FEFF 	 bl __aeabi_ui2d
+ 144 00ec 0246     	 mov r2,r0
+ 145 00ee 0B46     	 mov r3,r1
+ 146 00f0 8649     	 ldr r1,.L67+12
+ 147 00f2 01F59A61 	 add r1,r1,#1232
+ 148 00f6 C1E90023 	 strd r2,[r1]
+ 125:../Simulink/Subsystem_InputData.c **** /* DataStoreRead: '<S8>/Data Store Read5' */
+ 126:../Simulink/Subsystem_InputData.c **** /*@>f844*/VCU_B./*@>10d3d*/DataStoreRead5_d/*@>6a78*/ = /*@>ff09*/VCU_DW./*@>1102b*/VAR_IN_ABS_EBD_
+ 149              	 .loc 1 126 0
+ 150 00fa 834B     	 ldr r3,.L67+8
+ 151 00fc 93F83421 	 ldrb r2,[r3,#308]
+ 152 0100 824B     	 ldr r3,.L67+12
+ 153 0102 83F85B27 	 strb r2,[r3,#1883]
+ 127:../Simulink/Subsystem_InputData.c **** /* DataTypeConversion: '<S8>/Data Type Conversion4' */
+ 128:../Simulink/Subsystem_InputData.c **** /*@>f84a*/VCU_B./*@>10d40*/ABS_EBD_Lamp/*@>6a7b*/ = /*@>f850*/VCU_B./*@>10d43*/DataStoreRead5_d;
+ 154              	 .loc 1 128 0
+ 155 0106 814B     	 ldr r3,.L67+12
+ 156 0108 93F85B37 	 ldrb r3,[r3,#1883]
+ 157 010c 1846     	 mov r0,r3
+ 158 010e FFF7FEFF 	 bl __aeabi_ui2d
+ 159 0112 0246     	 mov r2,r0
+ 160 0114 0B46     	 mov r3,r1
+ 161 0116 7D49     	 ldr r1,.L67+12
+ 162 0118 01F59B61 	 add r1,r1,#1240
+ 163 011c C1E90023 	 strd r2,[r1]
+ 129:../Simulink/Subsystem_InputData.c **** /* DataStoreRead: '<S8>/Data Store Read6' */
+ 130:../Simulink/Subsystem_InputData.c **** /*@>f856*/VCU_B./*@>10d46*/DataStoreRead6_j/*@>6a7d*/ = /*@>ff0f*/VCU_DW./*@>1102e*/VAR_IN_ABS_acti
+ 164              	 .loc 1 130 0
+ 165 0120 794B     	 ldr r3,.L67+8
+ 166 0122 93F83521 	 ldrb r2,[r3,#309]
+ 167 0126 794B     	 ldr r3,.L67+12
+ 168 0128 83F85C27 	 strb r2,[r3,#1884]
+ 131:../Simulink/Subsystem_InputData.c **** /* DataTypeConversion: '<S8>/Data Type Conversion3' */
+ 132:../Simulink/Subsystem_InputData.c **** /*@>f85c*/VCU_B./*@>10d49*/ABS_active/*@>6a80*/ = /*@>f862*/VCU_B./*@>10d4c*/DataStoreRead6_j;
+ 169              	 .loc 1 132 0
+ 170 012c 774B     	 ldr r3,.L67+12
+ 171 012e 93F85C37 	 ldrb r3,[r3,#1884]
+ 172 0132 1846     	 mov r0,r3
+ 173 0134 FFF7FEFF 	 bl __aeabi_ui2d
+ 174 0138 0246     	 mov r2,r0
+ 175 013a 0B46     	 mov r3,r1
+ 176 013c 7349     	 ldr r1,.L67+12
+ 177 013e 01F59C61 	 add r1,r1,#1248
+ 178 0142 C1E90023 	 strd r2,[r1]
+ 133:../Simulink/Subsystem_InputData.c **** /* DataStoreRead: '<S8>/Data Store Read7' */
+ 134:../Simulink/Subsystem_InputData.c **** /*@>f868*/VCU_B./*@>10d4f*/DataStoreRead7_l/*@>6a82*/ = /*@>ff15*/VCU_DW./*@>11031*/VAR_IN_ABS_Lamp
+ 179              	 .loc 1 134 0
+ 180 0146 704B     	 ldr r3,.L67+8
+ 181 0148 93F83621 	 ldrb r2,[r3,#310]
+ 182 014c 6F4B     	 ldr r3,.L67+12
+ 183 014e 83F85D27 	 strb r2,[r3,#1885]
+ 135:../Simulink/Subsystem_InputData.c **** /* DataTypeConversion: '<S8>/Data Type Conversion5' */
+ 136:../Simulink/Subsystem_InputData.c **** /*@>f86e*/VCU_B./*@>10d52*/ABS_Lamp/*@>6a85*/ = /*@>f874*/VCU_B./*@>10d55*/DataStoreRead7_l;
+ 184              	 .loc 1 136 0
+ 185 0152 6E4B     	 ldr r3,.L67+12
+ 186 0154 93F85D37 	 ldrb r3,[r3,#1885]
+ 187 0158 1846     	 mov r0,r3
+ 188 015a FFF7FEFF 	 bl __aeabi_ui2d
+ 189 015e 0246     	 mov r2,r0
+ 190 0160 0B46     	 mov r3,r1
+ 191 0162 6A49     	 ldr r1,.L67+12
+ 192 0164 01F59D61 	 add r1,r1,#1256
+ 193 0168 C1E90023 	 strd r2,[r1]
+ 137:../Simulink/Subsystem_InputData.c **** /* DataStoreRead: '<S9>/Data Store Read5' */
+ 138:../Simulink/Subsystem_InputData.c **** /*@>f87a*/VCU_B./*@>10d58*/DataStoreRead5_n/*@>6a87*/ = /*@>ff1b*/VCU_DW./*@>11034*/VAR_IN_n_wheel_
+ 194              	 .loc 1 138 0
+ 195 016c 664B     	 ldr r3,.L67+8
+ 196 016e 93F83B21 	 ldrb r2,[r3,#315]
+ 197 0172 664B     	 ldr r3,.L67+12
+ 198 0174 83F85E27 	 strb r2,[r3,#1886]
+ 139:../Simulink/Subsystem_InputData.c **** /* DataStoreRead: '<S9>/Data Store Read1' */
+ 140:../Simulink/Subsystem_InputData.c **** /*@>f880*/VCU_B./*@>10d5b*/DataStoreRead1_k/*@>6a89*/ = /*@>ff21*/VCU_DW./*@>11037*/VAR_IN_n_wheel_
+ 199              	 .loc 1 140 0
+ 200 0178 634B     	 ldr r3,.L67+8
+ 201 017a 93F83721 	 ldrb r2,[r3,#311]
+ 202 017e 634B     	 ldr r3,.L67+12
+ 203 0180 83F85F27 	 strb r2,[r3,#1887]
+ 141:../Simulink/Subsystem_InputData.c **** /* Gain: '<S21>/Gain' */
+ 142:../Simulink/Subsystem_InputData.c **** /*@>f886*/VCU_B./*@>10d5e*/Gain_i/*@>6a91*/ = /*@>e464*/(uint16_T)(/*@>f88c*/VCU_B./*@>10d61*/DataS
+ 204              	 .loc 1 142 0
+ 205 0184 614B     	 ldr r3,.L67+12
+ 206 0186 93F85F37 	 ldrb r3,[r3,#1887]
+ 207 018a 9BB2     	 uxth r3,r3
+ 208 018c DB01     	 lsls r3,r3,#7
+ 209 018e 9AB2     	 uxth r2,r3
+ 210 0190 5E4B     	 ldr r3,.L67+12
+ 211 0192 A3F82A27 	 strh r2,[r3,#1834]
+ 143:../Simulink/Subsystem_InputData.c **** /* Sum: '<S21>/Add' */
+ 144:../Simulink/Subsystem_InputData.c **** /*@>f892*/VCU_B./*@>10d64*/Add_li/*@>8820*/ = /*@>e3d5*/(uint16_T)(((/*@>e469*/(uint32_T)/*@>f898*/
+ 212              	 .loc 1 144 0
+ 213 0196 5D4B     	 ldr r3,.L67+12
+ 214 0198 B3F82A37 	 ldrh r3,[r3,#1834]
+ 215 019c 5B00     	 lsls r3,r3,#1
+ 216 019e 5B4A     	 ldr r2,.L67+12
+ 217 01a0 92F85E27 	 ldrb r2,[r2,#1886]
+ 218 01a4 1344     	 add r3,r3,r2
+ 219 01a6 5B08     	 lsrs r3,r3,#1
+ 220 01a8 9AB2     	 uxth r2,r3
+ 221 01aa 584B     	 ldr r3,.L67+12
+ 222 01ac A3F82C27 	 strh r2,[r3,#1836]
+ 145:../Simulink/Subsystem_InputData.c **** /* DataTypeConversion: '<S21>/Data Type Conversion' */
+ 146:../Simulink/Subsystem_InputData.c **** /*@>f8a4*/VCU_B./*@>10d6d*/DataTypeConversion_a/*@>6a99*/ = /*@>f325*/(uint16_T)(/*@>f8aa*/VCU_B./*
+ 223              	 .loc 1 146 0
+ 224 01b0 564B     	 ldr r3,.L67+12
+ 225 01b2 B3F82C37 	 ldrh r3,[r3,#1836]
+ 226 01b6 5B00     	 lsls r3,r3,#1
+ 227 01b8 9AB2     	 uxth r2,r3
+ 228 01ba 544B     	 ldr r3,.L67+12
+ 229 01bc A3F81627 	 strh r2,[r3,#1814]
+ 147:../Simulink/Subsystem_InputData.c **** /* Gain: '<S17>/Factor' */
+ 148:../Simulink/Subsystem_InputData.c **** /*@>f8b0*/VCU_B./*@>10d73*/Factor_br/*@>6aa1*/ = /*@>e473*/(uint32_T)/*@>f8b6*/VCU_B./*@>10d76*/Dat
+ 230              	 .loc 1 148 0
+ 231 01c0 524B     	 ldr r3,.L67+12
+ 232 01c2 B3F81637 	 ldrh r3,[r3,#1814]
+ 233 01c6 DB03     	 lsls r3,r3,#15
+ 234 01c8 504A     	 ldr r2,.L67+12
+ 235 01ca C2F8E036 	 str r3,[r2,#1760]
+ 149:../Simulink/Subsystem_InputData.c **** /* Sum: '<S17>/Add1' */
+ 150:../Simulink/Subsystem_InputData.c **** /*@>f8bc*/VCU_B./*@>10d79*/Add1_k/*@>8827*/ = /*@>e477*/(real_T)/*@>f8c2*/VCU_B./*@>10d7c*/Factor_b
+ 236              	 .loc 1 150 0
+ 237 01ce 4F4B     	 ldr r3,.L67+12
+ 238 01d0 D3F8E036 	 ldr r3,[r3,#1760]
+ 239 01d4 1846     	 mov r0,r3
+ 240 01d6 FFF7FEFF 	 bl __aeabi_ui2d
+ 241 01da 0246     	 mov r2,r0
+ 242 01dc 0B46     	 mov r3,r1
+ 243 01de 1046     	 mov r0,r2
+ 244 01e0 1946     	 mov r1,r3
+ 245 01e2 4FF00002 	 mov r2,#0
+ 246 01e6 4C4B     	 ldr r3,.L67+24
+ 247 01e8 FFF7FEFF 	 bl __aeabi_dmul
+ 248 01ec 0246     	 mov r2,r0
+ 249 01ee 0B46     	 mov r3,r1
+ 250 01f0 4649     	 ldr r1,.L67+12
+ 251 01f2 01F59E61 	 add r1,r1,#1264
+ 252 01f6 C1E90023 	 strd r2,[r1]
+ 151:../Simulink/Subsystem_InputData.c **** /* DataStoreRead: '<S9>/Data Store Read2' */
+ 152:../Simulink/Subsystem_InputData.c **** /*@>f8c8*/VCU_B./*@>10d7f*/DataStoreRead2_n/*@>6aa8*/ = /*@>ff27*/VCU_DW./*@>1103a*/VAR_IN_n_wheel_
+ 253              	 .loc 1 152 0
+ 254 01fa 434B     	 ldr r3,.L67+8
+ 255 01fc 93F83821 	 ldrb r2,[r3,#312]
+ 256 0200 424B     	 ldr r3,.L67+12
+ 257 0202 83F86027 	 strb r2,[r3,#1888]
+ 153:../Simulink/Subsystem_InputData.c **** /* DataStoreRead: '<S9>/Data Store Read3' */
+ 154:../Simulink/Subsystem_InputData.c **** /*@>f8ce*/VCU_B./*@>10d82*/DataStoreRead3_k/*@>6aaa*/ = /*@>ff2d*/VCU_DW./*@>1103d*/VAR_IN_n_wheel_
+ 258              	 .loc 1 154 0
+ 259 0206 404B     	 ldr r3,.L67+8
+ 260 0208 93F83921 	 ldrb r2,[r3,#313]
+ 261 020c 3F4B     	 ldr r3,.L67+12
+ 262 020e 83F86127 	 strb r2,[r3,#1889]
+ 155:../Simulink/Subsystem_InputData.c **** /* Gain: '<S22>/Gain' */
+ 156:../Simulink/Subsystem_InputData.c **** /*@>f8d4*/VCU_B./*@>10d85*/Gain_e/*@>6ab2*/ = /*@>e480*/(uint16_T)(/*@>f8da*/VCU_B./*@>10d88*/DataS
+ 263              	 .loc 1 156 0
+ 264 0212 3E4B     	 ldr r3,.L67+12
+ 265 0214 93F86137 	 ldrb r3,[r3,#1889]
+ 266 0218 9BB2     	 uxth r3,r3
+ 267 021a DB01     	 lsls r3,r3,#7
+ 268 021c 9AB2     	 uxth r2,r3
+ 269 021e 3B4B     	 ldr r3,.L67+12
+ 270 0220 A3F82E27 	 strh r2,[r3,#1838]
+ 157:../Simulink/Subsystem_InputData.c **** /* Sum: '<S22>/Add' */
+ 158:../Simulink/Subsystem_InputData.c **** /*@>f8e0*/VCU_B./*@>10d8b*/Add_f/*@>8830*/ = /*@>e3a4*/(uint16_T)(((/*@>e485*/(uint32_T)/*@>f8e6*/V
+ 271              	 .loc 1 158 0
+ 272 0224 394B     	 ldr r3,.L67+12
+ 273 0226 B3F82E37 	 ldrh r3,[r3,#1838]
+ 274 022a 5B00     	 lsls r3,r3,#1
+ 275 022c 374A     	 ldr r2,.L67+12
+ 276 022e 92F86027 	 ldrb r2,[r2,#1888]
+ 277 0232 1344     	 add r3,r3,r2
+ 278 0234 5B08     	 lsrs r3,r3,#1
+ 279 0236 9AB2     	 uxth r2,r3
+ 280 0238 344B     	 ldr r3,.L67+12
+ 281 023a A3F83027 	 strh r2,[r3,#1840]
+ 159:../Simulink/Subsystem_InputData.c **** /* DataTypeConversion: '<S22>/Data Type Conversion' */
+ 160:../Simulink/Subsystem_InputData.c **** /*@>f8f2*/VCU_B./*@>10d94*/DataTypeConversion_l/*@>6aba*/ = /*@>f324*/(uint16_T)(/*@>f8f8*/VCU_B./*
+ 282              	 .loc 1 160 0
+ 283 023e 334B     	 ldr r3,.L67+12
+ 284 0240 B3F83037 	 ldrh r3,[r3,#1840]
+ 285 0244 5B00     	 lsls r3,r3,#1
+ 286 0246 9AB2     	 uxth r2,r3
+ 287 0248 304B     	 ldr r3,.L67+12
+ 288 024a A3F81827 	 strh r2,[r3,#1816]
+ 161:../Simulink/Subsystem_InputData.c **** /* Gain: '<S18>/Factor' */
+ 162:../Simulink/Subsystem_InputData.c **** /*@>f8fe*/VCU_B./*@>10d9a*/Factor_gm/*@>6ac2*/ = /*@>e48f*/(uint32_T)/*@>f904*/VCU_B./*@>10d9d*/Dat
+ 289              	 .loc 1 162 0
+ 290 024e 2F4B     	 ldr r3,.L67+12
+ 291 0250 B3F81837 	 ldrh r3,[r3,#1816]
+ 292 0254 DB03     	 lsls r3,r3,#15
+ 293 0256 2D4A     	 ldr r2,.L67+12
+ 294 0258 C2F8E436 	 str r3,[r2,#1764]
+ 163:../Simulink/Subsystem_InputData.c **** /* Sum: '<S18>/Add1' */
+ 164:../Simulink/Subsystem_InputData.c **** /*@>f90a*/VCU_B./*@>10da0*/Add1_de/*@>8837*/ = /*@>e493*/(real_T)/*@>f910*/VCU_B./*@>10da3*/Factor_
+ 295              	 .loc 1 164 0
+ 296 025c 2B4B     	 ldr r3,.L67+12
+ 297 025e D3F8E436 	 ldr r3,[r3,#1764]
+ 298 0262 1846     	 mov r0,r3
+ 299 0264 FFF7FEFF 	 bl __aeabi_ui2d
+ 300 0268 0246     	 mov r2,r0
+ 301 026a 0B46     	 mov r3,r1
+ 302 026c 1046     	 mov r0,r2
+ 303 026e 1946     	 mov r1,r3
+ 304 0270 4FF00002 	 mov r2,#0
+ 305 0274 284B     	 ldr r3,.L67+24
+ 306 0276 FFF7FEFF 	 bl __aeabi_dmul
+ 307 027a 0246     	 mov r2,r0
+ 308 027c 0B46     	 mov r3,r1
+ 309 027e 2349     	 ldr r1,.L67+12
+ 310 0280 01F59F61 	 add r1,r1,#1272
+ 311 0284 C1E90023 	 strd r2,[r1]
+ 165:../Simulink/Subsystem_InputData.c **** /* Sum: '<S9>/Add' */
+ 166:../Simulink/Subsystem_InputData.c **** /*@>f916*/VCU_B./*@>10da6*/Add_l1/*@>883c*/ = /*@>f91c*/VCU_B./*@>10da9*/Add1_k/*@>8839*/ + /*@>f92
+ 312              	 .loc 1 166 0
+ 313 0288 204B     	 ldr r3,.L67+12
+ 314 028a 03F59E63 	 add r3,r3,#1264
+ 315 028e D3E90001 	 ldrd r0,[r3]
+ 316 0292 1E4B     	 ldr r3,.L67+12
+ 317 0294 03F59F63 	 add r3,r3,#1272
+ 318 0298 D3E90023 	 ldrd r2,[r3]
+ 319 029c FFF7FEFF 	 bl __aeabi_dadd
+ 320 02a0 0246     	 mov r2,r0
+ 321 02a2 0B46     	 mov r3,r1
+ 322 02a4 1949     	 ldr r1,.L67+12
+ 323 02a6 01F5A061 	 add r1,r1,#1280
+ 324 02aa C1E90023 	 strd r2,[r1]
+ 167:../Simulink/Subsystem_InputData.c **** /* Gain: '<S9>/Gain4' */
+ 168:../Simulink/Subsystem_InputData.c **** /*@>f928*/VCU_B./*@>10daf*/Gain4/*@>6ad4*/ = /*@>e251*/0.9/*@>e382*/ * /*@>f92e*/VCU_B./*@>10db2*/A
+ 325              	 .loc 1 168 0
+ 326 02ae 174B     	 ldr r3,.L67+12
+ 327 02b0 03F5A063 	 add r3,r3,#1280
+ 328 02b4 D3E90023 	 ldrd r2,[r3]
+ 329 02b8 1046     	 mov r0,r2
+ 330 02ba 1946     	 mov r1,r3
+ 331 02bc 10A3     	 adr r3,.L67
+ 332 02be D3E90023 	 ldrd r2,[r3]
+ 333 02c2 FFF7FEFF 	 bl __aeabi_dmul
+ 334 02c6 0246     	 mov r2,r0
+ 335 02c8 0B46     	 mov r3,r1
+ 336 02ca 1049     	 ldr r1,.L67+12
+ 337 02cc 01F5A161 	 add r1,r1,#1288
+ 338 02d0 C1E90023 	 strd r2,[r1]
+ 169:../Simulink/Subsystem_InputData.c **** /* DataStoreRead: '<S9>/Data Store Read4' */
+ 170:../Simulink/Subsystem_InputData.c **** /*@>f934*/VCU_B./*@>10db5*/DataStoreRead4_o/*@>6ad6*/ = /*@>ff33*/VCU_DW./*@>11040*/VAR_IN_n_wheel_
+ 339              	 .loc 1 170 0
+ 340 02d4 0C4B     	 ldr r3,.L67+8
+ 341 02d6 93F83A21 	 ldrb r2,[r3,#314]
+ 342 02da 0C4B     	 ldr r3,.L67+12
+ 343 02dc 83F86227 	 strb r2,[r3,#1890]
+ 171:../Simulink/Subsystem_InputData.c **** /* DataStoreRead: '<S9>/Data Store Read6' */
+ 172:../Simulink/Subsystem_InputData.c **** /*@>f93a*/VCU_B./*@>10db8*/DataStoreRead6_f/*@>6ad8*/ = /*@>ff39*/VCU_DW./*@>11043*/VAR_IN_n_wheel_
+ 344              	 .loc 1 172 0
+ 345 02e0 094B     	 ldr r3,.L67+8
+ 346 02e2 93F83C21 	 ldrb r2,[r3,#316]
+ 347 02e6 094B     	 ldr r3,.L67+12
+ 348 02e8 83F86327 	 strb r2,[r3,#1891]
+ 173:../Simulink/Subsystem_InputData.c **** /* Gain: '<S23>/Gain' */
+ 174:../Simulink/Subsystem_InputData.c **** /*@>f940*/VCU_B./*@>10dbb*/Gain_me/*@>6ae0*/ = /*@>e4a1*/(uint16_T)(/*@>f946*/VCU_B./*@>10dbe*/Data
+ 349              	 .loc 1 174 0
+ 350 02ec 074B     	 ldr r3,.L67+12
+ 351 02ee 93F86337 	 ldrb r3,[r3,#1891]
+ 352 02f2 9BB2     	 uxth r3,r3
+ 353 02f4 DB01     	 lsls r3,r3,#7
+ 354 02f6 9AB2     	 uxth r2,r3
+ 355 02f8 044B     	 ldr r3,.L67+12
+ 356 02fa A3F83227 	 strh r2,[r3,#1842]
+ 357 02fe 0DE0     	 b .L68
+ 358              	.L69:
+ 359              	 .align 3
+ 360              	.L67:
+ 361 0300 CDCCCCCC 	 .word -858993459
+ 362 0304 CCCCEC3F 	 .word 1072483532
+ 363 0308 00000000 	 .word VCU_DW
+ 364 030c 00000000 	 .word VCU_B
+ 365 0310 0000903E 	 .word 1049624576
+ 366 0314 00003440 	 .word 1077149696
+ 367 0318 0000A03E 	 .word 1050673152
+ 368              	.L68:
+ 175:../Simulink/Subsystem_InputData.c **** /* Sum: '<S23>/Add' */
+ 176:../Simulink/Subsystem_InputData.c **** /*@>f94c*/VCU_B./*@>10dc1*/Add_o4/*@>8845*/ = /*@>e36f*/(uint16_T)(((/*@>e4a6*/(uint32_T)/*@>f952*/
+ 369              	 .loc 1 176 0
+ 370 031c C04B     	 ldr r3,.L70+8
+ 371 031e B3F83237 	 ldrh r3,[r3,#1842]
+ 372 0322 5B00     	 lsls r3,r3,#1
+ 373 0324 BE4A     	 ldr r2,.L70+8
+ 374 0326 92F86227 	 ldrb r2,[r2,#1890]
+ 375 032a 1344     	 add r3,r3,r2
+ 376 032c 5B08     	 lsrs r3,r3,#1
+ 377 032e 9AB2     	 uxth r2,r3
+ 378 0330 BB4B     	 ldr r3,.L70+8
+ 379 0332 A3F83427 	 strh r2,[r3,#1844]
+ 177:../Simulink/Subsystem_InputData.c **** /* DataTypeConversion: '<S23>/Data Type Conversion' */
+ 178:../Simulink/Subsystem_InputData.c **** /*@>f95e*/VCU_B./*@>10dca*/DataTypeConversion_j/*@>6ae8*/ = /*@>f323*/(uint16_T)(/*@>f964*/VCU_B./*
+ 380              	 .loc 1 178 0
+ 381 0336 BA4B     	 ldr r3,.L70+8
+ 382 0338 B3F83437 	 ldrh r3,[r3,#1844]
+ 383 033c 5B00     	 lsls r3,r3,#1
+ 384 033e 9AB2     	 uxth r2,r3
+ 385 0340 B74B     	 ldr r3,.L70+8
+ 386 0342 A3F81A27 	 strh r2,[r3,#1818]
+ 179:../Simulink/Subsystem_InputData.c **** /* Gain: '<S19>/Factor' */
+ 180:../Simulink/Subsystem_InputData.c **** /*@>f96a*/VCU_B./*@>10dd0*/Factor_d5/*@>6af0*/ = /*@>e4b0*/(uint32_T)/*@>f970*/VCU_B./*@>10dd3*/Dat
+ 387              	 .loc 1 180 0
+ 388 0346 B64B     	 ldr r3,.L70+8
+ 389 0348 B3F81A37 	 ldrh r3,[r3,#1818]
+ 390 034c DB03     	 lsls r3,r3,#15
+ 391 034e B44A     	 ldr r2,.L70+8
+ 392 0350 C2F8E836 	 str r3,[r2,#1768]
+ 181:../Simulink/Subsystem_InputData.c **** /* Sum: '<S19>/Add1' */
+ 182:../Simulink/Subsystem_InputData.c **** /*@>f976*/VCU_B./*@>10dd6*/Add1_ks/*@>884c*/ = /*@>e4b4*/(real_T)/*@>f97c*/VCU_B./*@>10dd9*/Factor_
+ 393              	 .loc 1 182 0
+ 394 0354 B24B     	 ldr r3,.L70+8
+ 395 0356 D3F8E836 	 ldr r3,[r3,#1768]
+ 396 035a 1846     	 mov r0,r3
+ 397 035c FFF7FEFF 	 bl __aeabi_ui2d
+ 398 0360 0246     	 mov r2,r0
+ 399 0362 0B46     	 mov r3,r1
+ 400 0364 1046     	 mov r0,r2
+ 401 0366 1946     	 mov r1,r3
+ 402 0368 4FF00002 	 mov r2,#0
+ 403 036c AD4B     	 ldr r3,.L70+12
+ 404 036e FFF7FEFF 	 bl __aeabi_dmul
+ 405 0372 0246     	 mov r2,r0
+ 406 0374 0B46     	 mov r3,r1
+ 407 0376 AA49     	 ldr r1,.L70+8
+ 408 0378 01F5A261 	 add r1,r1,#1296
+ 409 037c C1E90023 	 strd r2,[r1]
+ 183:../Simulink/Subsystem_InputData.c **** /* DataStoreRead: '<S9>/Data Store Read7' */
+ 184:../Simulink/Subsystem_InputData.c **** /*@>f982*/VCU_B./*@>10ddc*/DataStoreRead7_h/*@>6af7*/ = /*@>ff3f*/VCU_DW./*@>11046*/VAR_IN_n_wheel_
+ 410              	 .loc 1 184 0
+ 411 0380 A94B     	 ldr r3,.L70+16
+ 412 0382 93F83D21 	 ldrb r2,[r3,#317]
+ 413 0386 A64B     	 ldr r3,.L70+8
+ 414 0388 83F86427 	 strb r2,[r3,#1892]
+ 185:../Simulink/Subsystem_InputData.c **** /* DataStoreRead: '<S9>/Data Store Read8' */
+ 186:../Simulink/Subsystem_InputData.c **** /*@>f988*/VCU_B./*@>10ddf*/DataStoreRead8_e/*@>6af9*/ = /*@>ff45*/VCU_DW./*@>11049*/VAR_IN_n_wheel_
+ 415              	 .loc 1 186 0
+ 416 038c A64B     	 ldr r3,.L70+16
+ 417 038e 93F83E21 	 ldrb r2,[r3,#318]
+ 418 0392 A34B     	 ldr r3,.L70+8
+ 419 0394 83F86527 	 strb r2,[r3,#1893]
+ 187:../Simulink/Subsystem_InputData.c **** /* Gain: '<S24>/Gain' */
+ 188:../Simulink/Subsystem_InputData.c **** /*@>f98e*/VCU_B./*@>10de2*/Gain_c/*@>6b01*/ = /*@>e4bd*/(uint16_T)(/*@>f994*/VCU_B./*@>10de5*/DataS
+ 420              	 .loc 1 188 0
+ 421 0398 A14B     	 ldr r3,.L70+8
+ 422 039a 93F86537 	 ldrb r3,[r3,#1893]
+ 423 039e 9BB2     	 uxth r3,r3
+ 424 03a0 DB01     	 lsls r3,r3,#7
+ 425 03a2 9AB2     	 uxth r2,r3
+ 426 03a4 9E4B     	 ldr r3,.L70+8
+ 427 03a6 A3F83627 	 strh r2,[r3,#1846]
+ 189:../Simulink/Subsystem_InputData.c **** /* Sum: '<S24>/Add' */
+ 190:../Simulink/Subsystem_InputData.c **** /*@>f99a*/VCU_B./*@>10de8*/Add_fb/*@>8855*/ = /*@>e33e*/(uint16_T)(((/*@>e4c2*/(uint32_T)/*@>f9a0*/
+ 428              	 .loc 1 190 0
+ 429 03aa 9D4B     	 ldr r3,.L70+8
+ 430 03ac B3F83637 	 ldrh r3,[r3,#1846]
+ 431 03b0 5B00     	 lsls r3,r3,#1
+ 432 03b2 9B4A     	 ldr r2,.L70+8
+ 433 03b4 92F86427 	 ldrb r2,[r2,#1892]
+ 434 03b8 1344     	 add r3,r3,r2
+ 435 03ba 5B08     	 lsrs r3,r3,#1
+ 436 03bc 9AB2     	 uxth r2,r3
+ 437 03be 984B     	 ldr r3,.L70+8
+ 438 03c0 A3F83827 	 strh r2,[r3,#1848]
+ 191:../Simulink/Subsystem_InputData.c **** /* DataTypeConversion: '<S24>/Data Type Conversion' */
+ 192:../Simulink/Subsystem_InputData.c **** /*@>f9ac*/VCU_B./*@>10df1*/DataTypeConversion_c/*@>6b09*/ = /*@>f322*/(uint16_T)(/*@>f9b2*/VCU_B./*
+ 439              	 .loc 1 192 0
+ 440 03c4 964B     	 ldr r3,.L70+8
+ 441 03c6 B3F83837 	 ldrh r3,[r3,#1848]
+ 442 03ca 5B00     	 lsls r3,r3,#1
+ 443 03cc 9AB2     	 uxth r2,r3
+ 444 03ce 944B     	 ldr r3,.L70+8
+ 445 03d0 A3F81C27 	 strh r2,[r3,#1820]
+ 193:../Simulink/Subsystem_InputData.c **** /* Gain: '<S20>/Factor' */
+ 194:../Simulink/Subsystem_InputData.c **** /*@>f9b8*/VCU_B./*@>10df7*/Factor_jp/*@>6b11*/ = /*@>e4cc*/(uint32_T)/*@>f9be*/VCU_B./*@>10dfa*/Dat
+ 446              	 .loc 1 194 0
+ 447 03d4 924B     	 ldr r3,.L70+8
+ 448 03d6 B3F81C37 	 ldrh r3,[r3,#1820]
+ 449 03da DB03     	 lsls r3,r3,#15
+ 450 03dc 904A     	 ldr r2,.L70+8
+ 451 03de C2F8EC36 	 str r3,[r2,#1772]
+ 195:../Simulink/Subsystem_InputData.c **** /* Sum: '<S20>/Add1' */
+ 196:../Simulink/Subsystem_InputData.c **** /*@>f9c4*/VCU_B./*@>10dfd*/Add1_eq/*@>885c*/ = /*@>e4d0*/(real_T)/*@>f9ca*/VCU_B./*@>10e00*/Factor_
+ 452              	 .loc 1 196 0
+ 453 03e2 8F4B     	 ldr r3,.L70+8
+ 454 03e4 D3F8EC36 	 ldr r3,[r3,#1772]
+ 455 03e8 1846     	 mov r0,r3
+ 456 03ea FFF7FEFF 	 bl __aeabi_ui2d
+ 457 03ee 0246     	 mov r2,r0
+ 458 03f0 0B46     	 mov r3,r1
+ 459 03f2 1046     	 mov r0,r2
+ 460 03f4 1946     	 mov r1,r3
+ 461 03f6 4FF00002 	 mov r2,#0
+ 462 03fa 8A4B     	 ldr r3,.L70+12
+ 463 03fc FFF7FEFF 	 bl __aeabi_dmul
+ 464 0400 0246     	 mov r2,r0
+ 465 0402 0B46     	 mov r3,r1
+ 466 0404 8649     	 ldr r1,.L70+8
+ 467 0406 01F5A361 	 add r1,r1,#1304
+ 468 040a C1E90023 	 strd r2,[r1]
+ 197:../Simulink/Subsystem_InputData.c **** /* DataStoreRead: '<S25>/Data Store Read1' */
+ 198:../Simulink/Subsystem_InputData.c **** /*@>f9d0*/VCU_B./*@>10e03*/DataStoreRead1_g/*@>6b18*/ = /*@>ff4b*/VCU_DW./*@>1104c*/VAR_IN_u_TPS;
+ 469              	 .loc 1 198 0
+ 470 040e 864B     	 ldr r3,.L70+16
+ 471 0410 93F83F21 	 ldrb r2,[r3,#319]
+ 472 0414 824B     	 ldr r3,.L70+8
+ 473 0416 83F86627 	 strb r2,[r3,#1894]
+ 199:../Simulink/Subsystem_InputData.c **** /* DataStoreRead: '<S26>/Data Store Read5' */
+ 200:../Simulink/Subsystem_InputData.c **** /*@>f9d6*/VCU_B./*@>10e06*/DataStoreRead5_i/*@>6b1a*/ = /*@>ff51*/VCU_DW./*@>1104f*/VAR_IN_p_air_22
+ 474              	 .loc 1 200 0
+ 475 041a 834B     	 ldr r3,.L70+16
+ 476 041c 93F84421 	 ldrb r2,[r3,#324]
+ 477 0420 7F4B     	 ldr r3,.L70+8
+ 478 0422 83F86727 	 strb r2,[r3,#1895]
+ 201:../Simulink/Subsystem_InputData.c **** /* DataTypeConversion: '<S26>/Data Type Conversion' */
+ 202:../Simulink/Subsystem_InputData.c **** /*@>f9dc*/VCU_B./*@>10e09*/DataTypeConversion/*@>6b1d*/ = /*@>f9e2*/VCU_B./*@>10e0c*/DataStoreRead5
+ 479              	 .loc 1 202 0
+ 480 0426 7E4B     	 ldr r3,.L70+8
+ 481 0428 93F86737 	 ldrb r3,[r3,#1895]
+ 482 042c 1846     	 mov r0,r3
+ 483 042e FFF7FEFF 	 bl __aeabi_ui2d
+ 484 0432 0246     	 mov r2,r0
+ 485 0434 0B46     	 mov r3,r1
+ 486 0436 7A49     	 ldr r1,.L70+8
+ 487 0438 01F5A461 	 add r1,r1,#1312
+ 488 043c C1E90023 	 strd r2,[r1]
+ 203:../Simulink/Subsystem_InputData.c **** /* DataStoreRead: '<S26>/Data Store Read4' */
+ 204:../Simulink/Subsystem_InputData.c **** /*@>f9e8*/VCU_B./*@>10e0f*/DataStoreRead4_k/*@>6b1f*/ = /*@>ff57*/VCU_DW./*@>11052*/VAR_IN_p_air_22
+ 489              	 .loc 1 204 0
+ 490 0440 794B     	 ldr r3,.L70+16
+ 491 0442 93F84321 	 ldrb r2,[r3,#323]
+ 492 0446 764B     	 ldr r3,.L70+8
+ 493 0448 83F86827 	 strb r2,[r3,#1896]
+ 205:../Simulink/Subsystem_InputData.c **** /* DataTypeConversion: '<S26>/Data Type Conversion1' */
+ 206:../Simulink/Subsystem_InputData.c **** /*@>f9ee*/VCU_B./*@>10e12*/DataTypeConversion1/*@>6b22*/ = /*@>f9f4*/VCU_B./*@>10e15*/DataStoreRead
+ 494              	 .loc 1 206 0
+ 495 044c 744B     	 ldr r3,.L70+8
+ 496 044e 93F86837 	 ldrb r3,[r3,#1896]
+ 497 0452 1846     	 mov r0,r3
+ 498 0454 FFF7FEFF 	 bl __aeabi_ui2d
+ 499 0458 0246     	 mov r2,r0
+ 500 045a 0B46     	 mov r3,r1
+ 501 045c 7049     	 ldr r1,.L70+8
+ 502 045e 01F5A561 	 add r1,r1,#1320
+ 503 0462 C1E90023 	 strd r2,[r1]
+ 207:../Simulink/Subsystem_InputData.c **** /* DataStoreRead: '<S26>/Data Store Read1' */
+ 208:../Simulink/Subsystem_InputData.c **** /*@>f9fa*/VCU_B./*@>10e18*/DataStoreRead1_m/*@>6b24*/ = /*@>ff5d*/VCU_DW./*@>11055*/VAR_IN_n_engine
+ 504              	 .loc 1 208 0
+ 505 0466 704B     	 ldr r3,.L70+16
+ 506 0468 93F84121 	 ldrb r2,[r3,#321]
+ 507 046c 6C4B     	 ldr r3,.L70+8
+ 508 046e 83F86927 	 strb r2,[r3,#1897]
+ 209:../Simulink/Subsystem_InputData.c **** /* Gain: '<S29>/Gain' */
+ 210:../Simulink/Subsystem_InputData.c **** /*@>fa00*/VCU_B./*@>10e1b*/Gain_cv/*@>6b2c*/ = /*@>e4e3*/(uint16_T)(/*@>fa06*/VCU_B./*@>10e1e*/Data
+ 509              	 .loc 1 210 0
+ 510 0472 6B4B     	 ldr r3,.L70+8
+ 511 0474 93F86937 	 ldrb r3,[r3,#1897]
+ 512 0478 9BB2     	 uxth r3,r3
+ 513 047a DB01     	 lsls r3,r3,#7
+ 514 047c 9AB2     	 uxth r2,r3
+ 515 047e 684B     	 ldr r3,.L70+8
+ 516 0480 A3F83A27 	 strh r2,[r3,#1850]
+ 211:../Simulink/Subsystem_InputData.c **** /* DataStoreRead: '<S26>/Data Store Read2' */
+ 212:../Simulink/Subsystem_InputData.c **** /*@>fa0c*/VCU_B./*@>10e21*/DataStoreRead2_o/*@>6b2e*/ = /*@>ff63*/VCU_DW./*@>11058*/VAR_IN_n_engine
+ 517              	 .loc 1 212 0
+ 518 0484 684B     	 ldr r3,.L70+16
+ 519 0486 93F84221 	 ldrb r2,[r3,#322]
+ 520 048a 654B     	 ldr r3,.L70+8
+ 521 048c 83F86A27 	 strb r2,[r3,#1898]
+ 213:../Simulink/Subsystem_InputData.c **** /* Sum: '<S29>/Add' */
+ 214:../Simulink/Subsystem_InputData.c **** /*@>fa12*/VCU_B./*@>10e24*/Add_d/*@>8865*/ = /*@>e30d*/(uint16_T)(((/*@>e4ea*/(uint32_T)/*@>fa18*/V
+ 522              	 .loc 1 214 0
+ 523 0490 634B     	 ldr r3,.L70+8
+ 524 0492 B3F83A37 	 ldrh r3,[r3,#1850]
+ 525 0496 5B00     	 lsls r3,r3,#1
+ 526 0498 614A     	 ldr r2,.L70+8
+ 527 049a 92F86A27 	 ldrb r2,[r2,#1898]
+ 528 049e 1344     	 add r3,r3,r2
+ 529 04a0 5B08     	 lsrs r3,r3,#1
+ 530 04a2 9AB2     	 uxth r2,r3
+ 531 04a4 5E4B     	 ldr r3,.L70+8
+ 532 04a6 A3F83C27 	 strh r2,[r3,#1852]
+ 215:../Simulink/Subsystem_InputData.c **** /* DataTypeConversion: '<S29>/Data Type Conversion' */
+ 216:../Simulink/Subsystem_InputData.c **** /*@>fa24*/VCU_B./*@>10e2d*/DataTypeConversion_o/*@>6b36*/ = /*@>f321*/(uint16_T)(/*@>fa2a*/VCU_B./*
+ 533              	 .loc 1 216 0
+ 534 04aa 5D4B     	 ldr r3,.L70+8
+ 535 04ac B3F83C37 	 ldrh r3,[r3,#1852]
+ 536 04b0 5B00     	 lsls r3,r3,#1
+ 537 04b2 9AB2     	 uxth r2,r3
+ 538 04b4 5A4B     	 ldr r3,.L70+8
+ 539 04b6 A3F81E27 	 strh r2,[r3,#1822]
+ 217:../Simulink/Subsystem_InputData.c **** /* DataTypeConversion: '<S26>/Data Type Conversion2' */
+ 218:../Simulink/Subsystem_InputData.c **** /*@>fa30*/VCU_B./*@>10e33*/DataTypeConversion2/*@>6b39*/ = /*@>fa36*/VCU_B./*@>10e36*/DataTypeConve
+ 540              	 .loc 1 218 0
+ 541 04ba 594B     	 ldr r3,.L70+8
+ 542 04bc B3F81E37 	 ldrh r3,[r3,#1822]
+ 543 04c0 1846     	 mov r0,r3
+ 544 04c2 FFF7FEFF 	 bl __aeabi_ui2d
+ 545 04c6 0246     	 mov r2,r0
+ 546 04c8 0B46     	 mov r3,r1
+ 547 04ca 5549     	 ldr r1,.L70+8
+ 548 04cc 01F5A661 	 add r1,r1,#1328
+ 549 04d0 C1E90023 	 strd r2,[r1]
+ 219:../Simulink/Subsystem_InputData.c **** /* DataStoreRead: '<S26>/Data Store Read' */
+ 220:../Simulink/Subsystem_InputData.c **** /*@>fa3c*/VCU_B./*@>10e39*/DataStoreRead_h/*@>6b3b*/ = /*@>ff69*/VCU_DW./*@>1105b*/VAR_IN_gear;
+ 550              	 .loc 1 220 0
+ 551 04d4 544B     	 ldr r3,.L70+16
+ 552 04d6 93F84021 	 ldrb r2,[r3,#320]
+ 553 04da 514B     	 ldr r3,.L70+8
+ 554 04dc 83F86B27 	 strb r2,[r3,#1899]
+ 221:../Simulink/Subsystem_InputData.c **** /* ArithShift: '<S26>/Shift Arithmetic' */
+ 222:../Simulink/Subsystem_InputData.c **** /*@>fa42*/VCU_B./*@>10e3c*/ShiftArithmetic/*@>8807*/ = /*@>e4fb*/(uint8_T)(/*@>e4f9*/(uint32_T)/*@>
+ 555              	 .loc 1 222 0
+ 556 04e0 4F4B     	 ldr r3,.L70+8
+ 557 04e2 93F86B37 	 ldrb r3,[r3,#1899]
+ 558 04e6 DB08     	 lsrs r3,r3,#3
+ 559 04e8 DAB2     	 uxtb r2,r3
+ 560 04ea 4D4B     	 ldr r3,.L70+8
+ 561 04ec 83F86C27 	 strb r2,[r3,#1900]
+ 223:../Simulink/Subsystem_InputData.c **** /* DataTypeConversion: '<S26>/Data Type Conversion3' */
+ 224:../Simulink/Subsystem_InputData.c **** /*@>fa4e*/VCU_B./*@>10e42*/DataTypeConversion3/*@>6b3f*/ = /*@>fa54*/VCU_B./*@>10e45*/ShiftArithmet
+ 562              	 .loc 1 224 0
+ 563 04f0 4B4B     	 ldr r3,.L70+8
+ 564 04f2 93F86C37 	 ldrb r3,[r3,#1900]
+ 565 04f6 1846     	 mov r0,r3
+ 566 04f8 FFF7FEFF 	 bl __aeabi_ui2d
+ 567 04fc 0246     	 mov r2,r0
+ 568 04fe 0B46     	 mov r3,r1
+ 569 0500 4749     	 ldr r1,.L70+8
+ 570 0502 01F5A761 	 add r1,r1,#1336
+ 571 0506 C1E90023 	 strd r2,[r1]
+ 225:../Simulink/Subsystem_InputData.c **** /* DataStoreRead: '<S27>/Data Store Read1' */
+ 226:../Simulink/Subsystem_InputData.c **** /*@>fa5a*/VCU_B./*@>10e48*/DataStoreRead1_g5/*@>6b41*/ = /*@>ff6f*/VCU_DW./*@>1105e*/VAR_IN_t_water
+ 572              	 .loc 1 226 0
+ 573 050a 474B     	 ldr r3,.L70+16
+ 574 050c 93F84521 	 ldrb r2,[r3,#325]
+ 575 0510 434B     	 ldr r3,.L70+8
+ 576 0512 83F86D27 	 strb r2,[r3,#1901]
+ 227:../Simulink/Subsystem_InputData.c **** /* Gain: '<S30>/Factor' */
+ 228:../Simulink/Subsystem_InputData.c **** /*@>fa60*/VCU_B./*@>10e4b*/Factor_ba/*@>6b49*/ = /*@>e505*/(uint16_T)(/*@>fa66*/VCU_B./*@>10e4e*/Da
+ 577              	 .loc 1 228 0
+ 578 0516 424B     	 ldr r3,.L70+8
+ 579 0518 93F86D37 	 ldrb r3,[r3,#1901]
+ 580 051c 9BB2     	 uxth r3,r3
+ 581 051e DB01     	 lsls r3,r3,#7
+ 582 0520 9AB2     	 uxth r2,r3
+ 583 0522 3F4B     	 ldr r3,.L70+8
+ 584 0524 A3F82027 	 strh r2,[r3,#1824]
+ 229:../Simulink/Subsystem_InputData.c **** /* Sum: '<S30>/Add1' incorporates:
+ 230:../Simulink/Subsystem_InputData.c ****  *  Constant: '<S30>/Offset'
+ 231:../Simulink/Subsystem_InputData.c ****  */
+ 232:../Simulink/Subsystem_InputData.c **** /*@>fa6c*/VCU_B./*@>10e51*/Add1_iu/*@>886c*/ = /*@>e508*/(real_T)/*@>fa72*/VCU_B./*@>10e54*/Factor_
+ 585              	 .loc 1 232 0
+ 586 0528 3D4B     	 ldr r3,.L70+8
+ 587 052a B3F82037 	 ldrh r3,[r3,#1824]
+ 588 052e 1846     	 mov r0,r3
+ 589 0530 FFF7FEFF 	 bl __aeabi_ui2d
+ 590 0534 0246     	 mov r2,r0
+ 591 0536 0B46     	 mov r3,r1
+ 592 0538 1046     	 mov r0,r2
+ 593 053a 1946     	 mov r1,r3
+ 594 053c 4FF00002 	 mov r2,#0
+ 595 0540 4FF07E53 	 mov r3,#1065353216
+ 596 0544 FFF7FEFF 	 bl __aeabi_dmul
+ 597 0548 0246     	 mov r2,r0
+ 598 054a 0B46     	 mov r3,r1
+ 599 054c 1046     	 mov r0,r2
+ 600 054e 1946     	 mov r1,r3
+ 601 0550 4FF00002 	 mov r2,#0
+ 602 0554 354B     	 ldr r3,.L70+20
+ 603 0556 FFF7FEFF 	 bl __aeabi_dsub
+ 604 055a 0246     	 mov r2,r0
+ 605 055c 0B46     	 mov r3,r1
+ 606 055e 3049     	 ldr r1,.L70+8
+ 607 0560 01F5A861 	 add r1,r1,#1344
+ 608 0564 C1E90023 	 strd r2,[r1]
+ 233:../Simulink/Subsystem_InputData.c **** /* DataStoreRead: '<S11>/Data Store Read1' */
+ 234:../Simulink/Subsystem_InputData.c **** /*@>fa78*/VCU_B./*@>10e57*/TeleFansDC_h/*@>6b50*/ = /*@>ff75*/VCU_DW./*@>11061*/VAR_IN_TeleFansDC;
+ 609              	 .loc 1 234 0
+ 610 0568 2F4B     	 ldr r3,.L70+16
+ 611 056a 93F84621 	 ldrb r2,[r3,#326]
+ 612 056e 2C4B     	 ldr r3,.L70+8
+ 613 0570 83F86E27 	 strb r2,[r3,#1902]
+ 235:../Simulink/Subsystem_InputData.c **** /* DataTypeConversion: '<S11>/Data Type Conversion1' */
+ 236:../Simulink/Subsystem_InputData.c **** /*@>fa7e*/VCU_B./*@>10e5a*/TeleFansDC/*@>6b53*/ = /*@>fa84*/VCU_B./*@>10e5d*/TeleFansDC_h;
+ 614              	 .loc 1 236 0
+ 615 0574 2A4B     	 ldr r3,.L70+8
+ 616 0576 93F86E37 	 ldrb r3,[r3,#1902]
+ 617 057a 1846     	 mov r0,r3
+ 618 057c FFF7FEFF 	 bl __aeabi_ui2d
+ 619 0580 0246     	 mov r2,r0
+ 620 0582 0B46     	 mov r3,r1
+ 621 0584 2649     	 ldr r1,.L70+8
+ 622 0586 01F5A961 	 add r1,r1,#1352
+ 623 058a C1E90023 	 strd r2,[r1]
+ 237:../Simulink/Subsystem_InputData.c **** /* Gain: '<S31>/Factor' */
+ 238:../Simulink/Subsystem_InputData.c **** /*@>fa8a*/VCU_B./*@>10e60*/Factor_kk/*@>6b5b*/ = /*@>e253*/0.01/*@>e2e2*/ * /*@>fa90*/VCU_B./*@>10e
+ 624              	 .loc 1 238 0
+ 625 058e 244B     	 ldr r3,.L70+8
+ 626 0590 03F5A963 	 add r3,r3,#1352
+ 627 0594 D3E90023 	 ldrd r2,[r3]
+ 628 0598 1046     	 mov r0,r2
+ 629 059a 1946     	 mov r1,r3
+ 630 059c 1EA3     	 adr r3,.L70
+ 631 059e D3E90023 	 ldrd r2,[r3]
+ 632 05a2 FFF7FEFF 	 bl __aeabi_dmul
+ 633 05a6 0246     	 mov r2,r0
+ 634 05a8 0B46     	 mov r3,r1
+ 635 05aa 1D49     	 ldr r1,.L70+8
+ 636 05ac 01F5AA61 	 add r1,r1,#1360
+ 637 05b0 C1E90023 	 strd r2,[r1]
+ 239:../Simulink/Subsystem_InputData.c **** /* Sum: '<S31>/Add1' */
+ 240:../Simulink/Subsystem_InputData.c **** /*@>fa96*/VCU_B./*@>10e66*/Add1_ik/*@>8871*/ = /*@>fa9c*/VCU_B./*@>10e69*/Factor_kk;
+ 638              	 .loc 1 240 0
+ 639 05b4 1A4B     	 ldr r3,.L70+8
+ 640 05b6 03F5AA63 	 add r3,r3,#1360
+ 641 05ba D3E90023 	 ldrd r2,[r3]
+ 642 05be 1849     	 ldr r1,.L70+8
+ 643 05c0 01F5AB61 	 add r1,r1,#1368
+ 644 05c4 C1E90023 	 strd r2,[r1]
+ 241:../Simulink/Subsystem_InputData.c **** /* DataStoreRead: '<S11>/Data Store Read8' */
+ 242:../Simulink/Subsystem_InputData.c **** /*@>faa2*/VCU_B./*@>10e6c*/TeleActiveBit_p/*@>6b62*/ = /*@>ff7b*/VCU_DW./*@>11064*/VAR_IN_TeleActiv
+ 645              	 .loc 1 242 0
+ 646 05c8 174B     	 ldr r3,.L70+16
+ 647 05ca 93F84721 	 ldrb r2,[r3,#327]
+ 648 05ce 144B     	 ldr r3,.L70+8
+ 649 05d0 83F86F27 	 strb r2,[r3,#1903]
+ 243:../Simulink/Subsystem_InputData.c **** /* DataTypeConversion: '<S11>/Data Type Conversion' */
+ 244:../Simulink/Subsystem_InputData.c **** /*@>faa8*/VCU_B./*@>10e6f*/TeleActiveBit/*@>6b65*/ = /*@>faae*/VCU_B./*@>10e72*/TeleActiveBit_p;
+ 650              	 .loc 1 244 0
+ 651 05d4 124B     	 ldr r3,.L70+8
+ 652 05d6 93F86F37 	 ldrb r3,[r3,#1903]
+ 653 05da 1846     	 mov r0,r3
+ 654 05dc FFF7FEFF 	 bl __aeabi_ui2d
+ 655 05e0 0246     	 mov r2,r0
+ 656 05e2 0B46     	 mov r3,r1
+ 657 05e4 0E49     	 ldr r1,.L70+8
+ 658 05e6 01F5AC61 	 add r1,r1,#1376
+ 659 05ea C1E90023 	 strd r2,[r1]
+ 245:../Simulink/Subsystem_InputData.c **** /* DataStoreRead: '<S12>/Data Store Read1' */
+ 246:../Simulink/Subsystem_InputData.c **** /*@>fab4*/VCU_B./*@>10e75*/DataStoreRead1_f/*@>6b67*/ = /*@>ff81*/VCU_DW./*@>11067*/VAR_IN_g_yaw_AB
+ 660              	 .loc 1 246 0
+ 661 05ee 0E4B     	 ldr r3,.L70+16
+ 662 05f0 93F84821 	 ldrb r2,[r3,#328]
+ 663 05f4 0A4B     	 ldr r3,.L70+8
+ 664 05f6 83F87027 	 strb r2,[r3,#1904]
+ 247:../Simulink/Subsystem_InputData.c **** /* DataStoreRead: '<S12>/Data Store Read3' */
+ 248:../Simulink/Subsystem_InputData.c **** /*@>faba*/VCU_B./*@>10e78*/DataStoreRead3_o/*@>6b69*/ = /*@>ff87*/VCU_DW./*@>1106a*/VAR_IN_g_yaw_AB
+ 665              	 .loc 1 248 0
+ 666 05fa 0B4B     	 ldr r3,.L70+16
+ 667 05fc 93F84A21 	 ldrb r2,[r3,#330]
+ 668 0600 074B     	 ldr r3,.L70+8
+ 669 0602 83F87127 	 strb r2,[r3,#1905]
+ 249:../Simulink/Subsystem_InputData.c **** /* DataStoreRead: '<S12>/Data Store Read2' */
+ 250:../Simulink/Subsystem_InputData.c **** /*@>fac0*/VCU_B./*@>10e7b*/DataStoreRead2_h/*@>6b6b*/ = /*@>ff8d*/VCU_DW./*@>1106d*/VAR_IN_g_long_A
+ 670              	 .loc 1 250 0
+ 671 0606 084B     	 ldr r3,.L70+16
+ 672 0608 93F84921 	 ldrb r2,[r3,#329]
+ 673 060c 044B     	 ldr r3,.L70+8
+ 674 060e 83F87227 	 strb r2,[r3,#1906]
+ 675 0612 0DE0     	 b .L71
+ 676              	.L72:
+ 677 0614 AFF30080 	 .align 3
+ 678              	.L70:
+ 679 0618 7B14AE47 	 .word 1202590843
+ 680 061c E17A843F 	 .word 1065646817
+ 681 0620 00000000 	 .word VCU_B
+ 682 0624 0000A03E 	 .word 1050673152
+ 683 0628 00000000 	 .word VCU_DW
+ 684 062c 00004940 	 .word 1078525952
+ 685              	.L71:
+ 251:../Simulink/Subsystem_InputData.c **** /* DataStoreRead: '<S12>/Data Store Read4' */
+ 252:../Simulink/Subsystem_InputData.c **** /*@>fac6*/VCU_B./*@>10e7e*/DataStoreRead4_l/*@>6b6d*/ = /*@>ff93*/VCU_DW./*@>11070*/VAR_IN_g_long_A
+ 686              	 .loc 1 252 0
+ 687 0630 2B4B     	 ldr r3,.L73+8
+ 688 0632 93F84B21 	 ldrb r2,[r3,#331]
+ 689 0636 2B4B     	 ldr r3,.L73+12
+ 690 0638 83F87327 	 strb r2,[r3,#1907]
+ 253:../Simulink/Subsystem_InputData.c **** /* DataStoreRead: '<S13>/Data Store Read9' */
+ 254:../Simulink/Subsystem_InputData.c **** /*@>facc*/VCU_B./*@>10e81*/DataStoreRead9/*@>6b6f*/ = /*@>ff99*/VCU_DW./*@>11073*/VAR_IN_x_clutch_S
+ 691              	 .loc 1 254 0
+ 692 063c 284B     	 ldr r3,.L73+8
+ 693 063e D3E91423 	 ldrd r2,[r3,#80]
+ 694 0642 2849     	 ldr r1,.L73+12
+ 695 0644 01F5AD61 	 add r1,r1,#1384
+ 696 0648 C1E90023 	 strd r2,[r1]
+ 255:../Simulink/Subsystem_InputData.c **** /* Saturate: '<S13>/Saturation' incorporates:
+ 256:../Simulink/Subsystem_InputData.c ****  *  Gain: '<S13>/mV//V'
+ 257:../Simulink/Subsystem_InputData.c ****  */
+ 258:../Simulink/Subsystem_InputData.c **** /*@>fad2*/VCU_B./*@>10e84*/mVV/*@>6b77*/ = /*@>e254*/0.001/*@>e2de*/ * /*@>fad8*/VCU_B./*@>10e87*/D
+ 697              	 .loc 1 258 0
+ 698 064c 254B     	 ldr r3,.L73+12
+ 699 064e 03F5AD63 	 add r3,r3,#1384
+ 700 0652 D3E90023 	 ldrd r2,[r3]
+ 701 0656 1046     	 mov r0,r2
+ 702 0658 1946     	 mov r1,r3
+ 703 065a 1FA3     	 adr r3,.L73
+ 704 065c D3E90023 	 ldrd r2,[r3]
+ 705 0660 FFF7FEFF 	 bl __aeabi_dmul
+ 706 0664 0246     	 mov r2,r0
+ 707 0666 0B46     	 mov r3,r1
+ 708 0668 1E49     	 ldr r1,.L73+12
+ 709 066a 01F5AE61 	 add r1,r1,#1392
+ 710 066e C1E90023 	 strd r2,[r1]
+ 259:../Simulink/Subsystem_InputData.c **** /*@>e64a*/if (/*@>fade*/VCU_B./*@>10e8a*/mVV/*@>e645*/ > /*@>eaee*/5.0) {
+ 711              	 .loc 1 259 0
+ 712 0672 1C4B     	 ldr r3,.L73+12
+ 713 0674 03F5AE63 	 add r3,r3,#1392
+ 714 0678 D3E90023 	 ldrd r2,[r3]
+ 715 067c 1046     	 mov r0,r2
+ 716 067e 1946     	 mov r1,r3
+ 717 0680 4FF00002 	 mov r2,#0
+ 718 0684 184B     	 ldr r3,.L73+16
+ 719 0686 FFF7FEFF 	 bl __aeabi_dcmpgt
+ 720 068a 0346     	 mov r3,r0
+ 721 068c 002B     	 cmp r3,#0
+ 722 068e 08D0     	 beq .L53
+ 260:../Simulink/Subsystem_InputData.c ****     /*@>faea*/VCU_B./*@>10e90*/Saturation_e/*@>e64c*/ = /*@>eaf4*/5.0;
+ 723              	 .loc 1 260 0
+ 724 0690 144B     	 ldr r3,.L73+12
+ 725 0692 03F5AF61 	 add r1,r3,#1400
+ 726 0696 4FF00002 	 mov r2,#0
+ 727 069a 134B     	 ldr r3,.L73+16
+ 728 069c C1E90023 	 strd r2,[r1]
+ 729 06a0 2EE0     	 b .L4
+ 730              	.L53:
+ 261:../Simulink/Subsystem_InputData.c **** } else /*@>e64d*/if (/*@>fae4*/VCU_B./*@>10e8d*/mVV/*@>e642*/ < /*@>eaf0*/0.0) {
+ 731              	 .loc 1 261 0
+ 732 06a2 104B     	 ldr r3,.L73+12
+ 733 06a4 03F5AE63 	 add r3,r3,#1392
+ 734 06a8 D3E90023 	 ldrd r2,[r3]
+ 735 06ac 1046     	 mov r0,r2
+ 736 06ae 1946     	 mov r1,r3
+ 737 06b0 4FF00002 	 mov r2,#0
+ 738 06b4 4FF00003 	 mov r3,#0
+ 739 06b8 FFF7FEFF 	 bl __aeabi_dcmplt
+ 740 06bc 0346     	 mov r3,r0
+ 741 06be 002B     	 cmp r3,#0
+ 742 06c0 14D0     	 beq .L54
+ 262:../Simulink/Subsystem_InputData.c ****     /*@>fafc*/VCU_B./*@>10e99*/Saturation_e/*@>e64f*/ = /*@>eaf2*/0.0;
+ 743              	 .loc 1 262 0
+ 744 06c2 084B     	 ldr r3,.L73+12
+ 745 06c4 03F5AF61 	 add r1,r3,#1400
+ 746 06c8 4FF00002 	 mov r2,#0
+ 747 06cc 4FF00003 	 mov r3,#0
+ 748 06d0 C1E90023 	 strd r2,[r1]
+ 749 06d4 14E0     	 b .L4
+ 750              	.L74:
+ 751 06d6 00BF     	 .align 3
+ 752              	.L73:
+ 753 06d8 FCA9F1D2 	 .word -755914244
+ 754 06dc 4D62503F 	 .word 1062232653
+ 755 06e0 00000000 	 .word VCU_DW
+ 756 06e4 00000000 	 .word VCU_B
+ 757 06e8 00001440 	 .word 1075052544
+ 758              	.L54:
+ 263:../Simulink/Subsystem_InputData.c **** } else {
+ 264:../Simulink/Subsystem_InputData.c ****     /*@>faf0*/VCU_B./*@>10e93*/Saturation_e/*@>e649*/ = /*@>faf6*/VCU_B./*@>10e96*/mVV;
+ 759              	 .loc 1 264 0
+ 760 06ec B44B     	 ldr r3,.L75+8
+ 761 06ee 03F5AE63 	 add r3,r3,#1392
+ 762 06f2 D3E90023 	 ldrd r2,[r3]
+ 763 06f6 B249     	 ldr r1,.L75+8
+ 764 06f8 01F5AF61 	 add r1,r1,#1400
+ 765 06fc C1E90023 	 strd r2,[r1]
+ 766              	.L4:
+ 265:../Simulink/Subsystem_InputData.c **** }
+ 266:../Simulink/Subsystem_InputData.c **** /* End of Saturate: '<S13>/Saturation' */
+ 267:../Simulink/Subsystem_InputData.c **** 
+ 268:../Simulink/Subsystem_InputData.c **** /* Lookup_n-D: '<S13>/1-D Lookup Table' */
+ 269:../Simulink/Subsystem_InputData.c **** /*@>fb02*/VCU_B./*@>10e9c*/x_clutch_STW/*@>8a14*/ = /*@>f1c2*/look1_binlxpw(/*@>fb08*/VCU_B./*@>10e
+ 767              	 .loc 1 269 0
+ 768 0700 AF4B     	 ldr r3,.L75+8
+ 769 0702 03F5AF63 	 add r3,r3,#1400
+ 770 0706 D3E90023 	 ldrd r2,[r3]
+ 771 070a 0121     	 movs r1,#1
+ 772 070c 0091     	 str r1,[sp]
+ 773 070e 1046     	 mov r0,r2
+ 774 0710 1946     	 mov r1,r3
+ 775 0712 AC4A     	 ldr r2,.L75+12
+ 776 0714 AC4B     	 ldr r3,.L75+16
+ 777 0716 FFF7FEFF 	 bl look1_binlxpw
+ 778 071a 0246     	 mov r2,r0
+ 779 071c 0B46     	 mov r3,r1
+ 780 071e A849     	 ldr r1,.L75+8
+ 781 0720 01F5B061 	 add r1,r1,#1408
+ 782 0724 C1E90023 	 strd r2,[r1]
+ 270:../Simulink/Subsystem_InputData.c **** /* DataStoreRead: '<S13>/Data Store Read10' */
+ 271:../Simulink/Subsystem_InputData.c **** /*@>fb0e*/VCU_B./*@>10ea2*/DataStoreRead10_b/*@>6b86*/ = /*@>ff9f*/VCU_DW./*@>11076*/VAR_IN_STW_mue
+ 783              	 .loc 1 271 0
+ 784 0728 A84B     	 ldr r3,.L75+20
+ 785 072a 93F84E21 	 ldrb r2,[r3,#334]
+ 786 072e A44B     	 ldr r3,.L75+8
+ 787 0730 83F87427 	 strb r2,[r3,#1908]
+ 272:../Simulink/Subsystem_InputData.c **** /* Gain: '<S36>/Factor' */
+ 273:../Simulink/Subsystem_InputData.c **** /*@>fb14*/VCU_B./*@>10ea5*/Factor_oq/*@>6b8e*/ = /*@>e52e*/(uint16_T)(/*@>e422*/164U/*@>e2d9*/ * /*
+ 788              	 .loc 1 273 0
+ 789 0734 A24B     	 ldr r3,.L75+8
+ 790 0736 93F87437 	 ldrb r3,[r3,#1908]
+ 791 073a 9BB2     	 uxth r3,r3
+ 792 073c 1A46     	 mov r2,r3
+ 793 073e 9200     	 lsls r2,r2,#2
+ 794 0740 1A44     	 add r2,r2,r3
+ 795 0742 D200     	 lsls r2,r2,#3
+ 796 0744 1344     	 add r3,r3,r2
+ 797 0746 9B00     	 lsls r3,r3,#2
+ 798 0748 9AB2     	 uxth r2,r3
+ 799 074a 9D4B     	 ldr r3,.L75+8
+ 800 074c A3F82227 	 strh r2,[r3,#1826]
+ 274:../Simulink/Subsystem_InputData.c **** /* Sum: '<S36>/Add1' */
+ 275:../Simulink/Subsystem_InputData.c **** /*@>fb20*/VCU_B./*@>10eab*/Add1_f1/*@>88d8*/ = /*@>e531*/(real_T)/*@>fb26*/VCU_B./*@>10eae*/Factor_
+ 801              	 .loc 1 275 0
+ 802 0750 9B4B     	 ldr r3,.L75+8
+ 803 0752 B3F82237 	 ldrh r3,[r3,#1826]
+ 804 0756 1846     	 mov r0,r3
+ 805 0758 FFF7FEFF 	 bl __aeabi_ui2d
+ 806 075c 0246     	 mov r2,r0
+ 807 075e 0B46     	 mov r3,r1
+ 808 0760 1046     	 mov r0,r2
+ 809 0762 1946     	 mov r1,r3
+ 810 0764 4FF00002 	 mov r2,#0
+ 811 0768 994B     	 ldr r3,.L75+24
+ 812 076a FFF7FEFF 	 bl __aeabi_dmul
+ 813 076e 0246     	 mov r2,r0
+ 814 0770 0B46     	 mov r3,r1
+ 815 0772 9349     	 ldr r1,.L75+8
+ 816 0774 01F5B161 	 add r1,r1,#1416
+ 817 0778 C1E90023 	 strd r2,[r1]
+ 276:../Simulink/Subsystem_InputData.c **** /* DataStoreRead: '<S13>/Data Store Read' */
+ 277:../Simulink/Subsystem_InputData.c **** /*@>fb2c*/VCU_B./*@>10eb1*/DataStoreRead_c/*@>6b95*/ = /*@>ffa5*/VCU_DW./*@>11079*/VAR_IN_STW_shift
+ 818              	 .loc 1 277 0
+ 819 077c 934B     	 ldr r3,.L75+20
+ 820 077e 93F84C21 	 ldrb r2,[r3,#332]
+ 821 0782 8F4B     	 ldr r3,.L75+8
+ 822 0784 83F87527 	 strb r2,[r3,#1909]
+ 278:../Simulink/Subsystem_InputData.c **** /* DataTypeConversion: '<S13>/Data Type Conversion' */
+ 279:../Simulink/Subsystem_InputData.c **** /*@>fb32*/VCU_B./*@>10eb4*/STW_shift_up_request/*@>6b98*/ = /*@>fb38*/VCU_B./*@>10eb7*/DataStoreRea
+ 823              	 .loc 1 279 0
+ 824 0788 8D4B     	 ldr r3,.L75+8
+ 825 078a 93F87537 	 ldrb r3,[r3,#1909]
+ 826 078e 1846     	 mov r0,r3
+ 827 0790 FFF7FEFF 	 bl __aeabi_ui2d
+ 828 0794 0246     	 mov r2,r0
+ 829 0796 0B46     	 mov r3,r1
+ 830 0798 8949     	 ldr r1,.L75+8
+ 831 079a 01F5B261 	 add r1,r1,#1424
+ 832 079e C1E90023 	 strd r2,[r1]
+ 280:../Simulink/Subsystem_InputData.c **** /* DataStoreRead: '<S13>/Data Store Read1' */
+ 281:../Simulink/Subsystem_InputData.c **** /*@>fb3e*/VCU_B./*@>10eba*/DataStoreRead1_j/*@>6b9a*/ = /*@>ffab*/VCU_DW./*@>1107c*/VAR_IN_STW_shif
+ 833              	 .loc 1 281 0
+ 834 07a2 8A4B     	 ldr r3,.L75+20
+ 835 07a4 93F84D21 	 ldrb r2,[r3,#333]
+ 836 07a8 854B     	 ldr r3,.L75+8
+ 837 07aa 83F87627 	 strb r2,[r3,#1910]
+ 282:../Simulink/Subsystem_InputData.c **** /* DataTypeConversion: '<S13>/Data Type Conversion1' */
+ 283:../Simulink/Subsystem_InputData.c **** /*@>fb44*/VCU_B./*@>10ebd*/STW_shift_down_request/*@>6b9d*/ = /*@>fb4a*/VCU_B./*@>10ec0*/DataStoreR
+ 838              	 .loc 1 283 0
+ 839 07ae 844B     	 ldr r3,.L75+8
+ 840 07b0 93F87637 	 ldrb r3,[r3,#1910]
+ 841 07b4 1846     	 mov r0,r3
+ 842 07b6 FFF7FEFF 	 bl __aeabi_ui2d
+ 843 07ba 0246     	 mov r2,r0
+ 844 07bc 0B46     	 mov r3,r1
+ 845 07be 8049     	 ldr r1,.L75+8
+ 846 07c0 01F5B361 	 add r1,r1,#1432
+ 847 07c4 C1E90023 	 strd r2,[r1]
+ 284:../Simulink/Subsystem_InputData.c **** /* DataStoreRead: '<S13>/Data Store Read2' */
+ 285:../Simulink/Subsystem_InputData.c **** /*@>fb50*/VCU_B./*@>10ec3*/DataStoreRead2_i/*@>6b9f*/ = /*@>ffb1*/VCU_DW./*@>1107f*/VAR_IN_STW_tran
+ 848              	 .loc 1 285 0
+ 849 07c8 804B     	 ldr r3,.L75+20
+ 850 07ca 93F84F21 	 ldrb r2,[r3,#335]
+ 851 07ce 7C4B     	 ldr r3,.L75+8
+ 852 07d0 83F87727 	 strb r2,[r3,#1911]
+ 286:../Simulink/Subsystem_InputData.c **** /* DataTypeConversion: '<S13>/Data Type Conversion6' */
+ 287:../Simulink/Subsystem_InputData.c **** /*@>fb56*/VCU_B./*@>10ec6*/STW_transmission_mode/*@>6ba2*/ = /*@>fb5c*/VCU_B./*@>10ec9*/DataStoreRe
+ 853              	 .loc 1 287 0
+ 854 07d4 7A4B     	 ldr r3,.L75+8
+ 855 07d6 93F87737 	 ldrb r3,[r3,#1911]
+ 856 07da 1846     	 mov r0,r3
+ 857 07dc FFF7FEFF 	 bl __aeabi_ui2d
+ 858 07e0 0246     	 mov r2,r0
+ 859 07e2 0B46     	 mov r3,r1
+ 860 07e4 7649     	 ldr r1,.L75+8
+ 861 07e6 01F5B461 	 add r1,r1,#1440
+ 862 07ea C1E90023 	 strd r2,[r1]
+ 288:../Simulink/Subsystem_InputData.c **** /* DataStoreRead: '<S14>/Data Store Read9' */
+ 289:../Simulink/Subsystem_InputData.c **** /*@>fb62*/VCU_B./*@>10ecc*/DataStoreRead9_m/*@>6ba4*/ = /*@>ffb7*/VCU_DW./*@>11082*/VAR_IN_x_RH_F;
+ 863              	 .loc 1 289 0
+ 864 07ee 774B     	 ldr r3,.L75+20
+ 865 07f0 D3E92C23 	 ldrd r2,[r3,#176]
+ 866 07f4 7249     	 ldr r1,.L75+8
+ 867 07f6 01F5B561 	 add r1,r1,#1448
+ 868 07fa C1E90023 	 strd r2,[r1]
+ 290:../Simulink/Subsystem_InputData.c **** /* Gain: '<S14>/mV//V19' */
+ 291:../Simulink/Subsystem_InputData.c **** /*@>fb68*/VCU_B./*@>10ecf*/mVV19/*@>6bac*/ = /*@>e257*/0.001/*@>e2cc*/ * /*@>fb6e*/VCU_B./*@>10ed2*
+ 869              	 .loc 1 291 0
+ 870 07fe 704B     	 ldr r3,.L75+8
+ 871 0800 03F5B563 	 add r3,r3,#1448
+ 872 0804 D3E90023 	 ldrd r2,[r3]
+ 873 0808 1046     	 mov r0,r2
+ 874 080a 1946     	 mov r1,r3
+ 875 080c 6AA3     	 adr r3,.L75
+ 876 080e D3E90023 	 ldrd r2,[r3]
+ 877 0812 FFF7FEFF 	 bl __aeabi_dmul
+ 878 0816 0246     	 mov r2,r0
+ 879 0818 0B46     	 mov r3,r1
+ 880 081a 6949     	 ldr r1,.L75+8
+ 881 081c 01F5B661 	 add r1,r1,#1456
+ 882 0820 C1E90023 	 strd r2,[r1]
+ 292:../Simulink/Subsystem_InputData.c **** /* Lookup_n-D: '<S14>/1-D Lookup Table4' */
+ 293:../Simulink/Subsystem_InputData.c **** /*@>fb74*/VCU_B./*@>10ed5*/x_RH_F/*@>8a3d*/ = /*@>f1c6*/look1_binlxpw(/*@>fb7a*/VCU_B./*@>10ed8*/mV
+ 883              	 .loc 1 293 0
+ 884 0824 664B     	 ldr r3,.L75+8
+ 885 0826 03F5B663 	 add r3,r3,#1456
+ 886 082a D3E90023 	 ldrd r2,[r3]
+ 887 082e 0121     	 movs r1,#1
+ 888 0830 0091     	 str r1,[sp]
+ 889 0832 1046     	 mov r0,r2
+ 890 0834 1946     	 mov r1,r3
+ 891 0836 674A     	 ldr r2,.L75+28
+ 892 0838 674B     	 ldr r3,.L75+32
+ 893 083a FFF7FEFF 	 bl look1_binlxpw
+ 894 083e 0246     	 mov r2,r0
+ 895 0840 0B46     	 mov r3,r1
+ 896 0842 5F49     	 ldr r1,.L75+8
+ 897 0844 01F5B761 	 add r1,r1,#1464
+ 898 0848 C1E90023 	 strd r2,[r1]
+ 294:../Simulink/Subsystem_InputData.c **** /* DataStoreRead: '<S14>/Data Store Read10' */
+ 295:../Simulink/Subsystem_InputData.c **** /*@>fb80*/VCU_B./*@>10edb*/DataStoreRead10/*@>6bb5*/ = /*@>ffbd*/VCU_DW./*@>11085*/VAR_IN_x_RH_RL;
+ 899              	 .loc 1 295 0
+ 900 084c 5F4B     	 ldr r3,.L75+20
+ 901 084e D3E91A23 	 ldrd r2,[r3,#104]
+ 902 0852 5B49     	 ldr r1,.L75+8
+ 903 0854 01F5B861 	 add r1,r1,#1472
+ 904 0858 C1E90023 	 strd r2,[r1]
+ 296:../Simulink/Subsystem_InputData.c **** /* Gain: '<S14>/mV//V20' */
+ 297:../Simulink/Subsystem_InputData.c **** /*@>fb86*/VCU_B./*@>10ede*/mVV20/*@>6bbd*/ = /*@>e258*/0.001/*@>e2c8*/ * /*@>fb8c*/VCU_B./*@>10ee1*
+ 905              	 .loc 1 297 0
+ 906 085c 584B     	 ldr r3,.L75+8
+ 907 085e 03F5B863 	 add r3,r3,#1472
+ 908 0862 D3E90023 	 ldrd r2,[r3]
+ 909 0866 1046     	 mov r0,r2
+ 910 0868 1946     	 mov r1,r3
+ 911 086a 53A3     	 adr r3,.L75
+ 912 086c D3E90023 	 ldrd r2,[r3]
+ 913 0870 FFF7FEFF 	 bl __aeabi_dmul
+ 914 0874 0246     	 mov r2,r0
+ 915 0876 0B46     	 mov r3,r1
+ 916 0878 5149     	 ldr r1,.L75+8
+ 917 087a 01F5B961 	 add r1,r1,#1480
+ 918 087e C1E90023 	 strd r2,[r1]
+ 298:../Simulink/Subsystem_InputData.c **** /* Lookup_n-D: '<S14>/1-D Lookup Table5' */
+ 299:../Simulink/Subsystem_InputData.c **** /*@>fb92*/VCU_B./*@>10ee4*/x_RH_RL/*@>8a66*/ = /*@>f1ca*/look1_binlxpw(/*@>fb98*/VCU_B./*@>10ee7*/m
+ 919              	 .loc 1 299 0
+ 920 0882 4F4B     	 ldr r3,.L75+8
+ 921 0884 03F5B963 	 add r3,r3,#1480
+ 922 0888 D3E90023 	 ldrd r2,[r3]
+ 923 088c 0121     	 movs r1,#1
+ 924 088e 0091     	 str r1,[sp]
+ 925 0890 1046     	 mov r0,r2
+ 926 0892 1946     	 mov r1,r3
+ 927 0894 514A     	 ldr r2,.L75+36
+ 928 0896 504B     	 ldr r3,.L75+32
+ 929 0898 FFF7FEFF 	 bl look1_binlxpw
+ 930 089c 0246     	 mov r2,r0
+ 931 089e 0B46     	 mov r3,r1
+ 932 08a0 4749     	 ldr r1,.L75+8
+ 933 08a2 01F5BA61 	 add r1,r1,#1488
+ 934 08a6 C1E90023 	 strd r2,[r1]
+ 300:../Simulink/Subsystem_InputData.c **** /* DataStoreRead: '<S14>/Data Store Read11' */
+ 301:../Simulink/Subsystem_InputData.c **** /*@>fb9e*/VCU_B./*@>10eea*/DataStoreRead11/*@>6bc6*/ = /*@>ffc3*/VCU_DW./*@>11088*/VAR_IN_x_RH_RR;
+ 935              	 .loc 1 301 0
+ 936 08aa 484B     	 ldr r3,.L75+20
+ 937 08ac D3E91C23 	 ldrd r2,[r3,#112]
+ 938 08b0 4349     	 ldr r1,.L75+8
+ 939 08b2 01F5BB61 	 add r1,r1,#1496
+ 940 08b6 C1E90023 	 strd r2,[r1]
+ 302:../Simulink/Subsystem_InputData.c **** /* Gain: '<S14>/mV//V21' */
+ 303:../Simulink/Subsystem_InputData.c **** /*@>fba4*/VCU_B./*@>10eed*/mVV21/*@>6bce*/ = /*@>e259*/0.001/*@>e2c4*/ * /*@>fbaa*/VCU_B./*@>10ef0*
+ 941              	 .loc 1 303 0
+ 942 08ba 414B     	 ldr r3,.L75+8
+ 943 08bc 03F5BB63 	 add r3,r3,#1496
+ 944 08c0 D3E90023 	 ldrd r2,[r3]
+ 945 08c4 1046     	 mov r0,r2
+ 946 08c6 1946     	 mov r1,r3
+ 947 08c8 3BA3     	 adr r3,.L75
+ 948 08ca D3E90023 	 ldrd r2,[r3]
+ 949 08ce FFF7FEFF 	 bl __aeabi_dmul
+ 950 08d2 0246     	 mov r2,r0
+ 951 08d4 0B46     	 mov r3,r1
+ 952 08d6 3A49     	 ldr r1,.L75+8
+ 953 08d8 01F5BC61 	 add r1,r1,#1504
+ 954 08dc C1E90023 	 strd r2,[r1]
+ 304:../Simulink/Subsystem_InputData.c **** /* Lookup_n-D: '<S14>/1-D Lookup Table6' */
+ 305:../Simulink/Subsystem_InputData.c **** /*@>fbb0*/VCU_B./*@>10ef3*/x_RH_RR/*@>8a8f*/ = /*@>f1ce*/look1_binlxpw(/*@>fbb6*/VCU_B./*@>10ef6*/m
+ 955              	 .loc 1 305 0
+ 956 08e0 374B     	 ldr r3,.L75+8
+ 957 08e2 03F5BC63 	 add r3,r3,#1504
+ 958 08e6 D3E90023 	 ldrd r2,[r3]
+ 959 08ea 0121     	 movs r1,#1
+ 960 08ec 0091     	 str r1,[sp]
+ 961 08ee 1046     	 mov r0,r2
+ 962 08f0 1946     	 mov r1,r3
+ 963 08f2 384A     	 ldr r2,.L75+28
+ 964 08f4 384B     	 ldr r3,.L75+32
+ 965 08f6 FFF7FEFF 	 bl look1_binlxpw
+ 966 08fa 0246     	 mov r2,r0
+ 967 08fc 0B46     	 mov r3,r1
+ 968 08fe 3049     	 ldr r1,.L75+8
+ 969 0900 01F5BD61 	 add r1,r1,#1512
+ 970 0904 C1E90023 	 strd r2,[r1]
+ 306:../Simulink/Subsystem_InputData.c **** /* DataStoreRead: '<S14>/Data Store Read2' */
+ 307:../Simulink/Subsystem_InputData.c **** /*@>fbbc*/VCU_B./*@>10ef9*/DataStoreRead2_k/*@>6bd7*/ = /*@>ffc9*/VCU_DW./*@>1108b*/VAR_IN_p_pneum;
+ 971              	 .loc 1 307 0
+ 972 0908 304B     	 ldr r3,.L75+20
+ 973 090a 93F85021 	 ldrb r2,[r3,#336]
+ 974 090e 2C4B     	 ldr r3,.L75+8
+ 975 0910 83F87827 	 strb r2,[r3,#1912]
+ 308:../Simulink/Subsystem_InputData.c **** /* Gain: '<S14>/CAN to bar' */
+ 309:../Simulink/Subsystem_InputData.c **** /*@>fbc2*/VCU_B./*@>10efc*/p_pneum/*@>6bdf*/ = /*@>e55e*/(uint16_T)(/*@>e424*/164U/*@>e2bf*/ * /*@>
+ 976              	 .loc 1 309 0
+ 977 0914 2A4B     	 ldr r3,.L75+8
+ 978 0916 93F87837 	 ldrb r3,[r3,#1912]
+ 979 091a 9BB2     	 uxth r3,r3
+ 980 091c 1A46     	 mov r2,r3
+ 981 091e 9200     	 lsls r2,r2,#2
+ 982 0920 1A44     	 add r2,r2,r3
+ 983 0922 D200     	 lsls r2,r2,#3
+ 984 0924 1344     	 add r3,r3,r2
+ 985 0926 9B00     	 lsls r3,r3,#2
+ 986 0928 9AB2     	 uxth r2,r3
+ 987 092a 254B     	 ldr r3,.L75+8
+ 988 092c A3F82427 	 strh r2,[r3,#1828]
+ 310:../Simulink/Subsystem_InputData.c **** /* DataStoreRead: '<S14>/Data Store Read3' */
+ 311:../Simulink/Subsystem_InputData.c **** /*@>fbce*/VCU_B./*@>10f02*/DataStoreRead3/*@>6be1*/ = /*@>ffcf*/VCU_DW./*@>1108e*/VAR_IN_x_clutch;
+ 989              	 .loc 1 311 0
+ 990 0930 264B     	 ldr r3,.L75+20
+ 991 0932 D3E92023 	 ldrd r2,[r3,#128]
+ 992 0936 2249     	 ldr r1,.L75+8
+ 993 0938 01F5BE61 	 add r1,r1,#1520
+ 994 093c C1E90023 	 strd r2,[r1]
+ 312:../Simulink/Subsystem_InputData.c **** /* Gain: '<S14>/mV//V14' */
+ 313:../Simulink/Subsystem_InputData.c **** /*@>fbd4*/VCU_B./*@>10f05*/mVV14/*@>6be9*/ = /*@>e25a*/0.001/*@>e2b9*/ * /*@>fbda*/VCU_B./*@>10f08*
+ 995              	 .loc 1 313 0
+ 996 0940 1F4B     	 ldr r3,.L75+8
+ 997 0942 03F5BE63 	 add r3,r3,#1520
+ 998 0946 D3E90023 	 ldrd r2,[r3]
+ 999 094a 1046     	 mov r0,r2
+ 1000 094c 1946     	 mov r1,r3
+ 1001 094e 1AA3     	 adr r3,.L75
+ 1002 0950 D3E90023 	 ldrd r2,[r3]
+ 1003 0954 FFF7FEFF 	 bl __aeabi_dmul
+ 1004 0958 0246     	 mov r2,r0
+ 1005 095a 0B46     	 mov r3,r1
+ 1006 095c 1849     	 ldr r1,.L75+8
+ 1007 095e 01F5BF61 	 add r1,r1,#1528
+ 1008 0962 C1E90023 	 strd r2,[r1]
+ 314:../Simulink/Subsystem_InputData.c **** /* Saturate: '<S14>/Saturation' incorporates:
+ 315:../Simulink/Subsystem_InputData.c ****  *  Lookup_n-D: '<S14>/Clutch_Pos2'
+ 316:../Simulink/Subsystem_InputData.c ****  */
+ 317:../Simulink/Subsystem_InputData.c **** /*@>fbe0*/VCU_B./*@>10f0b*/x_clutch/*@>8ab8*/ = /*@>f1d2*/look1_binlxpw(/*@>fbe6*/VCU_B./*@>10f0e*/
+ 1009              	 .loc 1 317 0
+ 1010 0966 164B     	 ldr r3,.L75+8
+ 1011 0968 03F5BF63 	 add r3,r3,#1528
+ 1012 096c D3E90023 	 ldrd r2,[r3]
+ 1013 0970 0121     	 movs r1,#1
+ 1014 0972 0091     	 str r1,[sp]
+ 1015 0974 1046     	 mov r0,r2
+ 1016 0976 1946     	 mov r1,r3
+ 1017 0978 194A     	 ldr r2,.L75+40
+ 1018 097a 134B     	 ldr r3,.L75+16
+ 1019 097c FFF7FEFF 	 bl look1_binlxpw
+ 1020 0980 0246     	 mov r2,r0
+ 1021 0982 0B46     	 mov r3,r1
+ 1022 0984 0E49     	 ldr r1,.L75+8
+ 1023 0986 01F5C061 	 add r1,r1,#1536
+ 1024 098a C1E90023 	 strd r2,[r1]
+ 318:../Simulink/Subsystem_InputData.c **** /*@>e695*/if (/*@>fbec*/VCU_B./*@>10f11*/x_clutch/*@>e690*/ > /*@>eaf6*/25.0) {
+ 1025              	 .loc 1 318 0
+ 1026 098e 0C4B     	 ldr r3,.L75+8
+ 1027 0990 03F5C063 	 add r3,r3,#1536
+ 1028 0994 D3E90023 	 ldrd r2,[r3]
+ 1029 0998 1046     	 mov r0,r2
+ 1030 099a 1946     	 mov r1,r3
+ 1031 099c 4FF00002 	 mov r2,#0
+ 1032 09a0 104B     	 ldr r3,.L75+44
+ 1033 09a2 FFF7FEFF 	 bl __aeabi_dcmpgt
+ 1034 09a6 0346     	 mov r3,r0
+ 1035 09a8 002B     	 cmp r3,#0
+ 1036 09aa 21D0     	 beq .L55
+ 319:../Simulink/Subsystem_InputData.c ****     /*@>fbf8*/VCU_B./*@>10f17*/x_clutch_b/*@>e697*/ = /*@>eafc*/25.0;
+ 1037              	 .loc 1 319 0
+ 1038 09ac 044B     	 ldr r3,.L75+8
+ 1039 09ae 03F5C161 	 add r1,r3,#1544
+ 1040 09b2 4FF00002 	 mov r2,#0
+ 1041 09b6 17E0     	 b .L76
+ 1042              	.L77:
+ 1043              	 .align 3
+ 1044              	.L75:
+ 1045 09b8 FCA9F1D2 	 .word -755914244
+ 1046 09bc 4D62503F 	 .word 1062232653
+ 1047 09c0 00000000 	 .word VCU_B
+ 1048 09c4 10000000 	 .word VCU_ConstP+16
+ 1049 09c8 00000000 	 .word VCU_ConstP
+ 1050 09cc 00000000 	 .word VCU_DW
+ 1051 09d0 0000103F 	 .word 1058013184
+ 1052 09d4 30000000 	 .word VCU_ConstP+48
+ 1053 09d8 20000000 	 .word VCU_ConstP+32
+ 1054 09dc 40000000 	 .word VCU_ConstP+64
+ 1055 09e0 50000000 	 .word VCU_ConstP+80
+ 1056 09e4 00003940 	 .word 1077477376
+ 1057              	.L76:
+ 1058 09e8 A74B     	 ldr r3,.L78+32
+ 1059 09ea C1E90023 	 strd r2,[r1]
+ 1060 09ee 23E0     	 b .L9
+ 1061              	.L55:
+ 320:../Simulink/Subsystem_InputData.c **** } else /*@>e698*/if (/*@>fbf2*/VCU_B./*@>10f14*/x_clutch/*@>e68d*/ < /*@>eaf8*/0.0) {
+ 1062              	 .loc 1 320 0
+ 1063 09f0 A64B     	 ldr r3,.L78+36
+ 1064 09f2 03F5C063 	 add r3,r3,#1536
+ 1065 09f6 D3E90023 	 ldrd r2,[r3]
+ 1066 09fa 1046     	 mov r0,r2
+ 1067 09fc 1946     	 mov r1,r3
+ 1068 09fe 4FF00002 	 mov r2,#0
+ 1069 0a02 4FF00003 	 mov r3,#0
+ 1070 0a06 FFF7FEFF 	 bl __aeabi_dcmplt
+ 1071 0a0a 0346     	 mov r3,r0
+ 1072 0a0c 002B     	 cmp r3,#0
+ 1073 0a0e 09D0     	 beq .L56
+ 321:../Simulink/Subsystem_InputData.c ****     /*@>fc0a*/VCU_B./*@>10f20*/x_clutch_b/*@>e69a*/ = /*@>eafa*/0.0;
+ 1074              	 .loc 1 321 0
+ 1075 0a10 9E4B     	 ldr r3,.L78+36
+ 1076 0a12 03F5C161 	 add r1,r3,#1544
+ 1077 0a16 4FF00002 	 mov r2,#0
+ 1078 0a1a 4FF00003 	 mov r3,#0
+ 1079 0a1e C1E90023 	 strd r2,[r1]
+ 1080 0a22 09E0     	 b .L9
+ 1081              	.L56:
+ 322:../Simulink/Subsystem_InputData.c **** } else {
+ 323:../Simulink/Subsystem_InputData.c ****     /*@>fbfe*/VCU_B./*@>10f1a*/x_clutch_b/*@>e694*/ = /*@>fc04*/VCU_B./*@>10f1d*/x_clutch;
+ 1082              	 .loc 1 323 0
+ 1083 0a24 994B     	 ldr r3,.L78+36
+ 1084 0a26 03F5C063 	 add r3,r3,#1536
+ 1085 0a2a D3E90023 	 ldrd r2,[r3]
+ 1086 0a2e 9749     	 ldr r1,.L78+36
+ 1087 0a30 01F5C161 	 add r1,r1,#1544
+ 1088 0a34 C1E90023 	 strd r2,[r1]
+ 1089              	.L9:
+ 324:../Simulink/Subsystem_InputData.c **** }
+ 325:../Simulink/Subsystem_InputData.c **** /* End of Saturate: '<S14>/Saturation' */
+ 326:../Simulink/Subsystem_InputData.c **** 
+ 327:../Simulink/Subsystem_InputData.c **** /* DataStoreRead: '<S14>/Data Store Read' */
+ 328:../Simulink/Subsystem_InputData.c **** /*@>fc10*/VCU_B./*@>10f23*/DataStoreRead/*@>6bf8*/ = /*@>ffd5*/VCU_DW./*@>11091*/VAR_IN_Fans_dash_b
+ 1090              	 .loc 1 328 0
+ 1091 0a38 954B     	 ldr r3,.L78+40
+ 1092 0a3a D3E91623 	 ldrd r2,[r3,#88]
+ 1093 0a3e 9349     	 ldr r1,.L78+36
+ 1094 0a40 01F5C261 	 add r1,r1,#1552
+ 1095 0a44 C1E90023 	 strd r2,[r1]
+ 329:../Simulink/Subsystem_InputData.c **** /* DataTypeConversion: '<S14>/Data Type Conversion10' */
+ 330:../Simulink/Subsystem_InputData.c **** /*@>fc16*/VCU_B./*@>10f26*/Fans_dash_bit/*@>6bfb*/ = (/*@>fc1c*/VCU_B./*@>10f29*/DataStoreRead/*@>e
+ 1096              	 .loc 1 330 0
+ 1097 0a48 904B     	 ldr r3,.L78+36
+ 1098 0a4a 03F5C263 	 add r3,r3,#1552
+ 1099 0a4e D3E90023 	 ldrd r2,[r3]
+ 1100 0a52 0121     	 movs r1,#1
+ 1101 0a54 0C46     	 mov r4,r1
+ 1102 0a56 1046     	 mov r0,r2
+ 1103 0a58 1946     	 mov r1,r3
+ 1104 0a5a 4FF00002 	 mov r2,#0
+ 1105 0a5e 4FF00003 	 mov r3,#0
+ 1106 0a62 FFF7FEFF 	 bl __aeabi_dcmpeq
+ 1107 0a66 0346     	 mov r3,r0
+ 1108 0a68 002B     	 cmp r3,#0
+ 1109 0a6a 01D0     	 beq .L12
+ 1110 0a6c 0023     	 movs r3,#0
+ 1111 0a6e 1C46     	 mov r4,r3
+ 1112              	.L12:
+ 1113 0a70 E3B2     	 uxtb r3,r4
+ 1114 0a72 1A46     	 mov r2,r3
+ 1115 0a74 854B     	 ldr r3,.L78+36
+ 1116 0a76 83F80E28 	 strb r2,[r3,#2062]
+ 331:../Simulink/Subsystem_InputData.c **** /* DataStoreRead: '<S14>/Data Store Read1' */
+ 332:../Simulink/Subsystem_InputData.c **** /*@>fc22*/VCU_B./*@>10f2c*/DataStoreRead1/*@>6bfd*/ = /*@>ffdb*/VCU_DW./*@>11094*/VAR_IN_p_brake_R;
+ 1117              	 .loc 1 332 0
+ 1118 0a7a 854B     	 ldr r3,.L78+40
+ 1119 0a7c D3E91823 	 ldrd r2,[r3,#96]
+ 1120 0a80 8249     	 ldr r1,.L78+36
+ 1121 0a82 01F5C361 	 add r1,r1,#1560
+ 1122 0a86 C1E90023 	 strd r2,[r1]
+ 333:../Simulink/Subsystem_InputData.c **** /* Saturate: '<S41>/Saturation' incorporates:
+ 334:../Simulink/Subsystem_InputData.c ****  *  Gain: '<S14>/mV//V11'
+ 335:../Simulink/Subsystem_InputData.c ****  */
+ 336:../Simulink/Subsystem_InputData.c **** /*@>fc28*/VCU_B./*@>10f2f*/mVV11/*@>6c05*/ = /*@>e25d*/0.001/*@>e2b1*/ * /*@>fc2e*/VCU_B./*@>10f32*
+ 1123              	 .loc 1 336 0
+ 1124 0a8a 804B     	 ldr r3,.L78+36
+ 1125 0a8c 03F5C363 	 add r3,r3,#1560
+ 1126 0a90 D3E90023 	 ldrd r2,[r3]
+ 1127 0a94 1046     	 mov r0,r2
+ 1128 0a96 1946     	 mov r1,r3
+ 1129 0a98 73A3     	 adr r3,.L78
+ 1130 0a9a D3E90023 	 ldrd r2,[r3]
+ 1131 0a9e FFF7FEFF 	 bl __aeabi_dmul
+ 1132 0aa2 0246     	 mov r2,r0
+ 1133 0aa4 0B46     	 mov r3,r1
+ 1134 0aa6 7949     	 ldr r1,.L78+36
+ 1135 0aa8 01F5C461 	 add r1,r1,#1568
+ 1136 0aac C1E90023 	 strd r2,[r1]
+ 337:../Simulink/Subsystem_InputData.c **** /*@>e6e0*/if (/*@>fc34*/VCU_B./*@>10f35*/mVV11/*@>e6db*/ > /*@>eafe*/4.8) {
+ 1137              	 .loc 1 337 0
+ 1138 0ab0 764B     	 ldr r3,.L78+36
+ 1139 0ab2 03F5C463 	 add r3,r3,#1568
+ 1140 0ab6 D3E90023 	 ldrd r2,[r3]
+ 1141 0aba 1046     	 mov r0,r2
+ 1142 0abc 1946     	 mov r1,r3
+ 1143 0abe 6CA3     	 adr r3,.L78+8
+ 1144 0ac0 D3E90023 	 ldrd r2,[r3]
+ 1145 0ac4 FFF7FEFF 	 bl __aeabi_dcmpgt
+ 1146 0ac8 0346     	 mov r3,r0
+ 1147 0aca 002B     	 cmp r3,#0
+ 1148 0acc 08D0     	 beq .L57
+ 338:../Simulink/Subsystem_InputData.c ****     /*@>fc40*/VCU_B./*@>10f3b*/Saturation_i/*@>e6e2*/ = /*@>eb04*/4.8;
+ 1149              	 .loc 1 338 0
+ 1150 0ace 6F4B     	 ldr r3,.L78+36
+ 1151 0ad0 03F5C561 	 add r1,r3,#1576
+ 1152 0ad4 66A3     	 adr r3,.L78+8
+ 1153 0ad6 D3E90023 	 ldrd r2,[r3]
+ 1154 0ada C1E90023 	 strd r2,[r1]
+ 1155 0ade 21E0     	 b .L15
+ 1156              	.L57:
+ 339:../Simulink/Subsystem_InputData.c **** } else /*@>e6e3*/if (/*@>fc3a*/VCU_B./*@>10f38*/mVV11/*@>e6d8*/ < /*@>eb00*/0.5) {
+ 1157              	 .loc 1 339 0
+ 1158 0ae0 6A4B     	 ldr r3,.L78+36
+ 1159 0ae2 03F5C463 	 add r3,r3,#1568
+ 1160 0ae6 D3E90023 	 ldrd r2,[r3]
+ 1161 0aea 1046     	 mov r0,r2
+ 1162 0aec 1946     	 mov r1,r3
+ 1163 0aee 4FF00002 	 mov r2,#0
+ 1164 0af2 684B     	 ldr r3,.L78+44
+ 1165 0af4 FFF7FEFF 	 bl __aeabi_dcmplt
+ 1166 0af8 0346     	 mov r3,r0
+ 1167 0afa 002B     	 cmp r3,#0
+ 1168 0afc 08D0     	 beq .L58
+ 340:../Simulink/Subsystem_InputData.c ****     /*@>fc52*/VCU_B./*@>10f44*/Saturation_i/*@>e6e5*/ = /*@>eb02*/0.5;
+ 1169              	 .loc 1 340 0
+ 1170 0afe 634B     	 ldr r3,.L78+36
+ 1171 0b00 03F5C561 	 add r1,r3,#1576
+ 1172 0b04 4FF00002 	 mov r2,#0
+ 1173 0b08 624B     	 ldr r3,.L78+44
+ 1174 0b0a C1E90023 	 strd r2,[r1]
+ 1175 0b0e 09E0     	 b .L15
+ 1176              	.L58:
+ 341:../Simulink/Subsystem_InputData.c **** } else {
+ 342:../Simulink/Subsystem_InputData.c ****     /*@>fc46*/VCU_B./*@>10f3e*/Saturation_i/*@>e6df*/ = /*@>fc4c*/VCU_B./*@>10f41*/mVV11;
+ 1177              	 .loc 1 342 0
+ 1178 0b10 5E4B     	 ldr r3,.L78+36
+ 1179 0b12 03F5C463 	 add r3,r3,#1568
+ 1180 0b16 D3E90023 	 ldrd r2,[r3]
+ 1181 0b1a 5C49     	 ldr r1,.L78+36
+ 1182 0b1c 01F5C561 	 add r1,r1,#1576
+ 1183 0b20 C1E90023 	 strd r2,[r1]
+ 1184              	.L15:
+ 343:../Simulink/Subsystem_InputData.c **** }
+ 344:../Simulink/Subsystem_InputData.c **** /* End of Saturate: '<S41>/Saturation' */
+ 345:../Simulink/Subsystem_InputData.c **** 
+ 346:../Simulink/Subsystem_InputData.c **** /* Sum: '<S41>/Add' incorporates:
+ 347:../Simulink/Subsystem_InputData.c ****  *  Constant: '<S41>/Offset'
+ 348:../Simulink/Subsystem_InputData.c ****  */
+ 349:../Simulink/Subsystem_InputData.c **** /*@>fc58*/VCU_B./*@>10f47*/Add_ps/*@>8931*/ = /*@>fc5e*/VCU_B./*@>10f4a*/Saturation_i/*@>892e*/ - /
+ 1185              	 .loc 1 349 0
+ 1186 0b24 594B     	 ldr r3,.L78+36
+ 1187 0b26 03F5C563 	 add r3,r3,#1576
+ 1188 0b2a D3E90023 	 ldrd r2,[r3]
+ 1189 0b2e 1046     	 mov r0,r2
+ 1190 0b30 1946     	 mov r1,r3
+ 1191 0b32 4FF00002 	 mov r2,#0
+ 1192 0b36 574B     	 ldr r3,.L78+44
+ 1193 0b38 FFF7FEFF 	 bl __aeabi_dsub
+ 1194 0b3c 0246     	 mov r2,r0
+ 1195 0b3e 0B46     	 mov r3,r1
+ 1196 0b40 5249     	 ldr r1,.L78+36
+ 1197 0b42 01F5C661 	 add r1,r1,#1584
+ 1198 0b46 C1E90023 	 strd r2,[r1]
+ 350:../Simulink/Subsystem_InputData.c **** /* Gain: '<S41>/Sensitivity: 15,38 mV // bar' */
+ 351:../Simulink/Subsystem_InputData.c **** /*@>fc64*/VCU_B./*@>10f4d*/Sensitivity1538mVbar/*@>6c18*/ = /*@>e261*/65.019505851755525/*@>e2ad*/ 
+ 1199              	 .loc 1 351 0
+ 1200 0b4a 504B     	 ldr r3,.L78+36
+ 1201 0b4c 03F5C663 	 add r3,r3,#1584
+ 1202 0b50 D3E90023 	 ldrd r2,[r3]
+ 1203 0b54 1046     	 mov r0,r2
+ 1204 0b56 1946     	 mov r1,r3
+ 1205 0b58 47A3     	 adr r3,.L78+16
+ 1206 0b5a D3E90023 	 ldrd r2,[r3]
+ 1207 0b5e FFF7FEFF 	 bl __aeabi_dmul
+ 1208 0b62 0246     	 mov r2,r0
+ 1209 0b64 0B46     	 mov r3,r1
+ 1210 0b66 4949     	 ldr r1,.L78+36
+ 1211 0b68 01F5C761 	 add r1,r1,#1592
+ 1212 0b6c C1E90023 	 strd r2,[r1]
+ 352:../Simulink/Subsystem_InputData.c **** /* DataStoreRead: '<S14>/Data Store Read12' */
+ 353:../Simulink/Subsystem_InputData.c **** /*@>fc70*/VCU_B./*@>10f53*/DataStoreRead12/*@>6c1a*/ = /*@>ffe1*/VCU_DW./*@>11097*/VAR_IN_U_Bat;
+ 1213              	 .loc 1 353 0
+ 1214 0b70 474B     	 ldr r3,.L78+40
+ 1215 0b72 D3E91E23 	 ldrd r2,[r3,#120]
+ 1216 0b76 4549     	 ldr r1,.L78+36
+ 1217 0b78 01F5C861 	 add r1,r1,#1600
+ 1218 0b7c C1E90023 	 strd r2,[r1]
+ 354:../Simulink/Subsystem_InputData.c **** /* Gain: '<S14>/mV//V13' */
+ 355:../Simulink/Subsystem_InputData.c **** /*@>fc76*/VCU_B./*@>10f56*/U_Bat/*@>6c22*/ = /*@>e262*/0.001/*@>e2a9*/ * /*@>fc7c*/VCU_B./*@>10f59*
+ 1219              	 .loc 1 355 0
+ 1220 0b80 424B     	 ldr r3,.L78+36
+ 1221 0b82 03F5C863 	 add r3,r3,#1600
+ 1222 0b86 D3E90023 	 ldrd r2,[r3]
+ 1223 0b8a 1046     	 mov r0,r2
+ 1224 0b8c 1946     	 mov r1,r3
+ 1225 0b8e 36A3     	 adr r3,.L78
+ 1226 0b90 D3E90023 	 ldrd r2,[r3]
+ 1227 0b94 FFF7FEFF 	 bl __aeabi_dmul
+ 1228 0b98 0246     	 mov r2,r0
+ 1229 0b9a 0B46     	 mov r3,r1
+ 1230 0b9c 3B49     	 ldr r1,.L78+36
+ 1231 0b9e 01F5C961 	 add r1,r1,#1608
+ 1232 0ba2 C1E90023 	 strd r2,[r1]
+ 356:../Simulink/Subsystem_InputData.c **** /* DataStoreRead: '<S14>/Data Store Read4' */
+ 357:../Simulink/Subsystem_InputData.c **** /*@>fc82*/VCU_B./*@>10f5c*/DataStoreRead4/*@>6c24*/ = /*@>ffe7*/VCU_DW./*@>1109a*/VAR_IN_f_FL;
+ 1233              	 .loc 1 357 0
+ 1234 0ba6 3A4B     	 ldr r3,.L78+40
+ 1235 0ba8 D3E92223 	 ldrd r2,[r3,#136]
+ 1236 0bac 3749     	 ldr r1,.L78+36
+ 1237 0bae 01F5CA61 	 add r1,r1,#1616
+ 1238 0bb2 C1E90023 	 strd r2,[r1]
+ 358:../Simulink/Subsystem_InputData.c **** /* Gain: '<S14>/mV//V15' */
+ 359:../Simulink/Subsystem_InputData.c **** /*@>fc88*/VCU_B./*@>10f5f*/mVV15/*@>6c2c*/ = /*@>e263*/0.001/*@>e2a5*/ * /*@>fc8e*/VCU_B./*@>10f62*
+ 1239              	 .loc 1 359 0
+ 1240 0bb6 354B     	 ldr r3,.L78+36
+ 1241 0bb8 03F5CA63 	 add r3,r3,#1616
+ 1242 0bbc D3E90023 	 ldrd r2,[r3]
+ 1243 0bc0 1046     	 mov r0,r2
+ 1244 0bc2 1946     	 mov r1,r3
+ 1245 0bc4 28A3     	 adr r3,.L78
+ 1246 0bc6 D3E90023 	 ldrd r2,[r3]
+ 1247 0bca FFF7FEFF 	 bl __aeabi_dmul
+ 1248 0bce 0246     	 mov r2,r0
+ 1249 0bd0 0B46     	 mov r3,r1
+ 1250 0bd2 2E49     	 ldr r1,.L78+36
+ 1251 0bd4 01F5CB61 	 add r1,r1,#1624
+ 1252 0bd8 C1E90023 	 strd r2,[r1]
+ 360:../Simulink/Subsystem_InputData.c **** /* Saturate: '<S42>/Saturation1' incorporates:
+ 361:../Simulink/Subsystem_InputData.c ****  *  Lookup_n-D: '<S42>/1-D Lookup Table1'
+ 362:../Simulink/Subsystem_InputData.c ****  */
+ 363:../Simulink/Subsystem_InputData.c **** /*@>fc94*/VCU_B./*@>10f65*/uDLookupTable1/*@>8ae1*/ = /*@>f1d6*/look1_binlxpw(/*@>fc9a*/VCU_B./*@>1
+ 1253              	 .loc 1 363 0
+ 1254 0bdc 2B4B     	 ldr r3,.L78+36
+ 1255 0bde 03F5CB63 	 add r3,r3,#1624
+ 1256 0be2 D3E90023 	 ldrd r2,[r3]
+ 1257 0be6 0121     	 movs r1,#1
+ 1258 0be8 0091     	 str r1,[sp]
+ 1259 0bea 1046     	 mov r0,r2
+ 1260 0bec 1946     	 mov r1,r3
+ 1261 0bee 2A4A     	 ldr r2,.L78+48
+ 1262 0bf0 2A4B     	 ldr r3,.L78+52
+ 1263 0bf2 FFF7FEFF 	 bl look1_binlxpw
+ 1264 0bf6 0246     	 mov r2,r0
+ 1265 0bf8 0B46     	 mov r3,r1
+ 1266 0bfa 2449     	 ldr r1,.L78+36
+ 1267 0bfc 01F5CC61 	 add r1,r1,#1632
+ 1268 0c00 C1E90023 	 strd r2,[r1]
+ 364:../Simulink/Subsystem_InputData.c **** /*@>e72b*/if (/*@>fca0*/VCU_B./*@>10f6b*/uDLookupTable1/*@>e726*/ > /*@>eb06*/9000.0) {
+ 1269              	 .loc 1 364 0
+ 1270 0c04 214B     	 ldr r3,.L78+36
+ 1271 0c06 03F5CC63 	 add r3,r3,#1632
+ 1272 0c0a D3E90023 	 ldrd r2,[r3]
+ 1273 0c0e 1046     	 mov r0,r2
+ 1274 0c10 1946     	 mov r1,r3
+ 1275 0c12 1BA3     	 adr r3,.L78+24
+ 1276 0c14 D3E90023 	 ldrd r2,[r3]
+ 1277 0c18 FFF7FEFF 	 bl __aeabi_dcmpgt
+ 1278 0c1c 0346     	 mov r3,r0
+ 1279 0c1e 002B     	 cmp r3,#0
+ 1280 0c20 08D0     	 beq .L59
+ 365:../Simulink/Subsystem_InputData.c ****     /*@>fcac*/VCU_B./*@>10f71*/Saturation1_e/*@>e72d*/ = /*@>eb0c*/9000.0;
+ 1281              	 .loc 1 365 0
+ 1282 0c22 1A4B     	 ldr r3,.L78+36
+ 1283 0c24 03F5CD61 	 add r1,r3,#1640
+ 1284 0c28 15A3     	 adr r3,.L78+24
+ 1285 0c2a D3E90023 	 ldrd r2,[r3]
+ 1286 0c2e C1E90023 	 strd r2,[r1]
+ 1287 0c32 3FE0     	 b .L20
+ 1288              	.L59:
+ 366:../Simulink/Subsystem_InputData.c **** } else /*@>e72e*/if (/*@>fca6*/VCU_B./*@>10f6e*/uDLookupTable1/*@>e723*/ < /*@>eb08*/0.0) {
+ 1289              	 .loc 1 366 0
+ 1290 0c34 154B     	 ldr r3,.L78+36
+ 1291 0c36 03F5CC63 	 add r3,r3,#1632
+ 1292 0c3a D3E90023 	 ldrd r2,[r3]
+ 1293 0c3e 1046     	 mov r0,r2
+ 1294 0c40 1946     	 mov r1,r3
+ 1295 0c42 4FF00002 	 mov r2,#0
+ 1296 0c46 4FF00003 	 mov r3,#0
+ 1297 0c4a FFF7FEFF 	 bl __aeabi_dcmplt
+ 1298 0c4e 0346     	 mov r3,r0
+ 1299 0c50 002B     	 cmp r3,#0
+ 1300 0c52 25D0     	 beq .L60
+ 367:../Simulink/Subsystem_InputData.c ****     /*@>fcbe*/VCU_B./*@>10f7a*/Saturation1_e/*@>e730*/ = /*@>eb0a*/0.0;
+ 1301              	 .loc 1 367 0
+ 1302 0c54 0D4B     	 ldr r3,.L78+36
+ 1303 0c56 03F5CD61 	 add r1,r3,#1640
+ 1304 0c5a 4FF00002 	 mov r2,#0
+ 1305 0c5e 4FF00003 	 mov r3,#0
+ 1306 0c62 C1E90023 	 strd r2,[r1]
+ 1307 0c66 25E0     	 b .L20
+ 1308              	.L79:
+ 1309              	 .align 3
+ 1310              	.L78:
+ 1311 0c68 FCA9F1D2 	 .word -755914244
+ 1312 0c6c 4D62503F 	 .word 1062232653
+ 1313 0c70 33333333 	 .word 858993459
+ 1314 0c74 33331340 	 .word 1075000115
+ 1315 0c78 B8D77895 	 .word -1787242568
+ 1316 0c7c 3F415040 	 .word 1079001407
+ 1317 0c80 00000000 	 .word 0
+ 1318 0c84 0094C140 	 .word 1086428160
+ 1319 0c88 00003940 	 .word 1077477376
+ 1320 0c8c 00000000 	 .word VCU_B
+ 1321 0c90 00000000 	 .word VCU_DW
+ 1322 0c94 0000E03F 	 .word 1071644672
+ 1323 0c98 70000000 	 .word VCU_ConstP+112
+ 1324 0c9c 60000000 	 .word VCU_ConstP+96
+ 1325              	.L60:
+ 368:../Simulink/Subsystem_InputData.c **** } else {
+ 369:../Simulink/Subsystem_InputData.c ****     /*@>fcb2*/VCU_B./*@>10f74*/Saturation1_e/*@>e72a*/ = /*@>fcb8*/VCU_B./*@>10f77*/uDLookupTable1;
+ 1326              	 .loc 1 369 0
+ 1327 0ca0 A54B     	 ldr r3,.L80+16
+ 1328 0ca2 03F5CC63 	 add r3,r3,#1632
+ 1329 0ca6 D3E90023 	 ldrd r2,[r3]
+ 1330 0caa A349     	 ldr r1,.L80+16
+ 1331 0cac 01F5CD61 	 add r1,r1,#1640
+ 1332 0cb0 C1E90023 	 strd r2,[r1]
+ 1333              	.L20:
+ 370:../Simulink/Subsystem_InputData.c **** }
+ 371:../Simulink/Subsystem_InputData.c **** /* End of Saturate: '<S42>/Saturation1' */
+ 372:../Simulink/Subsystem_InputData.c **** 
+ 373:../Simulink/Subsystem_InputData.c **** /* DataStoreRead: '<S14>/Data Store Read5' */
+ 374:../Simulink/Subsystem_InputData.c **** /*@>fcc4*/VCU_B./*@>10f7d*/DataStoreRead5/*@>6c3b*/ = /*@>ffed*/VCU_DW./*@>1109d*/VAR_IN_f_FR;
+ 1334              	 .loc 1 374 0
+ 1335 0cb4 A14B     	 ldr r3,.L80+20
+ 1336 0cb6 D3E92423 	 ldrd r2,[r3,#144]
+ 1337 0cba 9F49     	 ldr r1,.L80+16
+ 1338 0cbc 01F5CE61 	 add r1,r1,#1648
+ 1339 0cc0 C1E90023 	 strd r2,[r1]
+ 375:../Simulink/Subsystem_InputData.c **** /* Gain: '<S14>/mV//V16' */
+ 376:../Simulink/Subsystem_InputData.c **** /*@>fcca*/VCU_B./*@>10f80*/mVV16/*@>6c43*/ = /*@>e266*/0.001/*@>e2a1*/ * /*@>fcd0*/VCU_B./*@>10f83*
+ 1340              	 .loc 1 376 0
+ 1341 0cc4 9C4B     	 ldr r3,.L80+16
+ 1342 0cc6 03F5CE63 	 add r3,r3,#1648
+ 1343 0cca D3E90023 	 ldrd r2,[r3]
+ 1344 0cce 1046     	 mov r0,r2
+ 1345 0cd0 1946     	 mov r1,r3
+ 1346 0cd2 95A3     	 adr r3,.L80
+ 1347 0cd4 D3E90023 	 ldrd r2,[r3]
+ 1348 0cd8 FFF7FEFF 	 bl __aeabi_dmul
+ 1349 0cdc 0246     	 mov r2,r0
+ 1350 0cde 0B46     	 mov r3,r1
+ 1351 0ce0 9549     	 ldr r1,.L80+16
+ 1352 0ce2 01F5CF61 	 add r1,r1,#1656
+ 1353 0ce6 C1E90023 	 strd r2,[r1]
+ 377:../Simulink/Subsystem_InputData.c **** /* Saturate: '<S43>/Saturation1' incorporates:
+ 378:../Simulink/Subsystem_InputData.c ****  *  Lookup_n-D: '<S43>/1-D Lookup Table1'
+ 379:../Simulink/Subsystem_InputData.c ****  */
+ 380:../Simulink/Subsystem_InputData.c **** /*@>fcd6*/VCU_B./*@>10f86*/uDLookupTable1_k/*@>8b0a*/ = /*@>f1da*/look1_binlxpw(/*@>fcdc*/VCU_B./*@
+ 1354              	 .loc 1 380 0
+ 1355 0cea 934B     	 ldr r3,.L80+16
+ 1356 0cec 03F5CF63 	 add r3,r3,#1656
+ 1357 0cf0 D3E90023 	 ldrd r2,[r3]
+ 1358 0cf4 0121     	 movs r1,#1
+ 1359 0cf6 0091     	 str r1,[sp]
+ 1360 0cf8 1046     	 mov r0,r2
+ 1361 0cfa 1946     	 mov r1,r3
+ 1362 0cfc 904A     	 ldr r2,.L80+24
+ 1363 0cfe 914B     	 ldr r3,.L80+28
+ 1364 0d00 FFF7FEFF 	 bl look1_binlxpw
+ 1365 0d04 0246     	 mov r2,r0
+ 1366 0d06 0B46     	 mov r3,r1
+ 1367 0d08 8B49     	 ldr r1,.L80+16
+ 1368 0d0a 01F5D061 	 add r1,r1,#1664
+ 1369 0d0e C1E90023 	 strd r2,[r1]
+ 381:../Simulink/Subsystem_InputData.c **** /*@>e776*/if (/*@>fce2*/VCU_B./*@>10f8c*/uDLookupTable1_k/*@>e771*/ > /*@>eb0e*/9000.0) {
+ 1370              	 .loc 1 381 0
+ 1371 0d12 894B     	 ldr r3,.L80+16
+ 1372 0d14 03F5D063 	 add r3,r3,#1664
+ 1373 0d18 D3E90023 	 ldrd r2,[r3]
+ 1374 0d1c 1046     	 mov r0,r2
+ 1375 0d1e 1946     	 mov r1,r3
+ 1376 0d20 83A3     	 adr r3,.L80+8
+ 1377 0d22 D3E90023 	 ldrd r2,[r3]
+ 1378 0d26 FFF7FEFF 	 bl __aeabi_dcmpgt
+ 1379 0d2a 0346     	 mov r3,r0
+ 1380 0d2c 002B     	 cmp r3,#0
+ 1381 0d2e 08D0     	 beq .L61
+ 382:../Simulink/Subsystem_InputData.c ****     /*@>fcee*/VCU_B./*@>10f92*/Saturation1_n/*@>e778*/ = /*@>eb14*/9000.0;
+ 1382              	 .loc 1 382 0
+ 1383 0d30 814B     	 ldr r3,.L80+16
+ 1384 0d32 03F5D161 	 add r1,r3,#1672
+ 1385 0d36 7EA3     	 adr r3,.L80+8
+ 1386 0d38 D3E90023 	 ldrd r2,[r3]
+ 1387 0d3c C1E90023 	 strd r2,[r1]
+ 1388 0d40 23E0     	 b .L25
+ 1389              	.L61:
+ 383:../Simulink/Subsystem_InputData.c **** } else /*@>e779*/if (/*@>fce8*/VCU_B./*@>10f8f*/uDLookupTable1_k/*@>e76e*/ < /*@>eb10*/0.0) {
+ 1390              	 .loc 1 383 0
+ 1391 0d42 7D4B     	 ldr r3,.L80+16
+ 1392 0d44 03F5D063 	 add r3,r3,#1664
+ 1393 0d48 D3E90023 	 ldrd r2,[r3]
+ 1394 0d4c 1046     	 mov r0,r2
+ 1395 0d4e 1946     	 mov r1,r3
+ 1396 0d50 4FF00002 	 mov r2,#0
+ 1397 0d54 4FF00003 	 mov r3,#0
+ 1398 0d58 FFF7FEFF 	 bl __aeabi_dcmplt
+ 1399 0d5c 0346     	 mov r3,r0
+ 1400 0d5e 002B     	 cmp r3,#0
+ 1401 0d60 09D0     	 beq .L62
+ 384:../Simulink/Subsystem_InputData.c ****     /*@>fd00*/VCU_B./*@>10f9b*/Saturation1_n/*@>e77b*/ = /*@>eb12*/0.0;
+ 1402              	 .loc 1 384 0
+ 1403 0d62 754B     	 ldr r3,.L80+16
+ 1404 0d64 03F5D161 	 add r1,r3,#1672
+ 1405 0d68 4FF00002 	 mov r2,#0
+ 1406 0d6c 4FF00003 	 mov r3,#0
+ 1407 0d70 C1E90023 	 strd r2,[r1]
+ 1408 0d74 09E0     	 b .L25
+ 1409              	.L62:
+ 385:../Simulink/Subsystem_InputData.c **** } else {
+ 386:../Simulink/Subsystem_InputData.c ****     /*@>fcf4*/VCU_B./*@>10f95*/Saturation1_n/*@>e775*/ = /*@>fcfa*/VCU_B./*@>10f98*/uDLookupTable1_
+ 1410              	 .loc 1 386 0
+ 1411 0d76 704B     	 ldr r3,.L80+16
+ 1412 0d78 03F5D063 	 add r3,r3,#1664
+ 1413 0d7c D3E90023 	 ldrd r2,[r3]
+ 1414 0d80 6D49     	 ldr r1,.L80+16
+ 1415 0d82 01F5D161 	 add r1,r1,#1672
+ 1416 0d86 C1E90023 	 strd r2,[r1]
+ 1417              	.L25:
+ 387:../Simulink/Subsystem_InputData.c **** }
+ 388:../Simulink/Subsystem_InputData.c **** /* End of Saturate: '<S43>/Saturation1' */
+ 389:../Simulink/Subsystem_InputData.c **** 
+ 390:../Simulink/Subsystem_InputData.c **** /* DataStoreRead: '<S14>/Data Store Read6' */
+ 391:../Simulink/Subsystem_InputData.c **** /*@>fd06*/VCU_B./*@>10f9e*/DataStoreRead6/*@>6c52*/ = /*@>fff3*/VCU_DW./*@>110a0*/VAR_IN_f_RL;
+ 1418              	 .loc 1 391 0
+ 1419 0d8a 6C4B     	 ldr r3,.L80+20
+ 1420 0d8c D3E92623 	 ldrd r2,[r3,#152]
+ 1421 0d90 6949     	 ldr r1,.L80+16
+ 1422 0d92 01F5D261 	 add r1,r1,#1680
+ 1423 0d96 C1E90023 	 strd r2,[r1]
+ 392:../Simulink/Subsystem_InputData.c **** /* Gain: '<S14>/mV//V17' */
+ 393:../Simulink/Subsystem_InputData.c **** /*@>fd0c*/VCU_B./*@>10fa1*/mVV17/*@>6c5a*/ = /*@>e269*/0.001/*@>e29d*/ * /*@>fd12*/VCU_B./*@>10fa4*
+ 1424              	 .loc 1 393 0
+ 1425 0d9a 674B     	 ldr r3,.L80+16
+ 1426 0d9c 03F5D263 	 add r3,r3,#1680
+ 1427 0da0 D3E90023 	 ldrd r2,[r3]
+ 1428 0da4 1046     	 mov r0,r2
+ 1429 0da6 1946     	 mov r1,r3
+ 1430 0da8 5FA3     	 adr r3,.L80
+ 1431 0daa D3E90023 	 ldrd r2,[r3]
+ 1432 0dae FFF7FEFF 	 bl __aeabi_dmul
+ 1433 0db2 0246     	 mov r2,r0
+ 1434 0db4 0B46     	 mov r3,r1
+ 1435 0db6 6049     	 ldr r1,.L80+16
+ 1436 0db8 01F5D361 	 add r1,r1,#1688
+ 1437 0dbc C1E90023 	 strd r2,[r1]
+ 394:../Simulink/Subsystem_InputData.c **** /* Saturate: '<S44>/Saturation1' incorporates:
+ 395:../Simulink/Subsystem_InputData.c ****  *  Lookup_n-D: '<S44>/1-D Lookup Table1'
+ 396:../Simulink/Subsystem_InputData.c ****  */
+ 397:../Simulink/Subsystem_InputData.c **** /*@>fd18*/VCU_B./*@>10fa7*/uDLookupTable1_p/*@>8b33*/ = /*@>f1de*/look1_binlxpw(/*@>fd1e*/VCU_B./*@
+ 1438              	 .loc 1 397 0
+ 1439 0dc0 5D4B     	 ldr r3,.L80+16
+ 1440 0dc2 03F5D363 	 add r3,r3,#1688
+ 1441 0dc6 D3E90023 	 ldrd r2,[r3]
+ 1442 0dca 0421     	 movs r1,#4
+ 1443 0dcc 0091     	 str r1,[sp]
+ 1444 0dce 1046     	 mov r0,r2
+ 1445 0dd0 1946     	 mov r1,r3
+ 1446 0dd2 5D4A     	 ldr r2,.L80+32
+ 1447 0dd4 5D4B     	 ldr r3,.L80+36
+ 1448 0dd6 FFF7FEFF 	 bl look1_binlxpw
+ 1449 0dda 0246     	 mov r2,r0
+ 1450 0ddc 0B46     	 mov r3,r1
+ 1451 0dde 5649     	 ldr r1,.L80+16
+ 1452 0de0 01F5D461 	 add r1,r1,#1696
+ 1453 0de4 C1E90023 	 strd r2,[r1]
+ 398:../Simulink/Subsystem_InputData.c **** /*@>e7c1*/if (/*@>fd24*/VCU_B./*@>10fad*/uDLookupTable1_p/*@>e7bc*/ > /*@>eb16*/9000.0) {
+ 1454              	 .loc 1 398 0
+ 1455 0de8 534B     	 ldr r3,.L80+16
+ 1456 0dea 03F5D463 	 add r3,r3,#1696
+ 1457 0dee D3E90023 	 ldrd r2,[r3]
+ 1458 0df2 1046     	 mov r0,r2
+ 1459 0df4 1946     	 mov r1,r3
+ 1460 0df6 4EA3     	 adr r3,.L80+8
+ 1461 0df8 D3E90023 	 ldrd r2,[r3]
+ 1462 0dfc FFF7FEFF 	 bl __aeabi_dcmpgt
+ 1463 0e00 0346     	 mov r3,r0
+ 1464 0e02 002B     	 cmp r3,#0
+ 1465 0e04 08D0     	 beq .L63
+ 399:../Simulink/Subsystem_InputData.c ****     /*@>fd30*/VCU_B./*@>10fb3*/Saturation1_o/*@>e7c3*/ = /*@>eb1c*/9000.0;
+ 1466              	 .loc 1 399 0
+ 1467 0e06 4C4B     	 ldr r3,.L80+16
+ 1468 0e08 03F5D561 	 add r1,r3,#1704
+ 1469 0e0c 48A3     	 adr r3,.L80+8
+ 1470 0e0e D3E90023 	 ldrd r2,[r3]
+ 1471 0e12 C1E90023 	 strd r2,[r1]
+ 1472 0e16 23E0     	 b .L30
+ 1473              	.L63:
+ 400:../Simulink/Subsystem_InputData.c **** } else /*@>e7c4*/if (/*@>fd2a*/VCU_B./*@>10fb0*/uDLookupTable1_p/*@>e7b9*/ < /*@>eb18*/0.0) {
+ 1474              	 .loc 1 400 0
+ 1475 0e18 474B     	 ldr r3,.L80+16
+ 1476 0e1a 03F5D463 	 add r3,r3,#1696
+ 1477 0e1e D3E90023 	 ldrd r2,[r3]
+ 1478 0e22 1046     	 mov r0,r2
+ 1479 0e24 1946     	 mov r1,r3
+ 1480 0e26 4FF00002 	 mov r2,#0
+ 1481 0e2a 4FF00003 	 mov r3,#0
+ 1482 0e2e FFF7FEFF 	 bl __aeabi_dcmplt
+ 1483 0e32 0346     	 mov r3,r0
+ 1484 0e34 002B     	 cmp r3,#0
+ 1485 0e36 09D0     	 beq .L64
+ 401:../Simulink/Subsystem_InputData.c ****     /*@>fd42*/VCU_B./*@>10fbc*/Saturation1_o/*@>e7c6*/ = /*@>eb1a*/0.0;
+ 1486              	 .loc 1 401 0
+ 1487 0e38 3F4B     	 ldr r3,.L80+16
+ 1488 0e3a 03F5D561 	 add r1,r3,#1704
+ 1489 0e3e 4FF00002 	 mov r2,#0
+ 1490 0e42 4FF00003 	 mov r3,#0
+ 1491 0e46 C1E90023 	 strd r2,[r1]
+ 1492 0e4a 09E0     	 b .L30
+ 1493              	.L64:
+ 402:../Simulink/Subsystem_InputData.c **** } else {
+ 403:../Simulink/Subsystem_InputData.c ****     /*@>fd36*/VCU_B./*@>10fb6*/Saturation1_o/*@>e7c0*/ = /*@>fd3c*/VCU_B./*@>10fb9*/uDLookupTable1_
+ 1494              	 .loc 1 403 0
+ 1495 0e4c 3A4B     	 ldr r3,.L80+16
+ 1496 0e4e 03F5D463 	 add r3,r3,#1696
+ 1497 0e52 D3E90023 	 ldrd r2,[r3]
+ 1498 0e56 3849     	 ldr r1,.L80+16
+ 1499 0e58 01F5D561 	 add r1,r1,#1704
+ 1500 0e5c C1E90023 	 strd r2,[r1]
+ 1501              	.L30:
+ 404:../Simulink/Subsystem_InputData.c **** }
+ 405:../Simulink/Subsystem_InputData.c **** /* End of Saturate: '<S44>/Saturation1' */
+ 406:../Simulink/Subsystem_InputData.c **** 
+ 407:../Simulink/Subsystem_InputData.c **** /* DataStoreRead: '<S14>/Data Store Read7' */
+ 408:../Simulink/Subsystem_InputData.c **** /*@>fd48*/VCU_B./*@>10fbf*/DataStoreRead7/*@>6c69*/ = /*@>fff9*/VCU_DW./*@>110a3*/VAR_IN_f_RR;
+ 1502              	 .loc 1 408 0
+ 1503 0e60 364B     	 ldr r3,.L80+20
+ 1504 0e62 D3E92823 	 ldrd r2,[r3,#160]
+ 1505 0e66 3449     	 ldr r1,.L80+16
+ 1506 0e68 01F5D661 	 add r1,r1,#1712
+ 1507 0e6c C1E90023 	 strd r2,[r1]
+ 409:../Simulink/Subsystem_InputData.c **** /* Gain: '<S14>/mV//V18' */
+ 410:../Simulink/Subsystem_InputData.c **** /*@>fd4e*/VCU_B./*@>10fc2*/mVV18/*@>6c71*/ = /*@>e26c*/0.001/*@>e299*/ * /*@>fd54*/VCU_B./*@>10fc5*
+ 1508              	 .loc 1 410 0
+ 1509 0e70 314B     	 ldr r3,.L80+16
+ 1510 0e72 03F5D663 	 add r3,r3,#1712
+ 1511 0e76 D3E90023 	 ldrd r2,[r3]
+ 1512 0e7a 1046     	 mov r0,r2
+ 1513 0e7c 1946     	 mov r1,r3
+ 1514 0e7e 2AA3     	 adr r3,.L80
+ 1515 0e80 D3E90023 	 ldrd r2,[r3]
+ 1516 0e84 FFF7FEFF 	 bl __aeabi_dmul
+ 1517 0e88 0246     	 mov r2,r0
+ 1518 0e8a 0B46     	 mov r3,r1
+ 1519 0e8c 2A49     	 ldr r1,.L80+16
+ 1520 0e8e 01F5D761 	 add r1,r1,#1720
+ 1521 0e92 C1E90023 	 strd r2,[r1]
+ 411:../Simulink/Subsystem_InputData.c **** /* Saturate: '<S45>/Saturation1' incorporates:
+ 412:../Simulink/Subsystem_InputData.c ****  *  Lookup_n-D: '<S45>/1-D Lookup Table1'
+ 413:../Simulink/Subsystem_InputData.c ****  */
+ 414:../Simulink/Subsystem_InputData.c **** /*@>fd5a*/VCU_B./*@>10fc8*/uDLookupTable1_kb/*@>8b5c*/ = /*@>f1e2*/look1_binlxpw(/*@>fd60*/VCU_B./*
+ 1522              	 .loc 1 414 0
+ 1523 0e96 284B     	 ldr r3,.L80+16
+ 1524 0e98 03F5D763 	 add r3,r3,#1720
+ 1525 0e9c D3E90023 	 ldrd r2,[r3]
+ 1526 0ea0 0421     	 movs r1,#4
+ 1527 0ea2 0091     	 str r1,[sp]
+ 1528 0ea4 1046     	 mov r0,r2
+ 1529 0ea6 1946     	 mov r1,r3
+ 1530 0ea8 294A     	 ldr r2,.L80+40
+ 1531 0eaa 2A4B     	 ldr r3,.L80+44
+ 1532 0eac FFF7FEFF 	 bl look1_binlxpw
+ 1533 0eb0 0246     	 mov r2,r0
+ 1534 0eb2 0B46     	 mov r3,r1
+ 1535 0eb4 2049     	 ldr r1,.L80+16
+ 1536 0eb6 01F5D861 	 add r1,r1,#1728
+ 1537 0eba C1E90023 	 strd r2,[r1]
+ 415:../Simulink/Subsystem_InputData.c **** /*@>e80c*/if (/*@>fd66*/VCU_B./*@>10fce*/uDLookupTable1_kb/*@>e807*/ > /*@>eb1e*/9000.0) {
+ 1538              	 .loc 1 415 0
+ 1539 0ebe 1E4B     	 ldr r3,.L80+16
+ 1540 0ec0 03F5D863 	 add r3,r3,#1728
+ 1541 0ec4 D3E90023 	 ldrd r2,[r3]
+ 1542 0ec8 1046     	 mov r0,r2
+ 1543 0eca 1946     	 mov r1,r3
+ 1544 0ecc 18A3     	 adr r3,.L80+8
+ 1545 0ece D3E90023 	 ldrd r2,[r3]
+ 1546 0ed2 FFF7FEFF 	 bl __aeabi_dcmpgt
+ 1547 0ed6 0346     	 mov r3,r0
+ 1548 0ed8 002B     	 cmp r3,#0
+ 1549 0eda 08D0     	 beq .L65
+ 416:../Simulink/Subsystem_InputData.c ****     /*@>fd72*/VCU_B./*@>10fd4*/Saturation1_h/*@>e80e*/ = /*@>eb24*/9000.0;
+ 1550              	 .loc 1 416 0
+ 1551 0edc 164B     	 ldr r3,.L80+16
+ 1552 0ede 03F5D961 	 add r1,r3,#1736
+ 1553 0ee2 13A3     	 adr r3,.L80+8
+ 1554 0ee4 D3E90023 	 ldrd r2,[r3]
+ 1555 0ee8 C1E90023 	 strd r2,[r1]
+ 1556 0eec 3EE0     	 b .L35
+ 1557              	.L65:
+ 417:../Simulink/Subsystem_InputData.c **** } else /*@>e80f*/if (/*@>fd6c*/VCU_B./*@>10fd1*/uDLookupTable1_kb/*@>e804*/ < /*@>eb20*/0.0) {
+ 1558              	 .loc 1 417 0
+ 1559 0eee 124B     	 ldr r3,.L80+16
+ 1560 0ef0 03F5D863 	 add r3,r3,#1728
+ 1561 0ef4 D3E90023 	 ldrd r2,[r3]
+ 1562 0ef8 1046     	 mov r0,r2
+ 1563 0efa 1946     	 mov r1,r3
+ 1564 0efc 4FF00002 	 mov r2,#0
+ 1565 0f00 4FF00003 	 mov r3,#0
+ 1566 0f04 FFF7FEFF 	 bl __aeabi_dcmplt
+ 1567 0f08 0346     	 mov r3,r0
+ 1568 0f0a 002B     	 cmp r3,#0
+ 1569 0f0c 24D0     	 beq .L66
+ 418:../Simulink/Subsystem_InputData.c ****     /*@>fd84*/VCU_B./*@>10fdd*/Saturation1_h/*@>e811*/ = /*@>eb22*/0.0;
+ 1570              	 .loc 1 418 0
+ 1571 0f0e 0A4B     	 ldr r3,.L80+16
+ 1572 0f10 03F5D961 	 add r1,r3,#1736
+ 1573 0f14 4FF00002 	 mov r2,#0
+ 1574 0f18 4FF00003 	 mov r3,#0
+ 1575 0f1c C1E90023 	 strd r2,[r1]
+ 1576 0f20 24E0     	 b .L35
+ 1577              	.L81:
+ 1578 0f22 00BFAFF3 	 .align 3
+ 1578      0080
+ 1579              	.L80:
+ 1580 0f28 FCA9F1D2 	 .word -755914244
+ 1581 0f2c 4D62503F 	 .word 1062232653
+ 1582 0f30 00000000 	 .word 0
+ 1583 0f34 0094C140 	 .word 1086428160
+ 1584 0f38 00000000 	 .word VCU_B
+ 1585 0f3c 00000000 	 .word VCU_DW
+ 1586 0f40 90000000 	 .word VCU_ConstP+144
+ 1587 0f44 80000000 	 .word VCU_ConstP+128
+ 1588 0f48 C8000000 	 .word VCU_ConstP+200
+ 1589 0f4c A0000000 	 .word VCU_ConstP+160
+ 1590 0f50 18010000 	 .word VCU_ConstP+280
+ 1591 0f54 F0000000 	 .word VCU_ConstP+240
+ 1592              	.L66:
+ 419:../Simulink/Subsystem_InputData.c **** } else {
+ 420:../Simulink/Subsystem_InputData.c ****     /*@>fd78*/VCU_B./*@>10fd7*/Saturation1_h/*@>e80b*/ = /*@>fd7e*/VCU_B./*@>10fda*/uDLookupTable1_
+ 1593              	 .loc 1 420 0
+ 1594 0f58 164B     	 ldr r3,.L82
+ 1595 0f5a 03F5D863 	 add r3,r3,#1728
+ 1596 0f5e D3E90023 	 ldrd r2,[r3]
+ 1597 0f62 1449     	 ldr r1,.L82
+ 1598 0f64 01F5D961 	 add r1,r1,#1736
+ 1599 0f68 C1E90023 	 strd r2,[r1]
+ 1600              	.L35:
+ 421:../Simulink/Subsystem_InputData.c **** }
+ 422:../Simulink/Subsystem_InputData.c **** /* End of Saturate: '<S45>/Saturation1' */
+ 423:../Simulink/Subsystem_InputData.c **** 
+ 424:../Simulink/Subsystem_InputData.c **** /* DataStoreRead: '<S14>/Data Store Read8' */
+ 425:../Simulink/Subsystem_InputData.c **** /*@>fd8a*/VCU_B./*@>10fe0*/DataStoreRead8/*@>6c80*/ = /*@>ffff*/VCU_DW./*@>110a6*/VAR_IN_LC_dash_bi
+ 1601              	 .loc 1 425 0
+ 1602 0f6c 124B     	 ldr r3,.L82+4
+ 1603 0f6e D3E92A23 	 ldrd r2,[r3,#168]
+ 1604 0f72 1049     	 ldr r1,.L82
+ 1605 0f74 01F5DA61 	 add r1,r1,#1744
+ 1606 0f78 C1E90023 	 strd r2,[r1]
+ 426:../Simulink/Subsystem_InputData.c **** /* DataTypeConversion: '<S14>/Data Type Conversion11' */
+ 427:../Simulink/Subsystem_InputData.c **** /*@>fd90*/VCU_B./*@>10fe3*/LC_dash_bit/*@>6c83*/ = (/*@>fd96*/VCU_B./*@>10fe6*/DataStoreRead8/*@>e2
+ 1607              	 .loc 1 427 0
+ 1608 0f7c 0D4B     	 ldr r3,.L82
+ 1609 0f7e 03F5DA63 	 add r3,r3,#1744
+ 1610 0f82 D3E90023 	 ldrd r2,[r3]
+ 1611 0f86 0121     	 movs r1,#1
+ 1612 0f88 0C46     	 mov r4,r1
+ 1613 0f8a 1046     	 mov r0,r2
+ 1614 0f8c 1946     	 mov r1,r3
+ 1615 0f8e 4FF00002 	 mov r2,#0
+ 1616 0f92 4FF00003 	 mov r3,#0
+ 1617 0f96 FFF7FEFF 	 bl __aeabi_dcmpeq
+ 1618 0f9a 0346     	 mov r3,r0
+ 1619 0f9c 002B     	 cmp r3,#0
+ 1620 0f9e 01D0     	 beq .L38
+ 1621 0fa0 0023     	 movs r3,#0
+ 1622 0fa2 1C46     	 mov r4,r3
+ 1623              	.L38:
+ 1624 0fa4 E3B2     	 uxtb r3,r4
+ 1625 0fa6 1A46     	 mov r2,r3
+ 1626 0fa8 024B     	 ldr r3,.L82
+ 1627 0faa 83F80F28 	 strb r2,[r3,#2063]
+ 428:../Simulink/Subsystem_InputData.c **** 
+ 429:../Simulink/Subsystem_InputData.c **** 
+ 430:../Simulink/Subsystem_InputData.c **** 
+ 431:../Simulink/Subsystem_InputData.c **** 
+ 432:../Simulink/Subsystem_InputData.c **** 
+ 433:../Simulink/Subsystem_InputData.c ****       
+ 434:../Simulink/Subsystem_InputData.c ****   
+ 435:../Simulink/Subsystem_InputData.c **** 
+ 436:../Simulink/Subsystem_InputData.c **** 
+ 437:../Simulink/Subsystem_InputData.c ****         
+ 438:../Simulink/Subsystem_InputData.c ****     
+ 439:../Simulink/Subsystem_InputData.c ****       
+ 440:../Simulink/Subsystem_InputData.c ****           }
+ 1628              	 .loc 1 440 0
+ 1629 0fae 0437     	 adds r7,r7,#4
+ 1630              	.LCFI3:
+ 1631              	 .cfi_def_cfa_offset 12
+ 1632 0fb0 BD46     	 mov sp,r7
+ 1633              	.LCFI4:
+ 1634              	 .cfi_def_cfa_register 13
+ 1635              	 
+ 1636 0fb2 90BD     	 pop {r4,r7,pc}
+ 1637              	.L83:
+ 1638              	 .align 2
+ 1639              	.L82:
+ 1640 0fb4 00000000 	 .word VCU_B
+ 1641 0fb8 00000000 	 .word VCU_DW
+ 1642              	 .cfi_endproc
+ 1643              	.LFE175:
+ 1645 0fbc AFF30080 	 .text
+ 1646              	.Letext0:
+ 1647              	 .file 2 "../Simulink/rtwtypes.h"
+ 1648              	 .file 3 "c:\\dave\\dave-ide-4.4.2-64bit\\eclipse\\arm-gcc-49\\arm-none-eabi\\include\\machine\\_default_types.h"
+ 1649              	 .file 4 "c:\\dave\\dave-ide-4.4.2-64bit\\eclipse\\arm-gcc-49\\arm-none-eabi\\include\\stdint.h"
+ 1650              	 .file 5 "../Simulink/VCU.h"
+ 1651              	 .file 6 "C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_29_VCU_jr20_Source/Libraries/CMSIS/Include/cmsis_gcc.h"
+ 1652              	 .file 7 "C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_29_VCU_jr20_Source/Libraries/CMSIS/Include/core_cm4.h"
+ 1653              	 .file 8 "C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_29_VCU_jr20_Source/Libraries/CMSIS/Infineon/XMC4500_series/Include/system_XMC4500.h"
+DEFINED SYMBOLS
+                            *ABS*:00000000 Subsystem_InputData.c
+    {standard input}:27     .text.FUNC_InputData:00000000 $t
+    {standard input}:32     .text.FUNC_InputData:00000000 FUNC_InputData
+    {standard input}:361    .text.FUNC_InputData:00000300 $d
+    {standard input}:370    .text.FUNC_InputData:0000031c $t
+    {standard input}:679    .text.FUNC_InputData:00000618 $d
+    {standard input}:687    .text.FUNC_InputData:00000630 $t
+    {standard input}:753    .text.FUNC_InputData:000006d8 $d
+    {standard input}:760    .text.FUNC_InputData:000006ec $t
+    {standard input}:1045   .text.FUNC_InputData:000009b8 $d
+    {standard input}:1058   .text.FUNC_InputData:000009e8 $t
+    {standard input}:1311   .text.FUNC_InputData:00000c68 $d
+    {standard input}:1327   .text.FUNC_InputData:00000ca0 $t
+    {standard input}:1580   .text.FUNC_InputData:00000f28 $d
+    {standard input}:1594   .text.FUNC_InputData:00000f58 $t
+    {standard input}:1640   .text.FUNC_InputData:00000fb4 $d
+                     .debug_frame:00000010 $d
+    {standard input}:1645   .text.FUNC_InputData:00000fbc $t
+
+UNDEFINED SYMBOLS
+__aeabi_ui2d
+__aeabi_dmul
+__aeabi_dsub
+__aeabi_dadd
+__aeabi_dcmpgt
+__aeabi_dcmplt
+__aeabi_dcmpeq
+VCU_DW
+VCU_B
+look1_binlxpw
+VCU_ConstP

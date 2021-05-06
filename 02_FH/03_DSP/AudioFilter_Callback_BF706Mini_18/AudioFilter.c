@@ -17,9 +17,16 @@ to the terms of the associated Analog Devices License Agreement.
  * later your filter algorithms should be placed here
  */
 #define SAMPLES_PER_CHAN   NUM_AUDIO_SAMPLES/2
-extern fract16 CircBuffer[100];
-uint8_t buffer_index;
-extern uint8_t buffer_size;
+
+uint8_t i;
+
+extern fract16 CircBuffer[buffer_size];
+uint8_t n, buffer_index;
+fract32 out_buf;
+fract16 coeff_ar[no_coeff]={
+#include "tabs.h"
+		};
+
 
 /* Compute filter response  */
 void AudioFilter( fract32 dataIn[], fract32 dataOut[])
@@ -35,17 +42,26 @@ void AudioFilter( fract32 dataIn[], fract32 dataOut[])
 
 */
 	CircBuffer[buffer_index] = (fract16)(dataIn[0]>>8);
-	buffer_index = circindex(buffer_index,1, buffer_size);
 
-	dataOut[0] = dataIn[0];		//using RED connector
-	dataOut[1] = dataIn[1];		//using BLACK connector
-	//ClearSet_LED(TP0,2);
+	n = buffer_index;
 
+	out_buf = 0;
+
+	for(i=0; i<no_coeff; i++)
+	{
+
+		out_buf+=(coeff_ar[i]*CircBuffer[n]<<1);
+		n = circindex(n, -1, buffer_size);
+	}
+
+	dataOut[0] = dataIn[0];		//feedthrough
+	dataOut[1] = (fract32)(out_buf>>8);	//filtered
 
 /*	Store back to output buffer
 	calculated result has datatype: 	fract32 out2=0;
 	because of 24 bit format for DAC -> we shift 8 bit to rigth
 	dataOut[1] = (out2)>>8;		//because of 24 bit format for DAC
  */
+	buffer_index = circindex(buffer_index,1, buffer_size);
 
 }

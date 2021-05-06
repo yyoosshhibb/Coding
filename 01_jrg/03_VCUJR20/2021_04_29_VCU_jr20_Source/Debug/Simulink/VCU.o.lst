@@ -1,0 +1,1494 @@
+   1              	 .syntax unified
+   2              	 .cpu cortex-m4
+   3              	 .eabi_attribute 27,3
+   4              	 .fpu fpv4-sp-d16
+   5              	 .eabi_attribute 20,1
+   6              	 .eabi_attribute 21,1
+   7              	 .eabi_attribute 23,3
+   8              	 .eabi_attribute 24,1
+   9              	 .eabi_attribute 25,1
+  10              	 .eabi_attribute 26,1
+  11              	 .eabi_attribute 30,6
+  12              	 .eabi_attribute 34,1
+  13              	 .eabi_attribute 18,4
+  14              	 .thumb
+  15              	 .file "VCU.c"
+  16              	 .text
+  17              	.Ltext0:
+  18              	 .cfi_sections .debug_frame
+  19              	 .comm VCU_B,2072,8
+  20              	 .comm VCU_DW,360,8
+  21              	 .comm VCU_M_,4,4
+  22              	 .global VCU_M
+  23              	 .section .rodata.VCU_M,"a",%progbits
+  24              	 .align 2
+  27              	VCU_M:
+  28 0000 00000000 	 .word VCU_M_
+  29              	 .global __aeabi_dcmpge
+  30              	 .global __aeabi_dsub
+  31              	 .global __aeabi_ddiv
+  32              	 .global __aeabi_dcmpgt
+  33              	 .global __aeabi_dmul
+  34              	 .global __aeabi_dadd
+  35              	 .section .text.look1_binlxpw,"ax",%progbits
+  36              	 .align 2
+  37              	 .global look1_binlxpw
+  38              	 .thumb
+  39              	 .thumb_func
+  41              	look1_binlxpw:
+  42              	.LFB175:
+  43              	 .file 1 "../Simulink/VCU.c"
+   1:../Simulink/VCU.c **** /* 
+   2:../Simulink/VCU.c ****  * Academic License - for use in teaching, academic research, and meeting
+   3:../Simulink/VCU.c ****  * course requirements at degree granting institutions only.  Not for
+   4:../Simulink/VCU.c ****  * government, commercial, or other organizational use.
+   5:../Simulink/VCU.c ****  * 
+   6:../Simulink/VCU.c ****  * File: VCU.c
+   7:../Simulink/VCU.c ****  *  
+   8:../Simulink/VCU.c ****  * Code generated for Simulink model : VCU.
+   9:../Simulink/VCU.c ****  * Model version      : 1.300
+  10:../Simulink/VCU.c ****  * Simulink Coder version    : 8.14 (R2018a) 06-Feb-2018
+  11:../Simulink/VCU.c ****  * TLC version       : 8.14 (Feb 22 2018)
+  12:../Simulink/VCU.c ****  * C/C++ source code generated on  : Thu Apr 29 19:26:38 2021
+  13:../Simulink/VCU.c ****  * 
+  14:../Simulink/VCU.c ****  * Target selection: Infineon_XMC_Family.tlc
+  15:../Simulink/VCU.c ****  * Embedded hardware selection: ARM Compatible->ARM Cortex
+  16:../Simulink/VCU.c ****  * Code generation objectives: Unspecified
+  17:../Simulink/VCU.c ****  * Validation result: Not run
+  18:../Simulink/VCU.c ****  */
+  19:../Simulink/VCU.c **** 
+  20:../Simulink/VCU.c **** 
+  21:../Simulink/VCU.c ****     
+  22:../Simulink/VCU.c **** 
+  23:../Simulink/VCU.c ****           #include "VCU.h"
+  24:../Simulink/VCU.c **** 
+  25:../Simulink/VCU.c ****         #include "VCU_private.h"
+  26:../Simulink/VCU.c **** 
+  27:../Simulink/VCU.c **** 
+  28:../Simulink/VCU.c **** 
+  29:../Simulink/VCU.c **** 
+  30:../Simulink/VCU.c ****   
+  31:../Simulink/VCU.c **** 
+  32:../Simulink/VCU.c **** 
+  33:../Simulink/VCU.c ****   
+  34:../Simulink/VCU.c **** 
+  35:../Simulink/VCU.c **** 
+  36:../Simulink/VCU.c ****   
+  37:../Simulink/VCU.c **** 
+  38:../Simulink/VCU.c **** 
+  39:../Simulink/VCU.c ****   
+  40:../Simulink/VCU.c **** 
+  41:../Simulink/VCU.c **** 
+  42:../Simulink/VCU.c ****   
+  43:../Simulink/VCU.c **** 
+  44:../Simulink/VCU.c **** 
+  45:../Simulink/VCU.c ****   
+  46:../Simulink/VCU.c **** 
+  47:../Simulink/VCU.c **** 
+  48:../Simulink/VCU.c ****   
+  49:../Simulink/VCU.c **** 
+  50:../Simulink/VCU.c **** 
+  51:../Simulink/VCU.c ****   
+  52:../Simulink/VCU.c **** 
+  53:../Simulink/VCU.c **** 
+  54:../Simulink/VCU.c ****   
+  55:../Simulink/VCU.c **** 
+  56:../Simulink/VCU.c **** 
+  57:../Simulink/VCU.c ****     
+  58:../Simulink/VCU.c ****     
+  59:../Simulink/VCU.c **** 
+  60:../Simulink/VCU.c ****   
+  61:../Simulink/VCU.c ****     
+  62:../Simulink/VCU.c ****     /* Block signals (default storage) */
+  63:../Simulink/VCU.c ****                 
+  64:../Simulink/VCU.c **** 
+  65:../Simulink/VCU.c **** 
+  66:../Simulink/VCU.c ****   B_VCU_T VCU_B;
+  67:../Simulink/VCU.c **** 
+  68:../Simulink/VCU.c ****       
+  69:../Simulink/VCU.c ****   
+  70:../Simulink/VCU.c ****       
+  71:../Simulink/VCU.c ****     
+  72:../Simulink/VCU.c ****     
+  73:../Simulink/VCU.c ****     
+  74:../Simulink/VCU.c ****     
+  75:../Simulink/VCU.c ****     
+  76:../Simulink/VCU.c ****     
+  77:../Simulink/VCU.c ****     
+  78:../Simulink/VCU.c ****       /* Block states (default storage) */
+  79:../Simulink/VCU.c ****                 
+  80:../Simulink/VCU.c **** 
+  81:../Simulink/VCU.c **** 
+  82:../Simulink/VCU.c ****   DW_VCU_T VCU_DW;
+  83:../Simulink/VCU.c **** 
+  84:../Simulink/VCU.c ****       
+  85:../Simulink/VCU.c ****   
+  86:../Simulink/VCU.c ****         /* Real-time model */
+  87:../Simulink/VCU.c ****           
+  88:../Simulink/VCU.c **** 
+  89:../Simulink/VCU.c **** 
+  90:../Simulink/VCU.c ****   RT_MODEL_VCU_T VCU_M_;
+  91:../Simulink/VCU.c **** 
+  92:../Simulink/VCU.c ****         
+  93:../Simulink/VCU.c **** 
+  94:../Simulink/VCU.c **** 
+  95:../Simulink/VCU.c ****   RT_MODEL_VCU_T *const VCU_M = &VCU_M_;
+  96:../Simulink/VCU.c **** 
+  97:../Simulink/VCU.c **** 
+  98:../Simulink/VCU.c **** 
+  99:../Simulink/VCU.c **** 
+ 100:../Simulink/VCU.c ****   
+ 101:../Simulink/VCU.c **** 
+ 102:../Simulink/VCU.c **** 
+ 103:../Simulink/VCU.c ****   
+ 104:../Simulink/VCU.c **** 
+ 105:../Simulink/VCU.c **** 
+ 106:../Simulink/VCU.c ****   
+ 107:../Simulink/VCU.c **** 
+ 108:../Simulink/VCU.c **** 
+ 109:../Simulink/VCU.c ****   
+ 110:../Simulink/VCU.c **** 
+ 111:../Simulink/VCU.c **** 
+ 112:../Simulink/VCU.c ****     
+ 113:../Simulink/VCU.c ****              
+ 114:../Simulink/VCU.c **** real_T look1_binlxpw(real_T u0, const real_T bp0[], const real_T table[], uint32_T maxIndex)
+ 115:../Simulink/VCU.c **** {
+  44              	 .loc 1 115 0
+  45              	 .cfi_startproc
+  46              	 
+  47              	 
+  48 0000 B0B5     	 push {r4,r5,r7,lr}
+  49              	.LCFI0:
+  50              	 .cfi_def_cfa_offset 16
+  51              	 .cfi_offset 4,-16
+  52              	 .cfi_offset 5,-12
+  53              	 .cfi_offset 7,-8
+  54              	 .cfi_offset 14,-4
+  55 0002 8AB0     	 sub sp,sp,#40
+  56              	.LCFI1:
+  57              	 .cfi_def_cfa_offset 56
+  58 0004 00AF     	 add r7,sp,#0
+  59              	.LCFI2:
+  60              	 .cfi_def_cfa_register 7
+  61 0006 C7E90201 	 strd r0,[r7,#8]
+  62 000a 7A60     	 str r2,[r7,#4]
+  63 000c 3B60     	 str r3,[r7]
+ 116:../Simulink/VCU.c ****     real_T frac;
+ 117:../Simulink/VCU.c ****     uint32_T iRght;
+ 118:../Simulink/VCU.c ****     uint32_T iLeft;
+ 119:../Simulink/VCU.c ****     uint32_T bpIdx;
+ 120:../Simulink/VCU.c ****     /* Lookup 1-D
+ 121:../Simulink/VCU.c ****    Search method: 'binary'
+ 122:../Simulink/VCU.c ****    Use previous index: 'off'
+ 123:../Simulink/VCU.c ****    Interpolation method: 'Linear point-slope'
+ 124:../Simulink/VCU.c ****    Extrapolation method: 'Linear'
+ 125:../Simulink/VCU.c ****    Use last breakpoint for index at or above upper limit: 'off'
+ 126:../Simulink/VCU.c ****    Remove protection against out-of-range input in generated code: 'off'
+ 127:../Simulink/VCU.c ****  */
+ 128:../Simulink/VCU.c ****     /* Prelookup - Index and Fraction
+ 129:../Simulink/VCU.c ****    Index Search method: 'binary'
+ 130:../Simulink/VCU.c ****    Extrapolation method: 'Linear'
+ 131:../Simulink/VCU.c ****    Use previous index: 'off'
+ 132:../Simulink/VCU.c ****    Use last breakpoint for index at or above upper limit: 'off'
+ 133:../Simulink/VCU.c ****    Remove protection against out-of-range input in generated code: 'off'
+ 134:../Simulink/VCU.c ****  */
+ 135:../Simulink/VCU.c ****     if (u0 <= bp0[0U]) {
+  64              	 .loc 1 135 0
+  65 000e 7B68     	 ldr r3,[r7,#4]
+  66 0010 D3E90023 	 ldrd r2,[r3]
+  67 0014 1046     	 mov r0,r2
+  68 0016 1946     	 mov r1,r3
+  69 0018 D7E90223 	 ldrd r2,[r7,#8]
+  70 001c FFF7FEFF 	 bl __aeabi_dcmpge
+  71 0020 0346     	 mov r3,r0
+  72 0022 002B     	 cmp r3,#0
+  73 0024 20D0     	 beq .L16
+ 136:../Simulink/VCU.c ****         iLeft = 0U;
+  74              	 .loc 1 136 0
+  75 0026 0023     	 movs r3,#0
+  76 0028 BB61     	 str r3,[r7,#24]
+ 137:../Simulink/VCU.c ****         frac = (u0 - bp0[0U]) / (bp0[1U] - bp0[0U]);
+  77              	 .loc 1 137 0
+  78 002a 7B68     	 ldr r3,[r7,#4]
+  79 002c D3E90023 	 ldrd r2,[r3]
+  80 0030 D7E90201 	 ldrd r0,[r7,#8]
+  81 0034 FFF7FEFF 	 bl __aeabi_dsub
+  82 0038 0246     	 mov r2,r0
+  83 003a 0B46     	 mov r3,r1
+  84 003c 1446     	 mov r4,r2
+  85 003e 1D46     	 mov r5,r3
+  86 0040 7B68     	 ldr r3,[r7,#4]
+  87 0042 0833     	 adds r3,r3,#8
+  88 0044 D3E90001 	 ldrd r0,[r3]
+  89 0048 7B68     	 ldr r3,[r7,#4]
+  90 004a D3E90023 	 ldrd r2,[r3]
+  91 004e FFF7FEFF 	 bl __aeabi_dsub
+  92 0052 0246     	 mov r2,r0
+  93 0054 0B46     	 mov r3,r1
+  94 0056 2046     	 mov r0,r4
+  95 0058 2946     	 mov r1,r5
+  96 005a FFF7FEFF 	 bl __aeabi_ddiv
+  97 005e 0246     	 mov r2,r0
+  98 0060 0B46     	 mov r3,r1
+  99 0062 C7E90823 	 strd r2,[r7,#32]
+ 100 0066 8BE0     	 b .L4
+ 101              	.L16:
+ 138:../Simulink/VCU.c ****     } else if (u0 < bp0[maxIndex]) {
+ 102              	 .loc 1 138 0
+ 103 0068 BB6B     	 ldr r3,[r7,#56]
+ 104 006a DB00     	 lsls r3,r3,#3
+ 105 006c 7A68     	 ldr r2,[r7,#4]
+ 106 006e 1344     	 add r3,r3,r2
+ 107 0070 D3E90023 	 ldrd r2,[r3]
+ 108 0074 1046     	 mov r0,r2
+ 109 0076 1946     	 mov r1,r3
+ 110 0078 D7E90223 	 ldrd r2,[r7,#8]
+ 111 007c FFF7FEFF 	 bl __aeabi_dcmpgt
+ 112 0080 0346     	 mov r3,r0
+ 113 0082 002B     	 cmp r3,#0
+ 114 0084 4DD0     	 beq .L17
+ 139:../Simulink/VCU.c ****         /* Binary Search */
+ 140:../Simulink/VCU.c ****         bpIdx = maxIndex >> 1U;
+ 115              	 .loc 1 140 0
+ 116 0086 BB6B     	 ldr r3,[r7,#56]
+ 117 0088 5B08     	 lsrs r3,r3,#1
+ 118 008a 7B61     	 str r3,[r7,#20]
+ 141:../Simulink/VCU.c ****         iLeft = 0U;
+ 119              	 .loc 1 141 0
+ 120 008c 0023     	 movs r3,#0
+ 121 008e BB61     	 str r3,[r7,#24]
+ 142:../Simulink/VCU.c ****         iRght = maxIndex;
+ 122              	 .loc 1 142 0
+ 123 0090 BB6B     	 ldr r3,[r7,#56]
+ 124 0092 FB61     	 str r3,[r7,#28]
+ 143:../Simulink/VCU.c ****         while (iRght - iLeft > 1U) {
+ 125              	 .loc 1 143 0
+ 126 0094 18E0     	 b .L7
+ 127              	.L11:
+ 144:../Simulink/VCU.c ****             if (u0 < bp0[bpIdx]) {
+ 128              	 .loc 1 144 0
+ 129 0096 7B69     	 ldr r3,[r7,#20]
+ 130 0098 DB00     	 lsls r3,r3,#3
+ 131 009a 7A68     	 ldr r2,[r7,#4]
+ 132 009c 1344     	 add r3,r3,r2
+ 133 009e D3E90023 	 ldrd r2,[r3]
+ 134 00a2 1046     	 mov r0,r2
+ 135 00a4 1946     	 mov r1,r3
+ 136 00a6 D7E90223 	 ldrd r2,[r7,#8]
+ 137 00aa FFF7FEFF 	 bl __aeabi_dcmpgt
+ 138 00ae 0346     	 mov r3,r0
+ 139 00b0 002B     	 cmp r3,#0
+ 140 00b2 02D0     	 beq .L18
+ 145:../Simulink/VCU.c ****                 iRght = bpIdx;
+ 141              	 .loc 1 145 0
+ 142 00b4 7B69     	 ldr r3,[r7,#20]
+ 143 00b6 FB61     	 str r3,[r7,#28]
+ 144 00b8 01E0     	 b .L10
+ 145              	.L18:
+ 146:../Simulink/VCU.c ****             } else {
+ 147:../Simulink/VCU.c ****                 iLeft = bpIdx;
+ 146              	 .loc 1 147 0
+ 147 00ba 7B69     	 ldr r3,[r7,#20]
+ 148 00bc BB61     	 str r3,[r7,#24]
+ 149              	.L10:
+ 148:../Simulink/VCU.c ****             }
+ 149:../Simulink/VCU.c ****             bpIdx = (iRght + iLeft) >> 1U;
+ 150              	 .loc 1 149 0
+ 151 00be FA69     	 ldr r2,[r7,#28]
+ 152 00c0 BB69     	 ldr r3,[r7,#24]
+ 153 00c2 1344     	 add r3,r3,r2
+ 154 00c4 5B08     	 lsrs r3,r3,#1
+ 155 00c6 7B61     	 str r3,[r7,#20]
+ 156              	.L7:
+ 143:../Simulink/VCU.c ****             if (u0 < bp0[bpIdx]) {
+ 157              	 .loc 1 143 0
+ 158 00c8 FA69     	 ldr r2,[r7,#28]
+ 159 00ca BB69     	 ldr r3,[r7,#24]
+ 160 00cc D31A     	 subs r3,r2,r3
+ 161 00ce 012B     	 cmp r3,#1
+ 162 00d0 E1D8     	 bhi .L11
+ 150:../Simulink/VCU.c ****         }
+ 151:../Simulink/VCU.c ****         frac = (u0 - bp0[iLeft]) / (bp0[iLeft + 1U] - bp0[iLeft]);
+ 163              	 .loc 1 151 0
+ 164 00d2 BB69     	 ldr r3,[r7,#24]
+ 165 00d4 DB00     	 lsls r3,r3,#3
+ 166 00d6 7A68     	 ldr r2,[r7,#4]
+ 167 00d8 1344     	 add r3,r3,r2
+ 168 00da D3E90023 	 ldrd r2,[r3]
+ 169 00de D7E90201 	 ldrd r0,[r7,#8]
+ 170 00e2 FFF7FEFF 	 bl __aeabi_dsub
+ 171 00e6 0246     	 mov r2,r0
+ 172 00e8 0B46     	 mov r3,r1
+ 173 00ea 1446     	 mov r4,r2
+ 174 00ec 1D46     	 mov r5,r3
+ 175 00ee BB69     	 ldr r3,[r7,#24]
+ 176 00f0 0133     	 adds r3,r3,#1
+ 177 00f2 DB00     	 lsls r3,r3,#3
+ 178 00f4 7A68     	 ldr r2,[r7,#4]
+ 179 00f6 1344     	 add r3,r3,r2
+ 180 00f8 D3E90001 	 ldrd r0,[r3]
+ 181 00fc BB69     	 ldr r3,[r7,#24]
+ 182 00fe DB00     	 lsls r3,r3,#3
+ 183 0100 7A68     	 ldr r2,[r7,#4]
+ 184 0102 1344     	 add r3,r3,r2
+ 185 0104 D3E90023 	 ldrd r2,[r3]
+ 186 0108 FFF7FEFF 	 bl __aeabi_dsub
+ 187 010c 0246     	 mov r2,r0
+ 188 010e 0B46     	 mov r3,r1
+ 189 0110 2046     	 mov r0,r4
+ 190 0112 2946     	 mov r1,r5
+ 191 0114 FFF7FEFF 	 bl __aeabi_ddiv
+ 192 0118 0246     	 mov r2,r0
+ 193 011a 0B46     	 mov r3,r1
+ 194 011c C7E90823 	 strd r2,[r7,#32]
+ 195 0120 2EE0     	 b .L4
+ 196              	.L17:
+ 152:../Simulink/VCU.c ****     } else {
+ 153:../Simulink/VCU.c ****         iLeft = maxIndex - 1U;
+ 197              	 .loc 1 153 0
+ 198 0122 BB6B     	 ldr r3,[r7,#56]
+ 199 0124 013B     	 subs r3,r3,#1
+ 200 0126 BB61     	 str r3,[r7,#24]
+ 154:../Simulink/VCU.c ****         frac = (u0 - bp0[maxIndex - 1U]) / (bp0[maxIndex] - bp0[maxIndex - 1U]);
+ 201              	 .loc 1 154 0
+ 202 0128 BB6B     	 ldr r3,[r7,#56]
+ 203 012a 03F10053 	 add r3,r3,#536870912
+ 204 012e 013B     	 subs r3,r3,#1
+ 205 0130 DB00     	 lsls r3,r3,#3
+ 206 0132 7A68     	 ldr r2,[r7,#4]
+ 207 0134 1344     	 add r3,r3,r2
+ 208 0136 D3E90023 	 ldrd r2,[r3]
+ 209 013a D7E90201 	 ldrd r0,[r7,#8]
+ 210 013e FFF7FEFF 	 bl __aeabi_dsub
+ 211 0142 0246     	 mov r2,r0
+ 212 0144 0B46     	 mov r3,r1
+ 213 0146 1446     	 mov r4,r2
+ 214 0148 1D46     	 mov r5,r3
+ 215 014a BB6B     	 ldr r3,[r7,#56]
+ 216 014c DB00     	 lsls r3,r3,#3
+ 217 014e 7A68     	 ldr r2,[r7,#4]
+ 218 0150 1344     	 add r3,r3,r2
+ 219 0152 D3E90001 	 ldrd r0,[r3]
+ 220 0156 BB6B     	 ldr r3,[r7,#56]
+ 221 0158 03F10053 	 add r3,r3,#536870912
+ 222 015c 013B     	 subs r3,r3,#1
+ 223 015e DB00     	 lsls r3,r3,#3
+ 224 0160 7A68     	 ldr r2,[r7,#4]
+ 225 0162 1344     	 add r3,r3,r2
+ 226 0164 D3E90023 	 ldrd r2,[r3]
+ 227 0168 FFF7FEFF 	 bl __aeabi_dsub
+ 228 016c 0246     	 mov r2,r0
+ 229 016e 0B46     	 mov r3,r1
+ 230 0170 2046     	 mov r0,r4
+ 231 0172 2946     	 mov r1,r5
+ 232 0174 FFF7FEFF 	 bl __aeabi_ddiv
+ 233 0178 0246     	 mov r2,r0
+ 234 017a 0B46     	 mov r3,r1
+ 235 017c C7E90823 	 strd r2,[r7,#32]
+ 236              	.L4:
+ 155:../Simulink/VCU.c ****     }
+ 156:../Simulink/VCU.c ****     /* Interpolation 1-D
+ 157:../Simulink/VCU.c ****    Interpolation method: 'Linear point-slope'
+ 158:../Simulink/VCU.c ****    Use last breakpoint for index at or above upper limit: 'off'
+ 159:../Simulink/VCU.c ****    Overflow mode: 'portable wrapping'
+ 160:../Simulink/VCU.c ****  */
+ 161:../Simulink/VCU.c ****     return (table[iLeft + 1U] - table[iLeft]) * frac + table[iLeft];
+ 237              	 .loc 1 161 0
+ 238 0180 BB69     	 ldr r3,[r7,#24]
+ 239 0182 0133     	 adds r3,r3,#1
+ 240 0184 DB00     	 lsls r3,r3,#3
+ 241 0186 3A68     	 ldr r2,[r7]
+ 242 0188 1344     	 add r3,r3,r2
+ 243 018a D3E90001 	 ldrd r0,[r3]
+ 244 018e BB69     	 ldr r3,[r7,#24]
+ 245 0190 DB00     	 lsls r3,r3,#3
+ 246 0192 3A68     	 ldr r2,[r7]
+ 247 0194 1344     	 add r3,r3,r2
+ 248 0196 D3E90023 	 ldrd r2,[r3]
+ 249 019a FFF7FEFF 	 bl __aeabi_dsub
+ 250 019e 0246     	 mov r2,r0
+ 251 01a0 0B46     	 mov r3,r1
+ 252 01a2 1046     	 mov r0,r2
+ 253 01a4 1946     	 mov r1,r3
+ 254 01a6 D7E90823 	 ldrd r2,[r7,#32]
+ 255 01aa FFF7FEFF 	 bl __aeabi_dmul
+ 256 01ae 0246     	 mov r2,r0
+ 257 01b0 0B46     	 mov r3,r1
+ 258 01b2 1046     	 mov r0,r2
+ 259 01b4 1946     	 mov r1,r3
+ 260 01b6 BB69     	 ldr r3,[r7,#24]
+ 261 01b8 DB00     	 lsls r3,r3,#3
+ 262 01ba 3A68     	 ldr r2,[r7]
+ 263 01bc 1344     	 add r3,r3,r2
+ 264 01be D3E90023 	 ldrd r2,[r3]
+ 265 01c2 FFF7FEFF 	 bl __aeabi_dadd
+ 266 01c6 0246     	 mov r2,r0
+ 267 01c8 0B46     	 mov r3,r1
+ 162:../Simulink/VCU.c **** }
+ 268              	 .loc 1 162 0
+ 269 01ca 1046     	 mov r0,r2
+ 270 01cc 1946     	 mov r1,r3
+ 271 01ce 2837     	 adds r7,r7,#40
+ 272              	.LCFI3:
+ 273              	 .cfi_def_cfa_offset 16
+ 274 01d0 BD46     	 mov sp,r7
+ 275              	.LCFI4:
+ 276              	 .cfi_def_cfa_register 13
+ 277              	 
+ 278 01d2 B0BD     	 pop {r4,r5,r7,pc}
+ 279              	 .cfi_endproc
+ 280              	.LFE175:
+ 282              	 .section .text.look2_binlxpw,"ax",%progbits
+ 283              	 .align 2
+ 284              	 .global look2_binlxpw
+ 285              	 .thumb
+ 286              	 .thumb_func
+ 288              	look2_binlxpw:
+ 289              	.LFB176:
+ 163:../Simulink/VCU.c ****         
+ 164:../Simulink/VCU.c ****          
+ 165:../Simulink/VCU.c **** real_T look2_binlxpw(real_T u0, real_T u1, const real_T bp0[], const real_T bp1[], const real_T tab
+ 166:../Simulink/VCU.c **** {
+ 290              	 .loc 1 166 0
+ 291              	 .cfi_startproc
+ 292              	 
+ 293              	 
+ 294 0000 B0B5     	 push {r4,r5,r7,lr}
+ 295              	.LCFI5:
+ 296              	 .cfi_def_cfa_offset 16
+ 297              	 .cfi_offset 4,-16
+ 298              	 .cfi_offset 5,-12
+ 299              	 .cfi_offset 7,-8
+ 300              	 .cfi_offset 14,-4
+ 301 0002 92B0     	 sub sp,sp,#72
+ 302              	.LCFI6:
+ 303              	 .cfi_def_cfa_offset 88
+ 304 0004 00AF     	 add r7,sp,#0
+ 305              	.LCFI7:
+ 306              	 .cfi_def_cfa_register 7
+ 307 0006 C7E90201 	 strd r0,[r7,#8]
+ 308 000a C7E90023 	 strd r2,[r7]
+ 167:../Simulink/VCU.c ****     real_T frac;
+ 168:../Simulink/VCU.c ****     uint32_T bpIndices[2];
+ 169:../Simulink/VCU.c ****     real_T fractions[2];
+ 170:../Simulink/VCU.c ****     real_T yL_1d;
+ 171:../Simulink/VCU.c ****     uint32_T iRght;
+ 172:../Simulink/VCU.c ****     uint32_T bpIdx;
+ 173:../Simulink/VCU.c ****     uint32_T iLeft;
+ 174:../Simulink/VCU.c ****     /* Lookup 2-D
+ 175:../Simulink/VCU.c ****    Search method: 'binary'
+ 176:../Simulink/VCU.c ****    Use previous index: 'off'
+ 177:../Simulink/VCU.c ****    Interpolation method: 'Linear point-slope'
+ 178:../Simulink/VCU.c ****    Extrapolation method: 'Linear'
+ 179:../Simulink/VCU.c ****    Use last breakpoint for index at or above upper limit: 'off'
+ 180:../Simulink/VCU.c ****    Remove protection against out-of-range input in generated code: 'off'
+ 181:../Simulink/VCU.c ****  */
+ 182:../Simulink/VCU.c ****     /* Prelookup - Index and Fraction
+ 183:../Simulink/VCU.c ****    Index Search method: 'binary'
+ 184:../Simulink/VCU.c ****    Extrapolation method: 'Linear'
+ 185:../Simulink/VCU.c ****    Use previous index: 'off'
+ 186:../Simulink/VCU.c ****    Use last breakpoint for index at or above upper limit: 'off'
+ 187:../Simulink/VCU.c ****    Remove protection against out-of-range input in generated code: 'off'
+ 188:../Simulink/VCU.c ****  */
+ 189:../Simulink/VCU.c ****     if (u0 <= bp0[0U]) {
+ 309              	 .loc 1 189 0
+ 310 000e BB6D     	 ldr r3,[r7,#88]
+ 311 0010 D3E90023 	 ldrd r2,[r3]
+ 312 0014 1046     	 mov r0,r2
+ 313 0016 1946     	 mov r1,r3
+ 314 0018 D7E90223 	 ldrd r2,[r7,#8]
+ 315 001c FFF7FEFF 	 bl __aeabi_dcmpge
+ 316 0020 0346     	 mov r3,r0
+ 317 0022 002B     	 cmp r3,#0
+ 318 0024 20D0     	 beq .L47
+ 190:../Simulink/VCU.c ****         iLeft = 0U;
+ 319              	 .loc 1 190 0
+ 320 0026 0023     	 movs r3,#0
+ 321 0028 7B63     	 str r3,[r7,#52]
+ 191:../Simulink/VCU.c ****         frac = (u0 - bp0[0U]) / (bp0[1U] - bp0[0U]);
+ 322              	 .loc 1 191 0
+ 323 002a BB6D     	 ldr r3,[r7,#88]
+ 324 002c D3E90023 	 ldrd r2,[r3]
+ 325 0030 D7E90201 	 ldrd r0,[r7,#8]
+ 326 0034 FFF7FEFF 	 bl __aeabi_dsub
+ 327 0038 0246     	 mov r2,r0
+ 328 003a 0B46     	 mov r3,r1
+ 329 003c 1446     	 mov r4,r2
+ 330 003e 1D46     	 mov r5,r3
+ 331 0040 BB6D     	 ldr r3,[r7,#88]
+ 332 0042 0833     	 adds r3,r3,#8
+ 333 0044 D3E90001 	 ldrd r0,[r3]
+ 334 0048 BB6D     	 ldr r3,[r7,#88]
+ 335 004a D3E90023 	 ldrd r2,[r3]
+ 336 004e FFF7FEFF 	 bl __aeabi_dsub
+ 337 0052 0246     	 mov r2,r0
+ 338 0054 0B46     	 mov r3,r1
+ 339 0056 2046     	 mov r0,r4
+ 340 0058 2946     	 mov r1,r5
+ 341 005a FFF7FEFF 	 bl __aeabi_ddiv
+ 342 005e 0246     	 mov r2,r0
+ 343 0060 0B46     	 mov r3,r1
+ 344 0062 C7E91023 	 strd r2,[r7,#64]
+ 345 0066 92E0     	 b .L22
+ 346              	.L47:
+ 192:../Simulink/VCU.c ****     } else if (u0 < bp0[maxIndex[0U]]) {
+ 347              	 .loc 1 192 0
+ 348 0068 7B6E     	 ldr r3,[r7,#100]
+ 349 006a 1B68     	 ldr r3,[r3]
+ 350 006c DB00     	 lsls r3,r3,#3
+ 351 006e BA6D     	 ldr r2,[r7,#88]
+ 352 0070 1344     	 add r3,r3,r2
+ 353 0072 D3E90023 	 ldrd r2,[r3]
+ 354 0076 1046     	 mov r0,r2
+ 355 0078 1946     	 mov r1,r3
+ 356 007a D7E90223 	 ldrd r2,[r7,#8]
+ 357 007e FFF7FEFF 	 bl __aeabi_dcmpgt
+ 358 0082 0346     	 mov r3,r0
+ 359 0084 002B     	 cmp r3,#0
+ 360 0086 4FD0     	 beq .L48
+ 193:../Simulink/VCU.c ****         /* Binary Search */
+ 194:../Simulink/VCU.c ****         bpIdx = maxIndex[0U] >> 1U;
+ 361              	 .loc 1 194 0
+ 362 0088 7B6E     	 ldr r3,[r7,#100]
+ 363 008a 1B68     	 ldr r3,[r3]
+ 364 008c 5B08     	 lsrs r3,r3,#1
+ 365 008e BB63     	 str r3,[r7,#56]
+ 195:../Simulink/VCU.c ****         iLeft = 0U;
+ 366              	 .loc 1 195 0
+ 367 0090 0023     	 movs r3,#0
+ 368 0092 7B63     	 str r3,[r7,#52]
+ 196:../Simulink/VCU.c ****         iRght = maxIndex[0U];
+ 369              	 .loc 1 196 0
+ 370 0094 7B6E     	 ldr r3,[r7,#100]
+ 371 0096 1B68     	 ldr r3,[r3]
+ 372 0098 FB63     	 str r3,[r7,#60]
+ 197:../Simulink/VCU.c ****         while (iRght - iLeft > 1U) {
+ 373              	 .loc 1 197 0
+ 374 009a 18E0     	 b .L25
+ 375              	.L29:
+ 198:../Simulink/VCU.c ****             if (u0 < bp0[bpIdx]) {
+ 376              	 .loc 1 198 0
+ 377 009c BB6B     	 ldr r3,[r7,#56]
+ 378 009e DB00     	 lsls r3,r3,#3
+ 379 00a0 BA6D     	 ldr r2,[r7,#88]
+ 380 00a2 1344     	 add r3,r3,r2
+ 381 00a4 D3E90023 	 ldrd r2,[r3]
+ 382 00a8 1046     	 mov r0,r2
+ 383 00aa 1946     	 mov r1,r3
+ 384 00ac D7E90223 	 ldrd r2,[r7,#8]
+ 385 00b0 FFF7FEFF 	 bl __aeabi_dcmpgt
+ 386 00b4 0346     	 mov r3,r0
+ 387 00b6 002B     	 cmp r3,#0
+ 388 00b8 02D0     	 beq .L49
+ 199:../Simulink/VCU.c ****                 iRght = bpIdx;
+ 389              	 .loc 1 199 0
+ 390 00ba BB6B     	 ldr r3,[r7,#56]
+ 391 00bc FB63     	 str r3,[r7,#60]
+ 392 00be 01E0     	 b .L28
+ 393              	.L49:
+ 200:../Simulink/VCU.c ****             } else {
+ 201:../Simulink/VCU.c ****                 iLeft = bpIdx;
+ 394              	 .loc 1 201 0
+ 395 00c0 BB6B     	 ldr r3,[r7,#56]
+ 396 00c2 7B63     	 str r3,[r7,#52]
+ 397              	.L28:
+ 202:../Simulink/VCU.c ****             }
+ 203:../Simulink/VCU.c ****             bpIdx = (iRght + iLeft) >> 1U;
+ 398              	 .loc 1 203 0
+ 399 00c4 FA6B     	 ldr r2,[r7,#60]
+ 400 00c6 7B6B     	 ldr r3,[r7,#52]
+ 401 00c8 1344     	 add r3,r3,r2
+ 402 00ca 5B08     	 lsrs r3,r3,#1
+ 403 00cc BB63     	 str r3,[r7,#56]
+ 404              	.L25:
+ 197:../Simulink/VCU.c ****             if (u0 < bp0[bpIdx]) {
+ 405              	 .loc 1 197 0
+ 406 00ce FA6B     	 ldr r2,[r7,#60]
+ 407 00d0 7B6B     	 ldr r3,[r7,#52]
+ 408 00d2 D31A     	 subs r3,r2,r3
+ 409 00d4 012B     	 cmp r3,#1
+ 410 00d6 E1D8     	 bhi .L29
+ 204:../Simulink/VCU.c ****         }
+ 205:../Simulink/VCU.c ****         frac = (u0 - bp0[iLeft]) / (bp0[iLeft + 1U] - bp0[iLeft]);
+ 411              	 .loc 1 205 0
+ 412 00d8 7B6B     	 ldr r3,[r7,#52]
+ 413 00da DB00     	 lsls r3,r3,#3
+ 414 00dc BA6D     	 ldr r2,[r7,#88]
+ 415 00de 1344     	 add r3,r3,r2
+ 416 00e0 D3E90023 	 ldrd r2,[r3]
+ 417 00e4 D7E90201 	 ldrd r0,[r7,#8]
+ 418 00e8 FFF7FEFF 	 bl __aeabi_dsub
+ 419 00ec 0246     	 mov r2,r0
+ 420 00ee 0B46     	 mov r3,r1
+ 421 00f0 1446     	 mov r4,r2
+ 422 00f2 1D46     	 mov r5,r3
+ 423 00f4 7B6B     	 ldr r3,[r7,#52]
+ 424 00f6 0133     	 adds r3,r3,#1
+ 425 00f8 DB00     	 lsls r3,r3,#3
+ 426 00fa BA6D     	 ldr r2,[r7,#88]
+ 427 00fc 1344     	 add r3,r3,r2
+ 428 00fe D3E90001 	 ldrd r0,[r3]
+ 429 0102 7B6B     	 ldr r3,[r7,#52]
+ 430 0104 DB00     	 lsls r3,r3,#3
+ 431 0106 BA6D     	 ldr r2,[r7,#88]
+ 432 0108 1344     	 add r3,r3,r2
+ 433 010a D3E90023 	 ldrd r2,[r3]
+ 434 010e FFF7FEFF 	 bl __aeabi_dsub
+ 435 0112 0246     	 mov r2,r0
+ 436 0114 0B46     	 mov r3,r1
+ 437 0116 2046     	 mov r0,r4
+ 438 0118 2946     	 mov r1,r5
+ 439 011a FFF7FEFF 	 bl __aeabi_ddiv
+ 440 011e 0246     	 mov r2,r0
+ 441 0120 0B46     	 mov r3,r1
+ 442 0122 C7E91023 	 strd r2,[r7,#64]
+ 443 0126 32E0     	 b .L22
+ 444              	.L48:
+ 206:../Simulink/VCU.c ****     } else {
+ 207:../Simulink/VCU.c ****         iLeft = maxIndex[0U] - 1U;
+ 445              	 .loc 1 207 0
+ 446 0128 7B6E     	 ldr r3,[r7,#100]
+ 447 012a 1B68     	 ldr r3,[r3]
+ 448 012c 013B     	 subs r3,r3,#1
+ 449 012e 7B63     	 str r3,[r7,#52]
+ 208:../Simulink/VCU.c ****         frac = (u0 - bp0[maxIndex[0U] - 1U]) / (bp0[maxIndex[0U]] - bp0[maxIndex[0U] - 1U]);
+ 450              	 .loc 1 208 0
+ 451 0130 7B6E     	 ldr r3,[r7,#100]
+ 452 0132 1B68     	 ldr r3,[r3]
+ 453 0134 03F10053 	 add r3,r3,#536870912
+ 454 0138 013B     	 subs r3,r3,#1
+ 455 013a DB00     	 lsls r3,r3,#3
+ 456 013c BA6D     	 ldr r2,[r7,#88]
+ 457 013e 1344     	 add r3,r3,r2
+ 458 0140 D3E90023 	 ldrd r2,[r3]
+ 459 0144 D7E90201 	 ldrd r0,[r7,#8]
+ 460 0148 FFF7FEFF 	 bl __aeabi_dsub
+ 461 014c 0246     	 mov r2,r0
+ 462 014e 0B46     	 mov r3,r1
+ 463 0150 1446     	 mov r4,r2
+ 464 0152 1D46     	 mov r5,r3
+ 465 0154 7B6E     	 ldr r3,[r7,#100]
+ 466 0156 1B68     	 ldr r3,[r3]
+ 467 0158 DB00     	 lsls r3,r3,#3
+ 468 015a BA6D     	 ldr r2,[r7,#88]
+ 469 015c 1344     	 add r3,r3,r2
+ 470 015e D3E90001 	 ldrd r0,[r3]
+ 471 0162 7B6E     	 ldr r3,[r7,#100]
+ 472 0164 1B68     	 ldr r3,[r3]
+ 473 0166 03F10053 	 add r3,r3,#536870912
+ 474 016a 013B     	 subs r3,r3,#1
+ 475 016c DB00     	 lsls r3,r3,#3
+ 476 016e BA6D     	 ldr r2,[r7,#88]
+ 477 0170 1344     	 add r3,r3,r2
+ 478 0172 D3E90023 	 ldrd r2,[r3]
+ 479 0176 FFF7FEFF 	 bl __aeabi_dsub
+ 480 017a 0246     	 mov r2,r0
+ 481 017c 0B46     	 mov r3,r1
+ 482 017e 2046     	 mov r0,r4
+ 483 0180 2946     	 mov r1,r5
+ 484 0182 FFF7FEFF 	 bl __aeabi_ddiv
+ 485 0186 0246     	 mov r2,r0
+ 486 0188 0B46     	 mov r3,r1
+ 487 018a C7E91023 	 strd r2,[r7,#64]
+ 488              	.L22:
+ 209:../Simulink/VCU.c ****     }
+ 210:../Simulink/VCU.c ****     fractions[0U] = frac;
+ 489              	 .loc 1 210 0
+ 490 018e D7E91023 	 ldrd r2,[r7,#64]
+ 491 0192 C7E90423 	 strd r2,[r7,#16]
+ 211:../Simulink/VCU.c ****     bpIndices[0U] = iLeft;
+ 492              	 .loc 1 211 0
+ 493 0196 7B6B     	 ldr r3,[r7,#52]
+ 494 0198 3B62     	 str r3,[r7,#32]
+ 212:../Simulink/VCU.c ****     /* Prelookup - Index and Fraction
+ 213:../Simulink/VCU.c ****    Index Search method: 'binary'
+ 214:../Simulink/VCU.c ****    Extrapolation method: 'Linear'
+ 215:../Simulink/VCU.c ****    Use previous index: 'off'
+ 216:../Simulink/VCU.c ****    Use last breakpoint for index at or above upper limit: 'off'
+ 217:../Simulink/VCU.c ****    Remove protection against out-of-range input in generated code: 'off'
+ 218:../Simulink/VCU.c ****  */
+ 219:../Simulink/VCU.c ****     if (u1 <= bp1[0U]) {
+ 495              	 .loc 1 219 0
+ 496 019a FB6D     	 ldr r3,[r7,#92]
+ 497 019c D3E90023 	 ldrd r2,[r3]
+ 498 01a0 1046     	 mov r0,r2
+ 499 01a2 1946     	 mov r1,r3
+ 500 01a4 D7E90023 	 ldrd r2,[r7]
+ 501 01a8 FFF7FEFF 	 bl __aeabi_dcmpge
+ 502 01ac 0346     	 mov r3,r0
+ 503 01ae 002B     	 cmp r3,#0
+ 504 01b0 20D0     	 beq .L50
+ 220:../Simulink/VCU.c ****         iLeft = 0U;
+ 505              	 .loc 1 220 0
+ 506 01b2 0023     	 movs r3,#0
+ 507 01b4 7B63     	 str r3,[r7,#52]
+ 221:../Simulink/VCU.c ****         frac = (u1 - bp1[0U]) / (bp1[1U] - bp1[0U]);
+ 508              	 .loc 1 221 0
+ 509 01b6 FB6D     	 ldr r3,[r7,#92]
+ 510 01b8 D3E90023 	 ldrd r2,[r3]
+ 511 01bc D7E90001 	 ldrd r0,[r7]
+ 512 01c0 FFF7FEFF 	 bl __aeabi_dsub
+ 513 01c4 0246     	 mov r2,r0
+ 514 01c6 0B46     	 mov r3,r1
+ 515 01c8 1446     	 mov r4,r2
+ 516 01ca 1D46     	 mov r5,r3
+ 517 01cc FB6D     	 ldr r3,[r7,#92]
+ 518 01ce 0833     	 adds r3,r3,#8
+ 519 01d0 D3E90001 	 ldrd r0,[r3]
+ 520 01d4 FB6D     	 ldr r3,[r7,#92]
+ 521 01d6 D3E90023 	 ldrd r2,[r3]
+ 522 01da FFF7FEFF 	 bl __aeabi_dsub
+ 523 01de 0246     	 mov r2,r0
+ 524 01e0 0B46     	 mov r3,r1
+ 525 01e2 2046     	 mov r0,r4
+ 526 01e4 2946     	 mov r1,r5
+ 527 01e6 FFF7FEFF 	 bl __aeabi_ddiv
+ 528 01ea 0246     	 mov r2,r0
+ 529 01ec 0B46     	 mov r3,r1
+ 530 01ee C7E91023 	 strd r2,[r7,#64]
+ 531 01f2 98E0     	 b .L32
+ 532              	.L50:
+ 222:../Simulink/VCU.c ****     } else if (u1 < bp1[maxIndex[1U]]) {
+ 533              	 .loc 1 222 0
+ 534 01f4 7B6E     	 ldr r3,[r7,#100]
+ 535 01f6 0433     	 adds r3,r3,#4
+ 536 01f8 1B68     	 ldr r3,[r3]
+ 537 01fa DB00     	 lsls r3,r3,#3
+ 538 01fc FA6D     	 ldr r2,[r7,#92]
+ 539 01fe 1344     	 add r3,r3,r2
+ 540 0200 D3E90023 	 ldrd r2,[r3]
+ 541 0204 1046     	 mov r0,r2
+ 542 0206 1946     	 mov r1,r3
+ 543 0208 D7E90023 	 ldrd r2,[r7]
+ 544 020c FFF7FEFF 	 bl __aeabi_dcmpgt
+ 545 0210 0346     	 mov r3,r0
+ 546 0212 002B     	 cmp r3,#0
+ 547 0214 50D0     	 beq .L51
+ 223:../Simulink/VCU.c ****         /* Binary Search */
+ 224:../Simulink/VCU.c ****         bpIdx = maxIndex[1U] >> 1U;
+ 548              	 .loc 1 224 0
+ 549 0216 7B6E     	 ldr r3,[r7,#100]
+ 550 0218 0433     	 adds r3,r3,#4
+ 551 021a 1B68     	 ldr r3,[r3]
+ 552 021c 5B08     	 lsrs r3,r3,#1
+ 553 021e BB63     	 str r3,[r7,#56]
+ 225:../Simulink/VCU.c ****         iLeft = 0U;
+ 554              	 .loc 1 225 0
+ 555 0220 0023     	 movs r3,#0
+ 556 0222 7B63     	 str r3,[r7,#52]
+ 226:../Simulink/VCU.c ****         iRght = maxIndex[1U];
+ 557              	 .loc 1 226 0
+ 558 0224 7B6E     	 ldr r3,[r7,#100]
+ 559 0226 5B68     	 ldr r3,[r3,#4]
+ 560 0228 FB63     	 str r3,[r7,#60]
+ 227:../Simulink/VCU.c ****         while (iRght - iLeft > 1U) {
+ 561              	 .loc 1 227 0
+ 562 022a 18E0     	 b .L35
+ 563              	.L39:
+ 228:../Simulink/VCU.c ****             if (u1 < bp1[bpIdx]) {
+ 564              	 .loc 1 228 0
+ 565 022c BB6B     	 ldr r3,[r7,#56]
+ 566 022e DB00     	 lsls r3,r3,#3
+ 567 0230 FA6D     	 ldr r2,[r7,#92]
+ 568 0232 1344     	 add r3,r3,r2
+ 569 0234 D3E90023 	 ldrd r2,[r3]
+ 570 0238 1046     	 mov r0,r2
+ 571 023a 1946     	 mov r1,r3
+ 572 023c D7E90023 	 ldrd r2,[r7]
+ 573 0240 FFF7FEFF 	 bl __aeabi_dcmpgt
+ 574 0244 0346     	 mov r3,r0
+ 575 0246 002B     	 cmp r3,#0
+ 576 0248 02D0     	 beq .L52
+ 229:../Simulink/VCU.c ****                 iRght = bpIdx;
+ 577              	 .loc 1 229 0
+ 578 024a BB6B     	 ldr r3,[r7,#56]
+ 579 024c FB63     	 str r3,[r7,#60]
+ 580 024e 01E0     	 b .L38
+ 581              	.L52:
+ 230:../Simulink/VCU.c ****             } else {
+ 231:../Simulink/VCU.c ****                 iLeft = bpIdx;
+ 582              	 .loc 1 231 0
+ 583 0250 BB6B     	 ldr r3,[r7,#56]
+ 584 0252 7B63     	 str r3,[r7,#52]
+ 585              	.L38:
+ 232:../Simulink/VCU.c ****             }
+ 233:../Simulink/VCU.c ****             bpIdx = (iRght + iLeft) >> 1U;
+ 586              	 .loc 1 233 0
+ 587 0254 FA6B     	 ldr r2,[r7,#60]
+ 588 0256 7B6B     	 ldr r3,[r7,#52]
+ 589 0258 1344     	 add r3,r3,r2
+ 590 025a 5B08     	 lsrs r3,r3,#1
+ 591 025c BB63     	 str r3,[r7,#56]
+ 592              	.L35:
+ 227:../Simulink/VCU.c ****             if (u1 < bp1[bpIdx]) {
+ 593              	 .loc 1 227 0
+ 594 025e FA6B     	 ldr r2,[r7,#60]
+ 595 0260 7B6B     	 ldr r3,[r7,#52]
+ 596 0262 D31A     	 subs r3,r2,r3
+ 597 0264 012B     	 cmp r3,#1
+ 598 0266 E1D8     	 bhi .L39
+ 234:../Simulink/VCU.c ****         }
+ 235:../Simulink/VCU.c ****         frac = (u1 - bp1[iLeft]) / (bp1[iLeft + 1U] - bp1[iLeft]);
+ 599              	 .loc 1 235 0
+ 600 0268 7B6B     	 ldr r3,[r7,#52]
+ 601 026a DB00     	 lsls r3,r3,#3
+ 602 026c FA6D     	 ldr r2,[r7,#92]
+ 603 026e 1344     	 add r3,r3,r2
+ 604 0270 D3E90023 	 ldrd r2,[r3]
+ 605 0274 D7E90001 	 ldrd r0,[r7]
+ 606 0278 FFF7FEFF 	 bl __aeabi_dsub
+ 607 027c 0246     	 mov r2,r0
+ 608 027e 0B46     	 mov r3,r1
+ 609 0280 1446     	 mov r4,r2
+ 610 0282 1D46     	 mov r5,r3
+ 611 0284 7B6B     	 ldr r3,[r7,#52]
+ 612 0286 0133     	 adds r3,r3,#1
+ 613 0288 DB00     	 lsls r3,r3,#3
+ 614 028a FA6D     	 ldr r2,[r7,#92]
+ 615 028c 1344     	 add r3,r3,r2
+ 616 028e D3E90001 	 ldrd r0,[r3]
+ 617 0292 7B6B     	 ldr r3,[r7,#52]
+ 618 0294 DB00     	 lsls r3,r3,#3
+ 619 0296 FA6D     	 ldr r2,[r7,#92]
+ 620 0298 1344     	 add r3,r3,r2
+ 621 029a D3E90023 	 ldrd r2,[r3]
+ 622 029e FFF7FEFF 	 bl __aeabi_dsub
+ 623 02a2 0246     	 mov r2,r0
+ 624 02a4 0B46     	 mov r3,r1
+ 625 02a6 2046     	 mov r0,r4
+ 626 02a8 2946     	 mov r1,r5
+ 627 02aa FFF7FEFF 	 bl __aeabi_ddiv
+ 628 02ae 0246     	 mov r2,r0
+ 629 02b0 0B46     	 mov r3,r1
+ 630 02b2 C7E91023 	 strd r2,[r7,#64]
+ 631 02b6 36E0     	 b .L32
+ 632              	.L51:
+ 236:../Simulink/VCU.c ****     } else {
+ 237:../Simulink/VCU.c ****         iLeft = maxIndex[1U] - 1U;
+ 633              	 .loc 1 237 0
+ 634 02b8 7B6E     	 ldr r3,[r7,#100]
+ 635 02ba 0433     	 adds r3,r3,#4
+ 636 02bc 1B68     	 ldr r3,[r3]
+ 637 02be 013B     	 subs r3,r3,#1
+ 638 02c0 7B63     	 str r3,[r7,#52]
+ 238:../Simulink/VCU.c ****         frac = (u1 - bp1[maxIndex[1U] - 1U]) / (bp1[maxIndex[1U]] - bp1[maxIndex[1U] - 1U]);
+ 639              	 .loc 1 238 0
+ 640 02c2 7B6E     	 ldr r3,[r7,#100]
+ 641 02c4 0433     	 adds r3,r3,#4
+ 642 02c6 1B68     	 ldr r3,[r3]
+ 643 02c8 03F10053 	 add r3,r3,#536870912
+ 644 02cc 013B     	 subs r3,r3,#1
+ 645 02ce DB00     	 lsls r3,r3,#3
+ 646 02d0 FA6D     	 ldr r2,[r7,#92]
+ 647 02d2 1344     	 add r3,r3,r2
+ 648 02d4 D3E90023 	 ldrd r2,[r3]
+ 649 02d8 D7E90001 	 ldrd r0,[r7]
+ 650 02dc FFF7FEFF 	 bl __aeabi_dsub
+ 651 02e0 0246     	 mov r2,r0
+ 652 02e2 0B46     	 mov r3,r1
+ 653 02e4 1446     	 mov r4,r2
+ 654 02e6 1D46     	 mov r5,r3
+ 655 02e8 7B6E     	 ldr r3,[r7,#100]
+ 656 02ea 0433     	 adds r3,r3,#4
+ 657 02ec 1B68     	 ldr r3,[r3]
+ 658 02ee DB00     	 lsls r3,r3,#3
+ 659 02f0 FA6D     	 ldr r2,[r7,#92]
+ 660 02f2 1344     	 add r3,r3,r2
+ 661 02f4 D3E90001 	 ldrd r0,[r3]
+ 662 02f8 7B6E     	 ldr r3,[r7,#100]
+ 663 02fa 0433     	 adds r3,r3,#4
+ 664 02fc 1B68     	 ldr r3,[r3]
+ 665 02fe 03F10053 	 add r3,r3,#536870912
+ 666 0302 013B     	 subs r3,r3,#1
+ 667 0304 DB00     	 lsls r3,r3,#3
+ 668 0306 FA6D     	 ldr r2,[r7,#92]
+ 669 0308 1344     	 add r3,r3,r2
+ 670 030a D3E90023 	 ldrd r2,[r3]
+ 671 030e FFF7FEFF 	 bl __aeabi_dsub
+ 672 0312 0246     	 mov r2,r0
+ 673 0314 0B46     	 mov r3,r1
+ 674 0316 2046     	 mov r0,r4
+ 675 0318 2946     	 mov r1,r5
+ 676 031a FFF7FEFF 	 bl __aeabi_ddiv
+ 677 031e 0246     	 mov r2,r0
+ 678 0320 0B46     	 mov r3,r1
+ 679 0322 C7E91023 	 strd r2,[r7,#64]
+ 680              	.L32:
+ 239:../Simulink/VCU.c ****     }
+ 240:../Simulink/VCU.c ****     /* Interpolation 2-D
+ 241:../Simulink/VCU.c ****    Interpolation method: 'Linear point-slope'
+ 242:../Simulink/VCU.c ****    Use last breakpoint for index at or above upper limit: 'off'
+ 243:../Simulink/VCU.c ****    Overflow mode: 'portable wrapping'
+ 244:../Simulink/VCU.c ****  */
+ 245:../Simulink/VCU.c ****     bpIdx = iLeft * stride + bpIndices[0U];
+ 681              	 .loc 1 245 0
+ 682 0326 7B6B     	 ldr r3,[r7,#52]
+ 683 0328 BA6E     	 ldr r2,[r7,#104]
+ 684 032a 02FB03F2 	 mul r2,r2,r3
+ 685 032e 3B6A     	 ldr r3,[r7,#32]
+ 686 0330 1344     	 add r3,r3,r2
+ 687 0332 BB63     	 str r3,[r7,#56]
+ 246:../Simulink/VCU.c ****     yL_1d = (table[bpIdx + 1U] - table[bpIdx]) * fractions[0U] + table[bpIdx];
+ 688              	 .loc 1 246 0
+ 689 0334 BB6B     	 ldr r3,[r7,#56]
+ 690 0336 0133     	 adds r3,r3,#1
+ 691 0338 DB00     	 lsls r3,r3,#3
+ 692 033a 3A6E     	 ldr r2,[r7,#96]
+ 693 033c 1344     	 add r3,r3,r2
+ 694 033e D3E90001 	 ldrd r0,[r3]
+ 695 0342 BB6B     	 ldr r3,[r7,#56]
+ 696 0344 DB00     	 lsls r3,r3,#3
+ 697 0346 3A6E     	 ldr r2,[r7,#96]
+ 698 0348 1344     	 add r3,r3,r2
+ 699 034a D3E90023 	 ldrd r2,[r3]
+ 700 034e FFF7FEFF 	 bl __aeabi_dsub
+ 701 0352 0246     	 mov r2,r0
+ 702 0354 0B46     	 mov r3,r1
+ 703 0356 1046     	 mov r0,r2
+ 704 0358 1946     	 mov r1,r3
+ 705 035a D7E90423 	 ldrd r2,[r7,#16]
+ 706 035e FFF7FEFF 	 bl __aeabi_dmul
+ 707 0362 0246     	 mov r2,r0
+ 708 0364 0B46     	 mov r3,r1
+ 709 0366 1046     	 mov r0,r2
+ 710 0368 1946     	 mov r1,r3
+ 711 036a BB6B     	 ldr r3,[r7,#56]
+ 712 036c DB00     	 lsls r3,r3,#3
+ 713 036e 3A6E     	 ldr r2,[r7,#96]
+ 714 0370 1344     	 add r3,r3,r2
+ 715 0372 D3E90023 	 ldrd r2,[r3]
+ 716 0376 FFF7FEFF 	 bl __aeabi_dadd
+ 717 037a 0246     	 mov r2,r0
+ 718 037c 0B46     	 mov r3,r1
+ 719 037e C7E90A23 	 strd r2,[r7,#40]
+ 247:../Simulink/VCU.c ****     bpIdx += stride;
+ 720              	 .loc 1 247 0
+ 721 0382 BA6B     	 ldr r2,[r7,#56]
+ 722 0384 BB6E     	 ldr r3,[r7,#104]
+ 723 0386 1344     	 add r3,r3,r2
+ 724 0388 BB63     	 str r3,[r7,#56]
+ 248:../Simulink/VCU.c ****     return (((table[bpIdx + 1U] - table[bpIdx]) * fractions[0U] + table[bpIdx]) - yL_1d) * frac + y
+ 725              	 .loc 1 248 0
+ 726 038a BB6B     	 ldr r3,[r7,#56]
+ 727 038c 0133     	 adds r3,r3,#1
+ 728 038e DB00     	 lsls r3,r3,#3
+ 729 0390 3A6E     	 ldr r2,[r7,#96]
+ 730 0392 1344     	 add r3,r3,r2
+ 731 0394 D3E90001 	 ldrd r0,[r3]
+ 732 0398 BB6B     	 ldr r3,[r7,#56]
+ 733 039a DB00     	 lsls r3,r3,#3
+ 734 039c 3A6E     	 ldr r2,[r7,#96]
+ 735 039e 1344     	 add r3,r3,r2
+ 736 03a0 D3E90023 	 ldrd r2,[r3]
+ 737 03a4 FFF7FEFF 	 bl __aeabi_dsub
+ 738 03a8 0246     	 mov r2,r0
+ 739 03aa 0B46     	 mov r3,r1
+ 740 03ac 1046     	 mov r0,r2
+ 741 03ae 1946     	 mov r1,r3
+ 742 03b0 D7E90423 	 ldrd r2,[r7,#16]
+ 743 03b4 FFF7FEFF 	 bl __aeabi_dmul
+ 744 03b8 0246     	 mov r2,r0
+ 745 03ba 0B46     	 mov r3,r1
+ 746 03bc 1046     	 mov r0,r2
+ 747 03be 1946     	 mov r1,r3
+ 748 03c0 BB6B     	 ldr r3,[r7,#56]
+ 749 03c2 DB00     	 lsls r3,r3,#3
+ 750 03c4 3A6E     	 ldr r2,[r7,#96]
+ 751 03c6 1344     	 add r3,r3,r2
+ 752 03c8 D3E90023 	 ldrd r2,[r3]
+ 753 03cc FFF7FEFF 	 bl __aeabi_dadd
+ 754 03d0 0246     	 mov r2,r0
+ 755 03d2 0B46     	 mov r3,r1
+ 756 03d4 1046     	 mov r0,r2
+ 757 03d6 1946     	 mov r1,r3
+ 758 03d8 D7E90A23 	 ldrd r2,[r7,#40]
+ 759 03dc FFF7FEFF 	 bl __aeabi_dsub
+ 760 03e0 0246     	 mov r2,r0
+ 761 03e2 0B46     	 mov r3,r1
+ 762 03e4 1046     	 mov r0,r2
+ 763 03e6 1946     	 mov r1,r3
+ 764 03e8 D7E91023 	 ldrd r2,[r7,#64]
+ 765 03ec FFF7FEFF 	 bl __aeabi_dmul
+ 766 03f0 0246     	 mov r2,r0
+ 767 03f2 0B46     	 mov r3,r1
+ 768 03f4 1046     	 mov r0,r2
+ 769 03f6 1946     	 mov r1,r3
+ 770 03f8 D7E90A23 	 ldrd r2,[r7,#40]
+ 771 03fc FFF7FEFF 	 bl __aeabi_dadd
+ 772 0400 0246     	 mov r2,r0
+ 773 0402 0B46     	 mov r3,r1
+ 249:../Simulink/VCU.c **** }
+ 774              	 .loc 1 249 0
+ 775 0404 1046     	 mov r0,r2
+ 776 0406 1946     	 mov r1,r3
+ 777 0408 4837     	 adds r7,r7,#72
+ 778              	.LCFI8:
+ 779              	 .cfi_def_cfa_offset 16
+ 780 040a BD46     	 mov sp,r7
+ 781              	.LCFI9:
+ 782              	 .cfi_def_cfa_register 13
+ 783              	 
+ 784 040c B0BD     	 pop {r4,r5,r7,pc}
+ 785              	 .cfi_endproc
+ 786              	.LFE176:
+ 788 040e 00BF     	 .section .text.VCU_step,"ax",%progbits
+ 789              	 .align 2
+ 790              	 .global VCU_step
+ 791              	 .thumb
+ 792              	 .thumb_func
+ 794              	VCU_step:
+ 795              	.LFB177:
+ 250:../Simulink/VCU.c ****         
+ 251:../Simulink/VCU.c ****     
+ 252:../Simulink/VCU.c ****   
+ 253:../Simulink/VCU.c ****   
+ 254:../Simulink/VCU.c ****         
+ 255:../Simulink/VCU.c ****     
+ 256:../Simulink/VCU.c ****     
+ 257:../Simulink/VCU.c ****     
+ 258:../Simulink/VCU.c ****     
+ 259:../Simulink/VCU.c ****     
+ 260:../Simulink/VCU.c ****     
+ 261:../Simulink/VCU.c ****     
+ 262:../Simulink/VCU.c ****     
+ 263:../Simulink/VCU.c ****     
+ 264:../Simulink/VCU.c ****     
+ 265:../Simulink/VCU.c ****     
+ 266:../Simulink/VCU.c ****     
+ 267:../Simulink/VCU.c ****     
+ 268:../Simulink/VCU.c ****     
+ 269:../Simulink/VCU.c ****     
+ 270:../Simulink/VCU.c ****     
+ 271:../Simulink/VCU.c ****     
+ 272:../Simulink/VCU.c ****     
+ 273:../Simulink/VCU.c **** 
+ 274:../Simulink/VCU.c ****   
+ 275:../Simulink/VCU.c ****   
+ 276:../Simulink/VCU.c ****         
+ 277:../Simulink/VCU.c ****     
+ 278:../Simulink/VCU.c ****     
+ 279:../Simulink/VCU.c ****     
+ 280:../Simulink/VCU.c ****     /* Model step function */
+ 281:../Simulink/VCU.c ****     
+ 282:../Simulink/VCU.c ****         
+ 283:../Simulink/VCU.c ****     void VCU_step(void)   
+ 284:../Simulink/VCU.c ****     {
+ 796              	 .loc 1 284 0
+ 797              	 .cfi_startproc
+ 798              	 
+ 799              	 
+ 800 0000 80B5     	 push {r7,lr}
+ 801              	.LCFI10:
+ 802              	 .cfi_def_cfa_offset 8
+ 803              	 .cfi_offset 7,-8
+ 804              	 .cfi_offset 14,-4
+ 805 0002 00AF     	 add r7,sp,#0
+ 806              	.LCFI11:
+ 807              	 .cfi_def_cfa_register 7
+ 285:../Simulink/VCU.c ****             
+ 286:../Simulink/VCU.c **** 
+ 287:../Simulink/VCU.c **** 
+ 288:../Simulink/VCU.c ****       
+ 289:../Simulink/VCU.c ****       
+ 290:../Simulink/VCU.c ****       
+ 291:../Simulink/VCU.c ****             
+ 292:../Simulink/VCU.c ****       
+ 293:../Simulink/VCU.c ****         
+ 294:../Simulink/VCU.c ****         
+ 295:../Simulink/VCU.c **** 
+ 296:../Simulink/VCU.c ****       
+ 297:../Simulink/VCU.c **** 
+ 298:../Simulink/VCU.c ****         
+ 299:../Simulink/VCU.c ****   
+ 300:../Simulink/VCU.c **** 
+ 301:../Simulink/VCU.c **** 
+ 302:../Simulink/VCU.c **** 
+ 303:../Simulink/VCU.c ****           
+ 304:../Simulink/VCU.c ****         
+ 305:../Simulink/VCU.c ****   
+ 306:../Simulink/VCU.c **** 
+ 307:../Simulink/VCU.c **** 
+ 308:../Simulink/VCU.c **** 
+ 309:../Simulink/VCU.c ****                                   
+ 310:../Simulink/VCU.c **** 
+ 311:../Simulink/VCU.c **** 
+ 312:../Simulink/VCU.c **** /* Outputs for Atomic SubSystem: '<Root>/Input Data' */
+ 313:../Simulink/VCU.c **** 
+ 314:../Simulink/VCU.c **** /*@[28b51*/      FUNC_InputData();/*@]*/
+ 808              	 .loc 1 314 0
+ 809 0004 FFF7FEFF 	 bl FUNC_InputData
+ 315:../Simulink/VCU.c **** 
+ 316:../Simulink/VCU.c **** 
+ 317:../Simulink/VCU.c **** /* End of Outputs for SubSystem: '<Root>/Input Data' */
+ 318:../Simulink/VCU.c **** 
+ 319:../Simulink/VCU.c **** 
+ 320:../Simulink/VCU.c **** 
+ 321:../Simulink/VCU.c **** 
+ 322:../Simulink/VCU.c **** 
+ 323:../Simulink/VCU.c **** 
+ 324:../Simulink/VCU.c **** /* Outputs for Atomic SubSystem: '<Root>/Transmission' */
+ 325:../Simulink/VCU.c **** 
+ 326:../Simulink/VCU.c **** /*@[28b52*/      FUNC_Transmission();/*@]*/
+ 810              	 .loc 1 326 0
+ 811 0008 FFF7FEFF 	 bl FUNC_Transmission
+ 327:../Simulink/VCU.c **** 
+ 328:../Simulink/VCU.c **** 
+ 329:../Simulink/VCU.c **** /* End of Outputs for SubSystem: '<Root>/Transmission' */
+ 330:../Simulink/VCU.c **** 
+ 331:../Simulink/VCU.c **** 
+ 332:../Simulink/VCU.c **** 
+ 333:../Simulink/VCU.c **** 
+ 334:../Simulink/VCU.c **** 
+ 335:../Simulink/VCU.c **** 
+ 336:../Simulink/VCU.c **** /* Outputs for Atomic SubSystem: '<Root>/Pump and Fans' */
+ 337:../Simulink/VCU.c **** 
+ 338:../Simulink/VCU.c **** /*@[28b53*/      FUNC_PumpAndFans();/*@]*/
+ 812              	 .loc 1 338 0
+ 813 000c FFF7FEFF 	 bl FUNC_PumpAndFans
+ 339:../Simulink/VCU.c **** 
+ 340:../Simulink/VCU.c **** 
+ 341:../Simulink/VCU.c **** /* End of Outputs for SubSystem: '<Root>/Pump and Fans' */
+ 342:../Simulink/VCU.c **** 
+ 343:../Simulink/VCU.c **** 
+ 344:../Simulink/VCU.c **** 
+ 345:../Simulink/VCU.c **** 
+ 346:../Simulink/VCU.c **** 
+ 347:../Simulink/VCU.c **** 
+ 348:../Simulink/VCU.c **** /* Outputs for Atomic SubSystem: '<Root>/Brakelight' */
+ 349:../Simulink/VCU.c **** 
+ 350:../Simulink/VCU.c **** /*@[28b54*/      FUNC_Brakelight();/*@]*/
+ 814              	 .loc 1 350 0
+ 815 0010 FFF7FEFF 	 bl FUNC_Brakelight
+ 351:../Simulink/VCU.c **** 
+ 352:../Simulink/VCU.c **** 
+ 353:../Simulink/VCU.c **** /* End of Outputs for SubSystem: '<Root>/Brakelight' */
+ 354:../Simulink/VCU.c **** 
+ 355:../Simulink/VCU.c **** 
+ 356:../Simulink/VCU.c **** 
+ 357:../Simulink/VCU.c **** 
+ 358:../Simulink/VCU.c **** 
+ 359:../Simulink/VCU.c **** 
+ 360:../Simulink/VCU.c **** /* Outputs for Atomic SubSystem: '<Root>/Output Data' */
+ 361:../Simulink/VCU.c **** 
+ 362:../Simulink/VCU.c **** /*@[28b55*/      FUNC_OutputData();/*@]*/
+ 816              	 .loc 1 362 0
+ 817 0014 FFF7FEFF 	 bl FUNC_OutputData
+ 363:../Simulink/VCU.c **** 
+ 364:../Simulink/VCU.c **** 
+ 365:../Simulink/VCU.c **** /* End of Outputs for SubSystem: '<Root>/Output Data' */
+ 366:../Simulink/VCU.c **** 
+ 367:../Simulink/VCU.c **** 
+ 368:../Simulink/VCU.c **** 
+ 369:../Simulink/VCU.c **** 
+ 370:../Simulink/VCU.c **** 
+ 371:../Simulink/VCU.c **** 
+ 372:../Simulink/VCU.c **** 
+ 373:../Simulink/VCU.c **** 
+ 374:../Simulink/VCU.c ****         
+ 375:../Simulink/VCU.c ****   
+ 376:../Simulink/VCU.c **** 
+ 377:../Simulink/VCU.c **** 
+ 378:../Simulink/VCU.c ****             
+ 379:../Simulink/VCU.c ****       
+ 380:../Simulink/VCU.c ****       
+ 381:../Simulink/VCU.c ****       
+ 382:../Simulink/VCU.c ****       
+ 383:../Simulink/VCU.c ****             
+ 384:../Simulink/VCU.c ****   
+ 385:../Simulink/VCU.c ****   
+ 386:../Simulink/VCU.c ****     
+ 387:../Simulink/VCU.c ****     
+ 388:../Simulink/VCU.c **** 
+ 389:../Simulink/VCU.c ****       
+ 390:../Simulink/VCU.c ****         
+ 391:../Simulink/VCU.c **** 
+ 392:../Simulink/VCU.c ****     
+ 393:../Simulink/VCU.c **** 
+ 394:../Simulink/VCU.c **** 
+ 395:../Simulink/VCU.c ****     
+ 396:../Simulink/VCU.c ****     
+ 397:../Simulink/VCU.c ****   
+ 398:../Simulink/VCU.c ****   
+ 399:../Simulink/VCU.c **** 
+ 400:../Simulink/VCU.c ****         
+ 401:../Simulink/VCU.c **** 
+ 402:../Simulink/VCU.c ****       
+ 403:../Simulink/VCU.c ****       
+ 404:../Simulink/VCU.c ****       
+ 405:../Simulink/VCU.c **** 
+ 406:../Simulink/VCU.c **** 
+ 407:../Simulink/VCU.c ****       
+ 408:../Simulink/VCU.c ****           
+ 409:../Simulink/VCU.c ****   
+ 410:../Simulink/VCU.c **** 
+ 411:../Simulink/VCU.c ****     } 
+ 818              	 .loc 1 411 0
+ 819 0018 80BD     	 pop {r7,pc}
+ 820              	 .cfi_endproc
+ 821              	.LFE177:
+ 823 001a 00BF     	 .section .text.VCU_initialize,"ax",%progbits
+ 824              	 .align 2
+ 825              	 .global VCU_initialize
+ 826              	 .thumb
+ 827              	 .thumb_func
+ 829              	VCU_initialize:
+ 830              	.LFB178:
+ 412:../Simulink/VCU.c ****     
+ 413:../Simulink/VCU.c ****     
+ 414:../Simulink/VCU.c **** 
+ 415:../Simulink/VCU.c **** 
+ 416:../Simulink/VCU.c **** 
+ 417:../Simulink/VCU.c **** 
+ 418:../Simulink/VCU.c ****   
+ 419:../Simulink/VCU.c **** 
+ 420:../Simulink/VCU.c **** 
+ 421:../Simulink/VCU.c **** 
+ 422:../Simulink/VCU.c **** 
+ 423:../Simulink/VCU.c **** 
+ 424:../Simulink/VCU.c **** 
+ 425:../Simulink/VCU.c **** 
+ 426:../Simulink/VCU.c ****   /* Model initialize function */
+ 427:../Simulink/VCU.c ****   
+ 428:../Simulink/VCU.c ****     void VCU_initialize(void)
+ 429:../Simulink/VCU.c ****   { 
+ 831              	 .loc 1 429 0
+ 832              	 .cfi_startproc
+ 833              	 
+ 834              	 
+ 835 0000 80B5     	 push {r7,lr}
+ 836              	.LCFI12:
+ 837              	 .cfi_def_cfa_offset 8
+ 838              	 .cfi_offset 7,-8
+ 839              	 .cfi_offset 14,-4
+ 840 0002 00AF     	 add r7,sp,#0
+ 841              	.LCFI13:
+ 842              	 .cfi_def_cfa_register 7
+ 430:../Simulink/VCU.c ****       
+ 431:../Simulink/VCU.c **** 
+ 432:../Simulink/VCU.c **** 
+ 433:../Simulink/VCU.c ****     
+ 434:../Simulink/VCU.c ****     
+ 435:../Simulink/VCU.c ****     
+ 436:../Simulink/VCU.c ****     
+ 437:../Simulink/VCU.c ****         
+ 438:../Simulink/VCU.c ****     
+ 439:../Simulink/VCU.c ****     
+ 440:../Simulink/VCU.c ****         /* Registration code */
+ 441:../Simulink/VCU.c ****           
+ 442:../Simulink/VCU.c ****   /* initialize non-finites */
+ 443:../Simulink/VCU.c ****   rt_InitInfAndNaN(sizeof(real_T));
+ 843              	 .loc 1 443 0
+ 844 0004 0820     	 movs r0,#8
+ 845 0006 FFF7FEFF 	 bl rt_InitInfAndNaN
+ 444:../Simulink/VCU.c ****   
+ 445:../Simulink/VCU.c ****   
+ 446:../Simulink/VCU.c **** 
+ 447:../Simulink/VCU.c **** 
+ 448:../Simulink/VCU.c ****       
+ 449:../Simulink/VCU.c ****   
+ 450:../Simulink/VCU.c ****   
+ 451:../Simulink/VCU.c ****   
+ 452:../Simulink/VCU.c **** 
+ 453:../Simulink/VCU.c ****   
+ 454:../Simulink/VCU.c ****   
+ 455:../Simulink/VCU.c ****   
+ 456:../Simulink/VCU.c ****       
+ 457:../Simulink/VCU.c ****         
+ 458:../Simulink/VCU.c ****         
+ 459:../Simulink/VCU.c ****         
+ 460:../Simulink/VCU.c ****         
+ 461:../Simulink/VCU.c ****             
+ 462:../Simulink/VCU.c ****   
+ 463:../Simulink/VCU.c **** 
+ 464:../Simulink/VCU.c ****         
+ 465:../Simulink/VCU.c ****             
+ 466:../Simulink/VCU.c ****             /* initialize error status */
+ 467:../Simulink/VCU.c ****             rtmSetErrorStatus(VCU_M, (NULL));
+ 846              	 .loc 1 467 0
+ 847 000a 094B     	 ldr r3,.L55
+ 848 000c 0022     	 movs r2,#0
+ 849 000e 1A60     	 str r2,[r3]
+ 468:../Simulink/VCU.c ****       
+ 469:../Simulink/VCU.c ****       
+ 470:../Simulink/VCU.c ****       
+ 471:../Simulink/VCU.c ****   
+ 472:../Simulink/VCU.c ****   
+ 473:../Simulink/VCU.c **** 
+ 474:../Simulink/VCU.c ****   
+ 475:../Simulink/VCU.c ****   
+ 476:../Simulink/VCU.c ****   
+ 477:../Simulink/VCU.c **** 
+ 478:../Simulink/VCU.c ****     /* block I/O */
+ 479:../Simulink/VCU.c ****     
+ 480:../Simulink/VCU.c ****       
+ 481:../Simulink/VCU.c ****         
+ 482:../Simulink/VCU.c ****         (void) memset(((void *) &VCU_B), 0,
+ 850              	 .loc 1 482 0
+ 851 0010 0848     	 ldr r0,.L55+4
+ 852 0012 0021     	 movs r1,#0
+ 853 0014 40F61802 	 movw r2,#2072
+ 854 0018 FFF7FEFF 	 bl memset
+ 483:../Simulink/VCU.c **** sizeof(B_VCU_T));
+ 484:../Simulink/VCU.c ****         
+ 485:../Simulink/VCU.c **** 
+ 486:../Simulink/VCU.c ****         
+ 487:../Simulink/VCU.c **** 
+ 488:../Simulink/VCU.c ****   
+ 489:../Simulink/VCU.c ****     
+ 490:../Simulink/VCU.c ****   
+ 491:../Simulink/VCU.c ****   
+ 492:../Simulink/VCU.c ****     
+ 493:../Simulink/VCU.c **** 
+ 494:../Simulink/VCU.c **** 
+ 495:../Simulink/VCU.c **** 
+ 496:../Simulink/VCU.c **** 
+ 497:../Simulink/VCU.c **** 
+ 498:../Simulink/VCU.c **** 
+ 499:../Simulink/VCU.c **** 
+ 500:../Simulink/VCU.c **** 
+ 501:../Simulink/VCU.c ****     /* states (dwork) */
+ 502:../Simulink/VCU.c ****     
+ 503:../Simulink/VCU.c ****         
+ 504:../Simulink/VCU.c **** 
+ 505:../Simulink/VCU.c ****     
+ 506:../Simulink/VCU.c ****         
+ 507:../Simulink/VCU.c ****                     (void) memset((void *)&VCU_DW,  0,
+ 855              	 .loc 1 507 0
+ 856 001c 0648     	 ldr r0,.L55+8
+ 857 001e 0021     	 movs r1,#0
+ 858 0020 4FF4B472 	 mov r2,#360
+ 859 0024 FFF7FEFF 	 bl memset
+ 508:../Simulink/VCU.c ****  sizeof(DW_VCU_T));
+ 509:../Simulink/VCU.c ****         
+ 510:../Simulink/VCU.c ****         
+ 511:../Simulink/VCU.c **** 
+ 512:../Simulink/VCU.c ****         
+ 513:../Simulink/VCU.c ****     
+ 514:../Simulink/VCU.c ****         
+ 515:../Simulink/VCU.c ****   
+ 516:../Simulink/VCU.c ****     
+ 517:../Simulink/VCU.c **** 
+ 518:../Simulink/VCU.c ****     
+ 519:../Simulink/VCU.c **** 
+ 520:../Simulink/VCU.c **** 
+ 521:../Simulink/VCU.c ****   
+ 522:../Simulink/VCU.c **** 
+ 523:../Simulink/VCU.c ****     
+ 524:../Simulink/VCU.c ****       
+ 525:../Simulink/VCU.c **** 
+ 526:../Simulink/VCU.c ****   
+ 527:../Simulink/VCU.c ****       
+ 528:../Simulink/VCU.c ****       
+ 529:../Simulink/VCU.c **** 
+ 530:../Simulink/VCU.c ****     
+ 531:../Simulink/VCU.c ****     
+ 532:../Simulink/VCU.c ****     
+ 533:../Simulink/VCU.c ****         
+ 534:../Simulink/VCU.c **** 
+ 535:../Simulink/VCU.c **** 
+ 536:../Simulink/VCU.c **** 
+ 537:../Simulink/VCU.c **** 
+ 538:../Simulink/VCU.c ****       
+ 539:../Simulink/VCU.c ****                                 
+ 540:../Simulink/VCU.c **** 
+ 541:../Simulink/VCU.c ****     
+ 542:../Simulink/VCU.c **** 
+ 543:../Simulink/VCU.c ****     
+ 544:../Simulink/VCU.c ****  
+ 545:../Simulink/VCU.c ****     
+ 546:../Simulink/VCU.c **** 
+ 547:../Simulink/VCU.c ****     
+ 548:../Simulink/VCU.c ****  
+ 549:../Simulink/VCU.c ****     
+ 550:../Simulink/VCU.c **** 
+ 551:../Simulink/VCU.c ****     
+ 552:../Simulink/VCU.c ****  
+ 553:../Simulink/VCU.c **** 
+ 554:../Simulink/VCU.c **** 
+ 555:../Simulink/VCU.c **** 
+ 556:../Simulink/VCU.c **** /* SystemInitialize for Atomic SubSystem: '<Root>/Transmission' */
+ 557:../Simulink/VCU.c **** 
+ 558:../Simulink/VCU.c **** /*@[28b88*/      FUNC_Transmission_Init();      
+ 860              	 .loc 1 558 0
+ 861 0028 FFF7FEFF 	 bl FUNC_Transmission_Init
+ 559:../Simulink/VCU.c **** /*@]*/
+ 560:../Simulink/VCU.c **** 
+ 561:../Simulink/VCU.c **** 
+ 562:../Simulink/VCU.c **** /* End of SystemInitialize for SubSystem: '<Root>/Transmission' */
+ 563:../Simulink/VCU.c **** 
+ 564:../Simulink/VCU.c **** 
+ 565:../Simulink/VCU.c ****         
+ 566:../Simulink/VCU.c **** 
+ 567:../Simulink/VCU.c **** 
+ 568:../Simulink/VCU.c **** 
+ 569:../Simulink/VCU.c **** 
+ 570:../Simulink/VCU.c **** 
+ 571:../Simulink/VCU.c **** 
+ 572:../Simulink/VCU.c **** 
+ 573:../Simulink/VCU.c **** 
+ 574:../Simulink/VCU.c ****       
+ 575:../Simulink/VCU.c ****     
+ 576:../Simulink/VCU.c ****     
+ 577:../Simulink/VCU.c ****         
+ 578:../Simulink/VCU.c **** 
+ 579:../Simulink/VCU.c ****   
+ 580:../Simulink/VCU.c **** 
+ 581:../Simulink/VCU.c **** 
+ 582:../Simulink/VCU.c ****       
+ 583:../Simulink/VCU.c ****   
+ 584:../Simulink/VCU.c **** 
+ 585:../Simulink/VCU.c **** 
+ 586:../Simulink/VCU.c ****   }
+ 862              	 .loc 1 586 0
+ 863 002c 80BD     	 pop {r7,pc}
+ 864              	.L56:
+ 865 002e 00BF     	 .align 2
+ 866              	.L55:
+ 867 0030 00000000 	 .word VCU_M_
+ 868 0034 00000000 	 .word VCU_B
+ 869 0038 00000000 	 .word VCU_DW
+ 870              	 .cfi_endproc
+ 871              	.LFE178:
+ 873              	 .text
+ 874              	.Letext0:
+ 875              	 .file 2 "c:\\dave\\dave-ide-4.4.2-64bit\\eclipse\\arm-gcc-49\\arm-none-eabi\\include\\machine\\_default_types.h"
+ 876              	 .file 3 "c:\\dave\\dave-ide-4.4.2-64bit\\eclipse\\arm-gcc-49\\arm-none-eabi\\include\\stdint.h"
+ 877              	 .file 4 "../Simulink/rtwtypes.h"
+ 878              	 .file 5 "../Simulink/VCU_types.h"
+ 879              	 .file 6 "../Simulink/VCU.h"
+ 880              	 .file 7 "C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_29_VCU_jr20_Source/Libraries/CMSIS/Include/cmsis_gcc.h"
+ 881              	 .file 8 "C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_29_VCU_jr20_Source/Libraries/CMSIS/Include/core_cm4.h"
+ 882              	 .file 9 "C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_29_VCU_jr20_Source/Libraries/CMSIS/Infineon/XMC4500_series/Include/system_XMC4500.h"
+DEFINED SYMBOLS
+                            *ABS*:00000000 VCU.c
+                            *COM*:00000818 VCU_B
+                            *COM*:00000168 VCU_DW
+                            *COM*:00000004 VCU_M_
+    {standard input}:27     .rodata.VCU_M:00000000 VCU_M
+    {standard input}:24     .rodata.VCU_M:00000000 $d
+    {standard input}:36     .text.look1_binlxpw:00000000 $t
+    {standard input}:41     .text.look1_binlxpw:00000000 look1_binlxpw
+    {standard input}:283    .text.look2_binlxpw:00000000 $t
+    {standard input}:288    .text.look2_binlxpw:00000000 look2_binlxpw
+    {standard input}:789    .text.VCU_step:00000000 $t
+    {standard input}:794    .text.VCU_step:00000000 VCU_step
+    {standard input}:824    .text.VCU_initialize:00000000 $t
+    {standard input}:829    .text.VCU_initialize:00000000 VCU_initialize
+    {standard input}:867    .text.VCU_initialize:00000030 $d
+                     .debug_frame:00000010 $d
+
+UNDEFINED SYMBOLS
+__aeabi_dcmpge
+__aeabi_dsub
+__aeabi_ddiv
+__aeabi_dcmpgt
+__aeabi_dmul
+__aeabi_dadd
+FUNC_InputData
+FUNC_Transmission
+FUNC_PumpAndFans
+FUNC_Brakelight
+FUNC_OutputData
+rt_InitInfAndNaN
+memset
+FUNC_Transmission_Init

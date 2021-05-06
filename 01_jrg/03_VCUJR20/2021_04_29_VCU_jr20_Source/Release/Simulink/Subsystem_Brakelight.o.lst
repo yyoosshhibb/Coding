@@ -1,0 +1,52 @@
+   1              	 .syntax unified
+   2              	 .cpu cortex-m4
+   3              	 .eabi_attribute 27,3
+   4              	 .fpu fpv4-sp-d16
+   5              	 .eabi_attribute 20,1
+   6              	 .eabi_attribute 21,1
+   7              	 .eabi_attribute 23,3
+   8              	 .eabi_attribute 24,1
+   9              	 .eabi_attribute 25,1
+  10              	 .eabi_attribute 26,1
+  11              	 .eabi_attribute 30,4
+  12              	 .eabi_attribute 34,1
+  13              	 .eabi_attribute 18,4
+  14              	 .thumb
+  15              	 .file "Subsystem_Brakelight.c"
+  16              	 .global __aeabi_dcmpgt
+  17              	 .section .text.FUNC_Brakelight,"ax",%progbits
+  18              	 .align 1
+  19              	 .global FUNC_Brakelight
+  20              	 .thumb
+  21              	 .thumb_func
+  23              	FUNC_Brakelight:
+  24              	 
+  25              	 
+  26 0000 38B5     	 push {r3,r4,r5,lr}
+  27 0002 084C     	 ldr r4,.L4
+  28 0004 04F5C763 	 add r3,r4,#1592
+  29 0008 D3E90001 	 ldrd r0,[r3]
+  30 000c 0022     	 movs r2,#0
+  31 000e 064B     	 ldr r3,.L4+4
+  32 0010 4FF00105 	 mov r5,#1
+  33 0014 FFF7FEFF 	 bl __aeabi_dcmpgt
+  34 0018 00B9     	 cbnz r0,.L2
+  35 001a 0546     	 mov r5,r0
+  36              	.L2:
+  37 001c 84F81058 	 strb r5,[r4,#2064]
+  38 0020 38BD     	 pop {r3,r4,r5,pc}
+  39              	.L5:
+  40 0022 00BF     	 .align 2
+  41              	.L4:
+  42 0024 00000000 	 .word VCU_B
+  43 0028 00001440 	 .word 1075052544
+  45              	 .ident "GCC: (GNU Tools for ARM Embedded Processors) 4.9.3 20141119 (release) [ARM/embedded-4_9-branch revision 218278]"
+DEFINED SYMBOLS
+                            *ABS*:00000000 Subsystem_Brakelight.c
+    {standard input}:18     .text.FUNC_Brakelight:00000000 $t
+    {standard input}:23     .text.FUNC_Brakelight:00000000 FUNC_Brakelight
+    {standard input}:42     .text.FUNC_Brakelight:00000024 $d
+
+UNDEFINED SYMBOLS
+__aeabi_dcmpgt
+VCU_B

@@ -64,3 +64,4 @@ AudioFilter.doj: ../../../../../../../../../Analog\ Devices/CrossCore\ Embedded\
 AudioFilter.doj: ../../../../../../../../../Analog\ Devices/CrossCore\ Embedded\ Studio\ 2.9.4/Blackfin/include/stdio.h
 AudioFilter.doj: ../../../../../../../../../Analog\ Devices/CrossCore\ Embedded\ Studio\ 2.9.4/Blackfin/include/string.h
 AudioFilter.doj: ../system/adi_initialize.h
+AudioFilter.doj: ../tabs.h

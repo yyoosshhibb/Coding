@@ -43,7 +43,7 @@ to the terms of the associated Analog Devices License Agreement.
 //#pragma align(4)
  uint32_t filterOutput[NUM_AUDIO_SAMPLES];
 
- uint8_t buffer_size=100;
+
  fract16 CircBuffer[buffer_size];
 
 
