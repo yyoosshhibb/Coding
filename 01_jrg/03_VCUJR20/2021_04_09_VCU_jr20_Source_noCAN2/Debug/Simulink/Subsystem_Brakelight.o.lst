@@ -1,0 +1,256 @@
+   1              	 .syntax unified
+   2              	 .cpu cortex-m4
+   3              	 .eabi_attribute 27,3
+   4              	 .fpu fpv4-sp-d16
+   5              	 .eabi_attribute 20,1
+   6              	 .eabi_attribute 21,1
+   7              	 .eabi_attribute 23,3
+   8              	 .eabi_attribute 24,1
+   9              	 .eabi_attribute 25,1
+  10              	 .eabi_attribute 26,1
+  11              	 .eabi_attribute 30,6
+  12              	 .eabi_attribute 34,1
+  13              	 .eabi_attribute 18,4
+  14              	 .thumb
+  15              	 .file "Subsystem_Brakelight.c"
+  16              	 .text
+  17              	.Ltext0:
+  18              	 .cfi_sections .debug_frame
+  19              	 .global __aeabi_dcmpgt
+  20              	 .section .text.FUNC_Brakelight,"ax",%progbits
+  21              	 .align 2
+  22              	 .global FUNC_Brakelight
+  23              	 .thumb
+  24              	 .thumb_func
+  26              	FUNC_Brakelight:
+  27              	.LFB175:
+  28              	 .file 1 "../Simulink/Subsystem_Brakelight.c"
+   1:../Simulink/Subsystem_Brakelight.c **** /* 
+   2:../Simulink/Subsystem_Brakelight.c ****  * Academic License - for use in teaching, academic research, and meeting
+   3:../Simulink/Subsystem_Brakelight.c ****  * course requirements at degree granting institutions only.  Not for
+   4:../Simulink/Subsystem_Brakelight.c ****  * government, commercial, or other organizational use.
+   5:../Simulink/Subsystem_Brakelight.c ****  * 
+   6:../Simulink/Subsystem_Brakelight.c ****  * File: Subsystem_Brakelight.c
+   7:../Simulink/Subsystem_Brakelight.c ****  *  
+   8:../Simulink/Subsystem_Brakelight.c ****  * Code generated for Simulink model : VCU.
+   9:../Simulink/Subsystem_Brakelight.c ****  * Model version      : 1.300
+  10:../Simulink/Subsystem_Brakelight.c ****  * Simulink Coder version    : 8.14 (R2018a) 06-Feb-2018
+  11:../Simulink/Subsystem_Brakelight.c ****  * TLC version       : 8.14 (Feb 22 2018)
+  12:../Simulink/Subsystem_Brakelight.c ****  * C/C++ source code generated on  : Thu Oct 22 19:30:55 2020
+  13:../Simulink/Subsystem_Brakelight.c ****  * 
+  14:../Simulink/Subsystem_Brakelight.c ****  * Target selection: Infineon_XMC_Family.tlc
+  15:../Simulink/Subsystem_Brakelight.c ****  * Embedded hardware selection: ARM Compatible->ARM Cortex
+  16:../Simulink/Subsystem_Brakelight.c ****  * Code generation objectives: Unspecified
+  17:../Simulink/Subsystem_Brakelight.c ****  * Validation result: Not run
+  18:../Simulink/Subsystem_Brakelight.c ****  */
+  19:../Simulink/Subsystem_Brakelight.c **** 
+  20:../Simulink/Subsystem_Brakelight.c **** 
+  21:../Simulink/Subsystem_Brakelight.c ****     
+  22:../Simulink/Subsystem_Brakelight.c **** 
+  23:../Simulink/Subsystem_Brakelight.c ****         #include "Subsystem_Brakelight.h"
+  24:../Simulink/Subsystem_Brakelight.c ****           /* Include model header file for global data */
+  25:../Simulink/Subsystem_Brakelight.c ****               #include "VCU.h"
+  26:../Simulink/Subsystem_Brakelight.c **** 
+  27:../Simulink/Subsystem_Brakelight.c ****             #include "VCU_private.h"
+  28:../Simulink/Subsystem_Brakelight.c **** 
+  29:../Simulink/Subsystem_Brakelight.c **** 
+  30:../Simulink/Subsystem_Brakelight.c **** 
+  31:../Simulink/Subsystem_Brakelight.c **** 
+  32:../Simulink/Subsystem_Brakelight.c **** 
+  33:../Simulink/Subsystem_Brakelight.c ****   
+  34:../Simulink/Subsystem_Brakelight.c **** 
+  35:../Simulink/Subsystem_Brakelight.c **** 
+  36:../Simulink/Subsystem_Brakelight.c ****   
+  37:../Simulink/Subsystem_Brakelight.c **** 
+  38:../Simulink/Subsystem_Brakelight.c **** 
+  39:../Simulink/Subsystem_Brakelight.c ****   
+  40:../Simulink/Subsystem_Brakelight.c **** 
+  41:../Simulink/Subsystem_Brakelight.c **** 
+  42:../Simulink/Subsystem_Brakelight.c ****   
+  43:../Simulink/Subsystem_Brakelight.c **** 
+  44:../Simulink/Subsystem_Brakelight.c **** 
+  45:../Simulink/Subsystem_Brakelight.c ****   
+  46:../Simulink/Subsystem_Brakelight.c **** 
+  47:../Simulink/Subsystem_Brakelight.c **** 
+  48:../Simulink/Subsystem_Brakelight.c ****   
+  49:../Simulink/Subsystem_Brakelight.c **** 
+  50:../Simulink/Subsystem_Brakelight.c **** 
+  51:../Simulink/Subsystem_Brakelight.c ****   
+  52:../Simulink/Subsystem_Brakelight.c **** 
+  53:../Simulink/Subsystem_Brakelight.c **** 
+  54:../Simulink/Subsystem_Brakelight.c ****   
+  55:../Simulink/Subsystem_Brakelight.c **** 
+  56:../Simulink/Subsystem_Brakelight.c **** 
+  57:../Simulink/Subsystem_Brakelight.c ****   
+  58:../Simulink/Subsystem_Brakelight.c **** 
+  59:../Simulink/Subsystem_Brakelight.c **** 
+  60:../Simulink/Subsystem_Brakelight.c ****   
+  61:../Simulink/Subsystem_Brakelight.c **** 
+  62:../Simulink/Subsystem_Brakelight.c **** 
+  63:../Simulink/Subsystem_Brakelight.c ****   
+  64:../Simulink/Subsystem_Brakelight.c **** 
+  65:../Simulink/Subsystem_Brakelight.c **** 
+  66:../Simulink/Subsystem_Brakelight.c ****   
+  67:../Simulink/Subsystem_Brakelight.c **** 
+  68:../Simulink/Subsystem_Brakelight.c **** 
+  69:../Simulink/Subsystem_Brakelight.c ****   
+  70:../Simulink/Subsystem_Brakelight.c **** 
+  71:../Simulink/Subsystem_Brakelight.c **** 
+  72:../Simulink/Subsystem_Brakelight.c ****   
+  73:../Simulink/Subsystem_Brakelight.c **** 
+  74:../Simulink/Subsystem_Brakelight.c **** 
+  75:../Simulink/Subsystem_Brakelight.c ****     
+  76:../Simulink/Subsystem_Brakelight.c ****        
+  77:../Simulink/Subsystem_Brakelight.c ****     
+  78:../Simulink/Subsystem_Brakelight.c ****   
+  79:../Simulink/Subsystem_Brakelight.c **** 
+  80:../Simulink/Subsystem_Brakelight.c ****           /* Output and update for atomic system: '<Root>/Brakelight' */
+  81:../Simulink/Subsystem_Brakelight.c ****       
+  82:../Simulink/Subsystem_Brakelight.c ****               
+  83:../Simulink/Subsystem_Brakelight.c ****   
+  84:../Simulink/Subsystem_Brakelight.c ****         void FUNC_Brakelight(void)
+  85:../Simulink/Subsystem_Brakelight.c ****   {
+  29              	 .loc 1 85 0
+  30              	 .cfi_startproc
+  31              	 
+  32              	 
+  33 0000 98B5     	 push {r3,r4,r7,lr}
+  34              	.LCFI0:
+  35              	 .cfi_def_cfa_offset 16
+  36              	 .cfi_offset 3,-16
+  37              	 .cfi_offset 4,-12
+  38              	 .cfi_offset 7,-8
+  39              	 .cfi_offset 14,-4
+  40 0002 00AF     	 add r7,sp,#0
+  41              	.LCFI1:
+  42              	 .cfi_def_cfa_register 7
+  86:../Simulink/Subsystem_Brakelight.c ****   
+  87:../Simulink/Subsystem_Brakelight.c ****                       
+  88:../Simulink/Subsystem_Brakelight.c ****       
+  89:../Simulink/Subsystem_Brakelight.c ****       
+  90:../Simulink/Subsystem_Brakelight.c ****       
+  91:../Simulink/Subsystem_Brakelight.c ****   
+  92:../Simulink/Subsystem_Brakelight.c **** 
+  93:../Simulink/Subsystem_Brakelight.c **** 
+  94:../Simulink/Subsystem_Brakelight.c **** 
+  95:../Simulink/Subsystem_Brakelight.c ****                           
+  96:../Simulink/Subsystem_Brakelight.c ****       
+  97:../Simulink/Subsystem_Brakelight.c ****   
+  98:../Simulink/Subsystem_Brakelight.c **** 
+  99:../Simulink/Subsystem_Brakelight.c **** 
+ 100:../Simulink/Subsystem_Brakelight.c **** 
+ 101:../Simulink/Subsystem_Brakelight.c ****                                 /* RelationalOperator: '<S1>/Relational Operator' incorporates:
+ 102:../Simulink/Subsystem_Brakelight.c ****  *  Constant: '<S1>/Constant'
+ 103:../Simulink/Subsystem_Brakelight.c ****  */
+ 104:../Simulink/Subsystem_Brakelight.c **** /*@>c6e0*/VCU_B./*@>c876*/RelationalOperator_c/*@>6a7a*/ = (/*@>c6e6*/VCU_B./*@>c879*/Add1_m/*@>6a7
+  43              	 .loc 1 104 0
+  44 0004 204B     	 ldr r3,.L7
+  45 0006 03F59863 	 add r3,r3,#1216
+  46 000a D3E90023 	 ldrd r2,[r3]
+  47 000e 0121     	 movs r1,#1
+  48 0010 0C46     	 mov r4,r1
+  49 0012 1046     	 mov r0,r2
+  50 0014 1946     	 mov r1,r3
+  51 0016 4FF00002 	 mov r2,#0
+  52 001a 1C4B     	 ldr r3,.L7+4
+  53 001c FFF7FEFF 	 bl __aeabi_dcmpgt
+  54 0020 0346     	 mov r3,r0
+  55 0022 002B     	 cmp r3,#0
+  56 0024 01D1     	 bne .L2
+  57 0026 0023     	 movs r3,#0
+  58 0028 1C46     	 mov r4,r3
+  59              	.L2:
+  60 002a E3B2     	 uxtb r3,r4
+  61 002c 1A46     	 mov r2,r3
+  62 002e 164B     	 ldr r3,.L7
+  63 0030 83F81028 	 strb r2,[r3,#2064]
+ 105:../Simulink/Subsystem_Brakelight.c **** /* RelationalOperator: '<S1>/Relational Operator1' incorporates:
+ 106:../Simulink/Subsystem_Brakelight.c ****  *  Constant: '<S1>/Constant'
+ 107:../Simulink/Subsystem_Brakelight.c ****  */
+ 108:../Simulink/Subsystem_Brakelight.c **** /*@>c6ec*/VCU_B./*@>c87c*/RelationalOperator1_b/*@>6a7e*/ = (/*@>c465*/5.0/*@>6a7d*/ < /*@>c6f2*/VC
+  64              	 .loc 1 108 0
+  65 0034 144B     	 ldr r3,.L7
+  66 0036 03F5C763 	 add r3,r3,#1592
+  67 003a D3E90023 	 ldrd r2,[r3]
+  68 003e 0121     	 movs r1,#1
+  69 0040 0C46     	 mov r4,r1
+  70 0042 1046     	 mov r0,r2
+  71 0044 1946     	 mov r1,r3
+  72 0046 4FF00002 	 mov r2,#0
+  73 004a 104B     	 ldr r3,.L7+4
+  74 004c FFF7FEFF 	 bl __aeabi_dcmpgt
+  75 0050 0346     	 mov r3,r0
+  76 0052 002B     	 cmp r3,#0
+  77 0054 01D1     	 bne .L3
+  78 0056 0023     	 movs r3,#0
+  79 0058 1C46     	 mov r4,r3
+  80              	.L3:
+  81 005a E3B2     	 uxtb r3,r4
+  82 005c 1A46     	 mov r2,r3
+  83 005e 0A4B     	 ldr r3,.L7
+  84 0060 83F81128 	 strb r2,[r3,#2065]
+ 109:../Simulink/Subsystem_Brakelight.c **** /* Logic: '<S1>/Logical Operator' */
+ 110:../Simulink/Subsystem_Brakelight.c **** /*@>c6f8*/VCU_B./*@>c882*/Brakelight/*@>6a84*/ = (/*@>c6fe*/VCU_B./*@>c885*/RelationalOperator_c/*@
+  85              	 .loc 1 110 0
+  86 0064 084B     	 ldr r3,.L7
+  87 0066 93F81038 	 ldrb r3,[r3,#2064]
+  88 006a 002B     	 cmp r3,#0
+  89 006c 04D1     	 bne .L4
+  90              	 .loc 1 110 0 is_stmt 0 discriminator 2
+  91 006e 064B     	 ldr r3,.L7
+  92 0070 93F81138 	 ldrb r3,[r3,#2065]
+  93 0074 002B     	 cmp r3,#0
+  94 0076 01D0     	 beq .L5
+  95              	.L4:
+  96              	 .loc 1 110 0 discriminator 3
+  97 0078 0123     	 movs r3,#1
+  98 007a 00E0     	 b .L6
+  99              	.L5:
+ 100              	 .loc 1 110 0 discriminator 4
+ 101 007c 0023     	 movs r3,#0
+ 102              	.L6:
+ 103              	 .loc 1 110 0 discriminator 6
+ 104 007e DAB2     	 uxtb r2,r3
+ 105 0080 014B     	 ldr r3,.L7
+ 106 0082 83F81228 	 strb r2,[r3,#2066]
+ 111:../Simulink/Subsystem_Brakelight.c **** 
+ 112:../Simulink/Subsystem_Brakelight.c **** 
+ 113:../Simulink/Subsystem_Brakelight.c **** 
+ 114:../Simulink/Subsystem_Brakelight.c **** 
+ 115:../Simulink/Subsystem_Brakelight.c **** 
+ 116:../Simulink/Subsystem_Brakelight.c ****       
+ 117:../Simulink/Subsystem_Brakelight.c ****   
+ 118:../Simulink/Subsystem_Brakelight.c **** 
+ 119:../Simulink/Subsystem_Brakelight.c **** 
+ 120:../Simulink/Subsystem_Brakelight.c ****         
+ 121:../Simulink/Subsystem_Brakelight.c ****     
+ 122:../Simulink/Subsystem_Brakelight.c ****       
+ 123:../Simulink/Subsystem_Brakelight.c ****           }
+ 107              	 .loc 1 123 0 is_stmt 1 discriminator 6
+ 108 0086 98BD     	 pop {r3,r4,r7,pc}
+ 109              	.L8:
+ 110              	 .align 2
+ 111              	.L7:
+ 112 0088 00000000 	 .word VCU_B
+ 113 008c 00001440 	 .word 1075052544
+ 114              	 .cfi_endproc
+ 115              	.LFE175:
+ 117              	 .text
+ 118              	.Letext0:
+ 119              	 .file 2 "../Simulink/rtwtypes.h"
+ 120              	 .file 3 "c:\\dave\\dave-ide-4.4.2-64bit\\eclipse\\arm-gcc-49\\arm-none-eabi\\include\\machine\\_default_types.h"
+ 121              	 .file 4 "c:\\dave\\dave-ide-4.4.2-64bit\\eclipse\\arm-gcc-49\\arm-none-eabi\\include\\stdint.h"
+ 122              	 .file 5 "../Simulink/VCU.h"
+ 123              	 .file 6 "C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Libraries/CMSIS/Include/cmsis_gcc.h"
+ 124              	 .file 7 "C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Libraries/CMSIS/Include/core_cm4.h"
+ 125              	 .file 8 "C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Libraries/CMSIS/Infineon/XMC4500_series/Include/system_XMC4500.h"
+DEFINED SYMBOLS
+                            *ABS*:00000000 Subsystem_Brakelight.c
+    {standard input}:21     .text.FUNC_Brakelight:00000000 $t
+    {standard input}:26     .text.FUNC_Brakelight:00000000 FUNC_Brakelight
+    {standard input}:112    .text.FUNC_Brakelight:00000088 $d
+                     .debug_frame:00000010 $d
+
+UNDEFINED SYMBOLS
+__aeabi_dcmpgt
+VCU_B

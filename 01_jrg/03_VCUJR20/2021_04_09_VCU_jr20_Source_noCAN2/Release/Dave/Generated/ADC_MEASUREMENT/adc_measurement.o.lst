@@ -1,0 +1,251 @@
+   1              	 .syntax unified
+   2              	 .cpu cortex-m4
+   3              	 .eabi_attribute 27,3
+   4              	 .fpu fpv4-sp-d16
+   5              	 .eabi_attribute 20,1
+   6              	 .eabi_attribute 21,1
+   7              	 .eabi_attribute 23,3
+   8              	 .eabi_attribute 24,1
+   9              	 .eabi_attribute 25,1
+  10              	 .eabi_attribute 26,1
+  11              	 .eabi_attribute 30,4
+  12              	 .eabi_attribute 34,1
+  13              	 .eabi_attribute 18,4
+  14              	 .thumb
+  15              	 .file "adc_measurement.c"
+  16              	 .section .text.ADC_MEASUREMENT_GetAppVersion,"ax",%progbits
+  17              	 .align 1
+  18              	 .global ADC_MEASUREMENT_GetAppVersion
+  19              	 .thumb
+  20              	 .thumb_func
+  22              	ADC_MEASUREMENT_GetAppVersion:
+  23              	 
+  24              	 
+  25              	 
+  26 0000 0423     	 movs r3,#4
+  27 0002 0020     	 movs r0,#0
+  28 0004 63F30700 	 bfi r0,r3,#0,#8
+  29 0008 0123     	 movs r3,#1
+  30 000a 63F30F20 	 bfi r0,r3,#8,#8
+  31 000e 1623     	 movs r3,#22
+  32 0010 63F31740 	 bfi r0,r3,#16,#8
+  33 0014 82B0     	 sub sp,sp,#8
+  34 0016 02B0     	 add sp,sp,#8
+  35              	 
+  36 0018 7047     	 bx lr
+  38              	 .section .text.ADC_MEASUREMENT_Init,"ax",%progbits
+  39              	 .align 1
+  40              	 .global ADC_MEASUREMENT_Init
+  41              	 .thumb
+  42              	 .thumb_func
+  44              	ADC_MEASUREMENT_Init:
+  45              	 
+  46              	 
+  47 0000 F8B5     	 push {r3,r4,r5,r6,r7,lr}
+  48 0002 037E     	 ldrb r3,[r0,#24]
+  49 0004 022B     	 cmp r3,#2
+  50 0006 0446     	 mov r4,r0
+  51 0008 40F09580 	 bne .L3
+  52 000c C068     	 ldr r0,[r0,#12]
+  53 000e FFF7FEFF 	 bl GLOBAL_ADC_Init
+  54 0012 E268     	 ldr r2,[r4,#12]
+  55 0014 A368     	 ldr r3,[r4,#8]
+  56 0016 0546     	 mov r5,r0
+  57 0018 5069     	 ldr r0,[r2,#20]
+  58 001a 1968     	 ldr r1,[r3]
+  59 001c 0022     	 movs r2,#0
+  60 001e 1346     	 mov r3,r2
+  61 0020 FFF7FEFF 	 bl XMC_VADC_GLOBAL_InputClassInit
+  62 0024 E368     	 ldr r3,[r4,#12]
+  63 0026 6168     	 ldr r1,[r4,#4]
+  64 0028 5869     	 ldr r0,[r3,#20]
+  65 002a FFF7FEFF 	 bl XMC_VADC_GLOBAL_BackgroundInit
+  66 002e 0027     	 movs r7,#0
+  67              	.L5:
+  68 0030 2368     	 ldr r3,[r4]
+  69 0032 53F82760 	 ldr r6,[r3,r7,lsl#2]
+  70 0036 B068     	 ldr r0,[r6,#8]
+  71 0038 717C     	 ldrb r1,[r6,#17]
+  72 003a 3268     	 ldr r2,[r6]
+  73 003c FFF7FEFF 	 bl XMC_VADC_GROUP_ChannelInit
+  74 0040 3368     	 ldr r3,[r6]
+  75 0042 7168     	 ldr r1,[r6,#4]
+  76 0044 9B78     	 ldrb r3,[r3,#2]
+  77 0046 B268     	 ldr r2,[r6,#8]
+  78 0048 0968     	 ldr r1,[r1]
+  79 004a 03F00F03 	 and r3,r3,#15
+  80 004e A033     	 adds r3,r3,#160
+  81 0050 42F82310 	 str r1,[r2,r3,lsl#2]
+  82 0054 E368     	 ldr r3,[r4,#12]
+  83 0056 327C     	 ldrb r2,[r6,#16]
+  84 0058 5B69     	 ldr r3,[r3,#20]
+  85 005a 707C     	 ldrb r0,[r6,#17]
+  86 005c 03EB8203 	 add r3,r3,r2,lsl#2
+  87 0060 0122     	 movs r2,#1
+  88 0062 D3F88011 	 ldr r1,[r3,#384]
+  89 0066 8240     	 lsls r2,r2,r0
+  90 0068 F068     	 ldr r0,[r6,#12]
+  91 006a 0A43     	 orrs r2,r2,r1
+  92 006c C3F88021 	 str r2,[r3,#384]
+  93 0070 18B1     	 cbz r0,.L4
+  94 0072 FFF7FEFF 	 bl ANALOG_IO_Init
+  95 0076 2843     	 orrs r0,r0,r5
+  96 0078 C5B2     	 uxtb r5,r0
+  97              	.L4:
+  98 007a 0137     	 adds r7,r7,#1
+  99 007c 0B2F     	 cmp r7,#11
+ 100 007e D7D1     	 bne .L5
+ 101 0080 6368     	 ldr r3,[r4,#4]
+ 102 0082 1B7A     	 ldrb r3,[r3,#8]
+ 103 0084 1B07     	 lsls r3,r3,#28
+ 104 0086 48D5     	 bpl .L7
+ 105 0088 2369     	 ldr r3,[r4,#16]
+ 106 008a 002B     	 cmp r3,#0
+ 107 008c 45D0     	 beq .L7
+ 108 008e 2B4A     	 ldr r2,.L29
+ 109 0090 1E68     	 ldr r6,[r3]
+ 110 0092 D168     	 ldr r1,[r2,#12]
+ 111 0094 5A68     	 ldr r2,[r3,#4]
+ 112 0096 9B68     	 ldr r3,[r3,#8]
+ 113 0098 C1F30221 	 ubfx r1,r1,#8,#3
+ 114 009c C1F1070C 	 rsb ip,r1,#7
+ 115 00a0 BCF1060F 	 cmp ip,#6
+ 116 00a4 F7B2     	 uxtb r7,r6
+ 117 00a6 28BF     	 it cs
+ 118 00a8 4FF0060C 	 movcs ip,#6
+ 119 00ac 09B1     	 cbz r1,.L14
+ 120 00ae 481E     	 subs r0,r1,#1
+ 121 00b0 00E0     	 b .L9
+ 122              	.L14:
+ 123 00b2 0846     	 mov r0,r1
+ 124              	.L9:
+ 125 00b4 0121     	 movs r1,#1
+ 126 00b6 01FA00FE 	 lsl lr,r1,r0
+ 127 00ba 0EF1FF3E 	 add lr,lr,#-1
+ 128 00be 01FA0CF1 	 lsl r1,r1,ip
+ 129 00c2 0EEA030E 	 and lr,lr,r3
+ 130 00c6 4B1E     	 subs r3,r1,#1
+ 131 00c8 1340     	 ands r3,r3,r2
+ 132 00ca 8340     	 lsls r3,r3,r0
+ 133 00cc 7AB2     	 sxtb r2,r7
+ 134 00ce 002A     	 cmp r2,#0
+ 135 00d0 4EEA0303 	 orr r3,lr,r3
+ 136 00d4 4FEA8303 	 lsl r3,r3,#2
+ 137 00d8 ADBF     	 iteet ge
+ 138 00da 02F16042 	 addge r2,r2,#-536870912
+ 139 00de 184A     	 ldrlt r2,.L29+4
+ 140 00e0 06F00F06 	 andlt r6,r6,#15
+ 141 00e4 02F56142 	 addge r2,r2,#57600
+ 142 00e8 B9BF     	 ittee lt
+ 143 00ea DBB2     	 uxtblt r3,r3
+ 144 00ec 9355     	 strblt r3,[r2,r6]
+ 145 00ee DBB2     	 uxtbge r3,r3
+ 146 00f0 82F80033 	 strbge r3,[r2,#768]
+ 147 00f4 E368     	 ldr r3,[r4,#12]
+ 148 00f6 617E     	 ldrb r1,[r4,#25]
+ 149 00f8 5869     	 ldr r0,[r3,#20]
+ 150 00fa FFF7FEFF 	 bl XMC_VADC_GLOBAL_BackgroundSetReqSrcEventInterruptNode
+ 151 00fe 2369     	 ldr r3,[r4,#16]
+ 152 0100 1A68     	 ldr r2,[r3]
+ 153 0102 53B2     	 sxtb r3,r2
+ 154 0104 002B     	 cmp r3,#0
+ 155 0106 08DB     	 blt .L7
+ 156 0108 0121     	 movs r1,#1
+ 157 010a 02F01F02 	 and r2,r2,#31
+ 158 010e 01FA02F2 	 lsl r2,r1,r2
+ 159 0112 5B09     	 lsrs r3,r3,#5
+ 160 0114 0B49     	 ldr r1,.L29+8
+ 161 0116 41F82320 	 str r2,[r1,r3,lsl#2]
+ 162              	.L7:
+ 163 011a 6369     	 ldr r3,[r4,#20]
+ 164 011c 03B1     	 cbz r3,.L12
+ 165 011e 9847     	 blx r3
+ 166              	.L12:
+ 167 0120 A37E     	 ldrb r3,[r4,#26]
+ 168 0122 3BB1     	 cbz r3,.L13
+ 169 0124 E368     	 ldr r3,[r4,#12]
+ 170 0126 5A69     	 ldr r2,[r3,#20]
+ 171 0128 D2F80432 	 ldr r3,[r2,#516]
+ 172 012c 43F40073 	 orr r3,r3,#512
+ 173 0130 C2F80432 	 str r3,[r2,#516]
+ 174              	.L13:
+ 175 0134 2576     	 strb r5,[r4,#24]
+ 176              	.L3:
+ 177 0136 207E     	 ldrb r0,[r4,#24]
+ 178 0138 F8BD     	 pop {r3,r4,r5,r6,r7,pc}
+ 179              	.L30:
+ 180 013a 00BF     	 .align 2
+ 181              	.L29:
+ 182 013c 00ED00E0 	 .word -536810240
+ 183 0140 14ED00E0 	 .word -536810220
+ 184 0144 00E100E0 	 .word -536813312
+ 186              	 .section .text.ADC_MEASUREMENT_StartConversion,"ax",%progbits
+ 187              	 .align 1
+ 188              	 .global ADC_MEASUREMENT_StartConversion
+ 189              	 .thumb
+ 190              	 .thumb_func
+ 192              	ADC_MEASUREMENT_StartConversion:
+ 193              	 
+ 194              	 
+ 195              	 
+ 196 0000 C368     	 ldr r3,[r0,#12]
+ 197 0002 5A69     	 ldr r2,[r3,#20]
+ 198 0004 D2F80432 	 ldr r3,[r2,#516]
+ 199 0008 43F40073 	 orr r3,r3,#512
+ 200 000c C2F80432 	 str r3,[r2,#516]
+ 201 0010 7047     	 bx lr
+ 203              	 .section .text.ADC_MEASUREMENT_GetResult,"ax",%progbits
+ 204              	 .align 1
+ 205              	 .global ADC_MEASUREMENT_GetResult
+ 206              	 .thumb
+ 207              	 .thumb_func
+ 209              	ADC_MEASUREMENT_GetResult:
+ 210              	 
+ 211              	 
+ 212              	 
+ 213 0000 0368     	 ldr r3,[r0]
+ 214 0002 8268     	 ldr r2,[r0,#8]
+ 215 0004 9B78     	 ldrb r3,[r3,#2]
+ 216 0006 03F00F03 	 and r3,r3,#15
+ 217 000a C033     	 adds r3,r3,#192
+ 218 000c 52F82300 	 ldr r0,[r2,r3,lsl#2]
+ 219 0010 80B2     	 uxth r0,r0
+ 220 0012 7047     	 bx lr
+ 222              	 .section .text.ADC_MEASUREMENT_GetDetailedResult,"ax",%progbits
+ 223              	 .align 1
+ 224              	 .global ADC_MEASUREMENT_GetDetailedResult
+ 225              	 .thumb
+ 226              	 .thumb_func
+ 228              	ADC_MEASUREMENT_GetDetailedResult:
+ 229              	 
+ 230              	 
+ 231              	 
+ 232 0000 0368     	 ldr r3,[r0]
+ 233 0002 8268     	 ldr r2,[r0,#8]
+ 234 0004 9B78     	 ldrb r3,[r3,#2]
+ 235 0006 03F00F03 	 and r3,r3,#15
+ 236 000a C033     	 adds r3,r3,#192
+ 237 000c 52F82300 	 ldr r0,[r2,r3,lsl#2]
+ 238 0010 7047     	 bx lr
+ 240              	 .ident "GCC: (GNU Tools for ARM Embedded Processors) 4.9.3 20141119 (release) [ARM/embedded-4_9-branch revision 218278]"
+DEFINED SYMBOLS
+                            *ABS*:00000000 adc_measurement.c
+    {standard input}:17     .text.ADC_MEASUREMENT_GetAppVersion:00000000 $t
+    {standard input}:22     .text.ADC_MEASUREMENT_GetAppVersion:00000000 ADC_MEASUREMENT_GetAppVersion
+    {standard input}:39     .text.ADC_MEASUREMENT_Init:00000000 $t
+    {standard input}:44     .text.ADC_MEASUREMENT_Init:00000000 ADC_MEASUREMENT_Init
+    {standard input}:182    .text.ADC_MEASUREMENT_Init:0000013c $d
+    {standard input}:187    .text.ADC_MEASUREMENT_StartConversion:00000000 $t
+    {standard input}:192    .text.ADC_MEASUREMENT_StartConversion:00000000 ADC_MEASUREMENT_StartConversion
+    {standard input}:204    .text.ADC_MEASUREMENT_GetResult:00000000 $t
+    {standard input}:209    .text.ADC_MEASUREMENT_GetResult:00000000 ADC_MEASUREMENT_GetResult
+    {standard input}:223    .text.ADC_MEASUREMENT_GetDetailedResult:00000000 $t
+    {standard input}:228    .text.ADC_MEASUREMENT_GetDetailedResult:00000000 ADC_MEASUREMENT_GetDetailedResult
+
+UNDEFINED SYMBOLS
+GLOBAL_ADC_Init
+XMC_VADC_GLOBAL_InputClassInit
+XMC_VADC_GLOBAL_BackgroundInit
+XMC_VADC_GROUP_ChannelInit
+ANALOG_IO_Init
+XMC_VADC_GLOBAL_BackgroundSetReqSrcEventInterruptNode

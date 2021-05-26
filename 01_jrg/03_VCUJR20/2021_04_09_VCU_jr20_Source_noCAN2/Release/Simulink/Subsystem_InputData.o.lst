@@ -1,0 +1,686 @@
+   1              	 .syntax unified
+   2              	 .cpu cortex-m4
+   3              	 .eabi_attribute 27,3
+   4              	 .fpu fpv4-sp-d16
+   5              	 .eabi_attribute 20,1
+   6              	 .eabi_attribute 21,1
+   7              	 .eabi_attribute 23,3
+   8              	 .eabi_attribute 24,1
+   9              	 .eabi_attribute 25,1
+  10              	 .eabi_attribute 26,1
+  11              	 .eabi_attribute 30,4
+  12              	 .eabi_attribute 34,1
+  13              	 .eabi_attribute 18,4
+  14              	 .thumb
+  15              	 .file "Subsystem_InputData.c"
+  16              	 .global __aeabi_ui2d
+  17              	 .global __aeabi_dmul
+  18              	 .global __aeabi_dsub
+  19              	 .global __aeabi_dadd
+  20              	 .global __aeabi_dcmpgt
+  21              	 .global __aeabi_dcmplt
+  22              	 .global __aeabi_dcmpeq
+  23              	 .section .text.FUNC_InputData,"ax",%progbits
+  24              	 .align 1
+  25              	 .global FUNC_InputData
+  26              	 .thumb
+  27              	 .thumb_func
+  29              	FUNC_InputData:
+  30              	 
+  31              	 
+  32 0000 2DE9F74F 	 push {r0,r1,r2,r4,r5,r6,r7,r8,r9,r10,fp,lr}
+  33 0004 D44D     	 ldr r5,.L81+24
+  34 0006 D54C     	 ldr r4,.L81+28
+  35 0008 95F83331 	 ldrb r3,[r5,#307]
+  36 000c 95F83021 	 ldrb r2,[r5,#304]
+  37 0010 84F85837 	 strb r3,[r4,#1880]
+  38 0014 DB01     	 lsls r3,r3,#7
+  39 0016 A4F82637 	 strh r3,[r4,#1830]
+  40 001a 02EB4303 	 add r3,r2,r3,lsl#1
+  41 001e C3F34F03 	 ubfx r3,r3,#1,#16
+  42 0022 A4F82837 	 strh r3,[r4,#1832]
+  43 0026 5B00     	 lsls r3,r3,#1
+  44 0028 9BB2     	 uxth r3,r3
+  45 002a 4FF6AD20 	 movw r0,#64173
+  46 002e 5843     	 muls r0,r3,r0
+  47 0030 84F85727 	 strb r2,[r4,#1879]
+  48 0034 A4F81437 	 strh r3,[r4,#1812]
+  49 0038 C4F8DC06 	 str r0,[r4,#1756]
+  50 003c FFF7FEFF 	 bl __aeabi_ui2d
+  51 0040 0022     	 movs r2,#0
+  52 0042 C74B     	 ldr r3,.L81+32
+  53 0044 DFF82893 	 ldr r9,.L81+48
+  54 0048 FFF7FEFF 	 bl __aeabi_dmul
+  55 004c 0022     	 movs r2,#0
+  56 004e C54B     	 ldr r3,.L81+36
+  57 0050 FFF7FEFF 	 bl __aeabi_dsub
+  58 0054 04F59866 	 add r6,r4,#1216
+  59 0058 C6E90001 	 strd r0,[r6]
+  60 005c 95F83101 	 ldrb r0,[r5,#305]
+  61 0060 84F85907 	 strb r0,[r4,#1881]
+  62 0064 FFF7FEFF 	 bl __aeabi_ui2d
+  63 0068 04F59966 	 add r6,r4,#1224
+  64 006c C6E90001 	 strd r0,[r6]
+  65 0070 95F83201 	 ldrb r0,[r5,#306]
+  66 0074 84F85A07 	 strb r0,[r4,#1882]
+  67 0078 FFF7FEFF 	 bl __aeabi_ui2d
+  68 007c 04F59A66 	 add r6,r4,#1232
+  69 0080 C6E90001 	 strd r0,[r6]
+  70 0084 95F83401 	 ldrb r0,[r5,#308]
+  71 0088 84F85B07 	 strb r0,[r4,#1883]
+  72 008c FFF7FEFF 	 bl __aeabi_ui2d
+  73 0090 04F59B66 	 add r6,r4,#1240
+  74 0094 C6E90001 	 strd r0,[r6]
+  75 0098 95F83501 	 ldrb r0,[r5,#309]
+  76 009c 84F85C07 	 strb r0,[r4,#1884]
+  77 00a0 FFF7FEFF 	 bl __aeabi_ui2d
+  78 00a4 04F59C66 	 add r6,r4,#1248
+  79 00a8 C6E90001 	 strd r0,[r6]
+  80 00ac 95F83601 	 ldrb r0,[r5,#310]
+  81 00b0 84F85D07 	 strb r0,[r4,#1885]
+  82 00b4 FFF7FEFF 	 bl __aeabi_ui2d
+  83 00b8 04F59D66 	 add r6,r4,#1256
+  84 00bc C6E90001 	 strd r0,[r6]
+  85 00c0 95F83701 	 ldrb r0,[r5,#311]
+  86 00c4 95F83B31 	 ldrb r3,[r5,#315]
+  87 00c8 84F85F07 	 strb r0,[r4,#1887]
+  88 00cc C001     	 lsls r0,r0,#7
+  89 00ce A4F82A07 	 strh r0,[r4,#1834]
+  90 00d2 03EB4000 	 add r0,r3,r0,lsl#1
+  91 00d6 C0F34F00 	 ubfx r0,r0,#1,#16
+  92 00da A4F82C07 	 strh r0,[r4,#1836]
+  93 00de 4000     	 lsls r0,r0,#1
+  94 00e0 80B2     	 uxth r0,r0
+  95 00e2 A4F81607 	 strh r0,[r4,#1814]
+  96 00e6 C003     	 lsls r0,r0,#15
+  97 00e8 84F85E37 	 strb r3,[r4,#1886]
+  98 00ec C4F8E006 	 str r0,[r4,#1760]
+  99 00f0 FFF7FEFF 	 bl __aeabi_ui2d
+ 100 00f4 0022     	 movs r2,#0
+ 101 00f6 9C4B     	 ldr r3,.L81+40
+ 102 00f8 FFF7FEFF 	 bl __aeabi_dmul
+ 103 00fc 04F59E63 	 add r3,r4,#1264
+ 104 0100 0646     	 mov r6,r0
+ 105 0102 0F46     	 mov r7,r1
+ 106 0104 95F83901 	 ldrb r0,[r5,#313]
+ 107 0108 84F86107 	 strb r0,[r4,#1889]
+ 108 010c C3E90067 	 strd r6,[r3]
+ 109 0110 95F83831 	 ldrb r3,[r5,#312]
+ 110 0114 84F86037 	 strb r3,[r4,#1888]
+ 111 0118 C001     	 lsls r0,r0,#7
+ 112 011a A4F82E07 	 strh r0,[r4,#1838]
+ 113 011e 03EB4000 	 add r0,r3,r0,lsl#1
+ 114 0122 C0F34F00 	 ubfx r0,r0,#1,#16
+ 115 0126 A4F83007 	 strh r0,[r4,#1840]
+ 116 012a 4000     	 lsls r0,r0,#1
+ 117 012c 80B2     	 uxth r0,r0
+ 118 012e A4F81807 	 strh r0,[r4,#1816]
+ 119 0132 C003     	 lsls r0,r0,#15
+ 120 0134 C4F8E406 	 str r0,[r4,#1764]
+ 121 0138 FFF7FEFF 	 bl __aeabi_ui2d
+ 122 013c 0022     	 movs r2,#0
+ 123 013e 8A4B     	 ldr r3,.L81+40
+ 124 0140 FFF7FEFF 	 bl __aeabi_dmul
+ 125 0144 0246     	 mov r2,r0
+ 126 0146 0B46     	 mov r3,r1
+ 127 0148 04F59F61 	 add r1,r4,#1272
+ 128 014c C1E90023 	 strd r2,[r1]
+ 129 0150 3046     	 mov r0,r6
+ 130 0152 3946     	 mov r1,r7
+ 131 0154 FFF7FEFF 	 bl __aeabi_dadd
+ 132 0158 04F5A063 	 add r3,r4,#1280
+ 133 015c C3E90001 	 strd r0,[r3]
+ 134 0160 77A3     	 adr r3,.L81
+ 135 0162 D3E90023 	 ldrd r2,[r3]
+ 136 0166 FFF7FEFF 	 bl __aeabi_dmul
+ 137 016a 04F5A166 	 add r6,r4,#1288
+ 138 016e C6E90001 	 strd r0,[r6]
+ 139 0172 95F83C01 	 ldrb r0,[r5,#316]
+ 140 0176 95F83A31 	 ldrb r3,[r5,#314]
+ 141 017a 84F86307 	 strb r0,[r4,#1891]
+ 142 017e C001     	 lsls r0,r0,#7
+ 143 0180 A4F83207 	 strh r0,[r4,#1842]
+ 144 0184 03EB4000 	 add r0,r3,r0,lsl#1
+ 145 0188 C0F34F00 	 ubfx r0,r0,#1,#16
+ 146 018c A4F83407 	 strh r0,[r4,#1844]
+ 147 0190 4000     	 lsls r0,r0,#1
+ 148 0192 80B2     	 uxth r0,r0
+ 149 0194 A4F81A07 	 strh r0,[r4,#1818]
+ 150 0198 C003     	 lsls r0,r0,#15
+ 151 019a 84F86237 	 strb r3,[r4,#1890]
+ 152 019e C4F8E806 	 str r0,[r4,#1768]
+ 153 01a2 FFF7FEFF 	 bl __aeabi_ui2d
+ 154 01a6 0022     	 movs r2,#0
+ 155 01a8 6F4B     	 ldr r3,.L81+40
+ 156 01aa FFF7FEFF 	 bl __aeabi_dmul
+ 157 01ae 04F5A266 	 add r6,r4,#1296
+ 158 01b2 C6E90001 	 strd r0,[r6]
+ 159 01b6 95F83E01 	 ldrb r0,[r5,#318]
+ 160 01ba 95F83D31 	 ldrb r3,[r5,#317]
+ 161 01be 84F86507 	 strb r0,[r4,#1893]
+ 162 01c2 C001     	 lsls r0,r0,#7
+ 163 01c4 A4F83607 	 strh r0,[r4,#1846]
+ 164 01c8 03EB4000 	 add r0,r3,r0,lsl#1
+ 165 01cc C0F34F00 	 ubfx r0,r0,#1,#16
+ 166 01d0 A4F83807 	 strh r0,[r4,#1848]
+ 167 01d4 4000     	 lsls r0,r0,#1
+ 168 01d6 80B2     	 uxth r0,r0
+ 169 01d8 A4F81C07 	 strh r0,[r4,#1820]
+ 170 01dc C003     	 lsls r0,r0,#15
+ 171 01de 84F86437 	 strb r3,[r4,#1892]
+ 172 01e2 C4F8EC06 	 str r0,[r4,#1772]
+ 173 01e6 FFF7FEFF 	 bl __aeabi_ui2d
+ 174 01ea 0022     	 movs r2,#0
+ 175 01ec 5E4B     	 ldr r3,.L81+40
+ 176 01ee FFF7FEFF 	 bl __aeabi_dmul
+ 177 01f2 04F5A366 	 add r6,r4,#1304
+ 178 01f6 95F83F31 	 ldrb r3,[r5,#319]
+ 179 01fa 84F86637 	 strb r3,[r4,#1894]
+ 180 01fe C6E90001 	 strd r0,[r6]
+ 181 0202 95F84401 	 ldrb r0,[r5,#324]
+ 182 0206 84F86707 	 strb r0,[r4,#1895]
+ 183 020a FFF7FEFF 	 bl __aeabi_ui2d
+ 184 020e 04F5A466 	 add r6,r4,#1312
+ 185 0212 C6E90001 	 strd r0,[r6]
+ 186 0216 95F84301 	 ldrb r0,[r5,#323]
+ 187 021a 84F86807 	 strb r0,[r4,#1896]
+ 188 021e FFF7FEFF 	 bl __aeabi_ui2d
+ 189 0222 04F5A566 	 add r6,r4,#1320
+ 190 0226 C6E90001 	 strd r0,[r6]
+ 191 022a 95F84101 	 ldrb r0,[r5,#321]
+ 192 022e 95F84231 	 ldrb r3,[r5,#322]
+ 193 0232 84F86907 	 strb r0,[r4,#1897]
+ 194 0236 C001     	 lsls r0,r0,#7
+ 195 0238 A4F83A07 	 strh r0,[r4,#1850]
+ 196 023c 03EB4000 	 add r0,r3,r0,lsl#1
+ 197 0240 C0F34F00 	 ubfx r0,r0,#1,#16
+ 198 0244 A4F83C07 	 strh r0,[r4,#1852]
+ 199 0248 4000     	 lsls r0,r0,#1
+ 200 024a 80B2     	 uxth r0,r0
+ 201 024c 84F86A37 	 strb r3,[r4,#1898]
+ 202 0250 A4F81E07 	 strh r0,[r4,#1822]
+ 203 0254 FFF7FEFF 	 bl __aeabi_ui2d
+ 204 0258 04F5A666 	 add r6,r4,#1328
+ 205 025c C6E90001 	 strd r0,[r6]
+ 206 0260 95F84001 	 ldrb r0,[r5,#320]
+ 207 0264 84F86B07 	 strb r0,[r4,#1899]
+ 208 0268 C008     	 lsrs r0,r0,#3
+ 209 026a 84F86C07 	 strb r0,[r4,#1900]
+ 210 026e FFF7FEFF 	 bl __aeabi_ui2d
+ 211 0272 04F5A766 	 add r6,r4,#1336
+ 212 0276 C6E90001 	 strd r0,[r6]
+ 213 027a 95F84501 	 ldrb r0,[r5,#325]
+ 214 027e 84F86D07 	 strb r0,[r4,#1901]
+ 215 0282 C001     	 lsls r0,r0,#7
+ 216 0284 A4F82007 	 strh r0,[r4,#1824]
+ 217 0288 FFF7FEFF 	 bl __aeabi_ui2d
+ 218 028c 0022     	 movs r2,#0
+ 219 028e 4FF07E53 	 mov r3,#1065353216
+ 220 0292 FFF7FEFF 	 bl __aeabi_dmul
+ 221 0296 0022     	 movs r2,#0
+ 222 0298 344B     	 ldr r3,.L81+44
+ 223 029a FFF7FEFF 	 bl __aeabi_dsub
+ 224 029e 04F5A866 	 add r6,r4,#1344
+ 225 02a2 C6E90001 	 strd r0,[r6]
+ 226 02a6 95F84601 	 ldrb r0,[r5,#326]
+ 227 02aa 84F86E07 	 strb r0,[r4,#1902]
+ 228 02ae FFF7FEFF 	 bl __aeabi_ui2d
+ 229 02b2 04F5A963 	 add r3,r4,#1352
+ 230 02b6 C3E90001 	 strd r0,[r3]
+ 231 02ba 23A3     	 adr r3,.L81+8
+ 232 02bc D3E90023 	 ldrd r2,[r3]
+ 233 02c0 FFF7FEFF 	 bl __aeabi_dmul
+ 234 02c4 04F5AA63 	 add r3,r4,#1360
+ 235 02c8 C3E90001 	 strd r0,[r3]
+ 236 02cc 04F5AB63 	 add r3,r4,#1368
+ 237 02d0 C3E90001 	 strd r0,[r3]
+ 238 02d4 95F84701 	 ldrb r0,[r5,#327]
+ 239 02d8 84F86F07 	 strb r0,[r4,#1903]
+ 240 02dc FFF7FEFF 	 bl __aeabi_ui2d
+ 241 02e0 95F84831 	 ldrb r3,[r5,#328]
+ 242 02e4 84F87037 	 strb r3,[r4,#1904]
+ 243 02e8 95F84A31 	 ldrb r3,[r5,#330]
+ 244 02ec 84F87137 	 strb r3,[r4,#1905]
+ 245 02f0 95F84931 	 ldrb r3,[r5,#329]
+ 246 02f4 84F87237 	 strb r3,[r4,#1906]
+ 247 02f8 04F5AC66 	 add r6,r4,#1376
+ 248 02fc 95F84B31 	 ldrb r3,[r5,#331]
+ 249 0300 C6E90001 	 strd r0,[r6]
+ 250 0304 84F87337 	 strb r3,[r4,#1907]
+ 251 0308 D5E91401 	 ldrd r0,[r5,#80]
+ 252 030c 04F5AD63 	 add r3,r4,#1384
+ 253 0310 C3E90001 	 strd r0,[r3]
+ 254 0314 0EA3     	 adr r3,.L81+16
+ 255 0316 D3E90023 	 ldrd r2,[r3]
+ 256 031a FFF7FEFF 	 bl __aeabi_dmul
+ 257 031e 4FF00008 	 mov r8,#0
+ 258 0322 0646     	 mov r6,r0
+ 259 0324 0F46     	 mov r7,r1
+ 260 0326 04F5AE63 	 add r3,r4,#1392
+ 261 032a C3E90067 	 strd r6,[r3]
+ 262 032e 4246     	 mov r2,r8
+ 263 0330 4B46     	 mov r3,r9
+ 264 0332 FFF7FEFF 	 bl __aeabi_dcmpgt
+ 265 0336 04F5AF6A 	 add r10,r4,#1400
+ 266 033a 30BB     	 cbnz r0,.L73
+ 267 033c 1AE0     	 b .L82
+ 268              	.L83:
+ 269 033e 00BF     	 .align 3
+ 270              	.L81:
+ 271 0340 CDCCCCCC 	 .word -858993459
+ 272 0344 CCCCEC3F 	 .word 1072483532
+ 273 0348 7B14AE47 	 .word 1202590843
+ 274 034c E17A843F 	 .word 1065646817
+ 275 0350 FCA9F1D2 	 .word -755914244
+ 276 0354 4D62503F 	 .word 1062232653
+ 277 0358 00000000 	 .word VCU_DW
+ 278 035c 00000000 	 .word VCU_B
+ 279 0360 0000903E 	 .word 1049624576
+ 280 0364 00003440 	 .word 1077149696
+ 281 0368 0000A03E 	 .word 1050673152
+ 282 036c 00004940 	 .word 1078525952
+ 283 0370 00001440 	 .word 1075052544
+ 284              	.L82:
+ 285 0374 4FF00008 	 mov r8,#0
+ 286 0378 4FF00009 	 mov r9,#0
+ 287 037c 3046     	 mov r0,r6
+ 288 037e 3946     	 mov r1,r7
+ 289 0380 4246     	 mov r2,r8
+ 290 0382 4B46     	 mov r3,r9
+ 291 0384 FFF7FEFF 	 bl __aeabi_dcmplt
+ 292 0388 10B1     	 cbz r0,.L60
+ 293              	.L73:
+ 294 038a CAE90089 	 strd r8,[r10]
+ 295 038e 01E0     	 b .L4
+ 296              	.L60:
+ 297 0390 CAE90067 	 strd r6,[r10]
+ 298              	.L4:
+ 299 0394 0127     	 movs r7,#1
+ 300 0396 A04A     	 ldr r2,.L84+32
+ 301 0398 0097     	 str r7,[sp]
+ 302 039a A2F11003 	 sub r3,r2,#16
+ 303 039e DAE90001 	 ldrd r0,[r10]
+ 304 03a2 9E4E     	 ldr r6,.L84+36
+ 305 03a4 DFF89CB2 	 ldr fp,.L84+76
+ 306 03a8 FFF7FEFF 	 bl look1_binlxpw
+ 307 03ac 95F84E31 	 ldrb r3,[r5,#334]
+ 308 03b0 84F87437 	 strb r3,[r4,#1908]
+ 309 03b4 B046     	 mov r8,r6
+ 310 03b6 E8E80201 	 strd r0,[r8],#8
+ 311 03ba 03EB8300 	 add r0,r3,r3,lsl#2
+ 312 03be 03EBC000 	 add r0,r3,r0,lsl#3
+ 313 03c2 8000     	 lsls r0,r0,#2
+ 314 03c4 80B2     	 uxth r0,r0
+ 315 03c6 A4F82207 	 strh r0,[r4,#1826]
+ 316 03ca FFF7FEFF 	 bl __aeabi_ui2d
+ 317 03ce 0022     	 movs r2,#0
+ 318 03d0 934B     	 ldr r3,.L84+40
+ 319 03d2 FFF7FEFF 	 bl __aeabi_dmul
+ 320 03d6 C8E90001 	 strd r0,[r8]
+ 321 03da 95F84C01 	 ldrb r0,[r5,#332]
+ 322 03de 84F87507 	 strb r0,[r4,#1909]
+ 323 03e2 FFF7FEFF 	 bl __aeabi_ui2d
+ 324 03e6 C6E90401 	 strd r0,[r6,#16]
+ 325 03ea 95F84D01 	 ldrb r0,[r5,#333]
+ 326 03ee 84F87607 	 strb r0,[r4,#1910]
+ 327 03f2 FFF7FEFF 	 bl __aeabi_ui2d
+ 328 03f6 C6E90601 	 strd r0,[r6,#24]
+ 329 03fa 95F84F01 	 ldrb r0,[r5,#335]
+ 330 03fe 84F87707 	 strb r0,[r4,#1911]
+ 331 0402 FFF7FEFF 	 bl __aeabi_ui2d
+ 332 0406 C6E90801 	 strd r0,[r6,#32]
+ 333 040a D5E92C01 	 ldrd r0,[r5,#176]
+ 334 040e 7AA3     	 adr r3,.L84
+ 335 0410 D3E90023 	 ldrd r2,[r3]
+ 336 0414 C6E90A01 	 strd r0,[r6,#40]
+ 337 0418 FFF7FEFF 	 bl __aeabi_dmul
+ 338 041c 814A     	 ldr r2,.L84+44
+ 339 041e C6E90C01 	 strd r0,[r6,#48]
+ 340 0422 A2F11003 	 sub r3,r2,#16
+ 341 0426 0097     	 str r7,[sp]
+ 342 0428 FFF7FEFF 	 bl look1_binlxpw
+ 343 042c C6E90E01 	 strd r0,[r6,#56]
+ 344 0430 D5E91A01 	 ldrd r0,[r5,#104]
+ 345 0434 70A3     	 adr r3,.L84
+ 346 0436 D3E90023 	 ldrd r2,[r3]
+ 347 043a C6E91001 	 strd r0,[r6,#64]
+ 348 043e FFF7FEFF 	 bl __aeabi_dmul
+ 349 0442 794A     	 ldr r2,.L84+48
+ 350 0444 C6E91201 	 strd r0,[r6,#72]
+ 351 0448 A2F12003 	 sub r3,r2,#32
+ 352 044c 0097     	 str r7,[sp]
+ 353 044e FFF7FEFF 	 bl look1_binlxpw
+ 354 0452 C6E91401 	 strd r0,[r6,#80]
+ 355 0456 D5E91C01 	 ldrd r0,[r5,#112]
+ 356 045a 67A3     	 adr r3,.L84
+ 357 045c D3E90023 	 ldrd r2,[r3]
+ 358 0460 C6E91601 	 strd r0,[r6,#88]
+ 359 0464 FFF7FEFF 	 bl __aeabi_dmul
+ 360 0468 6E4A     	 ldr r2,.L84+44
+ 361 046a C6E91801 	 strd r0,[r6,#96]
+ 362 046e A2F11003 	 sub r3,r2,#16
+ 363 0472 0097     	 str r7,[sp]
+ 364 0474 FFF7FEFF 	 bl look1_binlxpw
+ 365 0478 95F85031 	 ldrb r3,[r5,#336]
+ 366 047c 84F87837 	 strb r3,[r4,#1912]
+ 367 0480 C6E91A01 	 strd r0,[r6,#104]
+ 368 0484 03EB8302 	 add r2,r3,r3,lsl#2
+ 369 0488 D5E92001 	 ldrd r0,[r5,#128]
+ 370 048c 03EBC203 	 add r3,r3,r2,lsl#3
+ 371 0490 9B00     	 lsls r3,r3,#2
+ 372 0492 A4F82437 	 strh r3,[r4,#1828]
+ 373 0496 C6E91C01 	 strd r0,[r6,#112]
+ 374 049a 57A3     	 adr r3,.L84
+ 375 049c D3E90023 	 ldrd r2,[r3]
+ 376 04a0 FFF7FEFF 	 bl __aeabi_dmul
+ 377 04a4 614A     	 ldr r2,.L84+52
+ 378 04a6 C6E91E01 	 strd r0,[r6,#120]
+ 379 04aa A2F15003 	 sub r3,r2,#80
+ 380 04ae 0097     	 str r7,[sp]
+ 381 04b0 FFF7FEFF 	 bl look1_binlxpw
+ 382 04b4 4FF0000A 	 mov r10,#0
+ 383 04b8 8046     	 mov r8,r0
+ 384 04ba 8946     	 mov r9,r1
+ 385 04bc C6E92089 	 strd r8,[r6,#128]
+ 386 04c0 5246     	 mov r2,r10
+ 387 04c2 5B46     	 mov r3,fp
+ 388 04c4 FFF7FEFF 	 bl __aeabi_dcmpgt
+ 389 04c8 8836     	 adds r6,r6,#136
+ 390 04ca 50B9     	 cbnz r0,.L74
+ 391 04cc 4FF0000A 	 mov r10,#0
+ 392 04d0 4FF0000B 	 mov fp,#0
+ 393 04d4 4046     	 mov r0,r8
+ 394 04d6 4946     	 mov r1,r9
+ 395 04d8 5246     	 mov r2,r10
+ 396 04da 5B46     	 mov r3,fp
+ 397 04dc FFF7FEFF 	 bl __aeabi_dcmplt
+ 398 04e0 10B1     	 cbz r0,.L62
+ 399              	.L74:
+ 400 04e2 C6E900AB 	 strd r10,[r6]
+ 401 04e6 01E0     	 b .L9
+ 402              	.L62:
+ 403 04e8 C6E90089 	 strd r8,[r6]
+ 404              	.L9:
+ 405 04ec D5E91601 	 ldrd r0,[r5,#88]
+ 406 04f0 4F4C     	 ldr r4,.L84+56
+ 407 04f2 04F5C263 	 add r3,r4,#1552
+ 408 04f6 C3E90001 	 strd r0,[r3]
+ 409 04fa 0022     	 movs r2,#0
+ 410 04fc 0023     	 movs r3,#0
+ 411 04fe 4FF00106 	 mov r6,#1
+ 412 0502 FFF7FEFF 	 bl __aeabi_dcmpeq
+ 413 0506 08B1     	 cbz r0,.L12
+ 414 0508 4FF00006 	 mov r6,#0
+ 415              	.L12:
+ 416 050c 84F80E68 	 strb r6,[r4,#2062]
+ 417 0510 D5E91801 	 ldrd r0,[r5,#96]
+ 418 0514 474C     	 ldr r4,.L84+60
+ 419 0516 A046     	 mov r8,r4
+ 420 0518 E8E80201 	 strd r0,[r8],#8
+ 421 051c 36A3     	 adr r3,.L84
+ 422 051e D3E90023 	 ldrd r2,[r3]
+ 423 0522 FFF7FEFF 	 bl __aeabi_dmul
+ 424 0526 0646     	 mov r6,r0
+ 425 0528 0F46     	 mov r7,r1
+ 426 052a C8E90067 	 strd r6,[r8]
+ 427 052e 0FF2D009 	 adr r9,.L84+8
+ 428 0532 D9E90089 	 ldrd r8,[r9]
+ 429 0536 4246     	 mov r2,r8
+ 430 0538 4B46     	 mov r3,r9
+ 431 053a FFF7FEFF 	 bl __aeabi_dcmpgt
+ 432 053e 1034     	 adds r4,r4,#16
+ 433 0540 50B9     	 cbnz r0,.L75
+ 434 0542 DFF8F490 	 ldr r9,.L84+64
+ 435 0546 4FF00008 	 mov r8,#0
+ 436 054a 3046     	 mov r0,r6
+ 437 054c 3946     	 mov r1,r7
+ 438 054e 4246     	 mov r2,r8
+ 439 0550 4B46     	 mov r3,r9
+ 440 0552 FFF7FEFF 	 bl __aeabi_dcmplt
+ 441 0556 10B1     	 cbz r0,.L64
+ 442              	.L75:
+ 443 0558 C4E90089 	 strd r8,[r4]
+ 444 055c 01E0     	 b .L15
+ 445              	.L64:
+ 446 055e C4E90067 	 strd r6,[r4]
+ 447              	.L15:
+ 448 0562 D4E90001 	 ldrd r0,[r4]
+ 449 0566 0022     	 movs r2,#0
+ 450 0568 334B     	 ldr r3,.L84+64
+ 451 056a 344C     	 ldr r4,.L84+68
+ 452 056c FFF7FEFF 	 bl __aeabi_dsub
+ 453 0570 2646     	 mov r6,r4
+ 454 0572 E6E80201 	 strd r0,[r6],#8
+ 455 0576 24A3     	 adr r3,.L84+16
+ 456 0578 D3E90023 	 ldrd r2,[r3]
+ 457 057c FFF7FEFF 	 bl __aeabi_dmul
+ 458 0580 C6E90001 	 strd r0,[r6]
+ 459 0584 D5E91E01 	 ldrd r0,[r5,#120]
+ 460 0588 1BA3     	 adr r3,.L84
+ 461 058a D3E90023 	 ldrd r2,[r3]
+ 462 058e C4E90401 	 strd r0,[r4,#16]
+ 463 0592 FFF7FEFF 	 bl __aeabi_dmul
+ 464 0596 C4E90601 	 strd r0,[r4,#24]
+ 465 059a D5E92201 	 ldrd r0,[r5,#136]
+ 466 059e 16A3     	 adr r3,.L84
+ 467 05a0 D3E90023 	 ldrd r2,[r3]
+ 468 05a4 C4E90801 	 strd r0,[r4,#32]
+ 469 05a8 FFF7FEFF 	 bl __aeabi_dmul
+ 470 05ac 244A     	 ldr r2,.L84+72
+ 471 05ae 0123     	 movs r3,#1
+ 472 05b0 C4E90A01 	 strd r0,[r4,#40]
+ 473 05b4 0093     	 str r3,[sp]
+ 474 05b6 A2F11003 	 sub r3,r2,#16
+ 475 05ba FFF7FEFF 	 bl look1_binlxpw
+ 476 05be 0FF25009 	 adr r9,.L84+24
+ 477 05c2 D9E90089 	 ldrd r8,[r9]
+ 478 05c6 0646     	 mov r6,r0
+ 479 05c8 0F46     	 mov r7,r1
+ 480 05ca C4E90C67 	 strd r6,[r4,#48]
+ 481 05ce 4246     	 mov r2,r8
+ 482 05d0 4B46     	 mov r3,r9
+ 483 05d2 FFF7FEFF 	 bl __aeabi_dcmpgt
+ 484 05d6 3834     	 adds r4,r4,#56
+ 485 05d8 50B9     	 cbnz r0,.L76
+ 486 05da 4FF00008 	 mov r8,#0
+ 487 05de 4FF00009 	 mov r9,#0
+ 488 05e2 3046     	 mov r0,r6
+ 489 05e4 3946     	 mov r1,r7
+ 490 05e6 4246     	 mov r2,r8
+ 491 05e8 4B46     	 mov r3,r9
+ 492 05ea FFF7FEFF 	 bl __aeabi_dcmplt
+ 493 05ee 58B3     	 cbz r0,.L66
+ 494              	.L76:
+ 495 05f0 C4E90089 	 strd r8,[r4]
+ 496 05f4 2AE0     	 b .L20
+ 497              	.L85:
+ 498 05f6 00BF     	 .align 3
+ 499              	.L84:
+ 500 05f8 FCA9F1D2 	 .word -755914244
+ 501 05fc 4D62503F 	 .word 1062232653
+ 502 0600 33333333 	 .word 858993459
+ 503 0604 33331340 	 .word 1075000115
+ 504 0608 B8D77895 	 .word -1787242568
+ 505 060c 3F415040 	 .word 1079001407
+ 506 0610 00000000 	 .word 0
+ 507 0614 0094C140 	 .word 1086428160
+ 508 0618 10000000 	 .word VCU_ConstP+16
+ 509 061c 80050000 	 .word VCU_B+1408
+ 510 0620 0000103F 	 .word 1058013184
+ 511 0624 30000000 	 .word VCU_ConstP+48
+ 512 0628 40000000 	 .word VCU_ConstP+64
+ 513 062c 50000000 	 .word VCU_ConstP+80
+ 514 0630 00000000 	 .word VCU_B
+ 515 0634 18060000 	 .word VCU_B+1560
+ 516 0638 0000E03F 	 .word 1071644672
+ 517 063c 30060000 	 .word VCU_B+1584
+ 518 0640 70000000 	 .word VCU_ConstP+112
+ 519 0644 00003940 	 .word 1077477376
+ 520              	.L66:
+ 521 0648 C4E90067 	 strd r6,[r4]
+ 522              	.L20:
+ 523 064c D5E92401 	 ldrd r0,[r5,#144]
+ 524 0650 594C     	 ldr r4,.L86+16
+ 525 0652 2646     	 mov r6,r4
+ 526 0654 E6E80201 	 strd r0,[r6],#8
+ 527 0658 53A3     	 adr r3,.L86
+ 528 065a D3E90023 	 ldrd r2,[r3]
+ 529 065e FFF7FEFF 	 bl __aeabi_dmul
+ 530 0662 564A     	 ldr r2,.L86+20
+ 531 0664 0123     	 movs r3,#1
+ 532 0666 C6E90001 	 strd r0,[r6]
+ 533 066a 0093     	 str r3,[sp]
+ 534 066c A2F11003 	 sub r3,r2,#16
+ 535 0670 FFF7FEFF 	 bl look1_binlxpw
+ 536 0674 0FF23819 	 adr r9,.L86+8
+ 537 0678 D9E90089 	 ldrd r8,[r9]
+ 538 067c 0646     	 mov r6,r0
+ 539 067e 0F46     	 mov r7,r1
+ 540 0680 C4E90467 	 strd r6,[r4,#16]
+ 541 0684 4246     	 mov r2,r8
+ 542 0686 4B46     	 mov r3,r9
+ 543 0688 FFF7FEFF 	 bl __aeabi_dcmpgt
+ 544 068c 1834     	 adds r4,r4,#24
+ 545 068e 50B9     	 cbnz r0,.L77
+ 546 0690 4FF00008 	 mov r8,#0
+ 547 0694 4FF00009 	 mov r9,#0
+ 548 0698 3046     	 mov r0,r6
+ 549 069a 3946     	 mov r1,r7
+ 550 069c 4246     	 mov r2,r8
+ 551 069e 4B46     	 mov r3,r9
+ 552 06a0 FFF7FEFF 	 bl __aeabi_dcmplt
+ 553 06a4 10B1     	 cbz r0,.L68
+ 554              	.L77:
+ 555 06a6 C4E90089 	 strd r8,[r4]
+ 556 06aa 01E0     	 b .L25
+ 557              	.L68:
+ 558 06ac C4E90067 	 strd r6,[r4]
+ 559              	.L25:
+ 560 06b0 D5E92601 	 ldrd r0,[r5,#152]
+ 561 06b4 424C     	 ldr r4,.L86+24
+ 562 06b6 2646     	 mov r6,r4
+ 563 06b8 E6E80201 	 strd r0,[r6],#8
+ 564 06bc 3AA3     	 adr r3,.L86
+ 565 06be D3E90023 	 ldrd r2,[r3]
+ 566 06c2 FFF7FEFF 	 bl __aeabi_dmul
+ 567 06c6 3F4A     	 ldr r2,.L86+28
+ 568 06c8 0423     	 movs r3,#4
+ 569 06ca C6E90001 	 strd r0,[r6]
+ 570 06ce 0093     	 str r3,[sp]
+ 571 06d0 A2F12803 	 sub r3,r2,#40
+ 572 06d4 FFF7FEFF 	 bl look1_binlxpw
+ 573 06d8 0FF2D409 	 adr r9,.L86+8
+ 574 06dc D9E90089 	 ldrd r8,[r9]
+ 575 06e0 0646     	 mov r6,r0
+ 576 06e2 0F46     	 mov r7,r1
+ 577 06e4 C4E90467 	 strd r6,[r4,#16]
+ 578 06e8 4246     	 mov r2,r8
+ 579 06ea 4B46     	 mov r3,r9
+ 580 06ec FFF7FEFF 	 bl __aeabi_dcmpgt
+ 581 06f0 1834     	 adds r4,r4,#24
+ 582 06f2 50B9     	 cbnz r0,.L78
+ 583 06f4 4FF00008 	 mov r8,#0
+ 584 06f8 4FF00009 	 mov r9,#0
+ 585 06fc 3046     	 mov r0,r6
+ 586 06fe 3946     	 mov r1,r7
+ 587 0700 4246     	 mov r2,r8
+ 588 0702 4B46     	 mov r3,r9
+ 589 0704 FFF7FEFF 	 bl __aeabi_dcmplt
+ 590 0708 10B1     	 cbz r0,.L70
+ 591              	.L78:
+ 592 070a C4E90089 	 strd r8,[r4]
+ 593 070e 01E0     	 b .L30
+ 594              	.L70:
+ 595 0710 C4E90067 	 strd r6,[r4]
+ 596              	.L30:
+ 597 0714 D5E92801 	 ldrd r0,[r5,#160]
+ 598 0718 2B4C     	 ldr r4,.L86+32
+ 599 071a 2646     	 mov r6,r4
+ 600 071c E6E80201 	 strd r0,[r6],#8
+ 601 0720 21A3     	 adr r3,.L86
+ 602 0722 D3E90023 	 ldrd r2,[r3]
+ 603 0726 FFF7FEFF 	 bl __aeabi_dmul
+ 604 072a 284A     	 ldr r2,.L86+36
+ 605 072c 0423     	 movs r3,#4
+ 606 072e C6E90001 	 strd r0,[r6]
+ 607 0732 0093     	 str r3,[sp]
+ 608 0734 A2F12803 	 sub r3,r2,#40
+ 609 0738 FFF7FEFF 	 bl look1_binlxpw
+ 610 073c 0FF27009 	 adr r9,.L86+8
+ 611 0740 D9E90089 	 ldrd r8,[r9]
+ 612 0744 0646     	 mov r6,r0
+ 613 0746 0F46     	 mov r7,r1
+ 614 0748 C4E90467 	 strd r6,[r4,#16]
+ 615 074c 4246     	 mov r2,r8
+ 616 074e 4B46     	 mov r3,r9
+ 617 0750 FFF7FEFF 	 bl __aeabi_dcmpgt
+ 618 0754 1834     	 adds r4,r4,#24
+ 619 0756 50B9     	 cbnz r0,.L79
+ 620 0758 4FF00008 	 mov r8,#0
+ 621 075c 4FF00009 	 mov r9,#0
+ 622 0760 3046     	 mov r0,r6
+ 623 0762 3946     	 mov r1,r7
+ 624 0764 4246     	 mov r2,r8
+ 625 0766 4B46     	 mov r3,r9
+ 626 0768 FFF7FEFF 	 bl __aeabi_dcmplt
+ 627 076c 10B1     	 cbz r0,.L72
+ 628              	.L79:
+ 629 076e C4E90089 	 strd r8,[r4]
+ 630 0772 01E0     	 b .L35
+ 631              	.L72:
+ 632 0774 C4E90067 	 strd r6,[r4]
+ 633              	.L35:
+ 634 0778 D5E92A01 	 ldrd r0,[r5,#168]
+ 635 077c 144C     	 ldr r4,.L86+40
+ 636 077e 04F5DA63 	 add r3,r4,#1744
+ 637 0782 C3E90001 	 strd r0,[r3]
+ 638 0786 0022     	 movs r2,#0
+ 639 0788 0023     	 movs r3,#0
+ 640 078a 4FF00105 	 mov r5,#1
+ 641 078e FFF7FEFF 	 bl __aeabi_dcmpeq
+ 642 0792 08B1     	 cbz r0,.L38
+ 643 0794 4FF00005 	 mov r5,#0
+ 644              	.L38:
+ 645 0798 84F80F58 	 strb r5,[r4,#2063]
+ 646 079c 03B0     	 add sp,sp,#12
+ 647              	 
+ 648 079e BDE8F08F 	 pop {r4,r5,r6,r7,r8,r9,r10,fp,pc}
+ 649              	.L87:
+ 650 07a2 00BFAFF3 	 .align 3
+ 650      0080
+ 651              	.L86:
+ 652 07a8 FCA9F1D2 	 .word -755914244
+ 653 07ac 4D62503F 	 .word 1062232653
+ 654 07b0 00000000 	 .word 0
+ 655 07b4 0094C140 	 .word 1086428160
+ 656 07b8 70060000 	 .word VCU_B+1648
+ 657 07bc 90000000 	 .word VCU_ConstP+144
+ 658 07c0 90060000 	 .word VCU_B+1680
+ 659 07c4 C8000000 	 .word VCU_ConstP+200
+ 660 07c8 B0060000 	 .word VCU_B+1712
+ 661 07cc 18010000 	 .word VCU_ConstP+280
+ 662 07d0 00000000 	 .word VCU_B
+ 664 07d4 AFF30080 	 .ident "GCC: (GNU Tools for ARM Embedded Processors) 4.9.3 20141119 (release) [ARM/embedded-4_9-branch revision 218278]"
+DEFINED SYMBOLS
+                            *ABS*:00000000 Subsystem_InputData.c
+    {standard input}:24     .text.FUNC_InputData:00000000 $t
+    {standard input}:29     .text.FUNC_InputData:00000000 FUNC_InputData
+    {standard input}:271    .text.FUNC_InputData:00000340 $d
+    {standard input}:285    .text.FUNC_InputData:00000374 $t
+    {standard input}:500    .text.FUNC_InputData:000005f8 $d
+    {standard input}:521    .text.FUNC_InputData:00000648 $t
+    {standard input}:652    .text.FUNC_InputData:000007a8 $d
+    {standard input}:664    .text.FUNC_InputData:000007d4 $t
+
+UNDEFINED SYMBOLS
+__aeabi_ui2d
+__aeabi_dmul
+__aeabi_dsub
+__aeabi_dadd
+__aeabi_dcmpgt
+__aeabi_dcmplt
+__aeabi_dcmpeq
+VCU_DW
+VCU_B
+look1_binlxpw
+VCU_ConstP

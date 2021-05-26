@@ -1,0 +1,276 @@
+   1              	 .syntax unified
+   2              	 .cpu cortex-m4
+   3              	 .eabi_attribute 27,3
+   4              	 .fpu fpv4-sp-d16
+   5              	 .eabi_attribute 20,1
+   6              	 .eabi_attribute 21,1
+   7              	 .eabi_attribute 23,3
+   8              	 .eabi_attribute 24,1
+   9              	 .eabi_attribute 25,1
+  10              	 .eabi_attribute 26,1
+  11              	 .eabi_attribute 30,4
+  12              	 .eabi_attribute 34,1
+  13              	 .eabi_attribute 18,4
+  14              	 .thumb
+  15              	 .file "analog_io_conf.c"
+  16              	 .global ANALOG_IO_15
+  17              	 .global ANALOG_IO_14
+  18              	 .global ANALOG_IO_13
+  19              	 .global ANALOG_IO_12
+  20              	 .global ANALOG_IO_11
+  21              	 .global ANALOG_IO_10
+  22              	 .global ANALOG_IO_9
+  23              	 .global ANALOG_IO_8
+  24              	 .global ANALOG_IO_7
+  25              	 .global ANALOG_IO_6
+  26              	 .global ANALOG_IO_5
+  27              	 .global ANALOG_IO_4
+  28              	 .global ANALOG_IO_3
+  29              	 .global ANALOG_IO_2
+  30              	 .global ANALOG_IO_1
+  31              	 .global ANALOG_IO_0
+  32              	 .section .bss.ANALOG_IO_6_state,"aw",%nobits
+  35              	ANALOG_IO_6_state:
+  36 0000 00       	 .space 1
+  37              	 .section .bss.ANALOG_IO_2_state,"aw",%nobits
+  40              	ANALOG_IO_2_state:
+  41 0000 00       	 .space 1
+  42              	 .section .rodata.ANALOG_IO_10,"a",%progbits
+  43              	 .align 2
+  46              	ANALOG_IO_10:
+  47 0000 00000000 	 .word 0
+  48 0004 00000000 	 .word ANALOG_IO_10_state
+  49 0008 008F0248 	 .word 1208127232
+  50 000c 03       	 .byte 3
+  51 000d 000000   	 .space 3
+  52              	 .section .rodata.ANALOG_IO_11,"a",%progbits
+  53              	 .align 2
+  56              	ANALOG_IO_11:
+  57 0000 00000000 	 .word 0
+  58 0004 00000000 	 .word ANALOG_IO_11_state
+  59 0008 008E0248 	 .word 1208126976
+  60 000c 0E       	 .byte 14
+  61 000d 000000   	 .space 3
+  62              	 .section .rodata.ANALOG_IO_12,"a",%progbits
+  63              	 .align 2
+  66              	ANALOG_IO_12:
+  67 0000 00000000 	 .word 0
+  68 0004 00000000 	 .word ANALOG_IO_12_state
+  69 0008 008E0248 	 .word 1208126976
+  70 000c 08       	 .byte 8
+  71 000d 000000   	 .space 3
+  72              	 .section .bss.ANALOG_IO_13_state,"aw",%nobits
+  75              	ANALOG_IO_13_state:
+  76 0000 00       	 .space 1
+  77              	 .section .rodata.ANALOG_IO_13,"a",%progbits
+  78              	 .align 2
+  81              	ANALOG_IO_13:
+  82 0000 00000000 	 .word 0
+  83 0004 00000000 	 .word ANALOG_IO_13_state
+  84 0008 008E0248 	 .word 1208126976
+  85 000c 09       	 .byte 9
+  86 000d 000000   	 .space 3
+  87              	 .section .rodata.ANALOG_IO_14,"a",%progbits
+  88              	 .align 2
+  91              	ANALOG_IO_14:
+  92 0000 00000000 	 .word 0
+  93 0004 00000000 	 .word ANALOG_IO_14_state
+  94 0008 008E0248 	 .word 1208126976
+  95 000c 0C       	 .byte 12
+  96 000d 000000   	 .space 3
+  97              	 .section .rodata.ANALOG_IO_15,"a",%progbits
+  98              	 .align 2
+ 101              	ANALOG_IO_15:
+ 102 0000 00000000 	 .word 0
+ 103 0004 00000000 	 .word ANALOG_IO_15_state
+ 104 0008 008E0248 	 .word 1208126976
+ 105 000c 0D       	 .byte 13
+ 106 000d 000000   	 .space 3
+ 107              	 .section .bss.ANALOG_IO_7_state,"aw",%nobits
+ 110              	ANALOG_IO_7_state:
+ 111 0000 00       	 .space 1
+ 112              	 .section .bss.ANALOG_IO_3_state,"aw",%nobits
+ 115              	ANALOG_IO_3_state:
+ 116 0000 00       	 .space 1
+ 117              	 .section .bss.ANALOG_IO_9_state,"aw",%nobits
+ 120              	ANALOG_IO_9_state:
+ 121 0000 00       	 .space 1
+ 122              	 .section .bss.ANALOG_IO_14_state,"aw",%nobits
+ 125              	ANALOG_IO_14_state:
+ 126 0000 00       	 .space 1
+ 127              	 .section .bss.ANALOG_IO_10_state,"aw",%nobits
+ 130              	ANALOG_IO_10_state:
+ 131 0000 00       	 .space 1
+ 132              	 .section .bss.ANALOG_IO_8_state,"aw",%nobits
+ 135              	ANALOG_IO_8_state:
+ 136 0000 00       	 .space 1
+ 137              	 .section .bss.ANALOG_IO_4_state,"aw",%nobits
+ 140              	ANALOG_IO_4_state:
+ 141 0000 00       	 .space 1
+ 142              	 .section .rodata.ANALOG_IO_6,"a",%progbits
+ 143              	 .align 2
+ 146              	ANALOG_IO_6:
+ 147 0000 00000000 	 .word 0
+ 148 0004 00000000 	 .word ANALOG_IO_6_state
+ 149 0008 008E0248 	 .word 1208126976
+ 150 000c 06       	 .byte 6
+ 151 000d 000000   	 .space 3
+ 152              	 .section .bss.ANALOG_IO_0_state,"aw",%nobits
+ 155              	ANALOG_IO_0_state:
+ 156 0000 00       	 .space 1
+ 157              	 .section .bss.ANALOG_IO_15_state,"aw",%nobits
+ 160              	ANALOG_IO_15_state:
+ 161 0000 00       	 .space 1
+ 162              	 .section .bss.ANALOG_IO_11_state,"aw",%nobits
+ 165              	ANALOG_IO_11_state:
+ 166 0000 00       	 .space 1
+ 167              	 .section .rodata.ANALOG_IO_0,"a",%progbits
+ 168              	 .align 2
+ 171              	ANALOG_IO_0:
+ 172 0000 00000000 	 .word 0
+ 173 0004 00000000 	 .word ANALOG_IO_0_state
+ 174 0008 008E0248 	 .word 1208126976
+ 175 000c 00       	 .byte 0
+ 176 000d 000000   	 .space 3
+ 177              	 .section .rodata.ANALOG_IO_1,"a",%progbits
+ 178              	 .align 2
+ 181              	ANALOG_IO_1:
+ 182 0000 00000000 	 .word 0
+ 183 0004 00000000 	 .word ANALOG_IO_1_state
+ 184 0008 008E0248 	 .word 1208126976
+ 185 000c 01       	 .byte 1
+ 186 000d 000000   	 .space 3
+ 187              	 .section .rodata.ANALOG_IO_2,"a",%progbits
+ 188              	 .align 2
+ 191              	ANALOG_IO_2:
+ 192 0000 00000000 	 .word 0
+ 193 0004 00000000 	 .word ANALOG_IO_2_state
+ 194 0008 008E0248 	 .word 1208126976
+ 195 000c 02       	 .byte 2
+ 196 000d 000000   	 .space 3
+ 197              	 .section .rodata.ANALOG_IO_3,"a",%progbits
+ 198              	 .align 2
+ 201              	ANALOG_IO_3:
+ 202 0000 00000000 	 .word 0
+ 203 0004 00000000 	 .word ANALOG_IO_3_state
+ 204 0008 008E0248 	 .word 1208126976
+ 205 000c 03       	 .byte 3
+ 206 000d 000000   	 .space 3
+ 207              	 .section .rodata.ANALOG_IO_4,"a",%progbits
+ 208              	 .align 2
+ 211              	ANALOG_IO_4:
+ 212 0000 00000000 	 .word 0
+ 213 0004 00000000 	 .word ANALOG_IO_4_state
+ 214 0008 008E0248 	 .word 1208126976
+ 215 000c 04       	 .byte 4
+ 216 000d 000000   	 .space 3
+ 217              	 .section .rodata.ANALOG_IO_5,"a",%progbits
+ 218              	 .align 2
+ 221              	ANALOG_IO_5:
+ 222 0000 00000000 	 .word 0
+ 223 0004 00000000 	 .word ANALOG_IO_5_state
+ 224 0008 008E0248 	 .word 1208126976
+ 225 000c 05       	 .byte 5
+ 226 000d 000000   	 .space 3
+ 227              	 .section .rodata.ANALOG_IO_9,"a",%progbits
+ 228              	 .align 2
+ 231              	ANALOG_IO_9:
+ 232 0000 00000000 	 .word 0
+ 233 0004 00000000 	 .word ANALOG_IO_9_state
+ 234 0008 008F0248 	 .word 1208127232
+ 235 000c 02       	 .byte 2
+ 236 000d 000000   	 .space 3
+ 237              	 .section .rodata.ANALOG_IO_7,"a",%progbits
+ 238              	 .align 2
+ 241              	ANALOG_IO_7:
+ 242 0000 00000000 	 .word 0
+ 243 0004 00000000 	 .word ANALOG_IO_7_state
+ 244 0008 008E0248 	 .word 1208126976
+ 245 000c 07       	 .byte 7
+ 246 000d 000000   	 .space 3
+ 247              	 .section .rodata.ANALOG_IO_8,"a",%progbits
+ 248              	 .align 2
+ 251              	ANALOG_IO_8:
+ 252 0000 00000000 	 .word 0
+ 253 0004 00000000 	 .word ANALOG_IO_8_state
+ 254 0008 008E0248 	 .word 1208126976
+ 255 000c 0F       	 .byte 15
+ 256 000d 000000   	 .space 3
+ 257              	 .section .bss.ANALOG_IO_5_state,"aw",%nobits
+ 260              	ANALOG_IO_5_state:
+ 261 0000 00       	 .space 1
+ 262              	 .section .bss.ANALOG_IO_1_state,"aw",%nobits
+ 265              	ANALOG_IO_1_state:
+ 266 0000 00       	 .space 1
+ 267              	 .section .bss.ANALOG_IO_12_state,"aw",%nobits
+ 270              	ANALOG_IO_12_state:
+ 271 0000 00       	 .space 1
+ 272              	 .ident "GCC: (GNU Tools for ARM Embedded Processors) 4.9.3 20141119 (release) [ARM/embedded-4_9-branch revision 218278]"
+DEFINED SYMBOLS
+                            *ABS*:00000000 analog_io_conf.c
+    {standard input}:101    .rodata.ANALOG_IO_15:00000000 ANALOG_IO_15
+    {standard input}:91     .rodata.ANALOG_IO_14:00000000 ANALOG_IO_14
+    {standard input}:81     .rodata.ANALOG_IO_13:00000000 ANALOG_IO_13
+    {standard input}:66     .rodata.ANALOG_IO_12:00000000 ANALOG_IO_12
+    {standard input}:56     .rodata.ANALOG_IO_11:00000000 ANALOG_IO_11
+    {standard input}:46     .rodata.ANALOG_IO_10:00000000 ANALOG_IO_10
+    {standard input}:231    .rodata.ANALOG_IO_9:00000000 ANALOG_IO_9
+    {standard input}:251    .rodata.ANALOG_IO_8:00000000 ANALOG_IO_8
+    {standard input}:241    .rodata.ANALOG_IO_7:00000000 ANALOG_IO_7
+    {standard input}:146    .rodata.ANALOG_IO_6:00000000 ANALOG_IO_6
+    {standard input}:221    .rodata.ANALOG_IO_5:00000000 ANALOG_IO_5
+    {standard input}:211    .rodata.ANALOG_IO_4:00000000 ANALOG_IO_4
+    {standard input}:201    .rodata.ANALOG_IO_3:00000000 ANALOG_IO_3
+    {standard input}:191    .rodata.ANALOG_IO_2:00000000 ANALOG_IO_2
+    {standard input}:181    .rodata.ANALOG_IO_1:00000000 ANALOG_IO_1
+    {standard input}:171    .rodata.ANALOG_IO_0:00000000 ANALOG_IO_0
+    {standard input}:35     .bss.ANALOG_IO_6_state:00000000 ANALOG_IO_6_state
+    {standard input}:36     .bss.ANALOG_IO_6_state:00000000 $d
+    {standard input}:40     .bss.ANALOG_IO_2_state:00000000 ANALOG_IO_2_state
+    {standard input}:41     .bss.ANALOG_IO_2_state:00000000 $d
+    {standard input}:43     .rodata.ANALOG_IO_10:00000000 $d
+    {standard input}:130    .bss.ANALOG_IO_10_state:00000000 ANALOG_IO_10_state
+    {standard input}:53     .rodata.ANALOG_IO_11:00000000 $d
+    {standard input}:165    .bss.ANALOG_IO_11_state:00000000 ANALOG_IO_11_state
+    {standard input}:63     .rodata.ANALOG_IO_12:00000000 $d
+    {standard input}:270    .bss.ANALOG_IO_12_state:00000000 ANALOG_IO_12_state
+    {standard input}:75     .bss.ANALOG_IO_13_state:00000000 ANALOG_IO_13_state
+    {standard input}:76     .bss.ANALOG_IO_13_state:00000000 $d
+    {standard input}:78     .rodata.ANALOG_IO_13:00000000 $d
+    {standard input}:88     .rodata.ANALOG_IO_14:00000000 $d
+    {standard input}:125    .bss.ANALOG_IO_14_state:00000000 ANALOG_IO_14_state
+    {standard input}:98     .rodata.ANALOG_IO_15:00000000 $d
+    {standard input}:160    .bss.ANALOG_IO_15_state:00000000 ANALOG_IO_15_state
+    {standard input}:110    .bss.ANALOG_IO_7_state:00000000 ANALOG_IO_7_state
+    {standard input}:111    .bss.ANALOG_IO_7_state:00000000 $d
+    {standard input}:115    .bss.ANALOG_IO_3_state:00000000 ANALOG_IO_3_state
+    {standard input}:116    .bss.ANALOG_IO_3_state:00000000 $d
+    {standard input}:120    .bss.ANALOG_IO_9_state:00000000 ANALOG_IO_9_state
+    {standard input}:121    .bss.ANALOG_IO_9_state:00000000 $d
+    {standard input}:126    .bss.ANALOG_IO_14_state:00000000 $d
+    {standard input}:131    .bss.ANALOG_IO_10_state:00000000 $d
+    {standard input}:135    .bss.ANALOG_IO_8_state:00000000 ANALOG_IO_8_state
+    {standard input}:136    .bss.ANALOG_IO_8_state:00000000 $d
+    {standard input}:140    .bss.ANALOG_IO_4_state:00000000 ANALOG_IO_4_state
+    {standard input}:141    .bss.ANALOG_IO_4_state:00000000 $d
+    {standard input}:143    .rodata.ANALOG_IO_6:00000000 $d
+    {standard input}:155    .bss.ANALOG_IO_0_state:00000000 ANALOG_IO_0_state
+    {standard input}:156    .bss.ANALOG_IO_0_state:00000000 $d
+    {standard input}:161    .bss.ANALOG_IO_15_state:00000000 $d
+    {standard input}:166    .bss.ANALOG_IO_11_state:00000000 $d
+    {standard input}:168    .rodata.ANALOG_IO_0:00000000 $d
+    {standard input}:178    .rodata.ANALOG_IO_1:00000000 $d
+    {standard input}:265    .bss.ANALOG_IO_1_state:00000000 ANALOG_IO_1_state
+    {standard input}:188    .rodata.ANALOG_IO_2:00000000 $d
+    {standard input}:198    .rodata.ANALOG_IO_3:00000000 $d
+    {standard input}:208    .rodata.ANALOG_IO_4:00000000 $d
+    {standard input}:218    .rodata.ANALOG_IO_5:00000000 $d
+    {standard input}:260    .bss.ANALOG_IO_5_state:00000000 ANALOG_IO_5_state
+    {standard input}:228    .rodata.ANALOG_IO_9:00000000 $d
+    {standard input}:238    .rodata.ANALOG_IO_7:00000000 $d
+    {standard input}:248    .rodata.ANALOG_IO_8:00000000 $d
+    {standard input}:261    .bss.ANALOG_IO_5_state:00000000 $d
+    {standard input}:266    .bss.ANALOG_IO_1_state:00000000 $d
+    {standard input}:271    .bss.ANALOG_IO_12_state:00000000 $d
+
+NO UNDEFINED SYMBOLS

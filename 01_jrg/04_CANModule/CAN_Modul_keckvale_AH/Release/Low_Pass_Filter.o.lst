@@ -1,0 +1,109 @@
+   1              	 .syntax unified
+   2              	 .cpu cortex-m4
+   3              	 .eabi_attribute 27,3
+   4              	 .fpu fpv4-sp-d16
+   5              	 .eabi_attribute 20,1
+   6              	 .eabi_attribute 21,1
+   7              	 .eabi_attribute 23,3
+   8              	 .eabi_attribute 24,1
+   9              	 .eabi_attribute 25,1
+  10              	 .eabi_attribute 26,1
+  11              	 .eabi_attribute 30,4
+  12              	 .eabi_attribute 34,1
+  13              	 .eabi_attribute 18,4
+  14              	 .thumb
+  15              	 .file "Low_Pass_Filter.c"
+  16              	 .global __aeabi_i2d
+  17              	 .global __aeabi_dmul
+  18              	 .global __aeabi_ui2d
+  19              	 .global __aeabi_dadd
+  20              	 .global __aeabi_d2f
+  21              	 .section .text.Low_Pass_Filter,"ax",%progbits
+  22              	 .align 1
+  23              	 .global Low_Pass_Filter
+  24              	 .thumb
+  25              	 .thumb_func
+  27              	Low_Pass_Filter:
+  28              	 
+  29              	 
+  30 0000 D0B5     	 push {r4,r6,r7,lr}
+  31 0002 0446     	 mov r4,r0
+  32 0004 0088     	 ldrh r0,[r0]
+  33 0006 FFF7FEFF 	 bl __aeabi_i2d
+  34 000a 0FA3     	 adr r3,.L2
+  35 000c D3E90023 	 ldrd r2,[r3]
+  36 0010 FFF7FEFF 	 bl __aeabi_dmul
+  37 0014 0646     	 mov r6,r0
+  38 0016 A068     	 ldr r0,[r4,#8]
+  39 0018 0F46     	 mov r7,r1
+  40 001a FFF7FEFF 	 bl __aeabi_ui2d
+  41 001e 0CA3     	 adr r3,.L2+8
+  42 0020 D3E90023 	 ldrd r2,[r3]
+  43 0024 FFF7FEFF 	 bl __aeabi_dmul
+  44 0028 0246     	 mov r2,r0
+  45 002a 0B46     	 mov r3,r1
+  46 002c 3046     	 mov r0,r6
+  47 002e 3946     	 mov r1,r7
+  48 0030 FFF7FEFF 	 bl __aeabi_dadd
+  49 0034 FFF7FEFF 	 bl __aeabi_d2f
+  50 0038 07EE900A 	 fmsr s15,r0
+  51 003c FCEEE77A 	 ftouizs s15,s15
+  52 0040 6060     	 str r0,[r4,#4]
+  53 0042 C4ED027A 	 fsts s15,[r4,#8]
+  54 0046 D0BD     	 pop {r4,r6,r7,pc}
+  55              	.L3:
+  56              	 .align 3
+  57              	.L2:
+  58 0048 CDCCCCCC 	 .word -858993459
+  59 004c CCCCEC3F 	 .word 1072483532
+  60 0050 98999999 	 .word -1717986920
+  61 0054 9999B93F 	 .word 1069128089
+  63              	 .comm NTC1,44,4
+  64              	 .comm u_OUT2_Meas,44,4
+  65              	 .comm u_OUT1_Meas,44,4
+  66              	 .comm u_5V_ANA_Meas,44,4
+  67              	 .comm u_12V_Meas,44,4
+  68              	 .comm T_Board,44,4
+  69              	 .comm f_LC_RR,44,4
+  70              	 .comm f_LC_RL,44,4
+  71              	 .comm x_RH_RR,44,4
+  72              	 .comm x_RH_RL,44,4
+  73              	 .comm x_DP_RR,44,4
+  74              	 .comm x_DP_RL,44,4
+  75              	 .comm p_Pneu,44,4
+  76              	 .comm p_Oil,44,4
+  77              	 .comm T_Water,44,4
+  78              	 .comm T_Oil,44,4
+  79              	 .comm time,4,4
+  80              	 .comm FilteredValue_old,2,2
+  81              	 .ident "GCC: (GNU Tools for ARM Embedded Processors) 4.9.3 20141119 (release) [ARM/embedded-4_9-branch revision 218278]"
+DEFINED SYMBOLS
+                            *ABS*:00000000 Low_Pass_Filter.c
+    {standard input}:22     .text.Low_Pass_Filter:00000000 $t
+    {standard input}:27     .text.Low_Pass_Filter:00000000 Low_Pass_Filter
+    {standard input}:58     .text.Low_Pass_Filter:00000048 $d
+                            *COM*:0000002c NTC1
+                            *COM*:0000002c u_OUT2_Meas
+                            *COM*:0000002c u_OUT1_Meas
+                            *COM*:0000002c u_5V_ANA_Meas
+                            *COM*:0000002c u_12V_Meas
+                            *COM*:0000002c T_Board
+                            *COM*:0000002c f_LC_RR
+                            *COM*:0000002c f_LC_RL
+                            *COM*:0000002c x_RH_RR
+                            *COM*:0000002c x_RH_RL
+                            *COM*:0000002c x_DP_RR
+                            *COM*:0000002c x_DP_RL
+                            *COM*:0000002c p_Pneu
+                            *COM*:0000002c p_Oil
+                            *COM*:0000002c T_Water
+                            *COM*:0000002c T_Oil
+                            *COM*:00000004 time
+                            *COM*:00000002 FilteredValue_old
+
+UNDEFINED SYMBOLS
+__aeabi_i2d
+__aeabi_dmul
+__aeabi_ui2d
+__aeabi_dadd
+__aeabi_d2f

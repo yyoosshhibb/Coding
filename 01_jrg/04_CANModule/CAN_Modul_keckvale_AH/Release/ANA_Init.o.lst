@@ -1,0 +1,236 @@
+   1              	 .syntax unified
+   2              	 .cpu cortex-m4
+   3              	 .eabi_attribute 27,3
+   4              	 .fpu fpv4-sp-d16
+   5              	 .eabi_attribute 20,1
+   6              	 .eabi_attribute 21,1
+   7              	 .eabi_attribute 23,3
+   8              	 .eabi_attribute 24,1
+   9              	 .eabi_attribute 25,1
+  10              	 .eabi_attribute 26,1
+  11              	 .eabi_attribute 30,4
+  12              	 .eabi_attribute 34,1
+  13              	 .eabi_attribute 18,4
+  14              	 .thumb
+  15              	 .file "ANA_Init.c"
+  16              	 .section .text.ANA_Init,"ax",%progbits
+  17              	 .align 1
+  18              	 .global ANA_Init
+  19              	 .thumb
+  20              	 .thumb_func
+  22              	ANA_Init:
+  23              	 
+  24              	 
+  25 0000 2DE9F843 	 push {r3,r4,r5,r6,r7,r8,r9,lr}
+  26 0004 554B     	 ldr r3,.L2
+  27 0006 564A     	 ldr r2,.L2+4
+  28 0008 DA61     	 str r2,[r3,#28]
+  29 000a 0024     	 movs r4,#0
+  30 000c 0225     	 movs r5,#2
+  31 000e 0526     	 movs r6,#5
+  32 0010 83F82050 	 strb r5,[r3,#32]
+  33 0014 83F82140 	 strb r4,[r3,#33]
+  34 0018 83F82860 	 strb r6,[r3,#40]
+  35 001c 514B     	 ldr r3,.L2+8
+  36 001e 524A     	 ldr r2,.L2+12
+  37 0020 DA61     	 str r2,[r3,#28]
+  38 0022 83F82050 	 strb r5,[r3,#32]
+  39 0026 83F82140 	 strb r4,[r3,#33]
+  40 002a 83F82860 	 strb r6,[r3,#40]
+  41 002e 4F4B     	 ldr r3,.L2+16
+  42 0030 4F4A     	 ldr r2,.L2+20
+  43 0032 DA61     	 str r2,[r3,#28]
+  44 0034 0321     	 movs r1,#3
+  45 0036 4F4A     	 ldr r2,.L2+24
+  46 0038 5A62     	 str r2,[r3,#36]
+  47 003a 83F82010 	 strb r1,[r3,#32]
+  48 003e 83F82140 	 strb r4,[r3,#33]
+  49 0042 83F82860 	 strb r6,[r3,#40]
+  50 0046 4C4B     	 ldr r3,.L2+28
+  51 0048 4C48     	 ldr r0,.L2+32
+  52 004a D861     	 str r0,[r3,#28]
+  53 004c 4C48     	 ldr r0,.L2+36
+  54 004e 5A62     	 str r2,[r3,#36]
+  55 0050 0127     	 movs r7,#1
+  56 0052 83F82010 	 strb r1,[r3,#32]
+  57 0056 DFF88891 	 ldr r9,.L2+132
+  58 005a 83F82140 	 strb r4,[r3,#33]
+  59 005e 4FF00C08 	 mov r8,#12
+  60 0062 83F82860 	 strb r6,[r3,#40]
+  61 0066 474B     	 ldr r3,.L2+40
+  62 0068 C361     	 str r3,[r0,#28]
+  63 006a C0F82490 	 str r9,[r0,#36]
+  64 006e 80F82880 	 strb r8,[r0,#40]
+  65 0072 80F82040 	 strb r4,[r0,#32]
+  66 0076 80F82170 	 strb r7,[r0,#33]
+  67 007a FFF7FEFF 	 bl Powercycle_Calibration
+  68 007e 4248     	 ldr r0,.L2+44
+  69 0080 424B     	 ldr r3,.L2+48
+  70 0082 C361     	 str r3,[r0,#28]
+  71 0084 C0F82490 	 str r9,[r0,#36]
+  72 0088 80F82880 	 strb r8,[r0,#40]
+  73 008c 80F82040 	 strb r4,[r0,#32]
+  74 0090 80F82170 	 strb r7,[r0,#33]
+  75 0094 FFF7FEFF 	 bl Powercycle_Calibration
+  76 0098 3D48     	 ldr r0,.L2+52
+  77 009a 3E4B     	 ldr r3,.L2+56
+  78 009c DFF84491 	 ldr r9,.L2+136
+  79 00a0 C361     	 str r3,[r0,#28]
+  80 00a2 4FF00A08 	 mov r8,#10
+  81 00a6 80F82070 	 strb r7,[r0,#32]
+  82 00aa 80F82170 	 strb r7,[r0,#33]
+  83 00ae C0F82490 	 str r9,[r0,#36]
+  84 00b2 80F82880 	 strb r8,[r0,#40]
+  85 00b6 FFF7FEFF 	 bl Powercycle_Calibration
+  86 00ba 3748     	 ldr r0,.L2+60
+  87 00bc 374B     	 ldr r3,.L2+64
+  88 00be C361     	 str r3,[r0,#28]
+  89 00c0 80F82070 	 strb r7,[r0,#32]
+  90 00c4 80F82170 	 strb r7,[r0,#33]
+  91 00c8 C0F82490 	 str r9,[r0,#36]
+  92 00cc 80F82880 	 strb r8,[r0,#40]
+  93 00d0 FFF7FEFF 	 bl Powercycle_Calibration
+  94 00d4 324B     	 ldr r3,.L2+68
+  95 00d6 334A     	 ldr r2,.L2+72
+  96 00d8 DA61     	 str r2,[r3,#28]
+  97 00da 0422     	 movs r2,#4
+  98 00dc 83F82020 	 strb r2,[r3,#32]
+  99 00e0 83F82170 	 strb r7,[r3,#33]
+ 100 00e4 83F82860 	 strb r6,[r3,#40]
+ 101 00e8 2F4B     	 ldr r3,.L2+76
+ 102 00ea 304A     	 ldr r2,.L2+80
+ 103 00ec DA61     	 str r2,[r3,#28]
+ 104 00ee 83F82060 	 strb r6,[r3,#32]
+ 105 00f2 83F82170 	 strb r7,[r3,#33]
+ 106 00f6 83F82860 	 strb r6,[r3,#40]
+ 107 00fa 2D4B     	 ldr r3,.L2+84
+ 108 00fc 2D4A     	 ldr r2,.L2+88
+ 109 00fe DA61     	 str r2,[r3,#28]
+ 110 0100 0622     	 movs r2,#6
+ 111 0102 83F82020 	 strb r2,[r3,#32]
+ 112 0106 83F82150 	 strb r5,[r3,#33]
+ 113 010a 83F82860 	 strb r6,[r3,#40]
+ 114 010e 2A4B     	 ldr r3,.L2+92
+ 115 0110 2A4A     	 ldr r2,.L2+96
+ 116 0112 DA61     	 str r2,[r3,#28]
+ 117 0114 0722     	 movs r2,#7
+ 118 0116 83F82020 	 strb r2,[r3,#32]
+ 119 011a 83F82150 	 strb r5,[r3,#33]
+ 120 011e 284B     	 ldr r3,.L2+100
+ 121 0120 284A     	 ldr r2,.L2+104
+ 122 0122 DA61     	 str r2,[r3,#28]
+ 123 0124 83F82040 	 strb r4,[r3,#32]
+ 124 0128 83F82150 	 strb r5,[r3,#33]
+ 125 012c 264B     	 ldr r3,.L2+108
+ 126 012e 274A     	 ldr r2,.L2+112
+ 127 0130 DA61     	 str r2,[r3,#28]
+ 128 0132 83F82040 	 strb r4,[r3,#32]
+ 129 0136 83F82150 	 strb r5,[r3,#33]
+ 130 013a 254B     	 ldr r3,.L2+116
+ 131 013c 254A     	 ldr r2,.L2+120
+ 132 013e DA61     	 str r2,[r3,#28]
+ 133 0140 83F82040 	 strb r4,[r3,#32]
+ 134 0144 83F82150 	 strb r5,[r3,#33]
+ 135 0148 234B     	 ldr r3,.L2+124
+ 136 014a 244A     	 ldr r2,.L2+128
+ 137 014c 83F82050 	 strb r5,[r3,#32]
+ 138 0150 83F82140 	 strb r4,[r3,#33]
+ 139 0154 DA61     	 str r2,[r3,#28]
+ 140 0156 BDE8F883 	 pop {r3,r4,r5,r6,r7,r8,r9,pc}
+ 141              	.L3:
+ 142 015a 00BF     	 .align 2
+ 143              	.L2:
+ 144 015c 00000000 	 .word T_Oil
+ 145 0160 00000000 	 .word ADC_MEASUREMENT_Channel_A_handle
+ 146 0164 00000000 	 .word T_Water
+ 147 0168 00000000 	 .word ADC_MEASUREMENT_Channel_B_handle
+ 148 016c 00000000 	 .word p_Oil
+ 149 0170 00000000 	 .word ADC_MEASUREMENT_Channel_C_handle
+ 150 0174 7B140E40 	 .word 1074664571
+ 151 0178 00000000 	 .word p_Pneu
+ 152 017c 00000000 	 .word ADC_MEASUREMENT_Channel_D_handle
+ 153 0180 00000000 	 .word x_DP_RL
+ 154 0184 00000000 	 .word ADC_MEASUREMENT_Channel_F_handle
+ 155 0188 00000000 	 .word x_DP_RR
+ 156 018c 00000000 	 .word ADC_MEASUREMENT_Channel_E_handle
+ 157 0190 00000000 	 .word x_RH_RL
+ 158 0194 00000000 	 .word ADC_MEASUREMENT_Channel_G_handle
+ 159 0198 00000000 	 .word x_RH_RR
+ 160 019c 00000000 	 .word ADC_MEASUREMENT_Channel_H_handle
+ 161 01a0 00000000 	 .word f_LC_RL
+ 162 01a4 00000000 	 .word ADC_MEASUREMENT_Channel_I_handle
+ 163 01a8 00000000 	 .word f_LC_RR
+ 164 01ac 00000000 	 .word ADC_MEASUREMENT_Channel_J_handle
+ 165 01b0 00000000 	 .word T_Board
+ 166 01b4 00000000 	 .word ADC_MEASUREMENT_Channel_L_handle
+ 167 01b8 00000000 	 .word u_12V_Meas
+ 168 01bc 00000000 	 .word ADC_MEASUREMENT_Channel_M_handle
+ 169 01c0 00000000 	 .word u_5V_ANA_Meas
+ 170 01c4 00000000 	 .word ADC_MEASUREMENT_Channel_N_handle
+ 171 01c8 00000000 	 .word u_OUT1_Meas
+ 172 01cc 00000000 	 .word ADC_MEASUREMENT_Channel_O_handle
+ 173 01d0 00000000 	 .word u_OUT2_Meas
+ 174 01d4 00000000 	 .word ADC_MEASUREMENT_Channel_P_handle
+ 175 01d8 00000000 	 .word NTC1
+ 176 01dc 00000000 	 .word ADC_MEASUREMENT_Channel_K_handle
+ 177 01e0 B9FC073C 	 .word 1007156409
+ 178 01e4 295C0F3D 	 .word 1024416809
+ 180              	 .comm NTC1,44,4
+ 181              	 .comm u_OUT2_Meas,44,4
+ 182              	 .comm u_OUT1_Meas,44,4
+ 183              	 .comm u_5V_ANA_Meas,44,4
+ 184              	 .comm u_12V_Meas,44,4
+ 185              	 .comm T_Board,44,4
+ 186              	 .comm f_LC_RR,44,4
+ 187              	 .comm f_LC_RL,44,4
+ 188              	 .comm x_RH_RR,44,4
+ 189              	 .comm x_RH_RL,44,4
+ 190              	 .comm x_DP_RR,44,4
+ 191              	 .comm x_DP_RL,44,4
+ 192              	 .comm p_Pneu,44,4
+ 193              	 .comm p_Oil,44,4
+ 194              	 .comm T_Water,44,4
+ 195              	 .comm T_Oil,44,4
+ 196              	 .comm time,4,4
+ 197              	 .ident "GCC: (GNU Tools for ARM Embedded Processors) 4.9.3 20141119 (release) [ARM/embedded-4_9-branch revision 218278]"
+DEFINED SYMBOLS
+                            *ABS*:00000000 ANA_Init.c
+    {standard input}:17     .text.ANA_Init:00000000 $t
+    {standard input}:22     .text.ANA_Init:00000000 ANA_Init
+    {standard input}:144    .text.ANA_Init:0000015c $d
+                            *COM*:0000002c T_Oil
+                            *COM*:0000002c T_Water
+                            *COM*:0000002c p_Oil
+                            *COM*:0000002c p_Pneu
+                            *COM*:0000002c x_DP_RL
+                            *COM*:0000002c x_DP_RR
+                            *COM*:0000002c x_RH_RL
+                            *COM*:0000002c x_RH_RR
+                            *COM*:0000002c f_LC_RL
+                            *COM*:0000002c f_LC_RR
+                            *COM*:0000002c T_Board
+                            *COM*:0000002c u_12V_Meas
+                            *COM*:0000002c u_5V_ANA_Meas
+                            *COM*:0000002c u_OUT1_Meas
+                            *COM*:0000002c u_OUT2_Meas
+                            *COM*:0000002c NTC1
+                            *COM*:00000004 time
+
+UNDEFINED SYMBOLS
+Powercycle_Calibration
+ADC_MEASUREMENT_Channel_A_handle
+ADC_MEASUREMENT_Channel_B_handle
+ADC_MEASUREMENT_Channel_C_handle
+ADC_MEASUREMENT_Channel_D_handle
+ADC_MEASUREMENT_Channel_F_handle
+ADC_MEASUREMENT_Channel_E_handle
+ADC_MEASUREMENT_Channel_G_handle
+ADC_MEASUREMENT_Channel_H_handle
+ADC_MEASUREMENT_Channel_I_handle
+ADC_MEASUREMENT_Channel_J_handle
+ADC_MEASUREMENT_Channel_L_handle
+ADC_MEASUREMENT_Channel_M_handle
+ADC_MEASUREMENT_Channel_N_handle
+ADC_MEASUREMENT_Channel_O_handle
+ADC_MEASUREMENT_Channel_P_handle
+ADC_MEASUREMENT_Channel_K_handle

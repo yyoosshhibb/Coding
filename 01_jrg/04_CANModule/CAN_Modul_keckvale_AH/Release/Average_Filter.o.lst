@@ -1,0 +1,93 @@
+   1              	 .syntax unified
+   2              	 .cpu cortex-m4
+   3              	 .eabi_attribute 27,3
+   4              	 .fpu fpv4-sp-d16
+   5              	 .eabi_attribute 20,1
+   6              	 .eabi_attribute 21,1
+   7              	 .eabi_attribute 23,3
+   8              	 .eabi_attribute 24,1
+   9              	 .eabi_attribute 25,1
+  10              	 .eabi_attribute 26,1
+  11              	 .eabi_attribute 30,4
+  12              	 .eabi_attribute 34,1
+  13              	 .eabi_attribute 18,4
+  14              	 .thumb
+  15              	 .file "Average_Filter.c"
+  16              	 .section .text.Average_Filter,"ax",%progbits
+  17              	 .align 1
+  18              	 .global Average_Filter
+  19              	 .thumb
+  20              	 .thumb_func
+  22              	Average_Filter:
+  23              	 
+  24              	 
+  25              	 
+  26 0000 0E4B     	 ldr r3,.L5
+  27 0002 0288     	 ldrh r2,[r0]
+  28 0004 1B78     	 ldrb r3,[r3]
+  29 0006 D0ED017A 	 flds s15,[r0,#4]
+  30 000a 00EB4303 	 add r3,r0,r3,lsl#1
+  31 000e 9A81     	 strh r2,[r3,#12]
+  32 0010 00F10A03 	 add r3,r0,#10
+  33 0014 00F11402 	 add r2,r0,#20
+  34              	.L2:
+  35 0018 33F8021F 	 ldrh r1,[r3,#2]!
+  36 001c 07EE101A 	 fmsr s14,r1
+  37 0020 B8EEC77A 	 fsitos s14,s14
+  38 0024 9342     	 cmp r3,r2
+  39 0026 77EE877A 	 fadds s15,s15,s14
+  40 002a F5D1     	 bne .L2
+  41 002c B1EE047A 	 fconsts s14,#20
+  42 0030 C7EE877A 	 fdivs s15,s15,s14
+  43 0034 C0ED017A 	 fsts s15,[r0,#4]
+  44 0038 7047     	 bx lr
+  45              	.L6:
+  46 003a 00BF     	 .align 2
+  47              	.L5:
+  48 003c 00000000 	 .word i_Buffer_average
+  50              	 .comm NTC1,44,4
+  51              	 .comm u_OUT2_Meas,44,4
+  52              	 .comm u_OUT1_Meas,44,4
+  53              	 .comm u_5V_ANA_Meas,44,4
+  54              	 .comm u_12V_Meas,44,4
+  55              	 .comm T_Board,44,4
+  56              	 .comm f_LC_RR,44,4
+  57              	 .comm f_LC_RL,44,4
+  58              	 .comm x_RH_RR,44,4
+  59              	 .comm x_RH_RL,44,4
+  60              	 .comm x_DP_RR,44,4
+  61              	 .comm x_DP_RL,44,4
+  62              	 .comm p_Pneu,44,4
+  63              	 .comm p_Oil,44,4
+  64              	 .comm T_Water,44,4
+  65              	 .comm T_Oil,44,4
+  66              	 .comm time,4,4
+  67              	 .comm i_Buffer_average,1,1
+  68              	 .comm Buffer_Average_Filter,10,2
+  69              	 .ident "GCC: (GNU Tools for ARM Embedded Processors) 4.9.3 20141119 (release) [ARM/embedded-4_9-branch revision 218278]"
+DEFINED SYMBOLS
+                            *ABS*:00000000 Average_Filter.c
+    {standard input}:17     .text.Average_Filter:00000000 $t
+    {standard input}:22     .text.Average_Filter:00000000 Average_Filter
+    {standard input}:48     .text.Average_Filter:0000003c $d
+                            *COM*:00000001 i_Buffer_average
+                            *COM*:0000002c NTC1
+                            *COM*:0000002c u_OUT2_Meas
+                            *COM*:0000002c u_OUT1_Meas
+                            *COM*:0000002c u_5V_ANA_Meas
+                            *COM*:0000002c u_12V_Meas
+                            *COM*:0000002c T_Board
+                            *COM*:0000002c f_LC_RR
+                            *COM*:0000002c f_LC_RL
+                            *COM*:0000002c x_RH_RR
+                            *COM*:0000002c x_RH_RL
+                            *COM*:0000002c x_DP_RR
+                            *COM*:0000002c x_DP_RL
+                            *COM*:0000002c p_Pneu
+                            *COM*:0000002c p_Oil
+                            *COM*:0000002c T_Water
+                            *COM*:0000002c T_Oil
+                            *COM*:00000004 time
+                            *COM*:0000000a Buffer_Average_Filter
+
+NO UNDEFINED SYMBOLS

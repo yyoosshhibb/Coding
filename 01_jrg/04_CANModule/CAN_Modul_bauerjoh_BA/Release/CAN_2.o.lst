@@ -1,0 +1,214 @@
+   1              	 .syntax unified
+   2              	 .cpu cortex-m4
+   3              	 .eabi_attribute 27,3
+   4              	 .fpu fpv4-sp-d16
+   5              	 .eabi_attribute 20,1
+   6              	 .eabi_attribute 21,1
+   7              	 .eabi_attribute 23,3
+   8              	 .eabi_attribute 24,1
+   9              	 .eabi_attribute 25,1
+  10              	 .eabi_attribute 26,1
+  11              	 .eabi_attribute 30,4
+  12              	 .eabi_attribute 34,1
+  13              	 .eabi_attribute 18,4
+  14              	 .thumb
+  15              	 .file "CAN_2.c"
+  16              	 .section .text.CAN2_INIT,"ax",%progbits
+  17              	 .align 1
+  18              	 .global CAN2_INIT
+  19              	 .thumb
+  20              	 .thumb_func
+  22              	CAN2_INIT:
+  23              	 
+  24              	 
+  25              	 
+  26 0000 034B     	 ldr r3,.L2
+  27 0002 197C     	 ldrb r1,[r3,#16]
+  28 0004 1A68     	 ldr r2,[r3]
+  29 0006 0123     	 movs r3,#1
+  30 0008 8B40     	 lsls r3,r3,r1
+  31 000a 5360     	 str r3,[r2,#4]
+  32 000c 7047     	 bx lr
+  33              	.L3:
+  34 000e 00BF     	 .align 2
+  35              	.L2:
+  36 0010 00000000 	 .word CAN_2_RES_CTRL
+  38              	 .section .text.Task_CAN_2_Receive,"ax",%progbits
+  39              	 .align 1
+  40              	 .global Task_CAN_2_Receive
+  41              	 .thumb
+  42              	 .thumb_func
+  44              	Task_CAN_2_Receive:
+  45              	 
+  46              	 
+  47 0000 10B5     	 push {r4,lr}
+  48              	.L7:
+  49 0002 0E4C     	 ldr r4,.L10
+  50 0004 2046     	 mov r0,r4
+  51 0006 FFF7FEFF 	 bl CAN_NODE_MO_Receive
+  52 000a 2368     	 ldr r3,[r4]
+  53 000c 1B7C     	 ldrb r3,[r3,#16]
+  54 000e 802B     	 cmp r3,#128
+  55 0010 0B4B     	 ldr r3,.L10+4
+  56 0012 197C     	 ldrb r1,[r3,#16]
+  57 0014 1A68     	 ldr r2,[r3]
+  58 0016 0CBF     	 ite eq
+  59 0018 0123     	 moveq r3,#1
+  60 001a 4FF48033 	 movne r3,#65536
+  61 001e 8B40     	 lsls r3,r3,r1
+  62 0020 5360     	 str r3,[r2,#4]
+  63 0022 084B     	 ldr r3,.L10+8
+  64 0024 1878     	 ldrb r0,[r3]
+  65 0026 42F21073 	 movw r3,#10000
+  66 002a 4343     	 muls r3,r0,r3
+  67 002c 4FF47A70 	 mov r0,#1000
+  68 0030 B3FBF0F0 	 udiv r0,r3,r0
+  69 0034 FFF7FEFF 	 bl vTaskDelay
+  70 0038 E3E7     	 b .L7
+  71              	.L11:
+  72 003a 00BF     	 .align 2
+  73              	.L10:
+  74 003c 00000000 	 .word CAN_2_LMO_02_Config
+  75 0040 00000000 	 .word Brake_Light
+  76 0044 00000000 	 .word .LANCHOR0
+  78              	 .section .text.Task_CAN_2_Transmit,"ax",%progbits
+  79              	 .align 1
+  80              	 .global Task_CAN_2_Transmit
+  81              	 .thumb
+  82              	 .thumb_func
+  84              	Task_CAN_2_Transmit:
+  85              	 
+  86              	 
+  87 0000 F8B5     	 push {r3,r4,r5,r6,r7,lr}
+  88              	.L13:
+  89 0002 1B4B     	 ldr r3,.L14
+  90 0004 1B49     	 ldr r1,.L14+4
+  91 0006 DA8A     	 ldrh r2,[r3,#22]
+  92 0008 D6B2     	 uxtb r6,r2
+  93 000a 120A     	 lsrs r2,r2,#8
+  94 000c 5A76     	 strb r2,[r3,#25]
+  95 000e 1E76     	 strb r6,[r3,#24]
+  96 0010 CB8A     	 ldrh r3,[r1,#22]
+  97 0012 DDB2     	 uxtb r5,r3
+  98 0014 1B0A     	 lsrs r3,r3,#8
+  99 0016 4B76     	 strb r3,[r1,#25]
+ 100 0018 0D76     	 strb r5,[r1,#24]
+ 101 001a 1749     	 ldr r1,.L14+8
+ 102 001c CC8A     	 ldrh r4,[r1,#22]
+ 103 001e 5FFA84FE 	 uxtb lr,r4
+ 104 0022 240A     	 lsrs r4,r4,#8
+ 105 0024 81F818E0 	 strb lr,[r1,#24]
+ 106 0028 4C76     	 strb r4,[r1,#25]
+ 107 002a 1449     	 ldr r1,.L14+12
+ 108 002c C88A     	 ldrh r0,[r1,#22]
+ 109 002e C7B2     	 uxtb r7,r0
+ 110 0030 000A     	 lsrs r0,r0,#8
+ 111 0032 0F76     	 strb r7,[r1,#24]
+ 112 0034 4876     	 strb r0,[r1,#25]
+ 113 0036 1249     	 ldr r1,.L14+16
+ 114 0038 C870     	 strb r0,[r1,#3]
+ 115 003a 1248     	 ldr r0,.L14+20
+ 116 003c CB71     	 strb r3,[r1,#7]
+ 117 003e 81F800E0 	 strb lr,[r1]
+ 118 0042 4C70     	 strb r4,[r1,#1]
+ 119 0044 8F70     	 strb r7,[r1,#2]
+ 120 0046 0E71     	 strb r6,[r1,#4]
+ 121 0048 4A71     	 strb r2,[r1,#5]
+ 122 004a 8D71     	 strb r5,[r1,#6]
+ 123 004c FFF7FEFF 	 bl CAN_NODE_MO_UpdateData
+ 124 0050 0C48     	 ldr r0,.L14+20
+ 125 0052 FFF7FEFF 	 bl CAN_NODE_MO_Transmit
+ 126 0056 0C4B     	 ldr r3,.L14+24
+ 127 0058 1878     	 ldrb r0,[r3]
+ 128 005a 42F21073 	 movw r3,#10000
+ 129 005e 4343     	 muls r3,r0,r3
+ 130 0060 4FF47A70 	 mov r0,#1000
+ 131 0064 B3FBF0F0 	 udiv r0,r3,r0
+ 132 0068 FFF7FEFF 	 bl vTaskDelay
+ 133 006c C9E7     	 b .L13
+ 134              	.L15:
+ 135 006e 00BF     	 .align 2
+ 136              	.L14:
+ 137 0070 00000000 	 .word x_DP_RL
+ 138 0074 00000000 	 .word x_DP_RR
+ 139 0078 00000000 	 .word f_LC_RL
+ 140 007c 00000000 	 .word f_LC_RR
+ 141 0080 00000000 	 .word .LANCHOR1
+ 142 0084 00000000 	 .word CAN_2_LMO_01_Config
+ 143 0088 00000000 	 .word .LANCHOR2
+ 145              	 .global delay_for_CAN2_Receive
+ 146              	 .global delay_for_CAN2_Transmit
+ 147              	 .global CAN2_data_Tx_LM01
+ 148              	 .comm NTC1,44,4
+ 149              	 .comm u_OUT2_Meas,44,4
+ 150              	 .comm u_OUT1_Meas,44,4
+ 151              	 .comm u_5V_ANA_Meas,44,4
+ 152              	 .comm u_12V_Meas,44,4
+ 153              	 .comm T_Board,44,4
+ 154              	 .comm f_LC_RR,44,4
+ 155              	 .comm f_LC_RL,44,4
+ 156              	 .comm x_RH_RR,44,4
+ 157              	 .comm x_RH_RL,44,4
+ 158              	 .comm x_DP_RR,44,4
+ 159              	 .comm x_DP_RL,44,4
+ 160              	 .comm p_Pneu,44,4
+ 161              	 .comm p_Oil,44,4
+ 162              	 .comm T_Water,44,4
+ 163              	 .comm T_Oil,44,4
+ 164              	 .comm time,4,4
+ 165              	 .section .bss.CAN2_data_Tx_LM01,"aw",%nobits
+ 166              	 .set .LANCHOR1,.+0
+ 169              	CAN2_data_Tx_LM01:
+ 170 0000 00000000 	 .space 8
+ 170      00000000 
+ 171              	 .section .data.delay_for_CAN2_Receive,"aw",%progbits
+ 172              	 .set .LANCHOR0,.+0
+ 175              	delay_for_CAN2_Receive:
+ 176 0000 01       	 .byte 1
+ 177              	 .section .data.delay_for_CAN2_Transmit,"aw",%progbits
+ 178              	 .set .LANCHOR2,.+0
+ 181              	delay_for_CAN2_Transmit:
+ 182 0000 05       	 .byte 5
+ 183              	 .ident "GCC: (GNU Tools for ARM Embedded Processors) 4.9.3 20141119 (release) [ARM/embedded-4_9-branch revision 218278]"
+DEFINED SYMBOLS
+                            *ABS*:00000000 CAN_2.c
+    {standard input}:17     .text.CAN2_INIT:00000000 $t
+    {standard input}:22     .text.CAN2_INIT:00000000 CAN2_INIT
+    {standard input}:36     .text.CAN2_INIT:00000010 $d
+    {standard input}:39     .text.Task_CAN_2_Receive:00000000 $t
+    {standard input}:44     .text.Task_CAN_2_Receive:00000000 Task_CAN_2_Receive
+    {standard input}:74     .text.Task_CAN_2_Receive:0000003c $d
+    {standard input}:79     .text.Task_CAN_2_Transmit:00000000 $t
+    {standard input}:84     .text.Task_CAN_2_Transmit:00000000 Task_CAN_2_Transmit
+    {standard input}:137    .text.Task_CAN_2_Transmit:00000070 $d
+                            *COM*:0000002c x_DP_RL
+                            *COM*:0000002c x_DP_RR
+                            *COM*:0000002c f_LC_RL
+                            *COM*:0000002c f_LC_RR
+    {standard input}:175    .data.delay_for_CAN2_Receive:00000000 delay_for_CAN2_Receive
+    {standard input}:181    .data.delay_for_CAN2_Transmit:00000000 delay_for_CAN2_Transmit
+    {standard input}:169    .bss.CAN2_data_Tx_LM01:00000000 CAN2_data_Tx_LM01
+                            *COM*:0000002c NTC1
+                            *COM*:0000002c u_OUT2_Meas
+                            *COM*:0000002c u_OUT1_Meas
+                            *COM*:0000002c u_5V_ANA_Meas
+                            *COM*:0000002c u_12V_Meas
+                            *COM*:0000002c T_Board
+                            *COM*:0000002c x_RH_RR
+                            *COM*:0000002c x_RH_RL
+                            *COM*:0000002c p_Pneu
+                            *COM*:0000002c p_Oil
+                            *COM*:0000002c T_Water
+                            *COM*:0000002c T_Oil
+                            *COM*:00000004 time
+    {standard input}:170    .bss.CAN2_data_Tx_LM01:00000000 $d
+
+UNDEFINED SYMBOLS
+CAN_2_RES_CTRL
+CAN_NODE_MO_Receive
+vTaskDelay
+CAN_2_LMO_02_Config
+Brake_Light
+CAN_NODE_MO_UpdateData
+CAN_NODE_MO_Transmit
+CAN_2_LMO_01_Config

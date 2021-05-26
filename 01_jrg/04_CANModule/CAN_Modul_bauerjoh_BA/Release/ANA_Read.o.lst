@@ -1,0 +1,217 @@
+   1              	 .syntax unified
+   2              	 .cpu cortex-m4
+   3              	 .eabi_attribute 27,3
+   4              	 .fpu fpv4-sp-d16
+   5              	 .eabi_attribute 20,1
+   6              	 .eabi_attribute 21,1
+   7              	 .eabi_attribute 23,3
+   8              	 .eabi_attribute 24,1
+   9              	 .eabi_attribute 25,1
+  10              	 .eabi_attribute 26,1
+  11              	 .eabi_attribute 30,4
+  12              	 .eabi_attribute 34,1
+  13              	 .eabi_attribute 18,4
+  14              	 .thumb
+  15              	 .file "ANA_Read.c"
+  16              	 .section .text.ANA_Read,"ax",%progbits
+  17              	 .align 1
+  18              	 .global ANA_Read
+  19              	 .thumb
+  20              	 .thumb_func
+  22              	ANA_Read:
+  23              	 
+  24              	 
+  25 0000 10B5     	 push {r4,lr}
+  26 0002 90F82030 	 ldrb r3,[r0,#32]
+  27 0006 012B     	 cmp r3,#1
+  28 0008 0446     	 mov r4,r0
+  29 000a 04D8     	 bhi .L2
+  30              	.L4:
+  31 000c E069     	 ldr r0,[r4,#28]
+  32 000e FFF7FEFF 	 bl ADC_MEASUREMENT_GetResult
+  33 0012 2080     	 strh r0,[r4]
+  34 0014 08E0     	 b .L3
+  35              	.L2:
+  36 0016 DA1E     	 subs r2,r3,#3
+  37 0018 022A     	 cmp r2,#2
+  38 001a F7D9     	 bls .L4
+  39 001c 03F0FB02 	 and r2,r3,#251
+  40 0020 022A     	 cmp r2,#2
+  41 0022 F3D0     	 beq .L4
+  42 0024 072B     	 cmp r3,#7
+  43 0026 F1D0     	 beq .L4
+  44              	.L3:
+  45 0028 94F82130 	 ldrb r3,[r4,#33]
+  46 002c 1BB9     	 cbnz r3,.L5
+  47 002e 2046     	 mov r0,r4
+  48 0030 FFF7FEFF 	 bl Average_Filter
+  49 0034 0EE0     	 b .L6
+  50              	.L5:
+  51 0036 012B     	 cmp r3,#1
+  52 0038 03D1     	 bne .L7
+  53 003a 2046     	 mov r0,r4
+  54 003c FFF7FEFF 	 bl Low_Pass_Filter
+  55 0040 08E0     	 b .L6
+  56              	.L7:
+  57 0042 022B     	 cmp r3,#2
+  58 0044 01BF     	 itttt eq
+  59 0046 2388     	 ldrheq r3,[r4]
+  60 0048 07EE903A 	 fmsreq s15,r3
+  61 004c F8EE677A 	 fuitoseq s15,s15
+  62 0050 C4ED017A 	 fstseq s15,[r4,#4]
+  63              	.L6:
+  64 0054 2046     	 mov r0,r4
+  65 0056 BDE81040 	 pop {r4,lr}
+  66 005a FFF7FEBF 	 b UnitConversion
+  68              	 .section .text.Filter_Time,"ax",%progbits
+  69              	 .align 1
+  70              	 .global Filter_Time
+  71              	 .thumb
+  72              	 .thumb_func
+  74              	Filter_Time:
+  75              	 
+  76              	 
+  77 0000 08B5     	 push {r3,lr}
+  78 0002 0A48     	 ldr r0,.L20
+  79 0004 FFF7FEFF 	 bl TIMER_GetTime
+  80 0008 094B     	 ldr r3,.L20+4
+  81 000a 1860     	 str r0,[r3]
+  82 000c 60B1     	 cbz r0,.L15
+  83 000e 094A     	 ldr r2,.L20+8
+  84 0010 0648     	 ldr r0,.L20
+  85 0012 1378     	 ldrb r3,[r2]
+  86 0014 0133     	 adds r3,r3,#1
+  87 0016 DBB2     	 uxtb r3,r3
+  88 0018 042B     	 cmp r3,#4
+  89 001a 08BF     	 it eq
+  90 001c 0023     	 moveq r3,#0
+  91 001e 1370     	 strb r3,[r2]
+  92 0020 BDE80840 	 pop {r3,lr}
+  93 0024 FFF7FEBF 	 b TIMER_Clear
+  94              	.L15:
+  95 0028 08BD     	 pop {r3,pc}
+  96              	.L21:
+  97 002a 00BF     	 .align 2
+  98              	.L20:
+  99 002c 00000000 	 .word TIMER_0
+ 100 0030 00000000 	 .word time
+ 101 0034 00000000 	 .word i_Buffer_average
+ 103              	 .section .text.Task_ANA_Read,"ax",%progbits
+ 104              	 .align 1
+ 105              	 .global Task_ANA_Read
+ 106              	 .thumb
+ 107              	 .thumb_func
+ 109              	Task_ANA_Read:
+ 110              	 
+ 111              	 
+ 112              	 
+ 113 0000 08B5     	 push {r3,lr}
+ 114              	.L23:
+ 115 0002 1848     	 ldr r0,.L24
+ 116 0004 FFF7FEFF 	 bl ANA_Read
+ 117 0008 1748     	 ldr r0,.L24+4
+ 118 000a FFF7FEFF 	 bl ANA_Read
+ 119 000e 1748     	 ldr r0,.L24+8
+ 120 0010 FFF7FEFF 	 bl ANA_Read
+ 121 0014 1648     	 ldr r0,.L24+12
+ 122 0016 FFF7FEFF 	 bl ANA_Read
+ 123 001a 1648     	 ldr r0,.L24+16
+ 124 001c FFF7FEFF 	 bl ANA_Read
+ 125 0020 1548     	 ldr r0,.L24+20
+ 126 0022 FFF7FEFF 	 bl ANA_Read
+ 127 0026 1548     	 ldr r0,.L24+24
+ 128 0028 FFF7FEFF 	 bl ANA_Read
+ 129 002c 1448     	 ldr r0,.L24+28
+ 130 002e FFF7FEFF 	 bl ANA_Read
+ 131 0032 1448     	 ldr r0,.L24+32
+ 132 0034 FFF7FEFF 	 bl ANA_Read
+ 133 0038 1348     	 ldr r0,.L24+36
+ 134 003a FFF7FEFF 	 bl ANA_Read
+ 135 003e 1348     	 ldr r0,.L24+40
+ 136 0040 FFF7FEFF 	 bl ANA_Read
+ 137 0044 1248     	 ldr r0,.L24+44
+ 138 0046 FFF7FEFF 	 bl ANA_Read
+ 139 004a 1248     	 ldr r0,.L24+48
+ 140 004c FFF7FEFF 	 bl ANA_Read
+ 141 0050 1148     	 ldr r0,.L24+52
+ 142 0052 FFF7FEFF 	 bl ANA_Read
+ 143 0056 1148     	 ldr r0,.L24+56
+ 144 0058 FFF7FEFF 	 bl ANA_Read
+ 145 005c FFF7FEFF 	 bl Filter_Time
+ 146 0060 CFE7     	 b .L23
+ 147              	.L25:
+ 148 0062 00BF     	 .align 2
+ 149              	.L24:
+ 150 0064 00000000 	 .word T_Oil
+ 151 0068 00000000 	 .word T_Water
+ 152 006c 00000000 	 .word T_Board
+ 153 0070 00000000 	 .word p_Oil
+ 154 0074 00000000 	 .word p_Pneu
+ 155 0078 00000000 	 .word x_DP_RL
+ 156 007c 00000000 	 .word x_DP_RR
+ 157 0080 00000000 	 .word x_RH_RL
+ 158 0084 00000000 	 .word x_RH_RR
+ 159 0088 00000000 	 .word f_LC_RL
+ 160 008c 00000000 	 .word f_LC_RR
+ 161 0090 00000000 	 .word u_12V_Meas
+ 162 0094 00000000 	 .word u_5V_ANA_Meas
+ 163 0098 00000000 	 .word u_OUT1_Meas
+ 164 009c 00000000 	 .word u_OUT2_Meas
+ 166              	 .comm i_Buffer_average,1,1
+ 167              	 .comm Buffer_Average_Filter,10,2
+ 168              	 .comm NTC1,44,4
+ 169              	 .comm u_OUT2_Meas,44,4
+ 170              	 .comm u_OUT1_Meas,44,4
+ 171              	 .comm u_5V_ANA_Meas,44,4
+ 172              	 .comm u_12V_Meas,44,4
+ 173              	 .comm T_Board,44,4
+ 174              	 .comm f_LC_RR,44,4
+ 175              	 .comm f_LC_RL,44,4
+ 176              	 .comm x_RH_RR,44,4
+ 177              	 .comm x_RH_RL,44,4
+ 178              	 .comm x_DP_RR,44,4
+ 179              	 .comm x_DP_RL,44,4
+ 180              	 .comm p_Pneu,44,4
+ 181              	 .comm p_Oil,44,4
+ 182              	 .comm T_Water,44,4
+ 183              	 .comm T_Oil,44,4
+ 184              	 .comm time,4,4
+ 185              	 .ident "GCC: (GNU Tools for ARM Embedded Processors) 4.9.3 20141119 (release) [ARM/embedded-4_9-branch revision 218278]"
+DEFINED SYMBOLS
+                            *ABS*:00000000 ANA_Read.c
+    {standard input}:17     .text.ANA_Read:00000000 $t
+    {standard input}:22     .text.ANA_Read:00000000 ANA_Read
+    {standard input}:69     .text.Filter_Time:00000000 $t
+    {standard input}:74     .text.Filter_Time:00000000 Filter_Time
+    {standard input}:99     .text.Filter_Time:0000002c $d
+                            *COM*:00000004 time
+                            *COM*:00000001 i_Buffer_average
+    {standard input}:104    .text.Task_ANA_Read:00000000 $t
+    {standard input}:109    .text.Task_ANA_Read:00000000 Task_ANA_Read
+    {standard input}:150    .text.Task_ANA_Read:00000064 $d
+                            *COM*:0000002c T_Oil
+                            *COM*:0000002c T_Water
+                            *COM*:0000002c T_Board
+                            *COM*:0000002c p_Oil
+                            *COM*:0000002c p_Pneu
+                            *COM*:0000002c x_DP_RL
+                            *COM*:0000002c x_DP_RR
+                            *COM*:0000002c x_RH_RL
+                            *COM*:0000002c x_RH_RR
+                            *COM*:0000002c f_LC_RL
+                            *COM*:0000002c f_LC_RR
+                            *COM*:0000002c u_12V_Meas
+                            *COM*:0000002c u_5V_ANA_Meas
+                            *COM*:0000002c u_OUT1_Meas
+                            *COM*:0000002c u_OUT2_Meas
+                            *COM*:0000000a Buffer_Average_Filter
+                            *COM*:0000002c NTC1
+
+UNDEFINED SYMBOLS
+ADC_MEASUREMENT_GetResult
+Average_Filter
+Low_Pass_Filter
+UnitConversion
+TIMER_GetTime
+TIMER_Clear
+TIMER_0

@@ -1,0 +1,153 @@
+   1              	 .syntax unified
+   2              	 .cpu cortex-m4
+   3              	 .eabi_attribute 27,3
+   4              	 .fpu fpv4-sp-d16
+   5              	 .eabi_attribute 20,1
+   6              	 .eabi_attribute 21,1
+   7              	 .eabi_attribute 23,3
+   8              	 .eabi_attribute 24,1
+   9              	 .eabi_attribute 25,1
+  10              	 .eabi_attribute 26,1
+  11              	 .eabi_attribute 30,4
+  12              	 .eabi_attribute 34,1
+  13              	 .eabi_attribute 18,4
+  14              	 .thumb
+  15              	 .file "main.c"
+  16              	 .section .text.startup.main,"ax",%progbits
+  17              	 .align 1
+  18              	 .global main
+  19              	 .thumb
+  20              	 .thumb_func
+  22              	main:
+  23              	 
+  24              	 
+  25 0000 37B5     	 push {r0,r1,r2,r4,r5,lr}
+  26 0002 0024     	 movs r4,#0
+  27 0004 FFF7FEFF 	 bl DAVE_Init
+  28 0008 FFF7FEFF 	 bl ANA_Init
+  29 000c FFF7FEFF 	 bl CAN1_INIT
+  30 0010 FFF7FEFF 	 bl CAN2_INIT
+  31 0014 1449     	 ldr r1,.L4
+  32 0016 0094     	 str r4,[sp]
+  33 0018 4FF47A72 	 mov r2,#1000
+  34 001c 2346     	 mov r3,r4
+  35 001e 0194     	 str r4,[sp,#4]
+  36 0020 1248     	 ldr r0,.L4+4
+  37 0022 FFF7FEFF 	 bl xTaskCreate
+  38 0026 0123     	 movs r3,#1
+  39 0028 8DE81800 	 stmia sp,{r3,r4}
+  40 002c 1049     	 ldr r1,.L4+8
+  41 002e 1148     	 ldr r0,.L4+12
+  42 0030 4FF47A72 	 mov r2,#1000
+  43 0034 2346     	 mov r3,r4
+  44 0036 0225     	 movs r5,#2
+  45 0038 FFF7FEFF 	 bl xTaskCreate
+  46 003c 0E49     	 ldr r1,.L4+16
+  47 003e 0095     	 str r5,[sp]
+  48 0040 4FF47A72 	 mov r2,#1000
+  49 0044 2346     	 mov r3,r4
+  50 0046 0194     	 str r4,[sp,#4]
+  51 0048 0C48     	 ldr r0,.L4+20
+  52 004a FFF7FEFF 	 bl xTaskCreate
+  53 004e 0C49     	 ldr r1,.L4+24
+  54 0050 0095     	 str r5,[sp]
+  55 0052 4FF47A72 	 mov r2,#1000
+  56 0056 2346     	 mov r3,r4
+  57 0058 0194     	 str r4,[sp,#4]
+  58 005a 0A48     	 ldr r0,.L4+28
+  59 005c FFF7FEFF 	 bl xTaskCreate
+  60 0060 FFF7FEFF 	 bl vTaskStartScheduler
+  61              	.L2:
+  62 0064 FEE7     	 b .L2
+  63              	.L5:
+  64 0066 00BF     	 .align 2
+  65              	.L4:
+  66 0068 00000000 	 .word .LC0
+  67 006c 00000000 	 .word Task_ANA_Read
+  68 0070 0A000000 	 .word .LC1
+  69 0074 00000000 	 .word Task_CAN_2_Receive
+  70 0078 1C000000 	 .word .LC2
+  71 007c 00000000 	 .word Task_CAN_2_Transmit
+  72 0080 2F000000 	 .word .LC3
+  73 0084 00000000 	 .word Task_CAN_1_Transmit
+  75              	 .comm value,2,2
+  76              	 .comm i_Buffer_average,1,1
+  77              	 .comm Buffer_Average_Filter,10,2
+  78              	 .comm NTC1,44,4
+  79              	 .comm u_OUT2_Meas,44,4
+  80              	 .comm u_OUT1_Meas,44,4
+  81              	 .comm u_5V_ANA_Meas,44,4
+  82              	 .comm u_12V_Meas,44,4
+  83              	 .comm T_Board,44,4
+  84              	 .comm f_LC_RR,44,4
+  85              	 .comm f_LC_RL,44,4
+  86              	 .comm x_RH_RR,44,4
+  87              	 .comm x_RH_RL,44,4
+  88              	 .comm x_DP_RR,44,4
+  89              	 .comm x_DP_RL,44,4
+  90              	 .comm p_Pneu,44,4
+  91              	 .comm p_Oil,44,4
+  92              	 .comm T_Water,44,4
+  93              	 .comm T_Oil,44,4
+  94              	 .comm time,4,4
+  95              	 .section .rodata.str1.1,"aMS",%progbits,1
+  96              	.LC0:
+  97 0000 52656164 	 .ascii "Read_Task\000"
+  97      5F546173 
+  97      6B00
+  98              	.LC1:
+  99 000a 43616E32 	 .ascii "Can2_Receive_Task\000"
+  99      5F526563 
+  99      65697665 
+  99      5F546173 
+  99      6B00
+ 100              	.LC2:
+ 101 001c 43616E32 	 .ascii "Can2_Transmit_Task\000"
+ 101      5F547261 
+ 101      6E736D69 
+ 101      745F5461 
+ 101      736B00
+ 102              	.LC3:
+ 103 002f 43616E31 	 .ascii "Can1_Transmit_Task\000"
+ 103      5F547261 
+ 103      6E736D69 
+ 103      745F5461 
+ 103      736B00
+ 104              	 .ident "GCC: (GNU Tools for ARM Embedded Processors) 4.9.3 20141119 (release) [ARM/embedded-4_9-branch revision 218278]"
+DEFINED SYMBOLS
+                            *ABS*:00000000 main.c
+    {standard input}:17     .text.startup.main:00000000 $t
+    {standard input}:22     .text.startup.main:00000000 main
+    {standard input}:66     .text.startup.main:00000068 $d
+                            *COM*:00000002 value
+                            *COM*:00000001 i_Buffer_average
+                            *COM*:0000000a Buffer_Average_Filter
+                            *COM*:0000002c NTC1
+                            *COM*:0000002c u_OUT2_Meas
+                            *COM*:0000002c u_OUT1_Meas
+                            *COM*:0000002c u_5V_ANA_Meas
+                            *COM*:0000002c u_12V_Meas
+                            *COM*:0000002c T_Board
+                            *COM*:0000002c f_LC_RR
+                            *COM*:0000002c f_LC_RL
+                            *COM*:0000002c x_RH_RR
+                            *COM*:0000002c x_RH_RL
+                            *COM*:0000002c x_DP_RR
+                            *COM*:0000002c x_DP_RL
+                            *COM*:0000002c p_Pneu
+                            *COM*:0000002c p_Oil
+                            *COM*:0000002c T_Water
+                            *COM*:0000002c T_Oil
+                            *COM*:00000004 time
+
+UNDEFINED SYMBOLS
+DAVE_Init
+ANA_Init
+CAN1_INIT
+CAN2_INIT
+xTaskCreate
+vTaskStartScheduler
+Task_ANA_Read
+Task_CAN_2_Receive
+Task_CAN_2_Transmit
+Task_CAN_1_Transmit

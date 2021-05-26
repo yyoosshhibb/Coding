@@ -1,0 +1,87 @@
+   1              	 .syntax unified
+   2              	 .cpu cortex-m4
+   3              	 .eabi_attribute 27,3
+   4              	 .fpu fpv4-sp-d16
+   5              	 .eabi_attribute 20,1
+   6              	 .eabi_attribute 21,1
+   7              	 .eabi_attribute 23,3
+   8              	 .eabi_attribute 24,1
+   9              	 .eabi_attribute 25,1
+  10              	 .eabi_attribute 26,1
+  11              	 .eabi_attribute 30,4
+  12              	 .eabi_attribute 34,1
+  13              	 .eabi_attribute 18,4
+  14              	 .thumb
+  15              	 .file "DAVE.c"
+  16              	 .section .text.DAVE_Init,"ax",%progbits
+  17              	 .align 1
+  18              	 .weak DAVE_Init
+  19              	 .thumb
+  20              	 .thumb_func
+  22              	DAVE_Init:
+  23              	 
+  24              	 
+  25 0000 08B5     	 push {r3,lr}
+  26 0002 1348     	 ldr r0,.L10
+  27 0004 FFF7FEFF 	 bl CLOCK_XMC4_Init
+  28 0008 00BB     	 cbnz r0,.L8
+  29 000a 1248     	 ldr r0,.L10+4
+  30 000c FFF7FEFF 	 bl ADC_MEASUREMENT_Init
+  31 0010 E0B9     	 cbnz r0,.L8
+  32 0012 1148     	 ldr r0,.L10+8
+  33 0014 FFF7FEFF 	 bl TIMER_Init
+  34 0018 C0B9     	 cbnz r0,.L8
+  35 001a 1048     	 ldr r0,.L10+12
+  36 001c FFF7FEFF 	 bl CAN_NODE_Init
+  37 0020 A0B9     	 cbnz r0,.L8
+  38 0022 0F48     	 ldr r0,.L10+16
+  39 0024 FFF7FEFF 	 bl DIGITAL_IO_Init
+  40 0028 80B9     	 cbnz r0,.L8
+  41 002a 0E48     	 ldr r0,.L10+20
+  42 002c FFF7FEFF 	 bl DIGITAL_IO_Init
+  43 0030 60B9     	 cbnz r0,.L8
+  44 0032 0D48     	 ldr r0,.L10+24
+  45 0034 FFF7FEFF 	 bl DIGITAL_IO_Init
+  46 0038 40B9     	 cbnz r0,.L8
+  47 003a 0C48     	 ldr r0,.L10+28
+  48 003c FFF7FEFF 	 bl CAN_NODE_Init
+  49 0040 20B9     	 cbnz r0,.L8
+  50 0042 0B48     	 ldr r0,.L10+32
+  51 0044 BDE80840 	 pop {r3,lr}
+  52 0048 FFF7FEBF 	 b DIGITAL_IO_Init
+  53              	.L8:
+  54 004c 08BD     	 pop {r3,pc}
+  55              	.L11:
+  56 004e 00BF     	 .align 2
+  57              	.L10:
+  58 0050 00000000 	 .word CLOCK_XMC4_0
+  59 0054 00000000 	 .word ADC_MEASUREMENT_0
+  60 0058 00000000 	 .word TIMER_0
+  61 005c 00000000 	 .word CAN_2
+  62 0060 00000000 	 .word Brake_Light
+  63 0064 00000000 	 .word CAN_2_RES_CTRL
+  64 0068 00000000 	 .word CAN_1_RES_CTRL
+  65 006c 00000000 	 .word CAN_1
+  66 0070 00000000 	 .word Debug_LED
+  68              	 .ident "GCC: (GNU Tools for ARM Embedded Processors) 4.9.3 20141119 (release) [ARM/embedded-4_9-branch revision 218278]"
+DEFINED SYMBOLS
+                            *ABS*:00000000 DAVE.c
+    {standard input}:17     .text.DAVE_Init:00000000 $t
+    {standard input}:22     .text.DAVE_Init:00000000 DAVE_Init
+    {standard input}:58     .text.DAVE_Init:00000050 $d
+
+UNDEFINED SYMBOLS
+CLOCK_XMC4_Init
+ADC_MEASUREMENT_Init
+TIMER_Init
+CAN_NODE_Init
+DIGITAL_IO_Init
+CLOCK_XMC4_0
+ADC_MEASUREMENT_0
+TIMER_0
+CAN_2
+Brake_Light
+CAN_2_RES_CTRL
+CAN_1_RES_CTRL
+CAN_1
+Debug_LED

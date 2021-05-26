@@ -1,0 +1,232 @@
+   1              	 .syntax unified
+   2              	 .cpu cortex-m4
+   3              	 .eabi_attribute 27,3
+   4              	 .fpu fpv4-sp-d16
+   5              	 .eabi_attribute 20,1
+   6              	 .eabi_attribute 21,1
+   7              	 .eabi_attribute 23,3
+   8              	 .eabi_attribute 24,1
+   9              	 .eabi_attribute 25,1
+  10              	 .eabi_attribute 26,1
+  11              	 .eabi_attribute 30,4
+  12              	 .eabi_attribute 34,1
+  13              	 .eabi_attribute 18,4
+  14              	 .thumb
+  15              	 .file "cpu_ctrl_xmc4.c"
+  16              	 .section .text.CPU_CTRL_XMC4_GetAppVersion,"ax",%progbits
+  17              	 .align 1
+  18              	 .global CPU_CTRL_XMC4_GetAppVersion
+  19              	 .thumb
+  20              	 .thumb_func
+  22              	CPU_CTRL_XMC4_GetAppVersion:
+  23              	 
+  24              	 
+  25              	 
+  26 0000 0023     	 movs r3,#0
+  27 0002 1846     	 mov r0,r3
+  28 0004 0422     	 movs r2,#4
+  29 0006 62F30700 	 bfi r0,r2,#0,#8
+  30 000a 63F30F20 	 bfi r0,r3,#8,#8
+  31 000e 1023     	 movs r3,#16
+  32 0010 63F31740 	 bfi r0,r3,#16,#8
+  33 0014 82B0     	 sub sp,sp,#8
+  34 0016 02B0     	 add sp,sp,#8
+  35              	 
+  36 0018 7047     	 bx lr
+  38              	 .section .text.CPU_CTRL_XMC4_Init,"ax",%progbits
+  39              	 .align 1
+  40              	 .global CPU_CTRL_XMC4_Init
+  41              	 .thumb
+  42              	 .thumb_func
+  44              	CPU_CTRL_XMC4_Init:
+  45              	 
+  46              	 
+  47              	 
+  48 0000 0020     	 movs r0,#0
+  49 0002 7047     	 bx lr
+  51              	 .section .text.CPU_CTRL_XMC4_MPU_Enable,"ax",%progbits
+  52              	 .align 1
+  53              	 .global CPU_CTRL_XMC4_MPU_Enable
+  54              	 .thumb
+  55              	 .thumb_func
+  57              	CPU_CTRL_XMC4_MPU_Enable:
+  58              	 
+  59              	 
+  60              	 
+  61 0000 044B     	 ldr r3,.L4
+  62 0002 40F00100 	 orr r0,r0,#1
+  63 0006 5860     	 str r0,[r3,#4]
+  64              	
+  65 0008 BFF34F8F 	 dsb 0xF
+  66              	
+  67              	
+  68 000c BFF36F8F 	 isb 0xF
+  69              	
+  70              	 .thumb
+  71 0010 7047     	 bx lr
+  72              	.L5:
+  73 0012 00BF     	 .align 2
+  74              	.L4:
+  75 0014 90ED00E0 	 .word -536810096
+  77              	 .section .text.CPU_CTRL_XMC4_MPU_Disable,"ax",%progbits
+  78              	 .align 1
+  79              	 .global CPU_CTRL_XMC4_MPU_Disable
+  80              	 .thumb
+  81              	 .thumb_func
+  83              	CPU_CTRL_XMC4_MPU_Disable:
+  84              	 
+  85              	 
+  86              	 
+  87              	
+  88 0000 BFF35F8F 	 dmb 0xF
+  89              	
+  90              	 .thumb
+  91 0004 014B     	 ldr r3,.L7
+  92 0006 0022     	 movs r2,#0
+  93 0008 5A60     	 str r2,[r3,#4]
+  94 000a 7047     	 bx lr
+  95              	.L8:
+  96              	 .align 2
+  97              	.L7:
+  98 000c 90ED00E0 	 .word -536810096
+ 100              	 .section .text.__HardFault_Handler,"ax",%progbits
+ 101              	 .align 1
+ 102              	 .global __HardFault_Handler
+ 103              	 .thumb
+ 104              	 .thumb_func
+ 106              	__HardFault_Handler:
+ 107              	 
+ 108              	 
+ 109              	 
+ 110 0000 154B     	 ldr r3,.L10
+ 111 0002 164A     	 ldr r2,.L10+4
+ 112 0004 996A     	 ldr r1,[r3,#40]
+ 113 0006 1160     	 str r1,[r2]
+ 114 0008 154A     	 ldr r2,.L10+8
+ 115 000a D96A     	 ldr r1,[r3,#44]
+ 116 000c 1160     	 str r1,[r2]
+ 117 000e 154A     	 ldr r2,.L10+12
+ 118 0010 196B     	 ldr r1,[r3,#48]
+ 119 0012 1160     	 str r1,[r2]
+ 120 0014 144A     	 ldr r2,.L10+16
+ 121 0016 D96B     	 ldr r1,[r3,#60]
+ 122 0018 1160     	 str r1,[r2]
+ 123 001a 144A     	 ldr r2,.L10+20
+ 124 001c 596B     	 ldr r1,[r3,#52]
+ 125 001e 1160     	 str r1,[r2]
+ 126 0020 9A6B     	 ldr r2,[r3,#56]
+ 127 0022 134B     	 ldr r3,.L10+24
+ 128 0024 1A60     	 str r2,[r3]
+ 129 0026 134B     	 ldr r3,.L10+28
+ 130 0028 0268     	 ldr r2,[r0]
+ 131 002a 1A60     	 str r2,[r3]
+ 132 002c 124B     	 ldr r3,.L10+32
+ 133 002e 4268     	 ldr r2,[r0,#4]
+ 134 0030 1A60     	 str r2,[r3]
+ 135 0032 124B     	 ldr r3,.L10+36
+ 136 0034 8268     	 ldr r2,[r0,#8]
+ 137 0036 1A60     	 str r2,[r3]
+ 138 0038 114B     	 ldr r3,.L10+40
+ 139 003a C268     	 ldr r2,[r0,#12]
+ 140 003c 1A60     	 str r2,[r3]
+ 141 003e 114B     	 ldr r3,.L10+44
+ 142 0040 0269     	 ldr r2,[r0,#16]
+ 143 0042 1A60     	 str r2,[r3]
+ 144 0044 104B     	 ldr r3,.L10+48
+ 145 0046 4269     	 ldr r2,[r0,#20]
+ 146 0048 1A60     	 str r2,[r3]
+ 147 004a 104B     	 ldr r3,.L10+52
+ 148 004c 8269     	 ldr r2,[r0,#24]
+ 149 004e 1A60     	 str r2,[r3]
+ 150 0050 0F4B     	 ldr r3,.L10+56
+ 151 0052 C269     	 ldr r2,[r0,#28]
+ 152 0054 1A60     	 str r2,[r3]
+ 153              	
+ 154 0056 00BE     	 BKPT 0
+ 155              	
+ 156              	
+ 157              	 .thumb
+ 158              	.L11:
+ 159              	 .align 2
+ 160              	.L10:
+ 161 0058 00ED00E0 	 .word -536810240
+ 162 005c 00000000 	 .word _CFSR
+ 163 0060 00000000 	 .word _HFSR
+ 164 0064 00000000 	 .word _DFSR
+ 165 0068 00000000 	 .word _AFSR
+ 166 006c 00000000 	 .word _MMAR
+ 167 0070 00000000 	 .word _BFAR
+ 168 0074 00000000 	 .word stacked_r0
+ 169 0078 00000000 	 .word stacked_r1
+ 170 007c 00000000 	 .word stacked_r2
+ 171 0080 00000000 	 .word stacked_r3
+ 172 0084 00000000 	 .word stacked_r12
+ 173 0088 00000000 	 .word stacked_lr
+ 174 008c 00000000 	 .word stacked_pc
+ 175 0090 00000000 	 .word stacked_psr
+ 177              	 .section .text.HardFault_Handler,"ax",%progbits
+ 178              	 .align 1
+ 179              	 .global HardFault_Handler
+ 180              	 .thumb
+ 181              	 .thumb_func
+ 183              	HardFault_Handler:
+ 184              	 
+ 185              	 
+ 186              	 
+ 187              	
+ 188 0000 1EF0040F 	 TST LR,#4
+ 189 0004 0CBF     	 ITE EQ
+ 190 0006 EFF30880 	 MRSEQ R0,MSP
+ 191 000a EFF30980 	 MRSNE R0,PSP
+ 192 000e FFF7FEBF 	 B __HardFault_Handler
+ 193              	
+ 194              	
+ 195              	 .thumb
+ 197              	 .comm _MMAR,4,4
+ 198              	 .comm _BFAR,4,4
+ 199              	 .comm _AFSR,4,4
+ 200              	 .comm _DFSR,4,4
+ 201              	 .comm _HFSR,4,4
+ 202              	 .comm _CFSR,4,4
+ 203              	 .comm stacked_psr,4,4
+ 204              	 .comm stacked_pc,4,4
+ 205              	 .comm stacked_lr,4,4
+ 206              	 .comm stacked_r12,4,4
+ 207              	 .comm stacked_r3,4,4
+ 208              	 .comm stacked_r2,4,4
+ 209              	 .comm stacked_r1,4,4
+ 210              	 .comm stacked_r0,4,4
+ 211              	 .ident "GCC: (GNU Tools for ARM Embedded Processors) 4.9.3 20141119 (release) [ARM/embedded-4_9-branch revision 218278]"
+DEFINED SYMBOLS
+                            *ABS*:00000000 cpu_ctrl_xmc4.c
+    {standard input}:17     .text.CPU_CTRL_XMC4_GetAppVersion:00000000 $t
+    {standard input}:22     .text.CPU_CTRL_XMC4_GetAppVersion:00000000 CPU_CTRL_XMC4_GetAppVersion
+    {standard input}:39     .text.CPU_CTRL_XMC4_Init:00000000 $t
+    {standard input}:44     .text.CPU_CTRL_XMC4_Init:00000000 CPU_CTRL_XMC4_Init
+    {standard input}:52     .text.CPU_CTRL_XMC4_MPU_Enable:00000000 $t
+    {standard input}:57     .text.CPU_CTRL_XMC4_MPU_Enable:00000000 CPU_CTRL_XMC4_MPU_Enable
+    {standard input}:75     .text.CPU_CTRL_XMC4_MPU_Enable:00000014 $d
+    {standard input}:78     .text.CPU_CTRL_XMC4_MPU_Disable:00000000 $t
+    {standard input}:83     .text.CPU_CTRL_XMC4_MPU_Disable:00000000 CPU_CTRL_XMC4_MPU_Disable
+    {standard input}:98     .text.CPU_CTRL_XMC4_MPU_Disable:0000000c $d
+    {standard input}:101    .text.__HardFault_Handler:00000000 $t
+    {standard input}:106    .text.__HardFault_Handler:00000000 __HardFault_Handler
+    {standard input}:161    .text.__HardFault_Handler:00000058 $d
+                            *COM*:00000004 _CFSR
+                            *COM*:00000004 _HFSR
+                            *COM*:00000004 _DFSR
+                            *COM*:00000004 _AFSR
+                            *COM*:00000004 _MMAR
+                            *COM*:00000004 _BFAR
+                            *COM*:00000004 stacked_r0
+                            *COM*:00000004 stacked_r1
+                            *COM*:00000004 stacked_r2
+                            *COM*:00000004 stacked_r3
+                            *COM*:00000004 stacked_r12
+                            *COM*:00000004 stacked_lr
+                            *COM*:00000004 stacked_pc
+                            *COM*:00000004 stacked_psr
+    {standard input}:178    .text.HardFault_Handler:00000000 $t
+    {standard input}:183    .text.HardFault_Handler:00000000 HardFault_Handler
+
+NO UNDEFINED SYMBOLS

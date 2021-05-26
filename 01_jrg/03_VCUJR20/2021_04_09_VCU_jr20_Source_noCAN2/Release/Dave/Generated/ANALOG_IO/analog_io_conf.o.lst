@@ -1,0 +1,196 @@
+   1              	 .syntax unified
+   2              	 .cpu cortex-m4
+   3              	 .eabi_attribute 27,3
+   4              	 .fpu fpv4-sp-d16
+   5              	 .eabi_attribute 20,1
+   6              	 .eabi_attribute 21,1
+   7              	 .eabi_attribute 23,3
+   8              	 .eabi_attribute 24,1
+   9              	 .eabi_attribute 25,1
+  10              	 .eabi_attribute 26,1
+  11              	 .eabi_attribute 30,4
+  12              	 .eabi_attribute 34,1
+  13              	 .eabi_attribute 18,4
+  14              	 .thumb
+  15              	 .file "analog_io_conf.c"
+  16              	 .global ANALOG_IO_TR3_I_FAN2
+  17              	 .global ANALOG_IO_TR2_I_FAN1
+  18              	 .global ANALOG_IO_TR1_I_WP
+  19              	 .global ANALOG_IO_xClutchSTW
+  20              	 .global ANALOG_IO_UBat
+  21              	 .global ANALOG_IO_xRHF
+  22              	 .global ANALOG_IO_fFR
+  23              	 .global ANALOG_IO_fFL
+  24              	 .global ANALOG_IO_xClutch
+  25              	 .global ANALOG_IO_pbrakeR
+  26              	 .global ANALOG_IO_boardTemp
+  27              	 .section .rodata.ANALOG_IO_xRHF,"a",%progbits
+  28              	 .align 2
+  31              	ANALOG_IO_xRHF:
+  32 0000 00000000 	 .word 0
+  33 0004 00000000 	 .word ANALOG_IO_xRHF_state
+  34 0008 008E0248 	 .word 1208126976
+  35 000c 04       	 .byte 4
+  36 000d 000000   	 .space 3
+  37              	 .section .rodata.ANALOG_IO_fFR,"a",%progbits
+  38              	 .align 2
+  41              	ANALOG_IO_fFR:
+  42 0000 00000000 	 .word 0
+  43 0004 00000000 	 .word ANALOG_IO_fFR_state
+  44 0008 008E0248 	 .word 1208126976
+  45 000c 03       	 .byte 3
+  46 000d 000000   	 .space 3
+  47              	 .section .rodata.ANALOG_IO_xClutchSTW,"a",%progbits
+  48              	 .align 2
+  51              	ANALOG_IO_xClutchSTW:
+  52 0000 00000000 	 .word 0
+  53 0004 00000000 	 .word ANALOG_IO_xClutchSTW_state
+  54 0008 008E0248 	 .word 1208126976
+  55 000c 00       	 .byte 0
+  56 000d 000000   	 .space 3
+  57              	 .section .bss.ANALOG_IO_UBat_state,"aw",%nobits
+  60              	ANALOG_IO_UBat_state:
+  61 0000 00       	 .space 1
+  62              	 .section .rodata.ANALOG_IO_boardTemp,"a",%progbits
+  63              	 .align 2
+  66              	ANALOG_IO_boardTemp:
+  67 0000 00000000 	 .word 0
+  68 0004 00000000 	 .word ANALOG_IO_boardTemp_state
+  69 0008 008E0248 	 .word 1208126976
+  70 000c 0E       	 .byte 14
+  71 000d 000000   	 .space 3
+  72              	 .section .rodata.ANALOG_IO_TR2_I_FAN1,"a",%progbits
+  73              	 .align 2
+  76              	ANALOG_IO_TR2_I_FAN1:
+  77 0000 00000000 	 .word 0
+  78 0004 00000000 	 .word ANALOG_IO_TR2_I_FAN1_state
+  79 0008 008F0248 	 .word 1208127232
+  80 000c 03       	 .byte 3
+  81 000d 000000   	 .space 3
+  82              	 .section .bss.ANALOG_IO_TR3_I_FAN2_state,"aw",%nobits
+  85              	ANALOG_IO_TR3_I_FAN2_state:
+  86 0000 00       	 .space 1
+  87              	 .section .bss.ANALOG_IO_TR1_I_WP_state,"aw",%nobits
+  90              	ANALOG_IO_TR1_I_WP_state:
+  91 0000 00       	 .space 1
+  92              	 .section .bss.ANALOG_IO_xRHF_state,"aw",%nobits
+  95              	ANALOG_IO_xRHF_state:
+  96 0000 00       	 .space 1
+  97              	 .section .rodata.ANALOG_IO_TR3_I_FAN2,"a",%progbits
+  98              	 .align 2
+ 101              	ANALOG_IO_TR3_I_FAN2:
+ 102 0000 00000000 	 .word 0
+ 103 0004 00000000 	 .word ANALOG_IO_TR3_I_FAN2_state
+ 104 0008 008F0248 	 .word 1208127232
+ 105 000c 08       	 .byte 8
+ 106 000d 000000   	 .space 3
+ 107              	 .section .bss.ANALOG_IO_fFL_state,"aw",%nobits
+ 110              	ANALOG_IO_fFL_state:
+ 111 0000 00       	 .space 1
+ 112              	 .section .rodata.ANALOG_IO_fFL,"a",%progbits
+ 113              	 .align 2
+ 116              	ANALOG_IO_fFL:
+ 117 0000 00000000 	 .word 0
+ 118 0004 00000000 	 .word ANALOG_IO_fFL_state
+ 119 0008 008E0248 	 .word 1208126976
+ 120 000c 02       	 .byte 2
+ 121 000d 000000   	 .space 3
+ 122              	 .section .bss.ANALOG_IO_boardTemp_state,"aw",%nobits
+ 125              	ANALOG_IO_boardTemp_state:
+ 126 0000 00       	 .space 1
+ 127              	 .section .bss.ANALOG_IO_fFR_state,"aw",%nobits
+ 130              	ANALOG_IO_fFR_state:
+ 131 0000 00       	 .space 1
+ 132              	 .section .bss.ANALOG_IO_pbrakeR_state,"aw",%nobits
+ 135              	ANALOG_IO_pbrakeR_state:
+ 136 0000 00       	 .space 1
+ 137              	 .section .rodata.ANALOG_IO_pbrakeR,"a",%progbits
+ 138              	 .align 2
+ 141              	ANALOG_IO_pbrakeR:
+ 142 0000 00000000 	 .word 0
+ 143 0004 00000000 	 .word ANALOG_IO_pbrakeR_state
+ 144 0008 008E0248 	 .word 1208126976
+ 145 000c 06       	 .byte 6
+ 146 000d 000000   	 .space 3
+ 147              	 .section .bss.ANALOG_IO_TR2_I_FAN1_state,"aw",%nobits
+ 150              	ANALOG_IO_TR2_I_FAN1_state:
+ 151 0000 00       	 .space 1
+ 152              	 .section .rodata.ANALOG_IO_UBat,"a",%progbits
+ 153              	 .align 2
+ 156              	ANALOG_IO_UBat:
+ 157 0000 00000000 	 .word 0
+ 158 0004 00000000 	 .word ANALOG_IO_UBat_state
+ 159 0008 008E0248 	 .word 1208126976
+ 160 000c 08       	 .byte 8
+ 161 000d 000000   	 .space 3
+ 162              	 .section .rodata.ANALOG_IO_xClutch,"a",%progbits
+ 163              	 .align 2
+ 166              	ANALOG_IO_xClutch:
+ 167 0000 00000000 	 .word 0
+ 168 0004 00000000 	 .word ANALOG_IO_xClutch_state
+ 169 0008 008E0248 	 .word 1208126976
+ 170 000c 05       	 .byte 5
+ 171 000d 000000   	 .space 3
+ 172              	 .section .rodata.ANALOG_IO_TR1_I_WP,"a",%progbits
+ 173              	 .align 2
+ 176              	ANALOG_IO_TR1_I_WP:
+ 177 0000 00000000 	 .word 0
+ 178 0004 00000000 	 .word ANALOG_IO_TR1_I_WP_state
+ 179 0008 008F0248 	 .word 1208127232
+ 180 000c 02       	 .byte 2
+ 181 000d 000000   	 .space 3
+ 182              	 .section .bss.ANALOG_IO_xClutch_state,"aw",%nobits
+ 185              	ANALOG_IO_xClutch_state:
+ 186 0000 00       	 .space 1
+ 187              	 .section .bss.ANALOG_IO_xClutchSTW_state,"aw",%nobits
+ 190              	ANALOG_IO_xClutchSTW_state:
+ 191 0000 00       	 .space 1
+ 192              	 .ident "GCC: (GNU Tools for ARM Embedded Processors) 4.9.3 20141119 (release) [ARM/embedded-4_9-branch revision 218278]"
+DEFINED SYMBOLS
+                            *ABS*:00000000 analog_io_conf.c
+    {standard input}:101    .rodata.ANALOG_IO_TR3_I_FAN2:00000000 ANALOG_IO_TR3_I_FAN2
+    {standard input}:76     .rodata.ANALOG_IO_TR2_I_FAN1:00000000 ANALOG_IO_TR2_I_FAN1
+    {standard input}:176    .rodata.ANALOG_IO_TR1_I_WP:00000000 ANALOG_IO_TR1_I_WP
+    {standard input}:51     .rodata.ANALOG_IO_xClutchSTW:00000000 ANALOG_IO_xClutchSTW
+    {standard input}:156    .rodata.ANALOG_IO_UBat:00000000 ANALOG_IO_UBat
+    {standard input}:31     .rodata.ANALOG_IO_xRHF:00000000 ANALOG_IO_xRHF
+    {standard input}:41     .rodata.ANALOG_IO_fFR:00000000 ANALOG_IO_fFR
+    {standard input}:116    .rodata.ANALOG_IO_fFL:00000000 ANALOG_IO_fFL
+    {standard input}:166    .rodata.ANALOG_IO_xClutch:00000000 ANALOG_IO_xClutch
+    {standard input}:141    .rodata.ANALOG_IO_pbrakeR:00000000 ANALOG_IO_pbrakeR
+    {standard input}:66     .rodata.ANALOG_IO_boardTemp:00000000 ANALOG_IO_boardTemp
+    {standard input}:28     .rodata.ANALOG_IO_xRHF:00000000 $d
+    {standard input}:95     .bss.ANALOG_IO_xRHF_state:00000000 ANALOG_IO_xRHF_state
+    {standard input}:38     .rodata.ANALOG_IO_fFR:00000000 $d
+    {standard input}:130    .bss.ANALOG_IO_fFR_state:00000000 ANALOG_IO_fFR_state
+    {standard input}:48     .rodata.ANALOG_IO_xClutchSTW:00000000 $d
+    {standard input}:190    .bss.ANALOG_IO_xClutchSTW_state:00000000 ANALOG_IO_xClutchSTW_state
+    {standard input}:60     .bss.ANALOG_IO_UBat_state:00000000 ANALOG_IO_UBat_state
+    {standard input}:61     .bss.ANALOG_IO_UBat_state:00000000 $d
+    {standard input}:63     .rodata.ANALOG_IO_boardTemp:00000000 $d
+    {standard input}:125    .bss.ANALOG_IO_boardTemp_state:00000000 ANALOG_IO_boardTemp_state
+    {standard input}:73     .rodata.ANALOG_IO_TR2_I_FAN1:00000000 $d
+    {standard input}:150    .bss.ANALOG_IO_TR2_I_FAN1_state:00000000 ANALOG_IO_TR2_I_FAN1_state
+    {standard input}:85     .bss.ANALOG_IO_TR3_I_FAN2_state:00000000 ANALOG_IO_TR3_I_FAN2_state
+    {standard input}:86     .bss.ANALOG_IO_TR3_I_FAN2_state:00000000 $d
+    {standard input}:90     .bss.ANALOG_IO_TR1_I_WP_state:00000000 ANALOG_IO_TR1_I_WP_state
+    {standard input}:91     .bss.ANALOG_IO_TR1_I_WP_state:00000000 $d
+    {standard input}:96     .bss.ANALOG_IO_xRHF_state:00000000 $d
+    {standard input}:98     .rodata.ANALOG_IO_TR3_I_FAN2:00000000 $d
+    {standard input}:110    .bss.ANALOG_IO_fFL_state:00000000 ANALOG_IO_fFL_state
+    {standard input}:111    .bss.ANALOG_IO_fFL_state:00000000 $d
+    {standard input}:113    .rodata.ANALOG_IO_fFL:00000000 $d
+    {standard input}:126    .bss.ANALOG_IO_boardTemp_state:00000000 $d
+    {standard input}:131    .bss.ANALOG_IO_fFR_state:00000000 $d
+    {standard input}:135    .bss.ANALOG_IO_pbrakeR_state:00000000 ANALOG_IO_pbrakeR_state
+    {standard input}:136    .bss.ANALOG_IO_pbrakeR_state:00000000 $d
+    {standard input}:138    .rodata.ANALOG_IO_pbrakeR:00000000 $d
+    {standard input}:151    .bss.ANALOG_IO_TR2_I_FAN1_state:00000000 $d
+    {standard input}:153    .rodata.ANALOG_IO_UBat:00000000 $d
+    {standard input}:163    .rodata.ANALOG_IO_xClutch:00000000 $d
+    {standard input}:185    .bss.ANALOG_IO_xClutch_state:00000000 ANALOG_IO_xClutch_state
+    {standard input}:173    .rodata.ANALOG_IO_TR1_I_WP:00000000 $d
+    {standard input}:186    .bss.ANALOG_IO_xClutch_state:00000000 $d
+    {standard input}:191    .bss.ANALOG_IO_xClutchSTW_state:00000000 $d
+
+NO UNDEFINED SYMBOLS

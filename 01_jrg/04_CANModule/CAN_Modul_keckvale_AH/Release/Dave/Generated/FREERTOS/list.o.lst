@@ -1,0 +1,141 @@
+   1              	 .syntax unified
+   2              	 .cpu cortex-m4
+   3              	 .eabi_attribute 27,3
+   4              	 .fpu fpv4-sp-d16
+   5              	 .eabi_attribute 20,1
+   6              	 .eabi_attribute 21,1
+   7              	 .eabi_attribute 23,3
+   8              	 .eabi_attribute 24,1
+   9              	 .eabi_attribute 25,1
+  10              	 .eabi_attribute 26,1
+  11              	 .eabi_attribute 30,4
+  12              	 .eabi_attribute 34,1
+  13              	 .eabi_attribute 18,4
+  14              	 .thumb
+  15              	 .file "list.c"
+  16              	 .section .text.vListInitialise,"ax",%progbits
+  17              	 .align 1
+  18              	 .global vListInitialise
+  19              	 .thumb
+  20              	 .thumb_func
+  22              	vListInitialise:
+  23              	 
+  24              	 
+  25              	 
+  26 0000 00F10803 	 add r3,r0,#8
+  27 0004 4360     	 str r3,[r0,#4]
+  28 0006 4FF0FF32 	 mov r2,#-1
+  29 000a C360     	 str r3,[r0,#12]
+  30 000c 0361     	 str r3,[r0,#16]
+  31 000e 0023     	 movs r3,#0
+  32 0010 8260     	 str r2,[r0,#8]
+  33 0012 0360     	 str r3,[r0]
+  34 0014 7047     	 bx lr
+  36              	 .section .text.vListInitialiseItem,"ax",%progbits
+  37              	 .align 1
+  38              	 .global vListInitialiseItem
+  39              	 .thumb
+  40              	 .thumb_func
+  42              	vListInitialiseItem:
+  43              	 
+  44              	 
+  45              	 
+  46 0000 0023     	 movs r3,#0
+  47 0002 0361     	 str r3,[r0,#16]
+  48 0004 7047     	 bx lr
+  50              	 .section .text.vListInsertEnd,"ax",%progbits
+  51              	 .align 1
+  52              	 .global vListInsertEnd
+  53              	 .thumb
+  54              	 .thumb_func
+  56              	vListInsertEnd:
+  57              	 
+  58              	 
+  59              	 
+  60 0000 4368     	 ldr r3,[r0,#4]
+  61 0002 4B60     	 str r3,[r1,#4]
+  62 0004 9A68     	 ldr r2,[r3,#8]
+  63 0006 8A60     	 str r2,[r1,#8]
+  64 0008 9A68     	 ldr r2,[r3,#8]
+  65 000a 5160     	 str r1,[r2,#4]
+  66 000c 9960     	 str r1,[r3,#8]
+  67 000e 0368     	 ldr r3,[r0]
+  68 0010 0861     	 str r0,[r1,#16]
+  69 0012 0133     	 adds r3,r3,#1
+  70 0014 0360     	 str r3,[r0]
+  71 0016 7047     	 bx lr
+  73              	 .section .text.vListInsert,"ax",%progbits
+  74              	 .align 1
+  75              	 .global vListInsert
+  76              	 .thumb
+  77              	 .thumb_func
+  79              	vListInsert:
+  80              	 
+  81              	 
+  82 0000 0A68     	 ldr r2,[r1]
+  83 0002 531C     	 adds r3,r2,#1
+  84 0004 30B5     	 push {r4,r5,lr}
+  85 0006 01D1     	 bne .L5
+  86 0008 0369     	 ldr r3,[r0,#16]
+  87 000a 07E0     	 b .L6
+  88              	.L5:
+  89 000c 00F10803 	 add r3,r0,#8
+  90              	.L7:
+  91 0010 5C68     	 ldr r4,[r3,#4]
+  92 0012 2568     	 ldr r5,[r4]
+  93 0014 9542     	 cmp r5,r2
+  94 0016 01D8     	 bhi .L6
+  95 0018 2346     	 mov r3,r4
+  96 001a F9E7     	 b .L7
+  97              	.L6:
+  98 001c 5A68     	 ldr r2,[r3,#4]
+  99 001e 4A60     	 str r2,[r1,#4]
+ 100 0020 9160     	 str r1,[r2,#8]
+ 101 0022 8B60     	 str r3,[r1,#8]
+ 102 0024 5960     	 str r1,[r3,#4]
+ 103 0026 0368     	 ldr r3,[r0]
+ 104 0028 0861     	 str r0,[r1,#16]
+ 105 002a 0133     	 adds r3,r3,#1
+ 106 002c 0360     	 str r3,[r0]
+ 107 002e 30BD     	 pop {r4,r5,pc}
+ 109              	 .section .text.uxListRemove,"ax",%progbits
+ 110              	 .align 1
+ 111              	 .global uxListRemove
+ 112              	 .thumb
+ 113              	 .thumb_func
+ 115              	uxListRemove:
+ 116              	 
+ 117              	 
+ 118              	 
+ 119 0000 4168     	 ldr r1,[r0,#4]
+ 120 0002 8268     	 ldr r2,[r0,#8]
+ 121 0004 0369     	 ldr r3,[r0,#16]
+ 122 0006 8A60     	 str r2,[r1,#8]
+ 123 0008 8268     	 ldr r2,[r0,#8]
+ 124 000a 5160     	 str r1,[r2,#4]
+ 125 000c 5968     	 ldr r1,[r3,#4]
+ 126 000e 8142     	 cmp r1,r0
+ 127 0010 08BF     	 it eq
+ 128 0012 5A60     	 streq r2,[r3,#4]
+ 129 0014 0022     	 movs r2,#0
+ 130 0016 0261     	 str r2,[r0,#16]
+ 131 0018 1A68     	 ldr r2,[r3]
+ 132 001a 013A     	 subs r2,r2,#1
+ 133 001c 1A60     	 str r2,[r3]
+ 134 001e 1868     	 ldr r0,[r3]
+ 135 0020 7047     	 bx lr
+ 137              	 .ident "GCC: (GNU Tools for ARM Embedded Processors) 4.9.3 20141119 (release) [ARM/embedded-4_9-branch revision 218278]"
+DEFINED SYMBOLS
+                            *ABS*:00000000 list.c
+    {standard input}:17     .text.vListInitialise:00000000 $t
+    {standard input}:22     .text.vListInitialise:00000000 vListInitialise
+    {standard input}:37     .text.vListInitialiseItem:00000000 $t
+    {standard input}:42     .text.vListInitialiseItem:00000000 vListInitialiseItem
+    {standard input}:51     .text.vListInsertEnd:00000000 $t
+    {standard input}:56     .text.vListInsertEnd:00000000 vListInsertEnd
+    {standard input}:74     .text.vListInsert:00000000 $t
+    {standard input}:79     .text.vListInsert:00000000 vListInsert
+    {standard input}:110    .text.uxListRemove:00000000 $t
+    {standard input}:115    .text.uxListRemove:00000000 uxListRemove
+
+NO UNDEFINED SYMBOLS

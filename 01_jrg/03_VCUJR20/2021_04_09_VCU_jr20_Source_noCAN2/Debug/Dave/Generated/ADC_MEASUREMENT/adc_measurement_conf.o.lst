@@ -1,0 +1,478 @@
+   1              	 .syntax unified
+   2              	 .cpu cortex-m4
+   3              	 .eabi_attribute 27,3
+   4              	 .fpu fpv4-sp-d16
+   5              	 .eabi_attribute 20,1
+   6              	 .eabi_attribute 21,1
+   7              	 .eabi_attribute 23,3
+   8              	 .eabi_attribute 24,1
+   9              	 .eabi_attribute 25,1
+  10              	 .eabi_attribute 26,1
+  11              	 .eabi_attribute 30,6
+  12              	 .eabi_attribute 34,1
+  13              	 .eabi_attribute 18,4
+  14              	 .thumb
+  15              	 .file "adc_measurement_conf.c"
+  16              	 .text
+  17              	.Ltext0:
+  18              	 .cfi_sections .debug_frame
+  19              	 .global global_iclass_config
+  20              	 .section .rodata.global_iclass_config,"a",%progbits
+  21              	 .align 2
+  24              	global_iclass_config:
+  25 0000 00000000 	 .space 4
+  26              	 .global Channel_A_ch_config
+  27              	 .section .data.Channel_A_ch_config,"aw",%progbits
+  28              	 .align 2
+  31              	Channel_A_ch_config:
+  32 0000 02       	 .byte 2
+  33 0001 00       	 .byte 0
+  34 0002 24       	 .byte 36
+  35 0003 00       	 .byte 0
+  36 0004 00000000 	 .word 0
+  37 0008 00       	 .byte 0
+  38 0009 FF       	 .byte -1
+  39 000a 0000     	 .space 2
+  40              	 .global Channel_A_res_config
+  41              	 .section .bss.Channel_A_res_config,"aw",%nobits
+  42              	 .align 2
+  45              	Channel_A_res_config:
+  46 0000 00000000 	 .space 4
+  47              	 .global ADC_MEASUREMENT_Channel_A_handle
+  48              	 .section .data.ADC_MEASUREMENT_Channel_A_handle,"aw",%progbits
+  49              	 .align 2
+  52              	ADC_MEASUREMENT_Channel_A_handle:
+  53 0000 00000000 	 .word Channel_A_ch_config
+  54 0004 00000000 	 .word Channel_A_res_config
+  55 0008 00440040 	 .word 1073759232
+  56 000c 00000000 	 .word ANALOG_IO_xClutchSTW
+  57 0010 00       	 .byte 0
+  58 0011 00       	 .byte 0
+  59 0012 0000     	 .space 2
+  60              	 .global Channel_B_ch_config
+  61              	 .section .data.Channel_B_ch_config,"aw",%progbits
+  62              	 .align 2
+  65              	Channel_B_ch_config:
+  66 0000 02       	 .byte 2
+  67 0001 00       	 .byte 0
+  68 0002 21       	 .byte 33
+  69 0003 00       	 .byte 0
+  70 0004 00000000 	 .word 0
+  71 0008 00       	 .byte 0
+  72 0009 FF       	 .byte -1
+  73 000a 0000     	 .space 2
+  74              	 .global Channel_B_res_config
+  75              	 .section .bss.Channel_B_res_config,"aw",%nobits
+  76              	 .align 2
+  79              	Channel_B_res_config:
+  80 0000 00000000 	 .space 4
+  81              	 .global ADC_MEASUREMENT_Channel_B_handle
+  82              	 .section .data.ADC_MEASUREMENT_Channel_B_handle,"aw",%progbits
+  83              	 .align 2
+  86              	ADC_MEASUREMENT_Channel_B_handle:
+  87 0000 00000000 	 .word Channel_B_ch_config
+  88 0004 00000000 	 .word Channel_B_res_config
+  89 0008 00480040 	 .word 1073760256
+  90 000c 00000000 	 .word ANALOG_IO_UBat
+  91 0010 01       	 .byte 1
+  92 0011 00       	 .byte 0
+  93 0012 0000     	 .space 2
+  94              	 .global Channel_C_ch_config
+  95              	 .section .data.Channel_C_ch_config,"aw",%progbits
+  96              	 .align 2
+  99              	Channel_C_ch_config:
+ 100 0000 02       	 .byte 2
+ 101 0001 00       	 .byte 0
+ 102 0002 23       	 .byte 35
+ 103 0003 00       	 .byte 0
+ 104 0004 00000000 	 .word 0
+ 105 0008 00       	 .byte 0
+ 106 0009 FF       	 .byte -1
+ 107 000a 0000     	 .space 2
+ 108              	 .global Channel_C_res_config
+ 109              	 .section .bss.Channel_C_res_config,"aw",%nobits
+ 110              	 .align 2
+ 113              	Channel_C_res_config:
+ 114 0000 00000000 	 .space 4
+ 115              	 .global ADC_MEASUREMENT_Channel_C_handle
+ 116              	 .section .data.ADC_MEASUREMENT_Channel_C_handle,"aw",%progbits
+ 117              	 .align 2
+ 120              	ADC_MEASUREMENT_Channel_C_handle:
+ 121 0000 00000000 	 .word Channel_C_ch_config
+ 122 0004 00000000 	 .word Channel_C_res_config
+ 123 0008 004C0040 	 .word 1073761280
+ 124 000c 00000000 	 .word ANALOG_IO_xRHF
+ 125 0010 02       	 .byte 2
+ 126 0011 00       	 .byte 0
+ 127 0012 0000     	 .space 2
+ 128              	 .global Channel_D_ch_config
+ 129              	 .section .data.Channel_D_ch_config,"aw",%progbits
+ 130              	 .align 2
+ 133              	Channel_D_ch_config:
+ 134 0000 02       	 .byte 2
+ 135 0001 00       	 .byte 0
+ 136 0002 20       	 .byte 32
+ 137 0003 00       	 .byte 0
+ 138 0004 00000000 	 .word 0
+ 139 0008 00       	 .byte 0
+ 140 0009 FF       	 .byte -1
+ 141 000a 0000     	 .space 2
+ 142              	 .global Channel_D_res_config
+ 143              	 .section .bss.Channel_D_res_config,"aw",%nobits
+ 144              	 .align 2
+ 147              	Channel_D_res_config:
+ 148 0000 00000000 	 .space 4
+ 149              	 .global ADC_MEASUREMENT_Channel_D_handle
+ 150              	 .section .data.ADC_MEASUREMENT_Channel_D_handle,"aw",%progbits
+ 151              	 .align 2
+ 154              	ADC_MEASUREMENT_Channel_D_handle:
+ 155 0000 00000000 	 .word Channel_D_ch_config
+ 156 0004 00000000 	 .word Channel_D_res_config
+ 157 0008 00480040 	 .word 1073760256
+ 158 000c 00000000 	 .word ANALOG_IO_fFR
+ 159 0010 01       	 .byte 1
+ 160 0011 03       	 .byte 3
+ 161 0012 0000     	 .space 2
+ 162              	 .global Channel_E_ch_config
+ 163              	 .section .data.Channel_E_ch_config,"aw",%progbits
+ 164              	 .align 2
+ 167              	Channel_E_ch_config:
+ 168 0000 02       	 .byte 2
+ 169 0001 00       	 .byte 0
+ 170 0002 2F       	 .byte 47
+ 171 0003 00       	 .byte 0
+ 172 0004 00000000 	 .word 0
+ 173 0008 00       	 .byte 0
+ 174 0009 FF       	 .byte -1
+ 175 000a 0000     	 .space 2
+ 176              	 .global Channel_E_res_config
+ 177              	 .section .bss.Channel_E_res_config,"aw",%nobits
+ 178              	 .align 2
+ 181              	Channel_E_res_config:
+ 182 0000 00000000 	 .space 4
+ 183              	 .global ADC_MEASUREMENT_Channel_E_handle
+ 184              	 .section .data.ADC_MEASUREMENT_Channel_E_handle,"aw",%progbits
+ 185              	 .align 2
+ 188              	ADC_MEASUREMENT_Channel_E_handle:
+ 189 0000 00000000 	 .word Channel_E_ch_config
+ 190 0004 00000000 	 .word Channel_E_res_config
+ 191 0008 00480040 	 .word 1073760256
+ 192 000c 00000000 	 .word ANALOG_IO_fFL
+ 193 0010 01       	 .byte 1
+ 194 0011 02       	 .byte 2
+ 195 0012 0000     	 .space 2
+ 196              	 .global Channel_F_ch_config
+ 197              	 .section .data.Channel_F_ch_config,"aw",%progbits
+ 198              	 .align 2
+ 201              	Channel_F_ch_config:
+ 202 0000 02       	 .byte 2
+ 203 0001 00       	 .byte 0
+ 204 0002 22       	 .byte 34
+ 205 0003 00       	 .byte 0
+ 206 0004 00000000 	 .word 0
+ 207 0008 00       	 .byte 0
+ 208 0009 FF       	 .byte -1
+ 209 000a 0000     	 .space 2
+ 210              	 .global Channel_F_res_config
+ 211              	 .section .bss.Channel_F_res_config,"aw",%nobits
+ 212              	 .align 2
+ 215              	Channel_F_res_config:
+ 216 0000 00000000 	 .space 4
+ 217              	 .global ADC_MEASUREMENT_Channel_F_handle
+ 218              	 .section .data.ADC_MEASUREMENT_Channel_F_handle,"aw",%progbits
+ 219              	 .align 2
+ 222              	ADC_MEASUREMENT_Channel_F_handle:
+ 223 0000 00000000 	 .word Channel_F_ch_config
+ 224 0004 00000000 	 .word Channel_F_res_config
+ 225 0008 004C0040 	 .word 1073761280
+ 226 000c 00000000 	 .word ANALOG_IO_xClutch
+ 227 0010 02       	 .byte 2
+ 228 0011 01       	 .byte 1
+ 229 0012 0000     	 .space 2
+ 230              	 .global Channel_G_ch_config
+ 231              	 .section .data.Channel_G_ch_config,"aw",%progbits
+ 232              	 .align 2
+ 235              	Channel_G_ch_config:
+ 236 0000 02       	 .byte 2
+ 237 0001 00       	 .byte 0
+ 238 0002 2F       	 .byte 47
+ 239 0003 00       	 .byte 0
+ 240 0004 00000000 	 .word 0
+ 241 0008 00       	 .byte 0
+ 242 0009 FF       	 .byte -1
+ 243 000a 0000     	 .space 2
+ 244              	 .global Channel_G_res_config
+ 245              	 .section .bss.Channel_G_res_config,"aw",%nobits
+ 246              	 .align 2
+ 249              	Channel_G_res_config:
+ 250 0000 00000000 	 .space 4
+ 251              	 .global ADC_MEASUREMENT_Channel_G_handle
+ 252              	 .section .data.ADC_MEASUREMENT_Channel_G_handle,"aw",%progbits
+ 253              	 .align 2
+ 256              	ADC_MEASUREMENT_Channel_G_handle:
+ 257 0000 00000000 	 .word Channel_G_ch_config
+ 258 0004 00000000 	 .word Channel_G_res_config
+ 259 0008 00440040 	 .word 1073759232
+ 260 000c 00000000 	 .word ANALOG_IO_pbrakeR
+ 261 0010 00       	 .byte 0
+ 262 0011 06       	 .byte 6
+ 263 0012 0000     	 .space 2
+ 264              	 .global Channel_H_ch_config
+ 265              	 .section .data.Channel_H_ch_config,"aw",%progbits
+ 266              	 .align 2
+ 269              	Channel_H_ch_config:
+ 270 0000 02       	 .byte 2
+ 271 0001 00       	 .byte 0
+ 272 0002 23       	 .byte 35
+ 273 0003 00       	 .byte 0
+ 274 0004 00000000 	 .word 0
+ 275 0008 00       	 .byte 0
+ 276 0009 FF       	 .byte -1
+ 277 000a 0000     	 .space 2
+ 278              	 .global Channel_H_res_config
+ 279              	 .section .bss.Channel_H_res_config,"aw",%nobits
+ 280              	 .align 2
+ 283              	Channel_H_res_config:
+ 284 0000 00000000 	 .space 4
+ 285              	 .global ADC_MEASUREMENT_Channel_H_handle
+ 286              	 .section .data.ADC_MEASUREMENT_Channel_H_handle,"aw",%progbits
+ 287              	 .align 2
+ 290              	ADC_MEASUREMENT_Channel_H_handle:
+ 291 0000 00000000 	 .word Channel_H_ch_config
+ 292 0004 00000000 	 .word Channel_H_res_config
+ 293 0008 00480040 	 .word 1073760256
+ 294 000c 00000000 	 .word ANALOG_IO_boardTemp
+ 295 0010 01       	 .byte 1
+ 296 0011 06       	 .byte 6
+ 297 0012 0000     	 .space 2
+ 298              	 .global Channel_I_ch_config
+ 299              	 .section .data.Channel_I_ch_config,"aw",%progbits
+ 300              	 .align 2
+ 303              	Channel_I_ch_config:
+ 304 0000 02       	 .byte 2
+ 305 0001 00       	 .byte 0
+ 306 0002 20       	 .byte 32
+ 307 0003 00       	 .byte 0
+ 308 0004 00000000 	 .word 0
+ 309 0008 00       	 .byte 0
+ 310 0009 FF       	 .byte -1
+ 311 000a 0000     	 .space 2
+ 312              	 .global Channel_I_res_config
+ 313              	 .section .bss.Channel_I_res_config,"aw",%nobits
+ 314              	 .align 2
+ 317              	Channel_I_res_config:
+ 318 0000 00000000 	 .space 4
+ 319              	 .global ADC_MEASUREMENT_Channel_I_handle
+ 320              	 .section .data.ADC_MEASUREMENT_Channel_I_handle,"aw",%progbits
+ 321              	 .align 2
+ 324              	ADC_MEASUREMENT_Channel_I_handle:
+ 325 0000 00000000 	 .word Channel_I_ch_config
+ 326 0004 00000000 	 .word Channel_I_res_config
+ 327 0008 004C0040 	 .word 1073761280
+ 328 000c 00000000 	 .word ANALOG_IO_TR1_I_WP
+ 329 0010 02       	 .byte 2
+ 330 0011 02       	 .byte 2
+ 331 0012 0000     	 .space 2
+ 332              	 .global Channel_J_ch_config
+ 333              	 .section .data.Channel_J_ch_config,"aw",%progbits
+ 334              	 .align 2
+ 337              	Channel_J_ch_config:
+ 338 0000 02       	 .byte 2
+ 339 0001 00       	 .byte 0
+ 340 0002 21       	 .byte 33
+ 341 0003 00       	 .byte 0
+ 342 0004 00000000 	 .word 0
+ 343 0008 00       	 .byte 0
+ 344 0009 FF       	 .byte -1
+ 345 000a 0000     	 .space 2
+ 346              	 .global Channel_J_res_config
+ 347              	 .section .bss.Channel_J_res_config,"aw",%nobits
+ 348              	 .align 2
+ 351              	Channel_J_res_config:
+ 352 0000 00000000 	 .space 4
+ 353              	 .global ADC_MEASUREMENT_Channel_J_handle
+ 354              	 .section .data.ADC_MEASUREMENT_Channel_J_handle,"aw",%progbits
+ 355              	 .align 2
+ 358              	ADC_MEASUREMENT_Channel_J_handle:
+ 359 0000 00000000 	 .word Channel_J_ch_config
+ 360 0004 00000000 	 .word Channel_J_res_config
+ 361 0008 004C0040 	 .word 1073761280
+ 362 000c 00000000 	 .word ANALOG_IO_TR2_I_FAN1
+ 363 0010 02       	 .byte 2
+ 364 0011 03       	 .byte 3
+ 365 0012 0000     	 .space 2
+ 366              	 .global Channel_K_ch_config
+ 367              	 .section .data.Channel_K_ch_config,"aw",%progbits
+ 368              	 .align 2
+ 371              	Channel_K_ch_config:
+ 372 0000 02       	 .byte 2
+ 373 0001 00       	 .byte 0
+ 374 0002 24       	 .byte 36
+ 375 0003 00       	 .byte 0
+ 376 0004 00000000 	 .word 0
+ 377 0008 00       	 .byte 0
+ 378 0009 FF       	 .byte -1
+ 379 000a 0000     	 .space 2
+ 380              	 .global Channel_K_res_config
+ 381              	 .section .bss.Channel_K_res_config,"aw",%nobits
+ 382              	 .align 2
+ 385              	Channel_K_res_config:
+ 386 0000 00000000 	 .space 4
+ 387              	 .global ADC_MEASUREMENT_Channel_K_handle
+ 388              	 .section .data.ADC_MEASUREMENT_Channel_K_handle,"aw",%progbits
+ 389              	 .align 2
+ 392              	ADC_MEASUREMENT_Channel_K_handle:
+ 393 0000 00000000 	 .word Channel_K_ch_config
+ 394 0004 00000000 	 .word Channel_K_res_config
+ 395 0008 00500040 	 .word 1073762304
+ 396 000c 00000000 	 .word ANALOG_IO_TR3_I_FAN2
+ 397 0010 03       	 .byte 3
+ 398 0011 00       	 .byte 0
+ 399 0012 0000     	 .space 2
+ 400              	 .global ADC_MEASUREMENT_channel_array
+ 401              	 .section .data.ADC_MEASUREMENT_channel_array,"aw",%progbits
+ 402              	 .align 2
+ 405              	ADC_MEASUREMENT_channel_array:
+ 406 0000 00000000 	 .word ADC_MEASUREMENT_Channel_A_handle
+ 407 0004 00000000 	 .word ADC_MEASUREMENT_Channel_B_handle
+ 408 0008 00000000 	 .word ADC_MEASUREMENT_Channel_C_handle
+ 409 000c 00000000 	 .word ADC_MEASUREMENT_Channel_D_handle
+ 410 0010 00000000 	 .word ADC_MEASUREMENT_Channel_E_handle
+ 411 0014 00000000 	 .word ADC_MEASUREMENT_Channel_F_handle
+ 412 0018 00000000 	 .word ADC_MEASUREMENT_Channel_G_handle
+ 413 001c 00000000 	 .word ADC_MEASUREMENT_Channel_H_handle
+ 414 0020 00000000 	 .word ADC_MEASUREMENT_Channel_I_handle
+ 415 0024 00000000 	 .word ADC_MEASUREMENT_Channel_J_handle
+ 416 0028 00000000 	 .word ADC_MEASUREMENT_Channel_K_handle
+ 417              	 .global backgnd_config
+ 418              	 .section .rodata.backgnd_config,"a",%progbits
+ 419              	 .align 2
+ 422              	backgnd_config:
+ 423 0000 05       	 .byte 5
+ 424 0001 000000   	 .space 3
+ 425 0004 00       	 .space 1
+ 426 0005 00       	 .byte 0
+ 427 0006 00       	 .byte 0
+ 428 0007 00       	 .byte 0
+ 429 0008 10       	 .byte 16
+ 430 0009 000000   	 .space 3
+ 431              	 .global ADC_MEASUREMENT
+ 432              	 .section .data.ADC_MEASUREMENT,"aw",%progbits
+ 433              	 .align 2
+ 436              	ADC_MEASUREMENT:
+ 437 0000 00000000 	 .word ADC_MEASUREMENT_channel_array
+ 438 0004 00000000 	 .word backgnd_config
+ 439 0008 00000000 	 .word global_iclass_config
+ 440 000c 00000000 	 .word GLOBAL_ADC_0
+ 441 0010 00000000 	 .word 0
+ 442 0014 00000000 	 .word 0
+ 443 0018 02       	 .byte 2
+ 444 0019 04       	 .byte 4
+ 445 001a 01       	 .byte 1
+ 446 001b 00       	 .space 1
+ 447              	 .text
+ 448              	.Letext0:
+ 449              	 .file 1 "c:\\dave\\dave-ide-4.4.2-64bit\\eclipse\\arm-gcc-49\\arm-none-eabi\\include\\machine\\_default_types.h"
+ 450              	 .file 2 "c:\\dave\\dave-ide-4.4.2-64bit\\eclipse\\arm-gcc-49\\arm-none-eabi\\include\\stdint.h"
+ 451              	 .file 3 "C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Libraries/CMSIS/Infineon/XMC4500_series/Include/XMC4500.h"
+ 452              	 .file 4 "C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Libraries/XMCLib/inc/xmc_vadc.h"
+ 453              	 .file 5 "C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Dave/Generated/GLOBAL_ADC/global_adc.h"
+ 454              	 .file 6 "C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Libraries/XMCLib/inc/xmc4_gpio.h"
+ 455              	 .file 7 "C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Dave/Generated/ANALOG_IO/analog_io.h"
+ 456              	 .file 8 "../Dave/Generated/ADC_MEASUREMENT/adc_measurement.h"
+ 457              	 .file 9 "C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Libraries/CMSIS/Include/cmsis_gcc.h"
+ 458              	 .file 10 "C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Libraries/CMSIS/Include/core_cm4.h"
+ 459              	 .file 11 "C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Libraries/CMSIS/Infineon/XMC4500_series/Include/system_XMC4500.h"
+ 460              	 .file 12 "C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Dave/Generated/GLOBAL_ADC/global_adc_extern.h"
+ 461              	 .file 13 "C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Dave/Generated/ANALOG_IO/analog_io_extern.h"
+ 462              	 .file 14 "../Dave/Generated/ADC_MEASUREMENT/adc_measurement_conf.c"
+DEFINED SYMBOLS
+                            *ABS*:00000000 adc_measurement_conf.c
+    {standard input}:24     .rodata.global_iclass_config:00000000 global_iclass_config
+    {standard input}:21     .rodata.global_iclass_config:00000000 $d
+    {standard input}:31     .data.Channel_A_ch_config:00000000 Channel_A_ch_config
+    {standard input}:28     .data.Channel_A_ch_config:00000000 $d
+    {standard input}:45     .bss.Channel_A_res_config:00000000 Channel_A_res_config
+    {standard input}:42     .bss.Channel_A_res_config:00000000 $d
+    {standard input}:52     .data.ADC_MEASUREMENT_Channel_A_handle:00000000 ADC_MEASUREMENT_Channel_A_handle
+    {standard input}:49     .data.ADC_MEASUREMENT_Channel_A_handle:00000000 $d
+    {standard input}:65     .data.Channel_B_ch_config:00000000 Channel_B_ch_config
+    {standard input}:62     .data.Channel_B_ch_config:00000000 $d
+    {standard input}:79     .bss.Channel_B_res_config:00000000 Channel_B_res_config
+    {standard input}:76     .bss.Channel_B_res_config:00000000 $d
+    {standard input}:86     .data.ADC_MEASUREMENT_Channel_B_handle:00000000 ADC_MEASUREMENT_Channel_B_handle
+    {standard input}:83     .data.ADC_MEASUREMENT_Channel_B_handle:00000000 $d
+    {standard input}:99     .data.Channel_C_ch_config:00000000 Channel_C_ch_config
+    {standard input}:96     .data.Channel_C_ch_config:00000000 $d
+    {standard input}:113    .bss.Channel_C_res_config:00000000 Channel_C_res_config
+    {standard input}:110    .bss.Channel_C_res_config:00000000 $d
+    {standard input}:120    .data.ADC_MEASUREMENT_Channel_C_handle:00000000 ADC_MEASUREMENT_Channel_C_handle
+    {standard input}:117    .data.ADC_MEASUREMENT_Channel_C_handle:00000000 $d
+    {standard input}:133    .data.Channel_D_ch_config:00000000 Channel_D_ch_config
+    {standard input}:130    .data.Channel_D_ch_config:00000000 $d
+    {standard input}:147    .bss.Channel_D_res_config:00000000 Channel_D_res_config
+    {standard input}:144    .bss.Channel_D_res_config:00000000 $d
+    {standard input}:154    .data.ADC_MEASUREMENT_Channel_D_handle:00000000 ADC_MEASUREMENT_Channel_D_handle
+    {standard input}:151    .data.ADC_MEASUREMENT_Channel_D_handle:00000000 $d
+    {standard input}:167    .data.Channel_E_ch_config:00000000 Channel_E_ch_config
+    {standard input}:164    .data.Channel_E_ch_config:00000000 $d
+    {standard input}:181    .bss.Channel_E_res_config:00000000 Channel_E_res_config
+    {standard input}:178    .bss.Channel_E_res_config:00000000 $d
+    {standard input}:188    .data.ADC_MEASUREMENT_Channel_E_handle:00000000 ADC_MEASUREMENT_Channel_E_handle
+    {standard input}:185    .data.ADC_MEASUREMENT_Channel_E_handle:00000000 $d
+    {standard input}:201    .data.Channel_F_ch_config:00000000 Channel_F_ch_config
+    {standard input}:198    .data.Channel_F_ch_config:00000000 $d
+    {standard input}:215    .bss.Channel_F_res_config:00000000 Channel_F_res_config
+    {standard input}:212    .bss.Channel_F_res_config:00000000 $d
+    {standard input}:222    .data.ADC_MEASUREMENT_Channel_F_handle:00000000 ADC_MEASUREMENT_Channel_F_handle
+    {standard input}:219    .data.ADC_MEASUREMENT_Channel_F_handle:00000000 $d
+    {standard input}:235    .data.Channel_G_ch_config:00000000 Channel_G_ch_config
+    {standard input}:232    .data.Channel_G_ch_config:00000000 $d
+    {standard input}:249    .bss.Channel_G_res_config:00000000 Channel_G_res_config
+    {standard input}:246    .bss.Channel_G_res_config:00000000 $d
+    {standard input}:256    .data.ADC_MEASUREMENT_Channel_G_handle:00000000 ADC_MEASUREMENT_Channel_G_handle
+    {standard input}:253    .data.ADC_MEASUREMENT_Channel_G_handle:00000000 $d
+    {standard input}:269    .data.Channel_H_ch_config:00000000 Channel_H_ch_config
+    {standard input}:266    .data.Channel_H_ch_config:00000000 $d
+    {standard input}:283    .bss.Channel_H_res_config:00000000 Channel_H_res_config
+    {standard input}:280    .bss.Channel_H_res_config:00000000 $d
+    {standard input}:290    .data.ADC_MEASUREMENT_Channel_H_handle:00000000 ADC_MEASUREMENT_Channel_H_handle
+    {standard input}:287    .data.ADC_MEASUREMENT_Channel_H_handle:00000000 $d
+    {standard input}:303    .data.Channel_I_ch_config:00000000 Channel_I_ch_config
+    {standard input}:300    .data.Channel_I_ch_config:00000000 $d
+    {standard input}:317    .bss.Channel_I_res_config:00000000 Channel_I_res_config
+    {standard input}:314    .bss.Channel_I_res_config:00000000 $d
+    {standard input}:324    .data.ADC_MEASUREMENT_Channel_I_handle:00000000 ADC_MEASUREMENT_Channel_I_handle
+    {standard input}:321    .data.ADC_MEASUREMENT_Channel_I_handle:00000000 $d
+    {standard input}:337    .data.Channel_J_ch_config:00000000 Channel_J_ch_config
+    {standard input}:334    .data.Channel_J_ch_config:00000000 $d
+    {standard input}:351    .bss.Channel_J_res_config:00000000 Channel_J_res_config
+    {standard input}:348    .bss.Channel_J_res_config:00000000 $d
+    {standard input}:358    .data.ADC_MEASUREMENT_Channel_J_handle:00000000 ADC_MEASUREMENT_Channel_J_handle
+    {standard input}:355    .data.ADC_MEASUREMENT_Channel_J_handle:00000000 $d
+    {standard input}:371    .data.Channel_K_ch_config:00000000 Channel_K_ch_config
+    {standard input}:368    .data.Channel_K_ch_config:00000000 $d
+    {standard input}:385    .bss.Channel_K_res_config:00000000 Channel_K_res_config
+    {standard input}:382    .bss.Channel_K_res_config:00000000 $d
+    {standard input}:392    .data.ADC_MEASUREMENT_Channel_K_handle:00000000 ADC_MEASUREMENT_Channel_K_handle
+    {standard input}:389    .data.ADC_MEASUREMENT_Channel_K_handle:00000000 $d
+    {standard input}:405    .data.ADC_MEASUREMENT_channel_array:00000000 ADC_MEASUREMENT_channel_array
+    {standard input}:402    .data.ADC_MEASUREMENT_channel_array:00000000 $d
+    {standard input}:422    .rodata.backgnd_config:00000000 backgnd_config
+    {standard input}:419    .rodata.backgnd_config:00000000 $d
+    {standard input}:436    .data.ADC_MEASUREMENT:00000000 ADC_MEASUREMENT
+    {standard input}:433    .data.ADC_MEASUREMENT:00000000 $d
+
+UNDEFINED SYMBOLS
+ANALOG_IO_xClutchSTW
+ANALOG_IO_UBat
+ANALOG_IO_xRHF
+ANALOG_IO_fFR
+ANALOG_IO_fFL
+ANALOG_IO_xClutch
+ANALOG_IO_pbrakeR
+ANALOG_IO_boardTemp
+ANALOG_IO_TR1_I_WP
+ANALOG_IO_TR2_I_FAN1
+ANALOG_IO_TR3_I_FAN2
+GLOBAL_ADC_0

@@ -1,0 +1,57 @@
+   1              	 .syntax unified
+   2              	 .cpu cortex-m4
+   3              	 .eabi_attribute 27,3
+   4              	 .fpu fpv4-sp-d16
+   5              	 .eabi_attribute 20,1
+   6              	 .eabi_attribute 21,1
+   7              	 .eabi_attribute 23,3
+   8              	 .eabi_attribute 24,1
+   9              	 .eabi_attribute 25,1
+  10              	 .eabi_attribute 26,1
+  11              	 .eabi_attribute 30,4
+  12              	 .eabi_attribute 34,1
+  13              	 .eabi_attribute 18,4
+  14              	 .thumb
+  15              	 .file "rtGetNaN.c"
+  16              	 .section .text.rtGetNaN,"ax",%progbits
+  17              	 .align 1
+  18              	 .global rtGetNaN
+  19              	 .thumb
+  20              	 .thumb_func
+  22              	rtGetNaN:
+  23              	 
+  24              	 
+  25              	 
+  26 0000 0020     	 movs r0,#0
+  27 0002 0149     	 ldr r1,.L2
+  28 0004 7047     	 bx lr
+  29              	.L3:
+  30 0006 00BF     	 .align 2
+  31              	.L2:
+  32 0008 0000F8FF 	 .word -524288
+  34              	 .section .text.rtGetNaNF,"ax",%progbits
+  35              	 .align 1
+  36              	 .global rtGetNaNF
+  37              	 .thumb
+  38              	 .thumb_func
+  40              	rtGetNaNF:
+  41              	 
+  42              	 
+  43              	 
+  44 0000 0048     	 ldr r0,.L5
+  45 0002 7047     	 bx lr
+  46              	.L6:
+  47              	 .align 2
+  48              	.L5:
+  49 0004 0000C0FF 	 .word -4194304
+  51              	 .ident "GCC: (GNU Tools for ARM Embedded Processors) 4.9.3 20141119 (release) [ARM/embedded-4_9-branch revision 218278]"
+DEFINED SYMBOLS
+                            *ABS*:00000000 rtGetNaN.c
+    {standard input}:17     .text.rtGetNaN:00000000 $t
+    {standard input}:22     .text.rtGetNaN:00000000 rtGetNaN
+    {standard input}:32     .text.rtGetNaN:00000008 $d
+    {standard input}:35     .text.rtGetNaNF:00000000 $t
+    {standard input}:40     .text.rtGetNaNF:00000000 rtGetNaNF
+    {standard input}:49     .text.rtGetNaNF:00000004 $d
+
+NO UNDEFINED SYMBOLS

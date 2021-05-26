@@ -1,0 +1,1807 @@
+   1              	 .syntax unified
+   2              	 .cpu cortex-m4
+   3              	 .eabi_attribute 27,3
+   4              	 .fpu fpv4-sp-d16
+   5              	 .eabi_attribute 20,1
+   6              	 .eabi_attribute 21,1
+   7              	 .eabi_attribute 23,3
+   8              	 .eabi_attribute 24,1
+   9              	 .eabi_attribute 25,1
+  10              	 .eabi_attribute 26,1
+  11              	 .eabi_attribute 30,6
+  12              	 .eabi_attribute 34,1
+  13              	 .eabi_attribute 18,4
+  14              	 .thumb
+  15              	 .file "CAN_1.c"
+  16              	 .text
+  17              	.Ltext0:
+  18              	 .cfi_sections .debug_frame
+  19              	 .section .text.XMC_GPIO_SetOutputHigh,"ax",%progbits
+  20              	 .align 2
+  21              	 .thumb
+  22              	 .thumb_func
+  24              	XMC_GPIO_SetOutputHigh:
+  25              	.LFB177:
+  26              	 .file 1 "C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Libraries/XMCLib/inc/xmc_gpio.h"
+   1:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Libraries/XMCLib/inc\xmc_gpio.h **** /**
+   2:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Libraries/XMCLib/inc\xmc_gpio.h ****  * @file xmc_gpio.h
+   3:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Libraries/XMCLib/inc\xmc_gpio.h ****  * @date 2015-06-20
+   4:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Libraries/XMCLib/inc\xmc_gpio.h ****  *
+   5:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Libraries/XMCLib/inc\xmc_gpio.h ****  * @cond
+   6:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Libraries/XMCLib/inc\xmc_gpio.h ****  **************************************************************************************************
+   7:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Libraries/XMCLib/inc\xmc_gpio.h ****  * XMClib v2.1.24 - XMC Peripheral Driver Library 
+   8:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Libraries/XMCLib/inc\xmc_gpio.h ****  *
+   9:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Libraries/XMCLib/inc\xmc_gpio.h ****  * Copyright (c) 2015-2019, Infineon Technologies AG
+  10:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Libraries/XMCLib/inc\xmc_gpio.h ****  * All rights reserved.                        
+  11:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Libraries/XMCLib/inc\xmc_gpio.h ****  *                                             
+  12:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Libraries/XMCLib/inc\xmc_gpio.h ****  * Redistribution and use in source and binary forms, with or without modification,are permitted pr
+  13:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Libraries/XMCLib/inc\xmc_gpio.h ****  * following conditions are met:   
+  14:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Libraries/XMCLib/inc\xmc_gpio.h ****  *                                                                              
+  15:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Libraries/XMCLib/inc\xmc_gpio.h ****  * Redistributions of source code must retain the above copyright notice, this list of conditions a
+  16:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Libraries/XMCLib/inc\xmc_gpio.h ****  * disclaimer.                        
+  17:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Libraries/XMCLib/inc\xmc_gpio.h ****  * 
+  18:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Libraries/XMCLib/inc\xmc_gpio.h ****  * Redistributions in binary form must reproduce the above copyright notice, this list of condition
+  19:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Libraries/XMCLib/inc\xmc_gpio.h ****  * disclaimer in the documentation and/or other materials provided with the distribution.          
+  20:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Libraries/XMCLib/inc\xmc_gpio.h ****  * 
+  21:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Libraries/XMCLib/inc\xmc_gpio.h ****  * Neither the name of the copyright holders nor the names of its contributors may be used to endor
+  22:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Libraries/XMCLib/inc\xmc_gpio.h ****  * products derived from this software without specific prior written permission.                  
+  23:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Libraries/XMCLib/inc\xmc_gpio.h ****  *                                                                              
+  24:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Libraries/XMCLib/inc\xmc_gpio.h ****  * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND ANY EXPRESS OR I
+  25:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Libraries/XMCLib/inc\xmc_gpio.h ****  * INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTI
+  26:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Libraries/XMCLib/inc\xmc_gpio.h ****  * DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE  FOR ANY DIRECT, IN
+  27:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Libraries/XMCLib/inc\xmc_gpio.h ****  * SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBS
+  28:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Libraries/XMCLib/inc\xmc_gpio.h ****  * SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THE
+  29:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Libraries/XMCLib/inc\xmc_gpio.h ****  * WHETHER IN CONTRACT, STRICT LIABILITY,OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY
+  30:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Libraries/XMCLib/inc\xmc_gpio.h ****  * OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.                            
+  31:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Libraries/XMCLib/inc\xmc_gpio.h ****  *                                                                              
+  32:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Libraries/XMCLib/inc\xmc_gpio.h ****  * To improve the quality of the software, users are encouraged to share modifications, enhancement
+  33:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Libraries/XMCLib/inc\xmc_gpio.h ****  * Infineon Technologies AG dave@infineon.com).                                                    
+  34:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Libraries/XMCLib/inc\xmc_gpio.h ****  **************************************************************************************************
+  35:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Libraries/XMCLib/inc\xmc_gpio.h ****  *
+  36:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Libraries/XMCLib/inc\xmc_gpio.h ****  * Change History
+  37:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Libraries/XMCLib/inc\xmc_gpio.h ****  * --------------
+  38:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Libraries/XMCLib/inc\xmc_gpio.h ****  *
+  39:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Libraries/XMCLib/inc\xmc_gpio.h ****  * 2015-02-20:
+  40:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Libraries/XMCLib/inc\xmc_gpio.h ****  *     - Initial draft<br>
+  41:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Libraries/XMCLib/inc\xmc_gpio.h ****  *     - Documentation improved <br>
+  42:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Libraries/XMCLib/inc\xmc_gpio.h ****  *      
+  43:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Libraries/XMCLib/inc\xmc_gpio.h ****  * 2015-06-20:
+  44:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Libraries/XMCLib/inc\xmc_gpio.h ****  *     - Removed version macros and declaration of GetDriverVersion API
+  45:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Libraries/XMCLib/inc\xmc_gpio.h ****  *
+  46:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Libraries/XMCLib/inc\xmc_gpio.h ****  * @endcond
+  47:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Libraries/XMCLib/inc\xmc_gpio.h ****  *
+  48:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Libraries/XMCLib/inc\xmc_gpio.h ****  */
+  49:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Libraries/XMCLib/inc\xmc_gpio.h **** 
+  50:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Libraries/XMCLib/inc\xmc_gpio.h **** #ifndef XMC_GPIO_H
+  51:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Libraries/XMCLib/inc\xmc_gpio.h **** #define XMC_GPIO_H
+  52:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Libraries/XMCLib/inc\xmc_gpio.h **** 
+  53:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Libraries/XMCLib/inc\xmc_gpio.h **** /**************************************************************************************************
+  54:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Libraries/XMCLib/inc\xmc_gpio.h ****  * HEADER FILES
+  55:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Libraries/XMCLib/inc\xmc_gpio.h ****  **************************************************************************************************
+  56:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Libraries/XMCLib/inc\xmc_gpio.h **** 
+  57:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Libraries/XMCLib/inc\xmc_gpio.h **** #include "xmc_common.h"
+  58:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Libraries/XMCLib/inc\xmc_gpio.h **** 
+  59:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Libraries/XMCLib/inc\xmc_gpio.h **** /**
+  60:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Libraries/XMCLib/inc\xmc_gpio.h ****  * @addtogroup XMClib XMC Peripheral Library
+  61:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Libraries/XMCLib/inc\xmc_gpio.h ****  * @{
+  62:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Libraries/XMCLib/inc\xmc_gpio.h ****  */
+  63:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Libraries/XMCLib/inc\xmc_gpio.h **** 
+  64:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Libraries/XMCLib/inc\xmc_gpio.h **** /**
+  65:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Libraries/XMCLib/inc\xmc_gpio.h ****  * @addtogroup GPIO
+  66:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Libraries/XMCLib/inc\xmc_gpio.h ****  * @brief General Purpose Input Output (GPIO) driver for the XMC microcontroller family.
+  67:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Libraries/XMCLib/inc\xmc_gpio.h ****  *
+  68:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Libraries/XMCLib/inc\xmc_gpio.h ****  * GPIO driver provide a generic and very flexible software interface for all standard digital I/O 
+  69:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Libraries/XMCLib/inc\xmc_gpio.h ****  * Each port slice has individual interfaces for the operation as General Purpose I/O and it furthe
+  70:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Libraries/XMCLib/inc\xmc_gpio.h ****  * connectivity to the on-chip periphery and the control for the pad characteristics. 
+  71:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Libraries/XMCLib/inc\xmc_gpio.h ****  *
+  72:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Libraries/XMCLib/inc\xmc_gpio.h ****  * The driver is divided into Input and Output mode.
+  73:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Libraries/XMCLib/inc\xmc_gpio.h ****  *
+  74:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Libraries/XMCLib/inc\xmc_gpio.h ****  * Input mode features:
+  75:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Libraries/XMCLib/inc\xmc_gpio.h ****  * -# Configuration structure XMC_GPIO_CONFIG_t and initialization function XMC_GPIO_Init()
+  76:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Libraries/XMCLib/inc\xmc_gpio.h ****  * -# Allows the selection of weak pull-up or pull-down device. Configuration structure XMC_GPIO_MO
+  77:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Libraries/XMCLib/inc\xmc_gpio.h ****  * \if XMC1
+  78:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Libraries/XMCLib/inc\xmc_gpio.h ****  * -# Allows the selection of input hysteresis. XMC_GPIO_SetInputHysteresis()
+  79:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Libraries/XMCLib/inc\xmc_gpio.h ****  * \endif
+  80:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Libraries/XMCLib/inc\xmc_gpio.h ****  *
+  81:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Libraries/XMCLib/inc\xmc_gpio.h ****  * 
+  82:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Libraries/XMCLib/inc\xmc_gpio.h ****  * Output mode features:
+  83:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Libraries/XMCLib/inc\xmc_gpio.h ****  * -# Allows the selection of push pull/open drain and Alternate output. Configuration structure XM
+  84:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Libraries/XMCLib/inc\xmc_gpio.h ****  * \if XMC4
+  85:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Libraries/XMCLib/inc\xmc_gpio.h ****  * -# Allows the selection of pad driver strength. Configuration structure XMC_GPIO_OUTPUT_STRENGTH
+  86:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Libraries/XMCLib/inc\xmc_gpio.h ****  * \endif
+  87:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Libraries/XMCLib/inc\xmc_gpio.h ****  *
+  88:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Libraries/XMCLib/inc\xmc_gpio.h ****  * -# Allows the selection of initial output level. Configuration structure XMC_GPIO_OUTPUT_LEVEL_t
+  89:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Libraries/XMCLib/inc\xmc_gpio.h ****  *
+  90:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Libraries/XMCLib/inc\xmc_gpio.h ****  *@{
+  91:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Libraries/XMCLib/inc\xmc_gpio.h ****  */
+  92:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Libraries/XMCLib/inc\xmc_gpio.h ****  
+  93:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Libraries/XMCLib/inc\xmc_gpio.h **** /**************************************************************************************************
+  94:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Libraries/XMCLib/inc\xmc_gpio.h ****  * MACROS
+  95:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Libraries/XMCLib/inc\xmc_gpio.h ****  **************************************************************************************************
+  96:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Libraries/XMCLib/inc\xmc_gpio.h **** 
+  97:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Libraries/XMCLib/inc\xmc_gpio.h **** #define PORT_IOCR_PC_Pos PORT0_IOCR0_PC0_Pos
+  98:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Libraries/XMCLib/inc\xmc_gpio.h **** #define PORT_IOCR_PC_Msk PORT0_IOCR0_PC0_Msk
+  99:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Libraries/XMCLib/inc\xmc_gpio.h **** 
+ 100:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Libraries/XMCLib/inc\xmc_gpio.h **** #define PORT_IOCR_PC_Size 				(8U)
+ 101:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Libraries/XMCLib/inc\xmc_gpio.h **** 											
+ 102:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Libraries/XMCLib/inc\xmc_gpio.h **** 
+ 103:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Libraries/XMCLib/inc\xmc_gpio.h **** #define XMC_GPIO_CHECK_OUTPUT_LEVEL(level) ((level == XMC_GPIO_OUTPUT_LEVEL_LOW) || \
+ 104:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Libraries/XMCLib/inc\xmc_gpio.h ****                                             (level == XMC_GPIO_OUTPUT_LEVEL_HIGH))
+ 105:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Libraries/XMCLib/inc\xmc_gpio.h ****                                             
+ 106:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Libraries/XMCLib/inc\xmc_gpio.h **** #define XMC_GPIO_CHECK_HWCTRL(hwctrl) ((hwctrl == XMC_GPIO_HWCTRL_DISABLED) || \
+ 107:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Libraries/XMCLib/inc\xmc_gpio.h ****                                        (hwctrl == XMC_GPIO_HWCTRL_PERIPHERAL1) || \
+ 108:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Libraries/XMCLib/inc\xmc_gpio.h ****                                        (hwctrl == XMC_GPIO_HWCTRL_PERIPHERAL2))                    
+ 109:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Libraries/XMCLib/inc\xmc_gpio.h ****                                             
+ 110:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Libraries/XMCLib/inc\xmc_gpio.h **** /**************************************************************************************************
+ 111:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Libraries/XMCLib/inc\xmc_gpio.h ****  * ENUMS
+ 112:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Libraries/XMCLib/inc\xmc_gpio.h ****  **************************************************************************************************
+ 113:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Libraries/XMCLib/inc\xmc_gpio.h **** 
+ 114:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Libraries/XMCLib/inc\xmc_gpio.h **** 
+ 115:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Libraries/XMCLib/inc\xmc_gpio.h **** /**
+ 116:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Libraries/XMCLib/inc\xmc_gpio.h ****  * Defines output level of a pin. Use type \a XMC_GPIO_OUTPUT_LEVEL_t for this enum.
+ 117:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Libraries/XMCLib/inc\xmc_gpio.h ****  */
+ 118:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Libraries/XMCLib/inc\xmc_gpio.h **** typedef enum XMC_GPIO_OUTPUT_LEVEL
+ 119:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Libraries/XMCLib/inc\xmc_gpio.h **** {
+ 120:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Libraries/XMCLib/inc\xmc_gpio.h ****   XMC_GPIO_OUTPUT_LEVEL_LOW  = 0x10000U, /**<  Reset bit */
+ 121:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Libraries/XMCLib/inc\xmc_gpio.h ****   XMC_GPIO_OUTPUT_LEVEL_HIGH = 0x1U, 	/**< Set bit  */
+ 122:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Libraries/XMCLib/inc\xmc_gpio.h **** } XMC_GPIO_OUTPUT_LEVEL_t;
+ 123:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Libraries/XMCLib/inc\xmc_gpio.h **** 
+ 124:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Libraries/XMCLib/inc\xmc_gpio.h **** /**
+ 125:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Libraries/XMCLib/inc\xmc_gpio.h ****  * Defines direct hardware control characteristics of the pin . Use type \a XMC_GPIO_HWCTRL_t for t
+ 126:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Libraries/XMCLib/inc\xmc_gpio.h ****  */
+ 127:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Libraries/XMCLib/inc\xmc_gpio.h **** typedef enum XMC_GPIO_HWCTRL
+ 128:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Libraries/XMCLib/inc\xmc_gpio.h **** {
+ 129:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Libraries/XMCLib/inc\xmc_gpio.h ****   XMC_GPIO_HWCTRL_DISABLED     = 0x0U, /**<  Software control only */
+ 130:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Libraries/XMCLib/inc\xmc_gpio.h ****   XMC_GPIO_HWCTRL_PERIPHERAL1  = 0x1U, /**<  HWI0/HWO0 control path can override the software confi
+ 131:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Libraries/XMCLib/inc\xmc_gpio.h ****   XMC_GPIO_HWCTRL_PERIPHERAL2  = 0x2U  /**<  HWI1/HWO1 control path can override the software confi
+ 132:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Libraries/XMCLib/inc\xmc_gpio.h **** } XMC_GPIO_HWCTRL_t;
+ 133:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Libraries/XMCLib/inc\xmc_gpio.h **** 
+ 134:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Libraries/XMCLib/inc\xmc_gpio.h **** /**************************************************************************************************
+ 135:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Libraries/XMCLib/inc\xmc_gpio.h ****  * DEVICE FAMILY EXTENSIONS
+ 136:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Libraries/XMCLib/inc\xmc_gpio.h ****  **************************************************************************************************
+ 137:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Libraries/XMCLib/inc\xmc_gpio.h **** 
+ 138:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Libraries/XMCLib/inc\xmc_gpio.h ****  #if UC_FAMILY == XMC1
+ 139:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Libraries/XMCLib/inc\xmc_gpio.h **** #include "xmc1_gpio.h"
+ 140:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Libraries/XMCLib/inc\xmc_gpio.h **** #elif UC_FAMILY == XMC4
+ 141:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Libraries/XMCLib/inc\xmc_gpio.h **** #include "xmc4_gpio.h"
+ 142:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Libraries/XMCLib/inc\xmc_gpio.h **** #else
+ 143:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Libraries/XMCLib/inc\xmc_gpio.h **** #error "xmc_gpio.h: family device not supported"
+ 144:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Libraries/XMCLib/inc\xmc_gpio.h **** #endif
+ 145:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Libraries/XMCLib/inc\xmc_gpio.h **** 
+ 146:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Libraries/XMCLib/inc\xmc_gpio.h **** /**************************************************************************************************
+ 147:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Libraries/XMCLib/inc\xmc_gpio.h ****  * API PROTOTYPES
+ 148:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Libraries/XMCLib/inc\xmc_gpio.h ****  **************************************************************************************************
+ 149:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Libraries/XMCLib/inc\xmc_gpio.h **** 
+ 150:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Libraries/XMCLib/inc\xmc_gpio.h **** #ifdef __cplusplus
+ 151:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Libraries/XMCLib/inc\xmc_gpio.h **** extern "C" {
+ 152:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Libraries/XMCLib/inc\xmc_gpio.h **** #endif
+ 153:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Libraries/XMCLib/inc\xmc_gpio.h **** 
+ 154:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Libraries/XMCLib/inc\xmc_gpio.h **** 
+ 155:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Libraries/XMCLib/inc\xmc_gpio.h **** /**
+ 156:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Libraries/XMCLib/inc\xmc_gpio.h ****  * @param  port	  Constant pointer pointing to GPIO port, to access port registers like Pn_OUT,Pn_O
+ 157:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Libraries/XMCLib/inc\xmc_gpio.h ****  * @param  pin	  Port pin number.
+ 158:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Libraries/XMCLib/inc\xmc_gpio.h ****  * @param  config GPIO configuration data structure. Refer data structure @ref XMC_GPIO_CONFIG_t fo
+ 159:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Libraries/XMCLib/inc\xmc_gpio.h ****  *
+ 160:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Libraries/XMCLib/inc\xmc_gpio.h ****  * @return None
+ 161:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Libraries/XMCLib/inc\xmc_gpio.h ****  *
+ 162:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Libraries/XMCLib/inc\xmc_gpio.h ****  * \par<b>Description:</b><br>
+ 163:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Libraries/XMCLib/inc\xmc_gpio.h ****  * \if XMC1
+ 164:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Libraries/XMCLib/inc\xmc_gpio.h ****  * Initializes input / output mode settings like, pull up / pull down devices,hysteresis, push pull
+ 165:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Libraries/XMCLib/inc\xmc_gpio.h ****  * Also configures alternate function outputs and clears hardware port control for a selected \a po
+ 166:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Libraries/XMCLib/inc\xmc_gpio.h ****  * \a config provides selected I/O settings. It configures hardware registers Pn_IOCR,Pn_OUT, Pn_OM
+ 167:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Libraries/XMCLib/inc\xmc_gpio.h ****  * \endif
+ 168:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Libraries/XMCLib/inc\xmc_gpio.h ****  * \if XMC4
+ 169:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Libraries/XMCLib/inc\xmc_gpio.h ****  * Initializes input / output mode settings like, pull up / pull down devices,push pull /open drain
+ 170:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Libraries/XMCLib/inc\xmc_gpio.h ****  * Also configures alternate function outputs and clears hardware port control for selected \a port
+ 171:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Libraries/XMCLib/inc\xmc_gpio.h ****  * It configures hardware registers Pn_IOCR,Pn_OUT,Pn_OMR,Pn_PDISC and Pn_PDR.\n
+ 172:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Libraries/XMCLib/inc\xmc_gpio.h ****  * \endif
+ 173:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Libraries/XMCLib/inc\xmc_gpio.h ****  *
+ 174:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Libraries/XMCLib/inc\xmc_gpio.h ****  * \par<b>Related APIs:</b><BR>
+ 175:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Libraries/XMCLib/inc\xmc_gpio.h ****  *  None
+ 176:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Libraries/XMCLib/inc\xmc_gpio.h ****  *
+ 177:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Libraries/XMCLib/inc\xmc_gpio.h ****  * \par<b>Note:</b><br>
+ 178:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Libraries/XMCLib/inc\xmc_gpio.h ****  * This API is called in definition of DAVE_init by code generation and therefore should not be exp
+ 179:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Libraries/XMCLib/inc\xmc_gpio.h ****  * for the normal operation. Use other APIs only after DAVE_init is called successfully (returns DA
+ 180:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Libraries/XMCLib/inc\xmc_gpio.h ****  *
+ 181:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Libraries/XMCLib/inc\xmc_gpio.h ****  *
+ 182:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Libraries/XMCLib/inc\xmc_gpio.h ****  */
+ 183:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Libraries/XMCLib/inc\xmc_gpio.h **** 
+ 184:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Libraries/XMCLib/inc\xmc_gpio.h ****  
+ 185:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Libraries/XMCLib/inc\xmc_gpio.h **** void XMC_GPIO_Init(XMC_GPIO_PORT_t *const port, const uint8_t pin, const XMC_GPIO_CONFIG_t *const c
+ 186:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Libraries/XMCLib/inc\xmc_gpio.h ****  
+ 187:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Libraries/XMCLib/inc\xmc_gpio.h **** /**
+ 188:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Libraries/XMCLib/inc\xmc_gpio.h ****  *
+ 189:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Libraries/XMCLib/inc\xmc_gpio.h ****  * @param  port	Constant pointer pointing to GPIO port, to access hardware register Pn_IOCR.
+ 190:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Libraries/XMCLib/inc\xmc_gpio.h ****  * @param  pin	Port pin number.
+ 191:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Libraries/XMCLib/inc\xmc_gpio.h ****  * @param  mode input / output functionality selection. Refer @ref XMC_GPIO_MODE_t for valid values
+ 192:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Libraries/XMCLib/inc\xmc_gpio.h ****  *
+ 193:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Libraries/XMCLib/inc\xmc_gpio.h ****  * @return None
+ 194:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Libraries/XMCLib/inc\xmc_gpio.h ****  *
+ 195:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Libraries/XMCLib/inc\xmc_gpio.h ****  * \par<b>Description:</b><br>
+ 196:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Libraries/XMCLib/inc\xmc_gpio.h ****  * Sets digital input and output driver functionality and characteristics of a GPIO port pin. It co
+ 197:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Libraries/XMCLib/inc\xmc_gpio.h ****  * registers Pn_IOCR. \a mode is initially configured during initialization in XMC_GPIO_Init(). Cal
+ 198:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Libraries/XMCLib/inc\xmc_gpio.h ****  * the port direction functionality as needed later in the program.
+ 199:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Libraries/XMCLib/inc\xmc_gpio.h ****  *
+ 200:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Libraries/XMCLib/inc\xmc_gpio.h ****  * \par<b>Related APIs:</b><BR>
+ 201:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Libraries/XMCLib/inc\xmc_gpio.h ****  *  None
+ 202:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Libraries/XMCLib/inc\xmc_gpio.h ****  *
+ 203:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Libraries/XMCLib/inc\xmc_gpio.h ****  */
+ 204:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Libraries/XMCLib/inc\xmc_gpio.h **** 
+ 205:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Libraries/XMCLib/inc\xmc_gpio.h **** void XMC_GPIO_SetMode(XMC_GPIO_PORT_t *const port, const uint8_t pin, const XMC_GPIO_MODE_t mode);
+ 206:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Libraries/XMCLib/inc\xmc_gpio.h **** 
+ 207:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Libraries/XMCLib/inc\xmc_gpio.h **** 
+ 208:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Libraries/XMCLib/inc\xmc_gpio.h **** /**
+ 209:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Libraries/XMCLib/inc\xmc_gpio.h ****  *
+ 210:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Libraries/XMCLib/inc\xmc_gpio.h ****  * @param  port	 Constant pointer pointing to GPIO port, to access hardware register Pn_OMR.
+ 211:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Libraries/XMCLib/inc\xmc_gpio.h ****  * @param  pin	 Port pin number.
+ 212:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Libraries/XMCLib/inc\xmc_gpio.h ****  * @param  level output level selection. Refer @ref XMC_GPIO_OUTPUT_LEVEL_t for valid values.
+ 213:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Libraries/XMCLib/inc\xmc_gpio.h ****  *
+ 214:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Libraries/XMCLib/inc\xmc_gpio.h ****  * @return None
+ 215:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Libraries/XMCLib/inc\xmc_gpio.h ****  *
+ 216:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Libraries/XMCLib/inc\xmc_gpio.h ****  * \par<b>Description:</b><br>
+ 217:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Libraries/XMCLib/inc\xmc_gpio.h ****  * Set port pin output level to high or low.It configures hardware registers Pn_OMR.\a level is ini
+ 218:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Libraries/XMCLib/inc\xmc_gpio.h ****  * configured during initialization in XMC_GPIO_Init(). Call this API to alter output level as need
+ 219:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Libraries/XMCLib/inc\xmc_gpio.h ****  *
+ 220:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Libraries/XMCLib/inc\xmc_gpio.h ****  * \par<b>Related APIs:</b><BR>
+ 221:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Libraries/XMCLib/inc\xmc_gpio.h ****  *  XMC_GPIO_SetOutputHigh(), XMC_GPIO_SetOutputLow().
+ 222:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Libraries/XMCLib/inc\xmc_gpio.h ****  *
+ 223:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Libraries/XMCLib/inc\xmc_gpio.h ****  * \par<b>Note:</b><br>
+ 224:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Libraries/XMCLib/inc\xmc_gpio.h ****  * Prior to this api, user has to configure port pin to output mode using XMC_GPIO_SetMode().
+ 225:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Libraries/XMCLib/inc\xmc_gpio.h ****  *
+ 226:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Libraries/XMCLib/inc\xmc_gpio.h ****  */
+ 227:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Libraries/XMCLib/inc\xmc_gpio.h **** 
+ 228:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Libraries/XMCLib/inc\xmc_gpio.h **** 
+ 229:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Libraries/XMCLib/inc\xmc_gpio.h **** __STATIC_INLINE void XMC_GPIO_SetOutputLevel(XMC_GPIO_PORT_t *const port, const uint8_t pin, const 
+ 230:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Libraries/XMCLib/inc\xmc_gpio.h **** {
+ 231:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Libraries/XMCLib/inc\xmc_gpio.h ****   XMC_ASSERT("XMC_GPIO_SetOutputLevel: Invalid port", XMC_GPIO_CHECK_OUTPUT_PORT(port));
+ 232:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Libraries/XMCLib/inc\xmc_gpio.h ****   XMC_ASSERT("XMC_GPIO_SetOutputLevel: Invalid output level", XMC_GPIO_CHECK_OUTPUT_LEVEL(level));
+ 233:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Libraries/XMCLib/inc\xmc_gpio.h ****   
+ 234:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Libraries/XMCLib/inc\xmc_gpio.h ****   port->OMR = (uint32_t)level << pin;
+ 235:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Libraries/XMCLib/inc\xmc_gpio.h **** }
+ 236:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Libraries/XMCLib/inc\xmc_gpio.h **** 
+ 237:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Libraries/XMCLib/inc\xmc_gpio.h **** 
+ 238:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Libraries/XMCLib/inc\xmc_gpio.h **** /**
+ 239:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Libraries/XMCLib/inc\xmc_gpio.h ****  * @param  port constant pointer pointing to GPIO port, to access hardware register Pn_OMR.
+ 240:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Libraries/XMCLib/inc\xmc_gpio.h ****  * @param  pin	Port pin number.
+ 241:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Libraries/XMCLib/inc\xmc_gpio.h ****  *
+ 242:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Libraries/XMCLib/inc\xmc_gpio.h ****  * @return None
+ 243:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Libraries/XMCLib/inc\xmc_gpio.h ****  *
+ 244:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Libraries/XMCLib/inc\xmc_gpio.h ****  * \par<b>Description:</b><br>
+ 245:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Libraries/XMCLib/inc\xmc_gpio.h ****  *  Sets port pin output to high. It configures hardware registers Pn_OMR.
+ 246:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Libraries/XMCLib/inc\xmc_gpio.h ****  *
+ 247:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Libraries/XMCLib/inc\xmc_gpio.h ****  *  \par<b>Related APIs:</b><BR>
+ 248:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Libraries/XMCLib/inc\xmc_gpio.h ****  *  XMC_GPIO_SetOutputLow()
+ 249:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Libraries/XMCLib/inc\xmc_gpio.h ****  *
+ 250:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Libraries/XMCLib/inc\xmc_gpio.h ****  * \par<b>Note:</b><br>
+ 251:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Libraries/XMCLib/inc\xmc_gpio.h ****  * Prior to this api, user has to configure port pin to output mode using XMC_GPIO_SetMode().\n
+ 252:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Libraries/XMCLib/inc\xmc_gpio.h ****  * Register Pn_OMR is virtual and does not contain any flip-flop. A read action delivers the value 
+ 253:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Libraries/XMCLib/inc\xmc_gpio.h ****  *
+ 254:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Libraries/XMCLib/inc\xmc_gpio.h ****  */
+ 255:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Libraries/XMCLib/inc\xmc_gpio.h **** 
+ 256:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Libraries/XMCLib/inc\xmc_gpio.h **** __STATIC_INLINE void XMC_GPIO_SetOutputHigh(XMC_GPIO_PORT_t *const port, const uint8_t pin)
+ 257:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Libraries/XMCLib/inc\xmc_gpio.h **** {
+  27              	 .loc 1 257 0
+  28              	 .cfi_startproc
+  29              	 
+  30              	 
+  31              	 
+  32 0000 80B4     	 push {r7}
+  33              	.LCFI0:
+  34              	 .cfi_def_cfa_offset 4
+  35              	 .cfi_offset 7,-4
+  36 0002 83B0     	 sub sp,sp,#12
+  37              	.LCFI1:
+  38              	 .cfi_def_cfa_offset 16
+  39 0004 00AF     	 add r7,sp,#0
+  40              	.LCFI2:
+  41              	 .cfi_def_cfa_register 7
+  42 0006 7860     	 str r0,[r7,#4]
+  43 0008 0B46     	 mov r3,r1
+  44 000a FB70     	 strb r3,[r7,#3]
+ 258:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Libraries/XMCLib/inc\xmc_gpio.h ****   XMC_ASSERT("XMC_GPIO_SetOutputHigh: Invalid port", XMC_GPIO_CHECK_OUTPUT_PORT(port));
+ 259:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Libraries/XMCLib/inc\xmc_gpio.h **** 
+ 260:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Libraries/XMCLib/inc\xmc_gpio.h ****   port->OMR = (uint32_t)0x1U << pin;
+  45              	 .loc 1 260 0
+  46 000c FB78     	 ldrb r3,[r7,#3]
+  47 000e 0122     	 movs r2,#1
+  48 0010 9A40     	 lsls r2,r2,r3
+  49 0012 7B68     	 ldr r3,[r7,#4]
+  50 0014 5A60     	 str r2,[r3,#4]
+ 261:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Libraries/XMCLib/inc\xmc_gpio.h **** }
+  51              	 .loc 1 261 0
+  52 0016 0C37     	 adds r7,r7,#12
+  53              	.LCFI3:
+  54              	 .cfi_def_cfa_offset 4
+  55 0018 BD46     	 mov sp,r7
+  56              	.LCFI4:
+  57              	 .cfi_def_cfa_register 13
+  58              	 
+  59 001a 5DF8047B 	 ldr r7,[sp],#4
+  60              	.LCFI5:
+  61              	 .cfi_restore 7
+  62              	 .cfi_def_cfa_offset 0
+  63 001e 7047     	 bx lr
+  64              	 .cfi_endproc
+  65              	.LFE177:
+  67              	 .section .text.XMC_GPIO_SetOutputLow,"ax",%progbits
+  68              	 .align 2
+  69              	 .thumb
+  70              	 .thumb_func
+  72              	XMC_GPIO_SetOutputLow:
+  73              	.LFB178:
+ 262:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Libraries/XMCLib/inc\xmc_gpio.h **** 
+ 263:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Libraries/XMCLib/inc\xmc_gpio.h **** /**
+ 264:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Libraries/XMCLib/inc\xmc_gpio.h ****  *
+ 265:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Libraries/XMCLib/inc\xmc_gpio.h ****  * @param  port	constant pointer pointing to GPIO port, to access hardware register Pn_OMR.
+ 266:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Libraries/XMCLib/inc\xmc_gpio.h ****  * @param  pin	port pin number.
+ 267:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Libraries/XMCLib/inc\xmc_gpio.h ****  *
+ 268:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Libraries/XMCLib/inc\xmc_gpio.h ****  * @return  None
+ 269:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Libraries/XMCLib/inc\xmc_gpio.h ****  *
+ 270:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Libraries/XMCLib/inc\xmc_gpio.h ****  *\par<b>Description:</b><br>
+ 271:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Libraries/XMCLib/inc\xmc_gpio.h ****  * Sets port pin output to low. It configures hardware registers Pn_OMR.\n
+ 272:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Libraries/XMCLib/inc\xmc_gpio.h ****  *
+ 273:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Libraries/XMCLib/inc\xmc_gpio.h ****  * \par<b>Related APIs:</b><BR>>
+ 274:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Libraries/XMCLib/inc\xmc_gpio.h ****  * XMC_GPIO_SetOutputHigh()
+ 275:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Libraries/XMCLib/inc\xmc_gpio.h ****  *
+ 276:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Libraries/XMCLib/inc\xmc_gpio.h ****  *\par<b>Note:</b><br>
+ 277:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Libraries/XMCLib/inc\xmc_gpio.h ****  * Prior to this api, user has to configure port pin to output mode using XMC_GPIO_SetMode().
+ 278:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Libraries/XMCLib/inc\xmc_gpio.h ****  * Register Pn_OMR is virtual and does not contain any flip-flop. A read action delivers the value 
+ 279:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Libraries/XMCLib/inc\xmc_gpio.h ****  *
+ 280:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Libraries/XMCLib/inc\xmc_gpio.h ****  */
+ 281:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Libraries/XMCLib/inc\xmc_gpio.h **** 
+ 282:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Libraries/XMCLib/inc\xmc_gpio.h **** __STATIC_INLINE void XMC_GPIO_SetOutputLow(XMC_GPIO_PORT_t *const port, const uint8_t pin)
+ 283:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Libraries/XMCLib/inc\xmc_gpio.h **** {
+  74              	 .loc 1 283 0
+  75              	 .cfi_startproc
+  76              	 
+  77              	 
+  78              	 
+  79 0000 80B4     	 push {r7}
+  80              	.LCFI6:
+  81              	 .cfi_def_cfa_offset 4
+  82              	 .cfi_offset 7,-4
+  83 0002 83B0     	 sub sp,sp,#12
+  84              	.LCFI7:
+  85              	 .cfi_def_cfa_offset 16
+  86 0004 00AF     	 add r7,sp,#0
+  87              	.LCFI8:
+  88              	 .cfi_def_cfa_register 7
+  89 0006 7860     	 str r0,[r7,#4]
+  90 0008 0B46     	 mov r3,r1
+  91 000a FB70     	 strb r3,[r7,#3]
+ 284:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Libraries/XMCLib/inc\xmc_gpio.h ****   XMC_ASSERT("XMC_GPIO_SetOutputLow: Invalid port", XMC_GPIO_CHECK_OUTPUT_PORT(port));
+ 285:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Libraries/XMCLib/inc\xmc_gpio.h **** 
+ 286:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Libraries/XMCLib/inc\xmc_gpio.h ****   port->OMR = 0x10000U << pin;
+  92              	 .loc 1 286 0
+  93 000c FB78     	 ldrb r3,[r7,#3]
+  94 000e 4FF48032 	 mov r2,#65536
+  95 0012 9A40     	 lsls r2,r2,r3
+  96 0014 7B68     	 ldr r3,[r7,#4]
+  97 0016 5A60     	 str r2,[r3,#4]
+ 287:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Libraries/XMCLib/inc\xmc_gpio.h **** }
+  98              	 .loc 1 287 0
+  99 0018 0C37     	 adds r7,r7,#12
+ 100              	.LCFI9:
+ 101              	 .cfi_def_cfa_offset 4
+ 102 001a BD46     	 mov sp,r7
+ 103              	.LCFI10:
+ 104              	 .cfi_def_cfa_register 13
+ 105              	 
+ 106 001c 5DF8047B 	 ldr r7,[sp],#4
+ 107              	.LCFI11:
+ 108              	 .cfi_restore 7
+ 109              	 .cfi_def_cfa_offset 0
+ 110 0020 7047     	 bx lr
+ 111              	 .cfi_endproc
+ 112              	.LFE178:
+ 114 0022 00BF     	 .section .text.DIGITAL_IO_SetOutputHigh,"ax",%progbits
+ 115              	 .align 2
+ 116              	 .thumb
+ 117              	 .thumb_func
+ 119              	DIGITAL_IO_SetOutputHigh:
+ 120              	.LFB264:
+ 121              	 .file 2 "C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Dave/Generated/DIGITAL_IO/digital_io.h"
+   1:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Dave/Generated/DIGITAL_IO\digital_io.h **** /*
+   2:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Dave/Generated/DIGITAL_IO\digital_io.h ****  *
+   3:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Dave/Generated/DIGITAL_IO\digital_io.h ****  * @file digital_io.h
+   4:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Dave/Generated/DIGITAL_IO\digital_io.h ****  * @date 2016-07-08
+   5:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Dave/Generated/DIGITAL_IO\digital_io.h ****  *
+   6:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Dave/Generated/DIGITAL_IO\digital_io.h ****  * NOTE:
+   7:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Dave/Generated/DIGITAL_IO\digital_io.h ****  * This file is generated by DAVE. Any manual modification done to this file will be lost when the 
+   8:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Dave/Generated/DIGITAL_IO\digital_io.h ****  *
+   9:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Dave/Generated/DIGITAL_IO\digital_io.h ****  * @cond
+  10:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Dave/Generated/DIGITAL_IO\digital_io.h ****  **************************************************************************************************
+  11:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Dave/Generated/DIGITAL_IO\digital_io.h ****  * DIGITAL_IO v4.0.16 - The DIGITAL_IO APP is used to configure a port pin as digital Input/Output.
+  12:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Dave/Generated/DIGITAL_IO\digital_io.h ****  *
+  13:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Dave/Generated/DIGITAL_IO\digital_io.h ****  * Copyright (c) 2015-2016, Infineon Technologies AG
+  14:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Dave/Generated/DIGITAL_IO\digital_io.h ****  * All rights reserved.
+  15:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Dave/Generated/DIGITAL_IO\digital_io.h ****  *
+  16:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Dave/Generated/DIGITAL_IO\digital_io.h ****  * Redistribution and use in source and binary forms, with or without modification,are permitted pr
+  17:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Dave/Generated/DIGITAL_IO\digital_io.h ****  * following conditions are met:
+  18:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Dave/Generated/DIGITAL_IO\digital_io.h ****  *
+  19:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Dave/Generated/DIGITAL_IO\digital_io.h ****  *   Redistributions of source code must retain the above copyright notice, this list of conditions
+  20:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Dave/Generated/DIGITAL_IO\digital_io.h ****  *   disclaimer.
+  21:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Dave/Generated/DIGITAL_IO\digital_io.h ****  *
+  22:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Dave/Generated/DIGITAL_IO\digital_io.h ****  *   Redistributions in binary form must reproduce the above copyright notice, this list of conditi
+  23:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Dave/Generated/DIGITAL_IO\digital_io.h ****  *   following disclaimer in the documentation and/or other materials provided with the distributio
+  24:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Dave/Generated/DIGITAL_IO\digital_io.h ****  *
+  25:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Dave/Generated/DIGITAL_IO\digital_io.h ****  *   Neither the name of the copyright holders nor the names of its contributors may be used to end
+  26:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Dave/Generated/DIGITAL_IO\digital_io.h ****  *   products derived from this software without specific prior written permission.
+  27:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Dave/Generated/DIGITAL_IO\digital_io.h ****  *
+  28:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Dave/Generated/DIGITAL_IO\digital_io.h ****  * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND ANY EXPRESS OR I
+  29:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Dave/Generated/DIGITAL_IO\digital_io.h ****  * INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTI
+  30:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Dave/Generated/DIGITAL_IO\digital_io.h ****  * DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE  FOR ANY DIRECT, IN
+  31:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Dave/Generated/DIGITAL_IO\digital_io.h ****  * SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBS
+  32:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Dave/Generated/DIGITAL_IO\digital_io.h ****  * SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THE
+  33:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Dave/Generated/DIGITAL_IO\digital_io.h ****  * WHETHER IN CONTRACT, STRICT LIABILITY,OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY
+  34:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Dave/Generated/DIGITAL_IO\digital_io.h ****  * USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+  35:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Dave/Generated/DIGITAL_IO\digital_io.h ****  *
+  36:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Dave/Generated/DIGITAL_IO\digital_io.h ****  * To improve the quality of the software, users are encouraged to share modifications, enhancement
+  37:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Dave/Generated/DIGITAL_IO\digital_io.h ****  * with Infineon Technologies AG (dave@infineon.com).
+  38:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Dave/Generated/DIGITAL_IO\digital_io.h ****  **************************************************************************************************
+  39:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Dave/Generated/DIGITAL_IO\digital_io.h ****  *
+  40:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Dave/Generated/DIGITAL_IO\digital_io.h ****  * Change History
+  41:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Dave/Generated/DIGITAL_IO\digital_io.h ****  * --------------
+  42:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Dave/Generated/DIGITAL_IO\digital_io.h ****  *
+  43:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Dave/Generated/DIGITAL_IO\digital_io.h ****  * 2015-02-16
+  44:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Dave/Generated/DIGITAL_IO\digital_io.h ****  *     - Initial version
+  45:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Dave/Generated/DIGITAL_IO\digital_io.h ****  *
+  46:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Dave/Generated/DIGITAL_IO\digital_io.h ****  * 2015-04-22
+  47:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Dave/Generated/DIGITAL_IO\digital_io.h ****  *     - XMC_ASSERT is added in static inline functions.<br>
+  48:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Dave/Generated/DIGITAL_IO\digital_io.h ****  *
+  49:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Dave/Generated/DIGITAL_IO\digital_io.h ****  * 2015-06-20
+  50:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Dave/Generated/DIGITAL_IO\digital_io.h ****  *     - Version check added for XMCLib dependency.<br>
+  51:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Dave/Generated/DIGITAL_IO\digital_io.h ****  *
+  52:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Dave/Generated/DIGITAL_IO\digital_io.h ****  * 2015-12-22
+  53:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Dave/Generated/DIGITAL_IO\digital_io.h ****  *     - Added hardware controlled IO feature.
+  54:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Dave/Generated/DIGITAL_IO\digital_io.h ****  * 2016-07-08:
+  55:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Dave/Generated/DIGITAL_IO\digital_io.h ****  *     - Fixed incorrect case for an included header.<br>
+  56:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Dave/Generated/DIGITAL_IO\digital_io.h ****  *
+  57:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Dave/Generated/DIGITAL_IO\digital_io.h ****  * @endcond
+  58:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Dave/Generated/DIGITAL_IO\digital_io.h ****  *
+  59:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Dave/Generated/DIGITAL_IO\digital_io.h ****  */
+  60:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Dave/Generated/DIGITAL_IO\digital_io.h **** 
+  61:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Dave/Generated/DIGITAL_IO\digital_io.h **** /**************************************************************************************************
+  62:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Dave/Generated/DIGITAL_IO\digital_io.h ****  * HEADER FILES
+  63:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Dave/Generated/DIGITAL_IO\digital_io.h ****  **************************************************************************************************
+  64:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Dave/Generated/DIGITAL_IO\digital_io.h **** 
+  65:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Dave/Generated/DIGITAL_IO\digital_io.h **** #ifndef DIGITAL_IO_H
+  66:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Dave/Generated/DIGITAL_IO\digital_io.h **** #define DIGITAL_IO_H
+  67:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Dave/Generated/DIGITAL_IO\digital_io.h **** 
+  68:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Dave/Generated/DIGITAL_IO\digital_io.h **** #include <xmc_gpio.h>
+  69:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Dave/Generated/DIGITAL_IO\digital_io.h **** #include <DAVE_Common.h>
+  70:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Dave/Generated/DIGITAL_IO\digital_io.h **** #include "digital_io_conf.h"
+  71:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Dave/Generated/DIGITAL_IO\digital_io.h **** 
+  72:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Dave/Generated/DIGITAL_IO\digital_io.h **** /**************************************************************************************************
+  73:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Dave/Generated/DIGITAL_IO\digital_io.h ****  * MACROS
+  74:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Dave/Generated/DIGITAL_IO\digital_io.h ****  **************************************************************************************************
+  75:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Dave/Generated/DIGITAL_IO\digital_io.h **** #if (!((XMC_LIB_MAJOR_VERSION == 2U) && \
+  76:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Dave/Generated/DIGITAL_IO\digital_io.h ****        (XMC_LIB_MINOR_VERSION >= 0U) && \
+  77:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Dave/Generated/DIGITAL_IO\digital_io.h ****        (XMC_LIB_PATCH_VERSION >= 0U)))
+  78:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Dave/Generated/DIGITAL_IO\digital_io.h **** #error "DIGITAL_IO requires XMC Peripheral Library v2.0.0 or higher"
+  79:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Dave/Generated/DIGITAL_IO\digital_io.h **** #endif
+  80:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Dave/Generated/DIGITAL_IO\digital_io.h **** 
+  81:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Dave/Generated/DIGITAL_IO\digital_io.h ****  /*************************************************************************************************
+  82:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Dave/Generated/DIGITAL_IO\digital_io.h ****  * ENUMS
+  83:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Dave/Generated/DIGITAL_IO\digital_io.h ****  **************************************************************************************************
+  84:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Dave/Generated/DIGITAL_IO\digital_io.h **** 
+  85:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Dave/Generated/DIGITAL_IO\digital_io.h **** /**
+  86:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Dave/Generated/DIGITAL_IO\digital_io.h **** * @ingroup DIGITAL_IO_enumerations
+  87:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Dave/Generated/DIGITAL_IO\digital_io.h **** * @{
+  88:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Dave/Generated/DIGITAL_IO\digital_io.h **** */
+  89:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Dave/Generated/DIGITAL_IO\digital_io.h **** 
+  90:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Dave/Generated/DIGITAL_IO\digital_io.h **** /**
+  91:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Dave/Generated/DIGITAL_IO\digital_io.h **** * @brief Initialization status of DIGITAL_IO APP.
+  92:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Dave/Generated/DIGITAL_IO\digital_io.h **** */
+  93:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Dave/Generated/DIGITAL_IO\digital_io.h **** typedef enum DIGITAL_IO_STATUS
+  94:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Dave/Generated/DIGITAL_IO\digital_io.h **** {
+  95:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Dave/Generated/DIGITAL_IO\digital_io.h ****   DIGITAL_IO_STATUS_OK = 0U,/**< 0=Status OK */
+  96:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Dave/Generated/DIGITAL_IO\digital_io.h ****   DIGITAL_IO_STATUS_FAILURE = 1U/**< 1=Status Failed */
+  97:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Dave/Generated/DIGITAL_IO\digital_io.h **** } DIGITAL_IO_STATUS_t;
+  98:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Dave/Generated/DIGITAL_IO\digital_io.h **** 
+  99:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Dave/Generated/DIGITAL_IO\digital_io.h **** /**
+ 100:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Dave/Generated/DIGITAL_IO\digital_io.h **** * @}
+ 101:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Dave/Generated/DIGITAL_IO\digital_io.h **** */
+ 102:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Dave/Generated/DIGITAL_IO\digital_io.h **** 
+ 103:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Dave/Generated/DIGITAL_IO\digital_io.h **** /**************************************************************************************************
+ 104:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Dave/Generated/DIGITAL_IO\digital_io.h ****  * DATA STRUCTURES
+ 105:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Dave/Generated/DIGITAL_IO\digital_io.h ****  **************************************************************************************************
+ 106:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Dave/Generated/DIGITAL_IO\digital_io.h **** /**
+ 107:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Dave/Generated/DIGITAL_IO\digital_io.h **** * @ingroup DIGITAL_IO_datastructures
+ 108:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Dave/Generated/DIGITAL_IO\digital_io.h **** * @{
+ 109:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Dave/Generated/DIGITAL_IO\digital_io.h **** */
+ 110:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Dave/Generated/DIGITAL_IO\digital_io.h **** 
+ 111:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Dave/Generated/DIGITAL_IO\digital_io.h **** /**
+ 112:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Dave/Generated/DIGITAL_IO\digital_io.h **** * @brief Initialization data structure of DIGITAL_IO APP
+ 113:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Dave/Generated/DIGITAL_IO\digital_io.h **** */
+ 114:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Dave/Generated/DIGITAL_IO\digital_io.h **** typedef struct DIGITAL_IO
+ 115:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Dave/Generated/DIGITAL_IO\digital_io.h **** {
+ 116:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Dave/Generated/DIGITAL_IO\digital_io.h ****   XMC_GPIO_PORT_t *const gpio_port;             /**< port number */
+ 117:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Dave/Generated/DIGITAL_IO\digital_io.h ****   const XMC_GPIO_CONFIG_t gpio_config;          /**< mode, initial output level and pad driver stre
+ 118:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Dave/Generated/DIGITAL_IO\digital_io.h ****   const uint8_t gpio_pin;                       /**< pin number */
+ 119:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Dave/Generated/DIGITAL_IO\digital_io.h ****   const XMC_GPIO_HWCTRL_t hwctrl;               /**< Hardware port control */
+ 120:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Dave/Generated/DIGITAL_IO\digital_io.h **** } DIGITAL_IO_t;
+ 121:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Dave/Generated/DIGITAL_IO\digital_io.h **** 
+ 122:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Dave/Generated/DIGITAL_IO\digital_io.h **** 
+ 123:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Dave/Generated/DIGITAL_IO\digital_io.h **** /**
+ 124:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Dave/Generated/DIGITAL_IO\digital_io.h **** * @}
+ 125:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Dave/Generated/DIGITAL_IO\digital_io.h **** */
+ 126:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Dave/Generated/DIGITAL_IO\digital_io.h **** 
+ 127:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Dave/Generated/DIGITAL_IO\digital_io.h **** 
+ 128:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Dave/Generated/DIGITAL_IO\digital_io.h **** /**************************************************************************************************
+ 129:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Dave/Generated/DIGITAL_IO\digital_io.h ****  * API Prototypes
+ 130:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Dave/Generated/DIGITAL_IO\digital_io.h ****  **************************************************************************************************
+ 131:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Dave/Generated/DIGITAL_IO\digital_io.h **** 
+ 132:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Dave/Generated/DIGITAL_IO\digital_io.h **** 
+ 133:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Dave/Generated/DIGITAL_IO\digital_io.h **** #ifdef __cplusplus
+ 134:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Dave/Generated/DIGITAL_IO\digital_io.h **** extern "C" {
+ 135:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Dave/Generated/DIGITAL_IO\digital_io.h **** #endif
+ 136:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Dave/Generated/DIGITAL_IO\digital_io.h **** 
+ 137:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Dave/Generated/DIGITAL_IO\digital_io.h **** /**
+ 138:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Dave/Generated/DIGITAL_IO\digital_io.h **** * @ingroup DIGITAL_IO_apidoc
+ 139:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Dave/Generated/DIGITAL_IO\digital_io.h **** * @{
+ 140:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Dave/Generated/DIGITAL_IO\digital_io.h **** */
+ 141:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Dave/Generated/DIGITAL_IO\digital_io.h **** 
+ 142:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Dave/Generated/DIGITAL_IO\digital_io.h **** 
+ 143:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Dave/Generated/DIGITAL_IO\digital_io.h **** 
+ 144:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Dave/Generated/DIGITAL_IO\digital_io.h **** /**
+ 145:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Dave/Generated/DIGITAL_IO\digital_io.h **** * @brief Get DIGITAL_IO APP version
+ 146:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Dave/Generated/DIGITAL_IO\digital_io.h **** * @return DAVE_APP_VERSION_t APP version information (major, minor and patch number)
+ 147:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Dave/Generated/DIGITAL_IO\digital_io.h **** *
+ 148:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Dave/Generated/DIGITAL_IO\digital_io.h **** * \par<b>Description: </b><br>
+ 149:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Dave/Generated/DIGITAL_IO\digital_io.h **** * The function can be used to check application software compatibility with a
+ 150:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Dave/Generated/DIGITAL_IO\digital_io.h **** * specific version of the APP.
+ 151:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Dave/Generated/DIGITAL_IO\digital_io.h **** *
+ 152:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Dave/Generated/DIGITAL_IO\digital_io.h **** * Example Usage:
+ 153:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Dave/Generated/DIGITAL_IO\digital_io.h **** *
+ 154:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Dave/Generated/DIGITAL_IO\digital_io.h **** * @code
+ 155:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Dave/Generated/DIGITAL_IO\digital_io.h **** * #include <DAVE.h>
+ 156:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Dave/Generated/DIGITAL_IO\digital_io.h **** *
+ 157:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Dave/Generated/DIGITAL_IO\digital_io.h **** * int main(void)
+ 158:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Dave/Generated/DIGITAL_IO\digital_io.h **** * {
+ 159:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Dave/Generated/DIGITAL_IO\digital_io.h **** *   DAVE_STATUS_t init_status;
+ 160:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Dave/Generated/DIGITAL_IO\digital_io.h **** *   DAVE_APP_VERSION_t version;
+ 161:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Dave/Generated/DIGITAL_IO\digital_io.h **** *
+ 162:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Dave/Generated/DIGITAL_IO\digital_io.h **** *   // Initialize DIGITAL_IO APP:
+ 163:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Dave/Generated/DIGITAL_IO\digital_io.h **** *   // DIGITAL_IO_Init() is called from within DAVE_Init().
+ 164:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Dave/Generated/DIGITAL_IO\digital_io.h **** *   init_status = DAVE_Init();
+ 165:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Dave/Generated/DIGITAL_IO\digital_io.h **** *   if(init_status == DAVE_STATUS_SUCCESS)
+ 166:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Dave/Generated/DIGITAL_IO\digital_io.h **** *   {
+ 167:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Dave/Generated/DIGITAL_IO\digital_io.h **** *     version = DIGITAL_IO_GetAppVersion();
+ 168:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Dave/Generated/DIGITAL_IO\digital_io.h **** *     if (version.major != 4U) {
+ 169:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Dave/Generated/DIGITAL_IO\digital_io.h **** *     // Probably, not the right version.
+ 170:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Dave/Generated/DIGITAL_IO\digital_io.h **** *     }
+ 171:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Dave/Generated/DIGITAL_IO\digital_io.h **** *   }
+ 172:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Dave/Generated/DIGITAL_IO\digital_io.h **** *
+ 173:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Dave/Generated/DIGITAL_IO\digital_io.h **** *     // More code here
+ 174:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Dave/Generated/DIGITAL_IO\digital_io.h **** *     while(1) {
+ 175:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Dave/Generated/DIGITAL_IO\digital_io.h **** *
+ 176:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Dave/Generated/DIGITAL_IO\digital_io.h **** *     }
+ 177:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Dave/Generated/DIGITAL_IO\digital_io.h **** *     return (1);
+ 178:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Dave/Generated/DIGITAL_IO\digital_io.h **** *  }
+ 179:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Dave/Generated/DIGITAL_IO\digital_io.h **** * @endcode<BR>
+ 180:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Dave/Generated/DIGITAL_IO\digital_io.h **** */
+ 181:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Dave/Generated/DIGITAL_IO\digital_io.h **** 
+ 182:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Dave/Generated/DIGITAL_IO\digital_io.h **** DAVE_APP_VERSION_t DIGITAL_IO_GetAppVersion(void);
+ 183:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Dave/Generated/DIGITAL_IO\digital_io.h **** 
+ 184:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Dave/Generated/DIGITAL_IO\digital_io.h **** /**
+ 185:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Dave/Generated/DIGITAL_IO\digital_io.h **** *
+ 186:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Dave/Generated/DIGITAL_IO\digital_io.h **** * @brief Function to initialize the port pin as per UI settings.
+ 187:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Dave/Generated/DIGITAL_IO\digital_io.h **** * @param handler Pointer pointing to APP data structure. Refer @ref DIGITAL_IO_t for details.
+ 188:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Dave/Generated/DIGITAL_IO\digital_io.h **** * @return DIGITAL_IO_STATUS_t DIGITAL_IO APP status. Refer @ref DIGITAL_IO_STATUS_t structure for d
+ 189:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Dave/Generated/DIGITAL_IO\digital_io.h **** *
+ 190:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Dave/Generated/DIGITAL_IO\digital_io.h **** * \par<b>Description:</b><br>
+ 191:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Dave/Generated/DIGITAL_IO\digital_io.h **** * This function initializes GPIO port registers IOCR,PDISC,OMR,PDR/PHCR to configure pin direction,
+ 192:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Dave/Generated/DIGITAL_IO\digital_io.h **** * and pad driver strength/hysteresis.
+ 193:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Dave/Generated/DIGITAL_IO\digital_io.h **** *
+ 194:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Dave/Generated/DIGITAL_IO\digital_io.h **** * \par<b>Related APIs:</b><BR>
+ 195:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Dave/Generated/DIGITAL_IO\digital_io.h **** * None
+ 196:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Dave/Generated/DIGITAL_IO\digital_io.h **** *
+ 197:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Dave/Generated/DIGITAL_IO\digital_io.h **** * Example Usage:
+ 198:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Dave/Generated/DIGITAL_IO\digital_io.h **** * @code
+ 199:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Dave/Generated/DIGITAL_IO\digital_io.h **** * #include <DAVE.h>//Declarations from DAVE Code Generation (includes SFR declaration)
+ 200:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Dave/Generated/DIGITAL_IO\digital_io.h **** * int main(void)
+ 201:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Dave/Generated/DIGITAL_IO\digital_io.h **** * {
+ 202:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Dave/Generated/DIGITAL_IO\digital_io.h **** *   DAVE_STATUS_t status;
+ 203:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Dave/Generated/DIGITAL_IO\digital_io.h **** *   status = DAVE_Init();  //(DAVE_STATUS_t)DIGITAL_IO_Init(&DIGITAL_IO_0) is called within DAVE_In
+ 204:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Dave/Generated/DIGITAL_IO\digital_io.h **** *   if(status == DAVE_STATUS_SUCCESS)
+ 205:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Dave/Generated/DIGITAL_IO\digital_io.h **** *   {
+ 206:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Dave/Generated/DIGITAL_IO\digital_io.h **** *     XMC_DEBUG("DAVE Apps initialization success\n");
+ 207:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Dave/Generated/DIGITAL_IO\digital_io.h **** *   }
+ 208:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Dave/Generated/DIGITAL_IO\digital_io.h **** *   else
+ 209:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Dave/Generated/DIGITAL_IO\digital_io.h **** *   {
+ 210:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Dave/Generated/DIGITAL_IO\digital_io.h **** *     XMC_DEBUG(("DAVE Apps initialization failed with status %d\n", status));
+ 211:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Dave/Generated/DIGITAL_IO\digital_io.h **** *     while(1U)
+ 212:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Dave/Generated/DIGITAL_IO\digital_io.h **** *     {
+ 213:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Dave/Generated/DIGITAL_IO\digital_io.h **** *     }
+ 214:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Dave/Generated/DIGITAL_IO\digital_io.h **** *   }
+ 215:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Dave/Generated/DIGITAL_IO\digital_io.h **** *   //Placeholder for user application code. The while loop below can be replaced with user applica
+ 216:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Dave/Generated/DIGITAL_IO\digital_io.h **** *   while(1U)
+ 217:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Dave/Generated/DIGITAL_IO\digital_io.h **** *   {
+ 218:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Dave/Generated/DIGITAL_IO\digital_io.h **** *   }
+ 219:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Dave/Generated/DIGITAL_IO\digital_io.h **** *   return 1U;
+ 220:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Dave/Generated/DIGITAL_IO\digital_io.h **** *  }
+ 221:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Dave/Generated/DIGITAL_IO\digital_io.h **** *  @endcode
+ 222:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Dave/Generated/DIGITAL_IO\digital_io.h **** */
+ 223:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Dave/Generated/DIGITAL_IO\digital_io.h **** 
+ 224:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Dave/Generated/DIGITAL_IO\digital_io.h **** DIGITAL_IO_STATUS_t DIGITAL_IO_Init(const DIGITAL_IO_t *const handler);
+ 225:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Dave/Generated/DIGITAL_IO\digital_io.h **** 
+ 226:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Dave/Generated/DIGITAL_IO\digital_io.h **** /**
+ 227:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Dave/Generated/DIGITAL_IO\digital_io.h **** *
+ 228:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Dave/Generated/DIGITAL_IO\digital_io.h **** * @brief Function to set port pin high.
+ 229:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Dave/Generated/DIGITAL_IO\digital_io.h **** * @param handler Pointer pointing to APP data structure. Refer @ref DIGITAL_IO_t for details.
+ 230:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Dave/Generated/DIGITAL_IO\digital_io.h **** * @return None
+ 231:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Dave/Generated/DIGITAL_IO\digital_io.h **** *
+ 232:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Dave/Generated/DIGITAL_IO\digital_io.h **** * \par<b>Description:</b><br>
+ 233:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Dave/Generated/DIGITAL_IO\digital_io.h **** * This function configures port output modification register Pn_OMR, to make port pin to high level
+ 234:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Dave/Generated/DIGITAL_IO\digital_io.h **** *
+ 235:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Dave/Generated/DIGITAL_IO\digital_io.h **** * \par<b>Related APIs:</b><BR>
+ 236:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Dave/Generated/DIGITAL_IO\digital_io.h **** *  DIGITAL_IO_SetOutputLow()
+ 237:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Dave/Generated/DIGITAL_IO\digital_io.h **** *
+ 238:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Dave/Generated/DIGITAL_IO\digital_io.h **** * Example Usage:
+ 239:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Dave/Generated/DIGITAL_IO\digital_io.h **** * @code
+ 240:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Dave/Generated/DIGITAL_IO\digital_io.h **** * #include <DAVE.h>//Declarations from DAVE Code Generation (includes SFR declaration)
+ 241:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Dave/Generated/DIGITAL_IO\digital_io.h **** * int main(void)
+ 242:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Dave/Generated/DIGITAL_IO\digital_io.h **** * {
+ 243:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Dave/Generated/DIGITAL_IO\digital_io.h **** *   DAVE_STATUS_t status;
+ 244:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Dave/Generated/DIGITAL_IO\digital_io.h **** *   status = DAVE_Init();  //(DAVE_STATUS_t)DIGITAL_IO_Init(&DIGITAL_IO_0) is called within DAVE_In
+ 245:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Dave/Generated/DIGITAL_IO\digital_io.h **** *   if(status == DAVE_STATUS_SUCCESS)
+ 246:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Dave/Generated/DIGITAL_IO\digital_io.h **** *   {
+ 247:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Dave/Generated/DIGITAL_IO\digital_io.h **** *     XMC_DEBUG("DAVE Apps initialization success\n");
+ 248:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Dave/Generated/DIGITAL_IO\digital_io.h **** *   }
+ 249:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Dave/Generated/DIGITAL_IO\digital_io.h **** *   else
+ 250:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Dave/Generated/DIGITAL_IO\digital_io.h **** *   {
+ 251:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Dave/Generated/DIGITAL_IO\digital_io.h **** *     XMC_DEBUG(("DAVE Apps initialization failed with status %d\n", status));
+ 252:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Dave/Generated/DIGITAL_IO\digital_io.h **** *     while(1U)
+ 253:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Dave/Generated/DIGITAL_IO\digital_io.h **** *     {
+ 254:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Dave/Generated/DIGITAL_IO\digital_io.h **** *     }
+ 255:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Dave/Generated/DIGITAL_IO\digital_io.h **** *   }
+ 256:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Dave/Generated/DIGITAL_IO\digital_io.h **** *   //Placeholder for user application code. The while loop below can be replaced with user applica
+ 257:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Dave/Generated/DIGITAL_IO\digital_io.h **** *   DIGITAL_IO_SetOutputHigh(&DIGITAL_IO_0);
+ 258:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Dave/Generated/DIGITAL_IO\digital_io.h **** *   while(1U)
+ 259:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Dave/Generated/DIGITAL_IO\digital_io.h **** *   {
+ 260:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Dave/Generated/DIGITAL_IO\digital_io.h **** *     // Add application code here
+ 261:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Dave/Generated/DIGITAL_IO\digital_io.h **** *   }
+ 262:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Dave/Generated/DIGITAL_IO\digital_io.h **** *
+ 263:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Dave/Generated/DIGITAL_IO\digital_io.h **** *   return (1);
+ 264:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Dave/Generated/DIGITAL_IO\digital_io.h **** * }
+ 265:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Dave/Generated/DIGITAL_IO\digital_io.h **** *  @endcode
+ 266:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Dave/Generated/DIGITAL_IO\digital_io.h **** */
+ 267:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Dave/Generated/DIGITAL_IO\digital_io.h **** 
+ 268:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Dave/Generated/DIGITAL_IO\digital_io.h **** __STATIC_INLINE void DIGITAL_IO_SetOutputHigh(const DIGITAL_IO_t *const handler)
+ 269:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Dave/Generated/DIGITAL_IO\digital_io.h **** {
+ 122              	 .loc 2 269 0
+ 123              	 .cfi_startproc
+ 124              	 
+ 125              	 
+ 126 0000 80B5     	 push {r7,lr}
+ 127              	.LCFI12:
+ 128              	 .cfi_def_cfa_offset 8
+ 129              	 .cfi_offset 7,-8
+ 130              	 .cfi_offset 14,-4
+ 131 0002 82B0     	 sub sp,sp,#8
+ 132              	.LCFI13:
+ 133              	 .cfi_def_cfa_offset 16
+ 134 0004 00AF     	 add r7,sp,#0
+ 135              	.LCFI14:
+ 136              	 .cfi_def_cfa_register 7
+ 137 0006 7860     	 str r0,[r7,#4]
+ 270:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Dave/Generated/DIGITAL_IO\digital_io.h ****   XMC_ASSERT("DIGITAL_IO_SetOutputHigh: handler null pointer", handler != NULL);
+ 271:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Dave/Generated/DIGITAL_IO\digital_io.h ****   XMC_GPIO_SetOutputHigh(handler->gpio_port, handler->gpio_pin);
+ 138              	 .loc 2 271 0
+ 139 0008 7B68     	 ldr r3,[r7,#4]
+ 140 000a 1A68     	 ldr r2,[r3]
+ 141 000c 7B68     	 ldr r3,[r7,#4]
+ 142 000e 1B7C     	 ldrb r3,[r3,#16]
+ 143 0010 1046     	 mov r0,r2
+ 144 0012 1946     	 mov r1,r3
+ 145 0014 FFF7FEFF 	 bl XMC_GPIO_SetOutputHigh
+ 272:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Dave/Generated/DIGITAL_IO\digital_io.h **** }
+ 146              	 .loc 2 272 0
+ 147 0018 0837     	 adds r7,r7,#8
+ 148              	.LCFI15:
+ 149              	 .cfi_def_cfa_offset 8
+ 150 001a BD46     	 mov sp,r7
+ 151              	.LCFI16:
+ 152              	 .cfi_def_cfa_register 13
+ 153              	 
+ 154 001c 80BD     	 pop {r7,pc}
+ 155              	 .cfi_endproc
+ 156              	.LFE264:
+ 158 001e 00BF     	 .section .text.DIGITAL_IO_SetOutputLow,"ax",%progbits
+ 159              	 .align 2
+ 160              	 .thumb
+ 161              	 .thumb_func
+ 163              	DIGITAL_IO_SetOutputLow:
+ 164              	.LFB265:
+ 273:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Dave/Generated/DIGITAL_IO\digital_io.h **** 
+ 274:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Dave/Generated/DIGITAL_IO\digital_io.h **** /**
+ 275:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Dave/Generated/DIGITAL_IO\digital_io.h **** * @brief Function to reset port pin.
+ 276:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Dave/Generated/DIGITAL_IO\digital_io.h **** * @param handler Pointer pointing to APP data structure. Refer @ref DIGITAL_IO_t for details.
+ 277:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Dave/Generated/DIGITAL_IO\digital_io.h **** * @return None
+ 278:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Dave/Generated/DIGITAL_IO\digital_io.h **** *
+ 279:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Dave/Generated/DIGITAL_IO\digital_io.h **** * \par<b>Description:</b><br>
+ 280:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Dave/Generated/DIGITAL_IO\digital_io.h **** * This function configures port output modification register Pn_OMR, to make port pin to low level.
+ 281:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Dave/Generated/DIGITAL_IO\digital_io.h **** *
+ 282:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Dave/Generated/DIGITAL_IO\digital_io.h **** * \par<b>Related APIs:</b><BR>
+ 283:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Dave/Generated/DIGITAL_IO\digital_io.h **** * DIGITAL_IO_SetOutputHigh()
+ 284:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Dave/Generated/DIGITAL_IO\digital_io.h **** *
+ 285:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Dave/Generated/DIGITAL_IO\digital_io.h **** * Example Usage:
+ 286:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Dave/Generated/DIGITAL_IO\digital_io.h **** * @code
+ 287:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Dave/Generated/DIGITAL_IO\digital_io.h **** *  #include <DAVE.h>//Declarations from DAVE Code Generation (includes SFR declaration)
+ 288:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Dave/Generated/DIGITAL_IO\digital_io.h **** *  int main(void)
+ 289:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Dave/Generated/DIGITAL_IO\digital_io.h **** *  {
+ 290:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Dave/Generated/DIGITAL_IO\digital_io.h **** *    DAVE_STATUS_t status;
+ 291:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Dave/Generated/DIGITAL_IO\digital_io.h **** *    status = DAVE_Init();  //(DAVE_STATUS_t)DIGITAL_IO_Init(&DIGITAL_IO_0) is called within DAVE_I
+ 292:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Dave/Generated/DIGITAL_IO\digital_io.h **** *    if(status == DAVE_STATUS_SUCCESS)
+ 293:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Dave/Generated/DIGITAL_IO\digital_io.h **** *    {
+ 294:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Dave/Generated/DIGITAL_IO\digital_io.h **** *      XMC_DEBUG("DAVE Apps initialization success\n");
+ 295:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Dave/Generated/DIGITAL_IO\digital_io.h **** *    }
+ 296:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Dave/Generated/DIGITAL_IO\digital_io.h **** *    else
+ 297:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Dave/Generated/DIGITAL_IO\digital_io.h **** *    {
+ 298:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Dave/Generated/DIGITAL_IO\digital_io.h **** *      XMC_DEBUG(("DAVE Apps initialization failed with status %d\n", status));
+ 299:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Dave/Generated/DIGITAL_IO\digital_io.h **** *      while(1U)
+ 300:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Dave/Generated/DIGITAL_IO\digital_io.h **** *      {
+ 301:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Dave/Generated/DIGITAL_IO\digital_io.h **** *      }
+ 302:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Dave/Generated/DIGITAL_IO\digital_io.h **** *    }
+ 303:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Dave/Generated/DIGITAL_IO\digital_io.h **** *    //Placeholder for user application code. The while loop below can be replaced with user applic
+ 304:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Dave/Generated/DIGITAL_IO\digital_io.h **** *    DIGITAL_IO_SetOutputLow(&DIGITAL_IO_0);
+ 305:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Dave/Generated/DIGITAL_IO\digital_io.h **** *    while(1U)
+ 306:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Dave/Generated/DIGITAL_IO\digital_io.h **** *    {
+ 307:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Dave/Generated/DIGITAL_IO\digital_io.h **** *      // Add application code here
+ 308:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Dave/Generated/DIGITAL_IO\digital_io.h **** *    }
+ 309:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Dave/Generated/DIGITAL_IO\digital_io.h **** *
+ 310:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Dave/Generated/DIGITAL_IO\digital_io.h **** *   return (1);
+ 311:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Dave/Generated/DIGITAL_IO\digital_io.h **** * }
+ 312:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Dave/Generated/DIGITAL_IO\digital_io.h **** *  @endcode
+ 313:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Dave/Generated/DIGITAL_IO\digital_io.h **** */
+ 314:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Dave/Generated/DIGITAL_IO\digital_io.h **** 
+ 315:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Dave/Generated/DIGITAL_IO\digital_io.h **** __STATIC_INLINE void DIGITAL_IO_SetOutputLow(const DIGITAL_IO_t *const handler)
+ 316:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Dave/Generated/DIGITAL_IO\digital_io.h **** {
+ 165              	 .loc 2 316 0
+ 166              	 .cfi_startproc
+ 167              	 
+ 168              	 
+ 169 0000 80B5     	 push {r7,lr}
+ 170              	.LCFI17:
+ 171              	 .cfi_def_cfa_offset 8
+ 172              	 .cfi_offset 7,-8
+ 173              	 .cfi_offset 14,-4
+ 174 0002 82B0     	 sub sp,sp,#8
+ 175              	.LCFI18:
+ 176              	 .cfi_def_cfa_offset 16
+ 177 0004 00AF     	 add r7,sp,#0
+ 178              	.LCFI19:
+ 179              	 .cfi_def_cfa_register 7
+ 180 0006 7860     	 str r0,[r7,#4]
+ 317:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Dave/Generated/DIGITAL_IO\digital_io.h ****   XMC_ASSERT("DIGITAL_IO_SetOutputLow: handler null pointer", handler != NULL);
+ 318:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Dave/Generated/DIGITAL_IO\digital_io.h ****   XMC_GPIO_SetOutputLow(handler->gpio_port,handler->gpio_pin);
+ 181              	 .loc 2 318 0
+ 182 0008 7B68     	 ldr r3,[r7,#4]
+ 183 000a 1A68     	 ldr r2,[r3]
+ 184 000c 7B68     	 ldr r3,[r7,#4]
+ 185 000e 1B7C     	 ldrb r3,[r3,#16]
+ 186 0010 1046     	 mov r0,r2
+ 187 0012 1946     	 mov r1,r3
+ 188 0014 FFF7FEFF 	 bl XMC_GPIO_SetOutputLow
+ 319:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Dave/Generated/DIGITAL_IO\digital_io.h **** }
+ 189              	 .loc 2 319 0
+ 190 0018 0837     	 adds r7,r7,#8
+ 191              	.LCFI20:
+ 192              	 .cfi_def_cfa_offset 8
+ 193 001a BD46     	 mov sp,r7
+ 194              	.LCFI21:
+ 195              	 .cfi_def_cfa_register 13
+ 196              	 
+ 197 001c 80BD     	 pop {r7,pc}
+ 198              	 .cfi_endproc
+ 199              	.LFE265:
+ 201              	 .comm VAR_boardTemp,8,8
+ 202              	 .comm VAR_TR1_VSense_WP,8,8
+ 203              	 .comm VAR_TR2_VSense_FAN1,8,8
+ 204              	 .comm VAR_TR3_VSense_FAN2,8,8
+ 205              	 .comm shiftUpInterrupt,1,1
+ 206              	 .comm shiftDownInterrupt,1,1
+ 207              	 .global CAN1_data_Tx_LM05
+ 208 001e 00BF     	 .section .bss.CAN1_data_Tx_LM05,"aw",%nobits
+ 209              	 .align 2
+ 212              	CAN1_data_Tx_LM05:
+ 213 0000 00000000 	 .space 8
+ 213      00000000 
+ 214              	 .global CAN1_data_Tx_LM06
+ 215              	 .section .bss.CAN1_data_Tx_LM06,"aw",%nobits
+ 216              	 .align 2
+ 219              	CAN1_data_Tx_LM06:
+ 220 0000 00000000 	 .space 8
+ 220      00000000 
+ 221              	 .global CAN1_data_Tx_LM07
+ 222              	 .section .bss.CAN1_data_Tx_LM07,"aw",%nobits
+ 223              	 .align 2
+ 226              	CAN1_data_Tx_LM07:
+ 227 0000 00000000 	 .space 8
+ 227      00000000 
+ 228              	 .global n_engine
+ 229              	 .section .bss.n_engine,"aw",%nobits
+ 230              	 .align 1
+ 233              	n_engine:
+ 234 0000 0000     	 .space 2
+ 235              	 .comm n_engine_LSB,4,4
+ 236              	 .comm n_engine_MSB,4,4
+ 237              	 .global counter
+ 238              	 .section .bss.counter,"aw",%nobits
+ 239              	 .align 1
+ 242              	counter:
+ 243 0000 0000     	 .space 2
+ 244              	 .global CAN_1_RES
+ 245              	 .section .data.CAN_1_RES,"aw",%progbits
+ 248              	CAN_1_RES:
+ 249 0000 01       	 .byte 1
+ 250              	 .section .text.CAN_1_ini,"ax",%progbits
+ 251              	 .align 2
+ 252              	 .global CAN_1_ini
+ 253              	 .thumb
+ 254              	 .thumb_func
+ 256              	CAN_1_ini:
+ 257              	.LFB415:
+ 258              	 .file 3 "../CAN_1.c"
+   1:../CAN_1.c    **** /*
+   2:../CAN_1.c    ****  * CAN_1.c
+   3:../CAN_1.c    ****  *
+   4:../CAN_1.c    ****  *  Created on: 17 Oct 2019
+   5:../CAN_1.c    ****  *      Author: Paul
+   6:../CAN_1.c    ****  */
+   7:../CAN_1.c    **** 
+   8:../CAN_1.c    **** #include "Header.h"
+   9:../CAN_1.c    **** 
+  10:../CAN_1.c    **** extern struct data_can canData;
+  11:../CAN_1.c    **** uint8_t CAN1_data_Tx_LM05[8] = {0};
+  12:../CAN_1.c    **** uint8_t CAN1_data_Tx_LM06[8] = {0};
+  13:../CAN_1.c    **** uint8_t CAN1_data_Tx_LM07[8] = {0};
+  14:../CAN_1.c    **** uint16_t n_engine = 0;
+  15:../CAN_1.c    **** uint8_t *n_engine_LSB, *n_engine_MSB;
+  16:../CAN_1.c    **** uint16_t counter = 0;
+  17:../CAN_1.c    **** 
+  18:../CAN_1.c    **** boolean_T CAN_1_RES = true;
+  19:../CAN_1.c    **** 
+  20:../CAN_1.c    **** void CAN_1_ini()
+  21:../CAN_1.c    **** {
+ 259              	 .loc 3 21 0
+ 260              	 .cfi_startproc
+ 261              	 
+ 262              	 
+ 263 0000 80B5     	 push {r7,lr}
+ 264              	.LCFI22:
+ 265              	 .cfi_def_cfa_offset 8
+ 266              	 .cfi_offset 7,-8
+ 267              	 .cfi_offset 14,-4
+ 268 0002 00AF     	 add r7,sp,#0
+ 269              	.LCFI23:
+ 270              	 .cfi_def_cfa_register 7
+  22:../CAN_1.c    **** 	//Termination Resistor on CAN 1
+  23:../CAN_1.c    **** 	if (CAN_1_RES)
+ 271              	 .loc 3 23 0
+ 272 0004 3C4B     	 ldr r3,.L8
+ 273 0006 1B78     	 ldrb r3,[r3]
+ 274 0008 002B     	 cmp r3,#0
+ 275 000a 03D0     	 beq .L6
+  24:../CAN_1.c    **** 		DIGITAL_IO_SetOutputHigh (&CAN1_Res);
+ 276              	 .loc 3 24 0
+ 277 000c 3B48     	 ldr r0,.L8+4
+ 278 000e FFF7FEFF 	 bl DIGITAL_IO_SetOutputHigh
+ 279 0012 02E0     	 b .L7
+ 280              	.L6:
+  25:../CAN_1.c    **** 	else
+  26:../CAN_1.c    **** 		DIGITAL_IO_SetOutputLow (&CAN1_Res);
+ 281              	 .loc 3 26 0
+ 282 0014 3948     	 ldr r0,.L8+4
+ 283 0016 FFF7FEFF 	 bl DIGITAL_IO_SetOutputLow
+ 284              	.L7:
+  27:../CAN_1.c    **** 
+  28:../CAN_1.c    **** 	//------LINK4_1_boost_gear_rev_map 0x10 LMO1------ todo
+  29:../CAN_1.c    **** 	canData.p_air_22 				= &VCU_DW.VAR_IN_p_air_22;
+ 285              	 .loc 3 29 0
+ 286 001a 394B     	 ldr r3,.L8+8
+ 287 001c 394A     	 ldr r2,.L8+12
+ 288 001e 1A60     	 str r2,[r3]
+  30:../CAN_1.c    **** 	canData.AN5GearPos	 			= &VCU_DW.VAR_IN_p_air_22_des;
+ 289              	 .loc 3 30 0
+ 290 0020 374B     	 ldr r3,.L8+8
+ 291 0022 394A     	 ldr r2,.L8+16
+ 292 0024 5A60     	 str r2,[r3,#4]
+  31:../CAN_1.c    **** 	canData.n_engine 				= &n_engine;
+ 293              	 .loc 3 31 0
+ 294 0026 364B     	 ldr r3,.L8+8
+ 295 0028 384A     	 ldr r2,.L8+20
+ 296 002a 9A60     	 str r2,[r3,#8]
+  32:../CAN_1.c    **** 	n_engine_LSB					= &VCU_DW.VAR_IN_n_engine_LSB;
+ 297              	 .loc 3 32 0
+ 298 002c 384B     	 ldr r3,.L8+24
+ 299 002e 394A     	 ldr r2,.L8+28
+ 300 0030 1A60     	 str r2,[r3]
+  33:../CAN_1.c    **** 	n_engine_MSB					= &VCU_DW.VAR_IN_n_engine_MSB;
+ 301              	 .loc 3 33 0
+ 302 0032 394B     	 ldr r3,.L8+32
+ 303 0034 394A     	 ldr r2,.L8+36
+ 304 0036 1A60     	 str r2,[r3]
+  34:../CAN_1.c    **** 	//canData.ign_angle 				= (uint8_t*)&VCU_DW.
+  35:../CAN_1.c    **** 	canData.gear 					= &VCU_DW.VAR_IN_gear;
+ 305              	 .loc 3 35 0
+ 306 0038 314B     	 ldr r3,.L8+8
+ 307 003a 394A     	 ldr r2,.L8+40
+ 308 003c DA60     	 str r2,[r3,#12]
+  36:../CAN_1.c    **** 	//canData.gear_shift_status 		= (uint8_t*)&VCU_DW.VAR_IN_gear_shift_status;
+  37:../CAN_1.c    **** 	//canData.fuel_table_1_status 	= (uint8_t*)&VCU_DW.VAR_IN_
+  38:../CAN_1.c    **** 	//canData.fuel_table_2_status 	= (uint8_t*)&VCU_DW.VAR_IN_
+  39:../CAN_1.c    **** 	//canData.ign_table_1_status 	= (uint8_t*)&VCU_DW.VAR_IN_
+  40:../CAN_1.c    **** 	//canData.ign_table_2_status 	= (uint8_t*)&VCU_DW.VAR_IN_
+  41:../CAN_1.c    **** 
+  42:../CAN_1.c    **** 	//------LINK4_2_press_temp_Wg 0x771 LMO2------ todo
+  43:../CAN_1.c    **** 	//canData.p_oil 				= (uint8_t*)&VCU_DW.VAR_IN_p_Oil;
+  44:../CAN_1.c    **** 	//canData.p_fuel_rail 		= (uint8_t*)&VCU_DW.VAR_IN_p_fuel_rail;
+  45:../CAN_1.c    **** 	//canData.x_throttle_valve 	= (uint8_t*)&VCU_DW.VAR_IN_x_ath;
+  46:../CAN_1.c    **** 	canData.t_water_engine 		= &VCU_DW.VAR_IN_t_water_engine;
+ 309              	 .loc 3 46 0
+ 310 003e 304B     	 ldr r3,.L8+8
+ 311 0040 384A     	 ldr r2,.L8+44
+ 312 0042 5A63     	 str r2,[r3,#52]
+  47:../CAN_1.c    **** 	//canData.t_air_22 			= (uint8_t*)&VCU_DW.VAR_IN_t_air_22;
+  48:../CAN_1.c    **** 	//canData.t_oil_engine 		= (uint8_t*)&VCU_DW.VAR_IN_t_oil_engine;
+  49:../CAN_1.c    **** 	//canData.WasteGate_dutycycle	= (uint8_t*)&VCU_DW.VAR_IN_
+  50:../CAN_1.c    **** 
+  51:../CAN_1.c    **** 	//------LINK4_3 inj_lambda_error 0x772 LMO3------
+  52:../CAN_1.c    **** 	//canData.inj_effective_PW = (uint8_t*)&VCU_DW.VAR_IN_
+  53:../CAN_1.c    **** 	//canData.lambda = (uint8_t*)&VCU_DW.VAR_IN_
+  54:../CAN_1.c    **** 	//canData.lambda_error_status = (uint8_t*)&VCU_DW.VAR_IN_
+  55:../CAN_1.c    **** 	//canData.Link_Fault_Codes = (uint8_t*)&VCU_DW.VAR_IN_
+  56:../CAN_1.c    **** 	//canData.lambda_status = (uint8_t*)&VCU_DW.VAR_IN_
+  57:../CAN_1.c    **** 	//canData.error_trigger = (uint8_t*)&VCU_DW.VAR_IN_
+  58:../CAN_1.c    **** 	//canData.boost_table = (uint8_t*)&VCU_DW.VAR_IN_
+  59:../CAN_1.c    **** 
+  60:../CAN_1.c    **** 	//------STW 0x8 LM04------
+  61:../CAN_1.c    **** 	canData.STW_shift_up_request 	= &VCU_DW.VAR_IN_STW_shift_up_request;
+ 313              	 .loc 3 61 0
+ 314 0044 2E4B     	 ldr r3,.L8+8
+ 315 0046 384A     	 ldr r2,.L8+48
+ 316 0048 1A66     	 str r2,[r3,#96]
+  62:../CAN_1.c    **** 	canData.STW_shift_down_request 	= &VCU_DW.VAR_IN_STW_shift_down_request;
+ 317              	 .loc 3 62 0
+ 318 004a 2D4B     	 ldr r3,.L8+8
+ 319 004c 374A     	 ldr r2,.L8+52
+ 320 004e 5A66     	 str r2,[r3,#100]
+  63:../CAN_1.c    **** 	canData.STW_transmission_mode 	= &VCU_DW.VAR_IN_STW_transmission_mode;
+ 321              	 .loc 3 63 0
+ 322 0050 2B4B     	 ldr r3,.L8+8
+ 323 0052 374A     	 ldr r2,.L8+56
+ 324 0054 9A67     	 str r2,[r3,#120]
+  64:../CAN_1.c    **** 	//canData.STW_trigger_point		= (uint8_t*)&VCU_DW.VAR_IN_STW_map_max;
+  65:../CAN_1.c    **** 	//canData.STW_engine_map 			= (uint8_t*)&VCU_DW.VAR_IN_STW_map_min;
+  66:../CAN_1.c    **** 	//canData.STW_rev_limiter 		= (uint8_t*)&VCU_DW.VAR_IN_STW_map_3;
+  67:../CAN_1.c    **** 	//canData.STW_clutch_mode 		= (uint8_t*)&VCU_DW.VAR_IN_STW_clutch_mode;
+  68:../CAN_1.c    **** 	canData.STW_mue_tyre 			= &VCU_DW.VAR_IN_STW_mue_tyre;
+ 325              	 .loc 3 68 0
+ 326 0056 2A4B     	 ldr r3,.L8+8
+ 327 0058 364A     	 ldr r2,.L8+60
+ 328 005a DA67     	 str r2,[r3,#124]
+  69:../CAN_1.c    **** 	//canData.STW_brake_balance 		= (uint8_t*)&VCU_DW.VAR_IN_brake_ratio_R;
+  70:../CAN_1.c    **** 
+  71:../CAN_1.c    **** 	//------TTC_ABS 0x5C0 LM05------
+  72:../CAN_1.c    **** 	canData.ABS_switchstate	= &VCU_DW.VAR_OUT_ABS_switchstate;
+ 329              	 .loc 3 72 0
+ 330 005c 284B     	 ldr r3,.L8+8
+ 331 005e 364A     	 ldr r2,.L8+64
+ 332 0060 C3F88420 	 str r2,[r3,#132]
+  73:../CAN_1.c    **** 	canData.p_brake_F		= &VCU_DW.VAR_OUT_p_brake_F;
+ 333              	 .loc 3 73 0
+ 334 0064 264B     	 ldr r3,.L8+8
+ 335 0066 354A     	 ldr r2,.L8+68
+ 336 0068 C3F88820 	 str r2,[r3,#136]
+  74:../CAN_1.c    **** 	canData.ABS_BL_switch	= &VCU_DW.VAR_OUT_ABS_BL_switch;
+ 337              	 .loc 3 74 0
+ 338 006c 244B     	 ldr r3,.L8+8
+ 339 006e 344A     	 ldr r2,.L8+72
+ 340 0070 C3F88C20 	 str r2,[r3,#140]
+  75:../CAN_1.c    **** 	canData.ABS_active		= &VCU_DW.VAR_OUT_ABS_active;
+ 341              	 .loc 3 75 0
+ 342 0074 224B     	 ldr r3,.L8+8
+ 343 0076 334A     	 ldr r2,.L8+76
+ 344 0078 C3F89020 	 str r2,[r3,#144]
+  76:../CAN_1.c    **** 	canData.ABS_EBD_lamp	= &VCU_DW.VAR_OUT_ABS_EBD_Lamp;
+ 345              	 .loc 3 76 0
+ 346 007c 204B     	 ldr r3,.L8+8
+ 347 007e 324A     	 ldr r2,.L8+80
+ 348 0080 C3F89420 	 str r2,[r3,#148]
+  77:../CAN_1.c    **** 	canData.ABS_lamp		= &VCU_DW.VAR_OUT_ABS_Lamp;
+ 349              	 .loc 3 77 0
+ 350 0084 1E4B     	 ldr r3,.L8+8
+ 351 0086 314A     	 ldr r2,.L8+84
+ 352 0088 C3F89820 	 str r2,[r3,#152]
+  78:../CAN_1.c    **** 
+  79:../CAN_1.c    **** 	//------TTC_LaunchControl 0x7F0 LM06------
+  80:../CAN_1.c    **** 	canData.p_brake_R			= &VCU_DW.VAR_OUT_p_brake_R;
+ 353              	 .loc 3 80 0
+ 354 008c 1C4B     	 ldr r3,.L8+8
+ 355 008e 304A     	 ldr r2,.L8+88
+ 356 0090 C3F89C20 	 str r2,[r3,#156]
+  81:../CAN_1.c    **** 	canData.LC_mue_tyre			= &VCU_DW.VAR_OUT_STW_mue_tyre;
+ 357              	 .loc 3 81 0
+ 358 0094 1A4B     	 ldr r3,.L8+8
+ 359 0096 2F4A     	 ldr r2,.L8+92
+ 360 0098 C3F8A020 	 str r2,[r3,#160]
+  82:../CAN_1.c    **** 	canData.LC_clutch_pos_des	= &VCU_DW.VAR_OUT_x_clutch_LC;
+ 361              	 .loc 3 82 0
+ 362 009c 184B     	 ldr r3,.L8+8
+ 363 009e 2E4A     	 ldr r2,.L8+96
+ 364 00a0 C3F8A420 	 str r2,[r3,#164]
+  83:../CAN_1.c    **** 	canData.LC_dash_bit			= &VCU_DW.VAR_OUT_LC_dash_Bit;
+ 365              	 .loc 3 83 0
+ 366 00a4 164B     	 ldr r3,.L8+8
+ 367 00a6 2D4A     	 ldr r2,.L8+100
+ 368 00a8 C3F8A820 	 str r2,[r3,#168]
+  84:../CAN_1.c    **** 	canData.LC_active_bit		= &VCU_DW.VAR_OUT_LC_active_bit;
+ 369              	 .loc 3 84 0
+ 370 00ac 144B     	 ldr r3,.L8+8
+ 371 00ae 2C4A     	 ldr r2,.L8+104
+ 372 00b0 C3F8AC20 	 str r2,[r3,#172]
+  85:../CAN_1.c    **** 	canData.LC_ready_bit		= &VCU_DW.VAR_OUT_LC_ready_bit;
+ 373              	 .loc 3 85 0
+ 374 00b4 124B     	 ldr r3,.L8+8
+ 375 00b6 2B4A     	 ldr r2,.L8+108
+ 376 00b8 C3F8B020 	 str r2,[r3,#176]
+  86:../CAN_1.c    **** 	canData.LC_Mdes				= &VCU_DW.VAR_OUT_LC_Mdes;
+ 377              	 .loc 3 86 0
+ 378 00bc 104B     	 ldr r3,.L8+8
+ 379 00be 2A4A     	 ldr r2,.L8+112
+ 380 00c0 C3F8B420 	 str r2,[r3,#180]
+  87:../CAN_1.c    **** 	canData.LC_Fnr				= &VCU_DW.VAR_OUT_LC_Fnr;
+ 381              	 .loc 3 87 0
+ 382 00c4 0E4B     	 ldr r3,.L8+8
+ 383 00c6 294A     	 ldr r2,.L8+116
+ 384 00c8 C3F8B820 	 str r2,[r3,#184]
+  88:../CAN_1.c    **** 
+  89:../CAN_1.c    **** 	//------TTC_WheelSpeed 0x340 LM07------
+  90:../CAN_1.c    **** 	canData.n_wheel_FL			= &VCU_DW.VAR_OUT_n_wheel_FL_kmproh;
+ 385              	 .loc 3 90 0
+ 386 00cc 0C4B     	 ldr r3,.L8+8
+ 387 00ce 284A     	 ldr r2,.L8+120
+ 388 00d0 C3F8BC20 	 str r2,[r3,#188]
+  91:../CAN_1.c    **** 	canData.n_wheel_FR			= &VCU_DW.VAR_OUT_n_wheel_FR_kmproh;
+ 389              	 .loc 3 91 0
+ 390 00d4 0A4B     	 ldr r3,.L8+8
+ 391 00d6 274A     	 ldr r2,.L8+124
+ 392 00d8 C3F8C020 	 str r2,[r3,#192]
+  92:../CAN_1.c    **** 	canData.n_wheel_RL			= &VCU_DW.VAR_OUT_n_wheel_RL_kmproh;
+ 393              	 .loc 3 92 0
+ 394 00dc 084B     	 ldr r3,.L8+8
+ 395 00de 264A     	 ldr r2,.L8+128
+ 396 00e0 C3F8C420 	 str r2,[r3,#196]
+  93:../CAN_1.c    **** 	canData.n_wheel_RR			= &VCU_DW.VAR_OUT_n_wheel_FL_kmproh;
+ 397              	 .loc 3 93 0
+ 398 00e4 064B     	 ldr r3,.L8+8
+ 399 00e6 224A     	 ldr r2,.L8+120
+ 400 00e8 C3F8C820 	 str r2,[r3,#200]
+  94:../CAN_1.c    **** 
+  95:../CAN_1.c    **** 	//----CAN-Modeul Measurement 0x7E1 LM08------
+  96:../CAN_1.c    **** 	canData.p_pneu_VCU_IN		= &VCU_DW.VAR_IN_p_pneum;
+ 401              	 .loc 3 96 0
+ 402 00ec 044B     	 ldr r3,.L8+8
+ 403 00ee 234A     	 ldr r2,.L8+132
+ 404 00f0 C3F83021 	 str r2,[r3,#304]
+  97:../CAN_1.c    **** }
+ 405              	 .loc 3 97 0
+ 406 00f4 80BD     	 pop {r7,pc}
+ 407              	.L9:
+ 408 00f6 00BF     	 .align 2
+ 409              	.L8:
+ 410 00f8 00000000 	 .word CAN_1_RES
+ 411 00fc 00000000 	 .word CAN1_Res
+ 412 0100 00000000 	 .word canData
+ 413 0104 44010000 	 .word VCU_DW+324
+ 414 0108 43010000 	 .word VCU_DW+323
+ 415 010c 00000000 	 .word n_engine
+ 416 0110 00000000 	 .word n_engine_LSB
+ 417 0114 42010000 	 .word VCU_DW+322
+ 418 0118 00000000 	 .word n_engine_MSB
+ 419 011c 41010000 	 .word VCU_DW+321
+ 420 0120 40010000 	 .word VCU_DW+320
+ 421 0124 45010000 	 .word VCU_DW+325
+ 422 0128 4C010000 	 .word VCU_DW+332
+ 423 012c 4D010000 	 .word VCU_DW+333
+ 424 0130 4F010000 	 .word VCU_DW+335
+ 425 0134 4E010000 	 .word VCU_DW+334
+ 426 0138 23010000 	 .word VCU_DW+291
+ 427 013c CA000000 	 .word VCU_DW+202
+ 428 0140 24010000 	 .word VCU_DW+292
+ 429 0144 25010000 	 .word VCU_DW+293
+ 430 0148 26010000 	 .word VCU_DW+294
+ 431 014c 27010000 	 .word VCU_DW+295
+ 432 0150 1B010000 	 .word VCU_DW+283
+ 433 0154 1C010000 	 .word VCU_DW+284
+ 434 0158 1D010000 	 .word VCU_DW+285
+ 435 015c 1E010000 	 .word VCU_DW+286
+ 436 0160 1F010000 	 .word VCU_DW+287
+ 437 0164 20010000 	 .word VCU_DW+288
+ 438 0168 21010000 	 .word VCU_DW+289
+ 439 016c 22010000 	 .word VCU_DW+290
+ 440 0170 C2000000 	 .word VCU_DW+194
+ 441 0174 C4000000 	 .word VCU_DW+196
+ 442 0178 C6000000 	 .word VCU_DW+198
+ 443 017c 50010000 	 .word VCU_DW+336
+ 444              	 .cfi_endproc
+ 445              	.LFE415:
+ 447              	 .section .text.CAN_1_Receive,"ax",%progbits
+ 448              	 .align 2
+ 449              	 .global CAN_1_Receive
+ 450              	 .thumb
+ 451              	 .thumb_func
+ 453              	CAN_1_Receive:
+ 454              	.LFB416:
+  98:../CAN_1.c    **** 
+  99:../CAN_1.c    **** void CAN_1_Receive()
+ 100:../CAN_1.c    **** {
+ 455              	 .loc 3 100 0
+ 456              	 .cfi_startproc
+ 457              	 
+ 458              	 
+ 459 0000 98B5     	 push {r3,r4,r7,lr}
+ 460              	.LCFI24:
+ 461              	 .cfi_def_cfa_offset 16
+ 462              	 .cfi_offset 3,-16
+ 463              	 .cfi_offset 4,-12
+ 464              	 .cfi_offset 7,-8
+ 465              	 .cfi_offset 14,-4
+ 466 0002 00AF     	 add r7,sp,#0
+ 467              	.LCFI25:
+ 468              	 .cfi_def_cfa_register 7
+ 101:../CAN_1.c    **** 	//------LINK4_1_boost_gear_rev_map 0x10 LMO1------
+ 102:../CAN_1.c    **** 	CAN_NODE_MO_Receive((CAN_NODE_LMO_t*)&CAN_1_LMO_01_Config);
+ 469              	 .loc 3 102 0
+ 470 0004 4F48     	 ldr r0,.L11
+ 471 0006 FFF7FEFF 	 bl CAN_NODE_MO_Receive
+ 103:../CAN_1.c    **** 
+ 104:../CAN_1.c    **** 	*canData.p_air_22 = checkRangePlausi(CAN_1_LMO_01_Config.mo_ptr->can_data_byte[0], ERR_P_AIR_22); 
+ 472              	 .loc 3 104 0
+ 473 000a 4F4B     	 ldr r3,.L11+4
+ 474 000c 1C68     	 ldr r4,[r3]
+ 475 000e 4D4B     	 ldr r3,.L11
+ 476 0010 1B68     	 ldr r3,[r3]
+ 477 0012 1B7C     	 ldrb r3,[r3,#16]
+ 478 0014 1846     	 mov r0,r3
+ 479 0016 0B21     	 movs r1,#11
+ 480 0018 FFF7FEFF 	 bl checkRangePlausi
+ 481 001c 0346     	 mov r3,r0
+ 482 001e DBB2     	 uxtb r3,r3
+ 483 0020 2370     	 strb r3,[r4]
+ 105:../CAN_1.c    **** 	*canData.AN5GearPos = checkRangePlausi(CAN_1_LMO_01_Config.mo_ptr->can_data_byte[1], ERR_P_AIR_22_
+ 484              	 .loc 3 105 0
+ 485 0022 494B     	 ldr r3,.L11+4
+ 486 0024 5C68     	 ldr r4,[r3,#4]
+ 487 0026 474B     	 ldr r3,.L11
+ 488 0028 1B68     	 ldr r3,[r3]
+ 489 002a 5B7C     	 ldrb r3,[r3,#17]
+ 490 002c 1846     	 mov r0,r3
+ 491 002e 0C21     	 movs r1,#12
+ 492 0030 FFF7FEFF 	 bl checkRangePlausi
+ 493 0034 0346     	 mov r3,r0
+ 494 0036 DBB2     	 uxtb r3,r3
+ 495 0038 2370     	 strb r3,[r4]
+ 106:../CAN_1.c    **** 	*canData.n_engine = checkRangePlausi(CAN_1_LMO_01_Config.mo_ptr->can_data_word[1], ERR_N_ENGINE);
+ 496              	 .loc 3 106 0
+ 497 003a 434B     	 ldr r3,.L11+4
+ 498 003c 9C68     	 ldr r4,[r3,#8]
+ 499 003e 414B     	 ldr r3,.L11
+ 500 0040 1B68     	 ldr r3,[r3]
+ 501 0042 5B8A     	 ldrh r3,[r3,#18]
+ 502 0044 1846     	 mov r0,r3
+ 503 0046 0621     	 movs r1,#6
+ 504 0048 FFF7FEFF 	 bl checkRangePlausi
+ 505 004c 0346     	 mov r3,r0
+ 506 004e 9BB2     	 uxth r3,r3
+ 507 0050 2380     	 strh r3,[r4]
+ 107:../CAN_1.c    **** 	*n_engine_LSB	= getbits(*canData.n_engine, 7, 8);
+ 508              	 .loc 3 107 0
+ 509 0052 3E4B     	 ldr r3,.L11+8
+ 510 0054 1C68     	 ldr r4,[r3]
+ 511 0056 3C4B     	 ldr r3,.L11+4
+ 512 0058 9B68     	 ldr r3,[r3,#8]
+ 513 005a 1B88     	 ldrh r3,[r3]
+ 514 005c 1846     	 mov r0,r3
+ 515 005e 0721     	 movs r1,#7
+ 516 0060 0822     	 movs r2,#8
+ 517 0062 FFF7FEFF 	 bl getbits
+ 518 0066 0346     	 mov r3,r0
+ 519 0068 DBB2     	 uxtb r3,r3
+ 520 006a 2370     	 strb r3,[r4]
+ 108:../CAN_1.c    **** 	*n_engine_MSB	= getbits(*canData.n_engine, 15, 8);
+ 521              	 .loc 3 108 0
+ 522 006c 384B     	 ldr r3,.L11+12
+ 523 006e 1C68     	 ldr r4,[r3]
+ 524 0070 354B     	 ldr r3,.L11+4
+ 525 0072 9B68     	 ldr r3,[r3,#8]
+ 526 0074 1B88     	 ldrh r3,[r3]
+ 527 0076 1846     	 mov r0,r3
+ 528 0078 0F21     	 movs r1,#15
+ 529 007a 0822     	 movs r2,#8
+ 530 007c FFF7FEFF 	 bl getbits
+ 531 0080 0346     	 mov r3,r0
+ 532 0082 DBB2     	 uxtb r3,r3
+ 533 0084 2370     	 strb r3,[r4]
+ 109:../CAN_1.c    **** 	*canData.gear =  checkRangePlausi(CAN_1_LMO_01_Config.mo_ptr->can_data_byte[4],ERR_GEAR); // ACHTU
+ 534              	 .loc 3 109 0
+ 535 0086 304B     	 ldr r3,.L11+4
+ 536 0088 DC68     	 ldr r4,[r3,#12]
+ 537 008a 2E4B     	 ldr r3,.L11
+ 538 008c 1B68     	 ldr r3,[r3]
+ 539 008e 1B7D     	 ldrb r3,[r3,#20]
+ 540 0090 1846     	 mov r0,r3
+ 541 0092 0421     	 movs r1,#4
+ 542 0094 FFF7FEFF 	 bl checkRangePlausi
+ 543 0098 0346     	 mov r3,r0
+ 544 009a DBB2     	 uxtb r3,r3
+ 545 009c 2370     	 strb r3,[r4]
+ 110:../CAN_1.c    **** 	//*canData.ign_angle =  getbits(CAN_1_LMO_01_Config.mo_ptr->can_data[1],23,16); //?
+ 111:../CAN_1.c    **** 	//*canData.gear_shift_status = getbits(CAN_1_LMO_01_Config.mo_ptr->can_data[1],28,4);
+ 112:../CAN_1.c    **** 	//*canData.fuel_table_1_status = getbits(CAN_1_LMO_01_Config.mo_ptr->can_data[1],29,1);
+ 113:../CAN_1.c    **** 	//*canData.fuel_table_2_status = getbits(CAN_1_LMO_01_Config.mo_ptr->can_data[1],30,1);
+ 114:../CAN_1.c    **** 	//*canData.ign_table_1_status = getbits(CAN_1_LMO_01_Config.mo_ptr->can_data[1],31,1);
+ 115:../CAN_1.c    **** 	//*canData.ign_table_2_status = getbits(CAN_1_LMO_01_Config.mo_ptr->can_data[1],32,1);
+ 116:../CAN_1.c    **** 
+ 117:../CAN_1.c    **** 	//------LINK4_2_press_temp_Wg 0x771 LMO2------
+ 118:../CAN_1.c    **** 	CAN_NODE_MO_Receive((CAN_NODE_LMO_t*)&CAN_1_LMO_02_Config);
+ 546              	 .loc 3 118 0
+ 547 009e 2D48     	 ldr r0,.L11+16
+ 548 00a0 FFF7FEFF 	 bl CAN_NODE_MO_Receive
+ 119:../CAN_1.c    **** 
+ 120:../CAN_1.c    **** 	//*canData.p_oil = CAN_1_LMO_02_Config.mo_ptr->can_data_byte[0];
+ 121:../CAN_1.c    **** 	//*canData.p_fuel_rail =  CAN_1_LMO_02_Config.mo_ptr->can_data_byte[1];
+ 122:../CAN_1.c    **** 	//*canData.x_throttle_valve = CAN_1_LMO_02_Config.mo_ptr->can_data_byte[2]; //x_throttleValve
+ 123:../CAN_1.c    **** 	*canData.t_water_engine = CAN_1_LMO_02_Config.mo_ptr->can_data_byte[3];
+ 549              	 .loc 3 123 0
+ 550 00a4 284B     	 ldr r3,.L11+4
+ 551 00a6 5B6B     	 ldr r3,[r3,#52]
+ 552 00a8 2A4A     	 ldr r2,.L11+16
+ 553 00aa 1268     	 ldr r2,[r2]
+ 554 00ac D27C     	 ldrb r2,[r2,#19]
+ 555 00ae 1A70     	 strb r2,[r3]
+ 124:../CAN_1.c    **** 	//*canData.t_air_22 = CAN_1_LMO_02_Config.mo_ptr->can_data_byte[4];
+ 125:../CAN_1.c    **** 	//*canData.t_oil_engine = CAN_1_LMO_02_Config.mo_ptr->can_data_byte[5];
+ 126:../CAN_1.c    **** 	//*canData.WasteGate_dutycycle = CAN_1_LMO_02_Config.mo_ptr->can_data_word[3];
+ 127:../CAN_1.c    **** 
+ 128:../CAN_1.c    **** 	//------LINK4_3 inj_lambda_error 0x772 LMO3------
+ 129:../CAN_1.c    **** 	//CAN_NODE_MO_Receive((CAN_NODE_LMO_t*)&CAN_1_LMO_03_Config);
+ 130:../CAN_1.c    **** 	/*
+ 131:../CAN_1.c    **** 	*canData.inj_effective_PW = CAN_1_LMO_03_Config.mo_ptr->can_data_byte[0];
+ 132:../CAN_1.c    **** 	*canData.lambda = getbits(CAN_1_LMO_03_Config.mo_ptr->can_data[0],23,16);
+ 133:../CAN_1.c    **** 	*canData.lambda_error_status = CAN_1_LMO_03_Config.mo_ptr->can_data_byte[3];
+ 134:../CAN_1.c    **** 	*canData.Link_Fault_Codes = CAN_1_LMO_03_Config.mo_ptr->can_data_byte[4];
+ 135:../CAN_1.c    **** 	*canData.lambda_status = CAN_1_LMO_03_Config.mo_ptr->can_data_byte[5];
+ 136:../CAN_1.c    **** 	*canData.error_trigger = (CAN_1_LMO_03_Config.mo_ptr->can_data_byte[6]);
+ 137:../CAN_1.c    **** 	*canData.boost_table = CAN_1_LMO_03_Config.mo_ptr->can_data_byte[7];
+ 138:../CAN_1.c    **** 	*/
+ 139:../CAN_1.c    **** 
+ 140:../CAN_1.c    **** 	//------STW 0x8 LM04------
+ 141:../CAN_1.c    **** 	CAN_NODE_MO_Receive((CAN_NODE_LMO_t*)&CAN_1_LMO_04_Config);
+ 556              	 .loc 3 141 0
+ 557 00b0 2948     	 ldr r0,.L11+20
+ 558 00b2 FFF7FEFF 	 bl CAN_NODE_MO_Receive
+ 142:../CAN_1.c    **** 
+ 143:../CAN_1.c    **** 	*canData.STW_shift_up_request = checkRangePlausi(getbits(CAN_1_LMO_04_Config.mo_ptr->can_data_byte
+ 559              	 .loc 3 143 0
+ 560 00b6 244B     	 ldr r3,.L11+4
+ 561 00b8 1C6E     	 ldr r4,[r3,#96]
+ 562 00ba 274B     	 ldr r3,.L11+20
+ 563 00bc 1B68     	 ldr r3,[r3]
+ 564 00be 1B7C     	 ldrb r3,[r3,#16]
+ 565 00c0 1846     	 mov r0,r3
+ 566 00c2 0021     	 movs r1,#0
+ 567 00c4 0122     	 movs r2,#1
+ 568 00c6 FFF7FEFF 	 bl getbits
+ 569 00ca 0346     	 mov r3,r0
+ 570 00cc 1846     	 mov r0,r3
+ 571 00ce 1221     	 movs r1,#18
+ 572 00d0 FFF7FEFF 	 bl checkRangePlausi
+ 573 00d4 0346     	 mov r3,r0
+ 574 00d6 DBB2     	 uxtb r3,r3
+ 575 00d8 2370     	 strb r3,[r4]
+ 144:../CAN_1.c    **** 	*canData.STW_shift_down_request = checkRangePlausi(getbits(CAN_1_LMO_04_Config.mo_ptr->can_data_by
+ 576              	 .loc 3 144 0
+ 577 00da 1B4B     	 ldr r3,.L11+4
+ 578 00dc 5C6E     	 ldr r4,[r3,#100]
+ 579 00de 1E4B     	 ldr r3,.L11+20
+ 580 00e0 1B68     	 ldr r3,[r3]
+ 581 00e2 1B7C     	 ldrb r3,[r3,#16]
+ 582 00e4 1846     	 mov r0,r3
+ 583 00e6 0121     	 movs r1,#1
+ 584 00e8 0122     	 movs r2,#1
+ 585 00ea FFF7FEFF 	 bl getbits
+ 586 00ee 0346     	 mov r3,r0
+ 587 00f0 1846     	 mov r0,r3
+ 588 00f2 1121     	 movs r1,#17
+ 589 00f4 FFF7FEFF 	 bl checkRangePlausi
+ 590 00f8 0346     	 mov r3,r0
+ 591 00fa DBB2     	 uxtb r3,r3
+ 592 00fc 2370     	 strb r3,[r4]
+ 145:../CAN_1.c    **** 	//*canData.STW_trigger_point = getbits(CAN_1_LMO_04_Config.mo_ptr->can_data_byte[0],2,1);
+ 146:../CAN_1.c    **** 	//*canData.STW_engine_map = getbits(CAN_1_LMO_04_Config.mo_ptr->can_data_byte[0],3,1);
+ 147:../CAN_1.c    **** 	//*canData.STW_rev_limiter = getbits(CAN_1_LMO_04_Config.mo_ptr->can_data_byte[0],4,1);
+ 148:../CAN_1.c    **** 	//*canData.STW_clutch_mode = CAN_1_LMO_04_Config.mo_ptr->can_data_byte[1];
+ 149:../CAN_1.c    **** 	*canData.STW_transmission_mode = checkRangePlausi(CAN_1_LMO_04_Config.mo_ptr->can_data_byte[2],ERR
+ 593              	 .loc 3 149 0
+ 594 00fe 124B     	 ldr r3,.L11+4
+ 595 0100 9C6F     	 ldr r4,[r3,#120]
+ 596 0102 154B     	 ldr r3,.L11+20
+ 597 0104 1B68     	 ldr r3,[r3]
+ 598 0106 9B7C     	 ldrb r3,[r3,#18]
+ 599 0108 1846     	 mov r0,r3
+ 600 010a 1421     	 movs r1,#20
+ 601 010c FFF7FEFF 	 bl checkRangePlausi
+ 602 0110 0346     	 mov r3,r0
+ 603 0112 DBB2     	 uxtb r3,r3
+ 604 0114 2370     	 strb r3,[r4]
+ 150:../CAN_1.c    **** 	*canData.STW_mue_tyre = checkRangePlausi(CAN_1_LMO_04_Config.mo_ptr->can_data_byte[3],ERR_MUE_TYRE
+ 605              	 .loc 3 150 0
+ 606 0116 0C4B     	 ldr r3,.L11+4
+ 607 0118 DC6F     	 ldr r4,[r3,#124]
+ 608 011a 0F4B     	 ldr r3,.L11+20
+ 609 011c 1B68     	 ldr r3,[r3]
+ 610 011e DB7C     	 ldrb r3,[r3,#19]
+ 611 0120 1846     	 mov r0,r3
+ 612 0122 1021     	 movs r1,#16
+ 613 0124 FFF7FEFF 	 bl checkRangePlausi
+ 614 0128 0346     	 mov r3,r0
+ 615 012a DBB2     	 uxtb r3,r3
+ 616 012c 2370     	 strb r3,[r4]
+ 151:../CAN_1.c    **** 	//*canData.STW_brake_balance = CAN_1_LMO_04_Config.mo_ptr->can_data_byte[4];
+ 152:../CAN_1.c    **** 
+ 153:../CAN_1.c    **** 	//-----CAN-Modul LM08-----
+ 154:../CAN_1.c    **** 	CAN_NODE_MO_Receive((CAN_NODE_LMO_t*)&CAN_1_LMO_08_Config);
+ 617              	 .loc 3 154 0
+ 618 012e 0B48     	 ldr r0,.L11+24
+ 619 0130 FFF7FEFF 	 bl CAN_NODE_MO_Receive
+ 155:../CAN_1.c    **** 
+ 156:../CAN_1.c    **** 	*canData.p_pneu_VCU_IN = CAN_1_LMO_08_Config.mo_ptr->can_data_byte[0];
+ 620              	 .loc 3 156 0
+ 621 0134 044B     	 ldr r3,.L11+4
+ 622 0136 D3F83031 	 ldr r3,[r3,#304]
+ 623 013a 084A     	 ldr r2,.L11+24
+ 624 013c 1268     	 ldr r2,[r2]
+ 625 013e 127C     	 ldrb r2,[r2,#16]
+ 626 0140 1A70     	 strb r2,[r3]
+ 157:../CAN_1.c    **** }
+ 627              	 .loc 3 157 0
+ 628 0142 98BD     	 pop {r3,r4,r7,pc}
+ 629              	.L12:
+ 630              	 .align 2
+ 631              	.L11:
+ 632 0144 00000000 	 .word CAN_1_LMO_01_Config
+ 633 0148 00000000 	 .word canData
+ 634 014c 00000000 	 .word n_engine_LSB
+ 635 0150 00000000 	 .word n_engine_MSB
+ 636 0154 00000000 	 .word CAN_1_LMO_02_Config
+ 637 0158 00000000 	 .word CAN_1_LMO_04_Config
+ 638 015c 00000000 	 .word CAN_1_LMO_08_Config
+ 639              	 .cfi_endproc
+ 640              	.LFE416:
+ 642              	 .section .text.CAN_1_Transmit,"ax",%progbits
+ 643              	 .align 2
+ 644              	 .global CAN_1_Transmit
+ 645              	 .thumb
+ 646              	 .thumb_func
+ 648              	CAN_1_Transmit:
+ 649              	.LFB417:
+ 158:../CAN_1.c    **** 
+ 159:../CAN_1.c    **** void CAN_1_Transmit()
+ 160:../CAN_1.c    **** {
+ 650              	 .loc 3 160 0
+ 651              	 .cfi_startproc
+ 652              	 
+ 653              	 
+ 654 0000 80B5     	 push {r7,lr}
+ 655              	.LCFI26:
+ 656              	 .cfi_def_cfa_offset 8
+ 657              	 .cfi_offset 7,-8
+ 658              	 .cfi_offset 14,-4
+ 659 0002 00AF     	 add r7,sp,#0
+ 660              	.LCFI27:
+ 661              	 .cfi_def_cfa_register 7
+ 161:../CAN_1.c    **** 	//------TTC_ABS 0x5C0 LM05------
+ 162:../CAN_1.c    **** 	CAN1_data_Tx_LM05[0] = *canData.ABS_switchstate;
+ 662              	 .loc 3 162 0
+ 663 0004 904B     	 ldr r3,.L20
+ 664 0006 D3F88430 	 ldr r3,[r3,#132]
+ 665 000a 1A78     	 ldrb r2,[r3]
+ 666 000c 8F4B     	 ldr r3,.L20+4
+ 667 000e 1A70     	 strb r2,[r3]
+ 163:../CAN_1.c    **** 	CAN1_data_Tx_LM05[1] = getbits(*canData.p_brake_F, 7,8);
+ 668              	 .loc 3 163 0
+ 669 0010 8D4B     	 ldr r3,.L20
+ 670 0012 D3F88830 	 ldr r3,[r3,#136]
+ 671 0016 1B88     	 ldrh r3,[r3]
+ 672 0018 1846     	 mov r0,r3
+ 673 001a 0721     	 movs r1,#7
+ 674 001c 0822     	 movs r2,#8
+ 675 001e FFF7FEFF 	 bl getbits
+ 676 0022 0346     	 mov r3,r0
+ 677 0024 DAB2     	 uxtb r2,r3
+ 678 0026 894B     	 ldr r3,.L20+4
+ 679 0028 5A70     	 strb r2,[r3,#1]
+ 164:../CAN_1.c    **** 	CAN1_data_Tx_LM05[2] = getbits(*canData.p_brake_F, 15,8);
+ 680              	 .loc 3 164 0
+ 681 002a 874B     	 ldr r3,.L20
+ 682 002c D3F88830 	 ldr r3,[r3,#136]
+ 683 0030 1B88     	 ldrh r3,[r3]
+ 684 0032 1846     	 mov r0,r3
+ 685 0034 0F21     	 movs r1,#15
+ 686 0036 0822     	 movs r2,#8
+ 687 0038 FFF7FEFF 	 bl getbits
+ 688 003c 0346     	 mov r3,r0
+ 689 003e DAB2     	 uxtb r2,r3
+ 690 0040 824B     	 ldr r3,.L20+4
+ 691 0042 9A70     	 strb r2,[r3,#2]
+ 165:../CAN_1.c    **** 	CAN1_data_Tx_LM05[3] = getbits(*canData.ABS_BL_switch,0,1) || getbits(*canData.ABS_active,0,1) << 
+ 692              	 .loc 3 165 0
+ 693 0044 804B     	 ldr r3,.L20
+ 694 0046 D3F88C30 	 ldr r3,[r3,#140]
+ 695 004a 1B78     	 ldrb r3,[r3]
+ 696 004c 1846     	 mov r0,r3
+ 697 004e 0021     	 movs r1,#0
+ 698 0050 0122     	 movs r2,#1
+ 699 0052 FFF7FEFF 	 bl getbits
+ 700 0056 0346     	 mov r3,r0
+ 701 0058 002B     	 cmp r3,#0
+ 702 005a 26D1     	 bne .L14
+ 703              	 .loc 3 165 0 is_stmt 0 discriminator 2
+ 704 005c 7A4B     	 ldr r3,.L20
+ 705 005e D3F89030 	 ldr r3,[r3,#144]
+ 706 0062 1B78     	 ldrb r3,[r3]
+ 707 0064 1846     	 mov r0,r3
+ 708 0066 0021     	 movs r1,#0
+ 709 0068 0122     	 movs r2,#1
+ 710 006a FFF7FEFF 	 bl getbits
+ 711 006e 0346     	 mov r3,r0
+ 712 0070 5B00     	 lsls r3,r3,#1
+ 713 0072 002B     	 cmp r3,#0
+ 714 0074 19D1     	 bne .L14
+ 715              	 .loc 3 165 0 discriminator 4
+ 716 0076 744B     	 ldr r3,.L20
+ 717 0078 D3F89430 	 ldr r3,[r3,#148]
+ 718 007c 1B78     	 ldrb r3,[r3]
+ 719 007e 1846     	 mov r0,r3
+ 720 0080 0021     	 movs r1,#0
+ 721 0082 0122     	 movs r2,#1
+ 722 0084 FFF7FEFF 	 bl getbits
+ 723 0088 0346     	 mov r3,r0
+ 724 008a 9B00     	 lsls r3,r3,#2
+ 725 008c 002B     	 cmp r3,#0
+ 726 008e 0CD1     	 bne .L14
+ 727              	 .loc 3 165 0 discriminator 6
+ 728 0090 6D4B     	 ldr r3,.L20
+ 729 0092 D3F89830 	 ldr r3,[r3,#152]
+ 730 0096 1B78     	 ldrb r3,[r3]
+ 731 0098 1846     	 mov r0,r3
+ 732 009a 0021     	 movs r1,#0
+ 733 009c 0122     	 movs r2,#1
+ 734 009e FFF7FEFF 	 bl getbits
+ 735 00a2 0346     	 mov r3,r0
+ 736 00a4 DB00     	 lsls r3,r3,#3
+ 737 00a6 002B     	 cmp r3,#0
+ 738 00a8 01D0     	 beq .L15
+ 739              	.L14:
+ 740              	 .loc 3 165 0 discriminator 7
+ 741 00aa 0123     	 movs r3,#1
+ 742 00ac 00E0     	 b .L16
+ 743              	.L15:
+ 744              	 .loc 3 165 0 discriminator 8
+ 745 00ae 0023     	 movs r3,#0
+ 746              	.L16:
+ 747              	 .loc 3 165 0 discriminator 10
+ 748 00b0 DAB2     	 uxtb r2,r3
+ 749 00b2 664B     	 ldr r3,.L20+4
+ 750 00b4 DA70     	 strb r2,[r3,#3]
+ 166:../CAN_1.c    **** 
+ 167:../CAN_1.c    **** 	CAN_NODE_MO_UpdateData(&CAN_1_LMO_05_Config, CAN1_data_Tx_LM05);
+ 751              	 .loc 3 167 0 is_stmt 1 discriminator 10
+ 752 00b6 6648     	 ldr r0,.L20+8
+ 753 00b8 6449     	 ldr r1,.L20+4
+ 754 00ba FFF7FEFF 	 bl CAN_NODE_MO_UpdateData
+ 168:../CAN_1.c    **** 	CAN_NODE_MO_Transmit(&CAN_1_LMO_05_Config);
+ 755              	 .loc 3 168 0 discriminator 10
+ 756 00be 6448     	 ldr r0,.L20+8
+ 757 00c0 FFF7FEFF 	 bl CAN_NODE_MO_Transmit
+ 169:../CAN_1.c    **** 
+ 170:../CAN_1.c    **** 	//------TTC_LaunchControl 0x7F0 LM06------
+ 171:../CAN_1.c    **** 	CAN1_data_Tx_LM06[0] = *canData.p_brake_R;
+ 758              	 .loc 3 171 0 discriminator 10
+ 759 00c4 604B     	 ldr r3,.L20
+ 760 00c6 D3F89C30 	 ldr r3,[r3,#156]
+ 761 00ca 1A78     	 ldrb r2,[r3]
+ 762 00cc 614B     	 ldr r3,.L20+12
+ 763 00ce 1A70     	 strb r2,[r3]
+ 172:../CAN_1.c    **** 	CAN1_data_Tx_LM06[1] = *canData.LC_mue_tyre;
+ 764              	 .loc 3 172 0 discriminator 10
+ 765 00d0 5D4B     	 ldr r3,.L20
+ 766 00d2 D3F8A030 	 ldr r3,[r3,#160]
+ 767 00d6 1A78     	 ldrb r2,[r3]
+ 768 00d8 5E4B     	 ldr r3,.L20+12
+ 769 00da 5A70     	 strb r2,[r3,#1]
+ 173:../CAN_1.c    **** 	CAN1_data_Tx_LM06[2] = *canData.LC_clutch_pos_des;
+ 770              	 .loc 3 173 0 discriminator 10
+ 771 00dc 5A4B     	 ldr r3,.L20
+ 772 00de D3F8A430 	 ldr r3,[r3,#164]
+ 773 00e2 1A78     	 ldrb r2,[r3]
+ 774 00e4 5B4B     	 ldr r3,.L20+12
+ 775 00e6 9A70     	 strb r2,[r3,#2]
+ 174:../CAN_1.c    **** 	CAN1_data_Tx_LM06[3] = getbits(*canData.LC_dash_bit,0,1) || getbits(*canData.LC_active_bit,0,1) <<
+ 776              	 .loc 3 174 0 discriminator 10
+ 777 00e8 574B     	 ldr r3,.L20
+ 778 00ea D3F8A830 	 ldr r3,[r3,#168]
+ 779 00ee 1B78     	 ldrb r3,[r3]
+ 780 00f0 1846     	 mov r0,r3
+ 781 00f2 0021     	 movs r1,#0
+ 782 00f4 0122     	 movs r2,#1
+ 783 00f6 FFF7FEFF 	 bl getbits
+ 784 00fa 0346     	 mov r3,r0
+ 785 00fc 002B     	 cmp r3,#0
+ 786 00fe 19D1     	 bne .L17
+ 787              	 .loc 3 174 0 is_stmt 0 discriminator 2
+ 788 0100 514B     	 ldr r3,.L20
+ 789 0102 D3F8AC30 	 ldr r3,[r3,#172]
+ 790 0106 1B78     	 ldrb r3,[r3]
+ 791 0108 1846     	 mov r0,r3
+ 792 010a 0021     	 movs r1,#0
+ 793 010c 0122     	 movs r2,#1
+ 794 010e FFF7FEFF 	 bl getbits
+ 795 0112 0346     	 mov r3,r0
+ 796 0114 5B00     	 lsls r3,r3,#1
+ 797 0116 002B     	 cmp r3,#0
+ 798 0118 0CD1     	 bne .L17
+ 799              	 .loc 3 174 0 discriminator 4
+ 800 011a 4B4B     	 ldr r3,.L20
+ 801 011c D3F8B030 	 ldr r3,[r3,#176]
+ 802 0120 1B78     	 ldrb r3,[r3]
+ 803 0122 1846     	 mov r0,r3
+ 804 0124 0021     	 movs r1,#0
+ 805 0126 0122     	 movs r2,#1
+ 806 0128 FFF7FEFF 	 bl getbits
+ 807 012c 0346     	 mov r3,r0
+ 808 012e 9B00     	 lsls r3,r3,#2
+ 809 0130 002B     	 cmp r3,#0
+ 810 0132 01D0     	 beq .L18
+ 811              	.L17:
+ 812              	 .loc 3 174 0 discriminator 5
+ 813 0134 0123     	 movs r3,#1
+ 814 0136 00E0     	 b .L19
+ 815              	.L18:
+ 816              	 .loc 3 174 0 discriminator 6
+ 817 0138 0023     	 movs r3,#0
+ 818              	.L19:
+ 819              	 .loc 3 174 0 discriminator 8
+ 820 013a DAB2     	 uxtb r2,r3
+ 821 013c 454B     	 ldr r3,.L20+12
+ 822 013e DA70     	 strb r2,[r3,#3]
+ 175:../CAN_1.c    **** 	CAN1_data_Tx_LM06[4] = *canData.LC_Mdes;
+ 823              	 .loc 3 175 0 is_stmt 1 discriminator 8
+ 824 0140 414B     	 ldr r3,.L20
+ 825 0142 D3F8B430 	 ldr r3,[r3,#180]
+ 826 0146 1A78     	 ldrb r2,[r3]
+ 827 0148 424B     	 ldr r3,.L20+12
+ 828 014a 1A71     	 strb r2,[r3,#4]
+ 176:../CAN_1.c    **** 	CAN1_data_Tx_LM06[5] = *canData.LC_Fnr;
+ 829              	 .loc 3 176 0 discriminator 8
+ 830 014c 3E4B     	 ldr r3,.L20
+ 831 014e D3F8B830 	 ldr r3,[r3,#184]
+ 832 0152 1A78     	 ldrb r2,[r3]
+ 833 0154 3F4B     	 ldr r3,.L20+12
+ 834 0156 5A71     	 strb r2,[r3,#5]
+ 177:../CAN_1.c    **** 
+ 178:../CAN_1.c    **** 	CAN_NODE_MO_UpdateData(&CAN_1_LMO_06_Config, CAN1_data_Tx_LM06);
+ 835              	 .loc 3 178 0 discriminator 8
+ 836 0158 3F48     	 ldr r0,.L20+16
+ 837 015a 3E49     	 ldr r1,.L20+12
+ 838 015c FFF7FEFF 	 bl CAN_NODE_MO_UpdateData
+ 179:../CAN_1.c    **** 	CAN_NODE_MO_Transmit(&CAN_1_LMO_06_Config);
+ 839              	 .loc 3 179 0 discriminator 8
+ 840 0160 3D48     	 ldr r0,.L20+16
+ 841 0162 FFF7FEFF 	 bl CAN_NODE_MO_Transmit
+ 180:../CAN_1.c    **** 
+ 181:../CAN_1.c    **** 	//------TTC_WheelSpeed 0x340 LM07------
+ 182:../CAN_1.c    **** 	CAN1_data_Tx_LM07[0] = getbits(*canData.n_wheel_FL,7,8);
+ 842              	 .loc 3 182 0 discriminator 8
+ 843 0166 384B     	 ldr r3,.L20
+ 844 0168 D3F8BC30 	 ldr r3,[r3,#188]
+ 845 016c 1B88     	 ldrh r3,[r3]
+ 846 016e 1846     	 mov r0,r3
+ 847 0170 0721     	 movs r1,#7
+ 848 0172 0822     	 movs r2,#8
+ 849 0174 FFF7FEFF 	 bl getbits
+ 850 0178 0346     	 mov r3,r0
+ 851 017a DAB2     	 uxtb r2,r3
+ 852 017c 374B     	 ldr r3,.L20+20
+ 853 017e 1A70     	 strb r2,[r3]
+ 183:../CAN_1.c    **** 	CAN1_data_Tx_LM07[1] = getbits(*canData.n_wheel_FL,15,8);
+ 854              	 .loc 3 183 0 discriminator 8
+ 855 0180 314B     	 ldr r3,.L20
+ 856 0182 D3F8BC30 	 ldr r3,[r3,#188]
+ 857 0186 1B88     	 ldrh r3,[r3]
+ 858 0188 1846     	 mov r0,r3
+ 859 018a 0F21     	 movs r1,#15
+ 860 018c 0822     	 movs r2,#8
+ 861 018e FFF7FEFF 	 bl getbits
+ 862 0192 0346     	 mov r3,r0
+ 863 0194 DAB2     	 uxtb r2,r3
+ 864 0196 314B     	 ldr r3,.L20+20
+ 865 0198 5A70     	 strb r2,[r3,#1]
+ 184:../CAN_1.c    **** 	CAN1_data_Tx_LM07[2] = getbits(*canData.n_wheel_FR,7,8);
+ 866              	 .loc 3 184 0 discriminator 8
+ 867 019a 2B4B     	 ldr r3,.L20
+ 868 019c D3F8C030 	 ldr r3,[r3,#192]
+ 869 01a0 1B88     	 ldrh r3,[r3]
+ 870 01a2 1846     	 mov r0,r3
+ 871 01a4 0721     	 movs r1,#7
+ 872 01a6 0822     	 movs r2,#8
+ 873 01a8 FFF7FEFF 	 bl getbits
+ 874 01ac 0346     	 mov r3,r0
+ 875 01ae DAB2     	 uxtb r2,r3
+ 876 01b0 2A4B     	 ldr r3,.L20+20
+ 877 01b2 9A70     	 strb r2,[r3,#2]
+ 185:../CAN_1.c    **** 	CAN1_data_Tx_LM07[3] = getbits(*canData.n_wheel_FR,15,8);
+ 878              	 .loc 3 185 0 discriminator 8
+ 879 01b4 244B     	 ldr r3,.L20
+ 880 01b6 D3F8C030 	 ldr r3,[r3,#192]
+ 881 01ba 1B88     	 ldrh r3,[r3]
+ 882 01bc 1846     	 mov r0,r3
+ 883 01be 0F21     	 movs r1,#15
+ 884 01c0 0822     	 movs r2,#8
+ 885 01c2 FFF7FEFF 	 bl getbits
+ 886 01c6 0346     	 mov r3,r0
+ 887 01c8 DAB2     	 uxtb r2,r3
+ 888 01ca 244B     	 ldr r3,.L20+20
+ 889 01cc DA70     	 strb r2,[r3,#3]
+ 186:../CAN_1.c    **** 	CAN1_data_Tx_LM07[4] = getbits(*canData.n_wheel_RL,7,8);
+ 890              	 .loc 3 186 0 discriminator 8
+ 891 01ce 1E4B     	 ldr r3,.L20
+ 892 01d0 D3F8C430 	 ldr r3,[r3,#196]
+ 893 01d4 1B88     	 ldrh r3,[r3]
+ 894 01d6 1846     	 mov r0,r3
+ 895 01d8 0721     	 movs r1,#7
+ 896 01da 0822     	 movs r2,#8
+ 897 01dc FFF7FEFF 	 bl getbits
+ 898 01e0 0346     	 mov r3,r0
+ 899 01e2 DAB2     	 uxtb r2,r3
+ 900 01e4 1D4B     	 ldr r3,.L20+20
+ 901 01e6 1A71     	 strb r2,[r3,#4]
+ 187:../CAN_1.c    **** 	CAN1_data_Tx_LM07[5] = getbits(*canData.n_wheel_RL,15,8);
+ 902              	 .loc 3 187 0 discriminator 8
+ 903 01e8 174B     	 ldr r3,.L20
+ 904 01ea D3F8C430 	 ldr r3,[r3,#196]
+ 905 01ee 1B88     	 ldrh r3,[r3]
+ 906 01f0 1846     	 mov r0,r3
+ 907 01f2 0F21     	 movs r1,#15
+ 908 01f4 0822     	 movs r2,#8
+ 909 01f6 FFF7FEFF 	 bl getbits
+ 910 01fa 0346     	 mov r3,r0
+ 911 01fc DAB2     	 uxtb r2,r3
+ 912 01fe 174B     	 ldr r3,.L20+20
+ 913 0200 5A71     	 strb r2,[r3,#5]
+ 188:../CAN_1.c    **** 	CAN1_data_Tx_LM07[6] = getbits(*canData.n_wheel_RR,7,8);
+ 914              	 .loc 3 188 0 discriminator 8
+ 915 0202 114B     	 ldr r3,.L20
+ 916 0204 D3F8C830 	 ldr r3,[r3,#200]
+ 917 0208 1B88     	 ldrh r3,[r3]
+ 918 020a 1846     	 mov r0,r3
+ 919 020c 0721     	 movs r1,#7
+ 920 020e 0822     	 movs r2,#8
+ 921 0210 FFF7FEFF 	 bl getbits
+ 922 0214 0346     	 mov r3,r0
+ 923 0216 DAB2     	 uxtb r2,r3
+ 924 0218 104B     	 ldr r3,.L20+20
+ 925 021a 9A71     	 strb r2,[r3,#6]
+ 189:../CAN_1.c    **** 	CAN1_data_Tx_LM07[7] = getbits(*canData.n_wheel_RR,15,8);
+ 926              	 .loc 3 189 0 discriminator 8
+ 927 021c 0A4B     	 ldr r3,.L20
+ 928 021e D3F8C830 	 ldr r3,[r3,#200]
+ 929 0222 1B88     	 ldrh r3,[r3]
+ 930 0224 1846     	 mov r0,r3
+ 931 0226 0F21     	 movs r1,#15
+ 932 0228 0822     	 movs r2,#8
+ 933 022a FFF7FEFF 	 bl getbits
+ 934 022e 0346     	 mov r3,r0
+ 935 0230 DAB2     	 uxtb r2,r3
+ 936 0232 0A4B     	 ldr r3,.L20+20
+ 937 0234 DA71     	 strb r2,[r3,#7]
+ 190:../CAN_1.c    **** 
+ 191:../CAN_1.c    **** 	CAN_NODE_MO_UpdateData(&CAN_1_LMO_07_Config, CAN1_data_Tx_LM07);
+ 938              	 .loc 3 191 0 discriminator 8
+ 939 0236 0A48     	 ldr r0,.L20+24
+ 940 0238 0849     	 ldr r1,.L20+20
+ 941 023a FFF7FEFF 	 bl CAN_NODE_MO_UpdateData
+ 192:../CAN_1.c    **** 	CAN_NODE_MO_Transmit(&CAN_1_LMO_07_Config);
+ 942              	 .loc 3 192 0 discriminator 8
+ 943 023e 0848     	 ldr r0,.L20+24
+ 944 0240 FFF7FEFF 	 bl CAN_NODE_MO_Transmit
+ 193:../CAN_1.c    **** }
+ 945              	 .loc 3 193 0 discriminator 8
+ 946 0244 80BD     	 pop {r7,pc}
+ 947              	.L21:
+ 948 0246 00BF     	 .align 2
+ 949              	.L20:
+ 950 0248 00000000 	 .word canData
+ 951 024c 00000000 	 .word CAN1_data_Tx_LM05
+ 952 0250 00000000 	 .word CAN_1_LMO_05_Config
+ 953 0254 00000000 	 .word CAN1_data_Tx_LM06
+ 954 0258 00000000 	 .word CAN_1_LMO_06_Config
+ 955 025c 00000000 	 .word CAN1_data_Tx_LM07
+ 956 0260 00000000 	 .word CAN_1_LMO_07_Config
+ 957              	 .cfi_endproc
+ 958              	.LFE417:
+ 960              	 .text
+ 961              	.Letext0:
+ 962              	 .file 4 "c:\\dave\\dave-ide-4.4.2-64bit\\eclipse\\arm-gcc-49\\arm-none-eabi\\include\\machine\\_default_types.h"
+ 963              	 .file 5 "c:\\dave\\dave-ide-4.4.2-64bit\\eclipse\\arm-gcc-49\\arm-none-eabi\\include\\stdint.h"
+ 964              	 .file 6 "C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Libraries/CMSIS/Infineon/XMC4500_series/Include/XMC4500.h"
+ 965              	 .file 7 "../Simulink/rtwtypes.h"
+ 966              	 .file 8 "../Simulink/VCU.h"
+ 967              	 .file 9 "C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Libraries/XMCLib/inc/xmc4_gpio.h"
+ 968              	 .file 10 "C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Libraries/XMCLib/inc/xmc_can.h"
+ 969              	 .file 11 "C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Dave/Generated/CAN_NODE/can_node.h"
+ 970              	 .file 12 "../Header.h"
+ 971              	 .file 13 "C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Libraries/CMSIS/Include/cmsis_gcc.h"
+ 972              	 .file 14 "C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Libraries/CMSIS/Include/core_cm4.h"
+ 973              	 .file 15 "C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Libraries/CMSIS/Infineon/XMC4500_series/Include/system_XMC4500.h"
+ 974              	 .file 16 "C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Dave/Generated/CAN_NODE/can_node_extern.h"
+ 975              	 .file 17 "C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_04_09_VCU_jr20_Source_noCAN2/Dave/Generated/DIGITAL_IO/digital_io_extern.h"
+DEFINED SYMBOLS
+                            *ABS*:00000000 CAN_1.c
+    {standard input}:20     .text.XMC_GPIO_SetOutputHigh:00000000 $t
+    {standard input}:24     .text.XMC_GPIO_SetOutputHigh:00000000 XMC_GPIO_SetOutputHigh
+    {standard input}:68     .text.XMC_GPIO_SetOutputLow:00000000 $t
+    {standard input}:72     .text.XMC_GPIO_SetOutputLow:00000000 XMC_GPIO_SetOutputLow
+    {standard input}:115    .text.DIGITAL_IO_SetOutputHigh:00000000 $t
+    {standard input}:119    .text.DIGITAL_IO_SetOutputHigh:00000000 DIGITAL_IO_SetOutputHigh
+    {standard input}:159    .text.DIGITAL_IO_SetOutputLow:00000000 $t
+    {standard input}:163    .text.DIGITAL_IO_SetOutputLow:00000000 DIGITAL_IO_SetOutputLow
+                            *COM*:00000008 VAR_boardTemp
+                            *COM*:00000008 VAR_TR1_VSense_WP
+                            *COM*:00000008 VAR_TR2_VSense_FAN1
+                            *COM*:00000008 VAR_TR3_VSense_FAN2
+                            *COM*:00000001 shiftUpInterrupt
+                            *COM*:00000001 shiftDownInterrupt
+    {standard input}:212    .bss.CAN1_data_Tx_LM05:00000000 CAN1_data_Tx_LM05
+    {standard input}:209    .bss.CAN1_data_Tx_LM05:00000000 $d
+    {standard input}:219    .bss.CAN1_data_Tx_LM06:00000000 CAN1_data_Tx_LM06
+    {standard input}:216    .bss.CAN1_data_Tx_LM06:00000000 $d
+    {standard input}:226    .bss.CAN1_data_Tx_LM07:00000000 CAN1_data_Tx_LM07
+    {standard input}:223    .bss.CAN1_data_Tx_LM07:00000000 $d
+    {standard input}:233    .bss.n_engine:00000000 n_engine
+    {standard input}:230    .bss.n_engine:00000000 $d
+                            *COM*:00000004 n_engine_LSB
+                            *COM*:00000004 n_engine_MSB
+    {standard input}:242    .bss.counter:00000000 counter
+    {standard input}:239    .bss.counter:00000000 $d
+    {standard input}:248    .data.CAN_1_RES:00000000 CAN_1_RES
+    {standard input}:251    .text.CAN_1_ini:00000000 $t
+    {standard input}:256    .text.CAN_1_ini:00000000 CAN_1_ini
+    {standard input}:410    .text.CAN_1_ini:000000f8 $d
+    {standard input}:448    .text.CAN_1_Receive:00000000 $t
+    {standard input}:453    .text.CAN_1_Receive:00000000 CAN_1_Receive
+    {standard input}:632    .text.CAN_1_Receive:00000144 $d
+    {standard input}:643    .text.CAN_1_Transmit:00000000 $t
+    {standard input}:648    .text.CAN_1_Transmit:00000000 CAN_1_Transmit
+    {standard input}:950    .text.CAN_1_Transmit:00000248 $d
+                     .debug_frame:00000010 $d
+
+UNDEFINED SYMBOLS
+CAN1_Res
+canData
+VCU_DW
+CAN_NODE_MO_Receive
+checkRangePlausi
+getbits
+CAN_1_LMO_01_Config
+CAN_1_LMO_02_Config
+CAN_1_LMO_04_Config
+CAN_1_LMO_08_Config
+CAN_NODE_MO_UpdateData
+CAN_NODE_MO_Transmit
+CAN_1_LMO_05_Config
+CAN_1_LMO_06_Config
+CAN_1_LMO_07_Config

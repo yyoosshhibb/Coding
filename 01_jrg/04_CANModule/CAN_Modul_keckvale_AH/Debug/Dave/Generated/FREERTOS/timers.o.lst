@@ -1,0 +1,3373 @@
+   1              	 .syntax unified
+   2              	 .cpu cortex-m4
+   3              	 .eabi_attribute 27,3
+   4              	 .fpu fpv4-sp-d16
+   5              	 .eabi_attribute 20,1
+   6              	 .eabi_attribute 21,1
+   7              	 .eabi_attribute 23,3
+   8              	 .eabi_attribute 24,1
+   9              	 .eabi_attribute 25,1
+  10              	 .eabi_attribute 26,1
+  11              	 .eabi_attribute 30,6
+  12              	 .eabi_attribute 34,1
+  13              	 .eabi_attribute 18,4
+  14              	 .thumb
+  15              	 .file "timers.c"
+  16              	 .text
+  17              	.Ltext0:
+  18              	 .cfi_sections .debug_frame
+  19              	 .section .bss.xActiveTimerList1,"aw",%nobits
+  20              	 .align 2
+  23              	xActiveTimerList1:
+  24 0000 00000000 	 .space 20
+  24      00000000 
+  24      00000000 
+  24      00000000 
+  24      00000000 
+  25              	 .section .bss.xActiveTimerList2,"aw",%nobits
+  26              	 .align 2
+  29              	xActiveTimerList2:
+  30 0000 00000000 	 .space 20
+  30      00000000 
+  30      00000000 
+  30      00000000 
+  30      00000000 
+  31              	 .section .bss.pxCurrentTimerList,"aw",%nobits
+  32              	 .align 2
+  35              	pxCurrentTimerList:
+  36 0000 00000000 	 .space 4
+  37              	 .section .bss.pxOverflowTimerList,"aw",%nobits
+  38              	 .align 2
+  41              	pxOverflowTimerList:
+  42 0000 00000000 	 .space 4
+  43              	 .section .bss.xTimerQueue,"aw",%nobits
+  44              	 .align 2
+  47              	xTimerQueue:
+  48 0000 00000000 	 .space 4
+  49              	 .section .bss.xTimerTaskHandle,"aw",%nobits
+  50              	 .align 2
+  53              	xTimerTaskHandle:
+  54 0000 00000000 	 .space 4
+  55              	 .section .rodata
+  56              	 .align 2
+  57              	.LC0:
+  58 0000 546D7220 	 .ascii "Tmr Svc\000"
+  58      53766300 
+  59              	 .section .text.xTimerCreateTimerTask,"ax",%progbits
+  60              	 .align 2
+  61              	 .global xTimerCreateTimerTask
+  62              	 .thumb
+  63              	 .thumb_func
+  65              	xTimerCreateTimerTask:
+  66              	.LFB137:
+  67              	 .file 1 "../Dave/Generated/FREERTOS/timers.c"
+   1:../Dave/Generated/FREERTOS/timers.c **** /*
+   2:../Dave/Generated/FREERTOS/timers.c ****  * FreeRTOS Kernel V10.0.1
+   3:../Dave/Generated/FREERTOS/timers.c ****  * Copyright (C) 2017 Amazon.com, Inc. or its affiliates.  All Rights Reserved.
+   4:../Dave/Generated/FREERTOS/timers.c ****  *
+   5:../Dave/Generated/FREERTOS/timers.c ****  * Permission is hereby granted, free of charge, to any person obtaining a copy of
+   6:../Dave/Generated/FREERTOS/timers.c ****  * this software and associated documentation files (the "Software"), to deal in
+   7:../Dave/Generated/FREERTOS/timers.c ****  * the Software without restriction, including without limitation the rights to
+   8:../Dave/Generated/FREERTOS/timers.c ****  * use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of
+   9:../Dave/Generated/FREERTOS/timers.c ****  * the Software, and to permit persons to whom the Software is furnished to do so,
+  10:../Dave/Generated/FREERTOS/timers.c ****  * subject to the following conditions:
+  11:../Dave/Generated/FREERTOS/timers.c ****  *
+  12:../Dave/Generated/FREERTOS/timers.c ****  * The above copyright notice and this permission notice shall be included in all
+  13:../Dave/Generated/FREERTOS/timers.c ****  * copies or substantial portions of the Software.
+  14:../Dave/Generated/FREERTOS/timers.c ****  *
+  15:../Dave/Generated/FREERTOS/timers.c ****  * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+  16:../Dave/Generated/FREERTOS/timers.c ****  * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS
+  17:../Dave/Generated/FREERTOS/timers.c ****  * FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR
+  18:../Dave/Generated/FREERTOS/timers.c ****  * COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER
+  19:../Dave/Generated/FREERTOS/timers.c ****  * IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
+  20:../Dave/Generated/FREERTOS/timers.c ****  * CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+  21:../Dave/Generated/FREERTOS/timers.c ****  *
+  22:../Dave/Generated/FREERTOS/timers.c ****  * http://www.FreeRTOS.org
+  23:../Dave/Generated/FREERTOS/timers.c ****  * http://aws.amazon.com/freertos
+  24:../Dave/Generated/FREERTOS/timers.c ****  *
+  25:../Dave/Generated/FREERTOS/timers.c ****  * 1 tab == 4 spaces!
+  26:../Dave/Generated/FREERTOS/timers.c ****  */
+  27:../Dave/Generated/FREERTOS/timers.c **** 
+  28:../Dave/Generated/FREERTOS/timers.c **** /* Standard includes. */
+  29:../Dave/Generated/FREERTOS/timers.c **** #include <stdlib.h>
+  30:../Dave/Generated/FREERTOS/timers.c **** 
+  31:../Dave/Generated/FREERTOS/timers.c **** /* Defining MPU_WRAPPERS_INCLUDED_FROM_API_FILE prevents task.h from redefining
+  32:../Dave/Generated/FREERTOS/timers.c **** all the API functions to use the MPU wrappers.  That should only be done when
+  33:../Dave/Generated/FREERTOS/timers.c **** task.h is included from an application file. */
+  34:../Dave/Generated/FREERTOS/timers.c **** #define MPU_WRAPPERS_INCLUDED_FROM_API_FILE
+  35:../Dave/Generated/FREERTOS/timers.c **** 
+  36:../Dave/Generated/FREERTOS/timers.c **** #include "FreeRTOS.h"
+  37:../Dave/Generated/FREERTOS/timers.c **** #include "task.h"
+  38:../Dave/Generated/FREERTOS/timers.c **** #include "queue.h"
+  39:../Dave/Generated/FREERTOS/timers.c **** #include "timers.h"
+  40:../Dave/Generated/FREERTOS/timers.c **** 
+  41:../Dave/Generated/FREERTOS/timers.c **** #if ( INCLUDE_xTimerPendFunctionCall == 1 ) && ( configUSE_TIMERS == 0 )
+  42:../Dave/Generated/FREERTOS/timers.c **** 	#error configUSE_TIMERS must be set to 1 to make the xTimerPendFunctionCall() function available.
+  43:../Dave/Generated/FREERTOS/timers.c **** #endif
+  44:../Dave/Generated/FREERTOS/timers.c **** 
+  45:../Dave/Generated/FREERTOS/timers.c **** /* Lint e961 and e750 are suppressed as a MISRA exception justified because the
+  46:../Dave/Generated/FREERTOS/timers.c **** MPU ports require MPU_WRAPPERS_INCLUDED_FROM_API_FILE to be defined for the
+  47:../Dave/Generated/FREERTOS/timers.c **** header files above, but not in this file, in order to generate the correct
+  48:../Dave/Generated/FREERTOS/timers.c **** privileged Vs unprivileged linkage and placement. */
+  49:../Dave/Generated/FREERTOS/timers.c **** #undef MPU_WRAPPERS_INCLUDED_FROM_API_FILE /*lint !e961 !e750. */
+  50:../Dave/Generated/FREERTOS/timers.c **** 
+  51:../Dave/Generated/FREERTOS/timers.c **** 
+  52:../Dave/Generated/FREERTOS/timers.c **** /* This entire source file will be skipped if the application is not configured
+  53:../Dave/Generated/FREERTOS/timers.c **** to include software timer functionality.  This #if is closed at the very bottom
+  54:../Dave/Generated/FREERTOS/timers.c **** of this file.  If you want to include software timer functionality then ensure
+  55:../Dave/Generated/FREERTOS/timers.c **** configUSE_TIMERS is set to 1 in FreeRTOSConfig.h. */
+  56:../Dave/Generated/FREERTOS/timers.c **** #if ( configUSE_TIMERS == 1 )
+  57:../Dave/Generated/FREERTOS/timers.c **** 
+  58:../Dave/Generated/FREERTOS/timers.c **** /* Misc definitions. */
+  59:../Dave/Generated/FREERTOS/timers.c **** #define tmrNO_DELAY		( TickType_t ) 0U
+  60:../Dave/Generated/FREERTOS/timers.c **** 
+  61:../Dave/Generated/FREERTOS/timers.c **** /* The name assigned to the timer service task.  This can be overridden by
+  62:../Dave/Generated/FREERTOS/timers.c **** defining trmTIMER_SERVICE_TASK_NAME in FreeRTOSConfig.h. */
+  63:../Dave/Generated/FREERTOS/timers.c **** #ifndef configTIMER_SERVICE_TASK_NAME
+  64:../Dave/Generated/FREERTOS/timers.c **** 	#define configTIMER_SERVICE_TASK_NAME "Tmr Svc"
+  65:../Dave/Generated/FREERTOS/timers.c **** #endif
+  66:../Dave/Generated/FREERTOS/timers.c **** 
+  67:../Dave/Generated/FREERTOS/timers.c **** /* The definition of the timers themselves. */
+  68:../Dave/Generated/FREERTOS/timers.c **** typedef struct tmrTimerControl
+  69:../Dave/Generated/FREERTOS/timers.c **** {
+  70:../Dave/Generated/FREERTOS/timers.c **** 	const char				*pcTimerName;		/*<< Text name.  This is not used by the kernel, it is included simpl
+  71:../Dave/Generated/FREERTOS/timers.c **** 	ListItem_t				xTimerListItem;		/*<< Standard linked list item as used by all kernel features for e
+  72:../Dave/Generated/FREERTOS/timers.c **** 	TickType_t				xTimerPeriodInTicks;/*<< How quickly and often the timer expires. */
+  73:../Dave/Generated/FREERTOS/timers.c **** 	UBaseType_t				uxAutoReload;		/*<< Set to pdTRUE if the timer should be automatically restarted on
+  74:../Dave/Generated/FREERTOS/timers.c **** 	void 					*pvTimerID;			/*<< An ID to identify the timer.  This allows the timer to be identified 
+  75:../Dave/Generated/FREERTOS/timers.c **** 	TimerCallbackFunction_t	pxCallbackFunction;	/*<< The function that will be called when the timer e
+  76:../Dave/Generated/FREERTOS/timers.c **** 	#if( configUSE_TRACE_FACILITY == 1 )
+  77:../Dave/Generated/FREERTOS/timers.c **** 		UBaseType_t			uxTimerNumber;		/*<< An ID assigned by trace tools such as FreeRTOS+Trace */
+  78:../Dave/Generated/FREERTOS/timers.c **** 	#endif
+  79:../Dave/Generated/FREERTOS/timers.c **** 
+  80:../Dave/Generated/FREERTOS/timers.c **** 	#if( ( configSUPPORT_STATIC_ALLOCATION == 1 ) && ( configSUPPORT_DYNAMIC_ALLOCATION == 1 ) )
+  81:../Dave/Generated/FREERTOS/timers.c **** 		uint8_t 			ucStaticallyAllocated; /*<< Set to pdTRUE if the timer was created statically so no at
+  82:../Dave/Generated/FREERTOS/timers.c **** 	#endif
+  83:../Dave/Generated/FREERTOS/timers.c **** } xTIMER;
+  84:../Dave/Generated/FREERTOS/timers.c **** 
+  85:../Dave/Generated/FREERTOS/timers.c **** /* The old xTIMER name is maintained above then typedefed to the new Timer_t
+  86:../Dave/Generated/FREERTOS/timers.c **** name below to enable the use of older kernel aware debuggers. */
+  87:../Dave/Generated/FREERTOS/timers.c **** typedef xTIMER Timer_t;
+  88:../Dave/Generated/FREERTOS/timers.c **** 
+  89:../Dave/Generated/FREERTOS/timers.c **** /* The definition of messages that can be sent and received on the timer queue.
+  90:../Dave/Generated/FREERTOS/timers.c **** Two types of message can be queued - messages that manipulate a software timer,
+  91:../Dave/Generated/FREERTOS/timers.c **** and messages that request the execution of a non-timer related callback.  The
+  92:../Dave/Generated/FREERTOS/timers.c **** two message types are defined in two separate structures, xTimerParametersType
+  93:../Dave/Generated/FREERTOS/timers.c **** and xCallbackParametersType respectively. */
+  94:../Dave/Generated/FREERTOS/timers.c **** typedef struct tmrTimerParameters
+  95:../Dave/Generated/FREERTOS/timers.c **** {
+  96:../Dave/Generated/FREERTOS/timers.c **** 	TickType_t			xMessageValue;		/*<< An optional value used by a subset of commands, for example, whe
+  97:../Dave/Generated/FREERTOS/timers.c **** 	Timer_t *			pxTimer;			/*<< The timer to which the command will be applied. */
+  98:../Dave/Generated/FREERTOS/timers.c **** } TimerParameter_t;
+  99:../Dave/Generated/FREERTOS/timers.c **** 
+ 100:../Dave/Generated/FREERTOS/timers.c **** 
+ 101:../Dave/Generated/FREERTOS/timers.c **** typedef struct tmrCallbackParameters
+ 102:../Dave/Generated/FREERTOS/timers.c **** {
+ 103:../Dave/Generated/FREERTOS/timers.c **** 	PendedFunction_t	pxCallbackFunction;	/* << The callback function to execute. */
+ 104:../Dave/Generated/FREERTOS/timers.c **** 	void *pvParameter1;						/* << The value that will be used as the callback functions first paramet
+ 105:../Dave/Generated/FREERTOS/timers.c **** 	uint32_t ulParameter2;					/* << The value that will be used as the callback functions second para
+ 106:../Dave/Generated/FREERTOS/timers.c **** } CallbackParameters_t;
+ 107:../Dave/Generated/FREERTOS/timers.c **** 
+ 108:../Dave/Generated/FREERTOS/timers.c **** /* The structure that contains the two message types, along with an identifier
+ 109:../Dave/Generated/FREERTOS/timers.c **** that is used to determine which message type is valid. */
+ 110:../Dave/Generated/FREERTOS/timers.c **** typedef struct tmrTimerQueueMessage
+ 111:../Dave/Generated/FREERTOS/timers.c **** {
+ 112:../Dave/Generated/FREERTOS/timers.c **** 	BaseType_t			xMessageID;			/*<< The command being sent to the timer service task. */
+ 113:../Dave/Generated/FREERTOS/timers.c **** 	union
+ 114:../Dave/Generated/FREERTOS/timers.c **** 	{
+ 115:../Dave/Generated/FREERTOS/timers.c **** 		TimerParameter_t xTimerParameters;
+ 116:../Dave/Generated/FREERTOS/timers.c **** 
+ 117:../Dave/Generated/FREERTOS/timers.c **** 		/* Don't include xCallbackParameters if it is not going to be used as
+ 118:../Dave/Generated/FREERTOS/timers.c **** 		it makes the structure (and therefore the timer queue) larger. */
+ 119:../Dave/Generated/FREERTOS/timers.c **** 		#if ( INCLUDE_xTimerPendFunctionCall == 1 )
+ 120:../Dave/Generated/FREERTOS/timers.c **** 			CallbackParameters_t xCallbackParameters;
+ 121:../Dave/Generated/FREERTOS/timers.c **** 		#endif /* INCLUDE_xTimerPendFunctionCall */
+ 122:../Dave/Generated/FREERTOS/timers.c **** 	} u;
+ 123:../Dave/Generated/FREERTOS/timers.c **** } DaemonTaskMessage_t;
+ 124:../Dave/Generated/FREERTOS/timers.c **** 
+ 125:../Dave/Generated/FREERTOS/timers.c **** /*lint -save -e956 A manual analysis and inspection has been used to determine
+ 126:../Dave/Generated/FREERTOS/timers.c **** which static variables must be declared volatile. */
+ 127:../Dave/Generated/FREERTOS/timers.c **** 
+ 128:../Dave/Generated/FREERTOS/timers.c **** /* The list in which active timers are stored.  Timers are referenced in expire
+ 129:../Dave/Generated/FREERTOS/timers.c **** time order, with the nearest expiry time at the front of the list.  Only the
+ 130:../Dave/Generated/FREERTOS/timers.c **** timer service task is allowed to access these lists. */
+ 131:../Dave/Generated/FREERTOS/timers.c **** PRIVILEGED_DATA static List_t xActiveTimerList1;
+ 132:../Dave/Generated/FREERTOS/timers.c **** PRIVILEGED_DATA static List_t xActiveTimerList2;
+ 133:../Dave/Generated/FREERTOS/timers.c **** PRIVILEGED_DATA static List_t *pxCurrentTimerList;
+ 134:../Dave/Generated/FREERTOS/timers.c **** PRIVILEGED_DATA static List_t *pxOverflowTimerList;
+ 135:../Dave/Generated/FREERTOS/timers.c **** 
+ 136:../Dave/Generated/FREERTOS/timers.c **** /* A queue that is used to send commands to the timer service task. */
+ 137:../Dave/Generated/FREERTOS/timers.c **** PRIVILEGED_DATA static QueueHandle_t xTimerQueue = NULL;
+ 138:../Dave/Generated/FREERTOS/timers.c **** PRIVILEGED_DATA static TaskHandle_t xTimerTaskHandle = NULL;
+ 139:../Dave/Generated/FREERTOS/timers.c **** 
+ 140:../Dave/Generated/FREERTOS/timers.c **** /*lint -restore */
+ 141:../Dave/Generated/FREERTOS/timers.c **** 
+ 142:../Dave/Generated/FREERTOS/timers.c **** /*-----------------------------------------------------------*/
+ 143:../Dave/Generated/FREERTOS/timers.c **** 
+ 144:../Dave/Generated/FREERTOS/timers.c **** #if( configSUPPORT_STATIC_ALLOCATION == 1 )
+ 145:../Dave/Generated/FREERTOS/timers.c **** 
+ 146:../Dave/Generated/FREERTOS/timers.c **** 	/* If static allocation is supported then the application must provide the
+ 147:../Dave/Generated/FREERTOS/timers.c **** 	following callback function - which enables the application to optionally
+ 148:../Dave/Generated/FREERTOS/timers.c **** 	provide the memory that will be used by the timer task as the task's stack
+ 149:../Dave/Generated/FREERTOS/timers.c **** 	and TCB. */
+ 150:../Dave/Generated/FREERTOS/timers.c **** 	extern void vApplicationGetTimerTaskMemory( StaticTask_t **ppxTimerTaskTCBBuffer, StackType_t **pp
+ 151:../Dave/Generated/FREERTOS/timers.c **** 
+ 152:../Dave/Generated/FREERTOS/timers.c **** #endif
+ 153:../Dave/Generated/FREERTOS/timers.c **** 
+ 154:../Dave/Generated/FREERTOS/timers.c **** /*
+ 155:../Dave/Generated/FREERTOS/timers.c ****  * Initialise the infrastructure used by the timer service task if it has not
+ 156:../Dave/Generated/FREERTOS/timers.c ****  * been initialised already.
+ 157:../Dave/Generated/FREERTOS/timers.c ****  */
+ 158:../Dave/Generated/FREERTOS/timers.c **** static void prvCheckForValidListAndQueue( void ) PRIVILEGED_FUNCTION;
+ 159:../Dave/Generated/FREERTOS/timers.c **** 
+ 160:../Dave/Generated/FREERTOS/timers.c **** /*
+ 161:../Dave/Generated/FREERTOS/timers.c ****  * The timer service task (daemon).  Timer functionality is controlled by this
+ 162:../Dave/Generated/FREERTOS/timers.c ****  * task.  Other tasks communicate with the timer service task using the
+ 163:../Dave/Generated/FREERTOS/timers.c ****  * xTimerQueue queue.
+ 164:../Dave/Generated/FREERTOS/timers.c ****  */
+ 165:../Dave/Generated/FREERTOS/timers.c **** static void prvTimerTask( void *pvParameters ) PRIVILEGED_FUNCTION;
+ 166:../Dave/Generated/FREERTOS/timers.c **** 
+ 167:../Dave/Generated/FREERTOS/timers.c **** /*
+ 168:../Dave/Generated/FREERTOS/timers.c ****  * Called by the timer service task to interpret and process a command it
+ 169:../Dave/Generated/FREERTOS/timers.c ****  * received on the timer queue.
+ 170:../Dave/Generated/FREERTOS/timers.c ****  */
+ 171:../Dave/Generated/FREERTOS/timers.c **** static void prvProcessReceivedCommands( void ) PRIVILEGED_FUNCTION;
+ 172:../Dave/Generated/FREERTOS/timers.c **** 
+ 173:../Dave/Generated/FREERTOS/timers.c **** /*
+ 174:../Dave/Generated/FREERTOS/timers.c ****  * Insert the timer into either xActiveTimerList1, or xActiveTimerList2,
+ 175:../Dave/Generated/FREERTOS/timers.c ****  * depending on if the expire time causes a timer counter overflow.
+ 176:../Dave/Generated/FREERTOS/timers.c ****  */
+ 177:../Dave/Generated/FREERTOS/timers.c **** static BaseType_t prvInsertTimerInActiveList( Timer_t * const pxTimer, const TickType_t xNextExpiry
+ 178:../Dave/Generated/FREERTOS/timers.c **** 
+ 179:../Dave/Generated/FREERTOS/timers.c **** /*
+ 180:../Dave/Generated/FREERTOS/timers.c ****  * An active timer has reached its expire time.  Reload the timer if it is an
+ 181:../Dave/Generated/FREERTOS/timers.c ****  * auto reload timer, then call its callback.
+ 182:../Dave/Generated/FREERTOS/timers.c ****  */
+ 183:../Dave/Generated/FREERTOS/timers.c **** static void prvProcessExpiredTimer( const TickType_t xNextExpireTime, const TickType_t xTimeNow ) P
+ 184:../Dave/Generated/FREERTOS/timers.c **** 
+ 185:../Dave/Generated/FREERTOS/timers.c **** /*
+ 186:../Dave/Generated/FREERTOS/timers.c ****  * The tick count has overflowed.  Switch the timer lists after ensuring the
+ 187:../Dave/Generated/FREERTOS/timers.c ****  * current timer list does not still reference some timers.
+ 188:../Dave/Generated/FREERTOS/timers.c ****  */
+ 189:../Dave/Generated/FREERTOS/timers.c **** static void prvSwitchTimerLists( void ) PRIVILEGED_FUNCTION;
+ 190:../Dave/Generated/FREERTOS/timers.c **** 
+ 191:../Dave/Generated/FREERTOS/timers.c **** /*
+ 192:../Dave/Generated/FREERTOS/timers.c ****  * Obtain the current tick count, setting *pxTimerListsWereSwitched to pdTRUE
+ 193:../Dave/Generated/FREERTOS/timers.c ****  * if a tick count overflow occurred since prvSampleTimeNow() was last called.
+ 194:../Dave/Generated/FREERTOS/timers.c ****  */
+ 195:../Dave/Generated/FREERTOS/timers.c **** static TickType_t prvSampleTimeNow( BaseType_t * const pxTimerListsWereSwitched ) PRIVILEGED_FUNCTI
+ 196:../Dave/Generated/FREERTOS/timers.c **** 
+ 197:../Dave/Generated/FREERTOS/timers.c **** /*
+ 198:../Dave/Generated/FREERTOS/timers.c ****  * If the timer list contains any active timers then return the expire time of
+ 199:../Dave/Generated/FREERTOS/timers.c ****  * the timer that will expire first and set *pxListWasEmpty to false.  If the
+ 200:../Dave/Generated/FREERTOS/timers.c ****  * timer list does not contain any timers then return 0 and set *pxListWasEmpty
+ 201:../Dave/Generated/FREERTOS/timers.c ****  * to pdTRUE.
+ 202:../Dave/Generated/FREERTOS/timers.c ****  */
+ 203:../Dave/Generated/FREERTOS/timers.c **** static TickType_t prvGetNextExpireTime( BaseType_t * const pxListWasEmpty ) PRIVILEGED_FUNCTION;
+ 204:../Dave/Generated/FREERTOS/timers.c **** 
+ 205:../Dave/Generated/FREERTOS/timers.c **** /*
+ 206:../Dave/Generated/FREERTOS/timers.c ****  * If a timer has expired, process it.  Otherwise, block the timer service task
+ 207:../Dave/Generated/FREERTOS/timers.c ****  * until either a timer does expire or a command is received.
+ 208:../Dave/Generated/FREERTOS/timers.c ****  */
+ 209:../Dave/Generated/FREERTOS/timers.c **** static void prvProcessTimerOrBlockTask( const TickType_t xNextExpireTime, BaseType_t xListWasEmpty 
+ 210:../Dave/Generated/FREERTOS/timers.c **** 
+ 211:../Dave/Generated/FREERTOS/timers.c **** /*
+ 212:../Dave/Generated/FREERTOS/timers.c ****  * Called after a Timer_t structure has been allocated either statically or
+ 213:../Dave/Generated/FREERTOS/timers.c ****  * dynamically to fill in the structure's members.
+ 214:../Dave/Generated/FREERTOS/timers.c ****  */
+ 215:../Dave/Generated/FREERTOS/timers.c **** static void prvInitialiseNewTimer(	const char * const pcTimerName,			/*lint !e971 Unqualified char 
+ 216:../Dave/Generated/FREERTOS/timers.c **** 									const TickType_t xTimerPeriodInTicks,
+ 217:../Dave/Generated/FREERTOS/timers.c **** 									const UBaseType_t uxAutoReload,
+ 218:../Dave/Generated/FREERTOS/timers.c **** 									void * const pvTimerID,
+ 219:../Dave/Generated/FREERTOS/timers.c **** 									TimerCallbackFunction_t pxCallbackFunction,
+ 220:../Dave/Generated/FREERTOS/timers.c **** 									Timer_t *pxNewTimer ) PRIVILEGED_FUNCTION;
+ 221:../Dave/Generated/FREERTOS/timers.c **** /*-----------------------------------------------------------*/
+ 222:../Dave/Generated/FREERTOS/timers.c **** 
+ 223:../Dave/Generated/FREERTOS/timers.c **** BaseType_t xTimerCreateTimerTask( void )
+ 224:../Dave/Generated/FREERTOS/timers.c **** {
+  68              	 .loc 1 224 0
+  69              	 .cfi_startproc
+  70              	 
+  71              	 
+  72 0000 80B5     	 push {r7,lr}
+  73              	 .cfi_def_cfa_offset 8
+  74              	 .cfi_offset 7,-8
+  75              	 .cfi_offset 14,-4
+  76 0002 84B0     	 sub sp,sp,#16
+  77              	 .cfi_def_cfa_offset 24
+  78 0004 02AF     	 add r7,sp,#8
+  79              	 .cfi_def_cfa 7,16
+ 225:../Dave/Generated/FREERTOS/timers.c **** BaseType_t xReturn = pdFAIL;
+  80              	 .loc 1 225 0
+  81 0006 0023     	 movs r3,#0
+  82 0008 7B60     	 str r3,[r7,#4]
+ 226:../Dave/Generated/FREERTOS/timers.c **** 
+ 227:../Dave/Generated/FREERTOS/timers.c **** 	/* This function is called when the scheduler is started if
+ 228:../Dave/Generated/FREERTOS/timers.c **** 	configUSE_TIMERS is set to 1.  Check that the infrastructure used by the
+ 229:../Dave/Generated/FREERTOS/timers.c **** 	timer service task has been created/initialised.  If timers have already
+ 230:../Dave/Generated/FREERTOS/timers.c **** 	been created then the initialisation will already have been performed. */
+ 231:../Dave/Generated/FREERTOS/timers.c **** 	prvCheckForValidListAndQueue();
+  83              	 .loc 1 231 0
+  84 000a FFF7FEFF 	 bl prvCheckForValidListAndQueue
+ 232:../Dave/Generated/FREERTOS/timers.c **** 
+ 233:../Dave/Generated/FREERTOS/timers.c **** 	if( xTimerQueue != NULL )
+  85              	 .loc 1 233 0
+  86 000e 114B     	 ldr r3,.L6
+  87 0010 1B68     	 ldr r3,[r3]
+  88 0012 002B     	 cmp r3,#0
+  89 0014 0BD0     	 beq .L2
+ 234:../Dave/Generated/FREERTOS/timers.c **** 	{
+ 235:../Dave/Generated/FREERTOS/timers.c **** 		#if( configSUPPORT_STATIC_ALLOCATION == 1 )
+ 236:../Dave/Generated/FREERTOS/timers.c **** 		{
+ 237:../Dave/Generated/FREERTOS/timers.c **** 			StaticTask_t *pxTimerTaskTCBBuffer = NULL;
+ 238:../Dave/Generated/FREERTOS/timers.c **** 			StackType_t *pxTimerTaskStackBuffer = NULL;
+ 239:../Dave/Generated/FREERTOS/timers.c **** 			uint32_t ulTimerTaskStackSize;
+ 240:../Dave/Generated/FREERTOS/timers.c **** 
+ 241:../Dave/Generated/FREERTOS/timers.c **** 			vApplicationGetTimerTaskMemory( &pxTimerTaskTCBBuffer, &pxTimerTaskStackBuffer, &ulTimerTaskStac
+ 242:../Dave/Generated/FREERTOS/timers.c **** 			xTimerTaskHandle = xTaskCreateStatic(	prvTimerTask,
+ 243:../Dave/Generated/FREERTOS/timers.c **** 													configTIMER_SERVICE_TASK_NAME,
+ 244:../Dave/Generated/FREERTOS/timers.c **** 													ulTimerTaskStackSize,
+ 245:../Dave/Generated/FREERTOS/timers.c **** 													NULL,
+ 246:../Dave/Generated/FREERTOS/timers.c **** 													( ( UBaseType_t ) configTIMER_TASK_PRIORITY ) | portPRIVILEGE_BIT,
+ 247:../Dave/Generated/FREERTOS/timers.c **** 													pxTimerTaskStackBuffer,
+ 248:../Dave/Generated/FREERTOS/timers.c **** 													pxTimerTaskTCBBuffer );
+ 249:../Dave/Generated/FREERTOS/timers.c **** 
+ 250:../Dave/Generated/FREERTOS/timers.c **** 			if( xTimerTaskHandle != NULL )
+ 251:../Dave/Generated/FREERTOS/timers.c **** 			{
+ 252:../Dave/Generated/FREERTOS/timers.c **** 				xReturn = pdPASS;
+ 253:../Dave/Generated/FREERTOS/timers.c **** 			}
+ 254:../Dave/Generated/FREERTOS/timers.c **** 		}
+ 255:../Dave/Generated/FREERTOS/timers.c **** 		#else
+ 256:../Dave/Generated/FREERTOS/timers.c **** 		{
+ 257:../Dave/Generated/FREERTOS/timers.c **** 			xReturn = xTaskCreate(	prvTimerTask,
+  90              	 .loc 1 257 0
+  91 0016 0223     	 movs r3,#2
+  92 0018 0093     	 str r3,[sp]
+  93 001a 0F4B     	 ldr r3,.L6+4
+  94 001c 0193     	 str r3,[sp,#4]
+  95 001e 0F48     	 ldr r0,.L6+8
+  96 0020 0F49     	 ldr r1,.L6+12
+  97 0022 4FF48272 	 mov r2,#260
+  98 0026 0023     	 movs r3,#0
+  99 0028 FFF7FEFF 	 bl xTaskCreate
+ 100 002c 7860     	 str r0,[r7,#4]
+ 101              	.L2:
+ 258:../Dave/Generated/FREERTOS/timers.c **** 									configTIMER_SERVICE_TASK_NAME,
+ 259:../Dave/Generated/FREERTOS/timers.c **** 									configTIMER_TASK_STACK_DEPTH,
+ 260:../Dave/Generated/FREERTOS/timers.c **** 									NULL,
+ 261:../Dave/Generated/FREERTOS/timers.c **** 									( ( UBaseType_t ) configTIMER_TASK_PRIORITY ) | portPRIVILEGE_BIT,
+ 262:../Dave/Generated/FREERTOS/timers.c **** 									&xTimerTaskHandle );
+ 263:../Dave/Generated/FREERTOS/timers.c **** 		}
+ 264:../Dave/Generated/FREERTOS/timers.c **** 		#endif /* configSUPPORT_STATIC_ALLOCATION */
+ 265:../Dave/Generated/FREERTOS/timers.c **** 	}
+ 266:../Dave/Generated/FREERTOS/timers.c **** 	else
+ 267:../Dave/Generated/FREERTOS/timers.c **** 	{
+ 268:../Dave/Generated/FREERTOS/timers.c **** 		mtCOVERAGE_TEST_MARKER();
+ 269:../Dave/Generated/FREERTOS/timers.c **** 	}
+ 270:../Dave/Generated/FREERTOS/timers.c **** 
+ 271:../Dave/Generated/FREERTOS/timers.c **** 	configASSERT( xReturn );
+ 102              	 .loc 1 271 0
+ 103 002e 7B68     	 ldr r3,[r7,#4]
+ 104 0030 002B     	 cmp r3,#0
+ 105 0032 09D1     	 bne .L3
+ 106              	.LBB35:
+ 107              	.LBB36:
+ 108              	 .file 2 "../Dave/Generated/FREERTOS/portable/GCC/portmacro.h"
+   1:../Dave/Generated/FREERTOS/portable/GCC/portmacro.h **** /*
+   2:../Dave/Generated/FREERTOS/portable/GCC/portmacro.h ****  * FreeRTOS Kernel V10.0.1
+   3:../Dave/Generated/FREERTOS/portable/GCC/portmacro.h ****  * Copyright (C) 2017 Amazon.com, Inc. or its affiliates.  All Rights Reserved.
+   4:../Dave/Generated/FREERTOS/portable/GCC/portmacro.h ****  *
+   5:../Dave/Generated/FREERTOS/portable/GCC/portmacro.h ****  * Permission is hereby granted, free of charge, to any person obtaining a copy of
+   6:../Dave/Generated/FREERTOS/portable/GCC/portmacro.h ****  * this software and associated documentation files (the "Software"), to deal in
+   7:../Dave/Generated/FREERTOS/portable/GCC/portmacro.h ****  * the Software without restriction, including without limitation the rights to
+   8:../Dave/Generated/FREERTOS/portable/GCC/portmacro.h ****  * use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of
+   9:../Dave/Generated/FREERTOS/portable/GCC/portmacro.h ****  * the Software, and to permit persons to whom the Software is furnished to do so,
+  10:../Dave/Generated/FREERTOS/portable/GCC/portmacro.h ****  * subject to the following conditions:
+  11:../Dave/Generated/FREERTOS/portable/GCC/portmacro.h ****  *
+  12:../Dave/Generated/FREERTOS/portable/GCC/portmacro.h ****  * The above copyright notice and this permission notice shall be included in all
+  13:../Dave/Generated/FREERTOS/portable/GCC/portmacro.h ****  * copies or substantial portions of the Software.
+  14:../Dave/Generated/FREERTOS/portable/GCC/portmacro.h ****  *
+  15:../Dave/Generated/FREERTOS/portable/GCC/portmacro.h ****  * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+  16:../Dave/Generated/FREERTOS/portable/GCC/portmacro.h ****  * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS
+  17:../Dave/Generated/FREERTOS/portable/GCC/portmacro.h ****  * FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR
+  18:../Dave/Generated/FREERTOS/portable/GCC/portmacro.h ****  * COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER
+  19:../Dave/Generated/FREERTOS/portable/GCC/portmacro.h ****  * IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
+  20:../Dave/Generated/FREERTOS/portable/GCC/portmacro.h ****  * CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+  21:../Dave/Generated/FREERTOS/portable/GCC/portmacro.h ****  *
+  22:../Dave/Generated/FREERTOS/portable/GCC/portmacro.h ****  * http://www.FreeRTOS.org
+  23:../Dave/Generated/FREERTOS/portable/GCC/portmacro.h ****  * http://aws.amazon.com/freertos
+  24:../Dave/Generated/FREERTOS/portable/GCC/portmacro.h ****  *
+  25:../Dave/Generated/FREERTOS/portable/GCC/portmacro.h ****  * 1 tab == 4 spaces!
+  26:../Dave/Generated/FREERTOS/portable/GCC/portmacro.h ****  */
+  27:../Dave/Generated/FREERTOS/portable/GCC/portmacro.h **** 
+  28:../Dave/Generated/FREERTOS/portable/GCC/portmacro.h **** 
+  29:../Dave/Generated/FREERTOS/portable/GCC/portmacro.h **** #ifndef PORTMACRO_H
+  30:../Dave/Generated/FREERTOS/portable/GCC/portmacro.h **** #define PORTMACRO_H
+  31:../Dave/Generated/FREERTOS/portable/GCC/portmacro.h **** 
+  32:../Dave/Generated/FREERTOS/portable/GCC/portmacro.h **** #ifdef __cplusplus
+  33:../Dave/Generated/FREERTOS/portable/GCC/portmacro.h **** extern "C" {
+  34:../Dave/Generated/FREERTOS/portable/GCC/portmacro.h **** #endif
+  35:../Dave/Generated/FREERTOS/portable/GCC/portmacro.h **** 
+  36:../Dave/Generated/FREERTOS/portable/GCC/portmacro.h **** /*-----------------------------------------------------------
+  37:../Dave/Generated/FREERTOS/portable/GCC/portmacro.h ****  * Port specific definitions.
+  38:../Dave/Generated/FREERTOS/portable/GCC/portmacro.h ****  *
+  39:../Dave/Generated/FREERTOS/portable/GCC/portmacro.h ****  * The settings in this file configure FreeRTOS correctly for the
+  40:../Dave/Generated/FREERTOS/portable/GCC/portmacro.h ****  * given hardware and compiler.
+  41:../Dave/Generated/FREERTOS/portable/GCC/portmacro.h ****  *
+  42:../Dave/Generated/FREERTOS/portable/GCC/portmacro.h ****  * These settings should not be altered.
+  43:../Dave/Generated/FREERTOS/portable/GCC/portmacro.h ****  *-----------------------------------------------------------
+  44:../Dave/Generated/FREERTOS/portable/GCC/portmacro.h ****  */
+  45:../Dave/Generated/FREERTOS/portable/GCC/portmacro.h **** 
+  46:../Dave/Generated/FREERTOS/portable/GCC/portmacro.h **** /* Type definitions. */
+  47:../Dave/Generated/FREERTOS/portable/GCC/portmacro.h **** #define portCHAR		char
+  48:../Dave/Generated/FREERTOS/portable/GCC/portmacro.h **** #define portFLOAT		float
+  49:../Dave/Generated/FREERTOS/portable/GCC/portmacro.h **** #define portDOUBLE		double
+  50:../Dave/Generated/FREERTOS/portable/GCC/portmacro.h **** #define portLONG		long
+  51:../Dave/Generated/FREERTOS/portable/GCC/portmacro.h **** #define portSHORT		short
+  52:../Dave/Generated/FREERTOS/portable/GCC/portmacro.h **** #define portSTACK_TYPE	uint32_t
+  53:../Dave/Generated/FREERTOS/portable/GCC/portmacro.h **** #define portBASE_TYPE	long
+  54:../Dave/Generated/FREERTOS/portable/GCC/portmacro.h **** 
+  55:../Dave/Generated/FREERTOS/portable/GCC/portmacro.h **** typedef portSTACK_TYPE StackType_t;
+  56:../Dave/Generated/FREERTOS/portable/GCC/portmacro.h **** typedef long BaseType_t;
+  57:../Dave/Generated/FREERTOS/portable/GCC/portmacro.h **** typedef unsigned long UBaseType_t;
+  58:../Dave/Generated/FREERTOS/portable/GCC/portmacro.h **** 
+  59:../Dave/Generated/FREERTOS/portable/GCC/portmacro.h **** #if( configUSE_16_BIT_TICKS == 1 )
+  60:../Dave/Generated/FREERTOS/portable/GCC/portmacro.h **** 	typedef uint16_t TickType_t;
+  61:../Dave/Generated/FREERTOS/portable/GCC/portmacro.h **** 	#define portMAX_DELAY ( TickType_t ) 0xffff
+  62:../Dave/Generated/FREERTOS/portable/GCC/portmacro.h **** #else
+  63:../Dave/Generated/FREERTOS/portable/GCC/portmacro.h **** 	typedef uint32_t TickType_t;
+  64:../Dave/Generated/FREERTOS/portable/GCC/portmacro.h **** 	#define portMAX_DELAY ( TickType_t ) 0xffffffffUL
+  65:../Dave/Generated/FREERTOS/portable/GCC/portmacro.h **** 
+  66:../Dave/Generated/FREERTOS/portable/GCC/portmacro.h **** 	/* 32-bit tick type on a 32-bit architecture, so reads of the tick count do
+  67:../Dave/Generated/FREERTOS/portable/GCC/portmacro.h **** 	not need to be guarded with a critical section. */
+  68:../Dave/Generated/FREERTOS/portable/GCC/portmacro.h **** 	#define portTICK_TYPE_IS_ATOMIC 1
+  69:../Dave/Generated/FREERTOS/portable/GCC/portmacro.h **** #endif
+  70:../Dave/Generated/FREERTOS/portable/GCC/portmacro.h **** /*-----------------------------------------------------------*/
+  71:../Dave/Generated/FREERTOS/portable/GCC/portmacro.h **** 
+  72:../Dave/Generated/FREERTOS/portable/GCC/portmacro.h **** /* Architecture specifics. */
+  73:../Dave/Generated/FREERTOS/portable/GCC/portmacro.h **** #define portSTACK_GROWTH			( -1 )
+  74:../Dave/Generated/FREERTOS/portable/GCC/portmacro.h **** #define portTICK_PERIOD_MS			( ( TickType_t ) 1000 / configTICK_RATE_HZ )
+  75:../Dave/Generated/FREERTOS/portable/GCC/portmacro.h **** #define portBYTE_ALIGNMENT			8
+  76:../Dave/Generated/FREERTOS/portable/GCC/portmacro.h **** /*-----------------------------------------------------------*/
+  77:../Dave/Generated/FREERTOS/portable/GCC/portmacro.h **** 
+  78:../Dave/Generated/FREERTOS/portable/GCC/portmacro.h **** /* Scheduler utilities. */
+  79:../Dave/Generated/FREERTOS/portable/GCC/portmacro.h **** #define portYIELD() 															\
+  80:../Dave/Generated/FREERTOS/portable/GCC/portmacro.h **** {																				\
+  81:../Dave/Generated/FREERTOS/portable/GCC/portmacro.h **** 	/* Set a PendSV to request a context switch. */								\
+  82:../Dave/Generated/FREERTOS/portable/GCC/portmacro.h **** 	portNVIC_INT_CTRL_REG = portNVIC_PENDSVSET_BIT;								\
+  83:../Dave/Generated/FREERTOS/portable/GCC/portmacro.h **** 																				\
+  84:../Dave/Generated/FREERTOS/portable/GCC/portmacro.h **** 	/* Barriers are normally not required but do ensure the code is completely	\
+  85:../Dave/Generated/FREERTOS/portable/GCC/portmacro.h **** 	within the specified behaviour for the architecture. */						\
+  86:../Dave/Generated/FREERTOS/portable/GCC/portmacro.h **** 	__asm volatile( "dsb" ::: "memory" );										\
+  87:../Dave/Generated/FREERTOS/portable/GCC/portmacro.h **** 	__asm volatile( "isb" );													\
+  88:../Dave/Generated/FREERTOS/portable/GCC/portmacro.h **** }
+  89:../Dave/Generated/FREERTOS/portable/GCC/portmacro.h **** 
+  90:../Dave/Generated/FREERTOS/portable/GCC/portmacro.h **** #define portNVIC_INT_CTRL_REG		( * ( ( volatile uint32_t * ) 0xe000ed04 ) )
+  91:../Dave/Generated/FREERTOS/portable/GCC/portmacro.h **** #define portNVIC_PENDSVSET_BIT		( 1UL << 28UL )
+  92:../Dave/Generated/FREERTOS/portable/GCC/portmacro.h **** #define portEND_SWITCHING_ISR( xSwitchRequired ) if( xSwitchRequired != pdFALSE ) portYIELD()
+  93:../Dave/Generated/FREERTOS/portable/GCC/portmacro.h **** #define portYIELD_FROM_ISR( x ) portEND_SWITCHING_ISR( x )
+  94:../Dave/Generated/FREERTOS/portable/GCC/portmacro.h **** /*-----------------------------------------------------------*/
+  95:../Dave/Generated/FREERTOS/portable/GCC/portmacro.h **** 
+  96:../Dave/Generated/FREERTOS/portable/GCC/portmacro.h **** /* Critical section management. */
+  97:../Dave/Generated/FREERTOS/portable/GCC/portmacro.h **** extern void vPortEnterCritical( void );
+  98:../Dave/Generated/FREERTOS/portable/GCC/portmacro.h **** extern void vPortExitCritical( void );
+  99:../Dave/Generated/FREERTOS/portable/GCC/portmacro.h **** #define portSET_INTERRUPT_MASK_FROM_ISR()		ulPortRaiseBASEPRI()
+ 100:../Dave/Generated/FREERTOS/portable/GCC/portmacro.h **** #define portCLEAR_INTERRUPT_MASK_FROM_ISR(x)	vPortSetBASEPRI(x)
+ 101:../Dave/Generated/FREERTOS/portable/GCC/portmacro.h **** #define portDISABLE_INTERRUPTS()				vPortRaiseBASEPRI()
+ 102:../Dave/Generated/FREERTOS/portable/GCC/portmacro.h **** #define portENABLE_INTERRUPTS()					vPortSetBASEPRI(0)
+ 103:../Dave/Generated/FREERTOS/portable/GCC/portmacro.h **** #define portENTER_CRITICAL()					vPortEnterCritical()
+ 104:../Dave/Generated/FREERTOS/portable/GCC/portmacro.h **** #define portEXIT_CRITICAL()						vPortExitCritical()
+ 105:../Dave/Generated/FREERTOS/portable/GCC/portmacro.h **** 
+ 106:../Dave/Generated/FREERTOS/portable/GCC/portmacro.h **** /*-----------------------------------------------------------*/
+ 107:../Dave/Generated/FREERTOS/portable/GCC/portmacro.h **** 
+ 108:../Dave/Generated/FREERTOS/portable/GCC/portmacro.h **** /* Task function macros as described on the FreeRTOS.org WEB site.  These are
+ 109:../Dave/Generated/FREERTOS/portable/GCC/portmacro.h **** not necessary for to use this port.  They are defined so the common demo files
+ 110:../Dave/Generated/FREERTOS/portable/GCC/portmacro.h **** (which build with all the ports) will build. */
+ 111:../Dave/Generated/FREERTOS/portable/GCC/portmacro.h **** #define portTASK_FUNCTION_PROTO( vFunction, pvParameters ) void vFunction( void *pvParameters )
+ 112:../Dave/Generated/FREERTOS/portable/GCC/portmacro.h **** #define portTASK_FUNCTION( vFunction, pvParameters ) void vFunction( void *pvParameters )
+ 113:../Dave/Generated/FREERTOS/portable/GCC/portmacro.h **** /*-----------------------------------------------------------*/
+ 114:../Dave/Generated/FREERTOS/portable/GCC/portmacro.h **** 
+ 115:../Dave/Generated/FREERTOS/portable/GCC/portmacro.h **** /* Tickless idle/low power functionality. */
+ 116:../Dave/Generated/FREERTOS/portable/GCC/portmacro.h **** #ifndef portSUPPRESS_TICKS_AND_SLEEP
+ 117:../Dave/Generated/FREERTOS/portable/GCC/portmacro.h **** 	extern void vPortSuppressTicksAndSleep( TickType_t xExpectedIdleTime );
+ 118:../Dave/Generated/FREERTOS/portable/GCC/portmacro.h **** 	#define portSUPPRESS_TICKS_AND_SLEEP( xExpectedIdleTime ) vPortSuppressTicksAndSleep( xExpectedIdl
+ 119:../Dave/Generated/FREERTOS/portable/GCC/portmacro.h **** #endif
+ 120:../Dave/Generated/FREERTOS/portable/GCC/portmacro.h **** /*-----------------------------------------------------------*/
+ 121:../Dave/Generated/FREERTOS/portable/GCC/portmacro.h **** 
+ 122:../Dave/Generated/FREERTOS/portable/GCC/portmacro.h **** /* Architecture specific optimisations. */
+ 123:../Dave/Generated/FREERTOS/portable/GCC/portmacro.h **** #ifndef configUSE_PORT_OPTIMISED_TASK_SELECTION
+ 124:../Dave/Generated/FREERTOS/portable/GCC/portmacro.h **** 	#define configUSE_PORT_OPTIMISED_TASK_SELECTION 1
+ 125:../Dave/Generated/FREERTOS/portable/GCC/portmacro.h **** #endif
+ 126:../Dave/Generated/FREERTOS/portable/GCC/portmacro.h **** 
+ 127:../Dave/Generated/FREERTOS/portable/GCC/portmacro.h **** #if configUSE_PORT_OPTIMISED_TASK_SELECTION == 1
+ 128:../Dave/Generated/FREERTOS/portable/GCC/portmacro.h **** 
+ 129:../Dave/Generated/FREERTOS/portable/GCC/portmacro.h **** 	/* Generic helper function. */
+ 130:../Dave/Generated/FREERTOS/portable/GCC/portmacro.h **** 	__attribute__( ( always_inline ) ) static inline uint8_t ucPortCountLeadingZeros( uint32_t ulBitma
+ 131:../Dave/Generated/FREERTOS/portable/GCC/portmacro.h **** 	{
+ 132:../Dave/Generated/FREERTOS/portable/GCC/portmacro.h **** 	uint8_t ucReturn;
+ 133:../Dave/Generated/FREERTOS/portable/GCC/portmacro.h **** 
+ 134:../Dave/Generated/FREERTOS/portable/GCC/portmacro.h **** 		__asm volatile ( "clz %0, %1" : "=r" ( ucReturn ) : "r" ( ulBitmap ) : "memory" );
+ 135:../Dave/Generated/FREERTOS/portable/GCC/portmacro.h **** 		return ucReturn;
+ 136:../Dave/Generated/FREERTOS/portable/GCC/portmacro.h **** 	}
+ 137:../Dave/Generated/FREERTOS/portable/GCC/portmacro.h **** 
+ 138:../Dave/Generated/FREERTOS/portable/GCC/portmacro.h **** 	/* Check the configuration. */
+ 139:../Dave/Generated/FREERTOS/portable/GCC/portmacro.h **** 	#if( configMAX_PRIORITIES > 32 )
+ 140:../Dave/Generated/FREERTOS/portable/GCC/portmacro.h **** 		#error configUSE_PORT_OPTIMISED_TASK_SELECTION can only be set to 1 when configMAX_PRIORITIES is 
+ 141:../Dave/Generated/FREERTOS/portable/GCC/portmacro.h **** 	#endif
+ 142:../Dave/Generated/FREERTOS/portable/GCC/portmacro.h **** 
+ 143:../Dave/Generated/FREERTOS/portable/GCC/portmacro.h **** 	/* Store/clear the ready priorities in a bit map. */
+ 144:../Dave/Generated/FREERTOS/portable/GCC/portmacro.h **** 	#define portRECORD_READY_PRIORITY( uxPriority, uxReadyPriorities ) ( uxReadyPriorities ) |= ( 1UL 
+ 145:../Dave/Generated/FREERTOS/portable/GCC/portmacro.h **** 	#define portRESET_READY_PRIORITY( uxPriority, uxReadyPriorities ) ( uxReadyPriorities ) &= ~( 1UL 
+ 146:../Dave/Generated/FREERTOS/portable/GCC/portmacro.h **** 
+ 147:../Dave/Generated/FREERTOS/portable/GCC/portmacro.h **** 	/*-----------------------------------------------------------*/
+ 148:../Dave/Generated/FREERTOS/portable/GCC/portmacro.h **** 
+ 149:../Dave/Generated/FREERTOS/portable/GCC/portmacro.h **** 	#define portGET_HIGHEST_PRIORITY( uxTopPriority, uxReadyPriorities ) uxTopPriority = ( 31UL - ( ui
+ 150:../Dave/Generated/FREERTOS/portable/GCC/portmacro.h **** 
+ 151:../Dave/Generated/FREERTOS/portable/GCC/portmacro.h **** #endif /* configUSE_PORT_OPTIMISED_TASK_SELECTION */
+ 152:../Dave/Generated/FREERTOS/portable/GCC/portmacro.h **** 
+ 153:../Dave/Generated/FREERTOS/portable/GCC/portmacro.h **** /*-----------------------------------------------------------*/
+ 154:../Dave/Generated/FREERTOS/portable/GCC/portmacro.h **** 
+ 155:../Dave/Generated/FREERTOS/portable/GCC/portmacro.h **** #ifdef configASSERT
+ 156:../Dave/Generated/FREERTOS/portable/GCC/portmacro.h **** 	void vPortValidateInterruptPriority( void );
+ 157:../Dave/Generated/FREERTOS/portable/GCC/portmacro.h **** 	#define portASSERT_IF_INTERRUPT_PRIORITY_INVALID() 	vPortValidateInterruptPriority()
+ 158:../Dave/Generated/FREERTOS/portable/GCC/portmacro.h **** #endif
+ 159:../Dave/Generated/FREERTOS/portable/GCC/portmacro.h **** 
+ 160:../Dave/Generated/FREERTOS/portable/GCC/portmacro.h **** /* portNOP() is not required by this port. */
+ 161:../Dave/Generated/FREERTOS/portable/GCC/portmacro.h **** #define portNOP()
+ 162:../Dave/Generated/FREERTOS/portable/GCC/portmacro.h **** 
+ 163:../Dave/Generated/FREERTOS/portable/GCC/portmacro.h **** #define portINLINE	__inline
+ 164:../Dave/Generated/FREERTOS/portable/GCC/portmacro.h **** 
+ 165:../Dave/Generated/FREERTOS/portable/GCC/portmacro.h **** #ifndef portFORCE_INLINE
+ 166:../Dave/Generated/FREERTOS/portable/GCC/portmacro.h **** 	#define portFORCE_INLINE inline __attribute__(( always_inline))
+ 167:../Dave/Generated/FREERTOS/portable/GCC/portmacro.h **** #endif
+ 168:../Dave/Generated/FREERTOS/portable/GCC/portmacro.h **** 
+ 169:../Dave/Generated/FREERTOS/portable/GCC/portmacro.h **** portFORCE_INLINE static BaseType_t xPortIsInsideInterrupt( void )
+ 170:../Dave/Generated/FREERTOS/portable/GCC/portmacro.h **** {
+ 171:../Dave/Generated/FREERTOS/portable/GCC/portmacro.h **** uint32_t ulCurrentInterrupt;
+ 172:../Dave/Generated/FREERTOS/portable/GCC/portmacro.h **** BaseType_t xReturn;
+ 173:../Dave/Generated/FREERTOS/portable/GCC/portmacro.h **** 
+ 174:../Dave/Generated/FREERTOS/portable/GCC/portmacro.h **** 	/* Obtain the number of the currently executing interrupt. */
+ 175:../Dave/Generated/FREERTOS/portable/GCC/portmacro.h **** 	__asm volatile( "mrs %0, ipsr" : "=r"( ulCurrentInterrupt ) :: "memory" );
+ 176:../Dave/Generated/FREERTOS/portable/GCC/portmacro.h **** 
+ 177:../Dave/Generated/FREERTOS/portable/GCC/portmacro.h **** 	if( ulCurrentInterrupt == 0 )
+ 178:../Dave/Generated/FREERTOS/portable/GCC/portmacro.h **** 	{
+ 179:../Dave/Generated/FREERTOS/portable/GCC/portmacro.h **** 		xReturn = pdFALSE;
+ 180:../Dave/Generated/FREERTOS/portable/GCC/portmacro.h **** 	}
+ 181:../Dave/Generated/FREERTOS/portable/GCC/portmacro.h **** 	else
+ 182:../Dave/Generated/FREERTOS/portable/GCC/portmacro.h **** 	{
+ 183:../Dave/Generated/FREERTOS/portable/GCC/portmacro.h **** 		xReturn = pdTRUE;
+ 184:../Dave/Generated/FREERTOS/portable/GCC/portmacro.h **** 	}
+ 185:../Dave/Generated/FREERTOS/portable/GCC/portmacro.h **** 
+ 186:../Dave/Generated/FREERTOS/portable/GCC/portmacro.h **** 	return xReturn;
+ 187:../Dave/Generated/FREERTOS/portable/GCC/portmacro.h **** }
+ 188:../Dave/Generated/FREERTOS/portable/GCC/portmacro.h **** 
+ 189:../Dave/Generated/FREERTOS/portable/GCC/portmacro.h **** /*-----------------------------------------------------------*/
+ 190:../Dave/Generated/FREERTOS/portable/GCC/portmacro.h **** 
+ 191:../Dave/Generated/FREERTOS/portable/GCC/portmacro.h **** portFORCE_INLINE static void vPortRaiseBASEPRI( void )
+ 192:../Dave/Generated/FREERTOS/portable/GCC/portmacro.h **** {
+ 193:../Dave/Generated/FREERTOS/portable/GCC/portmacro.h **** uint32_t ulNewBASEPRI;
+ 194:../Dave/Generated/FREERTOS/portable/GCC/portmacro.h **** 
+ 195:../Dave/Generated/FREERTOS/portable/GCC/portmacro.h **** 	__asm volatile
+ 109              	 .loc 2 195 0 discriminator 1
+ 110              	
+ 111 0034 4FF0FC03 	 mov r3,#252
+ 112 0038 83F31188 	 msr basepri,r3
+ 113 003c BFF36F8F 	 isb 
+ 114 0040 BFF34F8F 	 dsb 
+ 115              	
+ 116              	
+ 117              	 .thumb
+ 118 0044 3B60     	 str r3,[r7]
+ 119              	.L4:
+ 120              	.LBE36:
+ 121              	.LBE35:
+ 122              	 .loc 1 271 0 discriminator 1
+ 123 0046 FEE7     	 b .L4
+ 124              	.L3:
+ 272:../Dave/Generated/FREERTOS/timers.c **** 	return xReturn;
+ 125              	 .loc 1 272 0
+ 126 0048 7B68     	 ldr r3,[r7,#4]
+ 273:../Dave/Generated/FREERTOS/timers.c **** }
+ 127              	 .loc 1 273 0
+ 128 004a 1846     	 mov r0,r3
+ 129 004c 0837     	 adds r7,r7,#8
+ 130              	 .cfi_def_cfa_offset 8
+ 131 004e BD46     	 mov sp,r7
+ 132              	 .cfi_def_cfa_register 13
+ 133              	 
+ 134 0050 80BD     	 pop {r7,pc}
+ 135              	.L7:
+ 136 0052 00BF     	 .align 2
+ 137              	.L6:
+ 138 0054 00000000 	 .word xTimerQueue
+ 139 0058 00000000 	 .word xTimerTaskHandle
+ 140 005c 00000000 	 .word prvTimerTask
+ 141 0060 00000000 	 .word .LC0
+ 142              	 .cfi_endproc
+ 143              	.LFE137:
+ 145              	 .section .text.xTimerCreate,"ax",%progbits
+ 146              	 .align 2
+ 147              	 .global xTimerCreate
+ 148              	 .thumb
+ 149              	 .thumb_func
+ 151              	xTimerCreate:
+ 152              	.LFB138:
+ 274:../Dave/Generated/FREERTOS/timers.c **** /*-----------------------------------------------------------*/
+ 275:../Dave/Generated/FREERTOS/timers.c **** 
+ 276:../Dave/Generated/FREERTOS/timers.c **** #if( configSUPPORT_DYNAMIC_ALLOCATION == 1 )
+ 277:../Dave/Generated/FREERTOS/timers.c **** 
+ 278:../Dave/Generated/FREERTOS/timers.c **** 	TimerHandle_t xTimerCreate(	const char * const pcTimerName,			/*lint !e971 Unqualified char types 
+ 279:../Dave/Generated/FREERTOS/timers.c **** 								const TickType_t xTimerPeriodInTicks,
+ 280:../Dave/Generated/FREERTOS/timers.c **** 								const UBaseType_t uxAutoReload,
+ 281:../Dave/Generated/FREERTOS/timers.c **** 								void * const pvTimerID,
+ 282:../Dave/Generated/FREERTOS/timers.c **** 								TimerCallbackFunction_t pxCallbackFunction )
+ 283:../Dave/Generated/FREERTOS/timers.c **** 	{
+ 153              	 .loc 1 283 0
+ 154              	 .cfi_startproc
+ 155              	 
+ 156              	 
+ 157 0000 80B5     	 push {r7,lr}
+ 158              	 .cfi_def_cfa_offset 8
+ 159              	 .cfi_offset 7,-8
+ 160              	 .cfi_offset 14,-4
+ 161 0002 88B0     	 sub sp,sp,#32
+ 162              	 .cfi_def_cfa_offset 40
+ 163 0004 02AF     	 add r7,sp,#8
+ 164              	 .cfi_def_cfa 7,32
+ 165 0006 F860     	 str r0,[r7,#12]
+ 166 0008 B960     	 str r1,[r7,#8]
+ 167 000a 7A60     	 str r2,[r7,#4]
+ 168 000c 3B60     	 str r3,[r7]
+ 284:../Dave/Generated/FREERTOS/timers.c **** 	Timer_t *pxNewTimer;
+ 285:../Dave/Generated/FREERTOS/timers.c **** 
+ 286:../Dave/Generated/FREERTOS/timers.c **** 		pxNewTimer = ( Timer_t * ) pvPortMalloc( sizeof( Timer_t ) );
+ 169              	 .loc 1 286 0
+ 170 000e 2C20     	 movs r0,#44
+ 171 0010 FFF7FEFF 	 bl pvPortMalloc
+ 172 0014 7861     	 str r0,[r7,#20]
+ 287:../Dave/Generated/FREERTOS/timers.c **** 
+ 288:../Dave/Generated/FREERTOS/timers.c **** 		if( pxNewTimer != NULL )
+ 173              	 .loc 1 288 0
+ 174 0016 7B69     	 ldr r3,[r7,#20]
+ 175 0018 002B     	 cmp r3,#0
+ 176 001a 09D0     	 beq .L9
+ 289:../Dave/Generated/FREERTOS/timers.c **** 		{
+ 290:../Dave/Generated/FREERTOS/timers.c **** 			prvInitialiseNewTimer( pcTimerName, xTimerPeriodInTicks, uxAutoReload, pvTimerID, pxCallbackFunc
+ 177              	 .loc 1 290 0
+ 178 001c 3B6A     	 ldr r3,[r7,#32]
+ 179 001e 0093     	 str r3,[sp]
+ 180 0020 7B69     	 ldr r3,[r7,#20]
+ 181 0022 0193     	 str r3,[sp,#4]
+ 182 0024 F868     	 ldr r0,[r7,#12]
+ 183 0026 B968     	 ldr r1,[r7,#8]
+ 184 0028 7A68     	 ldr r2,[r7,#4]
+ 185 002a 3B68     	 ldr r3,[r7]
+ 186 002c FFF7FEFF 	 bl prvInitialiseNewTimer
+ 187              	.L9:
+ 291:../Dave/Generated/FREERTOS/timers.c **** 
+ 292:../Dave/Generated/FREERTOS/timers.c **** 			#if( configSUPPORT_STATIC_ALLOCATION == 1 )
+ 293:../Dave/Generated/FREERTOS/timers.c **** 			{
+ 294:../Dave/Generated/FREERTOS/timers.c **** 				/* Timers can be created statically or dynamically, so note this
+ 295:../Dave/Generated/FREERTOS/timers.c **** 				timer was created dynamically in case the timer is later
+ 296:../Dave/Generated/FREERTOS/timers.c **** 				deleted. */
+ 297:../Dave/Generated/FREERTOS/timers.c **** 				pxNewTimer->ucStaticallyAllocated = pdFALSE;
+ 298:../Dave/Generated/FREERTOS/timers.c **** 			}
+ 299:../Dave/Generated/FREERTOS/timers.c **** 			#endif /* configSUPPORT_STATIC_ALLOCATION */
+ 300:../Dave/Generated/FREERTOS/timers.c **** 		}
+ 301:../Dave/Generated/FREERTOS/timers.c **** 
+ 302:../Dave/Generated/FREERTOS/timers.c **** 		return pxNewTimer;
+ 188              	 .loc 1 302 0
+ 189 0030 7B69     	 ldr r3,[r7,#20]
+ 303:../Dave/Generated/FREERTOS/timers.c **** 	}
+ 190              	 .loc 1 303 0
+ 191 0032 1846     	 mov r0,r3
+ 192 0034 1837     	 adds r7,r7,#24
+ 193              	 .cfi_def_cfa_offset 8
+ 194 0036 BD46     	 mov sp,r7
+ 195              	 .cfi_def_cfa_register 13
+ 196              	 
+ 197 0038 80BD     	 pop {r7,pc}
+ 198              	 .cfi_endproc
+ 199              	.LFE138:
+ 201 003a 00BF     	 .section .text.prvInitialiseNewTimer,"ax",%progbits
+ 202              	 .align 2
+ 203              	 .thumb
+ 204              	 .thumb_func
+ 206              	prvInitialiseNewTimer:
+ 207              	.LFB139:
+ 304:../Dave/Generated/FREERTOS/timers.c **** 
+ 305:../Dave/Generated/FREERTOS/timers.c **** #endif /* configSUPPORT_STATIC_ALLOCATION */
+ 306:../Dave/Generated/FREERTOS/timers.c **** /*-----------------------------------------------------------*/
+ 307:../Dave/Generated/FREERTOS/timers.c **** 
+ 308:../Dave/Generated/FREERTOS/timers.c **** #if( configSUPPORT_STATIC_ALLOCATION == 1 )
+ 309:../Dave/Generated/FREERTOS/timers.c **** 
+ 310:../Dave/Generated/FREERTOS/timers.c **** 	TimerHandle_t xTimerCreateStatic(	const char * const pcTimerName,		/*lint !e971 Unqualified char t
+ 311:../Dave/Generated/FREERTOS/timers.c **** 										const TickType_t xTimerPeriodInTicks,
+ 312:../Dave/Generated/FREERTOS/timers.c **** 										const UBaseType_t uxAutoReload,
+ 313:../Dave/Generated/FREERTOS/timers.c **** 										void * const pvTimerID,
+ 314:../Dave/Generated/FREERTOS/timers.c **** 										TimerCallbackFunction_t pxCallbackFunction,
+ 315:../Dave/Generated/FREERTOS/timers.c **** 										StaticTimer_t *pxTimerBuffer )
+ 316:../Dave/Generated/FREERTOS/timers.c **** 	{
+ 317:../Dave/Generated/FREERTOS/timers.c **** 	Timer_t *pxNewTimer;
+ 318:../Dave/Generated/FREERTOS/timers.c **** 
+ 319:../Dave/Generated/FREERTOS/timers.c **** 		#if( configASSERT_DEFINED == 1 )
+ 320:../Dave/Generated/FREERTOS/timers.c **** 		{
+ 321:../Dave/Generated/FREERTOS/timers.c **** 			/* Sanity check that the size of the structure used to declare a
+ 322:../Dave/Generated/FREERTOS/timers.c **** 			variable of type StaticTimer_t equals the size of the real timer
+ 323:../Dave/Generated/FREERTOS/timers.c **** 			structure. */
+ 324:../Dave/Generated/FREERTOS/timers.c **** 			volatile size_t xSize = sizeof( StaticTimer_t );
+ 325:../Dave/Generated/FREERTOS/timers.c **** 			configASSERT( xSize == sizeof( Timer_t ) );
+ 326:../Dave/Generated/FREERTOS/timers.c **** 		}
+ 327:../Dave/Generated/FREERTOS/timers.c **** 		#endif /* configASSERT_DEFINED */
+ 328:../Dave/Generated/FREERTOS/timers.c **** 
+ 329:../Dave/Generated/FREERTOS/timers.c **** 		/* A pointer to a StaticTimer_t structure MUST be provided, use it. */
+ 330:../Dave/Generated/FREERTOS/timers.c **** 		configASSERT( pxTimerBuffer );
+ 331:../Dave/Generated/FREERTOS/timers.c **** 		pxNewTimer = ( Timer_t * ) pxTimerBuffer; /*lint !e740 Unusual cast is ok as the structures are d
+ 332:../Dave/Generated/FREERTOS/timers.c **** 
+ 333:../Dave/Generated/FREERTOS/timers.c **** 		if( pxNewTimer != NULL )
+ 334:../Dave/Generated/FREERTOS/timers.c **** 		{
+ 335:../Dave/Generated/FREERTOS/timers.c **** 			prvInitialiseNewTimer( pcTimerName, xTimerPeriodInTicks, uxAutoReload, pvTimerID, pxCallbackFunc
+ 336:../Dave/Generated/FREERTOS/timers.c **** 
+ 337:../Dave/Generated/FREERTOS/timers.c **** 			#if( configSUPPORT_DYNAMIC_ALLOCATION == 1 )
+ 338:../Dave/Generated/FREERTOS/timers.c **** 			{
+ 339:../Dave/Generated/FREERTOS/timers.c **** 				/* Timers can be created statically or dynamically so note this
+ 340:../Dave/Generated/FREERTOS/timers.c **** 				timer was created statically in case it is later deleted. */
+ 341:../Dave/Generated/FREERTOS/timers.c **** 				pxNewTimer->ucStaticallyAllocated = pdTRUE;
+ 342:../Dave/Generated/FREERTOS/timers.c **** 			}
+ 343:../Dave/Generated/FREERTOS/timers.c **** 			#endif /* configSUPPORT_DYNAMIC_ALLOCATION */
+ 344:../Dave/Generated/FREERTOS/timers.c **** 		}
+ 345:../Dave/Generated/FREERTOS/timers.c **** 
+ 346:../Dave/Generated/FREERTOS/timers.c **** 		return pxNewTimer;
+ 347:../Dave/Generated/FREERTOS/timers.c **** 	}
+ 348:../Dave/Generated/FREERTOS/timers.c **** 
+ 349:../Dave/Generated/FREERTOS/timers.c **** #endif /* configSUPPORT_STATIC_ALLOCATION */
+ 350:../Dave/Generated/FREERTOS/timers.c **** /*-----------------------------------------------------------*/
+ 351:../Dave/Generated/FREERTOS/timers.c **** 
+ 352:../Dave/Generated/FREERTOS/timers.c **** static void prvInitialiseNewTimer(	const char * const pcTimerName,			/*lint !e971 Unqualified char 
+ 353:../Dave/Generated/FREERTOS/timers.c **** 									const TickType_t xTimerPeriodInTicks,
+ 354:../Dave/Generated/FREERTOS/timers.c **** 									const UBaseType_t uxAutoReload,
+ 355:../Dave/Generated/FREERTOS/timers.c **** 									void * const pvTimerID,
+ 356:../Dave/Generated/FREERTOS/timers.c **** 									TimerCallbackFunction_t pxCallbackFunction,
+ 357:../Dave/Generated/FREERTOS/timers.c **** 									Timer_t *pxNewTimer )
+ 358:../Dave/Generated/FREERTOS/timers.c **** {
+ 208              	 .loc 1 358 0
+ 209              	 .cfi_startproc
+ 210              	 
+ 211              	 
+ 212 0000 80B5     	 push {r7,lr}
+ 213              	 .cfi_def_cfa_offset 8
+ 214              	 .cfi_offset 7,-8
+ 215              	 .cfi_offset 14,-4
+ 216 0002 86B0     	 sub sp,sp,#24
+ 217              	 .cfi_def_cfa_offset 32
+ 218 0004 00AF     	 add r7,sp,#0
+ 219              	 .cfi_def_cfa_register 7
+ 220 0006 F860     	 str r0,[r7,#12]
+ 221 0008 B960     	 str r1,[r7,#8]
+ 222 000a 7A60     	 str r2,[r7,#4]
+ 223 000c 3B60     	 str r3,[r7]
+ 359:../Dave/Generated/FREERTOS/timers.c **** 	/* 0 is not a valid value for xTimerPeriodInTicks. */
+ 360:../Dave/Generated/FREERTOS/timers.c **** 	configASSERT( ( xTimerPeriodInTicks > 0 ) );
+ 224              	 .loc 1 360 0
+ 225 000e BB68     	 ldr r3,[r7,#8]
+ 226 0010 002B     	 cmp r3,#0
+ 227 0012 09D1     	 bne .L12
+ 228              	.LBB37:
+ 229              	.LBB38:
+ 230              	 .loc 2 195 0 discriminator 1
+ 231              	
+ 232 0014 4FF0FC03 	 mov r3,#252
+ 233 0018 83F31188 	 msr basepri,r3
+ 234 001c BFF36F8F 	 isb 
+ 235 0020 BFF34F8F 	 dsb 
+ 236              	
+ 237              	
+ 238              	 .thumb
+ 239 0024 7B61     	 str r3,[r7,#20]
+ 240              	.L13:
+ 241              	.LBE38:
+ 242              	.LBE37:
+ 243              	 .loc 1 360 0 discriminator 1
+ 244 0026 FEE7     	 b .L13
+ 245              	.L12:
+ 361:../Dave/Generated/FREERTOS/timers.c **** 
+ 362:../Dave/Generated/FREERTOS/timers.c **** 	if( pxNewTimer != NULL )
+ 246              	 .loc 1 362 0
+ 247 0028 7B6A     	 ldr r3,[r7,#36]
+ 248 002a 002B     	 cmp r3,#0
+ 249 002c 15D0     	 beq .L11
+ 363:../Dave/Generated/FREERTOS/timers.c **** 	{
+ 364:../Dave/Generated/FREERTOS/timers.c **** 		/* Ensure the infrastructure used by the timer service task has been
+ 365:../Dave/Generated/FREERTOS/timers.c **** 		created/initialised. */
+ 366:../Dave/Generated/FREERTOS/timers.c **** 		prvCheckForValidListAndQueue();
+ 250              	 .loc 1 366 0
+ 251 002e FFF7FEFF 	 bl prvCheckForValidListAndQueue
+ 367:../Dave/Generated/FREERTOS/timers.c **** 
+ 368:../Dave/Generated/FREERTOS/timers.c **** 		/* Initialise the timer structure members using the function
+ 369:../Dave/Generated/FREERTOS/timers.c **** 		parameters. */
+ 370:../Dave/Generated/FREERTOS/timers.c **** 		pxNewTimer->pcTimerName = pcTimerName;
+ 252              	 .loc 1 370 0
+ 253 0032 7B6A     	 ldr r3,[r7,#36]
+ 254 0034 FA68     	 ldr r2,[r7,#12]
+ 255 0036 1A60     	 str r2,[r3]
+ 371:../Dave/Generated/FREERTOS/timers.c **** 		pxNewTimer->xTimerPeriodInTicks = xTimerPeriodInTicks;
+ 256              	 .loc 1 371 0
+ 257 0038 7B6A     	 ldr r3,[r7,#36]
+ 258 003a BA68     	 ldr r2,[r7,#8]
+ 259 003c 9A61     	 str r2,[r3,#24]
+ 372:../Dave/Generated/FREERTOS/timers.c **** 		pxNewTimer->uxAutoReload = uxAutoReload;
+ 260              	 .loc 1 372 0
+ 261 003e 7B6A     	 ldr r3,[r7,#36]
+ 262 0040 7A68     	 ldr r2,[r7,#4]
+ 263 0042 DA61     	 str r2,[r3,#28]
+ 373:../Dave/Generated/FREERTOS/timers.c **** 		pxNewTimer->pvTimerID = pvTimerID;
+ 264              	 .loc 1 373 0
+ 265 0044 7B6A     	 ldr r3,[r7,#36]
+ 266 0046 3A68     	 ldr r2,[r7]
+ 267 0048 1A62     	 str r2,[r3,#32]
+ 374:../Dave/Generated/FREERTOS/timers.c **** 		pxNewTimer->pxCallbackFunction = pxCallbackFunction;
+ 268              	 .loc 1 374 0
+ 269 004a 7B6A     	 ldr r3,[r7,#36]
+ 270 004c 3A6A     	 ldr r2,[r7,#32]
+ 271 004e 5A62     	 str r2,[r3,#36]
+ 375:../Dave/Generated/FREERTOS/timers.c **** 		vListInitialiseItem( &( pxNewTimer->xTimerListItem ) );
+ 272              	 .loc 1 375 0
+ 273 0050 7B6A     	 ldr r3,[r7,#36]
+ 274 0052 0433     	 adds r3,r3,#4
+ 275 0054 1846     	 mov r0,r3
+ 276 0056 FFF7FEFF 	 bl vListInitialiseItem
+ 277              	.L11:
+ 376:../Dave/Generated/FREERTOS/timers.c **** 		traceTIMER_CREATE( pxNewTimer );
+ 377:../Dave/Generated/FREERTOS/timers.c **** 	}
+ 378:../Dave/Generated/FREERTOS/timers.c **** }
+ 278              	 .loc 1 378 0
+ 279 005a 1837     	 adds r7,r7,#24
+ 280              	 .cfi_def_cfa_offset 8
+ 281 005c BD46     	 mov sp,r7
+ 282              	 .cfi_def_cfa_register 13
+ 283              	 
+ 284 005e 80BD     	 pop {r7,pc}
+ 285              	 .cfi_endproc
+ 286              	.LFE139:
+ 288              	 .section .text.xTimerGenericCommand,"ax",%progbits
+ 289              	 .align 2
+ 290              	 .global xTimerGenericCommand
+ 291              	 .thumb
+ 292              	 .thumb_func
+ 294              	xTimerGenericCommand:
+ 295              	.LFB140:
+ 379:../Dave/Generated/FREERTOS/timers.c **** /*-----------------------------------------------------------*/
+ 380:../Dave/Generated/FREERTOS/timers.c **** 
+ 381:../Dave/Generated/FREERTOS/timers.c **** BaseType_t xTimerGenericCommand( TimerHandle_t xTimer, const BaseType_t xCommandID, const TickType_
+ 382:../Dave/Generated/FREERTOS/timers.c **** {
+ 296              	 .loc 1 382 0
+ 297              	 .cfi_startproc
+ 298              	 
+ 299              	 
+ 300 0000 80B5     	 push {r7,lr}
+ 301              	 .cfi_def_cfa_offset 8
+ 302              	 .cfi_offset 7,-8
+ 303              	 .cfi_offset 14,-4
+ 304 0002 8AB0     	 sub sp,sp,#40
+ 305              	 .cfi_def_cfa_offset 48
+ 306 0004 00AF     	 add r7,sp,#0
+ 307              	 .cfi_def_cfa_register 7
+ 308 0006 F860     	 str r0,[r7,#12]
+ 309 0008 B960     	 str r1,[r7,#8]
+ 310 000a 7A60     	 str r2,[r7,#4]
+ 311 000c 3B60     	 str r3,[r7]
+ 383:../Dave/Generated/FREERTOS/timers.c **** BaseType_t xReturn = pdFAIL;
+ 312              	 .loc 1 383 0
+ 313 000e 0023     	 movs r3,#0
+ 314 0010 7B62     	 str r3,[r7,#36]
+ 384:../Dave/Generated/FREERTOS/timers.c **** DaemonTaskMessage_t xMessage;
+ 385:../Dave/Generated/FREERTOS/timers.c **** 
+ 386:../Dave/Generated/FREERTOS/timers.c **** 	configASSERT( xTimer );
+ 315              	 .loc 1 386 0
+ 316 0012 FB68     	 ldr r3,[r7,#12]
+ 317 0014 002B     	 cmp r3,#0
+ 318 0016 09D1     	 bne .L16
+ 319              	.LBB39:
+ 320              	.LBB40:
+ 321              	 .loc 2 195 0 discriminator 1
+ 322              	
+ 323 0018 4FF0FC03 	 mov r3,#252
+ 324 001c 83F31188 	 msr basepri,r3
+ 325 0020 BFF36F8F 	 isb 
+ 326 0024 BFF34F8F 	 dsb 
+ 327              	
+ 328              	
+ 329              	 .thumb
+ 330 0028 3B62     	 str r3,[r7,#32]
+ 331              	.L17:
+ 332              	.LBE40:
+ 333              	.LBE39:
+ 334              	 .loc 1 386 0 discriminator 1
+ 335 002a FEE7     	 b .L17
+ 336              	.L16:
+ 387:../Dave/Generated/FREERTOS/timers.c **** 
+ 388:../Dave/Generated/FREERTOS/timers.c **** 	/* Send a message to the timer service task to perform a particular action
+ 389:../Dave/Generated/FREERTOS/timers.c **** 	on a particular timer definition. */
+ 390:../Dave/Generated/FREERTOS/timers.c **** 	if( xTimerQueue != NULL )
+ 337              	 .loc 1 390 0
+ 338 002c 1C4B     	 ldr r3,.L24
+ 339 002e 1B68     	 ldr r3,[r3]
+ 340 0030 002B     	 cmp r3,#0
+ 341 0032 30D0     	 beq .L18
+ 391:../Dave/Generated/FREERTOS/timers.c **** 	{
+ 392:../Dave/Generated/FREERTOS/timers.c **** 		/* Send a command to the timer service task to start the xTimer timer. */
+ 393:../Dave/Generated/FREERTOS/timers.c **** 		xMessage.xMessageID = xCommandID;
+ 342              	 .loc 1 393 0
+ 343 0034 BB68     	 ldr r3,[r7,#8]
+ 344 0036 3B61     	 str r3,[r7,#16]
+ 394:../Dave/Generated/FREERTOS/timers.c **** 		xMessage.u.xTimerParameters.xMessageValue = xOptionalValue;
+ 345              	 .loc 1 394 0
+ 346 0038 7B68     	 ldr r3,[r7,#4]
+ 347 003a 7B61     	 str r3,[r7,#20]
+ 395:../Dave/Generated/FREERTOS/timers.c **** 		xMessage.u.xTimerParameters.pxTimer = ( Timer_t * ) xTimer;
+ 348              	 .loc 1 395 0
+ 349 003c FB68     	 ldr r3,[r7,#12]
+ 350 003e BB61     	 str r3,[r7,#24]
+ 396:../Dave/Generated/FREERTOS/timers.c **** 
+ 397:../Dave/Generated/FREERTOS/timers.c **** 		if( xCommandID < tmrFIRST_FROM_ISR_COMMAND )
+ 351              	 .loc 1 397 0
+ 352 0040 BB68     	 ldr r3,[r7,#8]
+ 353 0042 052B     	 cmp r3,#5
+ 354 0044 1CDC     	 bgt .L19
+ 398:../Dave/Generated/FREERTOS/timers.c **** 		{
+ 399:../Dave/Generated/FREERTOS/timers.c **** 			if( xTaskGetSchedulerState() == taskSCHEDULER_RUNNING )
+ 355              	 .loc 1 399 0
+ 356 0046 FFF7FEFF 	 bl xTaskGetSchedulerState
+ 357 004a 0346     	 mov r3,r0
+ 358 004c 022B     	 cmp r3,#2
+ 359 004e 0BD1     	 bne .L20
+ 400:../Dave/Generated/FREERTOS/timers.c **** 			{
+ 401:../Dave/Generated/FREERTOS/timers.c **** 				xReturn = xQueueSendToBack( xTimerQueue, &xMessage, xTicksToWait );
+ 360              	 .loc 1 401 0
+ 361 0050 134B     	 ldr r3,.L24
+ 362 0052 1A68     	 ldr r2,[r3]
+ 363 0054 07F11003 	 add r3,r7,#16
+ 364 0058 1046     	 mov r0,r2
+ 365 005a 1946     	 mov r1,r3
+ 366 005c 3A6B     	 ldr r2,[r7,#48]
+ 367 005e 0023     	 movs r3,#0
+ 368 0060 FFF7FEFF 	 bl xQueueGenericSend
+ 369 0064 7862     	 str r0,[r7,#36]
+ 370 0066 16E0     	 b .L18
+ 371              	.L20:
+ 402:../Dave/Generated/FREERTOS/timers.c **** 			}
+ 403:../Dave/Generated/FREERTOS/timers.c **** 			else
+ 404:../Dave/Generated/FREERTOS/timers.c **** 			{
+ 405:../Dave/Generated/FREERTOS/timers.c **** 				xReturn = xQueueSendToBack( xTimerQueue, &xMessage, tmrNO_DELAY );
+ 372              	 .loc 1 405 0
+ 373 0068 0D4B     	 ldr r3,.L24
+ 374 006a 1A68     	 ldr r2,[r3]
+ 375 006c 07F11003 	 add r3,r7,#16
+ 376 0070 1046     	 mov r0,r2
+ 377 0072 1946     	 mov r1,r3
+ 378 0074 0022     	 movs r2,#0
+ 379 0076 0023     	 movs r3,#0
+ 380 0078 FFF7FEFF 	 bl xQueueGenericSend
+ 381 007c 7862     	 str r0,[r7,#36]
+ 382 007e 0AE0     	 b .L18
+ 383              	.L19:
+ 406:../Dave/Generated/FREERTOS/timers.c **** 			}
+ 407:../Dave/Generated/FREERTOS/timers.c **** 		}
+ 408:../Dave/Generated/FREERTOS/timers.c **** 		else
+ 409:../Dave/Generated/FREERTOS/timers.c **** 		{
+ 410:../Dave/Generated/FREERTOS/timers.c **** 			xReturn = xQueueSendToBackFromISR( xTimerQueue, &xMessage, pxHigherPriorityTaskWoken );
+ 384              	 .loc 1 410 0
+ 385 0080 074B     	 ldr r3,.L24
+ 386 0082 1A68     	 ldr r2,[r3]
+ 387 0084 07F11003 	 add r3,r7,#16
+ 388 0088 1046     	 mov r0,r2
+ 389 008a 1946     	 mov r1,r3
+ 390 008c 3A68     	 ldr r2,[r7]
+ 391 008e 0023     	 movs r3,#0
+ 392 0090 FFF7FEFF 	 bl xQueueGenericSendFromISR
+ 393 0094 7862     	 str r0,[r7,#36]
+ 394              	.L18:
+ 411:../Dave/Generated/FREERTOS/timers.c **** 		}
+ 412:../Dave/Generated/FREERTOS/timers.c **** 
+ 413:../Dave/Generated/FREERTOS/timers.c **** 		traceTIMER_COMMAND_SEND( xTimer, xCommandID, xOptionalValue, xReturn );
+ 414:../Dave/Generated/FREERTOS/timers.c **** 	}
+ 415:../Dave/Generated/FREERTOS/timers.c **** 	else
+ 416:../Dave/Generated/FREERTOS/timers.c **** 	{
+ 417:../Dave/Generated/FREERTOS/timers.c **** 		mtCOVERAGE_TEST_MARKER();
+ 418:../Dave/Generated/FREERTOS/timers.c **** 	}
+ 419:../Dave/Generated/FREERTOS/timers.c **** 
+ 420:../Dave/Generated/FREERTOS/timers.c **** 	return xReturn;
+ 395              	 .loc 1 420 0
+ 396 0096 7B6A     	 ldr r3,[r7,#36]
+ 421:../Dave/Generated/FREERTOS/timers.c **** }
+ 397              	 .loc 1 421 0
+ 398 0098 1846     	 mov r0,r3
+ 399 009a 2837     	 adds r7,r7,#40
+ 400              	 .cfi_def_cfa_offset 8
+ 401 009c BD46     	 mov sp,r7
+ 402              	 .cfi_def_cfa_register 13
+ 403              	 
+ 404 009e 80BD     	 pop {r7,pc}
+ 405              	.L25:
+ 406              	 .align 2
+ 407              	.L24:
+ 408 00a0 00000000 	 .word xTimerQueue
+ 409              	 .cfi_endproc
+ 410              	.LFE140:
+ 412              	 .section .text.xTimerGetTimerDaemonTaskHandle,"ax",%progbits
+ 413              	 .align 2
+ 414              	 .global xTimerGetTimerDaemonTaskHandle
+ 415              	 .thumb
+ 416              	 .thumb_func
+ 418              	xTimerGetTimerDaemonTaskHandle:
+ 419              	.LFB141:
+ 422:../Dave/Generated/FREERTOS/timers.c **** /*-----------------------------------------------------------*/
+ 423:../Dave/Generated/FREERTOS/timers.c **** 
+ 424:../Dave/Generated/FREERTOS/timers.c **** TaskHandle_t xTimerGetTimerDaemonTaskHandle( void )
+ 425:../Dave/Generated/FREERTOS/timers.c **** {
+ 420              	 .loc 1 425 0
+ 421              	 .cfi_startproc
+ 422              	 
+ 423              	 
+ 424              	 
+ 425 0000 80B4     	 push {r7}
+ 426              	 .cfi_def_cfa_offset 4
+ 427              	 .cfi_offset 7,-4
+ 428 0002 83B0     	 sub sp,sp,#12
+ 429              	 .cfi_def_cfa_offset 16
+ 430 0004 00AF     	 add r7,sp,#0
+ 431              	 .cfi_def_cfa_register 7
+ 426:../Dave/Generated/FREERTOS/timers.c **** 	/* If xTimerGetTimerDaemonTaskHandle() is called before the scheduler has been
+ 427:../Dave/Generated/FREERTOS/timers.c **** 	started, then xTimerTaskHandle will be NULL. */
+ 428:../Dave/Generated/FREERTOS/timers.c **** 	configASSERT( ( xTimerTaskHandle != NULL ) );
+ 432              	 .loc 1 428 0
+ 433 0006 0B4B     	 ldr r3,.L30
+ 434 0008 1B68     	 ldr r3,[r3]
+ 435 000a 002B     	 cmp r3,#0
+ 436 000c 09D1     	 bne .L27
+ 437              	.LBB41:
+ 438              	.LBB42:
+ 439              	 .loc 2 195 0 discriminator 1
+ 440              	
+ 441 000e 4FF0FC03 	 mov r3,#252
+ 442 0012 83F31188 	 msr basepri,r3
+ 443 0016 BFF36F8F 	 isb 
+ 444 001a BFF34F8F 	 dsb 
+ 445              	
+ 446              	
+ 447              	 .thumb
+ 448 001e 7B60     	 str r3,[r7,#4]
+ 449              	.L28:
+ 450              	.LBE42:
+ 451              	.LBE41:
+ 452              	 .loc 1 428 0 discriminator 1
+ 453 0020 FEE7     	 b .L28
+ 454              	.L27:
+ 429:../Dave/Generated/FREERTOS/timers.c **** 	return xTimerTaskHandle;
+ 455              	 .loc 1 429 0
+ 456 0022 044B     	 ldr r3,.L30
+ 457 0024 1B68     	 ldr r3,[r3]
+ 430:../Dave/Generated/FREERTOS/timers.c **** }
+ 458              	 .loc 1 430 0
+ 459 0026 1846     	 mov r0,r3
+ 460 0028 0C37     	 adds r7,r7,#12
+ 461              	 .cfi_def_cfa_offset 4
+ 462 002a BD46     	 mov sp,r7
+ 463              	 .cfi_def_cfa_register 13
+ 464              	 
+ 465 002c 5DF8047B 	 ldr r7,[sp],#4
+ 466              	 .cfi_restore 7
+ 467              	 .cfi_def_cfa_offset 0
+ 468 0030 7047     	 bx lr
+ 469              	.L31:
+ 470 0032 00BF     	 .align 2
+ 471              	.L30:
+ 472 0034 00000000 	 .word xTimerTaskHandle
+ 473              	 .cfi_endproc
+ 474              	.LFE141:
+ 476              	 .section .text.xTimerGetPeriod,"ax",%progbits
+ 477              	 .align 2
+ 478              	 .global xTimerGetPeriod
+ 479              	 .thumb
+ 480              	 .thumb_func
+ 482              	xTimerGetPeriod:
+ 483              	.LFB142:
+ 431:../Dave/Generated/FREERTOS/timers.c **** /*-----------------------------------------------------------*/
+ 432:../Dave/Generated/FREERTOS/timers.c **** 
+ 433:../Dave/Generated/FREERTOS/timers.c **** TickType_t xTimerGetPeriod( TimerHandle_t xTimer )
+ 434:../Dave/Generated/FREERTOS/timers.c **** {
+ 484              	 .loc 1 434 0
+ 485              	 .cfi_startproc
+ 486              	 
+ 487              	 
+ 488              	 
+ 489 0000 80B4     	 push {r7}
+ 490              	 .cfi_def_cfa_offset 4
+ 491              	 .cfi_offset 7,-4
+ 492 0002 85B0     	 sub sp,sp,#20
+ 493              	 .cfi_def_cfa_offset 24
+ 494 0004 00AF     	 add r7,sp,#0
+ 495              	 .cfi_def_cfa_register 7
+ 496 0006 7860     	 str r0,[r7,#4]
+ 435:../Dave/Generated/FREERTOS/timers.c **** Timer_t *pxTimer = ( Timer_t * ) xTimer;
+ 497              	 .loc 1 435 0
+ 498 0008 7B68     	 ldr r3,[r7,#4]
+ 499 000a FB60     	 str r3,[r7,#12]
+ 436:../Dave/Generated/FREERTOS/timers.c **** 
+ 437:../Dave/Generated/FREERTOS/timers.c **** 	configASSERT( xTimer );
+ 500              	 .loc 1 437 0
+ 501 000c 7B68     	 ldr r3,[r7,#4]
+ 502 000e 002B     	 cmp r3,#0
+ 503 0010 09D1     	 bne .L33
+ 504              	.LBB43:
+ 505              	.LBB44:
+ 506              	 .loc 2 195 0 discriminator 1
+ 507              	
+ 508 0012 4FF0FC03 	 mov r3,#252
+ 509 0016 83F31188 	 msr basepri,r3
+ 510 001a BFF36F8F 	 isb 
+ 511 001e BFF34F8F 	 dsb 
+ 512              	
+ 513              	
+ 514              	 .thumb
+ 515 0022 BB60     	 str r3,[r7,#8]
+ 516              	.L34:
+ 517              	.LBE44:
+ 518              	.LBE43:
+ 519              	 .loc 1 437 0 discriminator 1
+ 520 0024 FEE7     	 b .L34
+ 521              	.L33:
+ 438:../Dave/Generated/FREERTOS/timers.c **** 	return pxTimer->xTimerPeriodInTicks;
+ 522              	 .loc 1 438 0
+ 523 0026 FB68     	 ldr r3,[r7,#12]
+ 524 0028 9B69     	 ldr r3,[r3,#24]
+ 439:../Dave/Generated/FREERTOS/timers.c **** }
+ 525              	 .loc 1 439 0
+ 526 002a 1846     	 mov r0,r3
+ 527 002c 1437     	 adds r7,r7,#20
+ 528              	 .cfi_def_cfa_offset 4
+ 529 002e BD46     	 mov sp,r7
+ 530              	 .cfi_def_cfa_register 13
+ 531              	 
+ 532 0030 5DF8047B 	 ldr r7,[sp],#4
+ 533              	 .cfi_restore 7
+ 534              	 .cfi_def_cfa_offset 0
+ 535 0034 7047     	 bx lr
+ 536              	 .cfi_endproc
+ 537              	.LFE142:
+ 539 0036 00BF     	 .section .text.xTimerGetExpiryTime,"ax",%progbits
+ 540              	 .align 2
+ 541              	 .global xTimerGetExpiryTime
+ 542              	 .thumb
+ 543              	 .thumb_func
+ 545              	xTimerGetExpiryTime:
+ 546              	.LFB143:
+ 440:../Dave/Generated/FREERTOS/timers.c **** /*-----------------------------------------------------------*/
+ 441:../Dave/Generated/FREERTOS/timers.c **** 
+ 442:../Dave/Generated/FREERTOS/timers.c **** TickType_t xTimerGetExpiryTime( TimerHandle_t xTimer )
+ 443:../Dave/Generated/FREERTOS/timers.c **** {
+ 547              	 .loc 1 443 0
+ 548              	 .cfi_startproc
+ 549              	 
+ 550              	 
+ 551              	 
+ 552 0000 80B4     	 push {r7}
+ 553              	 .cfi_def_cfa_offset 4
+ 554              	 .cfi_offset 7,-4
+ 555 0002 87B0     	 sub sp,sp,#28
+ 556              	 .cfi_def_cfa_offset 32
+ 557 0004 00AF     	 add r7,sp,#0
+ 558              	 .cfi_def_cfa_register 7
+ 559 0006 7860     	 str r0,[r7,#4]
+ 444:../Dave/Generated/FREERTOS/timers.c **** Timer_t * pxTimer = ( Timer_t * ) xTimer;
+ 560              	 .loc 1 444 0
+ 561 0008 7B68     	 ldr r3,[r7,#4]
+ 562 000a 7B61     	 str r3,[r7,#20]
+ 445:../Dave/Generated/FREERTOS/timers.c **** TickType_t xReturn;
+ 446:../Dave/Generated/FREERTOS/timers.c **** 
+ 447:../Dave/Generated/FREERTOS/timers.c **** 	configASSERT( xTimer );
+ 563              	 .loc 1 447 0
+ 564 000c 7B68     	 ldr r3,[r7,#4]
+ 565 000e 002B     	 cmp r3,#0
+ 566 0010 09D1     	 bne .L37
+ 567              	.LBB45:
+ 568              	.LBB46:
+ 569              	 .loc 2 195 0 discriminator 1
+ 570              	
+ 571 0012 4FF0FC03 	 mov r3,#252
+ 572 0016 83F31188 	 msr basepri,r3
+ 573 001a BFF36F8F 	 isb 
+ 574 001e BFF34F8F 	 dsb 
+ 575              	
+ 576              	
+ 577              	 .thumb
+ 578 0022 FB60     	 str r3,[r7,#12]
+ 579              	.L38:
+ 580              	.LBE46:
+ 581              	.LBE45:
+ 582              	 .loc 1 447 0 discriminator 1
+ 583 0024 FEE7     	 b .L38
+ 584              	.L37:
+ 448:../Dave/Generated/FREERTOS/timers.c **** 	xReturn = listGET_LIST_ITEM_VALUE( &( pxTimer->xTimerListItem ) );
+ 585              	 .loc 1 448 0
+ 586 0026 7B69     	 ldr r3,[r7,#20]
+ 587 0028 5B68     	 ldr r3,[r3,#4]
+ 588 002a 3B61     	 str r3,[r7,#16]
+ 449:../Dave/Generated/FREERTOS/timers.c **** 	return xReturn;
+ 589              	 .loc 1 449 0
+ 590 002c 3B69     	 ldr r3,[r7,#16]
+ 450:../Dave/Generated/FREERTOS/timers.c **** }
+ 591              	 .loc 1 450 0
+ 592 002e 1846     	 mov r0,r3
+ 593 0030 1C37     	 adds r7,r7,#28
+ 594              	 .cfi_def_cfa_offset 4
+ 595 0032 BD46     	 mov sp,r7
+ 596              	 .cfi_def_cfa_register 13
+ 597              	 
+ 598 0034 5DF8047B 	 ldr r7,[sp],#4
+ 599              	 .cfi_restore 7
+ 600              	 .cfi_def_cfa_offset 0
+ 601 0038 7047     	 bx lr
+ 602              	 .cfi_endproc
+ 603              	.LFE143:
+ 605 003a 00BF     	 .section .text.pcTimerGetName,"ax",%progbits
+ 606              	 .align 2
+ 607              	 .global pcTimerGetName
+ 608              	 .thumb
+ 609              	 .thumb_func
+ 611              	pcTimerGetName:
+ 612              	.LFB144:
+ 451:../Dave/Generated/FREERTOS/timers.c **** /*-----------------------------------------------------------*/
+ 452:../Dave/Generated/FREERTOS/timers.c **** 
+ 453:../Dave/Generated/FREERTOS/timers.c **** const char * pcTimerGetName( TimerHandle_t xTimer ) /*lint !e971 Unqualified char types are allowed
+ 454:../Dave/Generated/FREERTOS/timers.c **** {
+ 613              	 .loc 1 454 0
+ 614              	 .cfi_startproc
+ 615              	 
+ 616              	 
+ 617              	 
+ 618 0000 80B4     	 push {r7}
+ 619              	 .cfi_def_cfa_offset 4
+ 620              	 .cfi_offset 7,-4
+ 621 0002 85B0     	 sub sp,sp,#20
+ 622              	 .cfi_def_cfa_offset 24
+ 623 0004 00AF     	 add r7,sp,#0
+ 624              	 .cfi_def_cfa_register 7
+ 625 0006 7860     	 str r0,[r7,#4]
+ 455:../Dave/Generated/FREERTOS/timers.c **** Timer_t *pxTimer = ( Timer_t * ) xTimer;
+ 626              	 .loc 1 455 0
+ 627 0008 7B68     	 ldr r3,[r7,#4]
+ 628 000a FB60     	 str r3,[r7,#12]
+ 456:../Dave/Generated/FREERTOS/timers.c **** 
+ 457:../Dave/Generated/FREERTOS/timers.c **** 	configASSERT( xTimer );
+ 629              	 .loc 1 457 0
+ 630 000c 7B68     	 ldr r3,[r7,#4]
+ 631 000e 002B     	 cmp r3,#0
+ 632 0010 09D1     	 bne .L41
+ 633              	.LBB47:
+ 634              	.LBB48:
+ 635              	 .loc 2 195 0 discriminator 1
+ 636              	
+ 637 0012 4FF0FC03 	 mov r3,#252
+ 638 0016 83F31188 	 msr basepri,r3
+ 639 001a BFF36F8F 	 isb 
+ 640 001e BFF34F8F 	 dsb 
+ 641              	
+ 642              	
+ 643              	 .thumb
+ 644 0022 BB60     	 str r3,[r7,#8]
+ 645              	.L42:
+ 646              	.LBE48:
+ 647              	.LBE47:
+ 648              	 .loc 1 457 0 discriminator 1
+ 649 0024 FEE7     	 b .L42
+ 650              	.L41:
+ 458:../Dave/Generated/FREERTOS/timers.c **** 	return pxTimer->pcTimerName;
+ 651              	 .loc 1 458 0
+ 652 0026 FB68     	 ldr r3,[r7,#12]
+ 653 0028 1B68     	 ldr r3,[r3]
+ 459:../Dave/Generated/FREERTOS/timers.c **** }
+ 654              	 .loc 1 459 0
+ 655 002a 1846     	 mov r0,r3
+ 656 002c 1437     	 adds r7,r7,#20
+ 657              	 .cfi_def_cfa_offset 4
+ 658 002e BD46     	 mov sp,r7
+ 659              	 .cfi_def_cfa_register 13
+ 660              	 
+ 661 0030 5DF8047B 	 ldr r7,[sp],#4
+ 662              	 .cfi_restore 7
+ 663              	 .cfi_def_cfa_offset 0
+ 664 0034 7047     	 bx lr
+ 665              	 .cfi_endproc
+ 666              	.LFE144:
+ 668 0036 00BF     	 .section .text.prvProcessExpiredTimer,"ax",%progbits
+ 669              	 .align 2
+ 670              	 .thumb
+ 671              	 .thumb_func
+ 673              	prvProcessExpiredTimer:
+ 674              	.LFB145:
+ 460:../Dave/Generated/FREERTOS/timers.c **** /*-----------------------------------------------------------*/
+ 461:../Dave/Generated/FREERTOS/timers.c **** 
+ 462:../Dave/Generated/FREERTOS/timers.c **** static void prvProcessExpiredTimer( const TickType_t xNextExpireTime, const TickType_t xTimeNow )
+ 463:../Dave/Generated/FREERTOS/timers.c **** {
+ 675              	 .loc 1 463 0
+ 676              	 .cfi_startproc
+ 677              	 
+ 678              	 
+ 679 0000 80B5     	 push {r7,lr}
+ 680              	 .cfi_def_cfa_offset 8
+ 681              	 .cfi_offset 7,-8
+ 682              	 .cfi_offset 14,-4
+ 683 0002 88B0     	 sub sp,sp,#32
+ 684              	 .cfi_def_cfa_offset 40
+ 685 0004 02AF     	 add r7,sp,#8
+ 686              	 .cfi_def_cfa 7,32
+ 687 0006 7860     	 str r0,[r7,#4]
+ 688 0008 3960     	 str r1,[r7]
+ 464:../Dave/Generated/FREERTOS/timers.c **** BaseType_t xResult;
+ 465:../Dave/Generated/FREERTOS/timers.c **** Timer_t * const pxTimer = ( Timer_t * ) listGET_OWNER_OF_HEAD_ENTRY( pxCurrentTimerList );
+ 689              	 .loc 1 465 0
+ 690 000a 1C4B     	 ldr r3,.L47
+ 691 000c 1B68     	 ldr r3,[r3]
+ 692 000e DB68     	 ldr r3,[r3,#12]
+ 693 0010 DB68     	 ldr r3,[r3,#12]
+ 694 0012 7B61     	 str r3,[r7,#20]
+ 466:../Dave/Generated/FREERTOS/timers.c **** 
+ 467:../Dave/Generated/FREERTOS/timers.c **** 	/* Remove the timer from the list of active timers.  A check has already
+ 468:../Dave/Generated/FREERTOS/timers.c **** 	been performed to ensure the list is not empty. */
+ 469:../Dave/Generated/FREERTOS/timers.c **** 	( void ) uxListRemove( &( pxTimer->xTimerListItem ) );
+ 695              	 .loc 1 469 0
+ 696 0014 7B69     	 ldr r3,[r7,#20]
+ 697 0016 0433     	 adds r3,r3,#4
+ 698 0018 1846     	 mov r0,r3
+ 699 001a FFF7FEFF 	 bl uxListRemove
+ 470:../Dave/Generated/FREERTOS/timers.c **** 	traceTIMER_EXPIRED( pxTimer );
+ 471:../Dave/Generated/FREERTOS/timers.c **** 
+ 472:../Dave/Generated/FREERTOS/timers.c **** 	/* If the timer is an auto reload timer then calculate the next
+ 473:../Dave/Generated/FREERTOS/timers.c **** 	expiry time and re-insert the timer in the list of active timers. */
+ 474:../Dave/Generated/FREERTOS/timers.c **** 	if( pxTimer->uxAutoReload == ( UBaseType_t ) pdTRUE )
+ 700              	 .loc 1 474 0
+ 701 001e 7B69     	 ldr r3,[r7,#20]
+ 702 0020 DB69     	 ldr r3,[r3,#28]
+ 703 0022 012B     	 cmp r3,#1
+ 704 0024 22D1     	 bne .L45
+ 475:../Dave/Generated/FREERTOS/timers.c **** 	{
+ 476:../Dave/Generated/FREERTOS/timers.c **** 		/* The timer is inserted into a list using a time relative to anything
+ 477:../Dave/Generated/FREERTOS/timers.c **** 		other than the current time.  It will therefore be inserted into the
+ 478:../Dave/Generated/FREERTOS/timers.c **** 		correct list relative to the time this task thinks it is now. */
+ 479:../Dave/Generated/FREERTOS/timers.c **** 		if( prvInsertTimerInActiveList( pxTimer, ( xNextExpireTime + pxTimer->xTimerPeriodInTicks ), xTim
+ 705              	 .loc 1 479 0
+ 706 0026 7B69     	 ldr r3,[r7,#20]
+ 707 0028 9A69     	 ldr r2,[r3,#24]
+ 708 002a 7B68     	 ldr r3,[r7,#4]
+ 709 002c 1344     	 add r3,r3,r2
+ 710 002e 7869     	 ldr r0,[r7,#20]
+ 711 0030 1946     	 mov r1,r3
+ 712 0032 3A68     	 ldr r2,[r7]
+ 713 0034 7B68     	 ldr r3,[r7,#4]
+ 714 0036 FFF7FEFF 	 bl prvInsertTimerInActiveList
+ 715 003a 0346     	 mov r3,r0
+ 716 003c 002B     	 cmp r3,#0
+ 717 003e 15D0     	 beq .L45
+ 480:../Dave/Generated/FREERTOS/timers.c **** 		{
+ 481:../Dave/Generated/FREERTOS/timers.c **** 			/* The timer expired before it was added to the active timer
+ 482:../Dave/Generated/FREERTOS/timers.c **** 			list.  Reload it now.  */
+ 483:../Dave/Generated/FREERTOS/timers.c **** 			xResult = xTimerGenericCommand( pxTimer, tmrCOMMAND_START_DONT_TRACE, xNextExpireTime, NULL, tmr
+ 718              	 .loc 1 483 0
+ 719 0040 0023     	 movs r3,#0
+ 720 0042 0093     	 str r3,[sp]
+ 721 0044 7869     	 ldr r0,[r7,#20]
+ 722 0046 0021     	 movs r1,#0
+ 723 0048 7A68     	 ldr r2,[r7,#4]
+ 724 004a 0023     	 movs r3,#0
+ 725 004c FFF7FEFF 	 bl xTimerGenericCommand
+ 726 0050 3861     	 str r0,[r7,#16]
+ 484:../Dave/Generated/FREERTOS/timers.c **** 			configASSERT( xResult );
+ 727              	 .loc 1 484 0
+ 728 0052 3B69     	 ldr r3,[r7,#16]
+ 729 0054 002B     	 cmp r3,#0
+ 730 0056 09D1     	 bne .L45
+ 731              	.LBB49:
+ 732              	.LBB50:
+ 733              	 .loc 2 195 0 discriminator 1
+ 734              	
+ 735 0058 4FF0FC03 	 mov r3,#252
+ 736 005c 83F31188 	 msr basepri,r3
+ 737 0060 BFF36F8F 	 isb 
+ 738 0064 BFF34F8F 	 dsb 
+ 739              	
+ 740              	
+ 741              	 .thumb
+ 742 0068 FB60     	 str r3,[r7,#12]
+ 743              	.L46:
+ 744              	.LBE50:
+ 745              	.LBE49:
+ 746              	 .loc 1 484 0 discriminator 1
+ 747 006a FEE7     	 b .L46
+ 748              	.L45:
+ 485:../Dave/Generated/FREERTOS/timers.c **** 			( void ) xResult;
+ 486:../Dave/Generated/FREERTOS/timers.c **** 		}
+ 487:../Dave/Generated/FREERTOS/timers.c **** 		else
+ 488:../Dave/Generated/FREERTOS/timers.c **** 		{
+ 489:../Dave/Generated/FREERTOS/timers.c **** 			mtCOVERAGE_TEST_MARKER();
+ 490:../Dave/Generated/FREERTOS/timers.c **** 		}
+ 491:../Dave/Generated/FREERTOS/timers.c **** 	}
+ 492:../Dave/Generated/FREERTOS/timers.c **** 	else
+ 493:../Dave/Generated/FREERTOS/timers.c **** 	{
+ 494:../Dave/Generated/FREERTOS/timers.c **** 		mtCOVERAGE_TEST_MARKER();
+ 495:../Dave/Generated/FREERTOS/timers.c **** 	}
+ 496:../Dave/Generated/FREERTOS/timers.c **** 
+ 497:../Dave/Generated/FREERTOS/timers.c **** 	/* Call the timer callback. */
+ 498:../Dave/Generated/FREERTOS/timers.c **** 	pxTimer->pxCallbackFunction( ( TimerHandle_t ) pxTimer );
+ 749              	 .loc 1 498 0
+ 750 006c 7B69     	 ldr r3,[r7,#20]
+ 751 006e 5B6A     	 ldr r3,[r3,#36]
+ 752 0070 7869     	 ldr r0,[r7,#20]
+ 753 0072 9847     	 blx r3
+ 499:../Dave/Generated/FREERTOS/timers.c **** }
+ 754              	 .loc 1 499 0
+ 755 0074 1837     	 adds r7,r7,#24
+ 756              	 .cfi_def_cfa_offset 8
+ 757 0076 BD46     	 mov sp,r7
+ 758              	 .cfi_def_cfa_register 13
+ 759              	 
+ 760 0078 80BD     	 pop {r7,pc}
+ 761              	.L48:
+ 762 007a 00BF     	 .align 2
+ 763              	.L47:
+ 764 007c 00000000 	 .word pxCurrentTimerList
+ 765              	 .cfi_endproc
+ 766              	.LFE145:
+ 768              	 .section .text.prvTimerTask,"ax",%progbits
+ 769              	 .align 2
+ 770              	 .thumb
+ 771              	 .thumb_func
+ 773              	prvTimerTask:
+ 774              	.LFB146:
+ 500:../Dave/Generated/FREERTOS/timers.c **** /*-----------------------------------------------------------*/
+ 501:../Dave/Generated/FREERTOS/timers.c **** 
+ 502:../Dave/Generated/FREERTOS/timers.c **** static void prvTimerTask( void *pvParameters )
+ 503:../Dave/Generated/FREERTOS/timers.c **** {
+ 775              	 .loc 1 503 0
+ 776              	 .cfi_startproc
+ 777              	 
+ 778              	 
+ 779 0000 80B5     	 push {r7,lr}
+ 780              	 .cfi_def_cfa_offset 8
+ 781              	 .cfi_offset 7,-8
+ 782              	 .cfi_offset 14,-4
+ 783 0002 84B0     	 sub sp,sp,#16
+ 784              	 .cfi_def_cfa_offset 24
+ 785 0004 00AF     	 add r7,sp,#0
+ 786              	 .cfi_def_cfa_register 7
+ 787 0006 7860     	 str r0,[r7,#4]
+ 788              	.L50:
+ 504:../Dave/Generated/FREERTOS/timers.c **** TickType_t xNextExpireTime;
+ 505:../Dave/Generated/FREERTOS/timers.c **** BaseType_t xListWasEmpty;
+ 506:../Dave/Generated/FREERTOS/timers.c **** 
+ 507:../Dave/Generated/FREERTOS/timers.c **** 	/* Just to avoid compiler warnings. */
+ 508:../Dave/Generated/FREERTOS/timers.c **** 	( void ) pvParameters;
+ 509:../Dave/Generated/FREERTOS/timers.c **** 
+ 510:../Dave/Generated/FREERTOS/timers.c **** 	#if( configUSE_DAEMON_TASK_STARTUP_HOOK == 1 )
+ 511:../Dave/Generated/FREERTOS/timers.c **** 	{
+ 512:../Dave/Generated/FREERTOS/timers.c **** 		extern void vApplicationDaemonTaskStartupHook( void );
+ 513:../Dave/Generated/FREERTOS/timers.c **** 
+ 514:../Dave/Generated/FREERTOS/timers.c **** 		/* Allow the application writer to execute some code in the context of
+ 515:../Dave/Generated/FREERTOS/timers.c **** 		this task at the point the task starts executing.  This is useful if the
+ 516:../Dave/Generated/FREERTOS/timers.c **** 		application includes initialisation code that would benefit from
+ 517:../Dave/Generated/FREERTOS/timers.c **** 		executing after the scheduler has been started. */
+ 518:../Dave/Generated/FREERTOS/timers.c **** 		vApplicationDaemonTaskStartupHook();
+ 519:../Dave/Generated/FREERTOS/timers.c **** 	}
+ 520:../Dave/Generated/FREERTOS/timers.c **** 	#endif /* configUSE_DAEMON_TASK_STARTUP_HOOK */
+ 521:../Dave/Generated/FREERTOS/timers.c **** 
+ 522:../Dave/Generated/FREERTOS/timers.c **** 	for( ;; )
+ 523:../Dave/Generated/FREERTOS/timers.c **** 	{
+ 524:../Dave/Generated/FREERTOS/timers.c **** 		/* Query the timers list to see if it contains any timers, and if so,
+ 525:../Dave/Generated/FREERTOS/timers.c **** 		obtain the time at which the next timer will expire. */
+ 526:../Dave/Generated/FREERTOS/timers.c **** 		xNextExpireTime = prvGetNextExpireTime( &xListWasEmpty );
+ 789              	 .loc 1 526 0 discriminator 1
+ 790 0008 07F10803 	 add r3,r7,#8
+ 791 000c 1846     	 mov r0,r3
+ 792 000e FFF7FEFF 	 bl prvGetNextExpireTime
+ 793 0012 F860     	 str r0,[r7,#12]
+ 527:../Dave/Generated/FREERTOS/timers.c **** 
+ 528:../Dave/Generated/FREERTOS/timers.c **** 		/* If a timer has expired, process it.  Otherwise, block this task
+ 529:../Dave/Generated/FREERTOS/timers.c **** 		until either a timer does expire, or a command is received. */
+ 530:../Dave/Generated/FREERTOS/timers.c **** 		prvProcessTimerOrBlockTask( xNextExpireTime, xListWasEmpty );
+ 794              	 .loc 1 530 0 discriminator 1
+ 795 0014 BB68     	 ldr r3,[r7,#8]
+ 796 0016 F868     	 ldr r0,[r7,#12]
+ 797 0018 1946     	 mov r1,r3
+ 798 001a FFF7FEFF 	 bl prvProcessTimerOrBlockTask
+ 531:../Dave/Generated/FREERTOS/timers.c **** 
+ 532:../Dave/Generated/FREERTOS/timers.c **** 		/* Empty the command queue. */
+ 533:../Dave/Generated/FREERTOS/timers.c **** 		prvProcessReceivedCommands();
+ 799              	 .loc 1 533 0 discriminator 1
+ 800 001e FFF7FEFF 	 bl prvProcessReceivedCommands
+ 534:../Dave/Generated/FREERTOS/timers.c **** 	}
+ 801              	 .loc 1 534 0 discriminator 1
+ 802 0022 F1E7     	 b .L50
+ 803              	 .cfi_endproc
+ 804              	.LFE146:
+ 806              	 .section .text.prvProcessTimerOrBlockTask,"ax",%progbits
+ 807              	 .align 2
+ 808              	 .thumb
+ 809              	 .thumb_func
+ 811              	prvProcessTimerOrBlockTask:
+ 812              	.LFB147:
+ 535:../Dave/Generated/FREERTOS/timers.c **** }
+ 536:../Dave/Generated/FREERTOS/timers.c **** /*-----------------------------------------------------------*/
+ 537:../Dave/Generated/FREERTOS/timers.c **** 
+ 538:../Dave/Generated/FREERTOS/timers.c **** static void prvProcessTimerOrBlockTask( const TickType_t xNextExpireTime, BaseType_t xListWasEmpty 
+ 539:../Dave/Generated/FREERTOS/timers.c **** {
+ 813              	 .loc 1 539 0
+ 814              	 .cfi_startproc
+ 815              	 
+ 816              	 
+ 817 0000 80B5     	 push {r7,lr}
+ 818              	 .cfi_def_cfa_offset 8
+ 819              	 .cfi_offset 7,-8
+ 820              	 .cfi_offset 14,-4
+ 821 0002 84B0     	 sub sp,sp,#16
+ 822              	 .cfi_def_cfa_offset 24
+ 823 0004 00AF     	 add r7,sp,#0
+ 824              	 .cfi_def_cfa_register 7
+ 825 0006 7860     	 str r0,[r7,#4]
+ 826 0008 3960     	 str r1,[r7]
+ 540:../Dave/Generated/FREERTOS/timers.c **** TickType_t xTimeNow;
+ 541:../Dave/Generated/FREERTOS/timers.c **** BaseType_t xTimerListsWereSwitched;
+ 542:../Dave/Generated/FREERTOS/timers.c **** 
+ 543:../Dave/Generated/FREERTOS/timers.c **** 	vTaskSuspendAll();
+ 827              	 .loc 1 543 0
+ 828 000a FFF7FEFF 	 bl vTaskSuspendAll
+ 544:../Dave/Generated/FREERTOS/timers.c **** 	{
+ 545:../Dave/Generated/FREERTOS/timers.c **** 		/* Obtain the time now to make an assessment as to whether the timer
+ 546:../Dave/Generated/FREERTOS/timers.c **** 		has expired or not.  If obtaining the time causes the lists to switch
+ 547:../Dave/Generated/FREERTOS/timers.c **** 		then don't process this timer as any timers that remained in the list
+ 548:../Dave/Generated/FREERTOS/timers.c **** 		when the lists were switched will have been processed within the
+ 549:../Dave/Generated/FREERTOS/timers.c **** 		prvSampleTimeNow() function. */
+ 550:../Dave/Generated/FREERTOS/timers.c **** 		xTimeNow = prvSampleTimeNow( &xTimerListsWereSwitched );
+ 829              	 .loc 1 550 0
+ 830 000e 07F10803 	 add r3,r7,#8
+ 831 0012 1846     	 mov r0,r3
+ 832 0014 FFF7FEFF 	 bl prvSampleTimeNow
+ 833 0018 F860     	 str r0,[r7,#12]
+ 551:../Dave/Generated/FREERTOS/timers.c **** 		if( xTimerListsWereSwitched == pdFALSE )
+ 834              	 .loc 1 551 0
+ 835 001a BB68     	 ldr r3,[r7,#8]
+ 836 001c 002B     	 cmp r3,#0
+ 837 001e 31D1     	 bne .L52
+ 552:../Dave/Generated/FREERTOS/timers.c **** 		{
+ 553:../Dave/Generated/FREERTOS/timers.c **** 			/* The tick count has not overflowed, has the timer expired? */
+ 554:../Dave/Generated/FREERTOS/timers.c **** 			if( ( xListWasEmpty == pdFALSE ) && ( xNextExpireTime <= xTimeNow ) )
+ 838              	 .loc 1 554 0
+ 839 0020 3B68     	 ldr r3,[r7]
+ 840 0022 002B     	 cmp r3,#0
+ 841 0024 0AD1     	 bne .L53
+ 842              	 .loc 1 554 0 is_stmt 0 discriminator 1
+ 843 0026 7A68     	 ldr r2,[r7,#4]
+ 844 0028 FB68     	 ldr r3,[r7,#12]
+ 845 002a 9A42     	 cmp r2,r3
+ 846 002c 06D8     	 bhi .L53
+ 555:../Dave/Generated/FREERTOS/timers.c **** 			{
+ 556:../Dave/Generated/FREERTOS/timers.c **** 				( void ) xTaskResumeAll();
+ 847              	 .loc 1 556 0 is_stmt 1
+ 848 002e FFF7FEFF 	 bl xTaskResumeAll
+ 557:../Dave/Generated/FREERTOS/timers.c **** 				prvProcessExpiredTimer( xNextExpireTime, xTimeNow );
+ 849              	 .loc 1 557 0
+ 850 0032 7868     	 ldr r0,[r7,#4]
+ 851 0034 F968     	 ldr r1,[r7,#12]
+ 852 0036 FFF7FEFF 	 bl prvProcessExpiredTimer
+ 853 003a 25E0     	 b .L51
+ 854              	.L53:
+ 558:../Dave/Generated/FREERTOS/timers.c **** 			}
+ 559:../Dave/Generated/FREERTOS/timers.c **** 			else
+ 560:../Dave/Generated/FREERTOS/timers.c **** 			{
+ 561:../Dave/Generated/FREERTOS/timers.c **** 				/* The tick count has not overflowed, and the next expire
+ 562:../Dave/Generated/FREERTOS/timers.c **** 				time has not been reached yet.  This task should therefore
+ 563:../Dave/Generated/FREERTOS/timers.c **** 				block to wait for the next expire time or a command to be
+ 564:../Dave/Generated/FREERTOS/timers.c **** 				received - whichever comes first.  The following line cannot
+ 565:../Dave/Generated/FREERTOS/timers.c **** 				be reached unless xNextExpireTime > xTimeNow, except in the
+ 566:../Dave/Generated/FREERTOS/timers.c **** 				case when the current timer list is empty. */
+ 567:../Dave/Generated/FREERTOS/timers.c **** 				if( xListWasEmpty != pdFALSE )
+ 855              	 .loc 1 567 0
+ 856 003c 3B68     	 ldr r3,[r7]
+ 857 003e 002B     	 cmp r3,#0
+ 858 0040 08D0     	 beq .L55
+ 568:../Dave/Generated/FREERTOS/timers.c **** 				{
+ 569:../Dave/Generated/FREERTOS/timers.c **** 					/* The current timer list is empty - is the overflow list
+ 570:../Dave/Generated/FREERTOS/timers.c **** 					also empty? */
+ 571:../Dave/Generated/FREERTOS/timers.c **** 					xListWasEmpty = listLIST_IS_EMPTY( pxOverflowTimerList );
+ 859              	 .loc 1 571 0
+ 860 0042 134B     	 ldr r3,.L57
+ 861 0044 1B68     	 ldr r3,[r3]
+ 862 0046 1B68     	 ldr r3,[r3]
+ 863 0048 002B     	 cmp r3,#0
+ 864 004a 0CBF     	 ite eq
+ 865 004c 0123     	 moveq r3,#1
+ 866 004e 0023     	 movne r3,#0
+ 867 0050 DBB2     	 uxtb r3,r3
+ 868 0052 3B60     	 str r3,[r7]
+ 869              	.L55:
+ 572:../Dave/Generated/FREERTOS/timers.c **** 				}
+ 573:../Dave/Generated/FREERTOS/timers.c **** 
+ 574:../Dave/Generated/FREERTOS/timers.c **** 				vQueueWaitForMessageRestricted( xTimerQueue, ( xNextExpireTime - xTimeNow ), xListWasEmpty );
+ 870              	 .loc 1 574 0
+ 871 0054 0F4B     	 ldr r3,.L57+4
+ 872 0056 1968     	 ldr r1,[r3]
+ 873 0058 7A68     	 ldr r2,[r7,#4]
+ 874 005a FB68     	 ldr r3,[r7,#12]
+ 875 005c D31A     	 subs r3,r2,r3
+ 876 005e 0846     	 mov r0,r1
+ 877 0060 1946     	 mov r1,r3
+ 878 0062 3A68     	 ldr r2,[r7]
+ 879 0064 FFF7FEFF 	 bl vQueueWaitForMessageRestricted
+ 575:../Dave/Generated/FREERTOS/timers.c **** 
+ 576:../Dave/Generated/FREERTOS/timers.c **** 				if( xTaskResumeAll() == pdFALSE )
+ 880              	 .loc 1 576 0
+ 881 0068 FFF7FEFF 	 bl xTaskResumeAll
+ 882 006c 0346     	 mov r3,r0
+ 883 006e 002B     	 cmp r3,#0
+ 884 0070 0AD1     	 bne .L51
+ 577:../Dave/Generated/FREERTOS/timers.c **** 				{
+ 578:../Dave/Generated/FREERTOS/timers.c **** 					/* Yield to wait for either a command to arrive, or the
+ 579:../Dave/Generated/FREERTOS/timers.c **** 					block time to expire.  If a command arrived between the
+ 580:../Dave/Generated/FREERTOS/timers.c **** 					critical section being exited and this yield then the yield
+ 581:../Dave/Generated/FREERTOS/timers.c **** 					will not cause the task to block. */
+ 582:../Dave/Generated/FREERTOS/timers.c **** 					portYIELD_WITHIN_API();
+ 885              	 .loc 1 582 0
+ 886 0072 094B     	 ldr r3,.L57+8
+ 887 0074 4FF08052 	 mov r2,#268435456
+ 888 0078 1A60     	 str r2,[r3]
+ 889              	
+ 890 007a BFF34F8F 	 dsb
+ 891              	
+ 892              	
+ 893 007e BFF36F8F 	 isb
+ 894              	
+ 895              	 .thumb
+ 896 0082 01E0     	 b .L51
+ 897              	.L52:
+ 583:../Dave/Generated/FREERTOS/timers.c **** 				}
+ 584:../Dave/Generated/FREERTOS/timers.c **** 				else
+ 585:../Dave/Generated/FREERTOS/timers.c **** 				{
+ 586:../Dave/Generated/FREERTOS/timers.c **** 					mtCOVERAGE_TEST_MARKER();
+ 587:../Dave/Generated/FREERTOS/timers.c **** 				}
+ 588:../Dave/Generated/FREERTOS/timers.c **** 			}
+ 589:../Dave/Generated/FREERTOS/timers.c **** 		}
+ 590:../Dave/Generated/FREERTOS/timers.c **** 		else
+ 591:../Dave/Generated/FREERTOS/timers.c **** 		{
+ 592:../Dave/Generated/FREERTOS/timers.c **** 			( void ) xTaskResumeAll();
+ 898              	 .loc 1 592 0
+ 899 0084 FFF7FEFF 	 bl xTaskResumeAll
+ 900              	.L51:
+ 593:../Dave/Generated/FREERTOS/timers.c **** 		}
+ 594:../Dave/Generated/FREERTOS/timers.c **** 	}
+ 595:../Dave/Generated/FREERTOS/timers.c **** }
+ 901              	 .loc 1 595 0
+ 902 0088 1037     	 adds r7,r7,#16
+ 903              	 .cfi_def_cfa_offset 8
+ 904 008a BD46     	 mov sp,r7
+ 905              	 .cfi_def_cfa_register 13
+ 906              	 
+ 907 008c 80BD     	 pop {r7,pc}
+ 908              	.L58:
+ 909 008e 00BF     	 .align 2
+ 910              	.L57:
+ 911 0090 00000000 	 .word pxOverflowTimerList
+ 912 0094 00000000 	 .word xTimerQueue
+ 913 0098 04ED00E0 	 .word -536810236
+ 914              	 .cfi_endproc
+ 915              	.LFE147:
+ 917              	 .section .text.prvGetNextExpireTime,"ax",%progbits
+ 918              	 .align 2
+ 919              	 .thumb
+ 920              	 .thumb_func
+ 922              	prvGetNextExpireTime:
+ 923              	.LFB148:
+ 596:../Dave/Generated/FREERTOS/timers.c **** /*-----------------------------------------------------------*/
+ 597:../Dave/Generated/FREERTOS/timers.c **** 
+ 598:../Dave/Generated/FREERTOS/timers.c **** static TickType_t prvGetNextExpireTime( BaseType_t * const pxListWasEmpty )
+ 599:../Dave/Generated/FREERTOS/timers.c **** {
+ 924              	 .loc 1 599 0
+ 925              	 .cfi_startproc
+ 926              	 
+ 927              	 
+ 928              	 
+ 929 0000 80B4     	 push {r7}
+ 930              	 .cfi_def_cfa_offset 4
+ 931              	 .cfi_offset 7,-4
+ 932 0002 85B0     	 sub sp,sp,#20
+ 933              	 .cfi_def_cfa_offset 24
+ 934 0004 00AF     	 add r7,sp,#0
+ 935              	 .cfi_def_cfa_register 7
+ 936 0006 7860     	 str r0,[r7,#4]
+ 600:../Dave/Generated/FREERTOS/timers.c **** TickType_t xNextExpireTime;
+ 601:../Dave/Generated/FREERTOS/timers.c **** 
+ 602:../Dave/Generated/FREERTOS/timers.c **** 	/* Timers are listed in expiry time order, with the head of the list
+ 603:../Dave/Generated/FREERTOS/timers.c **** 	referencing the task that will expire first.  Obtain the time at which
+ 604:../Dave/Generated/FREERTOS/timers.c **** 	the timer with the nearest expiry time will expire.  If there are no
+ 605:../Dave/Generated/FREERTOS/timers.c **** 	active timers then just set the next expire time to 0.  That will cause
+ 606:../Dave/Generated/FREERTOS/timers.c **** 	this task to unblock when the tick count overflows, at which point the
+ 607:../Dave/Generated/FREERTOS/timers.c **** 	timer lists will be switched and the next expiry time can be
+ 608:../Dave/Generated/FREERTOS/timers.c **** 	re-assessed.  */
+ 609:../Dave/Generated/FREERTOS/timers.c **** 	*pxListWasEmpty = listLIST_IS_EMPTY( pxCurrentTimerList );
+ 937              	 .loc 1 609 0
+ 938 0008 0E4B     	 ldr r3,.L63
+ 939 000a 1B68     	 ldr r3,[r3]
+ 940 000c 1B68     	 ldr r3,[r3]
+ 941 000e 002B     	 cmp r3,#0
+ 942 0010 0CBF     	 ite eq
+ 943 0012 0123     	 moveq r3,#1
+ 944 0014 0023     	 movne r3,#0
+ 945 0016 DBB2     	 uxtb r3,r3
+ 946 0018 1A46     	 mov r2,r3
+ 947 001a 7B68     	 ldr r3,[r7,#4]
+ 948 001c 1A60     	 str r2,[r3]
+ 610:../Dave/Generated/FREERTOS/timers.c **** 	if( *pxListWasEmpty == pdFALSE )
+ 949              	 .loc 1 610 0
+ 950 001e 7B68     	 ldr r3,[r7,#4]
+ 951 0020 1B68     	 ldr r3,[r3]
+ 952 0022 002B     	 cmp r3,#0
+ 953 0024 05D1     	 bne .L60
+ 611:../Dave/Generated/FREERTOS/timers.c **** 	{
+ 612:../Dave/Generated/FREERTOS/timers.c **** 		xNextExpireTime = listGET_ITEM_VALUE_OF_HEAD_ENTRY( pxCurrentTimerList );
+ 954              	 .loc 1 612 0
+ 955 0026 074B     	 ldr r3,.L63
+ 956 0028 1B68     	 ldr r3,[r3]
+ 957 002a DB68     	 ldr r3,[r3,#12]
+ 958 002c 1B68     	 ldr r3,[r3]
+ 959 002e FB60     	 str r3,[r7,#12]
+ 960 0030 01E0     	 b .L61
+ 961              	.L60:
+ 613:../Dave/Generated/FREERTOS/timers.c **** 	}
+ 614:../Dave/Generated/FREERTOS/timers.c **** 	else
+ 615:../Dave/Generated/FREERTOS/timers.c **** 	{
+ 616:../Dave/Generated/FREERTOS/timers.c **** 		/* Ensure the task unblocks when the tick count rolls over. */
+ 617:../Dave/Generated/FREERTOS/timers.c **** 		xNextExpireTime = ( TickType_t ) 0U;
+ 962              	 .loc 1 617 0
+ 963 0032 0023     	 movs r3,#0
+ 964 0034 FB60     	 str r3,[r7,#12]
+ 965              	.L61:
+ 618:../Dave/Generated/FREERTOS/timers.c **** 	}
+ 619:../Dave/Generated/FREERTOS/timers.c **** 
+ 620:../Dave/Generated/FREERTOS/timers.c **** 	return xNextExpireTime;
+ 966              	 .loc 1 620 0
+ 967 0036 FB68     	 ldr r3,[r7,#12]
+ 621:../Dave/Generated/FREERTOS/timers.c **** }
+ 968              	 .loc 1 621 0
+ 969 0038 1846     	 mov r0,r3
+ 970 003a 1437     	 adds r7,r7,#20
+ 971              	 .cfi_def_cfa_offset 4
+ 972 003c BD46     	 mov sp,r7
+ 973              	 .cfi_def_cfa_register 13
+ 974              	 
+ 975 003e 5DF8047B 	 ldr r7,[sp],#4
+ 976              	 .cfi_restore 7
+ 977              	 .cfi_def_cfa_offset 0
+ 978 0042 7047     	 bx lr
+ 979              	.L64:
+ 980              	 .align 2
+ 981              	.L63:
+ 982 0044 00000000 	 .word pxCurrentTimerList
+ 983              	 .cfi_endproc
+ 984              	.LFE148:
+ 986              	 .section .text.prvSampleTimeNow,"ax",%progbits
+ 987              	 .align 2
+ 988              	 .thumb
+ 989              	 .thumb_func
+ 991              	prvSampleTimeNow:
+ 992              	.LFB149:
+ 622:../Dave/Generated/FREERTOS/timers.c **** /*-----------------------------------------------------------*/
+ 623:../Dave/Generated/FREERTOS/timers.c **** 
+ 624:../Dave/Generated/FREERTOS/timers.c **** static TickType_t prvSampleTimeNow( BaseType_t * const pxTimerListsWereSwitched )
+ 625:../Dave/Generated/FREERTOS/timers.c **** {
+ 993              	 .loc 1 625 0
+ 994              	 .cfi_startproc
+ 995              	 
+ 996              	 
+ 997 0000 80B5     	 push {r7,lr}
+ 998              	 .cfi_def_cfa_offset 8
+ 999              	 .cfi_offset 7,-8
+ 1000              	 .cfi_offset 14,-4
+ 1001 0002 84B0     	 sub sp,sp,#16
+ 1002              	 .cfi_def_cfa_offset 24
+ 1003 0004 00AF     	 add r7,sp,#0
+ 1004              	 .cfi_def_cfa_register 7
+ 1005 0006 7860     	 str r0,[r7,#4]
+ 626:../Dave/Generated/FREERTOS/timers.c **** TickType_t xTimeNow;
+ 627:../Dave/Generated/FREERTOS/timers.c **** PRIVILEGED_DATA static TickType_t xLastTime = ( TickType_t ) 0U; /*lint !e956 Variable is only acce
+ 628:../Dave/Generated/FREERTOS/timers.c **** 
+ 629:../Dave/Generated/FREERTOS/timers.c **** 	xTimeNow = xTaskGetTickCount();
+ 1006              	 .loc 1 629 0
+ 1007 0008 FFF7FEFF 	 bl xTaskGetTickCount
+ 1008 000c F860     	 str r0,[r7,#12]
+ 630:../Dave/Generated/FREERTOS/timers.c **** 
+ 631:../Dave/Generated/FREERTOS/timers.c **** 	if( xTimeNow < xLastTime )
+ 1009              	 .loc 1 631 0
+ 1010 000e 0B4B     	 ldr r3,.L69
+ 1011 0010 1B68     	 ldr r3,[r3]
+ 1012 0012 FA68     	 ldr r2,[r7,#12]
+ 1013 0014 9A42     	 cmp r2,r3
+ 1014 0016 05D2     	 bcs .L66
+ 632:../Dave/Generated/FREERTOS/timers.c **** 	{
+ 633:../Dave/Generated/FREERTOS/timers.c **** 		prvSwitchTimerLists();
+ 1015              	 .loc 1 633 0
+ 1016 0018 FFF7FEFF 	 bl prvSwitchTimerLists
+ 634:../Dave/Generated/FREERTOS/timers.c **** 		*pxTimerListsWereSwitched = pdTRUE;
+ 1017              	 .loc 1 634 0
+ 1018 001c 7B68     	 ldr r3,[r7,#4]
+ 1019 001e 0122     	 movs r2,#1
+ 1020 0020 1A60     	 str r2,[r3]
+ 1021 0022 02E0     	 b .L67
+ 1022              	.L66:
+ 635:../Dave/Generated/FREERTOS/timers.c **** 	}
+ 636:../Dave/Generated/FREERTOS/timers.c **** 	else
+ 637:../Dave/Generated/FREERTOS/timers.c **** 	{
+ 638:../Dave/Generated/FREERTOS/timers.c **** 		*pxTimerListsWereSwitched = pdFALSE;
+ 1023              	 .loc 1 638 0
+ 1024 0024 7B68     	 ldr r3,[r7,#4]
+ 1025 0026 0022     	 movs r2,#0
+ 1026 0028 1A60     	 str r2,[r3]
+ 1027              	.L67:
+ 639:../Dave/Generated/FREERTOS/timers.c **** 	}
+ 640:../Dave/Generated/FREERTOS/timers.c **** 
+ 641:../Dave/Generated/FREERTOS/timers.c **** 	xLastTime = xTimeNow;
+ 1028              	 .loc 1 641 0
+ 1029 002a 044A     	 ldr r2,.L69
+ 1030 002c FB68     	 ldr r3,[r7,#12]
+ 1031 002e 1360     	 str r3,[r2]
+ 642:../Dave/Generated/FREERTOS/timers.c **** 
+ 643:../Dave/Generated/FREERTOS/timers.c **** 	return xTimeNow;
+ 1032              	 .loc 1 643 0
+ 1033 0030 FB68     	 ldr r3,[r7,#12]
+ 644:../Dave/Generated/FREERTOS/timers.c **** }
+ 1034              	 .loc 1 644 0
+ 1035 0032 1846     	 mov r0,r3
+ 1036 0034 1037     	 adds r7,r7,#16
+ 1037              	 .cfi_def_cfa_offset 8
+ 1038 0036 BD46     	 mov sp,r7
+ 1039              	 .cfi_def_cfa_register 13
+ 1040              	 
+ 1041 0038 80BD     	 pop {r7,pc}
+ 1042              	.L70:
+ 1043 003a 00BF     	 .align 2
+ 1044              	.L69:
+ 1045 003c 00000000 	 .word xLastTime.7744
+ 1046              	 .cfi_endproc
+ 1047              	.LFE149:
+ 1049              	 .section .text.prvInsertTimerInActiveList,"ax",%progbits
+ 1050              	 .align 2
+ 1051              	 .thumb
+ 1052              	 .thumb_func
+ 1054              	prvInsertTimerInActiveList:
+ 1055              	.LFB150:
+ 645:../Dave/Generated/FREERTOS/timers.c **** /*-----------------------------------------------------------*/
+ 646:../Dave/Generated/FREERTOS/timers.c **** 
+ 647:../Dave/Generated/FREERTOS/timers.c **** static BaseType_t prvInsertTimerInActiveList( Timer_t * const pxTimer, const TickType_t xNextExpiry
+ 648:../Dave/Generated/FREERTOS/timers.c **** {
+ 1056              	 .loc 1 648 0
+ 1057              	 .cfi_startproc
+ 1058              	 
+ 1059              	 
+ 1060 0000 80B5     	 push {r7,lr}
+ 1061              	 .cfi_def_cfa_offset 8
+ 1062              	 .cfi_offset 7,-8
+ 1063              	 .cfi_offset 14,-4
+ 1064 0002 86B0     	 sub sp,sp,#24
+ 1065              	 .cfi_def_cfa_offset 32
+ 1066 0004 00AF     	 add r7,sp,#0
+ 1067              	 .cfi_def_cfa_register 7
+ 1068 0006 F860     	 str r0,[r7,#12]
+ 1069 0008 B960     	 str r1,[r7,#8]
+ 1070 000a 7A60     	 str r2,[r7,#4]
+ 1071 000c 3B60     	 str r3,[r7]
+ 649:../Dave/Generated/FREERTOS/timers.c **** BaseType_t xProcessTimerNow = pdFALSE;
+ 1072              	 .loc 1 649 0
+ 1073 000e 0023     	 movs r3,#0
+ 1074 0010 7B61     	 str r3,[r7,#20]
+ 650:../Dave/Generated/FREERTOS/timers.c **** 
+ 651:../Dave/Generated/FREERTOS/timers.c **** 	listSET_LIST_ITEM_VALUE( &( pxTimer->xTimerListItem ), xNextExpiryTime );
+ 1075              	 .loc 1 651 0
+ 1076 0012 FB68     	 ldr r3,[r7,#12]
+ 1077 0014 BA68     	 ldr r2,[r7,#8]
+ 1078 0016 5A60     	 str r2,[r3,#4]
+ 652:../Dave/Generated/FREERTOS/timers.c **** 	listSET_LIST_ITEM_OWNER( &( pxTimer->xTimerListItem ), pxTimer );
+ 1079              	 .loc 1 652 0
+ 1080 0018 FB68     	 ldr r3,[r7,#12]
+ 1081 001a FA68     	 ldr r2,[r7,#12]
+ 1082 001c 1A61     	 str r2,[r3,#16]
+ 653:../Dave/Generated/FREERTOS/timers.c **** 
+ 654:../Dave/Generated/FREERTOS/timers.c **** 	if( xNextExpiryTime <= xTimeNow )
+ 1083              	 .loc 1 654 0
+ 1084 001e BA68     	 ldr r2,[r7,#8]
+ 1085 0020 7B68     	 ldr r3,[r7,#4]
+ 1086 0022 9A42     	 cmp r2,r3
+ 1087 0024 12D8     	 bhi .L72
+ 655:../Dave/Generated/FREERTOS/timers.c **** 	{
+ 656:../Dave/Generated/FREERTOS/timers.c **** 		/* Has the expiry time elapsed between the command to start/reset a
+ 657:../Dave/Generated/FREERTOS/timers.c **** 		timer was issued, and the time the command was processed? */
+ 658:../Dave/Generated/FREERTOS/timers.c **** 		if( ( ( TickType_t ) ( xTimeNow - xCommandTime ) ) >= pxTimer->xTimerPeriodInTicks ) /*lint !e961
+ 1088              	 .loc 1 658 0
+ 1089 0026 7A68     	 ldr r2,[r7,#4]
+ 1090 0028 3B68     	 ldr r3,[r7]
+ 1091 002a D21A     	 subs r2,r2,r3
+ 1092 002c FB68     	 ldr r3,[r7,#12]
+ 1093 002e 9B69     	 ldr r3,[r3,#24]
+ 1094 0030 9A42     	 cmp r2,r3
+ 1095 0032 02D3     	 bcc .L73
+ 659:../Dave/Generated/FREERTOS/timers.c **** 		{
+ 660:../Dave/Generated/FREERTOS/timers.c **** 			/* The time between a command being issued and the command being
+ 661:../Dave/Generated/FREERTOS/timers.c **** 			processed actually exceeds the timers period.  */
+ 662:../Dave/Generated/FREERTOS/timers.c **** 			xProcessTimerNow = pdTRUE;
+ 1096              	 .loc 1 662 0
+ 1097 0034 0123     	 movs r3,#1
+ 1098 0036 7B61     	 str r3,[r7,#20]
+ 1099 0038 1BE0     	 b .L75
+ 1100              	.L73:
+ 663:../Dave/Generated/FREERTOS/timers.c **** 		}
+ 664:../Dave/Generated/FREERTOS/timers.c **** 		else
+ 665:../Dave/Generated/FREERTOS/timers.c **** 		{
+ 666:../Dave/Generated/FREERTOS/timers.c **** 			vListInsert( pxOverflowTimerList, &( pxTimer->xTimerListItem ) );
+ 1101              	 .loc 1 666 0
+ 1102 003a 104B     	 ldr r3,.L78
+ 1103 003c 1A68     	 ldr r2,[r3]
+ 1104 003e FB68     	 ldr r3,[r7,#12]
+ 1105 0040 0433     	 adds r3,r3,#4
+ 1106 0042 1046     	 mov r0,r2
+ 1107 0044 1946     	 mov r1,r3
+ 1108 0046 FFF7FEFF 	 bl vListInsert
+ 1109 004a 12E0     	 b .L75
+ 1110              	.L72:
+ 667:../Dave/Generated/FREERTOS/timers.c **** 		}
+ 668:../Dave/Generated/FREERTOS/timers.c **** 	}
+ 669:../Dave/Generated/FREERTOS/timers.c **** 	else
+ 670:../Dave/Generated/FREERTOS/timers.c **** 	{
+ 671:../Dave/Generated/FREERTOS/timers.c **** 		if( ( xTimeNow < xCommandTime ) && ( xNextExpiryTime >= xCommandTime ) )
+ 1111              	 .loc 1 671 0
+ 1112 004c 7A68     	 ldr r2,[r7,#4]
+ 1113 004e 3B68     	 ldr r3,[r7]
+ 1114 0050 9A42     	 cmp r2,r3
+ 1115 0052 06D2     	 bcs .L76
+ 1116              	 .loc 1 671 0 is_stmt 0 discriminator 1
+ 1117 0054 BA68     	 ldr r2,[r7,#8]
+ 1118 0056 3B68     	 ldr r3,[r7]
+ 1119 0058 9A42     	 cmp r2,r3
+ 1120 005a 02D3     	 bcc .L76
+ 672:../Dave/Generated/FREERTOS/timers.c **** 		{
+ 673:../Dave/Generated/FREERTOS/timers.c **** 			/* If, since the command was issued, the tick count has overflowed
+ 674:../Dave/Generated/FREERTOS/timers.c **** 			but the expiry time has not, then the timer must have already passed
+ 675:../Dave/Generated/FREERTOS/timers.c **** 			its expiry time and should be processed immediately. */
+ 676:../Dave/Generated/FREERTOS/timers.c **** 			xProcessTimerNow = pdTRUE;
+ 1121              	 .loc 1 676 0 is_stmt 1
+ 1122 005c 0123     	 movs r3,#1
+ 1123 005e 7B61     	 str r3,[r7,#20]
+ 1124 0060 07E0     	 b .L75
+ 1125              	.L76:
+ 677:../Dave/Generated/FREERTOS/timers.c **** 		}
+ 678:../Dave/Generated/FREERTOS/timers.c **** 		else
+ 679:../Dave/Generated/FREERTOS/timers.c **** 		{
+ 680:../Dave/Generated/FREERTOS/timers.c **** 			vListInsert( pxCurrentTimerList, &( pxTimer->xTimerListItem ) );
+ 1126              	 .loc 1 680 0
+ 1127 0062 074B     	 ldr r3,.L78+4
+ 1128 0064 1A68     	 ldr r2,[r3]
+ 1129 0066 FB68     	 ldr r3,[r7,#12]
+ 1130 0068 0433     	 adds r3,r3,#4
+ 1131 006a 1046     	 mov r0,r2
+ 1132 006c 1946     	 mov r1,r3
+ 1133 006e FFF7FEFF 	 bl vListInsert
+ 1134              	.L75:
+ 681:../Dave/Generated/FREERTOS/timers.c **** 		}
+ 682:../Dave/Generated/FREERTOS/timers.c **** 	}
+ 683:../Dave/Generated/FREERTOS/timers.c **** 
+ 684:../Dave/Generated/FREERTOS/timers.c **** 	return xProcessTimerNow;
+ 1135              	 .loc 1 684 0
+ 1136 0072 7B69     	 ldr r3,[r7,#20]
+ 685:../Dave/Generated/FREERTOS/timers.c **** }
+ 1137              	 .loc 1 685 0
+ 1138 0074 1846     	 mov r0,r3
+ 1139 0076 1837     	 adds r7,r7,#24
+ 1140              	 .cfi_def_cfa_offset 8
+ 1141 0078 BD46     	 mov sp,r7
+ 1142              	 .cfi_def_cfa_register 13
+ 1143              	 
+ 1144 007a 80BD     	 pop {r7,pc}
+ 1145              	.L79:
+ 1146              	 .align 2
+ 1147              	.L78:
+ 1148 007c 00000000 	 .word pxOverflowTimerList
+ 1149 0080 00000000 	 .word pxCurrentTimerList
+ 1150              	 .cfi_endproc
+ 1151              	.LFE150:
+ 1153              	 .section .text.prvProcessReceivedCommands,"ax",%progbits
+ 1154              	 .align 2
+ 1155              	 .thumb
+ 1156              	 .thumb_func
+ 1158              	prvProcessReceivedCommands:
+ 1159              	.LFB151:
+ 686:../Dave/Generated/FREERTOS/timers.c **** /*-----------------------------------------------------------*/
+ 687:../Dave/Generated/FREERTOS/timers.c **** 
+ 688:../Dave/Generated/FREERTOS/timers.c **** static void	prvProcessReceivedCommands( void )
+ 689:../Dave/Generated/FREERTOS/timers.c **** {
+ 1160              	 .loc 1 689 0
+ 1161              	 .cfi_startproc
+ 1162              	 
+ 1163              	 
+ 1164 0000 80B5     	 push {r7,lr}
+ 1165              	 .cfi_def_cfa_offset 8
+ 1166              	 .cfi_offset 7,-8
+ 1167              	 .cfi_offset 14,-4
+ 1168 0002 8EB0     	 sub sp,sp,#56
+ 1169              	 .cfi_def_cfa_offset 64
+ 1170 0004 02AF     	 add r7,sp,#8
+ 1171              	 .cfi_def_cfa 7,56
+ 690:../Dave/Generated/FREERTOS/timers.c **** DaemonTaskMessage_t xMessage;
+ 691:../Dave/Generated/FREERTOS/timers.c **** Timer_t *pxTimer;
+ 692:../Dave/Generated/FREERTOS/timers.c **** BaseType_t xTimerListsWereSwitched, xResult;
+ 693:../Dave/Generated/FREERTOS/timers.c **** TickType_t xTimeNow;
+ 694:../Dave/Generated/FREERTOS/timers.c **** 
+ 695:../Dave/Generated/FREERTOS/timers.c **** 	while( xQueueReceive( xTimerQueue, &xMessage, tmrNO_DELAY ) != pdFAIL ) /*lint !e603 xMessage does
+ 1172              	 .loc 1 695 0
+ 1173 0006 99E0     	 b .L81
+ 1174              	.L96:
+ 696:../Dave/Generated/FREERTOS/timers.c **** 	{
+ 697:../Dave/Generated/FREERTOS/timers.c **** 		#if ( INCLUDE_xTimerPendFunctionCall == 1 )
+ 698:../Dave/Generated/FREERTOS/timers.c **** 		{
+ 699:../Dave/Generated/FREERTOS/timers.c **** 			/* Negative commands are pended function calls rather than timer
+ 700:../Dave/Generated/FREERTOS/timers.c **** 			commands. */
+ 701:../Dave/Generated/FREERTOS/timers.c **** 			if( xMessage.xMessageID < ( BaseType_t ) 0 )
+ 1175              	 .loc 1 701 0
+ 1176 0008 7B68     	 ldr r3,[r7,#4]
+ 1177 000a 002B     	 cmp r3,#0
+ 1178 000c 18DA     	 bge .L82
+ 1179              	.LBB51:
+ 702:../Dave/Generated/FREERTOS/timers.c **** 			{
+ 703:../Dave/Generated/FREERTOS/timers.c **** 				const CallbackParameters_t * const pxCallback = &( xMessage.u.xCallbackParameters );
+ 1180              	 .loc 1 703 0
+ 1181 000e 3B1D     	 adds r3,r7,#4
+ 1182 0010 0433     	 adds r3,r3,#4
+ 1183 0012 FB62     	 str r3,[r7,#44]
+ 704:../Dave/Generated/FREERTOS/timers.c **** 
+ 705:../Dave/Generated/FREERTOS/timers.c **** 				/* The timer uses the xCallbackParameters member to request a
+ 706:../Dave/Generated/FREERTOS/timers.c **** 				callback be executed.  Check the callback is not NULL. */
+ 707:../Dave/Generated/FREERTOS/timers.c **** 				configASSERT( pxCallback );
+ 1184              	 .loc 1 707 0
+ 1185 0014 FB6A     	 ldr r3,[r7,#44]
+ 1186 0016 002B     	 cmp r3,#0
+ 1187 0018 09D1     	 bne .L83
+ 1188              	.LBB52:
+ 1189              	.LBB53:
+ 1190              	 .loc 2 195 0 discriminator 1
+ 1191              	
+ 1192 001a 4FF0FC03 	 mov r3,#252
+ 1193 001e 83F31188 	 msr basepri,r3
+ 1194 0022 BFF36F8F 	 isb 
+ 1195 0026 BFF34F8F 	 dsb 
+ 1196              	
+ 1197              	
+ 1198              	 .thumb
+ 1199 002a FB61     	 str r3,[r7,#28]
+ 1200              	.L84:
+ 1201              	.LBE53:
+ 1202              	.LBE52:
+ 1203              	 .loc 1 707 0 discriminator 1
+ 1204 002c FEE7     	 b .L84
+ 1205              	.L83:
+ 708:../Dave/Generated/FREERTOS/timers.c **** 
+ 709:../Dave/Generated/FREERTOS/timers.c **** 				/* Call the function. */
+ 710:../Dave/Generated/FREERTOS/timers.c **** 				pxCallback->pxCallbackFunction( pxCallback->pvParameter1, pxCallback->ulParameter2 );
+ 1206              	 .loc 1 710 0
+ 1207 002e FB6A     	 ldr r3,[r7,#44]
+ 1208 0030 1B68     	 ldr r3,[r3]
+ 1209 0032 FA6A     	 ldr r2,[r7,#44]
+ 1210 0034 5168     	 ldr r1,[r2,#4]
+ 1211 0036 FA6A     	 ldr r2,[r7,#44]
+ 1212 0038 9268     	 ldr r2,[r2,#8]
+ 1213 003a 0846     	 mov r0,r1
+ 1214 003c 1146     	 mov r1,r2
+ 1215 003e 9847     	 blx r3
+ 1216              	.L82:
+ 1217              	.LBE51:
+ 711:../Dave/Generated/FREERTOS/timers.c **** 			}
+ 712:../Dave/Generated/FREERTOS/timers.c **** 			else
+ 713:../Dave/Generated/FREERTOS/timers.c **** 			{
+ 714:../Dave/Generated/FREERTOS/timers.c **** 				mtCOVERAGE_TEST_MARKER();
+ 715:../Dave/Generated/FREERTOS/timers.c **** 			}
+ 716:../Dave/Generated/FREERTOS/timers.c **** 		}
+ 717:../Dave/Generated/FREERTOS/timers.c **** 		#endif /* INCLUDE_xTimerPendFunctionCall */
+ 718:../Dave/Generated/FREERTOS/timers.c **** 
+ 719:../Dave/Generated/FREERTOS/timers.c **** 		/* Commands that are positive are timer commands rather than pended
+ 720:../Dave/Generated/FREERTOS/timers.c **** 		function calls. */
+ 721:../Dave/Generated/FREERTOS/timers.c **** 		if( xMessage.xMessageID >= ( BaseType_t ) 0 )
+ 1218              	 .loc 1 721 0
+ 1219 0040 7B68     	 ldr r3,[r7,#4]
+ 1220 0042 002B     	 cmp r3,#0
+ 1221 0044 7ADB     	 blt .L81
+ 722:../Dave/Generated/FREERTOS/timers.c **** 		{
+ 723:../Dave/Generated/FREERTOS/timers.c **** 			/* The messages uses the xTimerParameters member to work on a
+ 724:../Dave/Generated/FREERTOS/timers.c **** 			software timer. */
+ 725:../Dave/Generated/FREERTOS/timers.c **** 			pxTimer = xMessage.u.xTimerParameters.pxTimer;
+ 1222              	 .loc 1 725 0
+ 1223 0046 FB68     	 ldr r3,[r7,#12]
+ 1224 0048 BB62     	 str r3,[r7,#40]
+ 726:../Dave/Generated/FREERTOS/timers.c **** 
+ 727:../Dave/Generated/FREERTOS/timers.c **** 			if( listIS_CONTAINED_WITHIN( NULL, &( pxTimer->xTimerListItem ) ) == pdFALSE ) /*lint !e961. The
+ 1225              	 .loc 1 727 0
+ 1226 004a BB6A     	 ldr r3,[r7,#40]
+ 1227 004c 5B69     	 ldr r3,[r3,#20]
+ 1228 004e 002B     	 cmp r3,#0
+ 1229 0050 04D0     	 beq .L85
+ 728:../Dave/Generated/FREERTOS/timers.c **** 			{
+ 729:../Dave/Generated/FREERTOS/timers.c **** 				/* The timer is in a list, remove it. */
+ 730:../Dave/Generated/FREERTOS/timers.c **** 				( void ) uxListRemove( &( pxTimer->xTimerListItem ) );
+ 1230              	 .loc 1 730 0
+ 1231 0052 BB6A     	 ldr r3,[r7,#40]
+ 1232 0054 0433     	 adds r3,r3,#4
+ 1233 0056 1846     	 mov r0,r3
+ 1234 0058 FFF7FEFF 	 bl uxListRemove
+ 1235              	.L85:
+ 731:../Dave/Generated/FREERTOS/timers.c **** 			}
+ 732:../Dave/Generated/FREERTOS/timers.c **** 			else
+ 733:../Dave/Generated/FREERTOS/timers.c **** 			{
+ 734:../Dave/Generated/FREERTOS/timers.c **** 				mtCOVERAGE_TEST_MARKER();
+ 735:../Dave/Generated/FREERTOS/timers.c **** 			}
+ 736:../Dave/Generated/FREERTOS/timers.c **** 
+ 737:../Dave/Generated/FREERTOS/timers.c **** 			traceTIMER_COMMAND_RECEIVED( pxTimer, xMessage.xMessageID, xMessage.u.xTimerParameters.xMessageV
+ 738:../Dave/Generated/FREERTOS/timers.c **** 
+ 739:../Dave/Generated/FREERTOS/timers.c **** 			/* In this case the xTimerListsWereSwitched parameter is not used, but
+ 740:../Dave/Generated/FREERTOS/timers.c **** 			it must be present in the function call.  prvSampleTimeNow() must be
+ 741:../Dave/Generated/FREERTOS/timers.c **** 			called after the message is received from xTimerQueue so there is no
+ 742:../Dave/Generated/FREERTOS/timers.c **** 			possibility of a higher priority task adding a message to the message
+ 743:../Dave/Generated/FREERTOS/timers.c **** 			queue with a time that is ahead of the timer daemon task (because it
+ 744:../Dave/Generated/FREERTOS/timers.c **** 			pre-empted the timer daemon task after the xTimeNow value was set). */
+ 745:../Dave/Generated/FREERTOS/timers.c **** 			xTimeNow = prvSampleTimeNow( &xTimerListsWereSwitched );
+ 1236              	 .loc 1 745 0
+ 1237 005c 3B46     	 mov r3,r7
+ 1238 005e 1846     	 mov r0,r3
+ 1239 0060 FFF7FEFF 	 bl prvSampleTimeNow
+ 1240 0064 7862     	 str r0,[r7,#36]
+ 746:../Dave/Generated/FREERTOS/timers.c **** 
+ 747:../Dave/Generated/FREERTOS/timers.c **** 			switch( xMessage.xMessageID )
+ 1241              	 .loc 1 747 0
+ 1242 0066 7B68     	 ldr r3,[r7,#4]
+ 1243 0068 092B     	 cmp r3,#9
+ 1244 006a 66D8     	 bhi .L97
+ 1245 006c 01A2     	 adr r2,.L88
+ 1246 006e 52F823F0 	 ldr pc,[r2,r3,lsl#2]
+ 1247 0072 00BF     	 .p2align 2
+ 1248              	.L88:
+ 1249 0074 9D000000 	 .word .L87+1
+ 1250 0078 9D000000 	 .word .L87+1
+ 1251 007c 9D000000 	 .word .L87+1
+ 1252 0080 3D010000 	 .word .L81+1
+ 1253 0084 FB000000 	 .word .L90+1
+ 1254 0088 33010000 	 .word .L91+1
+ 1255 008c 9D000000 	 .word .L87+1
+ 1256 0090 9D000000 	 .word .L87+1
+ 1257 0094 3D010000 	 .word .L81+1
+ 1258 0098 FB000000 	 .word .L90+1
+ 1259              	 .p2align 1
+ 1260              	.L87:
+ 748:../Dave/Generated/FREERTOS/timers.c **** 			{
+ 749:../Dave/Generated/FREERTOS/timers.c **** 				case tmrCOMMAND_START :
+ 750:../Dave/Generated/FREERTOS/timers.c **** 			    case tmrCOMMAND_START_FROM_ISR :
+ 751:../Dave/Generated/FREERTOS/timers.c **** 			    case tmrCOMMAND_RESET :
+ 752:../Dave/Generated/FREERTOS/timers.c **** 			    case tmrCOMMAND_RESET_FROM_ISR :
+ 753:../Dave/Generated/FREERTOS/timers.c **** 				case tmrCOMMAND_START_DONT_TRACE :
+ 754:../Dave/Generated/FREERTOS/timers.c **** 					/* Start or restart a timer. */
+ 755:../Dave/Generated/FREERTOS/timers.c **** 					if( prvInsertTimerInActiveList( pxTimer,  xMessage.u.xTimerParameters.xMessageValue + pxTimer-
+ 1261              	 .loc 1 755 0
+ 1262 009c BA68     	 ldr r2,[r7,#8]
+ 1263 009e BB6A     	 ldr r3,[r7,#40]
+ 1264 00a0 9B69     	 ldr r3,[r3,#24]
+ 1265 00a2 1A44     	 add r2,r2,r3
+ 1266 00a4 BB68     	 ldr r3,[r7,#8]
+ 1267 00a6 B86A     	 ldr r0,[r7,#40]
+ 1268 00a8 1146     	 mov r1,r2
+ 1269 00aa 7A6A     	 ldr r2,[r7,#36]
+ 1270 00ac FFF7FEFF 	 bl prvInsertTimerInActiveList
+ 1271 00b0 0346     	 mov r3,r0
+ 1272 00b2 002B     	 cmp r3,#0
+ 1273 00b4 20D0     	 beq .L92
+ 756:../Dave/Generated/FREERTOS/timers.c **** 					{
+ 757:../Dave/Generated/FREERTOS/timers.c **** 						/* The timer expired before it was added to the active
+ 758:../Dave/Generated/FREERTOS/timers.c **** 						timer list.  Process it now. */
+ 759:../Dave/Generated/FREERTOS/timers.c **** 						pxTimer->pxCallbackFunction( ( TimerHandle_t ) pxTimer );
+ 1274              	 .loc 1 759 0
+ 1275 00b6 BB6A     	 ldr r3,[r7,#40]
+ 1276 00b8 5B6A     	 ldr r3,[r3,#36]
+ 1277 00ba B86A     	 ldr r0,[r7,#40]
+ 1278 00bc 9847     	 blx r3
+ 760:../Dave/Generated/FREERTOS/timers.c **** 						traceTIMER_EXPIRED( pxTimer );
+ 761:../Dave/Generated/FREERTOS/timers.c **** 
+ 762:../Dave/Generated/FREERTOS/timers.c **** 						if( pxTimer->uxAutoReload == ( UBaseType_t ) pdTRUE )
+ 1279              	 .loc 1 762 0
+ 1280 00be BB6A     	 ldr r3,[r7,#40]
+ 1281 00c0 DB69     	 ldr r3,[r3,#28]
+ 1282 00c2 012B     	 cmp r3,#1
+ 1283 00c4 18D1     	 bne .L92
+ 763:../Dave/Generated/FREERTOS/timers.c **** 						{
+ 764:../Dave/Generated/FREERTOS/timers.c **** 							xResult = xTimerGenericCommand( pxTimer, tmrCOMMAND_START_DONT_TRACE, xMessage.u.xTimerParam
+ 1284              	 .loc 1 764 0
+ 1285 00c6 BA68     	 ldr r2,[r7,#8]
+ 1286 00c8 BB6A     	 ldr r3,[r7,#40]
+ 1287 00ca 9B69     	 ldr r3,[r3,#24]
+ 1288 00cc 1A44     	 add r2,r2,r3
+ 1289 00ce 0023     	 movs r3,#0
+ 1290 00d0 0093     	 str r3,[sp]
+ 1291 00d2 B86A     	 ldr r0,[r7,#40]
+ 1292 00d4 0021     	 movs r1,#0
+ 1293 00d6 0023     	 movs r3,#0
+ 1294 00d8 FFF7FEFF 	 bl xTimerGenericCommand
+ 1295 00dc 3862     	 str r0,[r7,#32]
+ 765:../Dave/Generated/FREERTOS/timers.c **** 							configASSERT( xResult );
+ 1296              	 .loc 1 765 0
+ 1297 00de 3B6A     	 ldr r3,[r7,#32]
+ 1298 00e0 002B     	 cmp r3,#0
+ 1299 00e2 09D1     	 bne .L92
+ 1300              	.LBB54:
+ 1301              	.LBB55:
+ 1302              	 .loc 2 195 0 discriminator 1
+ 1303              	
+ 1304 00e4 4FF0FC03 	 mov r3,#252
+ 1305 00e8 83F31188 	 msr basepri,r3
+ 1306 00ec BFF36F8F 	 isb 
+ 1307 00f0 BFF34F8F 	 dsb 
+ 1308              	
+ 1309              	
+ 1310              	 .thumb
+ 1311 00f4 BB61     	 str r3,[r7,#24]
+ 1312              	.L93:
+ 1313              	.LBE55:
+ 1314              	.LBE54:
+ 1315              	 .loc 1 765 0 discriminator 2
+ 1316 00f6 FEE7     	 b .L93
+ 1317              	.L92:
+ 766:../Dave/Generated/FREERTOS/timers.c **** 							( void ) xResult;
+ 767:../Dave/Generated/FREERTOS/timers.c **** 						}
+ 768:../Dave/Generated/FREERTOS/timers.c **** 						else
+ 769:../Dave/Generated/FREERTOS/timers.c **** 						{
+ 770:../Dave/Generated/FREERTOS/timers.c **** 							mtCOVERAGE_TEST_MARKER();
+ 771:../Dave/Generated/FREERTOS/timers.c **** 						}
+ 772:../Dave/Generated/FREERTOS/timers.c **** 					}
+ 773:../Dave/Generated/FREERTOS/timers.c **** 					else
+ 774:../Dave/Generated/FREERTOS/timers.c **** 					{
+ 775:../Dave/Generated/FREERTOS/timers.c **** 						mtCOVERAGE_TEST_MARKER();
+ 776:../Dave/Generated/FREERTOS/timers.c **** 					}
+ 777:../Dave/Generated/FREERTOS/timers.c **** 					break;
+ 1318              	 .loc 1 777 0 discriminator 4
+ 1319 00f8 20E0     	 b .L81
+ 1320              	.L90:
+ 778:../Dave/Generated/FREERTOS/timers.c **** 
+ 779:../Dave/Generated/FREERTOS/timers.c **** 				case tmrCOMMAND_STOP :
+ 780:../Dave/Generated/FREERTOS/timers.c **** 				case tmrCOMMAND_STOP_FROM_ISR :
+ 781:../Dave/Generated/FREERTOS/timers.c **** 					/* The timer has already been removed from the active list.
+ 782:../Dave/Generated/FREERTOS/timers.c **** 					There is nothing to do here. */
+ 783:../Dave/Generated/FREERTOS/timers.c **** 					break;
+ 784:../Dave/Generated/FREERTOS/timers.c **** 
+ 785:../Dave/Generated/FREERTOS/timers.c **** 				case tmrCOMMAND_CHANGE_PERIOD :
+ 786:../Dave/Generated/FREERTOS/timers.c **** 				case tmrCOMMAND_CHANGE_PERIOD_FROM_ISR :
+ 787:../Dave/Generated/FREERTOS/timers.c **** 					pxTimer->xTimerPeriodInTicks = xMessage.u.xTimerParameters.xMessageValue;
+ 1321              	 .loc 1 787 0
+ 1322 00fa BA68     	 ldr r2,[r7,#8]
+ 1323 00fc BB6A     	 ldr r3,[r7,#40]
+ 1324 00fe 9A61     	 str r2,[r3,#24]
+ 788:../Dave/Generated/FREERTOS/timers.c **** 					configASSERT( ( pxTimer->xTimerPeriodInTicks > 0 ) );
+ 1325              	 .loc 1 788 0
+ 1326 0100 BB6A     	 ldr r3,[r7,#40]
+ 1327 0102 9B69     	 ldr r3,[r3,#24]
+ 1328 0104 002B     	 cmp r3,#0
+ 1329 0106 09D1     	 bne .L94
+ 1330              	.LBB56:
+ 1331              	.LBB57:
+ 1332              	 .loc 2 195 0 discriminator 1
+ 1333              	
+ 1334 0108 4FF0FC03 	 mov r3,#252
+ 1335 010c 83F31188 	 msr basepri,r3
+ 1336 0110 BFF36F8F 	 isb 
+ 1337 0114 BFF34F8F 	 dsb 
+ 1338              	
+ 1339              	
+ 1340              	 .thumb
+ 1341 0118 7B61     	 str r3,[r7,#20]
+ 1342              	.L95:
+ 1343              	.LBE57:
+ 1344              	.LBE56:
+ 1345              	 .loc 1 788 0 discriminator 5
+ 1346 011a FEE7     	 b .L95
+ 1347              	.L94:
+ 789:../Dave/Generated/FREERTOS/timers.c **** 
+ 790:../Dave/Generated/FREERTOS/timers.c **** 					/* The new period does not really have a reference, and can
+ 791:../Dave/Generated/FREERTOS/timers.c **** 					be longer or shorter than the old one.  The command time is
+ 792:../Dave/Generated/FREERTOS/timers.c **** 					therefore set to the current time, and as the period cannot
+ 793:../Dave/Generated/FREERTOS/timers.c **** 					be zero the next expiry time can only be in the future,
+ 794:../Dave/Generated/FREERTOS/timers.c **** 					meaning (unlike for the xTimerStart() case above) there is
+ 795:../Dave/Generated/FREERTOS/timers.c **** 					no fail case that needs to be handled here. */
+ 796:../Dave/Generated/FREERTOS/timers.c **** 					( void ) prvInsertTimerInActiveList( pxTimer, ( xTimeNow + pxTimer->xTimerPeriodInTicks ), xTi
+ 1348              	 .loc 1 796 0
+ 1349 011c BB6A     	 ldr r3,[r7,#40]
+ 1350 011e 9A69     	 ldr r2,[r3,#24]
+ 1351 0120 7B6A     	 ldr r3,[r7,#36]
+ 1352 0122 1344     	 add r3,r3,r2
+ 1353 0124 B86A     	 ldr r0,[r7,#40]
+ 1354 0126 1946     	 mov r1,r3
+ 1355 0128 7A6A     	 ldr r2,[r7,#36]
+ 1356 012a 7B6A     	 ldr r3,[r7,#36]
+ 1357 012c FFF7FEFF 	 bl prvInsertTimerInActiveList
+ 797:../Dave/Generated/FREERTOS/timers.c **** 					break;
+ 1358              	 .loc 1 797 0
+ 1359 0130 04E0     	 b .L81
+ 1360              	.L91:
+ 798:../Dave/Generated/FREERTOS/timers.c **** 
+ 799:../Dave/Generated/FREERTOS/timers.c **** 				case tmrCOMMAND_DELETE :
+ 800:../Dave/Generated/FREERTOS/timers.c **** 					/* The timer has already been removed from the active list,
+ 801:../Dave/Generated/FREERTOS/timers.c **** 					just free up the memory if the memory was dynamically
+ 802:../Dave/Generated/FREERTOS/timers.c **** 					allocated. */
+ 803:../Dave/Generated/FREERTOS/timers.c **** 					#if( ( configSUPPORT_DYNAMIC_ALLOCATION == 1 ) && ( configSUPPORT_STATIC_ALLOCATION == 0 ) )
+ 804:../Dave/Generated/FREERTOS/timers.c **** 					{
+ 805:../Dave/Generated/FREERTOS/timers.c **** 						/* The timer can only have been allocated dynamically -
+ 806:../Dave/Generated/FREERTOS/timers.c **** 						free it again. */
+ 807:../Dave/Generated/FREERTOS/timers.c **** 						vPortFree( pxTimer );
+ 1361              	 .loc 1 807 0
+ 1362 0132 B86A     	 ldr r0,[r7,#40]
+ 1363 0134 FFF7FEFF 	 bl vPortFree
+ 808:../Dave/Generated/FREERTOS/timers.c **** 					}
+ 809:../Dave/Generated/FREERTOS/timers.c **** 					#elif( ( configSUPPORT_DYNAMIC_ALLOCATION == 1 ) && ( configSUPPORT_STATIC_ALLOCATION == 1 ) )
+ 810:../Dave/Generated/FREERTOS/timers.c **** 					{
+ 811:../Dave/Generated/FREERTOS/timers.c **** 						/* The timer could have been allocated statically or
+ 812:../Dave/Generated/FREERTOS/timers.c **** 						dynamically, so check before attempting to free the
+ 813:../Dave/Generated/FREERTOS/timers.c **** 						memory. */
+ 814:../Dave/Generated/FREERTOS/timers.c **** 						if( pxTimer->ucStaticallyAllocated == ( uint8_t ) pdFALSE )
+ 815:../Dave/Generated/FREERTOS/timers.c **** 						{
+ 816:../Dave/Generated/FREERTOS/timers.c **** 							vPortFree( pxTimer );
+ 817:../Dave/Generated/FREERTOS/timers.c **** 						}
+ 818:../Dave/Generated/FREERTOS/timers.c **** 						else
+ 819:../Dave/Generated/FREERTOS/timers.c **** 						{
+ 820:../Dave/Generated/FREERTOS/timers.c **** 							mtCOVERAGE_TEST_MARKER();
+ 821:../Dave/Generated/FREERTOS/timers.c **** 						}
+ 822:../Dave/Generated/FREERTOS/timers.c **** 					}
+ 823:../Dave/Generated/FREERTOS/timers.c **** 					#endif /* configSUPPORT_DYNAMIC_ALLOCATION */
+ 824:../Dave/Generated/FREERTOS/timers.c **** 					break;
+ 1364              	 .loc 1 824 0
+ 1365 0138 00E0     	 b .L81
+ 1366              	.L97:
+ 825:../Dave/Generated/FREERTOS/timers.c **** 
+ 826:../Dave/Generated/FREERTOS/timers.c **** 				default	:
+ 827:../Dave/Generated/FREERTOS/timers.c **** 					/* Don't expect to get here. */
+ 828:../Dave/Generated/FREERTOS/timers.c **** 					break;
+ 1367              	 .loc 1 828 0
+ 1368 013a 00BF     	 nop
+ 1369              	.L81:
+ 695:../Dave/Generated/FREERTOS/timers.c **** 	{
+ 1370              	 .loc 1 695 0
+ 1371 013c 074B     	 ldr r3,.L98
+ 1372 013e 1A68     	 ldr r2,[r3]
+ 1373 0140 3B1D     	 adds r3,r7,#4
+ 1374 0142 1046     	 mov r0,r2
+ 1375 0144 1946     	 mov r1,r3
+ 1376 0146 0022     	 movs r2,#0
+ 1377 0148 FFF7FEFF 	 bl xQueueReceive
+ 1378 014c 0346     	 mov r3,r0
+ 1379 014e 002B     	 cmp r3,#0
+ 1380 0150 7FF45AAF 	 bne .L96
+ 829:../Dave/Generated/FREERTOS/timers.c **** 			}
+ 830:../Dave/Generated/FREERTOS/timers.c **** 		}
+ 831:../Dave/Generated/FREERTOS/timers.c **** 	}
+ 832:../Dave/Generated/FREERTOS/timers.c **** }
+ 1381              	 .loc 1 832 0
+ 1382 0154 3037     	 adds r7,r7,#48
+ 1383              	 .cfi_def_cfa_offset 8
+ 1384 0156 BD46     	 mov sp,r7
+ 1385              	 .cfi_def_cfa_register 13
+ 1386              	 
+ 1387 0158 80BD     	 pop {r7,pc}
+ 1388              	.L99:
+ 1389 015a 00BF     	 .align 2
+ 1390              	.L98:
+ 1391 015c 00000000 	 .word xTimerQueue
+ 1392              	 .cfi_endproc
+ 1393              	.LFE151:
+ 1395              	 .section .text.prvSwitchTimerLists,"ax",%progbits
+ 1396              	 .align 2
+ 1397              	 .thumb
+ 1398              	 .thumb_func
+ 1400              	prvSwitchTimerLists:
+ 1401              	.LFB152:
+ 833:../Dave/Generated/FREERTOS/timers.c **** /*-----------------------------------------------------------*/
+ 834:../Dave/Generated/FREERTOS/timers.c **** 
+ 835:../Dave/Generated/FREERTOS/timers.c **** static void prvSwitchTimerLists( void )
+ 836:../Dave/Generated/FREERTOS/timers.c **** {
+ 1402              	 .loc 1 836 0
+ 1403              	 .cfi_startproc
+ 1404              	 
+ 1405              	 
+ 1406 0000 80B5     	 push {r7,lr}
+ 1407              	 .cfi_def_cfa_offset 8
+ 1408              	 .cfi_offset 7,-8
+ 1409              	 .cfi_offset 14,-4
+ 1410 0002 88B0     	 sub sp,sp,#32
+ 1411              	 .cfi_def_cfa_offset 40
+ 1412 0004 02AF     	 add r7,sp,#8
+ 1413              	 .cfi_def_cfa 7,32
+ 837:../Dave/Generated/FREERTOS/timers.c **** TickType_t xNextExpireTime, xReloadTime;
+ 838:../Dave/Generated/FREERTOS/timers.c **** List_t *pxTemp;
+ 839:../Dave/Generated/FREERTOS/timers.c **** Timer_t *pxTimer;
+ 840:../Dave/Generated/FREERTOS/timers.c **** BaseType_t xResult;
+ 841:../Dave/Generated/FREERTOS/timers.c **** 
+ 842:../Dave/Generated/FREERTOS/timers.c **** 	/* The tick count has overflowed.  The timer lists must be switched.
+ 843:../Dave/Generated/FREERTOS/timers.c **** 	If there are any timers still referenced from the current timer list
+ 844:../Dave/Generated/FREERTOS/timers.c **** 	then they must have expired and should be processed before the lists
+ 845:../Dave/Generated/FREERTOS/timers.c **** 	are switched. */
+ 846:../Dave/Generated/FREERTOS/timers.c **** 	while( listLIST_IS_EMPTY( pxCurrentTimerList ) == pdFALSE )
+ 1414              	 .loc 1 846 0
+ 1415 0006 44E0     	 b .L101
+ 1416              	.L104:
+ 847:../Dave/Generated/FREERTOS/timers.c **** 	{
+ 848:../Dave/Generated/FREERTOS/timers.c **** 		xNextExpireTime = listGET_ITEM_VALUE_OF_HEAD_ENTRY( pxCurrentTimerList );
+ 1417              	 .loc 1 848 0
+ 1418 0008 2B4B     	 ldr r3,.L105
+ 1419 000a 1B68     	 ldr r3,[r3]
+ 1420 000c DB68     	 ldr r3,[r3,#12]
+ 1421 000e 1B68     	 ldr r3,[r3]
+ 1422 0010 7B61     	 str r3,[r7,#20]
+ 849:../Dave/Generated/FREERTOS/timers.c **** 
+ 850:../Dave/Generated/FREERTOS/timers.c **** 		/* Remove the timer from the list. */
+ 851:../Dave/Generated/FREERTOS/timers.c **** 		pxTimer = ( Timer_t * ) listGET_OWNER_OF_HEAD_ENTRY( pxCurrentTimerList );
+ 1423              	 .loc 1 851 0
+ 1424 0012 294B     	 ldr r3,.L105
+ 1425 0014 1B68     	 ldr r3,[r3]
+ 1426 0016 DB68     	 ldr r3,[r3,#12]
+ 1427 0018 DB68     	 ldr r3,[r3,#12]
+ 1428 001a 3B61     	 str r3,[r7,#16]
+ 852:../Dave/Generated/FREERTOS/timers.c **** 		( void ) uxListRemove( &( pxTimer->xTimerListItem ) );
+ 1429              	 .loc 1 852 0
+ 1430 001c 3B69     	 ldr r3,[r7,#16]
+ 1431 001e 0433     	 adds r3,r3,#4
+ 1432 0020 1846     	 mov r0,r3
+ 1433 0022 FFF7FEFF 	 bl uxListRemove
+ 853:../Dave/Generated/FREERTOS/timers.c **** 		traceTIMER_EXPIRED( pxTimer );
+ 854:../Dave/Generated/FREERTOS/timers.c **** 
+ 855:../Dave/Generated/FREERTOS/timers.c **** 		/* Execute its callback, then send a command to restart the timer if
+ 856:../Dave/Generated/FREERTOS/timers.c **** 		it is an auto-reload timer.  It cannot be restarted here as the lists
+ 857:../Dave/Generated/FREERTOS/timers.c **** 		have not yet been switched. */
+ 858:../Dave/Generated/FREERTOS/timers.c **** 		pxTimer->pxCallbackFunction( ( TimerHandle_t ) pxTimer );
+ 1434              	 .loc 1 858 0
+ 1435 0026 3B69     	 ldr r3,[r7,#16]
+ 1436 0028 5B6A     	 ldr r3,[r3,#36]
+ 1437 002a 3869     	 ldr r0,[r7,#16]
+ 1438 002c 9847     	 blx r3
+ 859:../Dave/Generated/FREERTOS/timers.c **** 
+ 860:../Dave/Generated/FREERTOS/timers.c **** 		if( pxTimer->uxAutoReload == ( UBaseType_t ) pdTRUE )
+ 1439              	 .loc 1 860 0
+ 1440 002e 3B69     	 ldr r3,[r7,#16]
+ 1441 0030 DB69     	 ldr r3,[r3,#28]
+ 1442 0032 012B     	 cmp r3,#1
+ 1443 0034 2DD1     	 bne .L101
+ 861:../Dave/Generated/FREERTOS/timers.c **** 		{
+ 862:../Dave/Generated/FREERTOS/timers.c **** 			/* Calculate the reload value, and if the reload value results in
+ 863:../Dave/Generated/FREERTOS/timers.c **** 			the timer going into the same timer list then it has already expired
+ 864:../Dave/Generated/FREERTOS/timers.c **** 			and the timer should be re-inserted into the current list so it is
+ 865:../Dave/Generated/FREERTOS/timers.c **** 			processed again within this loop.  Otherwise a command should be sent
+ 866:../Dave/Generated/FREERTOS/timers.c **** 			to restart the timer to ensure it is only inserted into a list after
+ 867:../Dave/Generated/FREERTOS/timers.c **** 			the lists have been swapped. */
+ 868:../Dave/Generated/FREERTOS/timers.c **** 			xReloadTime = ( xNextExpireTime + pxTimer->xTimerPeriodInTicks );
+ 1444              	 .loc 1 868 0
+ 1445 0036 3B69     	 ldr r3,[r7,#16]
+ 1446 0038 9A69     	 ldr r2,[r3,#24]
+ 1447 003a 7B69     	 ldr r3,[r7,#20]
+ 1448 003c 1344     	 add r3,r3,r2
+ 1449 003e FB60     	 str r3,[r7,#12]
+ 869:../Dave/Generated/FREERTOS/timers.c **** 			if( xReloadTime > xNextExpireTime )
+ 1450              	 .loc 1 869 0
+ 1451 0040 FA68     	 ldr r2,[r7,#12]
+ 1452 0042 7B69     	 ldr r3,[r7,#20]
+ 1453 0044 9A42     	 cmp r2,r3
+ 1454 0046 0ED9     	 bls .L102
+ 870:../Dave/Generated/FREERTOS/timers.c **** 			{
+ 871:../Dave/Generated/FREERTOS/timers.c **** 				listSET_LIST_ITEM_VALUE( &( pxTimer->xTimerListItem ), xReloadTime );
+ 1455              	 .loc 1 871 0
+ 1456 0048 3B69     	 ldr r3,[r7,#16]
+ 1457 004a FA68     	 ldr r2,[r7,#12]
+ 1458 004c 5A60     	 str r2,[r3,#4]
+ 872:../Dave/Generated/FREERTOS/timers.c **** 				listSET_LIST_ITEM_OWNER( &( pxTimer->xTimerListItem ), pxTimer );
+ 1459              	 .loc 1 872 0
+ 1460 004e 3B69     	 ldr r3,[r7,#16]
+ 1461 0050 3A69     	 ldr r2,[r7,#16]
+ 1462 0052 1A61     	 str r2,[r3,#16]
+ 873:../Dave/Generated/FREERTOS/timers.c **** 				vListInsert( pxCurrentTimerList, &( pxTimer->xTimerListItem ) );
+ 1463              	 .loc 1 873 0
+ 1464 0054 184B     	 ldr r3,.L105
+ 1465 0056 1A68     	 ldr r2,[r3]
+ 1466 0058 3B69     	 ldr r3,[r7,#16]
+ 1467 005a 0433     	 adds r3,r3,#4
+ 1468 005c 1046     	 mov r0,r2
+ 1469 005e 1946     	 mov r1,r3
+ 1470 0060 FFF7FEFF 	 bl vListInsert
+ 1471 0064 15E0     	 b .L101
+ 1472              	.L102:
+ 874:../Dave/Generated/FREERTOS/timers.c **** 			}
+ 875:../Dave/Generated/FREERTOS/timers.c **** 			else
+ 876:../Dave/Generated/FREERTOS/timers.c **** 			{
+ 877:../Dave/Generated/FREERTOS/timers.c **** 				xResult = xTimerGenericCommand( pxTimer, tmrCOMMAND_START_DONT_TRACE, xNextExpireTime, NULL, tm
+ 1473              	 .loc 1 877 0
+ 1474 0066 0023     	 movs r3,#0
+ 1475 0068 0093     	 str r3,[sp]
+ 1476 006a 3869     	 ldr r0,[r7,#16]
+ 1477 006c 0021     	 movs r1,#0
+ 1478 006e 7A69     	 ldr r2,[r7,#20]
+ 1479 0070 0023     	 movs r3,#0
+ 1480 0072 FFF7FEFF 	 bl xTimerGenericCommand
+ 1481 0076 B860     	 str r0,[r7,#8]
+ 878:../Dave/Generated/FREERTOS/timers.c **** 				configASSERT( xResult );
+ 1482              	 .loc 1 878 0
+ 1483 0078 BB68     	 ldr r3,[r7,#8]
+ 1484 007a 002B     	 cmp r3,#0
+ 1485 007c 09D1     	 bne .L101
+ 1486              	.LBB58:
+ 1487              	.LBB59:
+ 1488              	 .loc 2 195 0 discriminator 1
+ 1489              	
+ 1490 007e 4FF0FC03 	 mov r3,#252
+ 1491 0082 83F31188 	 msr basepri,r3
+ 1492 0086 BFF36F8F 	 isb 
+ 1493 008a BFF34F8F 	 dsb 
+ 1494              	
+ 1495              	
+ 1496              	 .thumb
+ 1497 008e 3B60     	 str r3,[r7]
+ 1498              	.L103:
+ 1499              	.LBE59:
+ 1500              	.LBE58:
+ 1501              	 .loc 1 878 0 discriminator 1
+ 1502 0090 FEE7     	 b .L103
+ 1503              	.L101:
+ 846:../Dave/Generated/FREERTOS/timers.c **** 	{
+ 1504              	 .loc 1 846 0
+ 1505 0092 094B     	 ldr r3,.L105
+ 1506 0094 1B68     	 ldr r3,[r3]
+ 1507 0096 1B68     	 ldr r3,[r3]
+ 1508 0098 002B     	 cmp r3,#0
+ 1509 009a B5D1     	 bne .L104
+ 879:../Dave/Generated/FREERTOS/timers.c **** 				( void ) xResult;
+ 880:../Dave/Generated/FREERTOS/timers.c **** 			}
+ 881:../Dave/Generated/FREERTOS/timers.c **** 		}
+ 882:../Dave/Generated/FREERTOS/timers.c **** 		else
+ 883:../Dave/Generated/FREERTOS/timers.c **** 		{
+ 884:../Dave/Generated/FREERTOS/timers.c **** 			mtCOVERAGE_TEST_MARKER();
+ 885:../Dave/Generated/FREERTOS/timers.c **** 		}
+ 886:../Dave/Generated/FREERTOS/timers.c **** 	}
+ 887:../Dave/Generated/FREERTOS/timers.c **** 
+ 888:../Dave/Generated/FREERTOS/timers.c **** 	pxTemp = pxCurrentTimerList;
+ 1510              	 .loc 1 888 0
+ 1511 009c 064B     	 ldr r3,.L105
+ 1512 009e 1B68     	 ldr r3,[r3]
+ 1513 00a0 7B60     	 str r3,[r7,#4]
+ 889:../Dave/Generated/FREERTOS/timers.c **** 	pxCurrentTimerList = pxOverflowTimerList;
+ 1514              	 .loc 1 889 0
+ 1515 00a2 064B     	 ldr r3,.L105+4
+ 1516 00a4 1B68     	 ldr r3,[r3]
+ 1517 00a6 044A     	 ldr r2,.L105
+ 1518 00a8 1360     	 str r3,[r2]
+ 890:../Dave/Generated/FREERTOS/timers.c **** 	pxOverflowTimerList = pxTemp;
+ 1519              	 .loc 1 890 0
+ 1520 00aa 044A     	 ldr r2,.L105+4
+ 1521 00ac 7B68     	 ldr r3,[r7,#4]
+ 1522 00ae 1360     	 str r3,[r2]
+ 891:../Dave/Generated/FREERTOS/timers.c **** }
+ 1523              	 .loc 1 891 0
+ 1524 00b0 1837     	 adds r7,r7,#24
+ 1525              	 .cfi_def_cfa_offset 8
+ 1526 00b2 BD46     	 mov sp,r7
+ 1527              	 .cfi_def_cfa_register 13
+ 1528              	 
+ 1529 00b4 80BD     	 pop {r7,pc}
+ 1530              	.L106:
+ 1531 00b6 00BF     	 .align 2
+ 1532              	.L105:
+ 1533 00b8 00000000 	 .word pxCurrentTimerList
+ 1534 00bc 00000000 	 .word pxOverflowTimerList
+ 1535              	 .cfi_endproc
+ 1536              	.LFE152:
+ 1538              	 .section .rodata
+ 1539              	 .align 2
+ 1540              	.LC1:
+ 1541 0008 546D7251 	 .ascii "TmrQ\000"
+ 1541      00
+ 1542 000d 000000   	 .section .text.prvCheckForValidListAndQueue,"ax",%progbits
+ 1543              	 .align 2
+ 1544              	 .thumb
+ 1545              	 .thumb_func
+ 1547              	prvCheckForValidListAndQueue:
+ 1548              	.LFB153:
+ 892:../Dave/Generated/FREERTOS/timers.c **** /*-----------------------------------------------------------*/
+ 893:../Dave/Generated/FREERTOS/timers.c **** 
+ 894:../Dave/Generated/FREERTOS/timers.c **** static void prvCheckForValidListAndQueue( void )
+ 895:../Dave/Generated/FREERTOS/timers.c **** {
+ 1549              	 .loc 1 895 0
+ 1550              	 .cfi_startproc
+ 1551              	 
+ 1552              	 
+ 1553 0000 80B5     	 push {r7,lr}
+ 1554              	 .cfi_def_cfa_offset 8
+ 1555              	 .cfi_offset 7,-8
+ 1556              	 .cfi_offset 14,-4
+ 1557 0002 00AF     	 add r7,sp,#0
+ 1558              	 .cfi_def_cfa_register 7
+ 896:../Dave/Generated/FREERTOS/timers.c **** 	/* Check that the list from which active timers are referenced, and the
+ 897:../Dave/Generated/FREERTOS/timers.c **** 	queue used to communicate with the timer service, have been
+ 898:../Dave/Generated/FREERTOS/timers.c **** 	initialised. */
+ 899:../Dave/Generated/FREERTOS/timers.c **** 	taskENTER_CRITICAL();
+ 1559              	 .loc 1 899 0
+ 1560 0004 FFF7FEFF 	 bl vPortEnterCritical
+ 900:../Dave/Generated/FREERTOS/timers.c **** 	{
+ 901:../Dave/Generated/FREERTOS/timers.c **** 		if( xTimerQueue == NULL )
+ 1561              	 .loc 1 901 0
+ 1562 0008 124B     	 ldr r3,.L109
+ 1563 000a 1B68     	 ldr r3,[r3]
+ 1564 000c 002B     	 cmp r3,#0
+ 1565 000e 1DD1     	 bne .L108
+ 902:../Dave/Generated/FREERTOS/timers.c **** 		{
+ 903:../Dave/Generated/FREERTOS/timers.c **** 			vListInitialise( &xActiveTimerList1 );
+ 1566              	 .loc 1 903 0
+ 1567 0010 1148     	 ldr r0,.L109+4
+ 1568 0012 FFF7FEFF 	 bl vListInitialise
+ 904:../Dave/Generated/FREERTOS/timers.c **** 			vListInitialise( &xActiveTimerList2 );
+ 1569              	 .loc 1 904 0
+ 1570 0016 1148     	 ldr r0,.L109+8
+ 1571 0018 FFF7FEFF 	 bl vListInitialise
+ 905:../Dave/Generated/FREERTOS/timers.c **** 			pxCurrentTimerList = &xActiveTimerList1;
+ 1572              	 .loc 1 905 0
+ 1573 001c 104B     	 ldr r3,.L109+12
+ 1574 001e 0E4A     	 ldr r2,.L109+4
+ 1575 0020 1A60     	 str r2,[r3]
+ 906:../Dave/Generated/FREERTOS/timers.c **** 			pxOverflowTimerList = &xActiveTimerList2;
+ 1576              	 .loc 1 906 0
+ 1577 0022 104B     	 ldr r3,.L109+16
+ 1578 0024 0D4A     	 ldr r2,.L109+8
+ 1579 0026 1A60     	 str r2,[r3]
+ 907:../Dave/Generated/FREERTOS/timers.c **** 
+ 908:../Dave/Generated/FREERTOS/timers.c **** 			#if( configSUPPORT_STATIC_ALLOCATION == 1 )
+ 909:../Dave/Generated/FREERTOS/timers.c **** 			{
+ 910:../Dave/Generated/FREERTOS/timers.c **** 				/* The timer queue is allocated statically in case
+ 911:../Dave/Generated/FREERTOS/timers.c **** 				configSUPPORT_DYNAMIC_ALLOCATION is 0. */
+ 912:../Dave/Generated/FREERTOS/timers.c **** 				static StaticQueue_t xStaticTimerQueue; /*lint !e956 Ok to declare in this manner to prevent ad
+ 913:../Dave/Generated/FREERTOS/timers.c **** 				static uint8_t ucStaticTimerQueueStorage[ ( size_t ) configTIMER_QUEUE_LENGTH * sizeof( DaemonT
+ 914:../Dave/Generated/FREERTOS/timers.c **** 
+ 915:../Dave/Generated/FREERTOS/timers.c **** 				xTimerQueue = xQueueCreateStatic( ( UBaseType_t ) configTIMER_QUEUE_LENGTH, ( UBaseType_t ) siz
+ 916:../Dave/Generated/FREERTOS/timers.c **** 			}
+ 917:../Dave/Generated/FREERTOS/timers.c **** 			#else
+ 918:../Dave/Generated/FREERTOS/timers.c **** 			{
+ 919:../Dave/Generated/FREERTOS/timers.c **** 				xTimerQueue = xQueueCreate( ( UBaseType_t ) configTIMER_QUEUE_LENGTH, sizeof( DaemonTaskMessage
+ 1580              	 .loc 1 919 0
+ 1581 0028 0520     	 movs r0,#5
+ 1582 002a 1021     	 movs r1,#16
+ 1583 002c 0022     	 movs r2,#0
+ 1584 002e FFF7FEFF 	 bl xQueueGenericCreate
+ 1585 0032 0246     	 mov r2,r0
+ 1586 0034 074B     	 ldr r3,.L109
+ 1587 0036 1A60     	 str r2,[r3]
+ 920:../Dave/Generated/FREERTOS/timers.c **** 			}
+ 921:../Dave/Generated/FREERTOS/timers.c **** 			#endif
+ 922:../Dave/Generated/FREERTOS/timers.c **** 
+ 923:../Dave/Generated/FREERTOS/timers.c **** 			#if ( configQUEUE_REGISTRY_SIZE > 0 )
+ 924:../Dave/Generated/FREERTOS/timers.c **** 			{
+ 925:../Dave/Generated/FREERTOS/timers.c **** 				if( xTimerQueue != NULL )
+ 1588              	 .loc 1 925 0
+ 1589 0038 064B     	 ldr r3,.L109
+ 1590 003a 1B68     	 ldr r3,[r3]
+ 1591 003c 002B     	 cmp r3,#0
+ 1592 003e 05D0     	 beq .L108
+ 926:../Dave/Generated/FREERTOS/timers.c **** 				{
+ 927:../Dave/Generated/FREERTOS/timers.c **** 					vQueueAddToRegistry( xTimerQueue, "TmrQ" );
+ 1593              	 .loc 1 927 0
+ 1594 0040 044B     	 ldr r3,.L109
+ 1595 0042 1B68     	 ldr r3,[r3]
+ 1596 0044 1846     	 mov r0,r3
+ 1597 0046 0849     	 ldr r1,.L109+20
+ 1598 0048 FFF7FEFF 	 bl vQueueAddToRegistry
+ 1599              	.L108:
+ 928:../Dave/Generated/FREERTOS/timers.c **** 				}
+ 929:../Dave/Generated/FREERTOS/timers.c **** 				else
+ 930:../Dave/Generated/FREERTOS/timers.c **** 				{
+ 931:../Dave/Generated/FREERTOS/timers.c **** 					mtCOVERAGE_TEST_MARKER();
+ 932:../Dave/Generated/FREERTOS/timers.c **** 				}
+ 933:../Dave/Generated/FREERTOS/timers.c **** 			}
+ 934:../Dave/Generated/FREERTOS/timers.c **** 			#endif /* configQUEUE_REGISTRY_SIZE */
+ 935:../Dave/Generated/FREERTOS/timers.c **** 		}
+ 936:../Dave/Generated/FREERTOS/timers.c **** 		else
+ 937:../Dave/Generated/FREERTOS/timers.c **** 		{
+ 938:../Dave/Generated/FREERTOS/timers.c **** 			mtCOVERAGE_TEST_MARKER();
+ 939:../Dave/Generated/FREERTOS/timers.c **** 		}
+ 940:../Dave/Generated/FREERTOS/timers.c **** 	}
+ 941:../Dave/Generated/FREERTOS/timers.c **** 	taskEXIT_CRITICAL();
+ 1600              	 .loc 1 941 0
+ 1601 004c FFF7FEFF 	 bl vPortExitCritical
+ 942:../Dave/Generated/FREERTOS/timers.c **** }
+ 1602              	 .loc 1 942 0
+ 1603 0050 80BD     	 pop {r7,pc}
+ 1604              	.L110:
+ 1605 0052 00BF     	 .align 2
+ 1606              	.L109:
+ 1607 0054 00000000 	 .word xTimerQueue
+ 1608 0058 00000000 	 .word xActiveTimerList1
+ 1609 005c 00000000 	 .word xActiveTimerList2
+ 1610 0060 00000000 	 .word pxCurrentTimerList
+ 1611 0064 00000000 	 .word pxOverflowTimerList
+ 1612 0068 08000000 	 .word .LC1
+ 1613              	 .cfi_endproc
+ 1614              	.LFE153:
+ 1616              	 .section .text.xTimerIsTimerActive,"ax",%progbits
+ 1617              	 .align 2
+ 1618              	 .global xTimerIsTimerActive
+ 1619              	 .thumb
+ 1620              	 .thumb_func
+ 1622              	xTimerIsTimerActive:
+ 1623              	.LFB154:
+ 943:../Dave/Generated/FREERTOS/timers.c **** /*-----------------------------------------------------------*/
+ 944:../Dave/Generated/FREERTOS/timers.c **** 
+ 945:../Dave/Generated/FREERTOS/timers.c **** BaseType_t xTimerIsTimerActive( TimerHandle_t xTimer )
+ 946:../Dave/Generated/FREERTOS/timers.c **** {
+ 1624              	 .loc 1 946 0
+ 1625              	 .cfi_startproc
+ 1626              	 
+ 1627              	 
+ 1628 0000 80B5     	 push {r7,lr}
+ 1629              	 .cfi_def_cfa_offset 8
+ 1630              	 .cfi_offset 7,-8
+ 1631              	 .cfi_offset 14,-4
+ 1632 0002 86B0     	 sub sp,sp,#24
+ 1633              	 .cfi_def_cfa_offset 32
+ 1634 0004 00AF     	 add r7,sp,#0
+ 1635              	 .cfi_def_cfa_register 7
+ 1636 0006 7860     	 str r0,[r7,#4]
+ 947:../Dave/Generated/FREERTOS/timers.c **** BaseType_t xTimerIsInActiveList;
+ 948:../Dave/Generated/FREERTOS/timers.c **** Timer_t *pxTimer = ( Timer_t * ) xTimer;
+ 1637              	 .loc 1 948 0
+ 1638 0008 7B68     	 ldr r3,[r7,#4]
+ 1639 000a 7B61     	 str r3,[r7,#20]
+ 949:../Dave/Generated/FREERTOS/timers.c **** 
+ 950:../Dave/Generated/FREERTOS/timers.c **** 	configASSERT( xTimer );
+ 1640              	 .loc 1 950 0
+ 1641 000c 7B68     	 ldr r3,[r7,#4]
+ 1642 000e 002B     	 cmp r3,#0
+ 1643 0010 09D1     	 bne .L112
+ 1644              	.LBB60:
+ 1645              	.LBB61:
+ 1646              	 .loc 2 195 0 discriminator 1
+ 1647              	
+ 1648 0012 4FF0FC03 	 mov r3,#252
+ 1649 0016 83F31188 	 msr basepri,r3
+ 1650 001a BFF36F8F 	 isb 
+ 1651 001e BFF34F8F 	 dsb 
+ 1652              	
+ 1653              	
+ 1654              	 .thumb
+ 1655 0022 FB60     	 str r3,[r7,#12]
+ 1656              	.L113:
+ 1657              	.LBE61:
+ 1658              	.LBE60:
+ 1659              	 .loc 1 950 0 discriminator 1
+ 1660 0024 FEE7     	 b .L113
+ 1661              	.L112:
+ 951:../Dave/Generated/FREERTOS/timers.c **** 
+ 952:../Dave/Generated/FREERTOS/timers.c **** 	/* Is the timer in the list of active timers? */
+ 953:../Dave/Generated/FREERTOS/timers.c **** 	taskENTER_CRITICAL();
+ 1662              	 .loc 1 953 0
+ 1663 0026 FFF7FEFF 	 bl vPortEnterCritical
+ 954:../Dave/Generated/FREERTOS/timers.c **** 	{
+ 955:../Dave/Generated/FREERTOS/timers.c **** 		/* Checking to see if it is in the NULL list in effect checks to see if
+ 956:../Dave/Generated/FREERTOS/timers.c **** 		it is referenced from either the current or the overflow timer lists in
+ 957:../Dave/Generated/FREERTOS/timers.c **** 		one go, but the logic has to be reversed, hence the '!'. */
+ 958:../Dave/Generated/FREERTOS/timers.c **** 		xTimerIsInActiveList = ( BaseType_t ) !( listIS_CONTAINED_WITHIN( NULL, &( pxTimer->xTimerListIte
+ 1664              	 .loc 1 958 0
+ 1665 002a 7B69     	 ldr r3,[r7,#20]
+ 1666 002c 5B69     	 ldr r3,[r3,#20]
+ 1667 002e 002B     	 cmp r3,#0
+ 1668 0030 14BF     	 ite ne
+ 1669 0032 0123     	 movne r3,#1
+ 1670 0034 0023     	 moveq r3,#0
+ 1671 0036 DBB2     	 uxtb r3,r3
+ 1672 0038 3B61     	 str r3,[r7,#16]
+ 959:../Dave/Generated/FREERTOS/timers.c **** 	}
+ 960:../Dave/Generated/FREERTOS/timers.c **** 	taskEXIT_CRITICAL();
+ 1673              	 .loc 1 960 0
+ 1674 003a FFF7FEFF 	 bl vPortExitCritical
+ 961:../Dave/Generated/FREERTOS/timers.c **** 
+ 962:../Dave/Generated/FREERTOS/timers.c **** 	return xTimerIsInActiveList;
+ 1675              	 .loc 1 962 0
+ 1676 003e 3B69     	 ldr r3,[r7,#16]
+ 963:../Dave/Generated/FREERTOS/timers.c **** } /*lint !e818 Can't be pointer to const due to the typedef. */
+ 1677              	 .loc 1 963 0
+ 1678 0040 1846     	 mov r0,r3
+ 1679 0042 1837     	 adds r7,r7,#24
+ 1680              	 .cfi_def_cfa_offset 8
+ 1681 0044 BD46     	 mov sp,r7
+ 1682              	 .cfi_def_cfa_register 13
+ 1683              	 
+ 1684 0046 80BD     	 pop {r7,pc}
+ 1685              	 .cfi_endproc
+ 1686              	.LFE154:
+ 1688              	 .section .text.pvTimerGetTimerID,"ax",%progbits
+ 1689              	 .align 2
+ 1690              	 .global pvTimerGetTimerID
+ 1691              	 .thumb
+ 1692              	 .thumb_func
+ 1694              	pvTimerGetTimerID:
+ 1695              	.LFB155:
+ 964:../Dave/Generated/FREERTOS/timers.c **** /*-----------------------------------------------------------*/
+ 965:../Dave/Generated/FREERTOS/timers.c **** 
+ 966:../Dave/Generated/FREERTOS/timers.c **** void *pvTimerGetTimerID( const TimerHandle_t xTimer )
+ 967:../Dave/Generated/FREERTOS/timers.c **** {
+ 1696              	 .loc 1 967 0
+ 1697              	 .cfi_startproc
+ 1698              	 
+ 1699              	 
+ 1700 0000 80B5     	 push {r7,lr}
+ 1701              	 .cfi_def_cfa_offset 8
+ 1702              	 .cfi_offset 7,-8
+ 1703              	 .cfi_offset 14,-4
+ 1704 0002 86B0     	 sub sp,sp,#24
+ 1705              	 .cfi_def_cfa_offset 32
+ 1706 0004 00AF     	 add r7,sp,#0
+ 1707              	 .cfi_def_cfa_register 7
+ 1708 0006 7860     	 str r0,[r7,#4]
+ 968:../Dave/Generated/FREERTOS/timers.c **** Timer_t * const pxTimer = ( Timer_t * ) xTimer;
+ 1709              	 .loc 1 968 0
+ 1710 0008 7B68     	 ldr r3,[r7,#4]
+ 1711 000a 7B61     	 str r3,[r7,#20]
+ 969:../Dave/Generated/FREERTOS/timers.c **** void *pvReturn;
+ 970:../Dave/Generated/FREERTOS/timers.c **** 
+ 971:../Dave/Generated/FREERTOS/timers.c **** 	configASSERT( xTimer );
+ 1712              	 .loc 1 971 0
+ 1713 000c 7B68     	 ldr r3,[r7,#4]
+ 1714 000e 002B     	 cmp r3,#0
+ 1715 0010 09D1     	 bne .L116
+ 1716              	.LBB62:
+ 1717              	.LBB63:
+ 1718              	 .loc 2 195 0 discriminator 1
+ 1719              	
+ 1720 0012 4FF0FC03 	 mov r3,#252
+ 1721 0016 83F31188 	 msr basepri,r3
+ 1722 001a BFF36F8F 	 isb 
+ 1723 001e BFF34F8F 	 dsb 
+ 1724              	
+ 1725              	
+ 1726              	 .thumb
+ 1727 0022 FB60     	 str r3,[r7,#12]
+ 1728              	.L117:
+ 1729              	.LBE63:
+ 1730              	.LBE62:
+ 1731              	 .loc 1 971 0 discriminator 1
+ 1732 0024 FEE7     	 b .L117
+ 1733              	.L116:
+ 972:../Dave/Generated/FREERTOS/timers.c **** 
+ 973:../Dave/Generated/FREERTOS/timers.c **** 	taskENTER_CRITICAL();
+ 1734              	 .loc 1 973 0
+ 1735 0026 FFF7FEFF 	 bl vPortEnterCritical
+ 974:../Dave/Generated/FREERTOS/timers.c **** 	{
+ 975:../Dave/Generated/FREERTOS/timers.c **** 		pvReturn = pxTimer->pvTimerID;
+ 1736              	 .loc 1 975 0
+ 1737 002a 7B69     	 ldr r3,[r7,#20]
+ 1738 002c 1B6A     	 ldr r3,[r3,#32]
+ 1739 002e 3B61     	 str r3,[r7,#16]
+ 976:../Dave/Generated/FREERTOS/timers.c **** 	}
+ 977:../Dave/Generated/FREERTOS/timers.c **** 	taskEXIT_CRITICAL();
+ 1740              	 .loc 1 977 0
+ 1741 0030 FFF7FEFF 	 bl vPortExitCritical
+ 978:../Dave/Generated/FREERTOS/timers.c **** 
+ 979:../Dave/Generated/FREERTOS/timers.c **** 	return pvReturn;
+ 1742              	 .loc 1 979 0
+ 1743 0034 3B69     	 ldr r3,[r7,#16]
+ 980:../Dave/Generated/FREERTOS/timers.c **** }
+ 1744              	 .loc 1 980 0
+ 1745 0036 1846     	 mov r0,r3
+ 1746 0038 1837     	 adds r7,r7,#24
+ 1747              	 .cfi_def_cfa_offset 8
+ 1748 003a BD46     	 mov sp,r7
+ 1749              	 .cfi_def_cfa_register 13
+ 1750              	 
+ 1751 003c 80BD     	 pop {r7,pc}
+ 1752              	 .cfi_endproc
+ 1753              	.LFE155:
+ 1755 003e 00BF     	 .section .text.vTimerSetTimerID,"ax",%progbits
+ 1756              	 .align 2
+ 1757              	 .global vTimerSetTimerID
+ 1758              	 .thumb
+ 1759              	 .thumb_func
+ 1761              	vTimerSetTimerID:
+ 1762              	.LFB156:
+ 981:../Dave/Generated/FREERTOS/timers.c **** /*-----------------------------------------------------------*/
+ 982:../Dave/Generated/FREERTOS/timers.c **** 
+ 983:../Dave/Generated/FREERTOS/timers.c **** void vTimerSetTimerID( TimerHandle_t xTimer, void *pvNewID )
+ 984:../Dave/Generated/FREERTOS/timers.c **** {
+ 1763              	 .loc 1 984 0
+ 1764              	 .cfi_startproc
+ 1765              	 
+ 1766              	 
+ 1767 0000 80B5     	 push {r7,lr}
+ 1768              	 .cfi_def_cfa_offset 8
+ 1769              	 .cfi_offset 7,-8
+ 1770              	 .cfi_offset 14,-4
+ 1771 0002 84B0     	 sub sp,sp,#16
+ 1772              	 .cfi_def_cfa_offset 24
+ 1773 0004 00AF     	 add r7,sp,#0
+ 1774              	 .cfi_def_cfa_register 7
+ 1775 0006 7860     	 str r0,[r7,#4]
+ 1776 0008 3960     	 str r1,[r7]
+ 985:../Dave/Generated/FREERTOS/timers.c **** Timer_t * const pxTimer = ( Timer_t * ) xTimer;
+ 1777              	 .loc 1 985 0
+ 1778 000a 7B68     	 ldr r3,[r7,#4]
+ 1779 000c FB60     	 str r3,[r7,#12]
+ 986:../Dave/Generated/FREERTOS/timers.c **** 
+ 987:../Dave/Generated/FREERTOS/timers.c **** 	configASSERT( xTimer );
+ 1780              	 .loc 1 987 0
+ 1781 000e 7B68     	 ldr r3,[r7,#4]
+ 1782 0010 002B     	 cmp r3,#0
+ 1783 0012 09D1     	 bne .L120
+ 1784              	.LBB64:
+ 1785              	.LBB65:
+ 1786              	 .loc 2 195 0 discriminator 1
+ 1787              	
+ 1788 0014 4FF0FC03 	 mov r3,#252
+ 1789 0018 83F31188 	 msr basepri,r3
+ 1790 001c BFF36F8F 	 isb 
+ 1791 0020 BFF34F8F 	 dsb 
+ 1792              	
+ 1793              	
+ 1794              	 .thumb
+ 1795 0024 BB60     	 str r3,[r7,#8]
+ 1796              	.L121:
+ 1797              	.LBE65:
+ 1798              	.LBE64:
+ 1799              	 .loc 1 987 0 discriminator 1
+ 1800 0026 FEE7     	 b .L121
+ 1801              	.L120:
+ 988:../Dave/Generated/FREERTOS/timers.c **** 
+ 989:../Dave/Generated/FREERTOS/timers.c **** 	taskENTER_CRITICAL();
+ 1802              	 .loc 1 989 0
+ 1803 0028 FFF7FEFF 	 bl vPortEnterCritical
+ 990:../Dave/Generated/FREERTOS/timers.c **** 	{
+ 991:../Dave/Generated/FREERTOS/timers.c **** 		pxTimer->pvTimerID = pvNewID;
+ 1804              	 .loc 1 991 0
+ 1805 002c FB68     	 ldr r3,[r7,#12]
+ 1806 002e 3A68     	 ldr r2,[r7]
+ 1807 0030 1A62     	 str r2,[r3,#32]
+ 992:../Dave/Generated/FREERTOS/timers.c **** 	}
+ 993:../Dave/Generated/FREERTOS/timers.c **** 	taskEXIT_CRITICAL();
+ 1808              	 .loc 1 993 0
+ 1809 0032 FFF7FEFF 	 bl vPortExitCritical
+ 994:../Dave/Generated/FREERTOS/timers.c **** }
+ 1810              	 .loc 1 994 0
+ 1811 0036 1037     	 adds r7,r7,#16
+ 1812              	 .cfi_def_cfa_offset 8
+ 1813 0038 BD46     	 mov sp,r7
+ 1814              	 .cfi_def_cfa_register 13
+ 1815              	 
+ 1816 003a 80BD     	 pop {r7,pc}
+ 1817              	 .cfi_endproc
+ 1818              	.LFE156:
+ 1820              	 .section .text.xTimerPendFunctionCallFromISR,"ax",%progbits
+ 1821              	 .align 2
+ 1822              	 .global xTimerPendFunctionCallFromISR
+ 1823              	 .thumb
+ 1824              	 .thumb_func
+ 1826              	xTimerPendFunctionCallFromISR:
+ 1827              	.LFB157:
+ 995:../Dave/Generated/FREERTOS/timers.c **** /*-----------------------------------------------------------*/
+ 996:../Dave/Generated/FREERTOS/timers.c **** 
+ 997:../Dave/Generated/FREERTOS/timers.c **** #if( INCLUDE_xTimerPendFunctionCall == 1 )
+ 998:../Dave/Generated/FREERTOS/timers.c **** 
+ 999:../Dave/Generated/FREERTOS/timers.c **** 	BaseType_t xTimerPendFunctionCallFromISR( PendedFunction_t xFunctionToPend, void *pvParameter1, ui
+1000:../Dave/Generated/FREERTOS/timers.c **** 	{
+ 1828              	 .loc 1 1000 0
+ 1829              	 .cfi_startproc
+ 1830              	 
+ 1831              	 
+ 1832 0000 80B5     	 push {r7,lr}
+ 1833              	 .cfi_def_cfa_offset 8
+ 1834              	 .cfi_offset 7,-8
+ 1835              	 .cfi_offset 14,-4
+ 1836 0002 8AB0     	 sub sp,sp,#40
+ 1837              	 .cfi_def_cfa_offset 48
+ 1838 0004 00AF     	 add r7,sp,#0
+ 1839              	 .cfi_def_cfa_register 7
+ 1840 0006 F860     	 str r0,[r7,#12]
+ 1841 0008 B960     	 str r1,[r7,#8]
+ 1842 000a 7A60     	 str r2,[r7,#4]
+ 1843 000c 3B60     	 str r3,[r7]
+1001:../Dave/Generated/FREERTOS/timers.c **** 	DaemonTaskMessage_t xMessage;
+1002:../Dave/Generated/FREERTOS/timers.c **** 	BaseType_t xReturn;
+1003:../Dave/Generated/FREERTOS/timers.c **** 
+1004:../Dave/Generated/FREERTOS/timers.c **** 		/* Complete the message with the function parameters and post it to the
+1005:../Dave/Generated/FREERTOS/timers.c **** 		daemon task. */
+1006:../Dave/Generated/FREERTOS/timers.c **** 		xMessage.xMessageID = tmrCOMMAND_EXECUTE_CALLBACK_FROM_ISR;
+ 1844              	 .loc 1 1006 0
+ 1845 000e 6FF00103 	 mvn r3,#1
+ 1846 0012 7B61     	 str r3,[r7,#20]
+1007:../Dave/Generated/FREERTOS/timers.c **** 		xMessage.u.xCallbackParameters.pxCallbackFunction = xFunctionToPend;
+ 1847              	 .loc 1 1007 0
+ 1848 0014 FB68     	 ldr r3,[r7,#12]
+ 1849 0016 BB61     	 str r3,[r7,#24]
+1008:../Dave/Generated/FREERTOS/timers.c **** 		xMessage.u.xCallbackParameters.pvParameter1 = pvParameter1;
+ 1850              	 .loc 1 1008 0
+ 1851 0018 BB68     	 ldr r3,[r7,#8]
+ 1852 001a FB61     	 str r3,[r7,#28]
+1009:../Dave/Generated/FREERTOS/timers.c **** 		xMessage.u.xCallbackParameters.ulParameter2 = ulParameter2;
+ 1853              	 .loc 1 1009 0
+ 1854 001c 7B68     	 ldr r3,[r7,#4]
+ 1855 001e 3B62     	 str r3,[r7,#32]
+1010:../Dave/Generated/FREERTOS/timers.c **** 
+1011:../Dave/Generated/FREERTOS/timers.c **** 		xReturn = xQueueSendFromISR( xTimerQueue, &xMessage, pxHigherPriorityTaskWoken );
+ 1856              	 .loc 1 1011 0
+ 1857 0020 074B     	 ldr r3,.L124
+ 1858 0022 1A68     	 ldr r2,[r3]
+ 1859 0024 07F11403 	 add r3,r7,#20
+ 1860 0028 1046     	 mov r0,r2
+ 1861 002a 1946     	 mov r1,r3
+ 1862 002c 3A68     	 ldr r2,[r7]
+ 1863 002e 0023     	 movs r3,#0
+ 1864 0030 FFF7FEFF 	 bl xQueueGenericSendFromISR
+ 1865 0034 7862     	 str r0,[r7,#36]
+1012:../Dave/Generated/FREERTOS/timers.c **** 
+1013:../Dave/Generated/FREERTOS/timers.c **** 		tracePEND_FUNC_CALL_FROM_ISR( xFunctionToPend, pvParameter1, ulParameter2, xReturn );
+1014:../Dave/Generated/FREERTOS/timers.c **** 
+1015:../Dave/Generated/FREERTOS/timers.c **** 		return xReturn;
+ 1866              	 .loc 1 1015 0
+ 1867 0036 7B6A     	 ldr r3,[r7,#36]
+1016:../Dave/Generated/FREERTOS/timers.c **** 	}
+ 1868              	 .loc 1 1016 0
+ 1869 0038 1846     	 mov r0,r3
+ 1870 003a 2837     	 adds r7,r7,#40
+ 1871              	 .cfi_def_cfa_offset 8
+ 1872 003c BD46     	 mov sp,r7
+ 1873              	 .cfi_def_cfa_register 13
+ 1874              	 
+ 1875 003e 80BD     	 pop {r7,pc}
+ 1876              	.L125:
+ 1877              	 .align 2
+ 1878              	.L124:
+ 1879 0040 00000000 	 .word xTimerQueue
+ 1880              	 .cfi_endproc
+ 1881              	.LFE157:
+ 1883              	 .section .text.xTimerPendFunctionCall,"ax",%progbits
+ 1884              	 .align 2
+ 1885              	 .global xTimerPendFunctionCall
+ 1886              	 .thumb
+ 1887              	 .thumb_func
+ 1889              	xTimerPendFunctionCall:
+ 1890              	.LFB158:
+1017:../Dave/Generated/FREERTOS/timers.c **** 
+1018:../Dave/Generated/FREERTOS/timers.c **** #endif /* INCLUDE_xTimerPendFunctionCall */
+1019:../Dave/Generated/FREERTOS/timers.c **** /*-----------------------------------------------------------*/
+1020:../Dave/Generated/FREERTOS/timers.c **** 
+1021:../Dave/Generated/FREERTOS/timers.c **** #if( INCLUDE_xTimerPendFunctionCall == 1 )
+1022:../Dave/Generated/FREERTOS/timers.c **** 
+1023:../Dave/Generated/FREERTOS/timers.c **** 	BaseType_t xTimerPendFunctionCall( PendedFunction_t xFunctionToPend, void *pvParameter1, uint32_t 
+1024:../Dave/Generated/FREERTOS/timers.c **** 	{
+ 1891              	 .loc 1 1024 0
+ 1892              	 .cfi_startproc
+ 1893              	 
+ 1894              	 
+ 1895 0000 80B5     	 push {r7,lr}
+ 1896              	 .cfi_def_cfa_offset 8
+ 1897              	 .cfi_offset 7,-8
+ 1898              	 .cfi_offset 14,-4
+ 1899 0002 8AB0     	 sub sp,sp,#40
+ 1900              	 .cfi_def_cfa_offset 48
+ 1901 0004 00AF     	 add r7,sp,#0
+ 1902              	 .cfi_def_cfa_register 7
+ 1903 0006 F860     	 str r0,[r7,#12]
+ 1904 0008 B960     	 str r1,[r7,#8]
+ 1905 000a 7A60     	 str r2,[r7,#4]
+ 1906 000c 3B60     	 str r3,[r7]
+1025:../Dave/Generated/FREERTOS/timers.c **** 	DaemonTaskMessage_t xMessage;
+1026:../Dave/Generated/FREERTOS/timers.c **** 	BaseType_t xReturn;
+1027:../Dave/Generated/FREERTOS/timers.c **** 
+1028:../Dave/Generated/FREERTOS/timers.c **** 		/* This function can only be called after a timer has been created or
+1029:../Dave/Generated/FREERTOS/timers.c **** 		after the scheduler has been started because, until then, the timer
+1030:../Dave/Generated/FREERTOS/timers.c **** 		queue does not exist. */
+1031:../Dave/Generated/FREERTOS/timers.c **** 		configASSERT( xTimerQueue );
+ 1907              	 .loc 1 1031 0
+ 1908 000e 134B     	 ldr r3,.L130
+ 1909 0010 1B68     	 ldr r3,[r3]
+ 1910 0012 002B     	 cmp r3,#0
+ 1911 0014 09D1     	 bne .L127
+ 1912              	.LBB66:
+ 1913              	.LBB67:
+ 1914              	 .loc 2 195 0 discriminator 1
+ 1915              	
+ 1916 0016 4FF0FC03 	 mov r3,#252
+ 1917 001a 83F31188 	 msr basepri,r3
+ 1918 001e BFF36F8F 	 isb 
+ 1919 0022 BFF34F8F 	 dsb 
+ 1920              	
+ 1921              	
+ 1922              	 .thumb
+ 1923 0026 3B62     	 str r3,[r7,#32]
+ 1924              	.L128:
+ 1925              	.LBE67:
+ 1926              	.LBE66:
+ 1927              	 .loc 1 1031 0 discriminator 1
+ 1928 0028 FEE7     	 b .L128
+ 1929              	.L127:
+1032:../Dave/Generated/FREERTOS/timers.c **** 
+1033:../Dave/Generated/FREERTOS/timers.c **** 		/* Complete the message with the function parameters and post it to the
+1034:../Dave/Generated/FREERTOS/timers.c **** 		daemon task. */
+1035:../Dave/Generated/FREERTOS/timers.c **** 		xMessage.xMessageID = tmrCOMMAND_EXECUTE_CALLBACK;
+ 1930              	 .loc 1 1035 0
+ 1931 002a 4FF0FF33 	 mov r3,#-1
+ 1932 002e 3B61     	 str r3,[r7,#16]
+1036:../Dave/Generated/FREERTOS/timers.c **** 		xMessage.u.xCallbackParameters.pxCallbackFunction = xFunctionToPend;
+ 1933              	 .loc 1 1036 0
+ 1934 0030 FB68     	 ldr r3,[r7,#12]
+ 1935 0032 7B61     	 str r3,[r7,#20]
+1037:../Dave/Generated/FREERTOS/timers.c **** 		xMessage.u.xCallbackParameters.pvParameter1 = pvParameter1;
+ 1936              	 .loc 1 1037 0
+ 1937 0034 BB68     	 ldr r3,[r7,#8]
+ 1938 0036 BB61     	 str r3,[r7,#24]
+1038:../Dave/Generated/FREERTOS/timers.c **** 		xMessage.u.xCallbackParameters.ulParameter2 = ulParameter2;
+ 1939              	 .loc 1 1038 0
+ 1940 0038 7B68     	 ldr r3,[r7,#4]
+ 1941 003a FB61     	 str r3,[r7,#28]
+1039:../Dave/Generated/FREERTOS/timers.c **** 
+1040:../Dave/Generated/FREERTOS/timers.c **** 		xReturn = xQueueSendToBack( xTimerQueue, &xMessage, xTicksToWait );
+ 1942              	 .loc 1 1040 0
+ 1943 003c 074B     	 ldr r3,.L130
+ 1944 003e 1A68     	 ldr r2,[r3]
+ 1945 0040 07F11003 	 add r3,r7,#16
+ 1946 0044 1046     	 mov r0,r2
+ 1947 0046 1946     	 mov r1,r3
+ 1948 0048 3A68     	 ldr r2,[r7]
+ 1949 004a 0023     	 movs r3,#0
+ 1950 004c FFF7FEFF 	 bl xQueueGenericSend
+ 1951 0050 7862     	 str r0,[r7,#36]
+1041:../Dave/Generated/FREERTOS/timers.c **** 
+1042:../Dave/Generated/FREERTOS/timers.c **** 		tracePEND_FUNC_CALL( xFunctionToPend, pvParameter1, ulParameter2, xReturn );
+1043:../Dave/Generated/FREERTOS/timers.c **** 
+1044:../Dave/Generated/FREERTOS/timers.c **** 		return xReturn;
+ 1952              	 .loc 1 1044 0
+ 1953 0052 7B6A     	 ldr r3,[r7,#36]
+1045:../Dave/Generated/FREERTOS/timers.c **** 	}
+ 1954              	 .loc 1 1045 0
+ 1955 0054 1846     	 mov r0,r3
+ 1956 0056 2837     	 adds r7,r7,#40
+ 1957              	 .cfi_def_cfa_offset 8
+ 1958 0058 BD46     	 mov sp,r7
+ 1959              	 .cfi_def_cfa_register 13
+ 1960              	 
+ 1961 005a 80BD     	 pop {r7,pc}
+ 1962              	.L131:
+ 1963              	 .align 2
+ 1964              	.L130:
+ 1965 005c 00000000 	 .word xTimerQueue
+ 1966              	 .cfi_endproc
+ 1967              	.LFE158:
+ 1969              	 .section .text.uxTimerGetTimerNumber,"ax",%progbits
+ 1970              	 .align 2
+ 1971              	 .global uxTimerGetTimerNumber
+ 1972              	 .thumb
+ 1973              	 .thumb_func
+ 1975              	uxTimerGetTimerNumber:
+ 1976              	.LFB159:
+1046:../Dave/Generated/FREERTOS/timers.c **** 
+1047:../Dave/Generated/FREERTOS/timers.c **** #endif /* INCLUDE_xTimerPendFunctionCall */
+1048:../Dave/Generated/FREERTOS/timers.c **** /*-----------------------------------------------------------*/
+1049:../Dave/Generated/FREERTOS/timers.c **** 
+1050:../Dave/Generated/FREERTOS/timers.c **** #if ( configUSE_TRACE_FACILITY == 1 )
+1051:../Dave/Generated/FREERTOS/timers.c **** 
+1052:../Dave/Generated/FREERTOS/timers.c **** 	UBaseType_t uxTimerGetTimerNumber( TimerHandle_t xTimer )
+1053:../Dave/Generated/FREERTOS/timers.c **** 	{
+ 1977              	 .loc 1 1053 0
+ 1978              	 .cfi_startproc
+ 1979              	 
+ 1980              	 
+ 1981              	 
+ 1982 0000 80B4     	 push {r7}
+ 1983              	 .cfi_def_cfa_offset 4
+ 1984              	 .cfi_offset 7,-4
+ 1985 0002 83B0     	 sub sp,sp,#12
+ 1986              	 .cfi_def_cfa_offset 16
+ 1987 0004 00AF     	 add r7,sp,#0
+ 1988              	 .cfi_def_cfa_register 7
+ 1989 0006 7860     	 str r0,[r7,#4]
+1054:../Dave/Generated/FREERTOS/timers.c **** 		return ( ( Timer_t * ) xTimer )->uxTimerNumber;
+ 1990              	 .loc 1 1054 0
+ 1991 0008 7B68     	 ldr r3,[r7,#4]
+ 1992 000a 9B6A     	 ldr r3,[r3,#40]
+1055:../Dave/Generated/FREERTOS/timers.c **** 	}
+ 1993              	 .loc 1 1055 0
+ 1994 000c 1846     	 mov r0,r3
+ 1995 000e 0C37     	 adds r7,r7,#12
+ 1996              	 .cfi_def_cfa_offset 4
+ 1997 0010 BD46     	 mov sp,r7
+ 1998              	 .cfi_def_cfa_register 13
+ 1999              	 
+ 2000 0012 5DF8047B 	 ldr r7,[sp],#4
+ 2001              	 .cfi_restore 7
+ 2002              	 .cfi_def_cfa_offset 0
+ 2003 0016 7047     	 bx lr
+ 2004              	 .cfi_endproc
+ 2005              	.LFE159:
+ 2007              	 .section .text.vTimerSetTimerNumber,"ax",%progbits
+ 2008              	 .align 2
+ 2009              	 .global vTimerSetTimerNumber
+ 2010              	 .thumb
+ 2011              	 .thumb_func
+ 2013              	vTimerSetTimerNumber:
+ 2014              	.LFB160:
+1056:../Dave/Generated/FREERTOS/timers.c **** 
+1057:../Dave/Generated/FREERTOS/timers.c **** #endif /* configUSE_TRACE_FACILITY */
+1058:../Dave/Generated/FREERTOS/timers.c **** /*-----------------------------------------------------------*/
+1059:../Dave/Generated/FREERTOS/timers.c **** 
+1060:../Dave/Generated/FREERTOS/timers.c **** #if ( configUSE_TRACE_FACILITY == 1 )
+1061:../Dave/Generated/FREERTOS/timers.c **** 
+1062:../Dave/Generated/FREERTOS/timers.c **** 	void vTimerSetTimerNumber( TimerHandle_t xTimer, UBaseType_t uxTimerNumber )
+1063:../Dave/Generated/FREERTOS/timers.c **** 	{
+ 2015              	 .loc 1 1063 0
+ 2016              	 .cfi_startproc
+ 2017              	 
+ 2018              	 
+ 2019              	 
+ 2020 0000 80B4     	 push {r7}
+ 2021              	 .cfi_def_cfa_offset 4
+ 2022              	 .cfi_offset 7,-4
+ 2023 0002 83B0     	 sub sp,sp,#12
+ 2024              	 .cfi_def_cfa_offset 16
+ 2025 0004 00AF     	 add r7,sp,#0
+ 2026              	 .cfi_def_cfa_register 7
+ 2027 0006 7860     	 str r0,[r7,#4]
+ 2028 0008 3960     	 str r1,[r7]
+1064:../Dave/Generated/FREERTOS/timers.c **** 		( ( Timer_t * ) xTimer )->uxTimerNumber = uxTimerNumber;
+ 2029              	 .loc 1 1064 0
+ 2030 000a 7B68     	 ldr r3,[r7,#4]
+ 2031 000c 3A68     	 ldr r2,[r7]
+ 2032 000e 9A62     	 str r2,[r3,#40]
+1065:../Dave/Generated/FREERTOS/timers.c **** 	}
+ 2033              	 .loc 1 1065 0
+ 2034 0010 0C37     	 adds r7,r7,#12
+ 2035              	 .cfi_def_cfa_offset 4
+ 2036 0012 BD46     	 mov sp,r7
+ 2037              	 .cfi_def_cfa_register 13
+ 2038              	 
+ 2039 0014 5DF8047B 	 ldr r7,[sp],#4
+ 2040              	 .cfi_restore 7
+ 2041              	 .cfi_def_cfa_offset 0
+ 2042 0018 7047     	 bx lr
+ 2043              	 .cfi_endproc
+ 2044              	.LFE160:
+ 2046 001a 00BF     	 .section .bss.xLastTime.7744,"aw",%nobits
+ 2047              	 .align 2
+ 2050              	xLastTime.7744:
+ 2051 0000 00000000 	 .space 4
+ 2052              	 .text
+ 2053              	.Letext0:
+ 2054              	 .file 3 "c:\\dave\\dave-ide-4.4.2-64bit\\eclipse\\arm-gcc-49\\arm-none-eabi\\include\\machine\\_default_types.h"
+ 2055              	 .file 4 "c:\\dave\\dave-ide-4.4.2-64bit\\eclipse\\arm-gcc-49\\arm-none-eabi\\include\\stdint.h"
+ 2056              	 .file 5 "../Dave/Generated/FREERTOS/list.h"
+ 2057              	 .file 6 "../Dave/Generated/FREERTOS/task.h"
+ 2058              	 .file 7 "../Dave/Generated/FREERTOS/queue.h"
+ 2059              	 .file 8 "../Dave/Generated/FREERTOS/timers.h"
+ 2060              	 .file 9 "C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Libraries/CMSIS/Include/cmsis_gcc.h"
+ 2061              	 .file 10 "C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Libraries/CMSIS/Include/core_cm4.h"
+DEFINED SYMBOLS
+                            *ABS*:00000000 timers.c
+    {standard input}:20     .bss.xActiveTimerList1:00000000 $d
+    {standard input}:23     .bss.xActiveTimerList1:00000000 xActiveTimerList1
+    {standard input}:26     .bss.xActiveTimerList2:00000000 $d
+    {standard input}:29     .bss.xActiveTimerList2:00000000 xActiveTimerList2
+    {standard input}:32     .bss.pxCurrentTimerList:00000000 $d
+    {standard input}:35     .bss.pxCurrentTimerList:00000000 pxCurrentTimerList
+    {standard input}:38     .bss.pxOverflowTimerList:00000000 $d
+    {standard input}:41     .bss.pxOverflowTimerList:00000000 pxOverflowTimerList
+    {standard input}:44     .bss.xTimerQueue:00000000 $d
+    {standard input}:47     .bss.xTimerQueue:00000000 xTimerQueue
+    {standard input}:50     .bss.xTimerTaskHandle:00000000 $d
+    {standard input}:53     .bss.xTimerTaskHandle:00000000 xTimerTaskHandle
+    {standard input}:56     .rodata:00000000 $d
+    {standard input}:60     .text.xTimerCreateTimerTask:00000000 $t
+    {standard input}:65     .text.xTimerCreateTimerTask:00000000 xTimerCreateTimerTask
+    {standard input}:1547   .text.prvCheckForValidListAndQueue:00000000 prvCheckForValidListAndQueue
+    {standard input}:138    .text.xTimerCreateTimerTask:00000054 $d
+    {standard input}:773    .text.prvTimerTask:00000000 prvTimerTask
+    {standard input}:146    .text.xTimerCreate:00000000 $t
+    {standard input}:151    .text.xTimerCreate:00000000 xTimerCreate
+    {standard input}:206    .text.prvInitialiseNewTimer:00000000 prvInitialiseNewTimer
+    {standard input}:202    .text.prvInitialiseNewTimer:00000000 $t
+    {standard input}:289    .text.xTimerGenericCommand:00000000 $t
+    {standard input}:294    .text.xTimerGenericCommand:00000000 xTimerGenericCommand
+    {standard input}:408    .text.xTimerGenericCommand:000000a0 $d
+    {standard input}:413    .text.xTimerGetTimerDaemonTaskHandle:00000000 $t
+    {standard input}:418    .text.xTimerGetTimerDaemonTaskHandle:00000000 xTimerGetTimerDaemonTaskHandle
+    {standard input}:472    .text.xTimerGetTimerDaemonTaskHandle:00000034 $d
+    {standard input}:477    .text.xTimerGetPeriod:00000000 $t
+    {standard input}:482    .text.xTimerGetPeriod:00000000 xTimerGetPeriod
+    {standard input}:540    .text.xTimerGetExpiryTime:00000000 $t
+    {standard input}:545    .text.xTimerGetExpiryTime:00000000 xTimerGetExpiryTime
+    {standard input}:606    .text.pcTimerGetName:00000000 $t
+    {standard input}:611    .text.pcTimerGetName:00000000 pcTimerGetName
+    {standard input}:669    .text.prvProcessExpiredTimer:00000000 $t
+    {standard input}:673    .text.prvProcessExpiredTimer:00000000 prvProcessExpiredTimer
+    {standard input}:1054   .text.prvInsertTimerInActiveList:00000000 prvInsertTimerInActiveList
+    {standard input}:764    .text.prvProcessExpiredTimer:0000007c $d
+    {standard input}:769    .text.prvTimerTask:00000000 $t
+    {standard input}:922    .text.prvGetNextExpireTime:00000000 prvGetNextExpireTime
+    {standard input}:811    .text.prvProcessTimerOrBlockTask:00000000 prvProcessTimerOrBlockTask
+    {standard input}:1158   .text.prvProcessReceivedCommands:00000000 prvProcessReceivedCommands
+    {standard input}:807    .text.prvProcessTimerOrBlockTask:00000000 $t
+    {standard input}:991    .text.prvSampleTimeNow:00000000 prvSampleTimeNow
+    {standard input}:911    .text.prvProcessTimerOrBlockTask:00000090 $d
+    {standard input}:918    .text.prvGetNextExpireTime:00000000 $t
+    {standard input}:982    .text.prvGetNextExpireTime:00000044 $d
+    {standard input}:987    .text.prvSampleTimeNow:00000000 $t
+    {standard input}:1400   .text.prvSwitchTimerLists:00000000 prvSwitchTimerLists
+    {standard input}:1045   .text.prvSampleTimeNow:0000003c $d
+    {standard input}:2050   .bss.xLastTime.7744:00000000 xLastTime.7744
+    {standard input}:1050   .text.prvInsertTimerInActiveList:00000000 $t
+    {standard input}:1148   .text.prvInsertTimerInActiveList:0000007c $d
+    {standard input}:1154   .text.prvProcessReceivedCommands:00000000 $t
+    {standard input}:1249   .text.prvProcessReceivedCommands:00000074 $d
+    {standard input}:1259   .text.prvProcessReceivedCommands:0000009c $t
+    {standard input}:1391   .text.prvProcessReceivedCommands:0000015c $d
+    {standard input}:1396   .text.prvSwitchTimerLists:00000000 $t
+    {standard input}:1533   .text.prvSwitchTimerLists:000000b8 $d
+    {standard input}:1543   .text.prvCheckForValidListAndQueue:00000000 $t
+    {standard input}:1607   .text.prvCheckForValidListAndQueue:00000054 $d
+    {standard input}:1617   .text.xTimerIsTimerActive:00000000 $t
+    {standard input}:1622   .text.xTimerIsTimerActive:00000000 xTimerIsTimerActive
+    {standard input}:1689   .text.pvTimerGetTimerID:00000000 $t
+    {standard input}:1694   .text.pvTimerGetTimerID:00000000 pvTimerGetTimerID
+    {standard input}:1756   .text.vTimerSetTimerID:00000000 $t
+    {standard input}:1761   .text.vTimerSetTimerID:00000000 vTimerSetTimerID
+    {standard input}:1821   .text.xTimerPendFunctionCallFromISR:00000000 $t
+    {standard input}:1826   .text.xTimerPendFunctionCallFromISR:00000000 xTimerPendFunctionCallFromISR
+    {standard input}:1879   .text.xTimerPendFunctionCallFromISR:00000040 $d
+    {standard input}:1884   .text.xTimerPendFunctionCall:00000000 $t
+    {standard input}:1889   .text.xTimerPendFunctionCall:00000000 xTimerPendFunctionCall
+    {standard input}:1965   .text.xTimerPendFunctionCall:0000005c $d
+    {standard input}:1970   .text.uxTimerGetTimerNumber:00000000 $t
+    {standard input}:1975   .text.uxTimerGetTimerNumber:00000000 uxTimerGetTimerNumber
+    {standard input}:2008   .text.vTimerSetTimerNumber:00000000 $t
+    {standard input}:2013   .text.vTimerSetTimerNumber:00000000 vTimerSetTimerNumber
+    {standard input}:2047   .bss.xLastTime.7744:00000000 $d
+                     .debug_frame:00000010 $d
+
+UNDEFINED SYMBOLS
+xTaskCreate
+pvPortMalloc
+vListInitialiseItem
+xTaskGetSchedulerState
+xQueueGenericSend
+xQueueGenericSendFromISR
+uxListRemove
+vTaskSuspendAll
+xTaskResumeAll
+vQueueWaitForMessageRestricted
+xTaskGetTickCount
+vListInsert
+vPortFree
+xQueueReceive
+vPortEnterCritical
+vListInitialise
+xQueueGenericCreate
+vQueueAddToRegistry
+vPortExitCritical

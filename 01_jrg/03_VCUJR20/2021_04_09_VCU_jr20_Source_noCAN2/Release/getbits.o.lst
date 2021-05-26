@@ -1,0 +1,143 @@
+   1              	 .syntax unified
+   2              	 .cpu cortex-m4
+   3              	 .eabi_attribute 27,3
+   4              	 .fpu fpv4-sp-d16
+   5              	 .eabi_attribute 20,1
+   6              	 .eabi_attribute 21,1
+   7              	 .eabi_attribute 23,3
+   8              	 .eabi_attribute 24,1
+   9              	 .eabi_attribute 25,1
+  10              	 .eabi_attribute 26,1
+  11              	 .eabi_attribute 30,4
+  12              	 .eabi_attribute 34,1
+  13              	 .eabi_attribute 18,4
+  14              	 .thumb
+  15              	 .file "getbits.c"
+  16              	 .section .text.getbits,"ax",%progbits
+  17              	 .align 1
+  18              	 .global getbits
+  19              	 .thumb
+  20              	 .thumb_func
+  22              	getbits:
+  23              	 
+  24              	 
+  25              	 
+  26 0000 0131     	 adds r1,r1,#1
+  27 0002 891A     	 subs r1,r1,r2
+  28 0004 4FF0FF33 	 mov r3,#-1
+  29 0008 C840     	 lsrs r0,r0,r1
+  30 000a 9340     	 lsls r3,r3,r2
+  31 000c 20EA0300 	 bic r0,r0,r3
+  32 0010 7047     	 bx lr
+  34              	 .global __aeabi_llsr
+  35              	 .global __aeabi_llsl
+  36              	 .section .text.getbits64,"ax",%progbits
+  37              	 .align 1
+  38              	 .global getbits64
+  39              	 .thumb
+  40              	 .thumb_func
+  42              	getbits64:
+  43              	 
+  44              	 
+  45 0000 0132     	 adds r2,r2,#1
+  46 0002 38B5     	 push {r3,r4,r5,lr}
+  47 0004 D21A     	 subs r2,r2,r3
+  48 0006 1C46     	 mov r4,r3
+  49 0008 FFF7FEFF 	 bl __aeabi_llsr
+  50 000c 2246     	 mov r2,r4
+  51 000e 0546     	 mov r5,r0
+  52 0010 4FF0FF31 	 mov r1,#-1
+  53 0014 4FF0FF30 	 mov r0,#-1
+  54 0018 FFF7FEFF 	 bl __aeabi_llsl
+  55 001c 25EA0000 	 bic r0,r5,r0
+  56 0020 38BD     	 pop {r3,r4,r5,pc}
+  58              	 .section .text.reverse,"ax",%progbits
+  59              	 .align 1
+  60              	 .global reverse
+  61              	 .thumb
+  62              	 .thumb_func
+  64              	reverse:
+  65              	 
+  66              	 
+  67              	 
+  68 0000 0201     	 lsls r2,r0,#4
+  69 0002 C0F30311 	 ubfx r1,r0,#4,#4
+  70 0006 D2B2     	 uxtb r2,r2
+  71 0008 0A43     	 orrs r2,r2,r1
+  72 000a 02F0CC03 	 and r3,r2,#204
+  73 000e 02F03302 	 and r2,r2,#51
+  74 0012 9200     	 lsls r2,r2,#2
+  75 0014 42EA9303 	 orr r3,r2,r3,lsr#2
+  76 0018 03F0AA00 	 and r0,r3,#170
+  77 001c 03F05503 	 and r3,r3,#85
+  78 0020 5B00     	 lsls r3,r3,#1
+  79 0022 43EA5000 	 orr r0,r3,r0,lsr#1
+  80 0026 7047     	 bx lr
+  82              	 .section .text.shift,"ax",%progbits
+  83              	 .align 1
+  84              	 .global shift
+  85              	 .thumb
+  86              	 .thumb_func
+  88              	shift:
+  89              	 
+  90              	 
+  91              	 
+  92 0000 41EA0020 	 orr r0,r1,r0,lsl#8
+  93 0004 7047     	 bx lr
+  95              	 .section .text.setbitTrue,"ax",%progbits
+  96              	 .align 1
+  97              	 .global setbitTrue
+  98              	 .thumb
+  99              	 .thumb_func
+ 101              	setbitTrue:
+ 102              	 
+ 103              	 
+ 104 0000 0A46     	 mov r2,r1
+ 105 0002 10B5     	 push {r4,lr}
+ 106 0004 0021     	 movs r1,#0
+ 107 0006 0446     	 mov r4,r0
+ 108 0008 0120     	 movs r0,#1
+ 109 000a FFF7FEFF 	 bl __aeabi_llsl
+ 110 000e D4E90023 	 ldrd r2,[r4]
+ 111 0012 1043     	 orrs r0,r0,r2
+ 112 0014 1943     	 orrs r1,r1,r3
+ 113 0016 C4E90001 	 strd r0,[r4]
+ 114 001a 10BD     	 pop {r4,pc}
+ 116              	 .section .text.setbitFalse,"ax",%progbits
+ 117              	 .align 1
+ 118              	 .global setbitFalse
+ 119              	 .thumb
+ 120              	 .thumb_func
+ 122              	setbitFalse:
+ 123              	 
+ 124              	 
+ 125 0000 0A46     	 mov r2,r1
+ 126 0002 10B5     	 push {r4,lr}
+ 127 0004 0021     	 movs r1,#0
+ 128 0006 0446     	 mov r4,r0
+ 129 0008 0120     	 movs r0,#1
+ 130 000a FFF7FEFF 	 bl __aeabi_llsl
+ 131 000e D4E90023 	 ldrd r2,[r4]
+ 132 0012 22EA0000 	 bic r0,r2,r0
+ 133 0016 23EA0101 	 bic r1,r3,r1
+ 134 001a C4E90001 	 strd r0,[r4]
+ 135 001e 10BD     	 pop {r4,pc}
+ 137              	 .ident "GCC: (GNU Tools for ARM Embedded Processors) 4.9.3 20141119 (release) [ARM/embedded-4_9-branch revision 218278]"
+DEFINED SYMBOLS
+                            *ABS*:00000000 getbits.c
+    {standard input}:17     .text.getbits:00000000 $t
+    {standard input}:22     .text.getbits:00000000 getbits
+    {standard input}:37     .text.getbits64:00000000 $t
+    {standard input}:42     .text.getbits64:00000000 getbits64
+    {standard input}:59     .text.reverse:00000000 $t
+    {standard input}:64     .text.reverse:00000000 reverse
+    {standard input}:83     .text.shift:00000000 $t
+    {standard input}:88     .text.shift:00000000 shift
+    {standard input}:96     .text.setbitTrue:00000000 $t
+    {standard input}:101    .text.setbitTrue:00000000 setbitTrue
+    {standard input}:117    .text.setbitFalse:00000000 $t
+    {standard input}:122    .text.setbitFalse:00000000 setbitFalse
+
+UNDEFINED SYMBOLS
+__aeabi_llsr
+__aeabi_llsl

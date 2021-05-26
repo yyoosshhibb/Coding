@@ -1,0 +1,797 @@
+   1              	 .syntax unified
+   2              	 .cpu cortex-m4
+   3              	 .eabi_attribute 27,3
+   4              	 .fpu fpv4-sp-d16
+   5              	 .eabi_attribute 20,1
+   6              	 .eabi_attribute 21,1
+   7              	 .eabi_attribute 23,3
+   8              	 .eabi_attribute 24,1
+   9              	 .eabi_attribute 25,1
+  10              	 .eabi_attribute 26,1
+  11              	 .eabi_attribute 30,6
+  12              	 .eabi_attribute 34,1
+  13              	 .eabi_attribute 18,4
+  14              	 .thumb
+  15              	 .file "UnitConversion.c"
+  16              	 .text
+  17              	.Ltext0:
+  18              	 .cfi_sections .debug_frame
+  19              	 .comm time,4,4
+  20              	 .comm T_Oil,44,4
+  21              	 .comm T_Water,44,4
+  22              	 .comm p_Oil,44,4
+  23              	 .comm p_Pneu,44,4
+  24              	 .comm x_DP_RL,44,4
+  25              	 .comm x_DP_RR,44,4
+  26              	 .comm x_RH_RL,44,4
+  27              	 .comm x_RH_RR,44,4
+  28              	 .comm f_LC_RL,44,4
+  29              	 .comm f_LC_RR,44,4
+  30              	 .comm T_Board,44,4
+  31              	 .comm u_12V_Meas,44,4
+  32              	 .comm u_5V_ANA_Meas,44,4
+  33              	 .comm u_OUT1_Meas,44,4
+  34              	 .comm u_OUT2_Meas,44,4
+  35              	 .comm NTC1,44,4
+  36              	 .global __aeabi_f2d
+  37              	 .global __aeabi_dmul
+  38              	 .global __aeabi_dadd
+  39              	 .global __aeabi_d2uiz
+  40              	 .global __aeabi_dsub
+  41              	 .global __aeabi_ddiv
+  42              	 .section .text.UnitConversion,"ax",%progbits
+  43              	 .align 2
+  44              	 .global UnitConversion
+  45              	 .thumb
+  46              	 .thumb_func
+  48              	UnitConversion:
+  49              	.LFB387:
+  50              	 .file 1 "../UnitConversion.c"
+   1:../UnitConversion.c **** /*
+   2:../UnitConversion.c ****  * UnitConversion.c
+   3:../UnitConversion.c ****  *
+   4:../UnitConversion.c ****  *  Created on: 2 Dec 2019
+   5:../UnitConversion.c ****  *      Author: Valentin Keck
+   6:../UnitConversion.c ****  */
+   7:../UnitConversion.c **** #include "Header.h"
+   8:../UnitConversion.c **** #include "ANA_Init.h"
+   9:../UnitConversion.c **** 
+  10:../UnitConversion.c **** #define NTC_LUT_NB_POINT 6
+  11:../UnitConversion.c **** 
+  12:../UnitConversion.c **** void UnitConversion(Analog_Sensor_t *const Sensor)
+  13:../UnitConversion.c **** {
+  51              	 .loc 1 13 0
+  52              	 .cfi_startproc
+  53              	 
+  54              	 
+  55 0000 80B5     	 push {r7,lr}
+  56              	 .cfi_def_cfa_offset 8
+  57              	 .cfi_offset 7,-8
+  58              	 .cfi_offset 14,-4
+  59 0002 96B0     	 sub sp,sp,#88
+  60              	 .cfi_def_cfa_offset 96
+  61 0004 00AF     	 add r7,sp,#0
+  62              	 .cfi_def_cfa_register 7
+  63 0006 7860     	 str r0,[r7,#4]
+  14:../UnitConversion.c **** 	if(Sensor->Type == Linear)
+  64              	 .loc 1 14 0
+  65 0008 7B68     	 ldr r3,[r7,#4]
+  66 000a 93F82030 	 ldrb r3,[r3,#32]
+  67 000e 002B     	 cmp r3,#0
+  68 0010 2BD1     	 bne .L2
+  15:../UnitConversion.c **** 		Sensor->UnitValue = ((Sensor->FilteredValue - Sensor->Offset) * 8.0018 + 32768); //  !!!!!!!!!!!!
+  69              	 .loc 1 15 0
+  70 0012 7B68     	 ldr r3,[r7,#4]
+  71 0014 93ED017A 	 flds s14,[r3,#4]
+  72 0018 7B68     	 ldr r3,[r7,#4]
+  73 001a 5B8C     	 ldrh r3,[r3,#34]
+  74 001c 07EE903A 	 fmsr s15,r3
+  75 0020 F8EEE77A 	 fsitos s15,s15
+  76 0024 77EE677A 	 fsubs s15,s14,s15
+  77 0028 17EE900A 	 fmrs r0,s15
+  78 002c FFF7FEFF 	 bl __aeabi_f2d
+  79 0030 0246     	 mov r2,r0
+  80 0032 0B46     	 mov r3,r1
+  81 0034 1046     	 mov r0,r2
+  82 0036 1946     	 mov r1,r3
+  83 0038 B9A3     	 adr r3,.L20+64
+  84 003a D3E90023 	 ldrd r2,[r3]
+  85 003e FFF7FEFF 	 bl __aeabi_dmul
+  86 0042 0246     	 mov r2,r0
+  87 0044 0B46     	 mov r3,r1
+  88 0046 1046     	 mov r0,r2
+  89 0048 1946     	 mov r1,r3
+  90 004a 4FF00002 	 mov r2,#0
+  91 004e A84B     	 ldr r3,.L20+16
+  92 0050 FFF7FEFF 	 bl __aeabi_dadd
+  93 0054 0246     	 mov r2,r0
+  94 0056 0B46     	 mov r3,r1
+  95 0058 1046     	 mov r0,r2
+  96 005a 1946     	 mov r1,r3
+  97 005c FFF7FEFF 	 bl __aeabi_d2uiz
+  98 0060 0346     	 mov r3,r0
+  99 0062 9AB2     	 uxth r2,r3
+ 100 0064 7B68     	 ldr r3,[r7,#4]
+ 101 0066 DA82     	 strh r2,[r3,#22]
+ 102 0068 35E2     	 b .L1
+ 103              	.L2:
+  16:../UnitConversion.c **** 
+  17:../UnitConversion.c **** 	else if(Sensor->Type == RideHeight)
+ 104              	 .loc 1 17 0
+ 105 006a 7B68     	 ldr r3,[r7,#4]
+ 106 006c 93F82030 	 ldrb r3,[r3,#32]
+ 107 0070 012B     	 cmp r3,#1
+ 108 0072 2DD1     	 bne .L4
+  18:../UnitConversion.c **** 		Sensor->UnitValue = (Sensor->k * ((Sensor->FilteredValue-Sensor->Offset) * Sensor->InputVoltage*1
+ 109              	 .loc 1 18 0
+ 110 0074 7B68     	 ldr r3,[r7,#4]
+ 111 0076 93ED097A 	 flds s14,[r3,#36]
+ 112 007a 7B68     	 ldr r3,[r7,#4]
+ 113 007c D3ED016A 	 flds s13,[r3,#4]
+ 114 0080 7B68     	 ldr r3,[r7,#4]
+ 115 0082 5B8C     	 ldrh r3,[r3,#34]
+ 116 0084 07EE903A 	 fmsr s15,r3
+ 117 0088 F8EEE77A 	 fsitos s15,s15
+ 118 008c 76EEE76A 	 fsubs s13,s13,s15
+ 119 0090 7B68     	 ldr r3,[r7,#4]
+ 120 0092 93F82830 	 ldrb r3,[r3,#40]
+ 121 0096 07EE903A 	 fmsr s15,r3
+ 122 009a F8EEE77A 	 fsitos s15,s15
+ 123 009e 66EEA77A 	 fmuls s15,s13,s15
+ 124 00a2 DFED946A 	 flds s13,.L20+20
+ 125 00a6 67EEA67A 	 fmuls s15,s15,s13
+ 126 00aa DFED936A 	 flds s13,.L20+24
+ 127 00ae C7EEA67A 	 fdivs s15,s15,s13
+ 128 00b2 67EE277A 	 fmuls s15,s14,s15
+ 129 00b6 9FED917A 	 flds s14,.L20+28
+ 130 00ba 77EE877A 	 fadds s15,s15,s14
+ 131 00be FCEEE77A 	 ftouizs s15,s15
+ 132 00c2 C7ED007A 	 fsts s15,[r7]
+ 133 00c6 3B88     	 ldrh r3,[r7]
+ 134 00c8 9AB2     	 uxth r2,r3
+ 135 00ca 7B68     	 ldr r3,[r7,#4]
+ 136 00cc DA82     	 strh r2,[r3,#22]
+ 137 00ce 02E2     	 b .L1
+ 138              	.L4:
+  19:../UnitConversion.c **** 
+  20:../UnitConversion.c **** 	else if(Sensor->Type == Pressure)
+ 139              	 .loc 1 20 0
+ 140 00d0 7B68     	 ldr r3,[r7,#4]
+ 141 00d2 93F82030 	 ldrb r3,[r3,#32]
+ 142 00d6 032B     	 cmp r3,#3
+ 143 00d8 35D1     	 bne .L5
+  21:../UnitConversion.c **** 		Sensor->UnitValue = (Sensor->k * (Sensor->FilteredValue * Sensor->InputVoltage / 4095) - (2.5/4.5
+ 144              	 .loc 1 21 0
+ 145 00da 7B68     	 ldr r3,[r7,#4]
+ 146 00dc 93ED097A 	 flds s14,[r3,#36]
+ 147 00e0 7B68     	 ldr r3,[r7,#4]
+ 148 00e2 D3ED016A 	 flds s13,[r3,#4]
+ 149 00e6 7B68     	 ldr r3,[r7,#4]
+ 150 00e8 93F82830 	 ldrb r3,[r3,#40]
+ 151 00ec 07EE903A 	 fmsr s15,r3
+ 152 00f0 F8EEE77A 	 fsitos s15,s15
+ 153 00f4 66EEA77A 	 fmuls s15,s13,s15
+ 154 00f8 DFED7F6A 	 flds s13,.L20+24
+ 155 00fc C7EEA67A 	 fdivs s15,s15,s13
+ 156 0100 67EE277A 	 fmuls s15,s14,s15
+ 157 0104 17EE900A 	 fmrs r0,s15
+ 158 0108 FFF7FEFF 	 bl __aeabi_f2d
+ 159 010c 0246     	 mov r2,r0
+ 160 010e 0B46     	 mov r3,r1
+ 161 0110 1046     	 mov r0,r2
+ 162 0112 1946     	 mov r1,r3
+ 163 0114 72A3     	 adr r3,.L20
+ 164 0116 D3E90023 	 ldrd r2,[r3]
+ 165 011a FFF7FEFF 	 bl __aeabi_dsub
+ 166 011e 0246     	 mov r2,r0
+ 167 0120 0B46     	 mov r3,r1
+ 168 0122 1046     	 mov r0,r2
+ 169 0124 1946     	 mov r1,r3
+ 170 0126 70A3     	 adr r3,.L20+8
+ 171 0128 D3E90023 	 ldrd r2,[r3]
+ 172 012c FFF7FEFF 	 bl __aeabi_ddiv
+ 173 0130 0246     	 mov r2,r0
+ 174 0132 0B46     	 mov r3,r1
+ 175 0134 1046     	 mov r0,r2
+ 176 0136 1946     	 mov r1,r3
+ 177 0138 FFF7FEFF 	 bl __aeabi_d2uiz
+ 178 013c 0346     	 mov r3,r0
+ 179 013e 9AB2     	 uxth r2,r3
+ 180 0140 7B68     	 ldr r3,[r7,#4]
+ 181 0142 DA82     	 strh r2,[r3,#22]
+ 182 0144 C7E1     	 b .L1
+ 183              	.L5:
+  22:../UnitConversion.c **** 
+  23:../UnitConversion.c **** 	else if((Sensor->Type == NTC)||(Sensor->Type == NTC_Board))
+ 184              	 .loc 1 23 0
+ 185 0146 7B68     	 ldr r3,[r7,#4]
+ 186 0148 93F82030 	 ldrb r3,[r3,#32]
+ 187 014c 022B     	 cmp r3,#2
+ 188 014e 05D0     	 beq .L6
+ 189              	 .loc 1 23 0 is_stmt 0 discriminator 1
+ 190 0150 7B68     	 ldr r3,[r7,#4]
+ 191 0152 93F82030 	 ldrb r3,[r3,#32]
+ 192 0156 062B     	 cmp r3,#6
+ 193 0158 40F04581 	 bne .L7
+ 194              	.L6:
+ 195              	.LBB2:
+  24:../UnitConversion.c **** 	{
+  25:../UnitConversion.c **** 		int i;
+  26:../UnitConversion.c **** 		uint16_t Temp_Val;
+  27:../UnitConversion.c **** 		float x0,y0,x1,y1,a,b;
+  28:../UnitConversion.c **** 		uint32_t LUT_NTC_V[6]={0};
+ 196              	 .loc 1 28 0 is_stmt 1
+ 197 015c 07F12003 	 add r3,r7,#32
+ 198 0160 0022     	 movs r2,#0
+ 199 0162 1A60     	 str r2,[r3]
+ 200 0164 0433     	 adds r3,r3,#4
+ 201 0166 0022     	 movs r2,#0
+ 202 0168 1A60     	 str r2,[r3]
+ 203 016a 0433     	 adds r3,r3,#4
+ 204 016c 0022     	 movs r2,#0
+ 205 016e 1A60     	 str r2,[r3]
+ 206 0170 0433     	 adds r3,r3,#4
+ 207 0172 0022     	 movs r2,#0
+ 208 0174 1A60     	 str r2,[r3]
+ 209 0176 0433     	 adds r3,r3,#4
+ 210 0178 0022     	 movs r2,#0
+ 211 017a 1A60     	 str r2,[r3]
+ 212 017c 0433     	 adds r3,r3,#4
+ 213 017e 0022     	 movs r2,#0
+ 214 0180 1A60     	 str r2,[r3]
+ 215 0182 0433     	 adds r3,r3,#4
+  29:../UnitConversion.c **** 		float LUT_NTC[6]={0};
+ 216              	 .loc 1 29 0
+ 217 0184 07F10803 	 add r3,r7,#8
+ 218 0188 0022     	 movs r2,#0
+ 219 018a 1A60     	 str r2,[r3]
+ 220 018c 0433     	 adds r3,r3,#4
+ 221 018e 0022     	 movs r2,#0
+ 222 0190 1A60     	 str r2,[r3]
+ 223 0192 0433     	 adds r3,r3,#4
+ 224 0194 0022     	 movs r2,#0
+ 225 0196 1A60     	 str r2,[r3]
+ 226 0198 0433     	 adds r3,r3,#4
+ 227 019a 0022     	 movs r2,#0
+ 228 019c 1A60     	 str r2,[r3]
+ 229 019e 0433     	 adds r3,r3,#4
+ 230 01a0 0022     	 movs r2,#0
+ 231 01a2 1A60     	 str r2,[r3]
+ 232 01a4 0433     	 adds r3,r3,#4
+ 233 01a6 0022     	 movs r2,#0
+ 234 01a8 1A60     	 str r2,[r3]
+ 235 01aa 0433     	 adds r3,r3,#4
+  30:../UnitConversion.c **** 
+  31:../UnitConversion.c **** 		switch(Sensor->Type){
+ 236              	 .loc 1 31 0
+ 237 01ac 7B68     	 ldr r3,[r7,#4]
+ 238 01ae 93F82030 	 ldrb r3,[r3,#32]
+ 239 01b2 022B     	 cmp r3,#2
+ 240 01b4 02D0     	 beq .L9
+ 241 01b6 062B     	 cmp r3,#6
+ 242 01b8 20D0     	 beq .L10
+  32:../UnitConversion.c **** 		case NTC:
+  33:../UnitConversion.c **** 	    LUT_NTC_V[0] = 481;
+  34:../UnitConversion.c **** 		LUT_NTC_V[1] = 997;
+  35:../UnitConversion.c **** 		LUT_NTC_V[2] = 1517;
+  36:../UnitConversion.c **** 		LUT_NTC_V[3] = 2243;
+  37:../UnitConversion.c **** 		LUT_NTC_V[4] = 3333;
+  38:../UnitConversion.c **** 		LUT_NTC_V[5] = 4248;
+  39:../UnitConversion.c **** 
+  40:../UnitConversion.c **** 	    LUT_NTC[0] = 125;
+  41:../UnitConversion.c **** 		LUT_NTC[1] = 90;
+  42:../UnitConversion.c **** 		LUT_NTC[2] = 70;
+  43:../UnitConversion.c **** 		LUT_NTC[3] = 50;
+  44:../UnitConversion.c **** 		LUT_NTC[4] = 25;
+  45:../UnitConversion.c **** 		LUT_NTC[5] = 0;
+  46:../UnitConversion.c **** 		break;
+  47:../UnitConversion.c **** 
+  48:../UnitConversion.c **** 		case NTC_Board:
+  49:../UnitConversion.c **** 		LUT_NTC_V[0] = 140;
+  50:../UnitConversion.c **** 		LUT_NTC_V[1] = 283;
+  51:../UnitConversion.c **** 		LUT_NTC_V[2] = 602;
+  52:../UnitConversion.c **** 		LUT_NTC_V[3] = 1288;
+  53:../UnitConversion.c **** 		LUT_NTC_V[4] = 2500;
+  54:../UnitConversion.c **** 		LUT_NTC_V[5] = 3850;
+  55:../UnitConversion.c **** 
+  56:../UnitConversion.c **** 	    LUT_NTC[0] = 125;
+  57:../UnitConversion.c **** 		LUT_NTC[1] = 100;
+  58:../UnitConversion.c **** 		LUT_NTC[2] = 75;
+  59:../UnitConversion.c **** 		LUT_NTC[3] = 50;
+  60:../UnitConversion.c **** 		LUT_NTC[4] = 25;
+  61:../UnitConversion.c **** 		LUT_NTC[5] = 0;
+  62:../UnitConversion.c **** 		break;
+  63:../UnitConversion.c **** 
+  64:../UnitConversion.c **** 		default :
+  65:../UnitConversion.c **** 		break;
+ 243              	 .loc 1 65 0
+ 244 01ba 3EE0     	 b .L11
+ 245              	.L9:
+  33:../UnitConversion.c **** 		LUT_NTC_V[1] = 997;
+ 246              	 .loc 1 33 0
+ 247 01bc 40F2E113 	 movw r3,#481
+ 248 01c0 3B62     	 str r3,[r7,#32]
+  34:../UnitConversion.c **** 		LUT_NTC_V[2] = 1517;
+ 249              	 .loc 1 34 0
+ 250 01c2 40F2E533 	 movw r3,#997
+ 251 01c6 7B62     	 str r3,[r7,#36]
+  35:../UnitConversion.c **** 		LUT_NTC_V[3] = 2243;
+ 252              	 .loc 1 35 0
+ 253 01c8 40F2ED53 	 movw r3,#1517
+ 254 01cc BB62     	 str r3,[r7,#40]
+  36:../UnitConversion.c **** 		LUT_NTC_V[4] = 3333;
+ 255              	 .loc 1 36 0
+ 256 01ce 40F6C303 	 movw r3,#2243
+ 257 01d2 FB62     	 str r3,[r7,#44]
+  37:../UnitConversion.c **** 		LUT_NTC_V[5] = 4248;
+ 258              	 .loc 1 37 0
+ 259 01d4 40F60553 	 movw r3,#3333
+ 260 01d8 3B63     	 str r3,[r7,#48]
+  38:../UnitConversion.c **** 
+ 261              	 .loc 1 38 0
+ 262 01da 41F29803 	 movw r3,#4248
+ 263 01de 7B63     	 str r3,[r7,#52]
+  40:../UnitConversion.c **** 		LUT_NTC[1] = 90;
+ 264              	 .loc 1 40 0
+ 265 01e0 474B     	 ldr r3,.L20+32
+ 266 01e2 BB60     	 str r3,[r7,#8]
+  41:../UnitConversion.c **** 		LUT_NTC[2] = 70;
+ 267              	 .loc 1 41 0
+ 268 01e4 474B     	 ldr r3,.L20+36
+ 269 01e6 FB60     	 str r3,[r7,#12]
+  42:../UnitConversion.c **** 		LUT_NTC[3] = 50;
+ 270              	 .loc 1 42 0
+ 271 01e8 474B     	 ldr r3,.L20+40
+ 272 01ea 3B61     	 str r3,[r7,#16]
+  43:../UnitConversion.c **** 		LUT_NTC[4] = 25;
+ 273              	 .loc 1 43 0
+ 274 01ec 474B     	 ldr r3,.L20+44
+ 275 01ee 7B61     	 str r3,[r7,#20]
+  44:../UnitConversion.c **** 		LUT_NTC[5] = 0;
+ 276              	 .loc 1 44 0
+ 277 01f0 474B     	 ldr r3,.L20+48
+ 278 01f2 BB61     	 str r3,[r7,#24]
+  45:../UnitConversion.c **** 		break;
+ 279              	 .loc 1 45 0
+ 280 01f4 4FF00003 	 mov r3,#0
+ 281 01f8 FB61     	 str r3,[r7,#28]
+  46:../UnitConversion.c **** 
+ 282              	 .loc 1 46 0
+ 283 01fa 1EE0     	 b .L11
+ 284              	.L10:
+  49:../UnitConversion.c **** 		LUT_NTC_V[1] = 283;
+ 285              	 .loc 1 49 0
+ 286 01fc 8C23     	 movs r3,#140
+ 287 01fe 3B62     	 str r3,[r7,#32]
+  50:../UnitConversion.c **** 		LUT_NTC_V[2] = 602;
+ 288              	 .loc 1 50 0
+ 289 0200 40F21B13 	 movw r3,#283
+ 290 0204 7B62     	 str r3,[r7,#36]
+  51:../UnitConversion.c **** 		LUT_NTC_V[3] = 1288;
+ 291              	 .loc 1 51 0
+ 292 0206 40F25A23 	 movw r3,#602
+ 293 020a BB62     	 str r3,[r7,#40]
+  52:../UnitConversion.c **** 		LUT_NTC_V[4] = 2500;
+ 294              	 .loc 1 52 0
+ 295 020c 4FF4A163 	 mov r3,#1288
+ 296 0210 FB62     	 str r3,[r7,#44]
+  53:../UnitConversion.c **** 		LUT_NTC_V[5] = 3850;
+ 297              	 .loc 1 53 0
+ 298 0212 40F6C413 	 movw r3,#2500
+ 299 0216 3B63     	 str r3,[r7,#48]
+  54:../UnitConversion.c **** 
+ 300              	 .loc 1 54 0
+ 301 0218 40F60A73 	 movw r3,#3850
+ 302 021c 7B63     	 str r3,[r7,#52]
+  56:../UnitConversion.c **** 		LUT_NTC[1] = 100;
+ 303              	 .loc 1 56 0
+ 304 021e 384B     	 ldr r3,.L20+32
+ 305 0220 BB60     	 str r3,[r7,#8]
+  57:../UnitConversion.c **** 		LUT_NTC[2] = 75;
+ 306              	 .loc 1 57 0
+ 307 0222 3C4B     	 ldr r3,.L20+52
+ 308 0224 FB60     	 str r3,[r7,#12]
+  58:../UnitConversion.c **** 		LUT_NTC[3] = 50;
+ 309              	 .loc 1 58 0
+ 310 0226 3C4B     	 ldr r3,.L20+56
+ 311 0228 3B61     	 str r3,[r7,#16]
+  59:../UnitConversion.c **** 		LUT_NTC[4] = 25;
+ 312              	 .loc 1 59 0
+ 313 022a 384B     	 ldr r3,.L20+44
+ 314 022c 7B61     	 str r3,[r7,#20]
+  60:../UnitConversion.c **** 		LUT_NTC[5] = 0;
+ 315              	 .loc 1 60 0
+ 316 022e 384B     	 ldr r3,.L20+48
+ 317 0230 BB61     	 str r3,[r7,#24]
+  61:../UnitConversion.c **** 		break;
+ 318              	 .loc 1 61 0
+ 319 0232 4FF00003 	 mov r3,#0
+ 320 0236 FB61     	 str r3,[r7,#28]
+  62:../UnitConversion.c **** 
+ 321              	 .loc 1 62 0
+ 322 0238 00BF     	 nop
+ 323              	.L11:
+  66:../UnitConversion.c **** 		}
+  67:../UnitConversion.c **** 
+  68:../UnitConversion.c **** 		i=0;
+ 324              	 .loc 1 68 0
+ 325 023a 0023     	 movs r3,#0
+ 326 023c 7B65     	 str r3,[r7,#84]
+  69:../UnitConversion.c **** 		Temp_Val = ((Sensor->FilteredValue)*5000/4095);
+ 327              	 .loc 1 69 0
+ 328 023e 7B68     	 ldr r3,[r7,#4]
+ 329 0240 D3ED017A 	 flds s15,[r3,#4]
+ 330 0244 9FED357A 	 flds s14,.L20+60
+ 331 0248 67EE877A 	 fmuls s15,s15,s14
+ 332 024c 9FED2A7A 	 flds s14,.L20+24
+ 333 0250 C7EE877A 	 fdivs s15,s15,s14
+ 334 0254 FCEEE77A 	 ftouizs s15,s15
+ 335 0258 C7ED007A 	 fsts s15,[r7]
+ 336 025c 3B88     	 ldrh r3,[r7]
+ 337 025e A7F84230 	 strh r3,[r7,#66]
+  70:../UnitConversion.c **** 			while(i<NTC_LUT_NB_POINT && LUT_NTC_V[i]<=Temp_Val) i++;
+ 338              	 .loc 1 70 0
+ 339 0262 02E0     	 b .L12
+ 340              	.L14:
+ 341              	 .loc 1 70 0 is_stmt 0 discriminator 3
+ 342 0264 7B6D     	 ldr r3,[r7,#84]
+ 343 0266 0133     	 adds r3,r3,#1
+ 344 0268 7B65     	 str r3,[r7,#84]
+ 345              	.L12:
+ 346              	 .loc 1 70 0 discriminator 1
+ 347 026a 7B6D     	 ldr r3,[r7,#84]
+ 348 026c 052B     	 cmp r3,#5
+ 349 026e 0ADC     	 bgt .L13
+ 350              	 .loc 1 70 0 discriminator 2
+ 351 0270 7B6D     	 ldr r3,[r7,#84]
+ 352 0272 9B00     	 lsls r3,r3,#2
+ 353 0274 07F15802 	 add r2,r7,#88
+ 354 0278 1344     	 add r3,r3,r2
+ 355 027a 53F8382C 	 ldr r2,[r3,#-56]
+ 356 027e B7F84230 	 ldrh r3,[r7,#66]
+ 357 0282 9A42     	 cmp r2,r3
+ 358 0284 EED9     	 bls .L14
+ 359              	.L13:
+  71:../UnitConversion.c **** 		if(i==0){
+ 360              	 .loc 1 71 0 is_stmt 1
+ 361 0286 7B6D     	 ldr r3,[r7,#84]
+ 362 0288 002B     	 cmp r3,#0
+ 363 028a 12D1     	 bne .L15
+  72:../UnitConversion.c **** 			x0 = LUT_NTC_V[0];
+ 364              	 .loc 1 72 0
+ 365 028c 3B6A     	 ldr r3,[r7,#32]
+ 366 028e 07EE903A 	 fmsr s15,r3
+ 367 0292 F8EE677A 	 fuitos s15,s15
+ 368 0296 C7ED147A 	 fsts s15,[r7,#80]
+  73:../UnitConversion.c **** 			y0 = LUT_NTC[0];
+ 369              	 .loc 1 73 0
+ 370 029a BB68     	 ldr r3,[r7,#8]
+ 371 029c FB64     	 str r3,[r7,#76]
+  74:../UnitConversion.c **** 			x1 = LUT_NTC_V[1];
+ 372              	 .loc 1 74 0
+ 373 029e 7B6A     	 ldr r3,[r7,#36]
+ 374 02a0 07EE903A 	 fmsr s15,r3
+ 375 02a4 F8EE677A 	 fuitos s15,s15
+ 376 02a8 C7ED127A 	 fsts s15,[r7,#72]
+  75:../UnitConversion.c **** 			y1 = LUT_NTC[1];
+ 377              	 .loc 1 75 0
+ 378 02ac FB68     	 ldr r3,[r7,#12]
+ 379 02ae 7B64     	 str r3,[r7,#68]
+ 380 02b0 66E0     	 b .L16
+ 381              	.L15:
+  76:../UnitConversion.c **** 		}
+  77:../UnitConversion.c **** 		else if(i==NTC_LUT_NB_POINT){
+ 382              	 .loc 1 77 0
+ 383 02b2 7B6D     	 ldr r3,[r7,#84]
+ 384 02b4 062B     	 cmp r3,#6
+ 385 02b6 37D1     	 bne .L17
+  78:../UnitConversion.c **** 			x0 = LUT_NTC_V[NTC_LUT_NB_POINT-2];
+ 386              	 .loc 1 78 0
+ 387 02b8 3B6B     	 ldr r3,[r7,#48]
+ 388 02ba 07EE903A 	 fmsr s15,r3
+ 389 02be F8EE677A 	 fuitos s15,s15
+ 390 02c2 C7ED147A 	 fsts s15,[r7,#80]
+  79:../UnitConversion.c **** 			y0 = LUT_NTC[NTC_LUT_NB_POINT-2];
+ 391              	 .loc 1 79 0
+ 392 02c6 BB69     	 ldr r3,[r7,#24]
+ 393 02c8 FB64     	 str r3,[r7,#76]
+  80:../UnitConversion.c **** 			x1 = LUT_NTC_V[NTC_LUT_NB_POINT-1];
+ 394              	 .loc 1 80 0
+ 395 02ca 7B6B     	 ldr r3,[r7,#52]
+ 396 02cc 07EE903A 	 fmsr s15,r3
+ 397 02d0 F8EE677A 	 fuitos s15,s15
+ 398 02d4 C7ED127A 	 fsts s15,[r7,#72]
+  81:../UnitConversion.c **** 			y1 = LUT_NTC[NTC_LUT_NB_POINT-1];
+ 399              	 .loc 1 81 0
+ 400 02d8 FB69     	 ldr r3,[r7,#28]
+ 401 02da 7B64     	 str r3,[r7,#68]
+ 402 02dc 50E0     	 b .L16
+ 403              	.L21:
+ 404 02de 00BF     	 .align 3
+ 405              	.L20:
+ 406 02e0 721CC771 	 .word 1908874354
+ 407 02e4 1CC7E13F 	 .word 1071761180
+ 408 02e8 7B14AE47 	 .word 1202590843
+ 409 02ec E17AA43F 	 .word 1067743969
+ 410 02f0 0000E040 	 .word 1088421888
+ 411 02f4 00007A44 	 .word 1148846080
+ 412 02f8 00F07F45 	 .word 1166012416
+ 413 02fc 00000043 	 .word 1124073472
+ 414 0300 0000FA42 	 .word 1123680256
+ 415 0304 0000B442 	 .word 1119092736
+ 416 0308 00008C42 	 .word 1116471296
+ 417 030c 00004842 	 .word 1112014848
+ 418 0310 0000C841 	 .word 1103626240
+ 419 0314 0000C842 	 .word 1120403456
+ 420 0318 00009642 	 .word 1117126656
+ 421 031c 00409C45 	 .word 1167867904
+ 422 0320 FE43FAED 	 .word -302365698
+ 423 0324 EB002040 	 .word 1075839211
+ 424              	.L17:
+  82:../UnitConversion.c **** 		}
+  83:../UnitConversion.c **** 		else{
+  84:../UnitConversion.c **** 			x0 = LUT_NTC_V[i-1];
+ 425              	 .loc 1 84 0
+ 426 0328 7B6D     	 ldr r3,[r7,#84]
+ 427 032a 013B     	 subs r3,r3,#1
+ 428 032c 9B00     	 lsls r3,r3,#2
+ 429 032e 07F15802 	 add r2,r7,#88
+ 430 0332 1344     	 add r3,r3,r2
+ 431 0334 53F8383C 	 ldr r3,[r3,#-56]
+ 432 0338 07EE903A 	 fmsr s15,r3
+ 433 033c F8EE677A 	 fuitos s15,s15
+ 434 0340 C7ED147A 	 fsts s15,[r7,#80]
+  85:../UnitConversion.c **** 			y0 = LUT_NTC[i-1];
+ 435              	 .loc 1 85 0
+ 436 0344 7B6D     	 ldr r3,[r7,#84]
+ 437 0346 013B     	 subs r3,r3,#1
+ 438 0348 9B00     	 lsls r3,r3,#2
+ 439 034a 07F15802 	 add r2,r7,#88
+ 440 034e 1344     	 add r3,r3,r2
+ 441 0350 503B     	 subs r3,r3,#80
+ 442 0352 1B68     	 ldr r3,[r3]
+ 443 0354 FB64     	 str r3,[r7,#76]
+  86:../UnitConversion.c **** 			x1 = LUT_NTC_V[i];
+ 444              	 .loc 1 86 0
+ 445 0356 7B6D     	 ldr r3,[r7,#84]
+ 446 0358 9B00     	 lsls r3,r3,#2
+ 447 035a 07F15802 	 add r2,r7,#88
+ 448 035e 1344     	 add r3,r3,r2
+ 449 0360 53F8383C 	 ldr r3,[r3,#-56]
+ 450 0364 07EE903A 	 fmsr s15,r3
+ 451 0368 F8EE677A 	 fuitos s15,s15
+ 452 036c C7ED127A 	 fsts s15,[r7,#72]
+  87:../UnitConversion.c **** 			y1 = LUT_NTC[i];
+ 453              	 .loc 1 87 0
+ 454 0370 7B6D     	 ldr r3,[r7,#84]
+ 455 0372 9B00     	 lsls r3,r3,#2
+ 456 0374 07F15802 	 add r2,r7,#88
+ 457 0378 1344     	 add r3,r3,r2
+ 458 037a 503B     	 subs r3,r3,#80
+ 459 037c 1B68     	 ldr r3,[r3]
+ 460 037e 7B64     	 str r3,[r7,#68]
+ 461              	.L16:
+  88:../UnitConversion.c **** 		}
+  89:../UnitConversion.c **** 
+  90:../UnitConversion.c **** 		a = (y1-y0)/(x1-x0);
+ 462              	 .loc 1 90 0
+ 463 0380 97ED117A 	 flds s14,[r7,#68]
+ 464 0384 D7ED137A 	 flds s15,[r7,#76]
+ 465 0388 37EE677A 	 fsubs s14,s14,s15
+ 466 038c D7ED126A 	 flds s13,[r7,#72]
+ 467 0390 D7ED147A 	 flds s15,[r7,#80]
+ 468 0394 76EEE77A 	 fsubs s15,s13,s15
+ 469 0398 C7EE277A 	 fdivs s15,s14,s15
+ 470 039c C7ED0F7A 	 fsts s15,[r7,#60]
+  91:../UnitConversion.c **** 		b = y0 - a*x0;
+ 471              	 .loc 1 91 0
+ 472 03a0 97ED0F7A 	 flds s14,[r7,#60]
+ 473 03a4 D7ED147A 	 flds s15,[r7,#80]
+ 474 03a8 67EE277A 	 fmuls s15,s14,s15
+ 475 03ac 97ED137A 	 flds s14,[r7,#76]
+ 476 03b0 77EE677A 	 fsubs s15,s14,s15
+ 477 03b4 C7ED0E7A 	 fsts s15,[r7,#56]
+  92:../UnitConversion.c **** 		Sensor->UnitValue = a*(Temp_Val) + b;
+ 478              	 .loc 1 92 0
+ 479 03b8 B7F84230 	 ldrh r3,[r7,#66]
+ 480 03bc 07EE903A 	 fmsr s15,r3
+ 481 03c0 B8EEE77A 	 fsitos s14,s15
+ 482 03c4 D7ED0F7A 	 flds s15,[r7,#60]
+ 483 03c8 27EE277A 	 fmuls s14,s14,s15
+ 484 03cc D7ED0E7A 	 flds s15,[r7,#56]
+ 485 03d0 77EE277A 	 fadds s15,s14,s15
+ 486 03d4 FCEEE77A 	 ftouizs s15,s15
+ 487 03d8 C7ED007A 	 fsts s15,[r7]
+ 488 03dc 3B88     	 ldrh r3,[r7]
+ 489 03de 9AB2     	 uxth r2,r3
+ 490 03e0 7B68     	 ldr r3,[r7,#4]
+ 491 03e2 DA82     	 strh r2,[r3,#22]
+ 492              	.LBE2:
+  24:../UnitConversion.c **** 		int i;
+ 493              	 .loc 1 24 0
+ 494 03e4 77E0     	 b .L1
+ 495              	.L7:
+  93:../UnitConversion.c **** 	}
+  94:../UnitConversion.c **** 
+  95:../UnitConversion.c **** 	else if(Sensor->Type == LoadCell_RL)
+ 496              	 .loc 1 95 0
+ 497 03e6 7B68     	 ldr r3,[r7,#4]
+ 498 03e8 93F82030 	 ldrb r3,[r3,#32]
+ 499 03ec 042B     	 cmp r3,#4
+ 500 03ee 2AD1     	 bne .L18
+  96:../UnitConversion.c **** 		Sensor->UnitValue = ((Sensor->FilteredValue) * 1.1846 - 168 ) * 10.0;
+ 501              	 .loc 1 96 0
+ 502 03f0 7B68     	 ldr r3,[r7,#4]
+ 503 03f2 5B68     	 ldr r3,[r3,#4]
+ 504 03f4 1846     	 mov r0,r3
+ 505 03f6 FFF7FEFF 	 bl __aeabi_f2d
+ 506 03fa 0246     	 mov r2,r0
+ 507 03fc 0B46     	 mov r3,r1
+ 508 03fe 1046     	 mov r0,r2
+ 509 0400 1946     	 mov r1,r3
+ 510 0402 3FA3     	 adr r3,.L22+32
+ 511 0404 D3E90023 	 ldrd r2,[r3]
+ 512 0408 FFF7FEFF 	 bl __aeabi_dmul
+ 513 040c 0246     	 mov r2,r0
+ 514 040e 0B46     	 mov r3,r1
+ 515 0410 1046     	 mov r0,r2
+ 516 0412 1946     	 mov r1,r3
+ 517 0414 4FF00002 	 mov r2,#0
+ 518 0418 354B     	 ldr r3,.L22+16
+ 519 041a FFF7FEFF 	 bl __aeabi_dsub
+ 520 041e 0246     	 mov r2,r0
+ 521 0420 0B46     	 mov r3,r1
+ 522 0422 1046     	 mov r0,r2
+ 523 0424 1946     	 mov r1,r3
+ 524 0426 4FF00002 	 mov r2,#0
+ 525 042a 324B     	 ldr r3,.L22+20
+ 526 042c FFF7FEFF 	 bl __aeabi_dmul
+ 527 0430 0246     	 mov r2,r0
+ 528 0432 0B46     	 mov r3,r1
+ 529 0434 1046     	 mov r0,r2
+ 530 0436 1946     	 mov r1,r3
+ 531 0438 FFF7FEFF 	 bl __aeabi_d2uiz
+ 532 043c 0346     	 mov r3,r0
+ 533 043e 9AB2     	 uxth r2,r3
+ 534 0440 7B68     	 ldr r3,[r7,#4]
+ 535 0442 DA82     	 strh r2,[r3,#22]
+ 536 0444 47E0     	 b .L1
+ 537              	.L18:
+  97:../UnitConversion.c **** 
+  98:../UnitConversion.c **** 	else if(Sensor->Type == LoadCell_RR)
+ 538              	 .loc 1 98 0
+ 539 0446 7B68     	 ldr r3,[r7,#4]
+ 540 0448 93F82030 	 ldrb r3,[r3,#32]
+ 541 044c 052B     	 cmp r3,#5
+ 542 044e 2AD1     	 bne .L19
+  99:../UnitConversion.c **** 		Sensor->UnitValue = ((Sensor->FilteredValue) * 1.5055 - 203 ) * 10.0;
+ 543              	 .loc 1 99 0
+ 544 0450 7B68     	 ldr r3,[r7,#4]
+ 545 0452 5B68     	 ldr r3,[r3,#4]
+ 546 0454 1846     	 mov r0,r3
+ 547 0456 FFF7FEFF 	 bl __aeabi_f2d
+ 548 045a 0246     	 mov r2,r0
+ 549 045c 0B46     	 mov r3,r1
+ 550 045e 1046     	 mov r0,r2
+ 551 0460 1946     	 mov r1,r3
+ 552 0462 1FA3     	 adr r3,.L22
+ 553 0464 D3E90023 	 ldrd r2,[r3]
+ 554 0468 FFF7FEFF 	 bl __aeabi_dmul
+ 555 046c 0246     	 mov r2,r0
+ 556 046e 0B46     	 mov r3,r1
+ 557 0470 1046     	 mov r0,r2
+ 558 0472 1946     	 mov r1,r3
+ 559 0474 1CA3     	 adr r3,.L22+8
+ 560 0476 D3E90023 	 ldrd r2,[r3]
+ 561 047a FFF7FEFF 	 bl __aeabi_dsub
+ 562 047e 0246     	 mov r2,r0
+ 563 0480 0B46     	 mov r3,r1
+ 564 0482 1046     	 mov r0,r2
+ 565 0484 1946     	 mov r1,r3
+ 566 0486 4FF00002 	 mov r2,#0
+ 567 048a 1A4B     	 ldr r3,.L22+20
+ 568 048c FFF7FEFF 	 bl __aeabi_dmul
+ 569 0490 0246     	 mov r2,r0
+ 570 0492 0B46     	 mov r3,r1
+ 571 0494 1046     	 mov r0,r2
+ 572 0496 1946     	 mov r1,r3
+ 573 0498 FFF7FEFF 	 bl __aeabi_d2uiz
+ 574 049c 0346     	 mov r3,r0
+ 575 049e 9AB2     	 uxth r2,r3
+ 576 04a0 7B68     	 ldr r3,[r7,#4]
+ 577 04a2 DA82     	 strh r2,[r3,#22]
+ 578 04a4 17E0     	 b .L1
+ 579              	.L19:
+ 100:../UnitConversion.c **** 
+ 101:../UnitConversion.c **** 	else if(Sensor->Type == Voltage)
+ 580              	 .loc 1 101 0
+ 581 04a6 7B68     	 ldr r3,[r7,#4]
+ 582 04a8 93F82030 	 ldrb r3,[r3,#32]
+ 583 04ac 072B     	 cmp r3,#7
+ 584 04ae 12D1     	 bne .L1
+ 102:../UnitConversion.c **** 		Sensor->UnitValue = (((Sensor->FilteredValue)*(41600/1200)/4095));
+ 585              	 .loc 1 102 0
+ 586 04b0 7B68     	 ldr r3,[r7,#4]
+ 587 04b2 D3ED017A 	 flds s15,[r3,#4]
+ 588 04b6 9FED107A 	 flds s14,.L22+24
+ 589 04ba 67EE877A 	 fmuls s15,s15,s14
+ 590 04be 9FED0F7A 	 flds s14,.L22+28
+ 591 04c2 C7EE877A 	 fdivs s15,s15,s14
+ 592 04c6 FCEEE77A 	 ftouizs s15,s15
+ 593 04ca C7ED007A 	 fsts s15,[r7]
+ 594 04ce 3B88     	 ldrh r3,[r7]
+ 595 04d0 9AB2     	 uxth r2,r3
+ 596 04d2 7B68     	 ldr r3,[r7,#4]
+ 597 04d4 DA82     	 strh r2,[r3,#22]
+ 598              	.L1:
+ 103:../UnitConversion.c **** 
+ 104:../UnitConversion.c **** }
+ 599              	 .loc 1 104 0
+ 600 04d6 5837     	 adds r7,r7,#88
+ 601              	 .cfi_def_cfa_offset 8
+ 602 04d8 BD46     	 mov sp,r7
+ 603              	 .cfi_def_cfa_register 13
+ 604              	 
+ 605 04da 80BD     	 pop {r7,pc}
+ 606              	.L23:
+ 607 04dc AFF30080 	 .align 3
+ 608              	.L22:
+ 609 04e0 4A0C022B 	 .word 721554506
+ 610 04e4 8716F83F 	 .word 1073223303
+ 611 04e8 00000000 	 .word 0
+ 612 04ec 00606940 	 .word 1080647680
+ 613 04f0 00006540 	 .word 1080360960
+ 614 04f4 00002440 	 .word 1076101120
+ 615 04f8 00000842 	 .word 1107820544
+ 616 04fc 00F07F45 	 .word 1166012416
+ 617 0500 32772D21 	 .word 556627762
+ 618 0504 1FF4F23F 	 .word 1072886815
+ 619              	 .cfi_endproc
+ 620              	.LFE387:
+ 622              	 .text
+ 623              	.Letext0:
+ 624              	 .file 2 "c:\\dave\\dave-ide-4.4.2-64bit\\eclipse\\arm-gcc-49\\arm-none-eabi\\include\\machine\\_default_types.h"
+ 625              	 .file 3 "c:\\dave\\dave-ide-4.4.2-64bit\\eclipse\\arm-gcc-49\\arm-none-eabi\\include\\stdint.h"
+ 626              	 .file 4 "C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Libraries/CMSIS/Infineon/XMC4500_series/Include/XMC4500.h"
+ 627              	 .file 5 "C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Libraries/XMCLib/inc/xmc4_gpio.h"
+ 628              	 .file 6 "C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Libraries/XMCLib/inc/xmc_vadc.h"
+ 629              	 .file 7 "C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Dave/Generated/ANALOG_IO/analog_io.h"
+ 630              	 .file 8 "C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Dave/Generated/ADC_MEASUREMENT/adc_measurement.h"
+ 631              	 .file 9 "../Header.h"
+ 632              	 .file 10 "C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Libraries/CMSIS/Include/cmsis_gcc.h"
+ 633              	 .file 11 "C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Libraries/CMSIS/Include/core_cm4.h"
+ 634              	 .file 12 "C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Libraries/CMSIS/Infineon/XMC4500_series/Include/system_XMC4500.h"
+ 635              	 .file 13 "../ANA_Init.h"
+DEFINED SYMBOLS
+                            *ABS*:00000000 UnitConversion.c
+                            *COM*:00000004 time
+                            *COM*:0000002c T_Oil
+                            *COM*:0000002c T_Water
+                            *COM*:0000002c p_Oil
+                            *COM*:0000002c p_Pneu
+                            *COM*:0000002c x_DP_RL
+                            *COM*:0000002c x_DP_RR
+                            *COM*:0000002c x_RH_RL
+                            *COM*:0000002c x_RH_RR
+                            *COM*:0000002c f_LC_RL
+                            *COM*:0000002c f_LC_RR
+                            *COM*:0000002c T_Board
+                            *COM*:0000002c u_12V_Meas
+                            *COM*:0000002c u_5V_ANA_Meas
+                            *COM*:0000002c u_OUT1_Meas
+                            *COM*:0000002c u_OUT2_Meas
+                            *COM*:0000002c NTC1
+    {standard input}:43     .text.UnitConversion:00000000 $t
+    {standard input}:48     .text.UnitConversion:00000000 UnitConversion
+    {standard input}:406    .text.UnitConversion:000002e0 $d
+    {standard input}:426    .text.UnitConversion:00000328 $t
+    {standard input}:609    .text.UnitConversion:000004e0 $d
+                     .debug_frame:00000010 $d
+
+UNDEFINED SYMBOLS
+__aeabi_f2d
+__aeabi_dmul
+__aeabi_dadd
+__aeabi_d2uiz
+__aeabi_dsub
+__aeabi_ddiv

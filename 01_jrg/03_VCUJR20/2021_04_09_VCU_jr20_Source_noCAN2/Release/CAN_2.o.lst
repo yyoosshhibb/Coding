@@ -1,0 +1,775 @@
+   1              	 .syntax unified
+   2              	 .cpu cortex-m4
+   3              	 .eabi_attribute 27,3
+   4              	 .fpu fpv4-sp-d16
+   5              	 .eabi_attribute 20,1
+   6              	 .eabi_attribute 21,1
+   7              	 .eabi_attribute 23,3
+   8              	 .eabi_attribute 24,1
+   9              	 .eabi_attribute 25,1
+  10              	 .eabi_attribute 26,1
+  11              	 .eabi_attribute 30,4
+  12              	 .eabi_attribute 34,1
+  13              	 .eabi_attribute 18,4
+  14              	 .thumb
+  15              	 .file "CAN_2.c"
+  16              	 .section .text.CAN_2_ini,"ax",%progbits
+  17              	 .align 1
+  18              	 .global CAN_2_ini
+  19              	 .thumb
+  20              	 .thumb_func
+  22              	CAN_2_ini:
+  23              	 
+  24              	 
+  25 0000 10B5     	 push {r4,lr}
+  26 0002 624B     	 ldr r3,.L6
+  27 0004 1A78     	 ldrb r2,[r3]
+  28 0006 624B     	 ldr r3,.L6+4
+  29 0008 1AB1     	 cbz r2,.L2
+  30 000a 1A68     	 ldr r2,[r3]
+  31 000c 197C     	 ldrb r1,[r3,#16]
+  32 000e 0123     	 movs r3,#1
+  33 0010 03E0     	 b .L4
+  34              	.L2:
+  35 0012 1A68     	 ldr r2,[r3]
+  36 0014 197C     	 ldrb r1,[r3,#16]
+  37 0016 4FF48033 	 mov r3,#65536
+  38              	.L4:
+  39 001a 8B40     	 lsls r3,r3,r1
+  40 001c 5360     	 str r3,[r2,#4]
+  41 001e 5D4B     	 ldr r3,.L6+8
+  42 0020 5D4A     	 ldr r2,.L6+12
+  43 0022 C3F8CC20 	 str r2,[r3,#204]
+  44 0026 5D49     	 ldr r1,.L6+16
+  45 0028 5D4A     	 ldr r2,.L6+20
+  46 002a 5E48     	 ldr r0,.L6+24
+  47 002c 0A60     	 str r2,[r1]
+  48 002e 511E     	 subs r1,r2,#1
+  49 0030 0160     	 str r1,[r0]
+  50 0032 5D48     	 ldr r0,.L6+28
+  51 0034 C3F8D000 	 str r0,[r3,#208]
+  52 0038 5C48     	 ldr r0,.L6+32
+  53 003a 541C     	 adds r4,r2,#1
+  54 003c 0460     	 str r4,[r0]
+  55 003e 5C48     	 ldr r0,.L6+36
+  56 0040 0160     	 str r1,[r0]
+  57 0042 A2F11801 	 sub r1,r2,#24
+  58 0046 C3F8D410 	 str r1,[r3,#212]
+  59 004a 5A49     	 ldr r1,.L6+40
+  60 004c C3F8D810 	 str r1,[r3,#216]
+  61 0050 5949     	 ldr r1,.L6+44
+  62 0052 A2F11A00 	 sub r0,r2,#26
+  63 0056 0860     	 str r0,[r1]
+  64 0058 5849     	 ldr r1,.L6+48
+  65 005a A2F11700 	 sub r0,r2,#23
+  66 005e 0860     	 str r0,[r1]
+  67 0060 A2F11901 	 sub r1,r2,#25
+  68 0064 C3F8DC10 	 str r1,[r3,#220]
+  69 0068 A2F11501 	 sub r1,r2,#21
+  70 006c C3F8E010 	 str r1,[r3,#224]
+  71 0070 A2F11601 	 sub r1,r2,#22
+  72 0074 C3F8E410 	 str r1,[r3,#228]
+  73 0078 5149     	 ldr r1,.L6+52
+  74 007a C3F8EC10 	 str r1,[r3,#236]
+  75 007e 5149     	 ldr r1,.L6+56
+  76 0080 A2F10F00 	 sub r0,r2,#15
+  77 0084 0860     	 str r0,[r1]
+  78 0086 5049     	 ldr r1,.L6+60
+  79 0088 A2F11300 	 sub r0,r2,#19
+  80 008c 0860     	 str r0,[r1]
+  81 008e 4F49     	 ldr r1,.L6+64
+  82 0090 C3F8F010 	 str r1,[r3,#240]
+  83 0094 4E49     	 ldr r1,.L6+68
+  84 0096 A2F11200 	 sub r0,r2,#18
+  85 009a 0860     	 str r0,[r1]
+  86 009c 4D49     	 ldr r1,.L6+72
+  87 009e A2F11100 	 sub r0,r2,#17
+  88 00a2 0860     	 str r0,[r1]
+  89 00a4 4C49     	 ldr r1,.L6+76
+  90 00a6 C3F8F410 	 str r1,[r3,#244]
+  91 00aa 4C49     	 ldr r1,.L6+80
+  92 00ac A2F11000 	 sub r0,r2,#16
+  93 00b0 0860     	 str r0,[r1]
+  94 00b2 4B49     	 ldr r1,.L6+84
+  95 00b4 A2F10E00 	 sub r0,r2,#14
+  96 00b8 0860     	 str r0,[r1]
+  97 00ba 4A49     	 ldr r1,.L6+88
+  98 00bc C3F8F810 	 str r1,[r3,#248]
+  99 00c0 4949     	 ldr r1,.L6+92
+ 100 00c2 A2F10D00 	 sub r0,r2,#13
+ 101 00c6 0860     	 str r0,[r1]
+ 102 00c8 4849     	 ldr r1,.L6+96
+ 103 00ca A2F10C00 	 sub r0,r2,#12
+ 104 00ce 0860     	 str r0,[r1]
+ 105 00d0 A2F17E01 	 sub r1,r2,#126
+ 106 00d4 C3F8FC10 	 str r1,[r3,#252]
+ 107 00d8 A2F17C01 	 sub r1,r2,#124
+ 108 00dc C3F80011 	 str r1,[r3,#256]
+ 109 00e0 4349     	 ldr r1,.L6+100
+ 110 00e2 C3F80C11 	 str r1,[r3,#268]
+ 111 00e6 4349     	 ldr r1,.L6+104
+ 112 00e8 C3F81011 	 str r1,[r3,#272]
+ 113 00ec 4249     	 ldr r1,.L6+108
+ 114 00ee C3F81411 	 str r1,[r3,#276]
+ 115 00f2 02F11701 	 add r1,r2,#23
+ 116 00f6 C3F83811 	 str r1,[r3,#312]
+ 117 00fa A2F12001 	 sub r1,r2,#32
+ 118 00fe C3F82011 	 str r1,[r3,#288]
+ 119 0102 A2F11F01 	 sub r1,r2,#31
+ 120 0106 C3F82411 	 str r1,[r3,#292]
+ 121 010a A2F11E01 	 sub r1,r2,#30
+ 122 010e C3F82811 	 str r1,[r3,#296]
+ 123 0112 A2F11D01 	 sub r1,r2,#29
+ 124 0116 1C3A     	 subs r2,r2,#28
+ 125 0118 C3F83421 	 str r2,[r3,#308]
+ 126 011c 374A     	 ldr r2,.L6+112
+ 127 011e C3F82C11 	 str r1,[r3,#300]
+ 128 0122 C3F83C21 	 str r2,[r3,#316]
+ 129 0126 0020     	 movs r0,#0
+ 130 0128 03F5A072 	 add r2,r3,#320
+ 131 012c 0021     	 movs r1,#0
+ 132 012e C2E90001 	 strd r0,[r2]
+ 133 0132 0022     	 movs r2,#0
+ 134 0134 83F84821 	 strb r2,[r3,#328]
+ 135 0138 83F84921 	 strb r2,[r3,#329]
+ 136 013c 83F84A21 	 strb r2,[r3,#330]
+ 137 0140 83F84B21 	 strb r2,[r3,#331]
+ 138 0144 83F84C21 	 strb r2,[r3,#332]
+ 139 0148 83F84D21 	 strb r2,[r3,#333]
+ 140 014c 83F84E21 	 strb r2,[r3,#334]
+ 141 0150 83F84F21 	 strb r2,[r3,#335]
+ 142 0154 83F85021 	 strb r2,[r3,#336]
+ 143 0158 83F85121 	 strb r2,[r3,#337]
+ 144 015c 83F85221 	 strb r2,[r3,#338]
+ 145 0160 83F85321 	 strb r2,[r3,#339]
+ 146 0164 83F85421 	 strb r2,[r3,#340]
+ 147 0168 83F85521 	 strb r2,[r3,#341]
+ 148 016c 83F85621 	 strb r2,[r3,#342]
+ 149 0170 83F85721 	 strb r2,[r3,#343]
+ 150 0174 83F85821 	 strb r2,[r3,#344]
+ 151 0178 83F85921 	 strb r2,[r3,#345]
+ 152 017c 83F85A21 	 strb r2,[r3,#346]
+ 153 0180 83F85B21 	 strb r2,[r3,#347]
+ 154 0184 83F85C21 	 strb r2,[r3,#348]
+ 155 0188 10BD     	 pop {r4,pc}
+ 156              	.L7:
+ 157 018a 00BF     	 .align 2
+ 158              	.L6:
+ 159 018c 00000000 	 .word .LANCHOR0
+ 160 0190 00000000 	 .word CAN2_Res
+ 161 0194 00000000 	 .word canData
+ 162 0198 00000000 	 .word .LANCHOR1
+ 163 019c 00000000 	 .word g_yaw_ABS_LSB
+ 164 01a0 4A010000 	 .word VCU_DW+330
+ 165 01a4 00000000 	 .word g_yaw_ABS_MSB
+ 166 01a8 00000000 	 .word .LANCHOR2
+ 167 01ac 00000000 	 .word g_long_ABS_LSB
+ 168 01b0 00000000 	 .word g_long_ABS_MSB
+ 169 01b4 00000000 	 .word .LANCHOR3
+ 170 01b8 00000000 	 .word p_brake_F_LSB
+ 171 01bc 00000000 	 .word p_brake_F_MSB
+ 172 01c0 00000000 	 .word .LANCHOR4
+ 173 01c4 00000000 	 .word n_wheel_FL_mpros_LSB
+ 174 01c8 00000000 	 .word n_wheel_FL_mpros_MSB
+ 175 01cc 00000000 	 .word .LANCHOR5
+ 176 01d0 00000000 	 .word n_wheel_FR_mpros_LSB
+ 177 01d4 00000000 	 .word n_wheel_FR_mpros_MSB
+ 178 01d8 00000000 	 .word .LANCHOR6
+ 179 01dc 00000000 	 .word n_wheel_RL_mpros_LSB
+ 180 01e0 00000000 	 .word n_wheel_RL_mpros_MSB
+ 181 01e4 00000000 	 .word .LANCHOR7
+ 182 01e8 00000000 	 .word n_wheel_RR_mpros_LSB
+ 183 01ec 00000000 	 .word n_wheel_RR_mpros_MSB
+ 184 01f0 00000000 	 .word VAR_TR1_VSense_WP
+ 185 01f4 00000000 	 .word VAR_TR2_VSense_FAN1
+ 186 01f8 00000000 	 .word VAR_TR3_VSense_FAN2
+ 187 01fc 00000000 	 .word VAR_boardTemp
+ 189              	 .section .text.CAN_2_Receive,"ax",%progbits
+ 190              	 .align 1
+ 191              	 .global CAN_2_Receive
+ 192              	 .thumb
+ 193              	 .thumb_func
+ 195              	CAN_2_Receive:
+ 196              	 
+ 197              	 
+ 198 0000 70B5     	 push {r4,r5,r6,lr}
+ 199 0002 C44D     	 ldr r5,.L9
+ 200 0004 C44C     	 ldr r4,.L9+4
+ 201 0006 2846     	 mov r0,r5
+ 202 0008 FFF7FEFF 	 bl CAN_NODE_MO_Receive
+ 203 000c 2D68     	 ldr r5,[r5]
+ 204 000e D4F8CC60 	 ldr r6,[r4,#204]
+ 205 0012 288A     	 ldrh r0,[r5,#16]
+ 206 0014 0321     	 movs r1,#3
+ 207 0016 FFF7FEFF 	 bl checkRangePlausi
+ 208 001a C04B     	 ldr r3,.L9+8
+ 209 001c 3080     	 strh r0,[r6]
+ 210 001e 1E68     	 ldr r6,[r3]
+ 211 0020 D4F8CC30 	 ldr r3,[r4,#204]
+ 212 0024 0721     	 movs r1,#7
+ 213 0026 1888     	 ldrh r0,[r3]
+ 214 0028 0822     	 movs r2,#8
+ 215 002a FFF7FEFF 	 bl getbits
+ 216 002e BC4B     	 ldr r3,.L9+12
+ 217 0030 3070     	 strb r0,[r6]
+ 218 0032 1E68     	 ldr r6,[r3]
+ 219 0034 D4F8CC30 	 ldr r3,[r4,#204]
+ 220 0038 0822     	 movs r2,#8
+ 221 003a 1888     	 ldrh r0,[r3]
+ 222 003c 0F21     	 movs r1,#15
+ 223 003e FFF7FEFF 	 bl getbits
+ 224 0042 3070     	 strb r0,[r6]
+ 225 0044 688A     	 ldrh r0,[r5,#18]
+ 226 0046 D4F8D060 	 ldr r6,[r4,#208]
+ 227 004a 0221     	 movs r1,#2
+ 228 004c FFF7FEFF 	 bl checkRangePlausi
+ 229 0050 B44B     	 ldr r3,.L9+16
+ 230 0052 3080     	 strh r0,[r6]
+ 231 0054 1D68     	 ldr r5,[r3]
+ 232 0056 D4F8D030 	 ldr r3,[r4,#208]
+ 233 005a 0721     	 movs r1,#7
+ 234 005c 1888     	 ldrh r0,[r3]
+ 235 005e 0822     	 movs r2,#8
+ 236 0060 FFF7FEFF 	 bl getbits
+ 237 0064 B04B     	 ldr r3,.L9+20
+ 238 0066 2870     	 strb r0,[r5]
+ 239 0068 1D68     	 ldr r5,[r3]
+ 240 006a D4F8D030 	 ldr r3,[r4,#208]
+ 241 006e 0F21     	 movs r1,#15
+ 242 0070 1888     	 ldrh r0,[r3]
+ 243 0072 0822     	 movs r2,#8
+ 244 0074 FFF7FEFF 	 bl getbits
+ 245 0078 2870     	 strb r0,[r5]
+ 246 007a AC4D     	 ldr r5,.L9+24
+ 247 007c 2846     	 mov r0,r5
+ 248 007e FFF7FEFF 	 bl CAN_NODE_MO_Receive
+ 249 0082 2D68     	 ldr r5,[r5]
+ 250 0084 D4F8D430 	 ldr r3,[r4,#212]
+ 251 0088 2A7C     	 ldrb r2,[r5,#16]
+ 252 008a 1A70     	 strb r2,[r3]
+ 253 008c 2869     	 ldr r0,[r5,#16]
+ 254 008e D4F8D860 	 ldr r6,[r4,#216]
+ 255 0092 1022     	 movs r2,#16
+ 256 0094 1721     	 movs r1,#23
+ 257 0096 FFF7FEFF 	 bl getbits
+ 258 009a 0D21     	 movs r1,#13
+ 259 009c FFF7FEFF 	 bl checkRangePlausi
+ 260 00a0 A34B     	 ldr r3,.L9+28
+ 261 00a2 3080     	 strh r0,[r6]
+ 262 00a4 1E68     	 ldr r6,[r3]
+ 263 00a6 D4F8D830 	 ldr r3,[r4,#216]
+ 264 00aa 0721     	 movs r1,#7
+ 265 00ac 1888     	 ldrh r0,[r3]
+ 266 00ae 0822     	 movs r2,#8
+ 267 00b0 FFF7FEFF 	 bl getbits
+ 268 00b4 9F4B     	 ldr r3,.L9+32
+ 269 00b6 3070     	 strb r0,[r6]
+ 270 00b8 1E68     	 ldr r6,[r3]
+ 271 00ba D4F8D830 	 ldr r3,[r4,#216]
+ 272 00be 0F21     	 movs r1,#15
+ 273 00c0 1888     	 ldrh r0,[r3]
+ 274 00c2 0822     	 movs r2,#8
+ 275 00c4 FFF7FEFF 	 bl getbits
+ 276 00c8 3070     	 strb r0,[r6]
+ 277 00ca D4F8DC30 	 ldr r3,[r4,#220]
+ 278 00ce EA7C     	 ldrb r2,[r5,#19]
+ 279 00d0 1A70     	 strb r2,[r3]
+ 280 00d2 D4F8E030 	 ldr r3,[r4,#224]
+ 281 00d6 2A7D     	 ldrb r2,[r5,#20]
+ 282 00d8 1A70     	 strb r2,[r3]
+ 283 00da 6A7D     	 ldrb r2,[r5,#21]
+ 284 00dc D4F8E430 	 ldr r3,[r4,#228]
+ 285 00e0 954D     	 ldr r5,.L9+36
+ 286 00e2 1A70     	 strb r2,[r3]
+ 287 00e4 2846     	 mov r0,r5
+ 288 00e6 FFF7FEFF 	 bl CAN_NODE_MO_Receive
+ 289 00ea 2B68     	 ldr r3,[r5]
+ 290 00ec D4F8EC60 	 ldr r6,[r4,#236]
+ 291 00f0 188A     	 ldrh r0,[r3,#16]
+ 292 00f2 0721     	 movs r1,#7
+ 293 00f4 FFF7FEFF 	 bl checkRangePlausi
+ 294 00f8 904B     	 ldr r3,.L9+40
+ 295 00fa 3080     	 strh r0,[r6]
+ 296 00fc 1D68     	 ldr r5,[r3]
+ 297 00fe D4F8EC30 	 ldr r3,[r4,#236]
+ 298 0102 0721     	 movs r1,#7
+ 299 0104 1888     	 ldrh r0,[r3]
+ 300 0106 0822     	 movs r2,#8
+ 301 0108 FFF7FEFF 	 bl getbits
+ 302 010c 8C4B     	 ldr r3,.L9+44
+ 303 010e 2870     	 strb r0,[r5]
+ 304 0110 1D68     	 ldr r5,[r3]
+ 305 0112 D4F8EC30 	 ldr r3,[r4,#236]
+ 306 0116 0822     	 movs r2,#8
+ 307 0118 1888     	 ldrh r0,[r3]
+ 308 011a 0F21     	 movs r1,#15
+ 309 011c FFF7FEFF 	 bl getbits
+ 310 0120 2870     	 strb r0,[r5]
+ 311 0122 884D     	 ldr r5,.L9+48
+ 312 0124 2846     	 mov r0,r5
+ 313 0126 FFF7FEFF 	 bl CAN_NODE_MO_Receive
+ 314 012a 2B68     	 ldr r3,[r5]
+ 315 012c D4F8F060 	 ldr r6,[r4,#240]
+ 316 0130 188A     	 ldrh r0,[r3,#16]
+ 317 0132 0821     	 movs r1,#8
+ 318 0134 FFF7FEFF 	 bl checkRangePlausi
+ 319 0138 834B     	 ldr r3,.L9+52
+ 320 013a 3080     	 strh r0,[r6]
+ 321 013c 1D68     	 ldr r5,[r3]
+ 322 013e D4F8F030 	 ldr r3,[r4,#240]
+ 323 0142 0721     	 movs r1,#7
+ 324 0144 1888     	 ldrh r0,[r3]
+ 325 0146 0822     	 movs r2,#8
+ 326 0148 FFF7FEFF 	 bl getbits
+ 327 014c 7F4B     	 ldr r3,.L9+56
+ 328 014e 2870     	 strb r0,[r5]
+ 329 0150 1D68     	 ldr r5,[r3]
+ 330 0152 D4F8F030 	 ldr r3,[r4,#240]
+ 331 0156 0822     	 movs r2,#8
+ 332 0158 1888     	 ldrh r0,[r3]
+ 333 015a 0F21     	 movs r1,#15
+ 334 015c FFF7FEFF 	 bl getbits
+ 335 0160 2870     	 strb r0,[r5]
+ 336 0162 7B4D     	 ldr r5,.L9+60
+ 337 0164 2846     	 mov r0,r5
+ 338 0166 FFF7FEFF 	 bl CAN_NODE_MO_Receive
+ 339 016a 2B68     	 ldr r3,[r5]
+ 340 016c D4F8F460 	 ldr r6,[r4,#244]
+ 341 0170 188A     	 ldrh r0,[r3,#16]
+ 342 0172 0921     	 movs r1,#9
+ 343 0174 FFF7FEFF 	 bl checkRangePlausi
+ 344 0178 764B     	 ldr r3,.L9+64
+ 345 017a 3080     	 strh r0,[r6]
+ 346 017c 1D68     	 ldr r5,[r3]
+ 347 017e D4F8F430 	 ldr r3,[r4,#244]
+ 348 0182 0721     	 movs r1,#7
+ 349 0184 1888     	 ldrh r0,[r3]
+ 350 0186 0822     	 movs r2,#8
+ 351 0188 FFF7FEFF 	 bl getbits
+ 352 018c 724B     	 ldr r3,.L9+68
+ 353 018e 2870     	 strb r0,[r5]
+ 354 0190 1D68     	 ldr r5,[r3]
+ 355 0192 D4F8F430 	 ldr r3,[r4,#244]
+ 356 0196 0822     	 movs r2,#8
+ 357 0198 1888     	 ldrh r0,[r3]
+ 358 019a 0F21     	 movs r1,#15
+ 359 019c FFF7FEFF 	 bl getbits
+ 360 01a0 2870     	 strb r0,[r5]
+ 361 01a2 6E4D     	 ldr r5,.L9+72
+ 362 01a4 2846     	 mov r0,r5
+ 363 01a6 FFF7FEFF 	 bl CAN_NODE_MO_Receive
+ 364 01aa 2B68     	 ldr r3,[r5]
+ 365 01ac D4F8F860 	 ldr r6,[r4,#248]
+ 366 01b0 188A     	 ldrh r0,[r3,#16]
+ 367 01b2 0A21     	 movs r1,#10
+ 368 01b4 FFF7FEFF 	 bl checkRangePlausi
+ 369 01b8 694B     	 ldr r3,.L9+76
+ 370 01ba 3080     	 strh r0,[r6]
+ 371 01bc 1D68     	 ldr r5,[r3]
+ 372 01be D4F8F830 	 ldr r3,[r4,#248]
+ 373 01c2 0721     	 movs r1,#7
+ 374 01c4 1888     	 ldrh r0,[r3]
+ 375 01c6 0822     	 movs r2,#8
+ 376 01c8 FFF7FEFF 	 bl getbits
+ 377 01cc 654B     	 ldr r3,.L9+80
+ 378 01ce 2870     	 strb r0,[r5]
+ 379 01d0 1D68     	 ldr r5,[r3]
+ 380 01d2 D4F8F830 	 ldr r3,[r4,#248]
+ 381 01d6 0F21     	 movs r1,#15
+ 382 01d8 1888     	 ldrh r0,[r3]
+ 383 01da 0822     	 movs r2,#8
+ 384 01dc FFF7FEFF 	 bl getbits
+ 385 01e0 2870     	 strb r0,[r5]
+ 386 01e2 614D     	 ldr r5,.L9+84
+ 387 01e4 2846     	 mov r0,r5
+ 388 01e6 FFF7FEFF 	 bl CAN_NODE_MO_Receive
+ 389 01ea 2D68     	 ldr r5,[r5]
+ 390 01ec 0721     	 movs r1,#7
+ 391 01ee 0122     	 movs r2,#1
+ 392 01f0 E87D     	 ldrb r0,[r5,#23]
+ 393 01f2 FFF7FEFF 	 bl getbits
+ 394 01f6 84F84801 	 strb r0,[r4,#328]
+ 395 01fa 0021     	 movs r1,#0
+ 396 01fc 0122     	 movs r2,#1
+ 397 01fe 287C     	 ldrb r0,[r5,#16]
+ 398 0200 FFF7FEFF 	 bl getbits
+ 399 0204 84F84901 	 strb r0,[r4,#329]
+ 400 0208 0021     	 movs r1,#0
+ 401 020a 0122     	 movs r2,#1
+ 402 020c 687C     	 ldrb r0,[r5,#17]
+ 403 020e FFF7FEFF 	 bl getbits
+ 404 0212 84F84A01 	 strb r0,[r4,#330]
+ 405 0216 0021     	 movs r1,#0
+ 406 0218 0122     	 movs r2,#1
+ 407 021a A87C     	 ldrb r0,[r5,#18]
+ 408 021c FFF7FEFF 	 bl getbits
+ 409 0220 84F84B01 	 strb r0,[r4,#331]
+ 410 0224 0021     	 movs r1,#0
+ 411 0226 0122     	 movs r2,#1
+ 412 0228 E87C     	 ldrb r0,[r5,#19]
+ 413 022a FFF7FEFF 	 bl getbits
+ 414 022e 84F84C01 	 strb r0,[r4,#332]
+ 415 0232 0021     	 movs r1,#0
+ 416 0234 0122     	 movs r2,#1
+ 417 0236 287D     	 ldrb r0,[r5,#20]
+ 418 0238 FFF7FEFF 	 bl getbits
+ 419 023c 84F84D01 	 strb r0,[r4,#333]
+ 420 0240 0021     	 movs r1,#0
+ 421 0242 0122     	 movs r2,#1
+ 422 0244 687D     	 ldrb r0,[r5,#21]
+ 423 0246 FFF7FEFF 	 bl getbits
+ 424 024a 84F84F01 	 strb r0,[r4,#335]
+ 425 024e 0221     	 movs r1,#2
+ 426 0250 0122     	 movs r2,#1
+ 427 0252 687D     	 ldrb r0,[r5,#21]
+ 428 0254 FFF7FEFF 	 bl getbits
+ 429 0258 84F84E01 	 strb r0,[r4,#334]
+ 430 025c 0421     	 movs r1,#4
+ 431 025e 0122     	 movs r2,#1
+ 432 0260 687D     	 ldrb r0,[r5,#21]
+ 433 0262 FFF7FEFF 	 bl getbits
+ 434 0266 84F85001 	 strb r0,[r4,#336]
+ 435 026a 0621     	 movs r1,#6
+ 436 026c 0122     	 movs r2,#1
+ 437 026e 687D     	 ldrb r0,[r5,#21]
+ 438 0270 FFF7FEFF 	 bl getbits
+ 439 0274 84F85101 	 strb r0,[r4,#337]
+ 440 0278 0021     	 movs r1,#0
+ 441 027a 0122     	 movs r2,#1
+ 442 027c A87D     	 ldrb r0,[r5,#22]
+ 443 027e FFF7FEFF 	 bl getbits
+ 444 0282 0721     	 movs r1,#7
+ 445 0284 84F85201 	 strb r0,[r4,#338]
+ 446 0288 0A46     	 mov r2,r1
+ 447 028a 287C     	 ldrb r0,[r5,#16]
+ 448 028c FFF7FEFF 	 bl getbits
+ 449 0290 0721     	 movs r1,#7
+ 450 0292 84F85301 	 strb r0,[r4,#339]
+ 451 0296 0A46     	 mov r2,r1
+ 452 0298 687C     	 ldrb r0,[r5,#17]
+ 453 029a FFF7FEFF 	 bl getbits
+ 454 029e 0721     	 movs r1,#7
+ 455 02a0 84F85401 	 strb r0,[r4,#340]
+ 456 02a4 0A46     	 mov r2,r1
+ 457 02a6 A87C     	 ldrb r0,[r5,#18]
+ 458 02a8 FFF7FEFF 	 bl getbits
+ 459 02ac 0721     	 movs r1,#7
+ 460 02ae 84F85501 	 strb r0,[r4,#341]
+ 461 02b2 0A46     	 mov r2,r1
+ 462 02b4 E87C     	 ldrb r0,[r5,#19]
+ 463 02b6 FFF7FEFF 	 bl getbits
+ 464 02ba 0721     	 movs r1,#7
+ 465 02bc 84F85601 	 strb r0,[r4,#342]
+ 466 02c0 0A46     	 mov r2,r1
+ 467 02c2 287D     	 ldrb r0,[r5,#20]
+ 468 02c4 FFF7FEFF 	 bl getbits
+ 469 02c8 0121     	 movs r1,#1
+ 470 02ca 84F85701 	 strb r0,[r4,#343]
+ 471 02ce 0A46     	 mov r2,r1
+ 472 02d0 687D     	 ldrb r0,[r5,#21]
+ 473 02d2 FFF7FEFF 	 bl getbits
+ 474 02d6 84F85901 	 strb r0,[r4,#345]
+ 475 02da 0321     	 movs r1,#3
+ 476 02dc 0122     	 movs r2,#1
+ 477 02de 687D     	 ldrb r0,[r5,#21]
+ 478 02e0 FFF7FEFF 	 bl getbits
+ 479 02e4 84F85801 	 strb r0,[r4,#344]
+ 480 02e8 0521     	 movs r1,#5
+ 481 02ea 0122     	 movs r2,#1
+ 482 02ec 687D     	 ldrb r0,[r5,#21]
+ 483 02ee FFF7FEFF 	 bl getbits
+ 484 02f2 84F85A01 	 strb r0,[r4,#346]
+ 485 02f6 0721     	 movs r1,#7
+ 486 02f8 0122     	 movs r2,#1
+ 487 02fa 687D     	 ldrb r0,[r5,#21]
+ 488 02fc FFF7FEFF 	 bl getbits
+ 489 0300 84F85B01 	 strb r0,[r4,#347]
+ 490 0304 687D     	 ldrb r0,[r5,#21]
+ 491 0306 0921     	 movs r1,#9
+ 492 0308 0122     	 movs r2,#1
+ 493 030a FFF7FEFF 	 bl getbits
+ 494 030e 84F85C01 	 strb r0,[r4,#348]
+ 495 0312 70BD     	 pop {r4,r5,r6,pc}
+ 496              	.L10:
+ 497              	 .align 2
+ 498              	.L9:
+ 499 0314 00000000 	 .word CAN_2_LMO_01_Config
+ 500 0318 00000000 	 .word canData
+ 501 031c 00000000 	 .word g_yaw_ABS_LSB
+ 502 0320 00000000 	 .word g_yaw_ABS_MSB
+ 503 0324 00000000 	 .word g_long_ABS_LSB
+ 504 0328 00000000 	 .word g_long_ABS_MSB
+ 505 032c 00000000 	 .word CAN_2_LMO_02_Config
+ 506 0330 00000000 	 .word p_brake_F_LSB
+ 507 0334 00000000 	 .word p_brake_F_MSB
+ 508 0338 00000000 	 .word CAN_2_LMO_03_Config
+ 509 033c 00000000 	 .word n_wheel_FL_mpros_LSB
+ 510 0340 00000000 	 .word n_wheel_FL_mpros_MSB
+ 511 0344 00000000 	 .word CAN_2_LMO_04_Config
+ 512 0348 00000000 	 .word n_wheel_FR_mpros_LSB
+ 513 034c 00000000 	 .word n_wheel_FR_mpros_MSB
+ 514 0350 00000000 	 .word CAN_2_LMO_05_Config
+ 515 0354 00000000 	 .word n_wheel_RL_mpros_LSB
+ 516 0358 00000000 	 .word n_wheel_RL_mpros_MSB
+ 517 035c 00000000 	 .word CAN_2_LMO_06_Config
+ 518 0360 00000000 	 .word n_wheel_RR_mpros_LSB
+ 519 0364 00000000 	 .word n_wheel_RR_mpros_MSB
+ 520 0368 00000000 	 .word CAN_2_LMO_12_Config
+ 522              	 .global __aeabi_d2uiz
+ 523              	 .global __aeabi_ddiv
+ 524              	 .section .text.CAN_2_Transmit,"ax",%progbits
+ 525              	 .align 1
+ 526              	 .global CAN_2_Transmit
+ 527              	 .thumb
+ 528              	 .thumb_func
+ 530              	CAN_2_Transmit:
+ 531              	 
+ 532              	 
+ 533 0000 38B5     	 push {r3,r4,r5,lr}
+ 534 0002 394C     	 ldr r4,.L14+8
+ 535 0004 394D     	 ldr r5,.L14+12
+ 536 0006 D4F8FC30 	 ldr r3,[r4,#252]
+ 537 000a 0721     	 movs r1,#7
+ 538 000c 1888     	 ldrh r0,[r3]
+ 539 000e 0822     	 movs r2,#8
+ 540 0010 FFF7FEFF 	 bl getbits
+ 541 0014 D4F8FC30 	 ldr r3,[r4,#252]
+ 542 0018 2870     	 strb r0,[r5]
+ 543 001a 1888     	 ldrh r0,[r3]
+ 544 001c 0F21     	 movs r1,#15
+ 545 001e 0822     	 movs r2,#8
+ 546 0020 FFF7FEFF 	 bl getbits
+ 547 0024 D4F80031 	 ldr r3,[r4,#256]
+ 548 0028 6870     	 strb r0,[r5,#1]
+ 549 002a 1888     	 ldrh r0,[r3]
+ 550 002c 0721     	 movs r1,#7
+ 551 002e 0822     	 movs r2,#8
+ 552 0030 FFF7FEFF 	 bl getbits
+ 553 0034 D4F80031 	 ldr r3,[r4,#256]
+ 554 0038 A870     	 strb r0,[r5,#2]
+ 555 003a 0822     	 movs r2,#8
+ 556 003c 1888     	 ldrh r0,[r3]
+ 557 003e 0F21     	 movs r1,#15
+ 558 0040 FFF7FEFF 	 bl getbits
+ 559 0044 D4F80C31 	 ldr r3,[r4,#268]
+ 560 0048 E870     	 strb r0,[r5,#3]
+ 561 004a D3E90001 	 ldrd r0,[r3]
+ 562 004e FFF7FEFF 	 bl __aeabi_d2uiz
+ 563 0052 D4F81031 	 ldr r3,[r4,#272]
+ 564 0056 2871     	 strb r0,[r5,#4]
+ 565 0058 D3E90001 	 ldrd r0,[r3]
+ 566 005c FFF7FEFF 	 bl __aeabi_d2uiz
+ 567 0060 D4F81431 	 ldr r3,[r4,#276]
+ 568 0064 6871     	 strb r0,[r5,#5]
+ 569 0066 D3E90001 	 ldrd r0,[r3]
+ 570 006a FFF7FEFF 	 bl __aeabi_d2uiz
+ 571 006e D4F83831 	 ldr r3,[r4,#312]
+ 572 0072 A871     	 strb r0,[r5,#6]
+ 573 0074 1B78     	 ldrb r3,[r3]
+ 574 0076 1E4D     	 ldr r5,.L14+16
+ 575 0078 DB01     	 lsls r3,r3,#7
+ 576 007a 2B70     	 strb r3,[r5]
+ 577 007c D4F83C31 	 ldr r3,[r4,#316]
+ 578 0080 D3E90001 	 ldrd r0,[r3]
+ 579 0084 16A3     	 adr r3,.L14
+ 580 0086 D3E90023 	 ldrd r2,[r3]
+ 581 008a FFF7FEFF 	 bl __aeabi_ddiv
+ 582 008e FFF7FEFF 	 bl __aeabi_d2uiz
+ 583 0092 D4F82031 	 ldr r3,[r4,#288]
+ 584 0096 6870     	 strb r0,[r5,#1]
+ 585 0098 1B78     	 ldrb r3,[r3]
+ 586 009a AB70     	 strb r3,[r5,#2]
+ 587 009c D4F82431 	 ldr r3,[r4,#292]
+ 588 00a0 1B78     	 ldrb r3,[r3]
+ 589 00a2 EB70     	 strb r3,[r5,#3]
+ 590 00a4 D4F82831 	 ldr r3,[r4,#296]
+ 591 00a8 1B78     	 ldrb r3,[r3]
+ 592 00aa 2B71     	 strb r3,[r5,#4]
+ 593 00ac D4F82C31 	 ldr r3,[r4,#300]
+ 594 00b0 1B78     	 ldrb r3,[r3]
+ 595 00b2 6B71     	 strb r3,[r5,#5]
+ 596 00b4 D4F83431 	 ldr r3,[r4,#308]
+ 597 00b8 1B78     	 ldrb r3,[r3]
+ 598 00ba AB71     	 strb r3,[r5,#6]
+ 599 00bc 0024     	 movs r4,#0
+ 600              	.L12:
+ 601 00be 0D4B     	 ldr r3,.L14+20
+ 602 00c0 E200     	 lsls r2,r4,#3
+ 603 00c2 D3E90001 	 ldrd r0,[r3]
+ 604 00c6 0732     	 adds r2,r2,#7
+ 605 00c8 0823     	 movs r3,#8
+ 606 00ca FFF7FEFF 	 bl getbits64
+ 607 00ce 0A4B     	 ldr r3,.L14+24
+ 608 00d0 1855     	 strb r0,[r3,r4]
+ 609 00d2 0134     	 adds r4,r4,#1
+ 610 00d4 082C     	 cmp r4,#8
+ 611 00d6 F2D1     	 bne .L12
+ 612 00d8 38BD     	 pop {r3,r4,r5,pc}
+ 613              	.L15:
+ 614 00da 00BFAFF3 	 .align 3
+ 614      0080
+ 615              	.L14:
+ 616 00e0 33333333 	 .word 858993459
+ 617 00e4 3333E33F 	 .word 1071854387
+ 618 00e8 00000000 	 .word canData
+ 619 00ec 00000000 	 .word .LANCHOR8
+ 620 00f0 00000000 	 .word .LANCHOR9
+ 621 00f4 40010000 	 .word canData+320
+ 622 00f8 00000000 	 .word .LANCHOR10
+ 624              	 .global CAN_2_RES
+ 625              	 .comm n_wheel_RR_mpros_MSB,4,4
+ 626              	 .comm n_wheel_RR_mpros_LSB,4,4
+ 627              	 .global n_wheel_RR_mpros
+ 628              	 .comm n_wheel_RL_mpros_MSB,4,4
+ 629              	 .comm n_wheel_RL_mpros_LSB,4,4
+ 630              	 .global n_wheel_RL_mpros
+ 631              	 .comm n_wheel_FR_mpros_MSB,4,4
+ 632              	 .comm n_wheel_FR_mpros_LSB,4,4
+ 633              	 .global n_wheel_FR_mpros
+ 634              	 .comm n_wheel_FL_mpros_MSB,4,4
+ 635              	 .comm n_wheel_FL_mpros_LSB,4,4
+ 636              	 .global n_wheel_FL_mpros
+ 637              	 .comm p_brake_F_MSB,4,4
+ 638              	 .comm p_brake_F_LSB,4,4
+ 639              	 .global p_brake_F
+ 640              	 .comm g_long_ABS_MSB,4,4
+ 641              	 .comm g_long_ABS_LSB,4,4
+ 642              	 .global g_long_ABS
+ 643              	 .comm g_yaw_ABS_MSB,4,4
+ 644              	 .comm g_yaw_ABS_LSB,4,4
+ 645              	 .global g_yaw_ABS
+ 646              	 .global CAN2_data_Tx_LM11
+ 647              	 .global CAN2_data_Tx_LM10
+ 648              	 .global CAN2_data_Tx_LM09
+ 649              	 .comm shiftDownInterrupt,1,1
+ 650              	 .comm shiftUpInterrupt,1,1
+ 651              	 .comm VAR_TR3_VSense_FAN2,8,8
+ 652              	 .comm VAR_TR2_VSense_FAN1,8,8
+ 653              	 .comm VAR_TR1_VSense_WP,8,8
+ 654              	 .comm VAR_boardTemp,8,8
+ 655 00fc AFF30080 	 .section .bss.n_wheel_RR_mpros,"aw",%nobits
+ 656              	 .align 1
+ 657              	 .set .LANCHOR7,.+0
+ 660              	n_wheel_RR_mpros:
+ 661 0000 0000     	 .space 2
+ 662              	 .section .bss.n_wheel_FL_mpros,"aw",%nobits
+ 663              	 .align 1
+ 664              	 .set .LANCHOR4,.+0
+ 667              	n_wheel_FL_mpros:
+ 668 0000 0000     	 .space 2
+ 669              	 .section .bss.p_brake_F,"aw",%nobits
+ 670              	 .align 1
+ 671              	 .set .LANCHOR3,.+0
+ 674              	p_brake_F:
+ 675 0000 0000     	 .space 2
+ 676              	 .section .bss.g_yaw_ABS,"aw",%nobits
+ 677              	 .align 1
+ 678              	 .set .LANCHOR1,.+0
+ 681              	g_yaw_ABS:
+ 682 0000 0000     	 .space 2
+ 683              	 .section .bss.n_wheel_RL_mpros,"aw",%nobits
+ 684              	 .align 1
+ 685              	 .set .LANCHOR6,.+0
+ 688              	n_wheel_RL_mpros:
+ 689 0000 0000     	 .space 2
+ 690              	 .section .bss.n_wheel_FR_mpros,"aw",%nobits
+ 691              	 .align 1
+ 692              	 .set .LANCHOR5,.+0
+ 695              	n_wheel_FR_mpros:
+ 696 0000 0000     	 .space 2
+ 697              	 .section .data.CAN_2_RES,"aw",%progbits
+ 698              	 .set .LANCHOR0,.+0
+ 701              	CAN_2_RES:
+ 702 0000 01       	 .byte 1
+ 703              	 .section .bss.CAN2_data_Tx_LM10,"aw",%nobits
+ 704              	 .set .LANCHOR9,.+0
+ 707              	CAN2_data_Tx_LM10:
+ 708 0000 00000000 	 .space 8
+ 708      00000000 
+ 709              	 .section .bss.CAN2_data_Tx_LM11,"aw",%nobits
+ 710              	 .set .LANCHOR10,.+0
+ 713              	CAN2_data_Tx_LM11:
+ 714 0000 00000000 	 .space 8
+ 714      00000000 
+ 715              	 .section .bss.CAN2_data_Tx_LM09,"aw",%nobits
+ 716              	 .set .LANCHOR8,.+0
+ 719              	CAN2_data_Tx_LM09:
+ 720 0000 00000000 	 .space 8
+ 720      00000000 
+ 721              	 .section .bss.g_long_ABS,"aw",%nobits
+ 722              	 .align 1
+ 723              	 .set .LANCHOR2,.+0
+ 726              	g_long_ABS:
+ 727 0000 0000     	 .space 2
+ 728              	 .ident "GCC: (GNU Tools for ARM Embedded Processors) 4.9.3 20141119 (release) [ARM/embedded-4_9-branch revision 218278]"
+DEFINED SYMBOLS
+                            *ABS*:00000000 CAN_2.c
+    {standard input}:17     .text.CAN_2_ini:00000000 $t
+    {standard input}:22     .text.CAN_2_ini:00000000 CAN_2_ini
+    {standard input}:159    .text.CAN_2_ini:0000018c $d
+                            *COM*:00000004 g_yaw_ABS_LSB
+                            *COM*:00000004 g_yaw_ABS_MSB
+                            *COM*:00000004 g_long_ABS_LSB
+                            *COM*:00000004 g_long_ABS_MSB
+                            *COM*:00000004 p_brake_F_LSB
+                            *COM*:00000004 p_brake_F_MSB
+                            *COM*:00000004 n_wheel_FL_mpros_LSB
+                            *COM*:00000004 n_wheel_FL_mpros_MSB
+                            *COM*:00000004 n_wheel_FR_mpros_LSB
+                            *COM*:00000004 n_wheel_FR_mpros_MSB
+                            *COM*:00000004 n_wheel_RL_mpros_LSB
+                            *COM*:00000004 n_wheel_RL_mpros_MSB
+                            *COM*:00000004 n_wheel_RR_mpros_LSB
+                            *COM*:00000004 n_wheel_RR_mpros_MSB
+                            *COM*:00000008 VAR_TR1_VSense_WP
+                            *COM*:00000008 VAR_TR2_VSense_FAN1
+                            *COM*:00000008 VAR_TR3_VSense_FAN2
+                            *COM*:00000008 VAR_boardTemp
+    {standard input}:190    .text.CAN_2_Receive:00000000 $t
+    {standard input}:195    .text.CAN_2_Receive:00000000 CAN_2_Receive
+    {standard input}:499    .text.CAN_2_Receive:00000314 $d
+    {standard input}:525    .text.CAN_2_Transmit:00000000 $t
+    {standard input}:530    .text.CAN_2_Transmit:00000000 CAN_2_Transmit
+    {standard input}:616    .text.CAN_2_Transmit:000000e0 $d
+    {standard input}:701    .data.CAN_2_RES:00000000 CAN_2_RES
+    {standard input}:660    .bss.n_wheel_RR_mpros:00000000 n_wheel_RR_mpros
+    {standard input}:688    .bss.n_wheel_RL_mpros:00000000 n_wheel_RL_mpros
+    {standard input}:695    .bss.n_wheel_FR_mpros:00000000 n_wheel_FR_mpros
+    {standard input}:667    .bss.n_wheel_FL_mpros:00000000 n_wheel_FL_mpros
+    {standard input}:674    .bss.p_brake_F:00000000 p_brake_F
+    {standard input}:726    .bss.g_long_ABS:00000000 g_long_ABS
+    {standard input}:681    .bss.g_yaw_ABS:00000000 g_yaw_ABS
+    {standard input}:713    .bss.CAN2_data_Tx_LM11:00000000 CAN2_data_Tx_LM11
+    {standard input}:707    .bss.CAN2_data_Tx_LM10:00000000 CAN2_data_Tx_LM10
+    {standard input}:719    .bss.CAN2_data_Tx_LM09:00000000 CAN2_data_Tx_LM09
+                            *COM*:00000001 shiftDownInterrupt
+                            *COM*:00000001 shiftUpInterrupt
+    {standard input}:656    .bss.n_wheel_RR_mpros:00000000 $d
+    {standard input}:663    .bss.n_wheel_FL_mpros:00000000 $d
+    {standard input}:670    .bss.p_brake_F:00000000 $d
+    {standard input}:677    .bss.g_yaw_ABS:00000000 $d
+    {standard input}:684    .bss.n_wheel_RL_mpros:00000000 $d
+    {standard input}:691    .bss.n_wheel_FR_mpros:00000000 $d
+    {standard input}:708    .bss.CAN2_data_Tx_LM10:00000000 $d
+    {standard input}:714    .bss.CAN2_data_Tx_LM11:00000000 $d
+    {standard input}:720    .bss.CAN2_data_Tx_LM09:00000000 $d
+    {standard input}:722    .bss.g_long_ABS:00000000 $d
+    {standard input}:655    .text.CAN_2_Transmit:000000fc $t
+
+UNDEFINED SYMBOLS
+CAN2_Res
+canData
+VCU_DW
+CAN_NODE_MO_Receive
+checkRangePlausi
+getbits
+CAN_2_LMO_01_Config
+CAN_2_LMO_02_Config
+CAN_2_LMO_03_Config
+CAN_2_LMO_04_Config
+CAN_2_LMO_05_Config
+CAN_2_LMO_06_Config
+CAN_2_LMO_12_Config
+__aeabi_d2uiz
+__aeabi_ddiv
+getbits64

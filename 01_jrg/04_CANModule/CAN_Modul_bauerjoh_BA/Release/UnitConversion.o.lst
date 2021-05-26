@@ -1,0 +1,331 @@
+   1              	 .syntax unified
+   2              	 .cpu cortex-m4
+   3              	 .eabi_attribute 27,3
+   4              	 .fpu fpv4-sp-d16
+   5              	 .eabi_attribute 20,1
+   6              	 .eabi_attribute 21,1
+   7              	 .eabi_attribute 23,3
+   8              	 .eabi_attribute 24,1
+   9              	 .eabi_attribute 25,1
+  10              	 .eabi_attribute 26,1
+  11              	 .eabi_attribute 30,4
+  12              	 .eabi_attribute 34,1
+  13              	 .eabi_attribute 18,4
+  14              	 .thumb
+  15              	 .file "UnitConversion.c"
+  16              	 .global __aeabi_f2d
+  17              	 .global __aeabi_dmul
+  18              	 .global __aeabi_dadd
+  19              	 .global __aeabi_d2uiz
+  20              	 .global __aeabi_dsub
+  21              	 .global __aeabi_ddiv
+  22              	 .section .text.UnitConversion,"ax",%progbits
+  23              	 .align 1
+  24              	 .global UnitConversion
+  25              	 .thumb
+  26              	 .thumb_func
+  28              	UnitConversion:
+  29              	 
+  30              	 
+  31 0000 30B5     	 push {r4,r5,lr}
+  32 0002 90F82050 	 ldrb r5,[r0,#32]
+  33 0006 8FB0     	 sub sp,sp,#60
+  34 0008 0446     	 mov r4,r0
+  35 000a B5B9     	 cbnz r5,.L2
+  36 000c 438C     	 ldrh r3,[r0,#34]
+  37 000e 90ED017A 	 flds s14,[r0,#4]
+  38 0012 07EE903A 	 fmsr s15,r3
+  39 0016 F8EEE77A 	 fsitos s15,s15
+  40 001a 77EE677A 	 fsubs s15,s14,s15
+  41 001e 17EE900A 	 fmrs r0,s15
+  42 0022 FFF7FEFF 	 bl __aeabi_f2d
+  43 0026 ACA3     	 adr r3,.L30+104
+  44 0028 D3E90023 	 ldrd r2,[r3]
+  45 002c FFF7FEFF 	 bl __aeabi_dmul
+  46 0030 0022     	 movs r2,#0
+  47 0032 994B     	 ldr r3,.L30+40
+  48 0034 FFF7FEFF 	 bl __aeabi_dadd
+  49 0038 E1E0     	 b .L23
+  50              	.L2:
+  51 003a 012D     	 cmp r5,#1
+  52 003c 21D1     	 bne .L4
+  53 003e 438C     	 ldrh r3,[r0,#34]
+  54 0040 D0ED016A 	 flds s13,[r0,#4]
+  55 0044 07EE903A 	 fmsr s15,r3
+  56 0048 90F82830 	 ldrb r3,[r0,#40]
+  57 004c F8EEE77A 	 fsitos s15,s15
+  58 0050 36EEE77A 	 fsubs s14,s13,s15
+  59 0054 07EE903A 	 fmsr s15,r3
+  60 0058 F8EEE77A 	 fsitos s15,s15
+  61 005c D0ED096A 	 flds s13,[r0,#36]
+  62 0060 67EE277A 	 fmuls s15,s14,s15
+  63 0064 9FED8D7A 	 flds s14,.L30+44
+  64 0068 67EE877A 	 fmuls s15,s15,s14
+  65 006c 9FED8C7A 	 flds s14,.L30+48
+  66 0070 C7EE877A 	 fdivs s15,s15,s14
+  67 0074 9FED8B7A 	 flds s14,.L30+52
+  68 0078 A6EEA77A 	 vfma.f32 s14,s13,s15
+  69 007c F0EE477A 	 fcpys s15,s14
+  70 0080 CDE0     	 b .L24
+  71              	.L4:
+  72 0082 032D     	 cmp r5,#3
+  73 0084 20D1     	 bne .L5
+  74 0086 90F82830 	 ldrb r3,[r0,#40]
+  75 008a 90ED017A 	 flds s14,[r0,#4]
+  76 008e 07EE903A 	 fmsr s15,r3
+  77 0092 F8EEE77A 	 fsitos s15,s15
+  78 0096 67EE877A 	 fmuls s15,s15,s14
+  79 009a 9FED817A 	 flds s14,.L30+48
+  80 009e C7EE877A 	 fdivs s15,s15,s14
+  81 00a2 90ED097A 	 flds s14,[r0,#36]
+  82 00a6 67EE877A 	 fmuls s15,s15,s14
+  83 00aa 17EE900A 	 fmrs r0,s15
+  84 00ae FFF7FEFF 	 bl __aeabi_f2d
+  85 00b2 6FA3     	 adr r3,.L30
+  86 00b4 D3E90023 	 ldrd r2,[r3]
+  87 00b8 FFF7FEFF 	 bl __aeabi_dsub
+  88 00bc 6EA3     	 adr r3,.L30+8
+  89 00be D3E90023 	 ldrd r2,[r3]
+  90 00c2 FFF7FEFF 	 bl __aeabi_ddiv
+  91 00c6 9AE0     	 b .L23
+  92              	.L5:
+  93 00c8 05F0FB03 	 and r3,r5,#251
+  94 00cc 022B     	 cmp r3,#2
+  95 00ce 76D1     	 bne .L6
+  96 00d0 0021     	 movs r1,#0
+  97 00d2 1822     	 movs r2,#24
+  98 00d4 02A8     	 add r0,sp,#8
+  99 00d6 FFF7FEFF 	 bl memset
+ 100 00da 08A8     	 add r0,sp,#32
+ 101 00dc 0021     	 movs r1,#0
+ 102 00de 1822     	 movs r2,#24
+ 103 00e0 FFF7FEFF 	 bl memset
+ 104 00e4 022D     	 cmp r5,#2
+ 105 00e6 18D0     	 beq .L8
+ 106 00e8 062D     	 cmp r5,#6
+ 107 00ea 32D1     	 bne .L7
+ 108 00ec 8C23     	 movs r3,#140
+ 109 00ee 0293     	 str r3,[sp,#8]
+ 110 00f0 40F21B13 	 movw r3,#283
+ 111 00f4 0393     	 str r3,[sp,#12]
+ 112 00f6 40F25A23 	 movw r3,#602
+ 113 00fa 0493     	 str r3,[sp,#16]
+ 114 00fc 4FF4A163 	 mov r3,#1288
+ 115 0100 0593     	 str r3,[sp,#20]
+ 116 0102 40F6C413 	 movw r3,#2500
+ 117 0106 0693     	 str r3,[sp,#24]
+ 118 0108 40F60A73 	 movw r3,#3850
+ 119 010c 0793     	 str r3,[sp,#28]
+ 120 010e 664B     	 ldr r3,.L30+56
+ 121 0110 0893     	 str r3,[sp,#32]
+ 122 0112 664B     	 ldr r3,.L30+60
+ 123 0114 0993     	 str r3,[sp,#36]
+ 124 0116 664B     	 ldr r3,.L30+64
+ 125 0118 16E0     	 b .L22
+ 126              	.L8:
+ 127 011a 40F2E113 	 movw r3,#481
+ 128 011e 0293     	 str r3,[sp,#8]
+ 129 0120 40F2E533 	 movw r3,#997
+ 130 0124 0393     	 str r3,[sp,#12]
+ 131 0126 40F2ED53 	 movw r3,#1517
+ 132 012a 0493     	 str r3,[sp,#16]
+ 133 012c 40F6C303 	 movw r3,#2243
+ 134 0130 0593     	 str r3,[sp,#20]
+ 135 0132 40F60553 	 movw r3,#3333
+ 136 0136 0693     	 str r3,[sp,#24]
+ 137 0138 41F29803 	 movw r3,#4248
+ 138 013c 0793     	 str r3,[sp,#28]
+ 139 013e 5A4B     	 ldr r3,.L30+56
+ 140 0140 0893     	 str r3,[sp,#32]
+ 141 0142 5C4B     	 ldr r3,.L30+68
+ 142 0144 0993     	 str r3,[sp,#36]
+ 143 0146 5C4B     	 ldr r3,.L30+72
+ 144              	.L22:
+ 145 0148 0A93     	 str r3,[sp,#40]
+ 146 014a 5C4B     	 ldr r3,.L30+76
+ 147 014c 0B93     	 str r3,[sp,#44]
+ 148 014e 5C4B     	 ldr r3,.L30+80
+ 149 0150 0C93     	 str r3,[sp,#48]
+ 150              	.L7:
+ 151 0152 9FED5C7A 	 flds s14,.L30+84
+ 152 0156 D4ED017A 	 flds s15,[r4,#4]
+ 153 015a 67EE877A 	 fmuls s15,s15,s14
+ 154 015e 9FED507A 	 flds s14,.L30+48
+ 155 0162 C7EE877A 	 fdivs s15,s15,s14
+ 156 0166 0021     	 movs r1,#0
+ 157 0168 FCEEE77A 	 ftouizs s15,s15
+ 158 016c CDED017A 	 fsts s15,[sp,#4]
+ 159 0170 BDF80430 	 ldrh r3,[sp,#4]
+ 160              	.L10:
+ 161 0174 02AA     	 add r2,sp,#8
+ 162 0176 52F82120 	 ldr r2,[r2,r1,lsl#2]
+ 163 017a 9A42     	 cmp r2,r3
+ 164 017c 55D8     	 bhi .L28
+ 165 017e 0131     	 adds r1,r1,#1
+ 166 0180 0629     	 cmp r1,#6
+ 167 0182 F7D1     	 bne .L10
+ 168 0184 DDED067A 	 flds s15,[sp,#24]
+ 169 0188 DDED0C6A 	 flds s13,[sp,#48]
+ 170 018c 9FED4E6A 	 flds s12,.L30+88
+ 171 0190 B8EE677A 	 fuitos s14,s15
+ 172 0194 DDED077A 	 flds s15,[sp,#28]
+ 173 0198 F8EE677A 	 fuitos s15,s15
+ 174              	.L14:
+ 175 019c 36EE666A 	 fsubs s12,s12,s13
+ 176 01a0 77EEC77A 	 fsubs s15,s15,s14
+ 177 01a4 86EE276A 	 fdivs s12,s12,s15
+ 178 01a8 07EE903A 	 fmsr s15,r3
+ 179 01ac E6EE476A 	 vfms.f32 s13,s12,s14
+ 180 01b0 F8EEE77A 	 fsitos s15,s15
+ 181 01b4 E6EE276A 	 vfma.f32 s13,s12,s15
+ 182 01b8 FCEEE67A 	 ftouizs s15,s13
+ 183 01bc 31E0     	 b .L26
+ 184              	.L6:
+ 185 01be 042D     	 cmp r5,#4
+ 186 01c0 0AD1     	 bne .L15
+ 187 01c2 4068     	 ldr r0,[r0,#4]
+ 188 01c4 FFF7FEFF 	 bl __aeabi_f2d
+ 189 01c8 2DA3     	 adr r3,.L30+16
+ 190 01ca D3E90023 	 ldrd r2,[r3]
+ 191 01ce FFF7FEFF 	 bl __aeabi_dmul
+ 192 01d2 0022     	 movs r2,#0
+ 193 01d4 3D4B     	 ldr r3,.L30+92
+ 194 01d6 0CE0     	 b .L25
+ 195              	.L15:
+ 196 01d8 052D     	 cmp r5,#5
+ 197 01da 14D1     	 bne .L16
+ 198 01dc 4068     	 ldr r0,[r0,#4]
+ 199 01de FFF7FEFF 	 bl __aeabi_f2d
+ 200 01e2 29A3     	 adr r3,.L30+24
+ 201 01e4 D3E90023 	 ldrd r2,[r3]
+ 202 01e8 FFF7FEFF 	 bl __aeabi_dmul
+ 203 01ec 28A3     	 adr r3,.L30+32
+ 204 01ee D3E90023 	 ldrd r2,[r3]
+ 205              	.L25:
+ 206 01f2 FFF7FEFF 	 bl __aeabi_dsub
+ 207 01f6 0022     	 movs r2,#0
+ 208 01f8 354B     	 ldr r3,.L30+96
+ 209 01fa FFF7FEFF 	 bl __aeabi_dmul
+ 210              	.L23:
+ 211 01fe FFF7FEFF 	 bl __aeabi_d2uiz
+ 212 0202 E082     	 strh r0,[r4,#22]
+ 213 0204 32E0     	 b .L1
+ 214              	.L16:
+ 215 0206 072D     	 cmp r5,#7
+ 216 0208 30D1     	 bne .L1
+ 217 020a 9FED327A 	 flds s14,.L30+100
+ 218 020e D0ED017A 	 flds s15,[r0,#4]
+ 219 0212 67EE877A 	 fmuls s15,s15,s14
+ 220 0216 9FED227A 	 flds s14,.L30+48
+ 221 021a C7EE877A 	 fdivs s15,s15,s14
+ 222              	.L24:
+ 223 021e FCEEE77A 	 ftouizs s15,s15
+ 224              	.L26:
+ 225 0222 17EE903A 	 fmrs r3,s15
+ 226 0226 E382     	 strh r3,[r4,#22]
+ 227 0228 20E0     	 b .L1
+ 228              	.L28:
+ 229 022a 61B9     	 cbnz r1,.L29
+ 230 022c DDED027A 	 flds s15,[sp,#8]
+ 231 0230 DDED086A 	 flds s13,[sp,#32]
+ 232 0234 9DED096A 	 flds s12,[sp,#36]
+ 233 0238 B8EE677A 	 fuitos s14,s15
+ 234 023c DDED037A 	 flds s15,[sp,#12]
+ 235 0240 F8EE677A 	 fuitos s15,s15
+ 236 0244 AAE7     	 b .L14
+ 237              	.L29:
+ 238 0246 481E     	 subs r0,r1,#1
+ 239 0248 0EAD     	 add r5,sp,#56
+ 240 024a 05EB8000 	 add r0,r5,r0,lsl#2
+ 241 024e 50ED0C7A 	 flds s15,[r0,#-48]
+ 242 0252 50ED066A 	 flds s13,[r0,#-24]
+ 243 0256 B8EE677A 	 fuitos s14,s15
+ 244 025a 07EE902A 	 fmsr s15,r2
+ 245 025e 05EB8101 	 add r1,r5,r1,lsl#2
+ 246 0262 F8EE677A 	 fuitos s15,s15
+ 247 0266 11ED066A 	 flds s12,[r1,#-24]
+ 248 026a 97E7     	 b .L14
+ 249              	.L1:
+ 250 026c 0FB0     	 add sp,sp,#60
+ 251              	 
+ 252 026e 30BD     	 pop {r4,r5,pc}
+ 253              	.L31:
+ 254              	 .align 3
+ 255              	.L30:
+ 256 0270 721CC771 	 .word 1908874354
+ 257 0274 1CC7E13F 	 .word 1071761180
+ 258 0278 7B14AE47 	 .word 1202590843
+ 259 027c E17AA43F 	 .word 1067743969
+ 260 0280 32772D21 	 .word 556627762
+ 261 0284 1FF4F23F 	 .word 1072886815
+ 262 0288 4A0C022B 	 .word 721554506
+ 263 028c 8716F83F 	 .word 1073223303
+ 264 0290 00000000 	 .word 0
+ 265 0294 00606940 	 .word 1080647680
+ 266 0298 0000E040 	 .word 1088421888
+ 267 029c 00007A44 	 .word 1148846080
+ 268 02a0 00F07F45 	 .word 1166012416
+ 269 02a4 00000043 	 .word 1124073472
+ 270 02a8 0000FA42 	 .word 1123680256
+ 271 02ac 0000C842 	 .word 1120403456
+ 272 02b0 00009642 	 .word 1117126656
+ 273 02b4 0000B442 	 .word 1119092736
+ 274 02b8 00008C42 	 .word 1116471296
+ 275 02bc 00004842 	 .word 1112014848
+ 276 02c0 0000C841 	 .word 1103626240
+ 277 02c4 00409C45 	 .word 1167867904
+ 278 02c8 00000000 	 .word 0
+ 279 02cc 00006540 	 .word 1080360960
+ 280 02d0 00002440 	 .word 1076101120
+ 281 02d4 00000842 	 .word 1107820544
+ 282 02d8 FE43FAED 	 .word -302365698
+ 283 02dc EB002040 	 .word 1075839211
+ 285              	 .comm NTC1,44,4
+ 286              	 .comm u_OUT2_Meas,44,4
+ 287              	 .comm u_OUT1_Meas,44,4
+ 288              	 .comm u_5V_ANA_Meas,44,4
+ 289              	 .comm u_12V_Meas,44,4
+ 290              	 .comm T_Board,44,4
+ 291              	 .comm f_LC_RR,44,4
+ 292              	 .comm f_LC_RL,44,4
+ 293              	 .comm x_RH_RR,44,4
+ 294              	 .comm x_RH_RL,44,4
+ 295              	 .comm x_DP_RR,44,4
+ 296              	 .comm x_DP_RL,44,4
+ 297              	 .comm p_Pneu,44,4
+ 298              	 .comm p_Oil,44,4
+ 299              	 .comm T_Water,44,4
+ 300              	 .comm T_Oil,44,4
+ 301              	 .comm time,4,4
+ 302              	 .ident "GCC: (GNU Tools for ARM Embedded Processors) 4.9.3 20141119 (release) [ARM/embedded-4_9-branch revision 218278]"
+DEFINED SYMBOLS
+                            *ABS*:00000000 UnitConversion.c
+    {standard input}:23     .text.UnitConversion:00000000 $t
+    {standard input}:28     .text.UnitConversion:00000000 UnitConversion
+    {standard input}:256    .text.UnitConversion:00000270 $d
+                            *COM*:0000002c NTC1
+                            *COM*:0000002c u_OUT2_Meas
+                            *COM*:0000002c u_OUT1_Meas
+                            *COM*:0000002c u_5V_ANA_Meas
+                            *COM*:0000002c u_12V_Meas
+                            *COM*:0000002c T_Board
+                            *COM*:0000002c f_LC_RR
+                            *COM*:0000002c f_LC_RL
+                            *COM*:0000002c x_RH_RR
+                            *COM*:0000002c x_RH_RL
+                            *COM*:0000002c x_DP_RR
+                            *COM*:0000002c x_DP_RL
+                            *COM*:0000002c p_Pneu
+                            *COM*:0000002c p_Oil
+                            *COM*:0000002c T_Water
+                            *COM*:0000002c T_Oil
+                            *COM*:00000004 time
+
+UNDEFINED SYMBOLS
+__aeabi_f2d
+__aeabi_dmul
+__aeabi_dadd
+__aeabi_d2uiz
+__aeabi_dsub
+__aeabi_ddiv
+memset

@@ -1,0 +1,562 @@
+   1              	 .syntax unified
+   2              	 .cpu cortex-m4
+   3              	 .eabi_attribute 27,3
+   4              	 .fpu fpv4-sp-d16
+   5              	 .eabi_attribute 20,1
+   6              	 .eabi_attribute 21,1
+   7              	 .eabi_attribute 23,3
+   8              	 .eabi_attribute 24,1
+   9              	 .eabi_attribute 25,1
+  10              	 .eabi_attribute 26,1
+  11              	 .eabi_attribute 30,6
+  12              	 .eabi_attribute 34,1
+  13              	 .eabi_attribute 18,4
+  14              	 .thumb
+  15              	 .file "list.c"
+  16              	 .text
+  17              	.Ltext0:
+  18              	 .cfi_sections .debug_frame
+  19              	 .section .text.vListInitialise,"ax",%progbits
+  20              	 .align 2
+  21              	 .global vListInitialise
+  22              	 .thumb
+  23              	 .thumb_func
+  25              	vListInitialise:
+  26              	.LFB137:
+  27              	 .file 1 "../Dave/Generated/FREERTOS/list.c"
+   1:../Dave/Generated/FREERTOS/list.c **** /*
+   2:../Dave/Generated/FREERTOS/list.c ****  * FreeRTOS Kernel V10.0.1
+   3:../Dave/Generated/FREERTOS/list.c ****  * Copyright (C) 2017 Amazon.com, Inc. or its affiliates.  All Rights Reserved.
+   4:../Dave/Generated/FREERTOS/list.c ****  *
+   5:../Dave/Generated/FREERTOS/list.c ****  * Permission is hereby granted, free of charge, to any person obtaining a copy of
+   6:../Dave/Generated/FREERTOS/list.c ****  * this software and associated documentation files (the "Software"), to deal in
+   7:../Dave/Generated/FREERTOS/list.c ****  * the Software without restriction, including without limitation the rights to
+   8:../Dave/Generated/FREERTOS/list.c ****  * use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of
+   9:../Dave/Generated/FREERTOS/list.c ****  * the Software, and to permit persons to whom the Software is furnished to do so,
+  10:../Dave/Generated/FREERTOS/list.c ****  * subject to the following conditions:
+  11:../Dave/Generated/FREERTOS/list.c ****  *
+  12:../Dave/Generated/FREERTOS/list.c ****  * The above copyright notice and this permission notice shall be included in all
+  13:../Dave/Generated/FREERTOS/list.c ****  * copies or substantial portions of the Software.
+  14:../Dave/Generated/FREERTOS/list.c ****  *
+  15:../Dave/Generated/FREERTOS/list.c ****  * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+  16:../Dave/Generated/FREERTOS/list.c ****  * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS
+  17:../Dave/Generated/FREERTOS/list.c ****  * FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR
+  18:../Dave/Generated/FREERTOS/list.c ****  * COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER
+  19:../Dave/Generated/FREERTOS/list.c ****  * IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
+  20:../Dave/Generated/FREERTOS/list.c ****  * CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+  21:../Dave/Generated/FREERTOS/list.c ****  *
+  22:../Dave/Generated/FREERTOS/list.c ****  * http://www.FreeRTOS.org
+  23:../Dave/Generated/FREERTOS/list.c ****  * http://aws.amazon.com/freertos
+  24:../Dave/Generated/FREERTOS/list.c ****  *
+  25:../Dave/Generated/FREERTOS/list.c ****  * 1 tab == 4 spaces!
+  26:../Dave/Generated/FREERTOS/list.c ****  */
+  27:../Dave/Generated/FREERTOS/list.c **** 
+  28:../Dave/Generated/FREERTOS/list.c **** 
+  29:../Dave/Generated/FREERTOS/list.c **** #include <stdlib.h>
+  30:../Dave/Generated/FREERTOS/list.c **** #include "FreeRTOS.h"
+  31:../Dave/Generated/FREERTOS/list.c **** #include "list.h"
+  32:../Dave/Generated/FREERTOS/list.c **** 
+  33:../Dave/Generated/FREERTOS/list.c **** /*-----------------------------------------------------------
+  34:../Dave/Generated/FREERTOS/list.c ****  * PUBLIC LIST API documented in list.h
+  35:../Dave/Generated/FREERTOS/list.c ****  *----------------------------------------------------------*/
+  36:../Dave/Generated/FREERTOS/list.c **** 
+  37:../Dave/Generated/FREERTOS/list.c **** void vListInitialise( List_t * const pxList )
+  38:../Dave/Generated/FREERTOS/list.c **** {
+  28              	 .loc 1 38 0
+  29              	 .cfi_startproc
+  30              	 
+  31              	 
+  32              	 
+  33 0000 80B4     	 push {r7}
+  34              	 .cfi_def_cfa_offset 4
+  35              	 .cfi_offset 7,-4
+  36 0002 83B0     	 sub sp,sp,#12
+  37              	 .cfi_def_cfa_offset 16
+  38 0004 00AF     	 add r7,sp,#0
+  39              	 .cfi_def_cfa_register 7
+  40 0006 7860     	 str r0,[r7,#4]
+  39:../Dave/Generated/FREERTOS/list.c **** 	/* The list structure contains a list item which is used to mark the
+  40:../Dave/Generated/FREERTOS/list.c **** 	end of the list.  To initialise the list the list end is inserted
+  41:../Dave/Generated/FREERTOS/list.c **** 	as the only list entry. */
+  42:../Dave/Generated/FREERTOS/list.c **** 	pxList->pxIndex = ( ListItem_t * ) &( pxList->xListEnd );			/*lint !e826 !e740 The mini list struc
+  41              	 .loc 1 42 0
+  42 0008 7B68     	 ldr r3,[r7,#4]
+  43 000a 03F10802 	 add r2,r3,#8
+  44 000e 7B68     	 ldr r3,[r7,#4]
+  45 0010 5A60     	 str r2,[r3,#4]
+  43:../Dave/Generated/FREERTOS/list.c **** 
+  44:../Dave/Generated/FREERTOS/list.c **** 	/* The list end value is the highest possible value in the list to
+  45:../Dave/Generated/FREERTOS/list.c **** 	ensure it remains at the end of the list. */
+  46:../Dave/Generated/FREERTOS/list.c **** 	pxList->xListEnd.xItemValue = portMAX_DELAY;
+  46              	 .loc 1 46 0
+  47 0012 7B68     	 ldr r3,[r7,#4]
+  48 0014 4FF0FF32 	 mov r2,#-1
+  49 0018 9A60     	 str r2,[r3,#8]
+  47:../Dave/Generated/FREERTOS/list.c **** 
+  48:../Dave/Generated/FREERTOS/list.c **** 	/* The list end next and previous pointers point to itself so we know
+  49:../Dave/Generated/FREERTOS/list.c **** 	when the list is empty. */
+  50:../Dave/Generated/FREERTOS/list.c **** 	pxList->xListEnd.pxNext = ( ListItem_t * ) &( pxList->xListEnd );	/*lint !e826 !e740 The mini list
+  50              	 .loc 1 50 0
+  51 001a 7B68     	 ldr r3,[r7,#4]
+  52 001c 03F10802 	 add r2,r3,#8
+  53 0020 7B68     	 ldr r3,[r7,#4]
+  54 0022 DA60     	 str r2,[r3,#12]
+  51:../Dave/Generated/FREERTOS/list.c **** 	pxList->xListEnd.pxPrevious = ( ListItem_t * ) &( pxList->xListEnd );/*lint !e826 !e740 The mini l
+  55              	 .loc 1 51 0
+  56 0024 7B68     	 ldr r3,[r7,#4]
+  57 0026 03F10802 	 add r2,r3,#8
+  58 002a 7B68     	 ldr r3,[r7,#4]
+  59 002c 1A61     	 str r2,[r3,#16]
+  52:../Dave/Generated/FREERTOS/list.c **** 
+  53:../Dave/Generated/FREERTOS/list.c **** 	pxList->uxNumberOfItems = ( UBaseType_t ) 0U;
+  60              	 .loc 1 53 0
+  61 002e 7B68     	 ldr r3,[r7,#4]
+  62 0030 0022     	 movs r2,#0
+  63 0032 1A60     	 str r2,[r3]
+  54:../Dave/Generated/FREERTOS/list.c **** 
+  55:../Dave/Generated/FREERTOS/list.c **** 	/* Write known values into the list if
+  56:../Dave/Generated/FREERTOS/list.c **** 	configUSE_LIST_DATA_INTEGRITY_CHECK_BYTES is set to 1. */
+  57:../Dave/Generated/FREERTOS/list.c **** 	listSET_LIST_INTEGRITY_CHECK_1_VALUE( pxList );
+  58:../Dave/Generated/FREERTOS/list.c **** 	listSET_LIST_INTEGRITY_CHECK_2_VALUE( pxList );
+  59:../Dave/Generated/FREERTOS/list.c **** }
+  64              	 .loc 1 59 0
+  65 0034 0C37     	 adds r7,r7,#12
+  66              	 .cfi_def_cfa_offset 4
+  67 0036 BD46     	 mov sp,r7
+  68              	 .cfi_def_cfa_register 13
+  69              	 
+  70 0038 5DF8047B 	 ldr r7,[sp],#4
+  71              	 .cfi_restore 7
+  72              	 .cfi_def_cfa_offset 0
+  73 003c 7047     	 bx lr
+  74              	 .cfi_endproc
+  75              	.LFE137:
+  77 003e 00BF     	 .section .text.vListInitialiseItem,"ax",%progbits
+  78              	 .align 2
+  79              	 .global vListInitialiseItem
+  80              	 .thumb
+  81              	 .thumb_func
+  83              	vListInitialiseItem:
+  84              	.LFB138:
+  60:../Dave/Generated/FREERTOS/list.c **** /*-----------------------------------------------------------*/
+  61:../Dave/Generated/FREERTOS/list.c **** 
+  62:../Dave/Generated/FREERTOS/list.c **** void vListInitialiseItem( ListItem_t * const pxItem )
+  63:../Dave/Generated/FREERTOS/list.c **** {
+  85              	 .loc 1 63 0
+  86              	 .cfi_startproc
+  87              	 
+  88              	 
+  89              	 
+  90 0000 80B4     	 push {r7}
+  91              	 .cfi_def_cfa_offset 4
+  92              	 .cfi_offset 7,-4
+  93 0002 83B0     	 sub sp,sp,#12
+  94              	 .cfi_def_cfa_offset 16
+  95 0004 00AF     	 add r7,sp,#0
+  96              	 .cfi_def_cfa_register 7
+  97 0006 7860     	 str r0,[r7,#4]
+  64:../Dave/Generated/FREERTOS/list.c **** 	/* Make sure the list item is not recorded as being on a list. */
+  65:../Dave/Generated/FREERTOS/list.c **** 	pxItem->pvContainer = NULL;
+  98              	 .loc 1 65 0
+  99 0008 7B68     	 ldr r3,[r7,#4]
+ 100 000a 0022     	 movs r2,#0
+ 101 000c 1A61     	 str r2,[r3,#16]
+  66:../Dave/Generated/FREERTOS/list.c **** 
+  67:../Dave/Generated/FREERTOS/list.c **** 	/* Write known values into the list item if
+  68:../Dave/Generated/FREERTOS/list.c **** 	configUSE_LIST_DATA_INTEGRITY_CHECK_BYTES is set to 1. */
+  69:../Dave/Generated/FREERTOS/list.c **** 	listSET_FIRST_LIST_ITEM_INTEGRITY_CHECK_VALUE( pxItem );
+  70:../Dave/Generated/FREERTOS/list.c **** 	listSET_SECOND_LIST_ITEM_INTEGRITY_CHECK_VALUE( pxItem );
+  71:../Dave/Generated/FREERTOS/list.c **** }
+ 102              	 .loc 1 71 0
+ 103 000e 0C37     	 adds r7,r7,#12
+ 104              	 .cfi_def_cfa_offset 4
+ 105 0010 BD46     	 mov sp,r7
+ 106              	 .cfi_def_cfa_register 13
+ 107              	 
+ 108 0012 5DF8047B 	 ldr r7,[sp],#4
+ 109              	 .cfi_restore 7
+ 110              	 .cfi_def_cfa_offset 0
+ 111 0016 7047     	 bx lr
+ 112              	 .cfi_endproc
+ 113              	.LFE138:
+ 115              	 .section .text.vListInsertEnd,"ax",%progbits
+ 116              	 .align 2
+ 117              	 .global vListInsertEnd
+ 118              	 .thumb
+ 119              	 .thumb_func
+ 121              	vListInsertEnd:
+ 122              	.LFB139:
+  72:../Dave/Generated/FREERTOS/list.c **** /*-----------------------------------------------------------*/
+  73:../Dave/Generated/FREERTOS/list.c **** 
+  74:../Dave/Generated/FREERTOS/list.c **** void vListInsertEnd( List_t * const pxList, ListItem_t * const pxNewListItem )
+  75:../Dave/Generated/FREERTOS/list.c **** {
+ 123              	 .loc 1 75 0
+ 124              	 .cfi_startproc
+ 125              	 
+ 126              	 
+ 127              	 
+ 128 0000 80B4     	 push {r7}
+ 129              	 .cfi_def_cfa_offset 4
+ 130              	 .cfi_offset 7,-4
+ 131 0002 85B0     	 sub sp,sp,#20
+ 132              	 .cfi_def_cfa_offset 24
+ 133 0004 00AF     	 add r7,sp,#0
+ 134              	 .cfi_def_cfa_register 7
+ 135 0006 7860     	 str r0,[r7,#4]
+ 136 0008 3960     	 str r1,[r7]
+  76:../Dave/Generated/FREERTOS/list.c **** ListItem_t * const pxIndex = pxList->pxIndex;
+ 137              	 .loc 1 76 0
+ 138 000a 7B68     	 ldr r3,[r7,#4]
+ 139 000c 5B68     	 ldr r3,[r3,#4]
+ 140 000e FB60     	 str r3,[r7,#12]
+  77:../Dave/Generated/FREERTOS/list.c **** 
+  78:../Dave/Generated/FREERTOS/list.c **** 	/* Only effective when configASSERT() is also defined, these tests may catch
+  79:../Dave/Generated/FREERTOS/list.c **** 	the list data structures being overwritten in memory.  They will not catch
+  80:../Dave/Generated/FREERTOS/list.c **** 	data errors caused by incorrect configuration or use of FreeRTOS. */
+  81:../Dave/Generated/FREERTOS/list.c **** 	listTEST_LIST_INTEGRITY( pxList );
+  82:../Dave/Generated/FREERTOS/list.c **** 	listTEST_LIST_ITEM_INTEGRITY( pxNewListItem );
+  83:../Dave/Generated/FREERTOS/list.c **** 
+  84:../Dave/Generated/FREERTOS/list.c **** 	/* Insert a new list item into pxList, but rather than sort the list,
+  85:../Dave/Generated/FREERTOS/list.c **** 	makes the new list item the last item to be removed by a call to
+  86:../Dave/Generated/FREERTOS/list.c **** 	listGET_OWNER_OF_NEXT_ENTRY(). */
+  87:../Dave/Generated/FREERTOS/list.c **** 	pxNewListItem->pxNext = pxIndex;
+ 141              	 .loc 1 87 0
+ 142 0010 3B68     	 ldr r3,[r7]
+ 143 0012 FA68     	 ldr r2,[r7,#12]
+ 144 0014 5A60     	 str r2,[r3,#4]
+  88:../Dave/Generated/FREERTOS/list.c **** 	pxNewListItem->pxPrevious = pxIndex->pxPrevious;
+ 145              	 .loc 1 88 0
+ 146 0016 FB68     	 ldr r3,[r7,#12]
+ 147 0018 9A68     	 ldr r2,[r3,#8]
+ 148 001a 3B68     	 ldr r3,[r7]
+ 149 001c 9A60     	 str r2,[r3,#8]
+  89:../Dave/Generated/FREERTOS/list.c **** 
+  90:../Dave/Generated/FREERTOS/list.c **** 	/* Only used during decision coverage testing. */
+  91:../Dave/Generated/FREERTOS/list.c **** 	mtCOVERAGE_TEST_DELAY();
+  92:../Dave/Generated/FREERTOS/list.c **** 
+  93:../Dave/Generated/FREERTOS/list.c **** 	pxIndex->pxPrevious->pxNext = pxNewListItem;
+ 150              	 .loc 1 93 0
+ 151 001e FB68     	 ldr r3,[r7,#12]
+ 152 0020 9B68     	 ldr r3,[r3,#8]
+ 153 0022 3A68     	 ldr r2,[r7]
+ 154 0024 5A60     	 str r2,[r3,#4]
+  94:../Dave/Generated/FREERTOS/list.c **** 	pxIndex->pxPrevious = pxNewListItem;
+ 155              	 .loc 1 94 0
+ 156 0026 FB68     	 ldr r3,[r7,#12]
+ 157 0028 3A68     	 ldr r2,[r7]
+ 158 002a 9A60     	 str r2,[r3,#8]
+  95:../Dave/Generated/FREERTOS/list.c **** 
+  96:../Dave/Generated/FREERTOS/list.c **** 	/* Remember which list the item is in. */
+  97:../Dave/Generated/FREERTOS/list.c **** 	pxNewListItem->pvContainer = ( void * ) pxList;
+ 159              	 .loc 1 97 0
+ 160 002c 3B68     	 ldr r3,[r7]
+ 161 002e 7A68     	 ldr r2,[r7,#4]
+ 162 0030 1A61     	 str r2,[r3,#16]
+  98:../Dave/Generated/FREERTOS/list.c **** 
+  99:../Dave/Generated/FREERTOS/list.c **** 	( pxList->uxNumberOfItems )++;
+ 163              	 .loc 1 99 0
+ 164 0032 7B68     	 ldr r3,[r7,#4]
+ 165 0034 1B68     	 ldr r3,[r3]
+ 166 0036 5A1C     	 adds r2,r3,#1
+ 167 0038 7B68     	 ldr r3,[r7,#4]
+ 168 003a 1A60     	 str r2,[r3]
+ 100:../Dave/Generated/FREERTOS/list.c **** }
+ 169              	 .loc 1 100 0
+ 170 003c 1437     	 adds r7,r7,#20
+ 171              	 .cfi_def_cfa_offset 4
+ 172 003e BD46     	 mov sp,r7
+ 173              	 .cfi_def_cfa_register 13
+ 174              	 
+ 175 0040 5DF8047B 	 ldr r7,[sp],#4
+ 176              	 .cfi_restore 7
+ 177              	 .cfi_def_cfa_offset 0
+ 178 0044 7047     	 bx lr
+ 179              	 .cfi_endproc
+ 180              	.LFE139:
+ 182 0046 00BF     	 .section .text.vListInsert,"ax",%progbits
+ 183              	 .align 2
+ 184              	 .global vListInsert
+ 185              	 .thumb
+ 186              	 .thumb_func
+ 188              	vListInsert:
+ 189              	.LFB140:
+ 101:../Dave/Generated/FREERTOS/list.c **** /*-----------------------------------------------------------*/
+ 102:../Dave/Generated/FREERTOS/list.c **** 
+ 103:../Dave/Generated/FREERTOS/list.c **** void vListInsert( List_t * const pxList, ListItem_t * const pxNewListItem )
+ 104:../Dave/Generated/FREERTOS/list.c **** {
+ 190              	 .loc 1 104 0
+ 191              	 .cfi_startproc
+ 192              	 
+ 193              	 
+ 194              	 
+ 195 0000 80B4     	 push {r7}
+ 196              	 .cfi_def_cfa_offset 4
+ 197              	 .cfi_offset 7,-4
+ 198 0002 85B0     	 sub sp,sp,#20
+ 199              	 .cfi_def_cfa_offset 24
+ 200 0004 00AF     	 add r7,sp,#0
+ 201              	 .cfi_def_cfa_register 7
+ 202 0006 7860     	 str r0,[r7,#4]
+ 203 0008 3960     	 str r1,[r7]
+ 105:../Dave/Generated/FREERTOS/list.c **** ListItem_t *pxIterator;
+ 106:../Dave/Generated/FREERTOS/list.c **** const TickType_t xValueOfInsertion = pxNewListItem->xItemValue;
+ 204              	 .loc 1 106 0
+ 205 000a 3B68     	 ldr r3,[r7]
+ 206 000c 1B68     	 ldr r3,[r3]
+ 207 000e BB60     	 str r3,[r7,#8]
+ 107:../Dave/Generated/FREERTOS/list.c **** 
+ 108:../Dave/Generated/FREERTOS/list.c **** 	/* Only effective when configASSERT() is also defined, these tests may catch
+ 109:../Dave/Generated/FREERTOS/list.c **** 	the list data structures being overwritten in memory.  They will not catch
+ 110:../Dave/Generated/FREERTOS/list.c **** 	data errors caused by incorrect configuration or use of FreeRTOS. */
+ 111:../Dave/Generated/FREERTOS/list.c **** 	listTEST_LIST_INTEGRITY( pxList );
+ 112:../Dave/Generated/FREERTOS/list.c **** 	listTEST_LIST_ITEM_INTEGRITY( pxNewListItem );
+ 113:../Dave/Generated/FREERTOS/list.c **** 
+ 114:../Dave/Generated/FREERTOS/list.c **** 	/* Insert the new list item into the list, sorted in xItemValue order.
+ 115:../Dave/Generated/FREERTOS/list.c **** 
+ 116:../Dave/Generated/FREERTOS/list.c **** 	If the list already contains a list item with the same item value then the
+ 117:../Dave/Generated/FREERTOS/list.c **** 	new list item should be placed after it.  This ensures that TCB's which are
+ 118:../Dave/Generated/FREERTOS/list.c **** 	stored in ready lists (all of which have the same xItemValue value) get a
+ 119:../Dave/Generated/FREERTOS/list.c **** 	share of the CPU.  However, if the xItemValue is the same as the back marker
+ 120:../Dave/Generated/FREERTOS/list.c **** 	the iteration loop below will not end.  Therefore the value is checked
+ 121:../Dave/Generated/FREERTOS/list.c **** 	first, and the algorithm slightly modified if necessary. */
+ 122:../Dave/Generated/FREERTOS/list.c **** 	if( xValueOfInsertion == portMAX_DELAY )
+ 208              	 .loc 1 122 0
+ 209 0010 BB68     	 ldr r3,[r7,#8]
+ 210 0012 B3F1FF3F 	 cmp r3,#-1
+ 211 0016 03D1     	 bne .L5
+ 123:../Dave/Generated/FREERTOS/list.c **** 	{
+ 124:../Dave/Generated/FREERTOS/list.c **** 		pxIterator = pxList->xListEnd.pxPrevious;
+ 212              	 .loc 1 124 0
+ 213 0018 7B68     	 ldr r3,[r7,#4]
+ 214 001a 1B69     	 ldr r3,[r3,#16]
+ 215 001c FB60     	 str r3,[r7,#12]
+ 216 001e 0CE0     	 b .L6
+ 217              	.L5:
+ 125:../Dave/Generated/FREERTOS/list.c **** 	}
+ 126:../Dave/Generated/FREERTOS/list.c **** 	else
+ 127:../Dave/Generated/FREERTOS/list.c **** 	{
+ 128:../Dave/Generated/FREERTOS/list.c **** 		/* *** NOTE ***********************************************************
+ 129:../Dave/Generated/FREERTOS/list.c **** 		If you find your application is crashing here then likely causes are
+ 130:../Dave/Generated/FREERTOS/list.c **** 		listed below.  In addition see http://www.freertos.org/FAQHelp.html for
+ 131:../Dave/Generated/FREERTOS/list.c **** 		more tips, and ensure configASSERT() is defined!
+ 132:../Dave/Generated/FREERTOS/list.c **** 		http://www.freertos.org/a00110.html#configASSERT
+ 133:../Dave/Generated/FREERTOS/list.c **** 
+ 134:../Dave/Generated/FREERTOS/list.c **** 			1) Stack overflow -
+ 135:../Dave/Generated/FREERTOS/list.c **** 			   see http://www.freertos.org/Stacks-and-stack-overflow-checking.html
+ 136:../Dave/Generated/FREERTOS/list.c **** 			2) Incorrect interrupt priority assignment, especially on Cortex-M
+ 137:../Dave/Generated/FREERTOS/list.c **** 			   parts where numerically high priority values denote low actual
+ 138:../Dave/Generated/FREERTOS/list.c **** 			   interrupt priorities, which can seem counter intuitive.  See
+ 139:../Dave/Generated/FREERTOS/list.c **** 			   http://www.freertos.org/RTOS-Cortex-M3-M4.html and the definition
+ 140:../Dave/Generated/FREERTOS/list.c **** 			   of configMAX_SYSCALL_INTERRUPT_PRIORITY on
+ 141:../Dave/Generated/FREERTOS/list.c **** 			   http://www.freertos.org/a00110.html
+ 142:../Dave/Generated/FREERTOS/list.c **** 			3) Calling an API function from within a critical section or when
+ 143:../Dave/Generated/FREERTOS/list.c **** 			   the scheduler is suspended, or calling an API function that does
+ 144:../Dave/Generated/FREERTOS/list.c **** 			   not end in "FromISR" from an interrupt.
+ 145:../Dave/Generated/FREERTOS/list.c **** 			4) Using a queue or semaphore before it has been initialised or
+ 146:../Dave/Generated/FREERTOS/list.c **** 			   before the scheduler has been started (are interrupts firing
+ 147:../Dave/Generated/FREERTOS/list.c **** 			   before vTaskStartScheduler() has been called?).
+ 148:../Dave/Generated/FREERTOS/list.c **** 		**********************************************************************/
+ 149:../Dave/Generated/FREERTOS/list.c **** 
+ 150:../Dave/Generated/FREERTOS/list.c **** 		for( pxIterator = ( ListItem_t * ) &( pxList->xListEnd ); pxIterator->pxNext->xItemValue <= xValu
+ 218              	 .loc 1 150 0
+ 219 0020 7B68     	 ldr r3,[r7,#4]
+ 220 0022 0833     	 adds r3,r3,#8
+ 221 0024 FB60     	 str r3,[r7,#12]
+ 222 0026 02E0     	 b .L7
+ 223              	.L8:
+ 224              	 .loc 1 150 0 is_stmt 0 discriminator 3
+ 225 0028 FB68     	 ldr r3,[r7,#12]
+ 226 002a 5B68     	 ldr r3,[r3,#4]
+ 227 002c FB60     	 str r3,[r7,#12]
+ 228              	.L7:
+ 229              	 .loc 1 150 0 discriminator 1
+ 230 002e FB68     	 ldr r3,[r7,#12]
+ 231 0030 5B68     	 ldr r3,[r3,#4]
+ 232 0032 1A68     	 ldr r2,[r3]
+ 233 0034 BB68     	 ldr r3,[r7,#8]
+ 234 0036 9A42     	 cmp r2,r3
+ 235 0038 F6D9     	 bls .L8
+ 236              	.L6:
+ 151:../Dave/Generated/FREERTOS/list.c **** 		{
+ 152:../Dave/Generated/FREERTOS/list.c **** 			/* There is nothing to do here, just iterating to the wanted
+ 153:../Dave/Generated/FREERTOS/list.c **** 			insertion position. */
+ 154:../Dave/Generated/FREERTOS/list.c **** 		}
+ 155:../Dave/Generated/FREERTOS/list.c **** 	}
+ 156:../Dave/Generated/FREERTOS/list.c **** 
+ 157:../Dave/Generated/FREERTOS/list.c **** 	pxNewListItem->pxNext = pxIterator->pxNext;
+ 237              	 .loc 1 157 0 is_stmt 1
+ 238 003a FB68     	 ldr r3,[r7,#12]
+ 239 003c 5A68     	 ldr r2,[r3,#4]
+ 240 003e 3B68     	 ldr r3,[r7]
+ 241 0040 5A60     	 str r2,[r3,#4]
+ 158:../Dave/Generated/FREERTOS/list.c **** 	pxNewListItem->pxNext->pxPrevious = pxNewListItem;
+ 242              	 .loc 1 158 0
+ 243 0042 3B68     	 ldr r3,[r7]
+ 244 0044 5B68     	 ldr r3,[r3,#4]
+ 245 0046 3A68     	 ldr r2,[r7]
+ 246 0048 9A60     	 str r2,[r3,#8]
+ 159:../Dave/Generated/FREERTOS/list.c **** 	pxNewListItem->pxPrevious = pxIterator;
+ 247              	 .loc 1 159 0
+ 248 004a 3B68     	 ldr r3,[r7]
+ 249 004c FA68     	 ldr r2,[r7,#12]
+ 250 004e 9A60     	 str r2,[r3,#8]
+ 160:../Dave/Generated/FREERTOS/list.c **** 	pxIterator->pxNext = pxNewListItem;
+ 251              	 .loc 1 160 0
+ 252 0050 FB68     	 ldr r3,[r7,#12]
+ 253 0052 3A68     	 ldr r2,[r7]
+ 254 0054 5A60     	 str r2,[r3,#4]
+ 161:../Dave/Generated/FREERTOS/list.c **** 
+ 162:../Dave/Generated/FREERTOS/list.c **** 	/* Remember which list the item is in.  This allows fast removal of the
+ 163:../Dave/Generated/FREERTOS/list.c **** 	item later. */
+ 164:../Dave/Generated/FREERTOS/list.c **** 	pxNewListItem->pvContainer = ( void * ) pxList;
+ 255              	 .loc 1 164 0
+ 256 0056 3B68     	 ldr r3,[r7]
+ 257 0058 7A68     	 ldr r2,[r7,#4]
+ 258 005a 1A61     	 str r2,[r3,#16]
+ 165:../Dave/Generated/FREERTOS/list.c **** 
+ 166:../Dave/Generated/FREERTOS/list.c **** 	( pxList->uxNumberOfItems )++;
+ 259              	 .loc 1 166 0
+ 260 005c 7B68     	 ldr r3,[r7,#4]
+ 261 005e 1B68     	 ldr r3,[r3]
+ 262 0060 5A1C     	 adds r2,r3,#1
+ 263 0062 7B68     	 ldr r3,[r7,#4]
+ 264 0064 1A60     	 str r2,[r3]
+ 167:../Dave/Generated/FREERTOS/list.c **** }
+ 265              	 .loc 1 167 0
+ 266 0066 1437     	 adds r7,r7,#20
+ 267              	 .cfi_def_cfa_offset 4
+ 268 0068 BD46     	 mov sp,r7
+ 269              	 .cfi_def_cfa_register 13
+ 270              	 
+ 271 006a 5DF8047B 	 ldr r7,[sp],#4
+ 272              	 .cfi_restore 7
+ 273              	 .cfi_def_cfa_offset 0
+ 274 006e 7047     	 bx lr
+ 275              	 .cfi_endproc
+ 276              	.LFE140:
+ 278              	 .section .text.uxListRemove,"ax",%progbits
+ 279              	 .align 2
+ 280              	 .global uxListRemove
+ 281              	 .thumb
+ 282              	 .thumb_func
+ 284              	uxListRemove:
+ 285              	.LFB141:
+ 168:../Dave/Generated/FREERTOS/list.c **** /*-----------------------------------------------------------*/
+ 169:../Dave/Generated/FREERTOS/list.c **** 
+ 170:../Dave/Generated/FREERTOS/list.c **** UBaseType_t uxListRemove( ListItem_t * const pxItemToRemove )
+ 171:../Dave/Generated/FREERTOS/list.c **** {
+ 286              	 .loc 1 171 0
+ 287              	 .cfi_startproc
+ 288              	 
+ 289              	 
+ 290              	 
+ 291 0000 80B4     	 push {r7}
+ 292              	 .cfi_def_cfa_offset 4
+ 293              	 .cfi_offset 7,-4
+ 294 0002 85B0     	 sub sp,sp,#20
+ 295              	 .cfi_def_cfa_offset 24
+ 296 0004 00AF     	 add r7,sp,#0
+ 297              	 .cfi_def_cfa_register 7
+ 298 0006 7860     	 str r0,[r7,#4]
+ 172:../Dave/Generated/FREERTOS/list.c **** /* The list item knows which list it is in.  Obtain the list from the list
+ 173:../Dave/Generated/FREERTOS/list.c **** item. */
+ 174:../Dave/Generated/FREERTOS/list.c **** List_t * const pxList = ( List_t * ) pxItemToRemove->pvContainer;
+ 299              	 .loc 1 174 0
+ 300 0008 7B68     	 ldr r3,[r7,#4]
+ 301 000a 1B69     	 ldr r3,[r3,#16]
+ 302 000c FB60     	 str r3,[r7,#12]
+ 175:../Dave/Generated/FREERTOS/list.c **** 
+ 176:../Dave/Generated/FREERTOS/list.c **** 	pxItemToRemove->pxNext->pxPrevious = pxItemToRemove->pxPrevious;
+ 303              	 .loc 1 176 0
+ 304 000e 7B68     	 ldr r3,[r7,#4]
+ 305 0010 5B68     	 ldr r3,[r3,#4]
+ 306 0012 7A68     	 ldr r2,[r7,#4]
+ 307 0014 9268     	 ldr r2,[r2,#8]
+ 308 0016 9A60     	 str r2,[r3,#8]
+ 177:../Dave/Generated/FREERTOS/list.c **** 	pxItemToRemove->pxPrevious->pxNext = pxItemToRemove->pxNext;
+ 309              	 .loc 1 177 0
+ 310 0018 7B68     	 ldr r3,[r7,#4]
+ 311 001a 9B68     	 ldr r3,[r3,#8]
+ 312 001c 7A68     	 ldr r2,[r7,#4]
+ 313 001e 5268     	 ldr r2,[r2,#4]
+ 314 0020 5A60     	 str r2,[r3,#4]
+ 178:../Dave/Generated/FREERTOS/list.c **** 
+ 179:../Dave/Generated/FREERTOS/list.c **** 	/* Only used during decision coverage testing. */
+ 180:../Dave/Generated/FREERTOS/list.c **** 	mtCOVERAGE_TEST_DELAY();
+ 181:../Dave/Generated/FREERTOS/list.c **** 
+ 182:../Dave/Generated/FREERTOS/list.c **** 	/* Make sure the index is left pointing to a valid item. */
+ 183:../Dave/Generated/FREERTOS/list.c **** 	if( pxList->pxIndex == pxItemToRemove )
+ 315              	 .loc 1 183 0
+ 316 0022 FB68     	 ldr r3,[r7,#12]
+ 317 0024 5A68     	 ldr r2,[r3,#4]
+ 318 0026 7B68     	 ldr r3,[r7,#4]
+ 319 0028 9A42     	 cmp r2,r3
+ 320 002a 03D1     	 bne .L10
+ 184:../Dave/Generated/FREERTOS/list.c **** 	{
+ 185:../Dave/Generated/FREERTOS/list.c **** 		pxList->pxIndex = pxItemToRemove->pxPrevious;
+ 321              	 .loc 1 185 0
+ 322 002c 7B68     	 ldr r3,[r7,#4]
+ 323 002e 9A68     	 ldr r2,[r3,#8]
+ 324 0030 FB68     	 ldr r3,[r7,#12]
+ 325 0032 5A60     	 str r2,[r3,#4]
+ 326              	.L10:
+ 186:../Dave/Generated/FREERTOS/list.c **** 	}
+ 187:../Dave/Generated/FREERTOS/list.c **** 	else
+ 188:../Dave/Generated/FREERTOS/list.c **** 	{
+ 189:../Dave/Generated/FREERTOS/list.c **** 		mtCOVERAGE_TEST_MARKER();
+ 190:../Dave/Generated/FREERTOS/list.c **** 	}
+ 191:../Dave/Generated/FREERTOS/list.c **** 
+ 192:../Dave/Generated/FREERTOS/list.c **** 	pxItemToRemove->pvContainer = NULL;
+ 327              	 .loc 1 192 0
+ 328 0034 7B68     	 ldr r3,[r7,#4]
+ 329 0036 0022     	 movs r2,#0
+ 330 0038 1A61     	 str r2,[r3,#16]
+ 193:../Dave/Generated/FREERTOS/list.c **** 	( pxList->uxNumberOfItems )--;
+ 331              	 .loc 1 193 0
+ 332 003a FB68     	 ldr r3,[r7,#12]
+ 333 003c 1B68     	 ldr r3,[r3]
+ 334 003e 5A1E     	 subs r2,r3,#1
+ 335 0040 FB68     	 ldr r3,[r7,#12]
+ 336 0042 1A60     	 str r2,[r3]
+ 194:../Dave/Generated/FREERTOS/list.c **** 
+ 195:../Dave/Generated/FREERTOS/list.c **** 	return pxList->uxNumberOfItems;
+ 337              	 .loc 1 195 0
+ 338 0044 FB68     	 ldr r3,[r7,#12]
+ 339 0046 1B68     	 ldr r3,[r3]
+ 196:../Dave/Generated/FREERTOS/list.c **** }
+ 340              	 .loc 1 196 0
+ 341 0048 1846     	 mov r0,r3
+ 342 004a 1437     	 adds r7,r7,#20
+ 343              	 .cfi_def_cfa_offset 4
+ 344 004c BD46     	 mov sp,r7
+ 345              	 .cfi_def_cfa_register 13
+ 346              	 
+ 347 004e 5DF8047B 	 ldr r7,[sp],#4
+ 348              	 .cfi_restore 7
+ 349              	 .cfi_def_cfa_offset 0
+ 350 0052 7047     	 bx lr
+ 351              	 .cfi_endproc
+ 352              	.LFE141:
+ 354              	 .text
+ 355              	.Letext0:
+ 356              	 .file 2 "c:\\dave\\dave-ide-4.4.2-64bit\\eclipse\\arm-gcc-49\\arm-none-eabi\\include\\machine\\_default_types.h"
+ 357              	 .file 3 "c:\\dave\\dave-ide-4.4.2-64bit\\eclipse\\arm-gcc-49\\arm-none-eabi\\include\\stdint.h"
+ 358              	 .file 4 "../Dave/Generated/FREERTOS/portable/GCC/portmacro.h"
+ 359              	 .file 5 "../Dave/Generated/FREERTOS/list.h"
+ 360              	 .file 6 "C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Libraries/CMSIS/Include/cmsis_gcc.h"
+ 361              	 .file 7 "C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Libraries/CMSIS/Include/core_cm4.h"
+DEFINED SYMBOLS
+                            *ABS*:00000000 list.c
+    {standard input}:20     .text.vListInitialise:00000000 $t
+    {standard input}:25     .text.vListInitialise:00000000 vListInitialise
+    {standard input}:78     .text.vListInitialiseItem:00000000 $t
+    {standard input}:83     .text.vListInitialiseItem:00000000 vListInitialiseItem
+    {standard input}:116    .text.vListInsertEnd:00000000 $t
+    {standard input}:121    .text.vListInsertEnd:00000000 vListInsertEnd
+    {standard input}:183    .text.vListInsert:00000000 $t
+    {standard input}:188    .text.vListInsert:00000000 vListInsert
+    {standard input}:279    .text.uxListRemove:00000000 $t
+    {standard input}:284    .text.uxListRemove:00000000 uxListRemove
+                     .debug_frame:00000010 $d
+
+NO UNDEFINED SYMBOLS

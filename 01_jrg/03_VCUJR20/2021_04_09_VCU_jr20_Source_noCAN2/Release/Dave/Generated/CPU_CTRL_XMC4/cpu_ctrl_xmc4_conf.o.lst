@@ -1,0 +1,122 @@
+   1              	 .syntax unified
+   2              	 .cpu cortex-m4
+   3              	 .eabi_attribute 27,3
+   4              	 .fpu fpv4-sp-d16
+   5              	 .eabi_attribute 20,1
+   6              	 .eabi_attribute 21,1
+   7              	 .eabi_attribute 23,3
+   8              	 .eabi_attribute 24,1
+   9              	 .eabi_attribute 25,1
+  10              	 .eabi_attribute 26,1
+  11              	 .eabi_attribute 30,4
+  12              	 .eabi_attribute 34,1
+  13              	 .eabi_attribute 18,4
+  14              	 .thumb
+  15              	 .file "cpu_ctrl_xmc4_conf.c"
+  16              	 .section .text.NVIC_EncodePriority.constprop.0,"ax",%progbits
+  17              	 .align 1
+  18              	 .thumb
+  19              	 .thumb_func
+  21              	NVIC_EncodePriority.constprop.0:
+  22              	 
+  23              	 
+  24              	 
+  25 0000 0020     	 movs r0,#0
+  26 0002 7047     	 bx lr
+  28              	 .section .text.SystemCoreSetup,"ax",%progbits
+  29              	 .align 1
+  30              	 .global SystemCoreSetup
+  31              	 .thumb
+  32              	 .thumb_func
+  34              	SystemCoreSetup:
+  35              	 
+  36              	 
+  37 0000 10B5     	 push {r4,lr}
+  38 0002 254C     	 ldr r4,.L3
+  39 0004 254B     	 ldr r3,.L3+4
+  40 0006 E268     	 ldr r2,[r4,#12]
+  41 0008 22F4E062 	 bic r2,r2,#1792
+  42 000c 1204     	 lsls r2,r2,#16
+  43 000e 120C     	 lsrs r2,r2,#16
+  44 0010 1343     	 orrs r3,r3,r2
+  45 0012 E360     	 str r3,[r4,#12]
+  46              	
+  47 0014 72B6     	 cpsid i
+  48              	
+  49              	 .thumb
+  50 0016 224B     	 ldr r3,.L3+8
+  51 0018 A360     	 str r3,[r4,#8]
+  52              	
+  53 001a BFF34F8F 	 dsb 0xF
+  54              	
+  55              	
+  56 001e 62B6     	 cpsie i
+  57              	
+  58              	 .thumb
+  59 0020 D4F88830 	 ldr r3,[r4,#136]
+  60 0024 1F49     	 ldr r1,.L3+12
+  61 0026 41F21402 	 movw r2,#4116
+  62 002a 43F47003 	 orr r3,r3,#15728640
+  63 002e C4F88830 	 str r3,[r4,#136]
+  64 0032 8B58     	 ldr r3,[r1,r2]
+  65 0034 23F00F03 	 bic r3,r3,#15
+  66 0038 43F00303 	 orr r3,r3,#3
+  67 003c 8B50     	 str r3,[r1,r2]
+  68 003e 6369     	 ldr r3,[r4,#20]
+  69 0040 43F01003 	 orr r3,r3,#16
+  70 0044 6361     	 str r3,[r4,#20]
+  71 0046 6369     	 ldr r3,[r4,#20]
+  72 0048 43F00803 	 orr r3,r3,#8
+  73 004c 6361     	 str r3,[r4,#20]
+  74 004e E068     	 ldr r0,[r4,#12]
+  75 0050 C0F30220 	 ubfx r0,r0,#8,#3
+  76 0054 FFF7FEFF 	 bl NVIC_EncodePriority.constprop.0
+  77 0058 8000     	 lsls r0,r0,#2
+  78 005a C0B2     	 uxtb r0,r0
+  79 005c 2076     	 strb r0,[r4,#24]
+  80 005e 636A     	 ldr r3,[r4,#36]
+  81 0060 43F48033 	 orr r3,r3,#65536
+  82 0064 6362     	 str r3,[r4,#36]
+  83 0066 E068     	 ldr r0,[r4,#12]
+  84 0068 C0F30220 	 ubfx r0,r0,#8,#3
+  85 006c FFF7FEFF 	 bl NVIC_EncodePriority.constprop.0
+  86 0070 8000     	 lsls r0,r0,#2
+  87 0072 C0B2     	 uxtb r0,r0
+  88 0074 6076     	 strb r0,[r4,#25]
+  89 0076 636A     	 ldr r3,[r4,#36]
+  90 0078 43F40033 	 orr r3,r3,#131072
+  91 007c 6362     	 str r3,[r4,#36]
+  92 007e E068     	 ldr r0,[r4,#12]
+  93 0080 C0F30220 	 ubfx r0,r0,#8,#3
+  94 0084 FFF7FEFF 	 bl NVIC_EncodePriority.constprop.0
+  95 0088 8000     	 lsls r0,r0,#2
+  96 008a C0B2     	 uxtb r0,r0
+  97 008c A076     	 strb r0,[r4,#26]
+  98 008e 636A     	 ldr r3,[r4,#36]
+  99 0090 43F48023 	 orr r3,r3,#262144
+ 100 0094 6362     	 str r3,[r4,#36]
+ 101 0096 10BD     	 pop {r4,pc}
+ 102              	.L4:
+ 103              	 .align 2
+ 104              	.L3:
+ 105 0098 00ED00E0 	 .word -536810240
+ 106 009c 0001FA05 	 .word 100270336
+ 107 00a0 00000000 	 .word __Vectors
+ 108 00a4 00100058 	 .word 1476399104
+ 110              	 .global CPU_CTRL_XMC4_0
+ 111              	 .section .bss.CPU_CTRL_XMC4_0,"aw",%nobits
+ 114              	CPU_CTRL_XMC4_0:
+ 115 0000 00       	 .space 1
+ 116              	 .ident "GCC: (GNU Tools for ARM Embedded Processors) 4.9.3 20141119 (release) [ARM/embedded-4_9-branch revision 218278]"
+DEFINED SYMBOLS
+                            *ABS*:00000000 cpu_ctrl_xmc4_conf.c
+    {standard input}:17     .text.NVIC_EncodePriority.constprop.0:00000000 $t
+    {standard input}:21     .text.NVIC_EncodePriority.constprop.0:00000000 NVIC_EncodePriority.constprop.0
+    {standard input}:29     .text.SystemCoreSetup:00000000 $t
+    {standard input}:34     .text.SystemCoreSetup:00000000 SystemCoreSetup
+    {standard input}:105    .text.SystemCoreSetup:00000098 $d
+    {standard input}:114    .bss.CPU_CTRL_XMC4_0:00000000 CPU_CTRL_XMC4_0
+    {standard input}:115    .bss.CPU_CTRL_XMC4_0:00000000 $d
+
+UNDEFINED SYMBOLS
+__Vectors
