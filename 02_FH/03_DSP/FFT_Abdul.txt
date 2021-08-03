@@ -1,0 +1,52 @@
+void FFT(complex_fract16* input_buffer, int fft_len)
+{
+	complex_fract32 temp;
+
+
+	int x=fft_len;
+	int group=fft_len/2;
+	int groupjump=1;
+	int twindex=0;
+	int butterfly=1;
+	int twiddlechange=fft_len/2;
+	int butterflyjump=2;
+
+
+for (int s=fft_len; s>0; s=s>>1)
+{
+
+
+	for (int g=0; g<group; g++ )
+	{
+
+		for(int k=0; k<butterfly; k++)
+		{
+			int tw_i=twiddlechange*k;
+			int b1_i=k+butterflyjump*g;
+			int b2_i=b1_i+groupjump;
+
+			temp.re=(twiddle[tw_i].re*input_buffer[(b2_i)].re-twiddle[tw_i].im*input_buffer[b2_i].im)>>15;
+			temp.im=(twiddle[tw_i].re*input_buffer[b2_i].im+twiddle[tw_i].im*input_buffer[b2_i].re)>>15;
+
+			input_buffer[b2_i].re=(input_buffer[b1_i].re-temp.re)>>1;
+			input_buffer[b2_i].im=(input_buffer[b1_i].im-temp.im)>>1;
+			input_buffer[b1_i].re=(input_buffer[b1_i].re+temp.re)>>1;
+			input_buffer[b1_i].im=(input_buffer[b1_i].im+temp.im)>>1;
+
+
+			}
+
+
+
+
+		}
+	 twiddlechange=twiddlechange>>1; //divde by 2 for twiddle change
+	 group=group>>1; // group division by 2
+	 groupjump=groupjump<<1; //group jump multiply by 2 each stage
+	 butterfly=butterfly<<1; // butterfly multiply by 2 each stage
+	 butterflyjump=butterflyjump<<1;  //butterflyjump multiply by 2 each stage
+
+
+	}
+
+}

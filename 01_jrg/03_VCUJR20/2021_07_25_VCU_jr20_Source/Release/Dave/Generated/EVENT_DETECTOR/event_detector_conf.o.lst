@@ -1,0 +1,43 @@
+   1              	 .syntax unified
+   2              	 .cpu cortex-m4
+   3              	 .eabi_attribute 27,3
+   4              	 .fpu fpv4-sp-d16
+   5              	 .eabi_attribute 20,1
+   6              	 .eabi_attribute 21,1
+   7              	 .eabi_attribute 23,3
+   8              	 .eabi_attribute 24,1
+   9              	 .eabi_attribute 25,1
+  10              	 .eabi_attribute 26,1
+  11              	 .eabi_attribute 30,4
+  12              	 .eabi_attribute 34,1
+  13              	 .eabi_attribute 18,4
+  14              	 .thumb
+  15              	 .file "event_detector_conf.c"
+  16              	 .global EVENT_DETECTOR_Shifting
+  17              	 .global EVENT_DETECTOR_Shifting_ETL_Config
+  18              	 .section .data.EVENT_DETECTOR_Shifting,"aw",%progbits
+  19              	 .align 2
+  22              	EVENT_DETECTOR_Shifting:
+  23 0000 00480050 	 .word 1342195712
+  24 0004 00       	 .byte 0
+  25 0005 000000   	 .space 3
+  26 0008 00000000 	 .word EVENT_DETECTOR_Shifting_ETL_Config
+  27 000c 00       	 .byte 0
+  28 000d 000000   	 .space 3
+  29              	 .section .rodata.EVENT_DETECTOR_Shifting_ETL_Config,"a",%progbits
+  30              	 .align 2
+  33              	EVENT_DETECTOR_Shifting_ETL_Config:
+  34 0000 05       	 .byte 5
+  35 0001 000000   	 .space 3
+  36 0004 37       	 .byte 55
+  37 0005 02       	 .byte 2
+  38 0006 0000     	 .space 2
+  39              	 .ident "GCC: (GNU Tools for ARM Embedded Processors) 4.9.3 20141119 (release) [ARM/embedded-4_9-branch revision 218278]"
+DEFINED SYMBOLS
+                            *ABS*:00000000 event_detector_conf.c
+    {standard input}:22     .data.EVENT_DETECTOR_Shifting:00000000 EVENT_DETECTOR_Shifting
+    {standard input}:33     .rodata.EVENT_DETECTOR_Shifting_ETL_Config:00000000 EVENT_DETECTOR_Shifting_ETL_Config
+    {standard input}:19     .data.EVENT_DETECTOR_Shifting:00000000 $d
+    {standard input}:30     .rodata.EVENT_DETECTOR_Shifting_ETL_Config:00000000 $d
+
+NO UNDEFINED SYMBOLS

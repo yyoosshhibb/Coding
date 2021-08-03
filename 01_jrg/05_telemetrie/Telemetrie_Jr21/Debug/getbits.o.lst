@@ -1,0 +1,229 @@
+   1              	 .syntax unified
+   2              	 .cpu cortex-m4
+   3              	 .eabi_attribute 27,3
+   4              	 .fpu fpv4-sp-d16
+   5              	 .eabi_attribute 20,1
+   6              	 .eabi_attribute 21,1
+   7              	 .eabi_attribute 23,3
+   8              	 .eabi_attribute 24,1
+   9              	 .eabi_attribute 25,1
+  10              	 .eabi_attribute 26,1
+  11              	 .eabi_attribute 30,6
+  12              	 .eabi_attribute 34,1
+  13              	 .eabi_attribute 18,4
+  14              	 .thumb
+  15              	 .file "getbits.c"
+  16              	 .text
+  17              	.Ltext0:
+  18              	 .cfi_sections .debug_frame
+  19              	 .section .text.getbits,"ax",%progbits
+  20              	 .align 2
+  21              	 .global getbits
+  22              	 .thumb
+  23              	 .thumb_func
+  25              	getbits:
+  26              	.LFB0:
+  27              	 .file 1 "../getbits.c"
+   1:../getbits.c  **** /*
+   2:../getbits.c  ****  * getbits.c
+   3:../getbits.c  ****  *
+   4:../getbits.c  ****  *  Created on: 15 Jun 2018
+   5:../getbits.c  ****  *      Author: Lukas
+   6:../getbits.c  ****  */
+   7:../getbits.c  **** 
+   8:../getbits.c  **** /*
+   9:../getbits.c  **** get n bits from position n ____ Position(p) 0 = right_end of x.
+  10:../getbits.c  **** x >> (p+1-n) moves the desired field to the right end of the word. ~0 is all 1-bits; shifting it le
+  11:../getbits.c  **** in the right most n bits; complementing that with ~ makes a mask with ones in the rightmost n bits.
+  12:../getbits.c  **** vgl. "THE C PROGRAMMING LANGUGE" Brian W. KERNIGHAN PAGE 49
+  13:../getbits.c  **** ACHTUNG!!! das ganz rechte bit des Wortes is bit 0. BSP getbis(x,4,3) gibt bit 4,3,2 bit von rechts
+  14:../getbits.c  **** */
+  15:../getbits.c  **** unsigned getbits(unsigned x,int p, int n)
+  16:../getbits.c  **** {
+  28              	 .loc 1 16 0
+  29              	 .cfi_startproc
+  30              	 
+  31              	 
+  32              	 
+  33 0000 80B4     	 push {r7}
+  34              	.LCFI0:
+  35              	 .cfi_def_cfa_offset 4
+  36              	 .cfi_offset 7,-4
+  37 0002 85B0     	 sub sp,sp,#20
+  38              	.LCFI1:
+  39              	 .cfi_def_cfa_offset 24
+  40 0004 00AF     	 add r7,sp,#0
+  41              	.LCFI2:
+  42              	 .cfi_def_cfa_register 7
+  43 0006 F860     	 str r0,[r7,#12]
+  44 0008 B960     	 str r1,[r7,#8]
+  45 000a 7A60     	 str r2,[r7,#4]
+  17:../getbits.c  **** 	return(x >> (p+1-n)) & ~(~0 << n);
+  46              	 .loc 1 17 0
+  47 000c BB68     	 ldr r3,[r7,#8]
+  48 000e 5A1C     	 adds r2,r3,#1
+  49 0010 7B68     	 ldr r3,[r7,#4]
+  50 0012 D31A     	 subs r3,r2,r3
+  51 0014 FA68     	 ldr r2,[r7,#12]
+  52 0016 22FA03F3 	 lsr r3,r2,r3
+  53 001a 4FF0FF31 	 mov r1,#-1
+  54 001e 7A68     	 ldr r2,[r7,#4]
+  55 0020 01FA02F2 	 lsl r2,r1,r2
+  56 0024 D243     	 mvns r2,r2
+  57 0026 1340     	 ands r3,r3,r2
+  18:../getbits.c  **** }
+  58              	 .loc 1 18 0
+  59 0028 1846     	 mov r0,r3
+  60 002a 1437     	 adds r7,r7,#20
+  61              	.LCFI3:
+  62              	 .cfi_def_cfa_offset 4
+  63 002c BD46     	 mov sp,r7
+  64              	.LCFI4:
+  65              	 .cfi_def_cfa_register 13
+  66              	 
+  67 002e 5DF8047B 	 ldr r7,[sp],#4
+  68              	.LCFI5:
+  69              	 .cfi_restore 7
+  70              	 .cfi_def_cfa_offset 0
+  71 0032 7047     	 bx lr
+  72              	 .cfi_endproc
+  73              	.LFE0:
+  75              	 .section .text.reverse,"ax",%progbits
+  76              	 .align 2
+  77              	 .global reverse
+  78              	 .thumb
+  79              	 .thumb_func
+  81              	reverse:
+  82              	.LFB1:
+  19:../getbits.c  **** 
+  20:../getbits.c  **** unsigned char reverse(unsigned int b) {
+  83              	 .loc 1 20 0
+  84              	 .cfi_startproc
+  85              	 
+  86              	 
+  87              	 
+  88 0000 80B4     	 push {r7}
+  89              	.LCFI6:
+  90              	 .cfi_def_cfa_offset 4
+  91              	 .cfi_offset 7,-4
+  92 0002 83B0     	 sub sp,sp,#12
+  93              	.LCFI7:
+  94              	 .cfi_def_cfa_offset 16
+  95 0004 00AF     	 add r7,sp,#0
+  96              	.LCFI8:
+  97              	 .cfi_def_cfa_register 7
+  98 0006 7860     	 str r0,[r7,#4]
+  21:../getbits.c  ****    b = (b & 0xF0) >> 4 | (b & 0x0F) << 4;
+  99              	 .loc 1 21 0
+ 100 0008 7B68     	 ldr r3,[r7,#4]
+ 101 000a 03F0F003 	 and r3,r3,#240
+ 102 000e 1A09     	 lsrs r2,r3,#4
+ 103 0010 7B68     	 ldr r3,[r7,#4]
+ 104 0012 1B01     	 lsls r3,r3,#4
+ 105 0014 DBB2     	 uxtb r3,r3
+ 106 0016 1343     	 orrs r3,r3,r2
+ 107 0018 7B60     	 str r3,[r7,#4]
+  22:../getbits.c  ****    b = (b & 0xCC) >> 2 | (b & 0x33) << 2;
+ 108              	 .loc 1 22 0
+ 109 001a 7B68     	 ldr r3,[r7,#4]
+ 110 001c 03F0CC03 	 and r3,r3,#204
+ 111 0020 9A08     	 lsrs r2,r3,#2
+ 112 0022 7B68     	 ldr r3,[r7,#4]
+ 113 0024 03F03303 	 and r3,r3,#51
+ 114 0028 9B00     	 lsls r3,r3,#2
+ 115 002a 1343     	 orrs r3,r3,r2
+ 116 002c 7B60     	 str r3,[r7,#4]
+  23:../getbits.c  ****    b = (b & 0xAA) >> 1 | (b & 0x55) << 1;
+ 117              	 .loc 1 23 0
+ 118 002e 7B68     	 ldr r3,[r7,#4]
+ 119 0030 03F0AA03 	 and r3,r3,#170
+ 120 0034 5A08     	 lsrs r2,r3,#1
+ 121 0036 7B68     	 ldr r3,[r7,#4]
+ 122 0038 03F05503 	 and r3,r3,#85
+ 123 003c 5B00     	 lsls r3,r3,#1
+ 124 003e 1343     	 orrs r3,r3,r2
+ 125 0040 7B60     	 str r3,[r7,#4]
+  24:../getbits.c  ****    return b;
+ 126              	 .loc 1 24 0
+ 127 0042 7B68     	 ldr r3,[r7,#4]
+ 128 0044 DBB2     	 uxtb r3,r3
+  25:../getbits.c  **** }
+ 129              	 .loc 1 25 0
+ 130 0046 1846     	 mov r0,r3
+ 131 0048 0C37     	 adds r7,r7,#12
+ 132              	.LCFI9:
+ 133              	 .cfi_def_cfa_offset 4
+ 134 004a BD46     	 mov sp,r7
+ 135              	.LCFI10:
+ 136              	 .cfi_def_cfa_register 13
+ 137              	 
+ 138 004c 5DF8047B 	 ldr r7,[sp],#4
+ 139              	.LCFI11:
+ 140              	 .cfi_restore 7
+ 141              	 .cfi_def_cfa_offset 0
+ 142 0050 7047     	 bx lr
+ 143              	 .cfi_endproc
+ 144              	.LFE1:
+ 146 0052 00BF     	 .section .text.shift,"ax",%progbits
+ 147              	 .align 2
+ 148              	 .global shift
+ 149              	 .thumb
+ 150              	 .thumb_func
+ 152              	shift:
+ 153              	.LFB2:
+  26:../getbits.c  **** 
+  27:../getbits.c  **** unsigned shift(unsigned MSB ,unsigned LSB)
+  28:../getbits.c  **** {
+ 154              	 .loc 1 28 0
+ 155              	 .cfi_startproc
+ 156              	 
+ 157              	 
+ 158              	 
+ 159 0000 80B4     	 push {r7}
+ 160              	.LCFI12:
+ 161              	 .cfi_def_cfa_offset 4
+ 162              	 .cfi_offset 7,-4
+ 163 0002 83B0     	 sub sp,sp,#12
+ 164              	.LCFI13:
+ 165              	 .cfi_def_cfa_offset 16
+ 166 0004 00AF     	 add r7,sp,#0
+ 167              	.LCFI14:
+ 168              	 .cfi_def_cfa_register 7
+ 169 0006 7860     	 str r0,[r7,#4]
+ 170 0008 3960     	 str r1,[r7]
+  29:../getbits.c  **** 	return (MSB<<8)|LSB;
+ 171              	 .loc 1 29 0
+ 172 000a 7B68     	 ldr r3,[r7,#4]
+ 173 000c 1A02     	 lsls r2,r3,#8
+ 174 000e 3B68     	 ldr r3,[r7]
+ 175 0010 1343     	 orrs r3,r3,r2
+  30:../getbits.c  **** }
+ 176              	 .loc 1 30 0
+ 177 0012 1846     	 mov r0,r3
+ 178 0014 0C37     	 adds r7,r7,#12
+ 179              	.LCFI15:
+ 180              	 .cfi_def_cfa_offset 4
+ 181 0016 BD46     	 mov sp,r7
+ 182              	.LCFI16:
+ 183              	 .cfi_def_cfa_register 13
+ 184              	 
+ 185 0018 5DF8047B 	 ldr r7,[sp],#4
+ 186              	.LCFI17:
+ 187              	 .cfi_restore 7
+ 188              	 .cfi_def_cfa_offset 0
+ 189 001c 7047     	 bx lr
+ 190              	 .cfi_endproc
+ 191              	.LFE2:
+ 193 001e 00BF     	 .text
+ 194              	.Letext0:
+DEFINED SYMBOLS
+                            *ABS*:00000000 getbits.c
+    {standard input}:20     .text.getbits:00000000 $t
+    {standard input}:25     .text.getbits:00000000 getbits
+    {standard input}:76     .text.reverse:00000000 $t
+    {standard input}:81     .text.reverse:00000000 reverse
+    {standard input}:147    .text.shift:00000000 $t
+    {standard input}:152    .text.shift:00000000 shift
+                     .debug_frame:00000010 $d
+
+NO UNDEFINED SYMBOLS

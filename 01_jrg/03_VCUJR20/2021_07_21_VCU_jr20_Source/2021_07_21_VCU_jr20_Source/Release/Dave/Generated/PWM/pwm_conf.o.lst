@@ -1,0 +1,277 @@
+   1              	 .syntax unified
+   2              	 .cpu cortex-m4
+   3              	 .eabi_attribute 27,3
+   4              	 .fpu fpv4-sp-d16
+   5              	 .eabi_attribute 20,1
+   6              	 .eabi_attribute 21,1
+   7              	 .eabi_attribute 23,3
+   8              	 .eabi_attribute 24,1
+   9              	 .eabi_attribute 25,1
+  10              	 .eabi_attribute 26,1
+  11              	 .eabi_attribute 30,4
+  12              	 .eabi_attribute 34,1
+  13              	 .eabi_attribute 18,4
+  14              	 .thumb
+  15              	 .file "pwm_conf.c"
+  16              	 .global PWM_Fans2
+  17              	 .global PWM_Fans2_gpio_out_config
+  18              	 .global PWM_Fans2_compare_config
+  19              	 .global PWM_Fans1
+  20              	 .global PWM_Fans1_gpio_out_config
+  21              	 .global PWM_Fans1_compare_config
+  22              	 .global PWM_Waterpump
+  23              	 .global PWM_Waterpump_gpio_out_config
+  24              	 .global PWM_Waterpump_compare_config
+  25              	 .global PWM_MHJ9_OUT
+  26              	 .global PWM_MHJ9_OUT_gpio_out_config
+  27              	 .global PWM_MHJ9_OUT_compare_config
+  28              	 .global PWM_MHJ9_IN
+  29              	 .global PWM_MHJ9_IN_gpio_out_config
+  30              	 .global PWM_MHJ9_IN_compare_config
+  31              	 .section .data.PWM_Fans1,"aw",%progbits
+  32              	 .align 2
+  35              	PWM_Fans1:
+  36 0000 00000000 	 .word GLOBAL_CCU4_1
+  37 0004 00C00040 	 .word 1073790976
+  38 0008 00C30040 	 .word 1073791744
+  39 000c 00000000 	 .word PWM_Fans1_compare_config
+  40 0010 00810248 	 .word 1208123648
+  41 0014 00000000 	 .word PWM_Fans1_gpio_out_config
+  42 0018 7C920000 	 .word 37500
+  43 001c 7B920000 	 .word 37499
+  44 0020 00000000 	 .word 0
+  45 0024 00050000 	 .word 1280
+  46 0028 00       	 .byte 0
+  47 0029 02       	 .byte 2
+  48 002a 00       	 .byte 0
+  49 002b 00       	 .byte 0
+  50 002c 01       	 .byte 1
+  51 002d 00       	 .byte 0
+  52 002e 02       	 .byte 2
+  53 002f 01       	 .byte 1
+  54 0030 00       	 .byte 0
+  55 0031 00       	 .byte 0
+  56 0032 0000     	 .space 2
+  57              	 .section .data.PWM_Fans2,"aw",%progbits
+  58              	 .align 2
+  61              	PWM_Fans2:
+  62 0000 00000000 	 .word GLOBAL_CCU4_1
+  63 0004 00C00040 	 .word 1073790976
+  64 0008 00C20040 	 .word 1073791488
+  65 000c 00000000 	 .word PWM_Fans2_compare_config
+  66 0010 00810248 	 .word 1208123648
+  67 0014 00000000 	 .word PWM_Fans2_gpio_out_config
+  68 0018 7C920000 	 .word 37500
+  69 001c 7B920000 	 .word 37499
+  70 0020 00000000 	 .word 0
+  71 0024 50000000 	 .word 80
+  72 0028 00       	 .byte 0
+  73 0029 02       	 .byte 2
+  74 002a 00       	 .byte 0
+  75 002b 00       	 .byte 0
+  76 002c 02       	 .byte 2
+  77 002d 00       	 .byte 0
+  78 002e 01       	 .byte 1
+  79 002f 01       	 .byte 1
+  80 0030 00       	 .byte 0
+  81 0031 00       	 .byte 0
+  82 0032 0000     	 .space 2
+  83              	 .section .rodata.PWM_Fans1_gpio_out_config,"a",%progbits
+  84              	 .align 2
+  87              	PWM_Fans1_gpio_out_config:
+  88 0000 98       	 .byte -104
+  89 0001 000000   	 .space 3
+  90 0004 00000100 	 .word 65536
+  91 0008 04       	 .byte 4
+  92 0009 000000   	 .space 3
+  93              	 .section .rodata.PWM_MHJ9_IN_compare_config,"a",%progbits
+  94              	 .align 2
+  97              	PWM_MHJ9_IN_compare_config:
+  98 0000 00       	 .byte 0
+  99 0001 00       	 .byte 0
+ 100 0002 00       	 .byte 0
+ 101 0003 00       	 .byte 0
+ 102 0004 05       	 .byte 5
+ 103 0005 00       	 .byte 0
+ 104 0006 0000     	 .space 2
+ 105              	 .section .data.PWM_MHJ9_IN,"aw",%progbits
+ 106              	 .align 2
+ 109              	PWM_MHJ9_IN:
+ 110 0000 00000000 	 .word GLOBAL_CCU4_0
+ 111 0004 00400140 	 .word 1073823744
+ 112 0008 00440140 	 .word 1073824768
+ 113 000c 00000000 	 .word PWM_MHJ9_IN_compare_config
+ 114 0010 00830248 	 .word 1208124160
+ 115 0014 00000000 	 .word PWM_MHJ9_IN_gpio_out_config
+ 116 0018 7C920000 	 .word 37500
+ 117 001c 7B920000 	 .word 37499
+ 118 0020 00000000 	 .word 0
+ 119 0024 00500000 	 .word 20480
+ 120 0028 00       	 .byte 0
+ 121 0029 02       	 .byte 2
+ 122 002a 00       	 .byte 0
+ 123 002b 00       	 .byte 0
+ 124 002c 03       	 .byte 3
+ 125 002d 02       	 .byte 2
+ 126 002e 03       	 .byte 3
+ 127 002f 01       	 .byte 1
+ 128 0030 00       	 .byte 0
+ 129 0031 00       	 .byte 0
+ 130 0032 0000     	 .space 2
+ 131              	 .section .rodata.PWM_Fans2_gpio_out_config,"a",%progbits
+ 132              	 .align 2
+ 135              	PWM_Fans2_gpio_out_config:
+ 136 0000 98       	 .byte -104
+ 137 0001 000000   	 .space 3
+ 138 0004 00000100 	 .word 65536
+ 139 0008 04       	 .byte 4
+ 140 0009 000000   	 .space 3
+ 141              	 .section .rodata.PWM_Fans2_compare_config,"a",%progbits
+ 142              	 .align 2
+ 145              	PWM_Fans2_compare_config:
+ 146 0000 00       	 .byte 0
+ 147 0001 00       	 .byte 0
+ 148 0002 00       	 .byte 0
+ 149 0003 00       	 .byte 0
+ 150 0004 04       	 .byte 4
+ 151 0005 00       	 .byte 0
+ 152 0006 0000     	 .space 2
+ 153              	 .section .data.PWM_Waterpump,"aw",%progbits
+ 154              	 .align 2
+ 157              	PWM_Waterpump:
+ 158 0000 00000000 	 .word GLOBAL_CCU4_1
+ 159 0004 00C00040 	 .word 1073790976
+ 160 0008 00C40040 	 .word 1073792000
+ 161 000c 00000000 	 .word PWM_Waterpump_compare_config
+ 162 0010 00800248 	 .word 1208123392
+ 163 0014 00000000 	 .word PWM_Waterpump_gpio_out_config
+ 164 0018 7C920000 	 .word 37500
+ 165 001c 7B920000 	 .word 37499
+ 166 0020 00000000 	 .word 0
+ 167 0024 00500000 	 .word 20480
+ 168 0028 00       	 .byte 0
+ 169 0029 02       	 .byte 2
+ 170 002a 00       	 .byte 0
+ 171 002b 00       	 .byte 0
+ 172 002c 0C       	 .byte 12
+ 173 002d 00       	 .byte 0
+ 174 002e 03       	 .byte 3
+ 175 002f 01       	 .byte 1
+ 176 0030 00       	 .byte 0
+ 177 0031 00       	 .byte 0
+ 178 0032 0000     	 .space 2
+ 179              	 .section .rodata.PWM_Fans1_compare_config,"a",%progbits
+ 180              	 .align 2
+ 183              	PWM_Fans1_compare_config:
+ 184 0000 00       	 .byte 0
+ 185 0001 00       	 .byte 0
+ 186 0002 00       	 .byte 0
+ 187 0003 00       	 .byte 0
+ 188 0004 04       	 .byte 4
+ 189 0005 00       	 .byte 0
+ 190 0006 0000     	 .space 2
+ 191              	 .section .rodata.PWM_Waterpump_compare_config,"a",%progbits
+ 192              	 .align 2
+ 195              	PWM_Waterpump_compare_config:
+ 196 0000 00       	 .byte 0
+ 197 0001 00       	 .byte 0
+ 198 0002 00       	 .byte 0
+ 199 0003 00       	 .byte 0
+ 200 0004 04       	 .byte 4
+ 201 0005 00       	 .byte 0
+ 202 0006 0000     	 .space 2
+ 203              	 .section .rodata.PWM_MHJ9_OUT_gpio_out_config,"a",%progbits
+ 204              	 .align 2
+ 207              	PWM_MHJ9_OUT_gpio_out_config:
+ 208 0000 98       	 .byte -104
+ 209 0001 000000   	 .space 3
+ 210 0004 00000100 	 .word 65536
+ 211 0008 04       	 .byte 4
+ 212 0009 000000   	 .space 3
+ 213              	 .section .data.PWM_MHJ9_OUT,"aw",%progbits
+ 214              	 .align 2
+ 217              	PWM_MHJ9_OUT:
+ 218 0000 00000000 	 .word GLOBAL_CCU4_0
+ 219 0004 00400140 	 .word 1073823744
+ 220 0008 00430140 	 .word 1073824512
+ 221 000c 00000000 	 .word PWM_MHJ9_OUT_compare_config
+ 222 0010 00830248 	 .word 1208124160
+ 223 0014 00000000 	 .word PWM_MHJ9_OUT_gpio_out_config
+ 224 0018 7C920000 	 .word 37500
+ 225 001c 7B920000 	 .word 37499
+ 226 0020 00000000 	 .word 0
+ 227 0024 00050000 	 .word 1280
+ 228 0028 00       	 .byte 0
+ 229 0029 02       	 .byte 2
+ 230 002a 00       	 .byte 0
+ 231 002b 00       	 .byte 0
+ 232 002c 04       	 .byte 4
+ 233 002d 02       	 .byte 2
+ 234 002e 02       	 .byte 2
+ 235 002f 01       	 .byte 1
+ 236 0030 00       	 .byte 0
+ 237 0031 00       	 .byte 0
+ 238 0032 0000     	 .space 2
+ 239              	 .section .rodata.PWM_MHJ9_OUT_compare_config,"a",%progbits
+ 240              	 .align 2
+ 243              	PWM_MHJ9_OUT_compare_config:
+ 244 0000 00       	 .byte 0
+ 245 0001 00       	 .byte 0
+ 246 0002 00       	 .byte 0
+ 247 0003 00       	 .byte 0
+ 248 0004 05       	 .byte 5
+ 249 0005 00       	 .byte 0
+ 250 0006 0000     	 .space 2
+ 251              	 .section .rodata.PWM_MHJ9_IN_gpio_out_config,"a",%progbits
+ 252              	 .align 2
+ 255              	PWM_MHJ9_IN_gpio_out_config:
+ 256 0000 98       	 .byte -104
+ 257 0001 000000   	 .space 3
+ 258 0004 00000100 	 .word 65536
+ 259 0008 04       	 .byte 4
+ 260 0009 000000   	 .space 3
+ 261              	 .section .rodata.PWM_Waterpump_gpio_out_config,"a",%progbits
+ 262              	 .align 2
+ 265              	PWM_Waterpump_gpio_out_config:
+ 266 0000 98       	 .byte -104
+ 267 0001 000000   	 .space 3
+ 268 0004 00000100 	 .word 65536
+ 269 0008 04       	 .byte 4
+ 270 0009 000000   	 .space 3
+ 271              	 .ident "GCC: (GNU Tools for ARM Embedded Processors) 4.9.3 20141119 (release) [ARM/embedded-4_9-branch revision 218278]"
+DEFINED SYMBOLS
+                            *ABS*:00000000 pwm_conf.c
+    {standard input}:61     .data.PWM_Fans2:00000000 PWM_Fans2
+    {standard input}:135    .rodata.PWM_Fans2_gpio_out_config:00000000 PWM_Fans2_gpio_out_config
+    {standard input}:145    .rodata.PWM_Fans2_compare_config:00000000 PWM_Fans2_compare_config
+    {standard input}:35     .data.PWM_Fans1:00000000 PWM_Fans1
+    {standard input}:87     .rodata.PWM_Fans1_gpio_out_config:00000000 PWM_Fans1_gpio_out_config
+    {standard input}:183    .rodata.PWM_Fans1_compare_config:00000000 PWM_Fans1_compare_config
+    {standard input}:157    .data.PWM_Waterpump:00000000 PWM_Waterpump
+    {standard input}:265    .rodata.PWM_Waterpump_gpio_out_config:00000000 PWM_Waterpump_gpio_out_config
+    {standard input}:195    .rodata.PWM_Waterpump_compare_config:00000000 PWM_Waterpump_compare_config
+    {standard input}:217    .data.PWM_MHJ9_OUT:00000000 PWM_MHJ9_OUT
+    {standard input}:207    .rodata.PWM_MHJ9_OUT_gpio_out_config:00000000 PWM_MHJ9_OUT_gpio_out_config
+    {standard input}:243    .rodata.PWM_MHJ9_OUT_compare_config:00000000 PWM_MHJ9_OUT_compare_config
+    {standard input}:109    .data.PWM_MHJ9_IN:00000000 PWM_MHJ9_IN
+    {standard input}:255    .rodata.PWM_MHJ9_IN_gpio_out_config:00000000 PWM_MHJ9_IN_gpio_out_config
+    {standard input}:97     .rodata.PWM_MHJ9_IN_compare_config:00000000 PWM_MHJ9_IN_compare_config
+    {standard input}:32     .data.PWM_Fans1:00000000 $d
+    {standard input}:58     .data.PWM_Fans2:00000000 $d
+    {standard input}:84     .rodata.PWM_Fans1_gpio_out_config:00000000 $d
+    {standard input}:94     .rodata.PWM_MHJ9_IN_compare_config:00000000 $d
+    {standard input}:106    .data.PWM_MHJ9_IN:00000000 $d
+    {standard input}:132    .rodata.PWM_Fans2_gpio_out_config:00000000 $d
+    {standard input}:142    .rodata.PWM_Fans2_compare_config:00000000 $d
+    {standard input}:154    .data.PWM_Waterpump:00000000 $d
+    {standard input}:180    .rodata.PWM_Fans1_compare_config:00000000 $d
+    {standard input}:192    .rodata.PWM_Waterpump_compare_config:00000000 $d
+    {standard input}:204    .rodata.PWM_MHJ9_OUT_gpio_out_config:00000000 $d
+    {standard input}:214    .data.PWM_MHJ9_OUT:00000000 $d
+    {standard input}:240    .rodata.PWM_MHJ9_OUT_compare_config:00000000 $d
+    {standard input}:252    .rodata.PWM_MHJ9_IN_gpio_out_config:00000000 $d
+    {standard input}:262    .rodata.PWM_Waterpump_gpio_out_config:00000000 $d
+
+UNDEFINED SYMBOLS
+GLOBAL_CCU4_1
+GLOBAL_CCU4_0

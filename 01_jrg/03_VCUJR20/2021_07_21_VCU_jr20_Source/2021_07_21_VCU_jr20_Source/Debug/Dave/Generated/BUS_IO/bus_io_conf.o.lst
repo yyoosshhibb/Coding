@@ -1,0 +1,97 @@
+   1              	 .syntax unified
+   2              	 .cpu cortex-m4
+   3              	 .eabi_attribute 27,3
+   4              	 .fpu fpv4-sp-d16
+   5              	 .eabi_attribute 20,1
+   6              	 .eabi_attribute 21,1
+   7              	 .eabi_attribute 23,3
+   8              	 .eabi_attribute 24,1
+   9              	 .eabi_attribute 25,1
+  10              	 .eabi_attribute 26,1
+  11              	 .eabi_attribute 30,6
+  12              	 .eabi_attribute 34,1
+  13              	 .eabi_attribute 18,4
+  14              	 .thumb
+  15              	 .file "bus_io_conf.c"
+  16              	 .text
+  17              	.Ltext0:
+  18              	 .cfi_sections .debug_frame
+  19              	 .global BUS_IO_pin_list
+  20              	 .section .rodata.BUS_IO_pin_list,"a",%progbits
+  21              	 .align 2
+  24              	BUS_IO_pin_list:
+  25 0000 00800248 	 .word 1208123392
+  26 0004 09       	 .byte 9
+  27 0005 000000   	 .space 3
+  28 0008 00800248 	 .word 1208123392
+  29 000c 0A       	 .byte 10
+  30 000d 000000   	 .space 3
+  31 0010 00800248 	 .word 1208123392
+  32 0014 04       	 .byte 4
+  33 0015 000000   	 .space 3
+  34 0018 00800248 	 .word 1208123392
+  35 001c 05       	 .byte 5
+  36 001d 000000   	 .space 3
+  37 0020 00800248 	 .word 1208123392
+  38 0024 06       	 .byte 6
+  39 0025 000000   	 .space 3
+  40 0028 00850248 	 .word 1208124672
+  41 002c 02       	 .byte 2
+  42 002d 000000   	 .space 3
+  43 0030 00850248 	 .word 1208124672
+  44 0034 07       	 .byte 7
+  45 0035 000000   	 .space 3
+  46              	 .global BUS_IO
+  47              	 .section .data.BUS_IO,"aw",%progbits
+  48              	 .align 2
+  51              	BUS_IO:
+  52 0000 00000000 	 .word BUS_IO_pin_list
+  53 0004 80       	 .byte -128
+  54 0005 000000   	 .space 3
+  55 0008 00000100 	 .word 65536
+  56 000c 00000000 	 .space 4
+  57 0010 07       	 .byte 7
+  58 0011 000000   	 .space 3
+  59              	 .global BUS_IO_Input_pin_list
+  60              	 .section .rodata.BUS_IO_Input_pin_list,"a",%progbits
+  61              	 .align 2
+  64              	BUS_IO_Input_pin_list:
+  65 0000 00800248 	 .word 1208123392
+  66 0004 07       	 .byte 7
+  67 0005 000000   	 .space 3
+  68 0008 00800248 	 .word 1208123392
+  69 000c 08       	 .byte 8
+  70 000d 000000   	 .space 3
+  71              	 .global BUS_IO_Input
+  72              	 .section .data.BUS_IO_Input,"aw",%progbits
+  73              	 .align 2
+  76              	BUS_IO_Input:
+  77 0000 00000000 	 .word BUS_IO_Input_pin_list
+  78 0004 00       	 .byte 0
+  79 0005 00000000 	 .space 11
+  79      00000000 
+  79      000000
+  80 0010 02       	 .byte 2
+  81 0011 000000   	 .space 3
+  82              	 .text
+  83              	.Letext0:
+  84              	 .file 1 "c:\\dave\\dave-ide-4.4.2-64bit\\eclipse\\arm-gcc-49\\arm-none-eabi\\include\\machine\\_default_types.h"
+  85              	 .file 2 "c:\\dave\\dave-ide-4.4.2-64bit\\eclipse\\arm-gcc-49\\arm-none-eabi\\include\\stdint.h"
+  86              	 .file 3 "C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_07_21_VCU_jr20_Source/2021_07_21_VCU_jr20_Source/Libraries/XMCLib/inc/xmc_gpio.h"
+  87              	 .file 4 "C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_07_21_VCU_jr20_Source/2021_07_21_VCU_jr20_Source/Libraries/XMCLib/inc/xmc4_gpio.h"
+  88              	 .file 5 "../Dave/Generated/BUS_IO/bus_io.h"
+  89              	 .file 6 "C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_07_21_VCU_jr20_Source/2021_07_21_VCU_jr20_Source/Libraries/CMSIS/Include/cmsis_gcc.h"
+  90              	 .file 7 "C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_07_21_VCU_jr20_Source/2021_07_21_VCU_jr20_Source/Libraries/CMSIS/Include/core_cm4.h"
+  91              	 .file 8 "../Dave/Generated/BUS_IO/bus_io_conf.c"
+DEFINED SYMBOLS
+                            *ABS*:00000000 bus_io_conf.c
+    {standard input}:24     .rodata.BUS_IO_pin_list:00000000 BUS_IO_pin_list
+    {standard input}:21     .rodata.BUS_IO_pin_list:00000000 $d
+    {standard input}:51     .data.BUS_IO:00000000 BUS_IO
+    {standard input}:48     .data.BUS_IO:00000000 $d
+    {standard input}:64     .rodata.BUS_IO_Input_pin_list:00000000 BUS_IO_Input_pin_list
+    {standard input}:61     .rodata.BUS_IO_Input_pin_list:00000000 $d
+    {standard input}:76     .data.BUS_IO_Input:00000000 BUS_IO_Input
+    {standard input}:73     .data.BUS_IO_Input:00000000 $d
+
+NO UNDEFINED SYMBOLS

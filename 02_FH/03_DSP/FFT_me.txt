@@ -1,0 +1,32 @@
+	int stage, group, delta, no_groups, twiddleind, A, B;
+	no_groups = N>>1;
+	fract32 bufA, bufB;
+
+	for(stage = 1; stage<(N); stage = stage << 1)
+	{
+		//groupsize = N>>(J-stage);		//now stage
+		A = 0;
+		B = stage;
+
+		for(group = 0; group<no_groups; group++)
+		{
+			twiddleind = 0;
+			for(int i = 0; i<stage; i++)
+			{
+				bufA = (twiddle[twiddleind].re * vector[B].re - twiddle[twiddleind].im * vector[B].im)>>15;
+				bufB = (twiddle[twiddleind].re * vector[B].im + twiddle[twiddleind].im * vector[B].re)>>15;
+
+				vector[B].re = (vector[A].re - bufA) >> 1;
+				vector[B].im = (vector[A].im - bufB) >> 1;
+				vector[A].re = (vector[A].re + bufA) >> 1;
+				vector[A].im = (vector[A].im + bufB) >> 1;
+
+				twiddleind += no_groups;
+				A ++;
+				B ++;
+			}
+			A+=stage;
+			B+=stage;
+		}
+		no_groups = no_groups >> 1;
+	}

@@ -1,0 +1,519 @@
+   1              	 .syntax unified
+   2              	 .cpu cortex-m4
+   3              	 .eabi_attribute 27,3
+   4              	 .fpu fpv4-sp-d16
+   5              	 .eabi_attribute 20,1
+   6              	 .eabi_attribute 21,1
+   7              	 .eabi_attribute 23,3
+   8              	 .eabi_attribute 24,1
+   9              	 .eabi_attribute 25,1
+  10              	 .eabi_attribute 26,1
+  11              	 .eabi_attribute 30,4
+  12              	 .eabi_attribute 34,1
+  13              	 .eabi_attribute 18,4
+  14              	 .thumb
+  15              	 .file "CAN_1.c"
+  16              	 .section .text.CAN_1_Receive,"ax",%progbits
+  17              	 .align 1
+  18              	 .global CAN_1_Receive
+  19              	 .thumb
+  20              	 .thumb_func
+  22              	CAN_1_Receive:
+  23              	 
+  24              	 
+  25 0000 2DE9F04F 	 push {r4,r5,r6,r7,r8,r9,r10,fp,lr}
+  26 0004 A14C     	 ldr r4,.L2
+  27 0006 DFF808B3 	 ldr fp,.L2+132
+  28 000a DFF808A3 	 ldr r10,.L2+136
+  29 000e DFF80893 	 ldr r9,.L2+140
+  30 0012 DFF80883 	 ldr r8,.L2+144
+  31 0016 9E4F     	 ldr r7,.L2+4
+  32 0018 9E4E     	 ldr r6,.L2+8
+  33 001a 9F4D     	 ldr r5,.L2+12
+  34 001c 85B0     	 sub sp,sp,#20
+  35 001e 2046     	 mov r0,r4
+  36 0020 FFF7FEFF 	 bl CAN_NODE_MO_Receive
+  37 0024 2268     	 ldr r2,[r4]
+  38 0026 DFF8F8C2 	 ldr ip,.L2+148
+  39 002a CDF80CC0 	 str ip,[sp,#12]
+  40 002e 02F11003 	 add r3,r2,#16
+  41 0032 CCF80030 	 str r3,[ip]
+  42 0036 994B     	 ldr r3,.L2+16
+  43 0038 0293     	 str r3,[sp,#8]
+  44 003a 02F11201 	 add r1,r2,#18
+  45 003e 1960     	 str r1,[r3]
+  46 0040 9749     	 ldr r1,.L2+20
+  47 0042 984C     	 ldr r4,.L2+24
+  48 0044 02F11400 	 add r0,r2,#20
+  49 0048 0860     	 str r0,[r1]
+  50 004a 117D     	 ldrb r1,[r2,#20]
+  51 004c C908     	 lsrs r1,r1,#3
+  52 004e 8BF80010 	 strb r1,[fp]
+  53 0052 9549     	 ldr r1,.L2+28
+  54 0054 0860     	 str r0,[r1]
+  55 0056 1721     	 movs r1,#23
+  56 0058 5069     	 ldr r0,[r2,#20]
+  57 005a 1022     	 movs r2,#16
+  58 005c FFF7FEFF 	 bl getbits
+  59 0060 AAF80000 	 strh r0,[r10]
+  60 0064 2046     	 mov r0,r4
+  61 0066 FFF7FEFF 	 bl CAN_NODE_MO_Receive
+  62 006a 2268     	 ldr r2,[r4]
+  63 006c 8F4C     	 ldr r4,.L2+32
+  64 006e 904B     	 ldr r3,.L2+36
+  65 0070 1032     	 adds r2,r2,#16
+  66 0072 18BF     	 it ne
+  67 0074 0122     	 movne r2,#1
+  68 0076 2046     	 mov r0,r4
+  69 0078 89F80020 	 strb r2,[r9]
+  70 007c 88F80020 	 strb r2,[r8]
+  71 0080 1A70     	 strb r2,[r3]
+  72 0082 FFF7FEFF 	 bl CAN_NODE_MO_Receive
+  73 0086 2268     	 ldr r2,[r4]
+  74 0088 8A4B     	 ldr r3,.L2+40
+  75 008a 8B4C     	 ldr r4,.L2+44
+  76 008c 02F11001 	 add r1,r2,#16
+  77 0090 1960     	 str r1,[r3]
+  78 0092 8A4B     	 ldr r3,.L2+48
+  79 0094 02F11101 	 add r1,r2,#17
+  80 0098 1960     	 str r1,[r3]
+  81 009a 894B     	 ldr r3,.L2+52
+  82 009c 02F11201 	 add r1,r2,#18
+  83 00a0 1960     	 str r1,[r3]
+  84 00a2 884B     	 ldr r3,.L2+56
+  85 00a4 02F11501 	 add r1,r2,#21
+  86 00a8 1960     	 str r1,[r3]
+  87 00aa 874B     	 ldr r3,.L2+60
+  88 00ac 1632     	 adds r2,r2,#22
+  89 00ae 2046     	 mov r0,r4
+  90 00b0 1A60     	 str r2,[r3]
+  91 00b2 FFF7FEFF 	 bl CAN_NODE_MO_Receive
+  92 00b6 2268     	 ldr r2,[r4]
+  93 00b8 844B     	 ldr r3,.L2+64
+  94 00ba 854C     	 ldr r4,.L2+68
+  95 00bc 02F11001 	 add r1,r2,#16
+  96 00c0 1960     	 str r1,[r3]
+  97 00c2 844B     	 ldr r3,.L2+72
+  98 00c4 02F11101 	 add r1,r2,#17
+  99 00c8 1960     	 str r1,[r3]
+ 100 00ca 834B     	 ldr r3,.L2+76
+ 101 00cc 02F11201 	 add r1,r2,#18
+ 102 00d0 1960     	 str r1,[r3]
+ 103 00d2 02F11301 	 add r1,r2,#19
+ 104 00d6 3960     	 str r1,[r7]
+ 105 00d8 2046     	 mov r0,r4
+ 106 00da 02F11401 	 add r1,r2,#20
+ 107 00de 1532     	 adds r2,r2,#21
+ 108 00e0 3160     	 str r1,[r6]
+ 109 00e2 2A60     	 str r2,[r5]
+ 110 00e4 FFF7FEFF 	 bl CAN_NODE_MO_Receive
+ 111 00e8 2468     	 ldr r4,[r4]
+ 112 00ea 7C4A     	 ldr r2,.L2+80
+ 113 00ec 2069     	 ldr r0,[r4,#16]
+ 114 00ee 04F11001 	 add r1,r4,#16
+ 115 00f2 1160     	 str r1,[r2]
+ 116 00f4 1721     	 movs r1,#23
+ 117 00f6 1022     	 movs r2,#16
+ 118 00f8 FFF7FEFF 	 bl getbits
+ 119 00fc 784A     	 ldr r2,.L2+84
+ 120 00fe 7949     	 ldr r1,.L2+88
+ 121 0100 0191     	 str r1,[sp,#4]
+ 122 0102 1634     	 adds r4,r4,#22
+ 123 0104 1460     	 str r4,[r2]
+ 124 0106 784C     	 ldr r4,.L2+92
+ 125 0108 0880     	 strh r0,[r1]
+ 126 010a 2046     	 mov r0,r4
+ 127 010c 0092     	 str r2,[sp]
+ 128 010e FFF7FEFF 	 bl CAN_NODE_MO_Receive
+ 129 0112 2068     	 ldr r0,[r4]
+ 130 0114 DDF80CC0 	 ldr ip,[sp,#12]
+ 131 0118 744C     	 ldr r4,.L2+96
+ 132 011a 9FED757A 	 flds s14,.L2+100
+ 133 011e DFED756A 	 flds s13,.L2+104
+ 134 0122 00F1100E 	 add lr,r0,#16
+ 135 0126 C4F800E0 	 str lr,[r4]
+ 136 012a DCF800E0 	 ldr lr,[ip]
+ 137 012e 724C     	 ldr r4,.L2+108
+ 138 0130 9EF80030 	 ldrb r3,[lr]
+ 139 0134 07EE903A 	 fmsr s15,r3
+ 140 0138 F8EE677A 	 fuitos s15,s15
+ 141 013c 67EE877A 	 fmuls s15,s15,s14
+ 142 0140 17EE903A 	 fmrs r3,s15
+ 143 0144 6360     	 str r3,[r4,#4]
+ 144 0146 029B     	 ldr r3,[sp,#8]
+ 145 0148 DFED6C7A 	 flds s15,.L2+112
+ 146 014c 1B68     	 ldr r3,[r3]
+ 147 014e 1B88     	 ldrh r3,[r3]
+ 148 0150 6380     	 strh r3,[r4,#2]
+ 149 0152 9BF80030 	 ldrb r3,[fp]
+ 150 0156 2372     	 strb r3,[r4,#8]
+ 151 0158 BAF80030 	 ldrh r3,[r10]
+ 152 015c 07EE103A 	 fmsr s14,r3
+ 153 0160 B8EE477A 	 fuitos s14,s14
+ 154 0164 E7EE267A 	 vfma.f32 s15,s14,s13
+ 155 0168 9FED657A 	 flds s14,.L2+116
+ 156 016c 17EE903A 	 fmrs r3,s15
+ 157 0170 C4F80930 	 str r3,[r4,#9]
+ 158 0174 99F80030 	 ldrb r3,[r9]
+ 159 0178 6373     	 strb r3,[r4,#13]
+ 160 017a 98F80030 	 ldrb r3,[r8]
+ 161 017e A373     	 strb r3,[r4,#14]
+ 162 0180 4B4B     	 ldr r3,.L2+36
+ 163 0182 1B78     	 ldrb r3,[r3]
+ 164 0184 E373     	 strb r3,[r4,#15]
+ 165 0186 4B4B     	 ldr r3,.L2+40
+ 166 0188 1B68     	 ldr r3,[r3]
+ 167 018a 1B78     	 ldrb r3,[r3]
+ 168 018c 07EE903A 	 fmsr s15,r3
+ 169 0190 F8EE677A 	 fuitos s15,s15
+ 170 0194 F6EE006A 	 fconsts s13,#96
+ 171 0198 67EE877A 	 fmuls s15,s15,s14
+ 172 019c 17EE903A 	 fmrs r3,s15
+ 173 01a0 2361     	 str r3,[r4,#16]
+ 174 01a2 464B     	 ldr r3,.L2+48
+ 175 01a4 1B68     	 ldr r3,[r3]
+ 176 01a6 1B78     	 ldrb r3,[r3]
+ 177 01a8 07EE103A 	 fmsr s14,r3
+ 178 01ac B8EE477A 	 fuitos s14,s14
+ 179 01b0 27EE267A 	 fmuls s14,s14,s13
+ 180 01b4 17EE103A 	 fmrs r3,s14
+ 181 01b8 6361     	 str r3,[r4,#20]
+ 182 01ba 414B     	 ldr r3,.L2+52
+ 183 01bc 1B68     	 ldr r3,[r3]
+ 184 01be 1B78     	 ldrb r3,[r3]
+ 185 01c0 07EE903A 	 fmsr s15,r3
+ 186 01c4 F8EE677A 	 fuitos s15,s15
+ 187 01c8 67EEA67A 	 fmuls s15,s15,s13
+ 188 01cc DFED4D6A 	 flds s13,.L2+120
+ 189 01d0 17EE903A 	 fmrs r3,s15
+ 190 01d4 A361     	 str r3,[r4,#24]
+ 191 01d6 3B4B     	 ldr r3,.L2+56
+ 192 01d8 1B68     	 ldr r3,[r3]
+ 193 01da 1B78     	 ldrb r3,[r3]
+ 194 01dc 2377     	 strb r3,[r4,#28]
+ 195 01de 3A4B     	 ldr r3,.L2+60
+ 196 01e0 1B68     	 ldr r3,[r3]
+ 197 01e2 1B78     	 ldrb r3,[r3]
+ 198 01e4 6377     	 strb r3,[r4,#29]
+ 199 01e6 394B     	 ldr r3,.L2+64
+ 200 01e8 0199     	 ldr r1,[sp,#4]
+ 201 01ea 1B68     	 ldr r3,[r3]
+ 202 01ec 009A     	 ldr r2,[sp]
+ 203 01ee 1B78     	 ldrb r3,[r3]
+ 204 01f0 07EE103A 	 fmsr s14,r3
+ 205 01f4 B8EE477A 	 fuitos s14,s14
+ 206 01f8 27EE267A 	 fmuls s14,s14,s13
+ 207 01fc 17EE103A 	 fmrs r3,s14
+ 208 0200 C4F81E30 	 str r3,[r4,#30]
+ 209 0204 334B     	 ldr r3,.L2+72
+ 210 0206 9FED407A 	 flds s14,.L2+124
+ 211 020a 1B68     	 ldr r3,[r3]
+ 212 020c 1B78     	 ldrb r3,[r3]
+ 213 020e 07EE903A 	 fmsr s15,r3
+ 214 0212 F8EE677A 	 fuitos s15,s15
+ 215 0216 67EEA67A 	 fmuls s15,s15,s13
+ 216 021a 17EE903A 	 fmrs r3,s15
+ 217 021e C4F82230 	 str r3,[r4,#34]
+ 218 0222 2D4B     	 ldr r3,.L2+76
+ 219 0224 1B68     	 ldr r3,[r3]
+ 220 0226 1B78     	 ldrb r3,[r3]
+ 221 0228 07EE903A 	 fmsr s15,r3
+ 222 022c F8EE677A 	 fuitos s15,s15
+ 223 0230 67EE877A 	 fmuls s15,s15,s14
+ 224 0234 9FED357A 	 flds s14,.L2+128
+ 225 0238 17EE903A 	 fmrs r3,s15
+ 226 023c C4F82630 	 str r3,[r4,#38]
+ 227 0240 3B68     	 ldr r3,[r7]
+ 228 0242 1B78     	 ldrb r3,[r3]
+ 229 0244 323B     	 subs r3,r3,#50
+ 230 0246 6385     	 strh r3,[r4,#42]
+ 231 0248 3368     	 ldr r3,[r6]
+ 232 024a 1B78     	 ldrb r3,[r3]
+ 233 024c 323B     	 subs r3,r3,#50
+ 234 024e A385     	 strh r3,[r4,#44]
+ 235 0250 2B68     	 ldr r3,[r5]
+ 236 0252 1B78     	 ldrb r3,[r3]
+ 237 0254 323B     	 subs r3,r3,#50
+ 238 0256 E385     	 strh r3,[r4,#46]
+ 239 0258 0B88     	 ldrh r3,[r1]
+ 240 025a 07EE903A 	 fmsr s15,r3
+ 241 025e F8EE677A 	 fuitos s15,s15
+ 242 0262 67EE877A 	 fmuls s15,s15,s14
+ 243 0266 17EE903A 	 fmrs r3,s15
+ 244 026a 2363     	 str r3,[r4,#48]
+ 245 026c 1368     	 ldr r3,[r2]
+ 246 026e 1B78     	 ldrb r3,[r3]
+ 247 0270 84F83430 	 strb r3,[r4,#52]
+ 248 0274 037C     	 ldrb r3,[r0,#16]
+ 249 0276 07EE903A 	 fmsr s15,r3
+ 250 027a F8EE677A 	 fuitos s15,s15
+ 251 027e 17EE903A 	 fmrs r3,s15
+ 252 0282 C4F83530 	 str r3,[r4,#53]
+ 253 0286 05B0     	 add sp,sp,#20
+ 254              	 
+ 255 0288 BDE8F08F 	 pop {r4,r5,r6,r7,r8,r9,r10,fp,pc}
+ 256              	.L3:
+ 257              	 .align 2
+ 258              	.L2:
+ 259 028c 00000000 	 .word CAN_1_LMO_01_Config
+ 260 0290 00000000 	 .word .LANCHOR17
+ 261 0294 00000000 	 .word .LANCHOR18
+ 262 0298 00000000 	 .word .LANCHOR19
+ 263 029c 00000000 	 .word .LANCHOR1
+ 264 02a0 00000000 	 .word .LANCHOR2
+ 265 02a4 00000000 	 .word CAN_1_LMO_02_Config
+ 266 02a8 00000000 	 .word .LANCHOR4
+ 267 02ac 00000000 	 .word CAN_1_LMO_03_Config
+ 268 02b0 00000000 	 .word .LANCHOR8
+ 269 02b4 00000000 	 .word .LANCHOR9
+ 270 02b8 00000000 	 .word CAN_1_LMO_04_Config
+ 271 02bc 00000000 	 .word .LANCHOR10
+ 272 02c0 00000000 	 .word .LANCHOR11
+ 273 02c4 00000000 	 .word .LANCHOR12
+ 274 02c8 00000000 	 .word .LANCHOR13
+ 275 02cc 00000000 	 .word .LANCHOR14
+ 276 02d0 00000000 	 .word CAN_1_LMO_05_Config
+ 277 02d4 00000000 	 .word .LANCHOR15
+ 278 02d8 00000000 	 .word .LANCHOR16
+ 279 02dc 00000000 	 .word .LANCHOR20
+ 280 02e0 00000000 	 .word .LANCHOR22
+ 281 02e4 00000000 	 .word .LANCHOR21
+ 282 02e8 00000000 	 .word CAN_1_LMO_06_Config
+ 283 02ec 00000000 	 .word .LANCHOR23
+ 284 02f0 0AD7233C 	 .word 1008981770
+ 285 02f4 CDCCCC3D 	 .word 1036831949
+ 286 02f8 00000000 	 .word carData
+ 287 02fc 0000C8C2 	 .word -1027080192
+ 288 0300 0AD7233D 	 .word 1025758986
+ 289 0304 6F12033D 	 .word 1023611503
+ 290 0308 CDCCCC3E 	 .word 1053609165
+ 291 030c 6F12833A 	 .word 981668463
+ 292 0310 00000000 	 .word .LANCHOR3
+ 293 0314 00000000 	 .word .LANCHOR5
+ 294 0318 00000000 	 .word .LANCHOR6
+ 295 031c 00000000 	 .word .LANCHOR7
+ 296 0320 00000000 	 .word .LANCHOR0
+ 298              	 .section .text.CAN_1_Transmit,"ax",%progbits
+ 299              	 .align 1
+ 300              	 .global CAN_1_Transmit
+ 301              	 .thumb
+ 302              	 .thumb_func
+ 304              	CAN_1_Transmit:
+ 305              	 
+ 306              	 
+ 307              	 
+ 308 0000 7047     	 bx lr
+ 310              	 .global p_brake_rear
+ 311              	 .global trigger_error
+ 312              	 .global lambda
+ 313              	 .global lambda1
+ 314              	 .global t_oil_engine
+ 315              	 .global t_air_22
+ 316              	 .global t_water_engine
+ 317              	 .global a_ath
+ 318              	 .global p_fuel_rail
+ 319              	 .global p_oil
+ 320              	 .global t_canmod
+ 321              	 .global t_oil_gb
+ 322              	 .global x_RH_RR
+ 323              	 .global x_RH_RL
+ 324              	 .global p_pneu
+ 325              	 .global eng_map
+ 326              	 .global shift_down
+ 327              	 .global shift_up
+ 328              	 .global ign_angle_1
+ 329              	 .global ign_angle
+ 330              	 .global gear_1
+ 331              	 .global gear
+ 332              	 .global n_engine
+ 333              	 .global p_air_22
+ 334              	 .global CAN_data_Tx
+ 335              	 .section .bss.gear,"aw",%nobits
+ 336              	 .align 2
+ 337              	 .set .LANCHOR2,.+0
+ 340              	gear:
+ 341 0000 00000000 	 .space 4
+ 342              	 .section .bss.lambda,"aw",%nobits
+ 343              	 .align 1
+ 344              	 .set .LANCHOR21,.+0
+ 347              	lambda:
+ 348 0000 0000     	 .space 2
+ 349              	 .section .bss.trigger_error,"aw",%nobits
+ 350              	 .align 2
+ 351              	 .set .LANCHOR22,.+0
+ 354              	trigger_error:
+ 355 0000 00000000 	 .space 4
+ 356              	 .section .bss.p_fuel_rail,"aw",%nobits
+ 357              	 .align 2
+ 358              	 .set .LANCHOR15,.+0
+ 361              	p_fuel_rail:
+ 362 0000 00000000 	 .space 4
+ 363              	 .section .bss.t_air_22,"aw",%nobits
+ 364              	 .align 2
+ 365              	 .set .LANCHOR18,.+0
+ 368              	t_air_22:
+ 369 0000 00000000 	 .space 4
+ 370              	 .section .bss.n_engine,"aw",%nobits
+ 371              	 .align 2
+ 372              	 .set .LANCHOR1,.+0
+ 375              	n_engine:
+ 376 0000 00000000 	 .space 4
+ 377              	 .section .bss.ign_angle,"aw",%nobits
+ 378              	 .align 2
+ 379              	 .set .LANCHOR4,.+0
+ 382              	ign_angle:
+ 383 0000 00000000 	 .space 4
+ 384              	 .section .bss.gear_1,"aw",%nobits
+ 385              	 .set .LANCHOR3,.+0
+ 388              	gear_1:
+ 389 0000 00       	 .space 1
+ 390              	 .section .bss.CAN_data_Tx,"aw",%nobits
+ 393              	CAN_data_Tx:
+ 394 0000 00000000 	 .space 8
+ 394      00000000 
+ 395              	 .section .bss.t_oil_engine,"aw",%nobits
+ 396              	 .align 2
+ 397              	 .set .LANCHOR19,.+0
+ 400              	t_oil_engine:
+ 401 0000 00000000 	 .space 4
+ 402              	 .section .bss.lambda1,"aw",%nobits
+ 403              	 .align 2
+ 404              	 .set .LANCHOR20,.+0
+ 407              	lambda1:
+ 408 0000 00000000 	 .space 4
+ 409              	 .section .bss.p_brake_rear,"aw",%nobits
+ 410              	 .align 2
+ 411              	 .set .LANCHOR23,.+0
+ 414              	p_brake_rear:
+ 415 0000 00000000 	 .space 4
+ 416              	 .section .bss.eng_map,"aw",%nobits
+ 417              	 .set .LANCHOR8,.+0
+ 420              	eng_map:
+ 421 0000 00       	 .space 1
+ 422              	 .section .bss.p_oil,"aw",%nobits
+ 423              	 .align 2
+ 424              	 .set .LANCHOR14,.+0
+ 427              	p_oil:
+ 428 0000 00000000 	 .space 4
+ 429              	 .section .bss.x_RH_RL,"aw",%nobits
+ 430              	 .align 2
+ 431              	 .set .LANCHOR10,.+0
+ 434              	x_RH_RL:
+ 435 0000 00000000 	 .space 4
+ 436              	 .section .bss.a_ath,"aw",%nobits
+ 437              	 .align 2
+ 438              	 .set .LANCHOR16,.+0
+ 441              	a_ath:
+ 442 0000 00000000 	 .space 4
+ 443              	 .section .bss.shift_up,"aw",%nobits
+ 444              	 .set .LANCHOR6,.+0
+ 447              	shift_up:
+ 448 0000 00       	 .space 1
+ 449              	 .section .bss.x_RH_RR,"aw",%nobits
+ 450              	 .align 2
+ 451              	 .set .LANCHOR11,.+0
+ 454              	x_RH_RR:
+ 455 0000 00000000 	 .space 4
+ 456              	 .section .bss.p_air_22,"aw",%nobits
+ 457              	 .align 2
+ 458              	 .set .LANCHOR0,.+0
+ 461              	p_air_22:
+ 462 0000 00000000 	 .space 4
+ 463              	 .section .bss.shift_down,"aw",%nobits
+ 464              	 .set .LANCHOR7,.+0
+ 467              	shift_down:
+ 468 0000 00       	 .space 1
+ 469              	 .section .bss.p_pneu,"aw",%nobits
+ 470              	 .align 2
+ 471              	 .set .LANCHOR9,.+0
+ 474              	p_pneu:
+ 475 0000 00000000 	 .space 4
+ 476              	 .section .bss.t_canmod,"aw",%nobits
+ 477              	 .align 2
+ 478              	 .set .LANCHOR13,.+0
+ 481              	t_canmod:
+ 482 0000 00000000 	 .space 4
+ 483              	 .section .bss.t_oil_gb,"aw",%nobits
+ 484              	 .align 2
+ 485              	 .set .LANCHOR12,.+0
+ 488              	t_oil_gb:
+ 489 0000 00000000 	 .space 4
+ 490              	 .section .bss.t_water_engine,"aw",%nobits
+ 491              	 .align 2
+ 492              	 .set .LANCHOR17,.+0
+ 495              	t_water_engine:
+ 496 0000 00000000 	 .space 4
+ 497              	 .section .bss.ign_angle_1,"aw",%nobits
+ 498              	 .align 1
+ 499              	 .set .LANCHOR5,.+0
+ 502              	ign_angle_1:
+ 503 0000 0000     	 .space 2
+ 504              	 .ident "GCC: (GNU Tools for ARM Embedded Processors) 4.9.3 20141119 (release) [ARM/embedded-4_9-branch revision 218278]"
+DEFINED SYMBOLS
+                            *ABS*:00000000 CAN_1.c
+    {standard input}:17     .text.CAN_1_Receive:00000000 $t
+    {standard input}:22     .text.CAN_1_Receive:00000000 CAN_1_Receive
+    {standard input}:259    .text.CAN_1_Receive:0000028c $d
+    {standard input}:299    .text.CAN_1_Transmit:00000000 $t
+    {standard input}:304    .text.CAN_1_Transmit:00000000 CAN_1_Transmit
+    {standard input}:414    .bss.p_brake_rear:00000000 p_brake_rear
+    {standard input}:354    .bss.trigger_error:00000000 trigger_error
+    {standard input}:347    .bss.lambda:00000000 lambda
+    {standard input}:407    .bss.lambda1:00000000 lambda1
+    {standard input}:400    .bss.t_oil_engine:00000000 t_oil_engine
+    {standard input}:368    .bss.t_air_22:00000000 t_air_22
+    {standard input}:495    .bss.t_water_engine:00000000 t_water_engine
+    {standard input}:441    .bss.a_ath:00000000 a_ath
+    {standard input}:361    .bss.p_fuel_rail:00000000 p_fuel_rail
+    {standard input}:427    .bss.p_oil:00000000 p_oil
+    {standard input}:481    .bss.t_canmod:00000000 t_canmod
+    {standard input}:488    .bss.t_oil_gb:00000000 t_oil_gb
+    {standard input}:454    .bss.x_RH_RR:00000000 x_RH_RR
+    {standard input}:434    .bss.x_RH_RL:00000000 x_RH_RL
+    {standard input}:474    .bss.p_pneu:00000000 p_pneu
+    {standard input}:420    .bss.eng_map:00000000 eng_map
+    {standard input}:467    .bss.shift_down:00000000 shift_down
+    {standard input}:447    .bss.shift_up:00000000 shift_up
+    {standard input}:502    .bss.ign_angle_1:00000000 ign_angle_1
+    {standard input}:382    .bss.ign_angle:00000000 ign_angle
+    {standard input}:388    .bss.gear_1:00000000 gear_1
+    {standard input}:340    .bss.gear:00000000 gear
+    {standard input}:375    .bss.n_engine:00000000 n_engine
+    {standard input}:461    .bss.p_air_22:00000000 p_air_22
+    {standard input}:393    .bss.CAN_data_Tx:00000000 CAN_data_Tx
+    {standard input}:336    .bss.gear:00000000 $d
+    {standard input}:343    .bss.lambda:00000000 $d
+    {standard input}:350    .bss.trigger_error:00000000 $d
+    {standard input}:357    .bss.p_fuel_rail:00000000 $d
+    {standard input}:364    .bss.t_air_22:00000000 $d
+    {standard input}:371    .bss.n_engine:00000000 $d
+    {standard input}:378    .bss.ign_angle:00000000 $d
+    {standard input}:389    .bss.gear_1:00000000 $d
+    {standard input}:394    .bss.CAN_data_Tx:00000000 $d
+    {standard input}:396    .bss.t_oil_engine:00000000 $d
+    {standard input}:403    .bss.lambda1:00000000 $d
+    {standard input}:410    .bss.p_brake_rear:00000000 $d
+    {standard input}:421    .bss.eng_map:00000000 $d
+    {standard input}:423    .bss.p_oil:00000000 $d
+    {standard input}:430    .bss.x_RH_RL:00000000 $d
+    {standard input}:437    .bss.a_ath:00000000 $d
+    {standard input}:448    .bss.shift_up:00000000 $d
+    {standard input}:450    .bss.x_RH_RR:00000000 $d
+    {standard input}:457    .bss.p_air_22:00000000 $d
+    {standard input}:468    .bss.shift_down:00000000 $d
+    {standard input}:470    .bss.p_pneu:00000000 $d
+    {standard input}:477    .bss.t_canmod:00000000 $d
+    {standard input}:484    .bss.t_oil_gb:00000000 $d
+    {standard input}:491    .bss.t_water_engine:00000000 $d
+    {standard input}:498    .bss.ign_angle_1:00000000 $d
+
+UNDEFINED SYMBOLS
+CAN_NODE_MO_Receive
+getbits
+CAN_1_LMO_01_Config
+CAN_1_LMO_02_Config
+CAN_1_LMO_03_Config
+CAN_1_LMO_04_Config
+CAN_1_LMO_05_Config
+CAN_1_LMO_06_Config
+carData

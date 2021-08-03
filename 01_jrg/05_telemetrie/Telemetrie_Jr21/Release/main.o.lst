@@ -1,0 +1,196 @@
+   1              	 .syntax unified
+   2              	 .cpu cortex-m4
+   3              	 .eabi_attribute 27,3
+   4              	 .fpu fpv4-sp-d16
+   5              	 .eabi_attribute 20,1
+   6              	 .eabi_attribute 21,1
+   7              	 .eabi_attribute 23,3
+   8              	 .eabi_attribute 24,1
+   9              	 .eabi_attribute 25,1
+  10              	 .eabi_attribute 26,1
+  11              	 .eabi_attribute 30,4
+  12              	 .eabi_attribute 34,1
+  13              	 .eabi_attribute 18,4
+  14              	 .thumb
+  15              	 .file "main.c"
+  16              	 .section .text.startup.main,"ax",%progbits
+  17              	 .align 1
+  18              	 .global main
+  19              	 .thumb
+  20              	 .thumb_func
+  22              	main:
+  23              	 
+  24              	 
+  25 0000 08B5     	 push {r3,lr}
+  26 0002 0A4B     	 ldr r3,.L8
+  27 0004 0122     	 movs r2,#1
+  28 0006 5A70     	 strb r2,[r3,#1]
+  29 0008 3422     	 movs r2,#52
+  30 000a 83F8BA20 	 strb r2,[r3,#186]
+  31 000e FFF7FEFF 	 bl DAVE_Init
+  32 0012 00B1     	 cbz r0,.L2
+  33              	.L6:
+  34 0014 FEE7     	 b .L6
+  35              	.L2:
+  36 0016 FFF7FEFF 	 bl CAN_1_Receive
+  37 001a 0549     	 ldr r1,.L8+4
+  38 001c 0548     	 ldr r0,.L8+8
+  39 001e 0622     	 movs r2,#6
+  40 0020 FFF7FEFF 	 bl UART_Receive
+  41 0024 FFF7FEFF 	 bl CAN_2_Receive
+  42 0028 F5E7     	 b .L2
+  43              	.L9:
+  44 002a 00BF     	 .align 2
+  45              	.L8:
+  46 002c 00000000 	 .word carData
+  47 0030 00000000 	 .word buffer
+  48 0034 00000000 	 .word UART_0
+  50              	 .section .text.uartreceive,"ax",%progbits
+  51              	 .align 1
+  52              	 .global uartreceive
+  53              	 .thumb
+  54              	 .thumb_func
+  56              	uartreceive:
+  57              	 
+  58              	 
+  59 0000 38B5     	 push {r3,r4,r5,lr}
+  60 0002 0A4C     	 ldr r4,.L12
+  61 0004 0A4D     	 ldr r5,.L12+4
+  62 0006 0B48     	 ldr r0,.L12+8
+  63 0008 0023     	 movs r3,#0
+  64 000a 0622     	 movs r2,#6
+  65 000c 2146     	 mov r1,r4
+  66 000e 2B70     	 strb r3,[r5]
+  67 0010 FFF7FEFF 	 bl UART_Receive
+  68 0014 084B     	 ldr r3,.L12+12
+  69 0016 2278     	 ldrb r2,[r4]
+  70 0018 1B78     	 ldrb r3,[r3]
+  71 001a 9A42     	 cmp r2,r3
+  72 001c 04D1     	 bne .L10
+  73 001e 6378     	 ldrb r3,[r4,#1]
+  74 0020 132B     	 cmp r3,#19
+  75 0022 04BF     	 itt eq
+  76 0024 0123     	 moveq r3,#1
+  77 0026 2B70     	 strbeq r3,[r5]
+  78              	.L10:
+  79 0028 38BD     	 pop {r3,r4,r5,pc}
+  80              	.L13:
+  81 002a 00BF     	 .align 2
+  82              	.L12:
+  83 002c 00000000 	 .word buffer
+  84 0030 00000000 	 .word .LANCHOR0
+  85 0034 00000000 	 .word UART_0
+  86 0038 00000000 	 .word .LANCHOR1
+  88              	 .section .text.writeTlm,"ax",%progbits
+  89              	 .align 1
+  90              	 .global writeTlm
+  91              	 .thumb
+  92              	 .thumb_func
+  94              	writeTlm:
+  95              	 
+  96              	 
+  97 0000 70B5     	 push {r4,r5,r6,lr}
+  98 0002 0546     	 mov r5,r0
+  99 0004 0E46     	 mov r6,r1
+ 100 0006 0446     	 mov r4,r0
+ 101              	.L15:
+ 102 0008 631B     	 subs r3,r4,r5
+ 103 000a B342     	 cmp r3,r6
+ 104 000c 06DA     	 bge .L17
+ 105 000e 044B     	 ldr r3,.L18
+ 106 0010 14F8011B 	 ldrb r1,[r4],#1
+ 107 0014 1868     	 ldr r0,[r3]
+ 108 0016 FFF7FEFF 	 bl XMC_UART_CH_Transmit
+ 109 001a F5E7     	 b .L15
+ 110              	.L17:
+ 111 001c 70BD     	 pop {r4,r5,r6,pc}
+ 112              	.L19:
+ 113 001e 00BF     	 .align 2
+ 114              	.L18:
+ 115 0020 00000000 	 .word UART_0
+ 117              	 .section .text.sendTlm,"ax",%progbits
+ 118              	 .align 1
+ 119              	 .global sendTlm
+ 120              	 .thumb
+ 121              	 .thumb_func
+ 123              	sendTlm:
+ 124              	 
+ 125              	 
+ 126              	 
+ 127 0000 0248     	 ldr r0,.L21
+ 128 0002 BB21     	 movs r1,#187
+ 129 0004 0170     	 strb r1,[r0]
+ 130 0006 FFF7FEBF 	 b writeTlm
+ 131              	.L22:
+ 132 000a 00BF     	 .align 2
+ 133              	.L21:
+ 134 000c 00000000 	 .word carData
+ 136              	 .section .text.CCU43_1_IRQHandler,"ax",%progbits
+ 137              	 .align 1
+ 138              	 .global CCU43_1_IRQHandler
+ 139              	 .thumb
+ 140              	 .thumb_func
+ 142              	CCU43_1_IRQHandler:
+ 143              	 
+ 144              	 
+ 145              	 
+ 146 0000 FFF7FEBF 	 b sendTlm
+ 148              	 .comm buffer,6,1
+ 149              	 .global ok
+ 150              	 .global sync
+ 151              	 .global id_check
+ 152              	 .global id
+ 153              	 .global z
+ 154              	 .comm delay_count,4,4
+ 155              	 .comm carData,187,1
+ 156              	 .section .data.id_check,"aw",%progbits
+ 157              	 .set .LANCHOR1,.+0
+ 160              	id_check:
+ 161 0000 02       	 .byte 2
+ 162              	 .section .data.sync,"aw",%progbits
+ 165              	sync:
+ 166 0000 4D       	 .byte 77
+ 167              	 .section .data.id,"aw",%progbits
+ 170              	id:
+ 171 0000 01       	 .byte 1
+ 172              	 .section .bss.z,"aw",%nobits
+ 175              	z:
+ 176 0000 00       	 .space 1
+ 177              	 .section .data.ok,"aw",%progbits
+ 178              	 .set .LANCHOR0,.+0
+ 181              	ok:
+ 182 0000 01       	 .byte 1
+ 183              	 .ident "GCC: (GNU Tools for ARM Embedded Processors) 4.9.3 20141119 (release) [ARM/embedded-4_9-branch revision 218278]"
+DEFINED SYMBOLS
+                            *ABS*:00000000 main.c
+    {standard input}:17     .text.startup.main:00000000 $t
+    {standard input}:22     .text.startup.main:00000000 main
+    {standard input}:46     .text.startup.main:0000002c $d
+                            *COM*:000000bb carData
+                            *COM*:00000006 buffer
+    {standard input}:51     .text.uartreceive:00000000 $t
+    {standard input}:56     .text.uartreceive:00000000 uartreceive
+    {standard input}:83     .text.uartreceive:0000002c $d
+    {standard input}:89     .text.writeTlm:00000000 $t
+    {standard input}:94     .text.writeTlm:00000000 writeTlm
+    {standard input}:115    .text.writeTlm:00000020 $d
+    {standard input}:118    .text.sendTlm:00000000 $t
+    {standard input}:123    .text.sendTlm:00000000 sendTlm
+    {standard input}:134    .text.sendTlm:0000000c $d
+    {standard input}:137    .text.CCU43_1_IRQHandler:00000000 $t
+    {standard input}:142    .text.CCU43_1_IRQHandler:00000000 CCU43_1_IRQHandler
+    {standard input}:181    .data.ok:00000000 ok
+    {standard input}:165    .data.sync:00000000 sync
+    {standard input}:160    .data.id_check:00000000 id_check
+    {standard input}:170    .data.id:00000000 id
+    {standard input}:175    .bss.z:00000000 z
+                            *COM*:00000004 delay_count
+    {standard input}:176    .bss.z:00000000 $d
+
+UNDEFINED SYMBOLS
+DAVE_Init
+CAN_1_Receive
+UART_Receive
+CAN_2_Receive
+UART_0
+XMC_UART_CH_Transmit

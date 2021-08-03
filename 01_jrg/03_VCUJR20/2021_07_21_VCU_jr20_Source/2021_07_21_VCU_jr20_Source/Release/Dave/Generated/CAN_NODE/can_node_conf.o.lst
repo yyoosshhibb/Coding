@@ -1,0 +1,972 @@
+   1              	 .syntax unified
+   2              	 .cpu cortex-m4
+   3              	 .eabi_attribute 27,3
+   4              	 .fpu fpv4-sp-d16
+   5              	 .eabi_attribute 20,1
+   6              	 .eabi_attribute 21,1
+   7              	 .eabi_attribute 23,3
+   8              	 .eabi_attribute 24,1
+   9              	 .eabi_attribute 25,1
+  10              	 .eabi_attribute 26,1
+  11              	 .eabi_attribute 30,4
+  12              	 .eabi_attribute 34,1
+  13              	 .eabi_attribute 18,4
+  14              	 .thumb
+  15              	 .file "can_node_conf.c"
+  16              	 .global CAN_2
+  17              	 .global CAN_2_LMO_13_Config
+  18              	 .global CAN_2_LMO_13
+  19              	 .global CAN_2_LMO_12_Config
+  20              	 .global CAN_2_LMO_12
+  21              	 .global CAN_2_LMO_11_Config
+  22              	 .global CAN_2_LMO_11
+  23              	 .global CAN_2_LMO_10_Config
+  24              	 .global CAN_2_LMO_10
+  25              	 .global CAN_2_LMO_09_Config
+  26              	 .global CAN_2_LMO_09
+  27              	 .global CAN_2_LMO_08_Config
+  28              	 .global CAN_2_LMO_08
+  29              	 .global CAN_2_LMO_07_Config
+  30              	 .global CAN_2_LMO_07
+  31              	 .global CAN_2_LMO_06_Config
+  32              	 .global CAN_2_LMO_06
+  33              	 .global CAN_2_LMO_05_Config
+  34              	 .global CAN_2_LMO_05
+  35              	 .global CAN_2_LMO_04_Config
+  36              	 .global CAN_2_LMO_04
+  37              	 .global CAN_2_LMO_03_Config
+  38              	 .global CAN_2_LMO_03
+  39              	 .global CAN_2_LMO_02_Config
+  40              	 .global CAN_2_LMO_02
+  41              	 .global CAN_2_LMO_01_Config
+  42              	 .global CAN_2_LMO_01
+  43              	 .global CAN_2_sr
+  44              	 .global CAN_2_BitTimeConfig
+  45              	 .global CAN_2_gpio_in_config
+  46              	 .global CAN_2_gpio_in
+  47              	 .global CAN_2_gpio_out_config
+  48              	 .global CAN_2_gpio_out
+  49              	 .global CAN_1
+  50              	 .global CAN_1_LMO_08_Config
+  51              	 .global CAN_1_LMO_08
+  52              	 .global CAN_1_LMO_07_Config
+  53              	 .global CAN_1_LMO_07
+  54              	 .global CAN_1_LMO_06_Config
+  55              	 .global CAN_1_LMO_06
+  56              	 .global CAN_1_LMO_05_Config
+  57              	 .global CAN_1_LMO_05
+  58              	 .global CAN_1_LMO_04_Config
+  59              	 .global CAN_1_LMO_04
+  60              	 .global CAN_1_LMO_03_Config
+  61              	 .global CAN_1_LMO_03
+  62              	 .global CAN_1_LMO_02_Config
+  63              	 .global CAN_1_LMO_02
+  64              	 .global CAN_1_LMO_01_Config
+  65              	 .global CAN_1_LMO_01
+  66              	 .global CAN_1_sr
+  67              	 .global CAN_1_BitTimeConfig
+  68              	 .global CAN_1_gpio_in_config
+  69              	 .global CAN_1_gpio_in
+  70              	 .global CAN_1_gpio_out_config
+  71              	 .global CAN_1_gpio_out
+  72              	 .section .rodata.CAN_2_LMO_01_Config,"a",%progbits
+  73              	 .align 2
+  76              	CAN_2_LMO_01_Config:
+  77 0000 00000000 	 .word CAN_2_LMO_01
+  78 0004 07       	 .byte 7
+  79 0005 00       	 .byte 0
+  80 0006 00       	 .byte 0
+  81 0007 00       	 .byte 0
+  82 0008 00       	 .byte 0
+  83 0009 000000   	 .space 3
+  84              	 .section .rodata.CAN_2_LMO_05_Config,"a",%progbits
+  85              	 .align 2
+  88              	CAN_2_LMO_05_Config:
+  89 0000 00000000 	 .word CAN_2_LMO_05
+  90 0004 16       	 .byte 22
+  91 0005 00       	 .byte 0
+  92 0006 00       	 .byte 0
+  93 0007 00       	 .byte 0
+  94 0008 00       	 .byte 0
+  95 0009 000000   	 .space 3
+  96              	 .section .rodata.CAN_2_gpio_in_config,"a",%progbits
+  97              	 .align 2
+ 100              	CAN_2_gpio_in_config:
+ 101 0000 00000000 	 .space 12
+ 101      00000000 
+ 101      00000000 
+ 102              	 .section .rodata.CAN_2_LMO_13_Config,"a",%progbits
+ 103              	 .align 2
+ 106              	CAN_2_LMO_13_Config:
+ 107 0000 00000000 	 .word CAN_2_LMO_13
+ 108 0004 3C       	 .byte 60
+ 109 0005 00       	 .byte 0
+ 110 0006 00       	 .byte 0
+ 111 0007 00       	 .byte 0
+ 112 0008 00       	 .byte 0
+ 113 0009 000000   	 .space 3
+ 114              	 .section .rodata.CAN_1_LMO_01_Config,"a",%progbits
+ 115              	 .align 2
+ 118              	CAN_1_LMO_01_Config:
+ 119 0000 00000000 	 .word CAN_1_LMO_01
+ 120 0004 26       	 .byte 38
+ 121 0005 00       	 .byte 0
+ 122 0006 00       	 .byte 0
+ 123 0007 00       	 .byte 0
+ 124 0008 00       	 .byte 0
+ 125 0009 000000   	 .space 3
+ 126              	 .section .rodata.CAN_1_LMO_06_Config,"a",%progbits
+ 127              	 .align 2
+ 130              	CAN_1_LMO_06_Config:
+ 131 0000 00000000 	 .word CAN_1_LMO_06
+ 132 0004 21       	 .byte 33
+ 133 0005 00       	 .byte 0
+ 134 0006 00       	 .byte 0
+ 135 0007 00       	 .byte 0
+ 136 0008 00       	 .byte 0
+ 137 0009 000000   	 .space 3
+ 138              	 .section .rodata.CAN_1_sr,"a",%progbits
+ 141              	CAN_1_sr:
+ 142 0000 00000000 	 .space 4
+ 143              	 .section .rodata.CAN_2_LMO_06_Config,"a",%progbits
+ 144              	 .align 2
+ 147              	CAN_2_LMO_06_Config:
+ 148 0000 00000000 	 .word CAN_2_LMO_06
+ 149 0004 15       	 .byte 21
+ 150 0005 00       	 .byte 0
+ 151 0006 00       	 .byte 0
+ 152 0007 00       	 .byte 0
+ 153 0008 00       	 .byte 0
+ 154 0009 000000   	 .space 3
+ 155              	 .section .rodata.CAN_1_LMO_02_Config,"a",%progbits
+ 156              	 .align 2
+ 159              	CAN_1_LMO_02_Config:
+ 160 0000 00000000 	 .word CAN_1_LMO_02
+ 161 0004 27       	 .byte 39
+ 162 0005 00       	 .byte 0
+ 163 0006 00       	 .byte 0
+ 164 0007 00       	 .byte 0
+ 165 0008 00       	 .byte 0
+ 166 0009 000000   	 .space 3
+ 167              	 .section .rodata.CAN_2_gpio_in,"a",%progbits
+ 168              	 .align 2
+ 171              	CAN_2_gpio_in:
+ 172 0000 00810248 	 .word 1208123648
+ 173 0004 05       	 .byte 5
+ 174 0005 000000   	 .space 3
+ 175              	 .section .rodata.CAN_1_gpio_out_config,"a",%progbits
+ 176              	 .align 2
+ 179              	CAN_1_gpio_out_config:
+ 180 0000 90       	 .byte -112
+ 181 0001 000000   	 .space 3
+ 182 0004 01000000 	 .word 1
+ 183 0008 02       	 .byte 2
+ 184 0009 000000   	 .space 3
+ 185              	 .section .rodata.CAN_2_LMO_12_Config,"a",%progbits
+ 186              	 .align 2
+ 189              	CAN_2_LMO_12_Config:
+ 190 0000 00000000 	 .word CAN_2_LMO_12
+ 191 0004 09       	 .byte 9
+ 192 0005 00       	 .byte 0
+ 193 0006 00       	 .byte 0
+ 194 0007 00       	 .byte 0
+ 195 0008 00       	 .byte 0
+ 196 0009 000000   	 .space 3
+ 197              	 .section .data.CAN_1_BitTimeConfig,"aw",%progbits
+ 198              	 .align 2
+ 201              	CAN_1_BitTimeConfig:
+ 202 0000 000E2707 	 .word 120000000
+ 203 0004 40420F00 	 .word 1000000
+ 204 0008 401F     	 .short 8000
+ 205 000a 0100     	 .short 1
+ 206              	 .section .rodata.CAN_1_gpio_out,"a",%progbits
+ 207              	 .align 2
+ 210              	CAN_1_gpio_out:
+ 211 0000 00810248 	 .word 1208123648
+ 212 0004 0C       	 .byte 12
+ 213 0005 000000   	 .space 3
+ 214              	 .section .data.CAN_2_BitTimeConfig,"aw",%progbits
+ 215              	 .align 2
+ 218              	CAN_2_BitTimeConfig:
+ 219 0000 000E2707 	 .word 120000000
+ 220 0004 40420F00 	 .word 1000000
+ 221 0008 401F     	 .short 8000
+ 222 000a 0100     	 .short 1
+ 223              	 .section .rodata.CAN_2_LMO_11_Config,"a",%progbits
+ 224              	 .align 2
+ 227              	CAN_2_LMO_11_Config:
+ 228 0000 00000000 	 .word CAN_2_LMO_11
+ 229 0004 24       	 .byte 36
+ 230 0005 00       	 .byte 0
+ 231 0006 00       	 .byte 0
+ 232 0007 00       	 .byte 0
+ 233 0008 00       	 .byte 0
+ 234 0009 000000   	 .space 3
+ 235              	 .section .rodata.CAN_1_LMO_04_Config,"a",%progbits
+ 236              	 .align 2
+ 239              	CAN_1_LMO_04_Config:
+ 240 0000 00000000 	 .word CAN_1_LMO_04
+ 241 0004 1F       	 .byte 31
+ 242 0005 00       	 .byte 0
+ 243 0006 00       	 .byte 0
+ 244 0007 00       	 .byte 0
+ 245 0008 00       	 .byte 0
+ 246 0009 000000   	 .space 3
+ 247              	 .section .data.CAN_2_LMO_01,"aw",%progbits
+ 248              	 .align 3
+ 251              	CAN_2_LMO_01:
+ 252 0000 E0500148 	 .word 1208045792
+ 253 0004 80       	 .byte 128
+ 254 0005 00       	 .byte 0
+ 255 0006 00       	 .byte 0
+ 256 0007 80       	 .byte 128
+ 257 0008 FF       	 .byte 255
+ 258 0009 07       	 .byte 7
+ 259 000a 00       	 .byte 0
+ 260 000b 20       	 .byte 32
+ 261 000c 08       	 .byte 8
+ 262 000d 000000   	 .space 3
+ 263 0010 00000000 	 .word 0
+ 264 0014 00000000 	 .word 0
+ 265 0018 00       	 .byte 0
+ 266 0019 00000000 	 .space 7
+ 266      000000
+ 267              	 .section .data.CAN_2_LMO_02,"aw",%progbits
+ 268              	 .align 3
+ 271              	CAN_2_LMO_02:
+ 272 0000 00510148 	 .word 1208045824
+ 273 0004 C0       	 .byte 192
+ 274 0005 05       	 .byte 5
+ 275 0006 00       	 .byte 0
+ 276 0007 80       	 .byte 128
+ 277 0008 FF       	 .byte 255
+ 278 0009 07       	 .byte 7
+ 279 000a 00       	 .byte 0
+ 280 000b 20       	 .byte 32
+ 281 000c 08       	 .byte 8
+ 282 000d 000000   	 .space 3
+ 283 0010 00000000 	 .word 0
+ 284 0014 00000000 	 .word 0
+ 285 0018 01       	 .byte 1
+ 286 0019 00000000 	 .space 7
+ 286      000000
+ 287              	 .section .data.CAN_2_LMO_03,"aw",%progbits
+ 288              	 .align 3
+ 291              	CAN_2_LMO_03:
+ 292 0000 A0500148 	 .word 1208045728
+ 293 0004 40       	 .byte 64
+ 294 0005 01       	 .byte 1
+ 295 0006 00       	 .byte 0
+ 296 0007 80       	 .byte 128
+ 297 0008 FF       	 .byte 255
+ 298 0009 07       	 .byte 7
+ 299 000a 00       	 .byte 0
+ 300 000b 20       	 .byte 32
+ 301 000c 08       	 .byte 8
+ 302 000d 000000   	 .space 3
+ 303 0010 00000000 	 .word 0
+ 304 0014 00000000 	 .word 0
+ 305 0018 01       	 .byte 1
+ 306 0019 00000000 	 .space 7
+ 306      000000
+ 307              	 .section .data.CAN_2_LMO_04,"aw",%progbits
+ 308              	 .align 3
+ 311              	CAN_2_LMO_04:
+ 312 0000 C0500148 	 .word 1208045760
+ 313 0004 42       	 .byte 66
+ 314 0005 01       	 .byte 1
+ 315 0006 00       	 .byte 0
+ 316 0007 80       	 .byte 128
+ 317 0008 FF       	 .byte 255
+ 318 0009 07       	 .byte 7
+ 319 000a 00       	 .byte 0
+ 320 000b 20       	 .byte 32
+ 321 000c 08       	 .byte 8
+ 322 000d 000000   	 .space 3
+ 323 0010 00000000 	 .word 0
+ 324 0014 00000000 	 .word 0
+ 325 0018 01       	 .byte 1
+ 326 0019 00000000 	 .space 7
+ 326      000000
+ 327              	 .section .data.CAN_2_LMO_05,"aw",%progbits
+ 328              	 .align 3
+ 331              	CAN_2_LMO_05:
+ 332 0000 C0520148 	 .word 1208046272
+ 333 0004 40       	 .byte 64
+ 334 0005 03       	 .byte 3
+ 335 0006 00       	 .byte 0
+ 336 0007 80       	 .byte 128
+ 337 0008 FF       	 .byte 255
+ 338 0009 07       	 .byte 7
+ 339 000a 00       	 .byte 0
+ 340 000b 20       	 .byte 32
+ 341 000c 08       	 .byte 8
+ 342 000d 000000   	 .space 3
+ 343 0010 00000000 	 .word 0
+ 344 0014 00000000 	 .word 0
+ 345 0018 01       	 .byte 1
+ 346 0019 00000000 	 .space 7
+ 346      000000
+ 347              	 .section .data.CAN_2_LMO_06,"aw",%progbits
+ 348              	 .align 3
+ 351              	CAN_2_LMO_06:
+ 352 0000 A0520148 	 .word 1208046240
+ 353 0004 42       	 .byte 66
+ 354 0005 03       	 .byte 3
+ 355 0006 00       	 .byte 0
+ 356 0007 80       	 .byte 128
+ 357 0008 FF       	 .byte 255
+ 358 0009 07       	 .byte 7
+ 359 000a 00       	 .byte 0
+ 360 000b 20       	 .byte 32
+ 361 000c 08       	 .byte 8
+ 362 000d 000000   	 .space 3
+ 363 0010 00000000 	 .word 0
+ 364 0014 00000000 	 .word 0
+ 365 0018 01       	 .byte 1
+ 366 0019 00000000 	 .space 7
+ 366      000000
+ 367              	 .section .data.CAN_2_LMO_07,"aw",%progbits
+ 368              	 .align 3
+ 371              	CAN_2_LMO_07:
+ 372 0000 00530148 	 .word 1208046336
+ 373 0004 00       	 .byte 0
+ 374 0005 02       	 .byte 2
+ 375 0006 00       	 .byte 0
+ 376 0007 80       	 .byte 128
+ 377 0008 FF       	 .byte 255
+ 378 0009 07       	 .byte 7
+ 379 000a 00       	 .byte 0
+ 380 000b 20       	 .byte 32
+ 381 000c 08       	 .byte 8
+ 382 000d 000000   	 .space 3
+ 383 0010 00000000 	 .word 0
+ 384 0014 00000000 	 .word 0
+ 385 0018 01       	 .byte 1
+ 386 0019 00000000 	 .space 7
+ 386      000000
+ 387              	 .section .data.CAN_2_LMO_08,"aw",%progbits
+ 388              	 .align 3
+ 391              	CAN_2_LMO_08:
+ 392 0000 E0520148 	 .word 1208046304
+ 393 0004 01       	 .byte 1
+ 394 0005 02       	 .byte 2
+ 395 0006 00       	 .byte 0
+ 396 0007 80       	 .byte 128
+ 397 0008 FF       	 .byte 255
+ 398 0009 07       	 .byte 7
+ 399 000a 00       	 .byte 0
+ 400 000b 20       	 .byte 32
+ 401 000c 08       	 .byte 8
+ 402 000d 000000   	 .space 3
+ 403 0010 00000000 	 .word 0
+ 404 0014 00000000 	 .word 0
+ 405 0018 01       	 .byte 1
+ 406 0019 00000000 	 .space 7
+ 406      000000
+ 407              	 .section .data.CAN_2_LMO_09,"aw",%progbits
+ 408              	 .align 3
+ 411              	CAN_2_LMO_09:
+ 412 0000 80520148 	 .word 1208046208
+ 413 0004 E0       	 .byte 224
+ 414 0005 07       	 .byte 7
+ 415 0006 00       	 .byte 0
+ 416 0007 80       	 .byte 128
+ 417 0008 FF       	 .byte 255
+ 418 0009 07       	 .byte 7
+ 419 000a 00       	 .byte 0
+ 420 000b 20       	 .byte 32
+ 421 000c 08       	 .byte 8
+ 422 000d 000000   	 .space 3
+ 423 0010 00000000 	 .word 0
+ 424 0014 00000000 	 .word 0
+ 425 0018 01       	 .byte 1
+ 426 0019 00000000 	 .space 7
+ 426      000000
+ 427              	 .section .rodata.CAN_2_LMO_04_Config,"a",%progbits
+ 428              	 .align 2
+ 431              	CAN_2_LMO_04_Config:
+ 432 0000 00000000 	 .word CAN_2_LMO_04
+ 433 0004 06       	 .byte 6
+ 434 0005 00       	 .byte 0
+ 435 0006 00       	 .byte 0
+ 436 0007 00       	 .byte 0
+ 437 0008 00       	 .byte 0
+ 438 0009 000000   	 .space 3
+ 439              	 .section .rodata.CAN_2_LMO_09_Config,"a",%progbits
+ 440              	 .align 2
+ 443              	CAN_2_LMO_09_Config:
+ 444 0000 00000000 	 .word CAN_2_LMO_09
+ 445 0004 14       	 .byte 20
+ 446 0005 00       	 .byte 0
+ 447 0006 00       	 .byte 0
+ 448 0007 00       	 .byte 0
+ 449 0008 00       	 .byte 0
+ 450 0009 000000   	 .space 3
+ 451              	 .section .rodata.CAN_1_LMO_05_Config,"a",%progbits
+ 452              	 .align 2
+ 455              	CAN_1_LMO_05_Config:
+ 456 0000 00000000 	 .word CAN_1_LMO_05
+ 457 0004 20       	 .byte 32
+ 458 0005 00       	 .byte 0
+ 459 0006 00       	 .byte 0
+ 460 0007 00       	 .byte 0
+ 461 0008 00       	 .byte 0
+ 462 0009 000000   	 .space 3
+ 463              	 .section .data.CAN_1_LMO_01,"aw",%progbits
+ 464              	 .align 3
+ 467              	CAN_1_LMO_01:
+ 468 0000 C0540148 	 .word 1208046784
+ 469 0004 10       	 .byte 16
+ 470 0005 00       	 .byte 0
+ 471 0006 00       	 .byte 0
+ 472 0007 80       	 .byte 128
+ 473 0008 FF       	 .byte 255
+ 474 0009 07       	 .byte 7
+ 475 000a 00       	 .byte 0
+ 476 000b 20       	 .byte 32
+ 477 000c 08       	 .byte 8
+ 478 000d 000000   	 .space 3
+ 479 0010 00000000 	 .word 0
+ 480 0014 00000000 	 .word 0
+ 481 0018 00       	 .byte 0
+ 482 0019 00000000 	 .space 7
+ 482      000000
+ 483              	 .section .data.CAN_1_LMO_02,"aw",%progbits
+ 484              	 .align 3
+ 487              	CAN_1_LMO_02:
+ 488 0000 E0540148 	 .word 1208046816
+ 489 0004 71       	 .byte 113
+ 490 0005 07       	 .byte 7
+ 491 0006 00       	 .byte 0
+ 492 0007 80       	 .byte 128
+ 493 0008 FF       	 .byte 255
+ 494 0009 07       	 .byte 7
+ 495 000a 00       	 .byte 0
+ 496 000b 20       	 .byte 32
+ 497 000c 08       	 .byte 8
+ 498 000d 000000   	 .space 3
+ 499 0010 00000000 	 .word 0
+ 500 0014 00000000 	 .word 0
+ 501 0018 00       	 .byte 0
+ 502 0019 00000000 	 .space 7
+ 502      000000
+ 503              	 .section .rodata.CAN_2_gpio_out,"a",%progbits
+ 504              	 .align 2
+ 507              	CAN_2_gpio_out:
+ 508 0000 00810248 	 .word 1208123648
+ 509 0004 04       	 .byte 4
+ 510 0005 000000   	 .space 3
+ 511              	 .section .rodata.CAN_2_LMO_10_Config,"a",%progbits
+ 512              	 .align 2
+ 515              	CAN_2_LMO_10_Config:
+ 516 0000 00000000 	 .word CAN_2_LMO_10
+ 517 0004 25       	 .byte 37
+ 518 0005 00       	 .byte 0
+ 519 0006 00       	 .byte 0
+ 520 0007 00       	 .byte 0
+ 521 0008 00       	 .byte 0
+ 522 0009 000000   	 .space 3
+ 523              	 .section .data.CAN_1_LMO_05,"aw",%progbits
+ 524              	 .align 3
+ 527              	CAN_1_LMO_05:
+ 528 0000 00540148 	 .word 1208046592
+ 529 0004 C0       	 .byte 192
+ 530 0005 05       	 .byte 5
+ 531 0006 00       	 .byte 0
+ 532 0007 80       	 .byte 128
+ 533 0008 FF       	 .byte 255
+ 534 0009 07       	 .byte 7
+ 535 000a 00       	 .byte 0
+ 536 000b 20       	 .byte 32
+ 537 000c 08       	 .byte 8
+ 538 000d 000000   	 .space 3
+ 539 0010 00000000 	 .word 0
+ 540 0014 00000000 	 .word 0
+ 541 0018 01       	 .byte 1
+ 542 0019 00000000 	 .space 7
+ 542      000000
+ 543              	 .section .data.CAN_1_LMO_06,"aw",%progbits
+ 544              	 .align 3
+ 547              	CAN_1_LMO_06:
+ 548 0000 20540148 	 .word 1208046624
+ 549 0004 F0       	 .byte 240
+ 550 0005 07       	 .byte 7
+ 551 0006 00       	 .byte 0
+ 552 0007 80       	 .byte 128
+ 553 0008 FF       	 .byte 255
+ 554 0009 07       	 .byte 7
+ 555 000a 00       	 .byte 0
+ 556 000b 20       	 .byte 32
+ 557 000c 08       	 .byte 8
+ 558 000d 000000   	 .space 3
+ 559 0010 00000000 	 .word 0
+ 560 0014 00000000 	 .word 0
+ 561 0018 01       	 .byte 1
+ 562 0019 00000000 	 .space 7
+ 562      000000
+ 563              	 .section .data.CAN_1_LMO_07,"aw",%progbits
+ 564              	 .align 3
+ 567              	CAN_1_LMO_07:
+ 568 0000 40540148 	 .word 1208046656
+ 569 0004 40       	 .byte 64
+ 570 0005 03       	 .byte 3
+ 571 0006 00       	 .byte 0
+ 572 0007 80       	 .byte 128
+ 573 0008 FF       	 .byte 255
+ 574 0009 07       	 .byte 7
+ 575 000a 00       	 .byte 0
+ 576 000b 20       	 .byte 32
+ 577 000c 08       	 .byte 8
+ 578 000d 000000   	 .space 3
+ 579 0010 00000000 	 .word 0
+ 580 0014 00000000 	 .word 0
+ 581 0018 01       	 .byte 1
+ 582 0019 00000000 	 .space 7
+ 582      000000
+ 583              	 .section .data.CAN_1_LMO_08,"aw",%progbits
+ 584              	 .align 3
+ 587              	CAN_1_LMO_08:
+ 588 0000 60540148 	 .word 1208046688
+ 589 0004 E1       	 .byte 225
+ 590 0005 07       	 .byte 7
+ 591 0006 00       	 .byte 0
+ 592 0007 80       	 .byte 128
+ 593 0008 FF       	 .byte 255
+ 594 0009 07       	 .byte 7
+ 595 000a 00       	 .byte 0
+ 596 000b 20       	 .byte 32
+ 597 000c 08       	 .byte 8
+ 598 000d 000000   	 .space 3
+ 599 0010 00000000 	 .word 0
+ 600 0014 00000000 	 .word 0
+ 601 0018 00       	 .byte 0
+ 602 0019 00000000 	 .space 7
+ 602      000000
+ 603              	 .section .rodata.CAN_1_LMO_03_Config,"a",%progbits
+ 604              	 .align 2
+ 607              	CAN_1_LMO_03_Config:
+ 608 0000 00000000 	 .word CAN_1_LMO_03
+ 609 0004 1E       	 .byte 30
+ 610 0005 00       	 .byte 0
+ 611 0006 00       	 .byte 0
+ 612 0007 00       	 .byte 0
+ 613 0008 00       	 .byte 0
+ 614 0009 000000   	 .space 3
+ 615              	 .section .rodata.CAN_1,"a",%progbits
+ 616              	 .align 2
+ 619              	CAN_1:
+ 620 0000 00000000 	 .word GLOBAL_CAN_0
+ 621 0004 00430148 	 .word 1208042240
+ 622 0008 00000000 	 .word CAN_1_BitTimeConfig
+ 623 000c 00000000 	 .word CAN_1_LMO_01_Config
+ 624 0010 00000000 	 .word CAN_1_LMO_02_Config
+ 625 0014 00000000 	 .word CAN_1_LMO_03_Config
+ 626 0018 00000000 	 .word CAN_1_LMO_04_Config
+ 627 001c 00000000 	 .word CAN_1_LMO_05_Config
+ 628 0020 00000000 	 .word CAN_1_LMO_06_Config
+ 629 0024 00000000 	 .word CAN_1_LMO_07_Config
+ 630 0028 00000000 	 .word CAN_1_LMO_08_Config
+ 631 002c 00000000 	 .word 0
+ 632 0030 00000000 	 .word 0
+ 633 0034 00000000 	 .word 0
+ 634 0038 00000000 	 .word 0
+ 635 003c 00000000 	 .word 0
+ 636 0040 00000000 	 .word 0
+ 637 0044 00000000 	 .word 0
+ 638 0048 00000000 	 .word 0
+ 639 004c 00000000 	 .word 0
+ 640 0050 00000000 	 .word 0
+ 641 0054 00000000 	 .word 0
+ 642 0058 00000000 	 .word 0
+ 643 005c 00000000 	 .word 0
+ 644 0060 00000000 	 .word 0
+ 645 0064 00000000 	 .word 0
+ 646 0068 00000000 	 .word 0
+ 647 006c 00000000 	 .word 0
+ 648 0070 00000000 	 .word 0
+ 649 0074 00000000 	 .word 0
+ 650 0078 00000000 	 .word 0
+ 651 007c 00000000 	 .word 0
+ 652 0080 00000000 	 .word 0
+ 653 0084 00000000 	 .word 0
+ 654 0088 00000000 	 .word 0
+ 655 008c 00000000 	 .word CAN_1_sr
+ 656 0090 00000000 	 .word CAN_1_gpio_out
+ 657 0094 00000000 	 .word CAN_1_gpio_out_config
+ 658 0098 00000000 	 .word CAN_1_gpio_in
+ 659 009c 00000000 	 .word CAN_1_gpio_in_config
+ 660 00a0 02       	 .byte 2
+ 661 00a1 01       	 .byte 1
+ 662 00a2 08       	 .byte 8
+ 663 00a3 00       	 .byte 0
+ 664 00a4 00       	 .byte 0
+ 665 00a5 00       	 .byte 0
+ 666 00a6 00       	 .byte 0
+ 667 00a7 00       	 .byte 0
+ 668              	 .section .rodata.CAN_2,"a",%progbits
+ 669              	 .align 2
+ 672              	CAN_2:
+ 673 0000 00000000 	 .word GLOBAL_CAN_0
+ 674 0004 00420148 	 .word 1208041984
+ 675 0008 00000000 	 .word CAN_2_BitTimeConfig
+ 676 000c 00000000 	 .word CAN_2_LMO_01_Config
+ 677 0010 00000000 	 .word CAN_2_LMO_02_Config
+ 678 0014 00000000 	 .word CAN_2_LMO_03_Config
+ 679 0018 00000000 	 .word CAN_2_LMO_04_Config
+ 680 001c 00000000 	 .word CAN_2_LMO_05_Config
+ 681 0020 00000000 	 .word CAN_2_LMO_06_Config
+ 682 0024 00000000 	 .word CAN_2_LMO_07_Config
+ 683 0028 00000000 	 .word CAN_2_LMO_08_Config
+ 684 002c 00000000 	 .word CAN_2_LMO_09_Config
+ 685 0030 00000000 	 .word CAN_2_LMO_10_Config
+ 686 0034 00000000 	 .word CAN_2_LMO_11_Config
+ 687 0038 00000000 	 .word CAN_2_LMO_12_Config
+ 688 003c 00000000 	 .word CAN_2_LMO_13_Config
+ 689 0040 00000000 	 .word 0
+ 690 0044 00000000 	 .word 0
+ 691 0048 00000000 	 .word 0
+ 692 004c 00000000 	 .word 0
+ 693 0050 00000000 	 .word 0
+ 694 0054 00000000 	 .word 0
+ 695 0058 00000000 	 .word 0
+ 696 005c 00000000 	 .word 0
+ 697 0060 00000000 	 .word 0
+ 698 0064 00000000 	 .word 0
+ 699 0068 00000000 	 .word 0
+ 700 006c 00000000 	 .word 0
+ 701 0070 00000000 	 .word 0
+ 702 0074 00000000 	 .word 0
+ 703 0078 00000000 	 .word 0
+ 704 007c 00000000 	 .word 0
+ 705 0080 00000000 	 .word 0
+ 706 0084 00000000 	 .word 0
+ 707 0088 00000000 	 .word 0
+ 708 008c 00000000 	 .word CAN_2_sr
+ 709 0090 00000000 	 .word CAN_2_gpio_out
+ 710 0094 00000000 	 .word CAN_2_gpio_out_config
+ 711 0098 00000000 	 .word CAN_2_gpio_in
+ 712 009c 00000000 	 .word CAN_2_gpio_in_config
+ 713 00a0 00       	 .byte 0
+ 714 00a1 00       	 .byte 0
+ 715 00a2 0D       	 .byte 13
+ 716 00a3 00       	 .byte 0
+ 717 00a4 00       	 .byte 0
+ 718 00a5 00       	 .byte 0
+ 719 00a6 00       	 .byte 0
+ 720 00a7 00       	 .byte 0
+ 721              	 .section .rodata.CAN_2_LMO_03_Config,"a",%progbits
+ 722              	 .align 2
+ 725              	CAN_2_LMO_03_Config:
+ 726 0000 00000000 	 .word CAN_2_LMO_03
+ 727 0004 05       	 .byte 5
+ 728 0005 00       	 .byte 0
+ 729 0006 00       	 .byte 0
+ 730 0007 00       	 .byte 0
+ 731 0008 00       	 .byte 0
+ 732 0009 000000   	 .space 3
+ 733              	 .section .rodata.CAN_2_LMO_08_Config,"a",%progbits
+ 734              	 .align 2
+ 737              	CAN_2_LMO_08_Config:
+ 738 0000 00000000 	 .word CAN_2_LMO_08
+ 739 0004 17       	 .byte 23
+ 740 0005 00       	 .byte 0
+ 741 0006 00       	 .byte 0
+ 742 0007 00       	 .byte 0
+ 743 0008 00       	 .byte 0
+ 744 0009 000000   	 .space 3
+ 745              	 .section .data.CAN_1_LMO_03,"aw",%progbits
+ 746              	 .align 3
+ 749              	CAN_1_LMO_03:
+ 750 0000 C0530148 	 .word 1208046528
+ 751 0004 72       	 .byte 114
+ 752 0005 07       	 .byte 7
+ 753 0006 00       	 .byte 0
+ 754 0007 80       	 .byte 128
+ 755 0008 FF       	 .byte 255
+ 756 0009 07       	 .byte 7
+ 757 000a 00       	 .byte 0
+ 758 000b 20       	 .byte 32
+ 759 000c 08       	 .byte 8
+ 760 000d 000000   	 .space 3
+ 761 0010 00000000 	 .word 0
+ 762 0014 00000000 	 .word 0
+ 763 0018 00       	 .byte 0
+ 764 0019 00000000 	 .space 7
+ 764      000000
+ 765              	 .section .data.CAN_1_LMO_04,"aw",%progbits
+ 766              	 .align 3
+ 769              	CAN_1_LMO_04:
+ 770 0000 E0530148 	 .word 1208046560
+ 771 0004 08       	 .byte 8
+ 772 0005 00       	 .byte 0
+ 773 0006 00       	 .byte 0
+ 774 0007 80       	 .byte 128
+ 775 0008 FF       	 .byte 255
+ 776 0009 07       	 .byte 7
+ 777 000a 00       	 .byte 0
+ 778 000b 20       	 .byte 32
+ 779 000c 08       	 .byte 8
+ 780 000d 000000   	 .space 3
+ 781 0010 00000000 	 .word 0
+ 782 0014 00000000 	 .word 0
+ 783 0018 00       	 .byte 0
+ 784 0019 00000000 	 .space 7
+ 784      000000
+ 785              	 .section .rodata.CAN_1_LMO_08_Config,"a",%progbits
+ 786              	 .align 2
+ 789              	CAN_1_LMO_08_Config:
+ 790 0000 00000000 	 .word CAN_1_LMO_08
+ 791 0004 23       	 .byte 35
+ 792 0005 00       	 .byte 0
+ 793 0006 00       	 .byte 0
+ 794 0007 00       	 .byte 0
+ 795 0008 00       	 .byte 0
+ 796 0009 000000   	 .space 3
+ 797              	 .section .rodata.CAN_1_gpio_in_config,"a",%progbits
+ 798              	 .align 2
+ 801              	CAN_1_gpio_in_config:
+ 802 0000 00000000 	 .space 12
+ 802      00000000 
+ 802      00000000 
+ 803              	 .section .rodata.CAN_1_gpio_in,"a",%progbits
+ 804              	 .align 2
+ 807              	CAN_1_gpio_in:
+ 808 0000 00810248 	 .word 1208123648
+ 809 0004 0D       	 .byte 13
+ 810 0005 000000   	 .space 3
+ 811              	 .section .rodata.CAN_2_sr,"a",%progbits
+ 814              	CAN_2_sr:
+ 815 0000 00000000 	 .space 4
+ 816              	 .section .rodata.CAN_2_LMO_02_Config,"a",%progbits
+ 817              	 .align 2
+ 820              	CAN_2_LMO_02_Config:
+ 821 0000 00000000 	 .word CAN_2_LMO_02
+ 822 0004 08       	 .byte 8
+ 823 0005 00       	 .byte 0
+ 824 0006 00       	 .byte 0
+ 825 0007 00       	 .byte 0
+ 826 0008 00       	 .byte 0
+ 827 0009 000000   	 .space 3
+ 828              	 .section .rodata.CAN_1_LMO_07_Config,"a",%progbits
+ 829              	 .align 2
+ 832              	CAN_1_LMO_07_Config:
+ 833 0000 00000000 	 .word CAN_1_LMO_07
+ 834 0004 22       	 .byte 34
+ 835 0005 00       	 .byte 0
+ 836 0006 00       	 .byte 0
+ 837 0007 00       	 .byte 0
+ 838 0008 00       	 .byte 0
+ 839 0009 000000   	 .space 3
+ 840              	 .section .data.CAN_2_LMO_10,"aw",%progbits
+ 841              	 .align 3
+ 844              	CAN_2_LMO_10:
+ 845 0000 A0540148 	 .word 1208046752
+ 846 0004 E2       	 .byte 226
+ 847 0005 07       	 .byte 7
+ 848 0006 00       	 .byte 0
+ 849 0007 80       	 .byte 128
+ 850 0008 FF       	 .byte 255
+ 851 0009 07       	 .byte 7
+ 852 000a 00       	 .byte 0
+ 853 000b 20       	 .byte 32
+ 854 000c 08       	 .byte 8
+ 855 000d 000000   	 .space 3
+ 856 0010 00000000 	 .word 0
+ 857 0014 00000000 	 .word 0
+ 858 0018 01       	 .byte 1
+ 859 0019 00000000 	 .space 7
+ 859      000000
+ 860              	 .section .data.CAN_2_LMO_11,"aw",%progbits
+ 861              	 .align 3
+ 864              	CAN_2_LMO_11:
+ 865 0000 80540148 	 .word 1208046720
+ 866 0004 E3       	 .byte 227
+ 867 0005 07       	 .byte 7
+ 868 0006 00       	 .byte 0
+ 869 0007 80       	 .byte 128
+ 870 0008 FF       	 .byte 255
+ 871 0009 07       	 .byte 7
+ 872 000a 00       	 .byte 0
+ 873 000b 20       	 .byte 32
+ 874 000c 08       	 .byte 8
+ 875 000d 000000   	 .space 3
+ 876 0010 00000000 	 .word 0
+ 877 0014 00000000 	 .word 0
+ 878 0018 01       	 .byte 1
+ 879 0019 00000000 	 .space 7
+ 879      000000
+ 880              	 .section .data.CAN_2_LMO_12,"aw",%progbits
+ 881              	 .align 3
+ 884              	CAN_2_LMO_12:
+ 885 0000 20510148 	 .word 1208045856
+ 886 0004 FF       	 .byte 255
+ 887 0005 07       	 .byte 7
+ 888 0006 00       	 .byte 0
+ 889 0007 80       	 .byte 128
+ 890 0008 FF       	 .byte 255
+ 891 0009 07       	 .byte 7
+ 892 000a 00       	 .byte 0
+ 893 000b 20       	 .byte 32
+ 894 000c 08       	 .byte 8
+ 895 000d 000000   	 .space 3
+ 896 0010 00000000 	 .word 0
+ 897 0014 00000000 	 .word 0
+ 898 0018 00       	 .byte 0
+ 899 0019 00000000 	 .space 7
+ 899      000000
+ 900              	 .section .data.CAN_2_LMO_13,"aw",%progbits
+ 901              	 .align 3
+ 904              	CAN_2_LMO_13:
+ 905 0000 80570148 	 .word 1208047488
+ 906 0004 4A       	 .byte 74
+ 907 0005 02       	 .byte 2
+ 908 0006 00       	 .byte 0
+ 909 0007 80       	 .byte 128
+ 910 0008 FF       	 .byte 255
+ 911 0009 07       	 .byte 7
+ 912 000a 00       	 .byte 0
+ 913 000b 20       	 .byte 32
+ 914 000c 08       	 .byte 8
+ 915 000d 000000   	 .space 3
+ 916 0010 00000000 	 .word 0
+ 917 0014 00000000 	 .word 0
+ 918 0018 00       	 .byte 0
+ 919 0019 00000000 	 .space 7
+ 919      000000
+ 920              	 .section .rodata.CAN_2_gpio_out_config,"a",%progbits
+ 921              	 .align 2
+ 924              	CAN_2_gpio_out_config:
+ 925 0000 90       	 .byte -112
+ 926 0001 000000   	 .space 3
+ 927 0004 01000000 	 .word 1
+ 928 0008 02       	 .byte 2
+ 929 0009 000000   	 .space 3
+ 930              	 .section .rodata.CAN_2_LMO_07_Config,"a",%progbits
+ 931              	 .align 2
+ 934              	CAN_2_LMO_07_Config:
+ 935 0000 00000000 	 .word CAN_2_LMO_07
+ 936 0004 18       	 .byte 24
+ 937 0005 00       	 .byte 0
+ 938 0006 00       	 .byte 0
+ 939 0007 00       	 .byte 0
+ 940 0008 00       	 .byte 0
+ 941 0009 000000   	 .space 3
+ 942              	 .ident "GCC: (GNU Tools for ARM Embedded Processors) 4.9.3 20141119 (release) [ARM/embedded-4_9-branch revision 218278]"
+DEFINED SYMBOLS
+                            *ABS*:00000000 can_node_conf.c
+    {standard input}:672    .rodata.CAN_2:00000000 CAN_2
+    {standard input}:106    .rodata.CAN_2_LMO_13_Config:00000000 CAN_2_LMO_13_Config
+    {standard input}:904    .data.CAN_2_LMO_13:00000000 CAN_2_LMO_13
+    {standard input}:189    .rodata.CAN_2_LMO_12_Config:00000000 CAN_2_LMO_12_Config
+    {standard input}:884    .data.CAN_2_LMO_12:00000000 CAN_2_LMO_12
+    {standard input}:227    .rodata.CAN_2_LMO_11_Config:00000000 CAN_2_LMO_11_Config
+    {standard input}:864    .data.CAN_2_LMO_11:00000000 CAN_2_LMO_11
+    {standard input}:515    .rodata.CAN_2_LMO_10_Config:00000000 CAN_2_LMO_10_Config
+    {standard input}:844    .data.CAN_2_LMO_10:00000000 CAN_2_LMO_10
+    {standard input}:443    .rodata.CAN_2_LMO_09_Config:00000000 CAN_2_LMO_09_Config
+    {standard input}:411    .data.CAN_2_LMO_09:00000000 CAN_2_LMO_09
+    {standard input}:737    .rodata.CAN_2_LMO_08_Config:00000000 CAN_2_LMO_08_Config
+    {standard input}:391    .data.CAN_2_LMO_08:00000000 CAN_2_LMO_08
+    {standard input}:934    .rodata.CAN_2_LMO_07_Config:00000000 CAN_2_LMO_07_Config
+    {standard input}:371    .data.CAN_2_LMO_07:00000000 CAN_2_LMO_07
+    {standard input}:147    .rodata.CAN_2_LMO_06_Config:00000000 CAN_2_LMO_06_Config
+    {standard input}:351    .data.CAN_2_LMO_06:00000000 CAN_2_LMO_06
+    {standard input}:88     .rodata.CAN_2_LMO_05_Config:00000000 CAN_2_LMO_05_Config
+    {standard input}:331    .data.CAN_2_LMO_05:00000000 CAN_2_LMO_05
+    {standard input}:431    .rodata.CAN_2_LMO_04_Config:00000000 CAN_2_LMO_04_Config
+    {standard input}:311    .data.CAN_2_LMO_04:00000000 CAN_2_LMO_04
+    {standard input}:725    .rodata.CAN_2_LMO_03_Config:00000000 CAN_2_LMO_03_Config
+    {standard input}:291    .data.CAN_2_LMO_03:00000000 CAN_2_LMO_03
+    {standard input}:820    .rodata.CAN_2_LMO_02_Config:00000000 CAN_2_LMO_02_Config
+    {standard input}:271    .data.CAN_2_LMO_02:00000000 CAN_2_LMO_02
+    {standard input}:76     .rodata.CAN_2_LMO_01_Config:00000000 CAN_2_LMO_01_Config
+    {standard input}:251    .data.CAN_2_LMO_01:00000000 CAN_2_LMO_01
+    {standard input}:814    .rodata.CAN_2_sr:00000000 CAN_2_sr
+    {standard input}:218    .data.CAN_2_BitTimeConfig:00000000 CAN_2_BitTimeConfig
+    {standard input}:100    .rodata.CAN_2_gpio_in_config:00000000 CAN_2_gpio_in_config
+    {standard input}:171    .rodata.CAN_2_gpio_in:00000000 CAN_2_gpio_in
+    {standard input}:924    .rodata.CAN_2_gpio_out_config:00000000 CAN_2_gpio_out_config
+    {standard input}:507    .rodata.CAN_2_gpio_out:00000000 CAN_2_gpio_out
+    {standard input}:619    .rodata.CAN_1:00000000 CAN_1
+    {standard input}:789    .rodata.CAN_1_LMO_08_Config:00000000 CAN_1_LMO_08_Config
+    {standard input}:587    .data.CAN_1_LMO_08:00000000 CAN_1_LMO_08
+    {standard input}:832    .rodata.CAN_1_LMO_07_Config:00000000 CAN_1_LMO_07_Config
+    {standard input}:567    .data.CAN_1_LMO_07:00000000 CAN_1_LMO_07
+    {standard input}:130    .rodata.CAN_1_LMO_06_Config:00000000 CAN_1_LMO_06_Config
+    {standard input}:547    .data.CAN_1_LMO_06:00000000 CAN_1_LMO_06
+    {standard input}:455    .rodata.CAN_1_LMO_05_Config:00000000 CAN_1_LMO_05_Config
+    {standard input}:527    .data.CAN_1_LMO_05:00000000 CAN_1_LMO_05
+    {standard input}:239    .rodata.CAN_1_LMO_04_Config:00000000 CAN_1_LMO_04_Config
+    {standard input}:769    .data.CAN_1_LMO_04:00000000 CAN_1_LMO_04
+    {standard input}:607    .rodata.CAN_1_LMO_03_Config:00000000 CAN_1_LMO_03_Config
+    {standard input}:749    .data.CAN_1_LMO_03:00000000 CAN_1_LMO_03
+    {standard input}:159    .rodata.CAN_1_LMO_02_Config:00000000 CAN_1_LMO_02_Config
+    {standard input}:487    .data.CAN_1_LMO_02:00000000 CAN_1_LMO_02
+    {standard input}:118    .rodata.CAN_1_LMO_01_Config:00000000 CAN_1_LMO_01_Config
+    {standard input}:467    .data.CAN_1_LMO_01:00000000 CAN_1_LMO_01
+    {standard input}:141    .rodata.CAN_1_sr:00000000 CAN_1_sr
+    {standard input}:201    .data.CAN_1_BitTimeConfig:00000000 CAN_1_BitTimeConfig
+    {standard input}:801    .rodata.CAN_1_gpio_in_config:00000000 CAN_1_gpio_in_config
+    {standard input}:807    .rodata.CAN_1_gpio_in:00000000 CAN_1_gpio_in
+    {standard input}:179    .rodata.CAN_1_gpio_out_config:00000000 CAN_1_gpio_out_config
+    {standard input}:210    .rodata.CAN_1_gpio_out:00000000 CAN_1_gpio_out
+    {standard input}:73     .rodata.CAN_2_LMO_01_Config:00000000 $d
+    {standard input}:85     .rodata.CAN_2_LMO_05_Config:00000000 $d
+    {standard input}:97     .rodata.CAN_2_gpio_in_config:00000000 $d
+    {standard input}:103    .rodata.CAN_2_LMO_13_Config:00000000 $d
+    {standard input}:115    .rodata.CAN_1_LMO_01_Config:00000000 $d
+    {standard input}:127    .rodata.CAN_1_LMO_06_Config:00000000 $d
+    {standard input}:142    .rodata.CAN_1_sr:00000000 $d
+    {standard input}:144    .rodata.CAN_2_LMO_06_Config:00000000 $d
+    {standard input}:156    .rodata.CAN_1_LMO_02_Config:00000000 $d
+    {standard input}:168    .rodata.CAN_2_gpio_in:00000000 $d
+    {standard input}:176    .rodata.CAN_1_gpio_out_config:00000000 $d
+    {standard input}:186    .rodata.CAN_2_LMO_12_Config:00000000 $d
+    {standard input}:198    .data.CAN_1_BitTimeConfig:00000000 $d
+    {standard input}:207    .rodata.CAN_1_gpio_out:00000000 $d
+    {standard input}:215    .data.CAN_2_BitTimeConfig:00000000 $d
+    {standard input}:224    .rodata.CAN_2_LMO_11_Config:00000000 $d
+    {standard input}:236    .rodata.CAN_1_LMO_04_Config:00000000 $d
+    {standard input}:248    .data.CAN_2_LMO_01:00000000 $d
+    {standard input}:268    .data.CAN_2_LMO_02:00000000 $d
+    {standard input}:288    .data.CAN_2_LMO_03:00000000 $d
+    {standard input}:308    .data.CAN_2_LMO_04:00000000 $d
+    {standard input}:328    .data.CAN_2_LMO_05:00000000 $d
+    {standard input}:348    .data.CAN_2_LMO_06:00000000 $d
+    {standard input}:368    .data.CAN_2_LMO_07:00000000 $d
+    {standard input}:388    .data.CAN_2_LMO_08:00000000 $d
+    {standard input}:408    .data.CAN_2_LMO_09:00000000 $d
+    {standard input}:428    .rodata.CAN_2_LMO_04_Config:00000000 $d
+    {standard input}:440    .rodata.CAN_2_LMO_09_Config:00000000 $d
+    {standard input}:452    .rodata.CAN_1_LMO_05_Config:00000000 $d
+    {standard input}:464    .data.CAN_1_LMO_01:00000000 $d
+    {standard input}:484    .data.CAN_1_LMO_02:00000000 $d
+    {standard input}:504    .rodata.CAN_2_gpio_out:00000000 $d
+    {standard input}:512    .rodata.CAN_2_LMO_10_Config:00000000 $d
+    {standard input}:524    .data.CAN_1_LMO_05:00000000 $d
+    {standard input}:544    .data.CAN_1_LMO_06:00000000 $d
+    {standard input}:564    .data.CAN_1_LMO_07:00000000 $d
+    {standard input}:584    .data.CAN_1_LMO_08:00000000 $d
+    {standard input}:604    .rodata.CAN_1_LMO_03_Config:00000000 $d
+    {standard input}:616    .rodata.CAN_1:00000000 $d
+    {standard input}:669    .rodata.CAN_2:00000000 $d
+    {standard input}:722    .rodata.CAN_2_LMO_03_Config:00000000 $d
+    {standard input}:734    .rodata.CAN_2_LMO_08_Config:00000000 $d
+    {standard input}:746    .data.CAN_1_LMO_03:00000000 $d
+    {standard input}:766    .data.CAN_1_LMO_04:00000000 $d
+    {standard input}:786    .rodata.CAN_1_LMO_08_Config:00000000 $d
+    {standard input}:798    .rodata.CAN_1_gpio_in_config:00000000 $d
+    {standard input}:804    .rodata.CAN_1_gpio_in:00000000 $d
+    {standard input}:815    .rodata.CAN_2_sr:00000000 $d
+    {standard input}:817    .rodata.CAN_2_LMO_02_Config:00000000 $d
+    {standard input}:829    .rodata.CAN_1_LMO_07_Config:00000000 $d
+    {standard input}:841    .data.CAN_2_LMO_10:00000000 $d
+    {standard input}:861    .data.CAN_2_LMO_11:00000000 $d
+    {standard input}:881    .data.CAN_2_LMO_12:00000000 $d
+    {standard input}:901    .data.CAN_2_LMO_13:00000000 $d
+    {standard input}:921    .rodata.CAN_2_gpio_out_config:00000000 $d
+    {standard input}:931    .rodata.CAN_2_LMO_07_Config:00000000 $d
+
+UNDEFINED SYMBOLS
+GLOBAL_CAN_0

@@ -1,0 +1,164 @@
+   1              	 .syntax unified
+   2              	 .cpu cortex-m4
+   3              	 .eabi_attribute 27,3
+   4              	 .fpu fpv4-sp-d16
+   5              	 .eabi_attribute 20,1
+   6              	 .eabi_attribute 21,1
+   7              	 .eabi_attribute 23,3
+   8              	 .eabi_attribute 24,1
+   9              	 .eabi_attribute 25,1
+  10              	 .eabi_attribute 26,1
+  11              	 .eabi_attribute 30,6
+  12              	 .eabi_attribute 34,1
+  13              	 .eabi_attribute 18,4
+  14              	 .thumb
+  15              	 .file "Subsystem_Safety.c"
+  16              	 .text
+  17              	.Ltext0:
+  18              	 .cfi_sections .debug_frame
+  19              	 .global __aeabi_dcmpgt
+  20              	 .section .text.FUNC_Safety,"ax",%progbits
+  21              	 .align 2
+  22              	 .global FUNC_Safety
+  23              	 .thumb
+  24              	 .thumb_func
+  26              	FUNC_Safety:
+  27              	.LFB175:
+  28              	 .file 1 "../Simulink/Subsystem_Safety.c"
+   1:../Simulink/Subsystem_Safety.c **** /*
+   2:../Simulink/Subsystem_Safety.c ****  * Academic License - for use in teaching, academic research, and meeting
+   3:../Simulink/Subsystem_Safety.c ****  * course requirements at degree granting institutions only.  Not for
+   4:../Simulink/Subsystem_Safety.c ****  * government, commercial, or other organizational use.
+   5:../Simulink/Subsystem_Safety.c ****  *
+   6:../Simulink/Subsystem_Safety.c ****  * File: Subsystem_Safety.c
+   7:../Simulink/Subsystem_Safety.c ****  *
+   8:../Simulink/Subsystem_Safety.c ****  * Code generated for Simulink model : VCU.
+   9:../Simulink/Subsystem_Safety.c ****  * Model version      : 1.312
+  10:../Simulink/Subsystem_Safety.c ****  * Simulink Coder version    : 8.14 (R2018a) 06-Feb-2018
+  11:../Simulink/Subsystem_Safety.c ****  * TLC version       : 8.14 (Feb 22 2018)
+  12:../Simulink/Subsystem_Safety.c ****  * C/C++ source code generated on  : Wed Jul 14 18:29:54 2021
+  13:../Simulink/Subsystem_Safety.c ****  *
+  14:../Simulink/Subsystem_Safety.c ****  * Target selection: Infineon_XMC_Family.tlc
+  15:../Simulink/Subsystem_Safety.c ****  * Embedded hardware selection: ARM Compatible->ARM Cortex
+  16:../Simulink/Subsystem_Safety.c ****  * Code generation objectives: Unspecified
+  17:../Simulink/Subsystem_Safety.c ****  * Validation result: Not run
+  18:../Simulink/Subsystem_Safety.c ****  */
+  19:../Simulink/Subsystem_Safety.c **** 
+  20:../Simulink/Subsystem_Safety.c **** #include "Subsystem_Safety.h"
+  21:../Simulink/Subsystem_Safety.c **** 
+  22:../Simulink/Subsystem_Safety.c **** /* Include model header file for global data */
+  23:../Simulink/Subsystem_Safety.c **** #include "VCU.h"
+  24:../Simulink/Subsystem_Safety.c **** #include "VCU_private.h"
+  25:../Simulink/Subsystem_Safety.c **** 
+  26:../Simulink/Subsystem_Safety.c **** /* Output and update for atomic system: '<Root>/Safety ' */
+  27:../Simulink/Subsystem_Safety.c **** void FUNC_Safety(void)
+  28:../Simulink/Subsystem_Safety.c **** {
+  29              	 .loc 1 28 0
+  30              	 .cfi_startproc
+  31              	 
+  32              	 
+  33 0000 98B5     	 push {r3,r4,r7,lr}
+  34              	.LCFI0:
+  35              	 .cfi_def_cfa_offset 16
+  36              	 .cfi_offset 3,-16
+  37              	 .cfi_offset 4,-12
+  38              	 .cfi_offset 7,-8
+  39              	 .cfi_offset 14,-4
+  40 0002 00AF     	 add r7,sp,#0
+  41              	.LCFI1:
+  42              	 .cfi_def_cfa_register 7
+  29:../Simulink/Subsystem_Safety.c ****   /* RelationalOperator: '<S127>/Compare' incorporates:
+  30:../Simulink/Subsystem_Safety.c ****    *  Constant: '<S127>/Constant'
+  31:../Simulink/Subsystem_Safety.c ****    */
+  32:../Simulink/Subsystem_Safety.c ****   VCU_B.Compare_dm = (VCU_B.DataStoreRead3_a == 2);
+  43              	 .loc 1 32 0
+  44 0004 1A4B     	 ldr r3,.L6
+  45 0006 93F8B736 	 ldrb r3,[r3,#1719]
+  46 000a 022B     	 cmp r3,#2
+  47 000c 0CBF     	 ite eq
+  48 000e 0123     	 moveq r3,#1
+  49 0010 0023     	 movne r3,#0
+  50 0012 DBB2     	 uxtb r3,r3
+  51 0014 1A46     	 mov r2,r3
+  52 0016 164B     	 ldr r3,.L6
+  53 0018 83F87527 	 strb r2,[r3,#1909]
+  33:../Simulink/Subsystem_Safety.c **** 
+  34:../Simulink/Subsystem_Safety.c ****   /* RelationalOperator: '<S5>/Relational Operator3' incorporates:
+  35:../Simulink/Subsystem_Safety.c ****    *  Constant: '<S5>/Constant5'
+  36:../Simulink/Subsystem_Safety.c ****    */
+  37:../Simulink/Subsystem_Safety.c ****   VCU_B.RelationalOperator3 = (VCU_B.Sensitivity1538mVbar > 50.0);
+  54              	 .loc 1 37 0
+  55 001c 144B     	 ldr r3,.L6
+  56 001e 03F5B163 	 add r3,r3,#1416
+  57 0022 D3E90023 	 ldrd r2,[r3]
+  58 0026 0121     	 movs r1,#1
+  59 0028 0C46     	 mov r4,r1
+  60 002a 1046     	 mov r0,r2
+  61 002c 1946     	 mov r1,r3
+  62 002e 4FF00002 	 mov r2,#0
+  63 0032 104B     	 ldr r3,.L6+4
+  64 0034 FFF7FEFF 	 bl __aeabi_dcmpgt
+  65 0038 0346     	 mov r3,r0
+  66 003a 002B     	 cmp r3,#0
+  67 003c 01D1     	 bne .L2
+  68 003e 0023     	 movs r3,#0
+  69 0040 1C46     	 mov r4,r3
+  70              	.L2:
+  71 0042 E3B2     	 uxtb r3,r4
+  72 0044 1A46     	 mov r2,r3
+  73 0046 0A4B     	 ldr r3,.L6
+  74 0048 83F87627 	 strb r2,[r3,#1910]
+  38:../Simulink/Subsystem_Safety.c **** 
+  39:../Simulink/Subsystem_Safety.c ****   /* Logic: '<S5>/Logical Operator1' */
+  40:../Simulink/Subsystem_Safety.c ****   VCU_B.LogicalOperator1_a = (VCU_B.RelationalOperator3 || VCU_B.Compare_dm);
+  75              	 .loc 1 40 0
+  76 004c 084B     	 ldr r3,.L6
+  77 004e 93F87637 	 ldrb r3,[r3,#1910]
+  78 0052 002B     	 cmp r3,#0
+  79 0054 04D1     	 bne .L3
+  80              	 .loc 1 40 0 is_stmt 0 discriminator 2
+  81 0056 064B     	 ldr r3,.L6
+  82 0058 93F87537 	 ldrb r3,[r3,#1909]
+  83 005c 002B     	 cmp r3,#0
+  84 005e 01D0     	 beq .L4
+  85              	.L3:
+  86              	 .loc 1 40 0 discriminator 3
+  87 0060 0123     	 movs r3,#1
+  88 0062 00E0     	 b .L5
+  89              	.L4:
+  90              	 .loc 1 40 0 discriminator 4
+  91 0064 0023     	 movs r3,#0
+  92              	.L5:
+  93              	 .loc 1 40 0 discriminator 6
+  94 0066 DAB2     	 uxtb r2,r3
+  95 0068 014B     	 ldr r3,.L6
+  96 006a 83F87727 	 strb r2,[r3,#1911]
+  41:../Simulink/Subsystem_Safety.c **** }
+  97              	 .loc 1 41 0 is_stmt 1 discriminator 6
+  98 006e 98BD     	 pop {r3,r4,r7,pc}
+  99              	.L7:
+ 100              	 .align 2
+ 101              	.L6:
+ 102 0070 00000000 	 .word VCU_B
+ 103 0074 00004940 	 .word 1078525952
+ 104              	 .cfi_endproc
+ 105              	.LFE175:
+ 107              	 .text
+ 108              	.Letext0:
+ 109              	 .file 2 "../Simulink/rtwtypes.h"
+ 110              	 .file 3 "c:\\dave\\dave-ide-4.4.2-64bit\\eclipse\\arm-gcc-49\\arm-none-eabi\\include\\machine\\_default_types.h"
+ 111              	 .file 4 "c:\\dave\\dave-ide-4.4.2-64bit\\eclipse\\arm-gcc-49\\arm-none-eabi\\include\\stdint.h"
+ 112              	 .file 5 "../Simulink/VCU.h"
+ 113              	 .file 6 "C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_07_14_VCU_jr20_Source/Libraries/CMSIS/Include/cmsis_gcc.h"
+ 114              	 .file 7 "C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_07_14_VCU_jr20_Source/Libraries/CMSIS/Include/core_cm4.h"
+ 115              	 .file 8 "C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_07_14_VCU_jr20_Source/Libraries/CMSIS/Infineon/XMC4500_series/Include/system_XMC4500.h"
+DEFINED SYMBOLS
+                            *ABS*:00000000 Subsystem_Safety.c
+    {standard input}:21     .text.FUNC_Safety:00000000 $t
+    {standard input}:26     .text.FUNC_Safety:00000000 FUNC_Safety
+    {standard input}:102    .text.FUNC_Safety:00000070 $d
+                     .debug_frame:00000010 $d
+
+UNDEFINED SYMBOLS
+__aeabi_dcmpgt
+VCU_B

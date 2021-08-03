@@ -1,0 +1,65 @@
+   1              	 .syntax unified
+   2              	 .cpu cortex-m4
+   3              	 .eabi_attribute 27,3
+   4              	 .fpu fpv4-sp-d16
+   5              	 .eabi_attribute 20,1
+   6              	 .eabi_attribute 21,1
+   7              	 .eabi_attribute 23,3
+   8              	 .eabi_attribute 24,1
+   9              	 .eabi_attribute 25,1
+  10              	 .eabi_attribute 26,1
+  11              	 .eabi_attribute 30,4
+  12              	 .eabi_attribute 34,1
+  13              	 .eabi_attribute 18,4
+  14              	 .thumb
+  15              	 .file "Subsystem_Safety.c"
+  16              	 .global __aeabi_dcmpgt
+  17              	 .section .text.FUNC_Safety,"ax",%progbits
+  18              	 .align 1
+  19              	 .global FUNC_Safety
+  20              	 .thumb
+  21              	 .thumb_func
+  23              	FUNC_Safety:
+  24              	 
+  25              	 
+  26 0000 38B5     	 push {r3,r4,r5,lr}
+  27 0002 114C     	 ldr r4,.L4
+  28 0004 94F8B736 	 ldrb r3,[r4,#1719]
+  29 0008 9A1E     	 subs r2,r3,#2
+  30 000a 5342     	 rsbs r3,r2,#0
+  31 000c 5341     	 adcs r3,r3,r2
+  32 000e 84F87537 	 strb r3,[r4,#1909]
+  33 0012 04F5B163 	 add r3,r4,#1416
+  34 0016 D3E90001 	 ldrd r0,[r3]
+  35 001a 0022     	 movs r2,#0
+  36 001c 0B4B     	 ldr r3,.L4+4
+  37 001e FFF7FEFF 	 bl __aeabi_dcmpgt
+  38 0022 4FF00105 	 mov r5,#1
+  39 0026 2246     	 mov r2,r4
+  40 0028 00B9     	 cbnz r0,.L2
+  41 002a 0546     	 mov r5,r0
+  42              	.L2:
+  43 002c 84F87657 	 strb r5,[r4,#1910]
+  44 0030 D2F87437 	 ldr r3,[r2,#1908]
+  45 0034 23F07F43 	 bic r3,r3,#-16777216
+  46 0038 23F0FF03 	 bic r3,r3,#255
+  47 003c 0033     	 adds r3,r3,#0
+  48 003e 18BF     	 it ne
+  49 0040 0123     	 movne r3,#1
+  50 0042 82F87737 	 strb r3,[r2,#1911]
+  51 0046 38BD     	 pop {r3,r4,r5,pc}
+  52              	.L5:
+  53              	 .align 2
+  54              	.L4:
+  55 0048 00000000 	 .word VCU_B
+  56 004c 00006940 	 .word 1080623104
+  58              	 .ident "GCC: (GNU Tools for ARM Embedded Processors) 4.9.3 20141119 (release) [ARM/embedded-4_9-branch revision 218278]"
+DEFINED SYMBOLS
+                            *ABS*:00000000 Subsystem_Safety.c
+    {standard input}:18     .text.FUNC_Safety:00000000 $t
+    {standard input}:23     .text.FUNC_Safety:00000000 FUNC_Safety
+    {standard input}:55     .text.FUNC_Safety:00000048 $d
+
+UNDEFINED SYMBOLS
+__aeabi_dcmpgt
+VCU_B

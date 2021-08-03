@@ -1,0 +1,154 @@
+   1              	 .syntax unified
+   2              	 .cpu cortex-m4
+   3              	 .eabi_attribute 27,3
+   4              	 .fpu fpv4-sp-d16
+   5              	 .eabi_attribute 20,1
+   6              	 .eabi_attribute 21,1
+   7              	 .eabi_attribute 23,3
+   8              	 .eabi_attribute 24,1
+   9              	 .eabi_attribute 25,1
+  10              	 .eabi_attribute 26,1
+  11              	 .eabi_attribute 30,4
+  12              	 .eabi_attribute 34,1
+  13              	 .eabi_attribute 18,4
+  14              	 .thumb
+  15              	 .file "DAVE.c"
+  16              	 .section .text.DAVE_Init,"ax",%progbits
+  17              	 .align 1
+  18              	 .weak DAVE_Init
+  19              	 .thumb
+  20              	 .thumb_func
+  22              	DAVE_Init:
+  23              	 
+  24              	 
+  25 0000 08B5     	 push {r3,lr}
+  26 0002 2C48     	 ldr r0,.L21
+  27 0004 FFF7FEFF 	 bl CLOCK_XMC4_Init
+  28 0008 0028     	 cmp r0,#0
+  29 000a 52D1     	 bne .L19
+  30 000c 2A48     	 ldr r0,.L21+4
+  31 000e FFF7FEFF 	 bl CAN_NODE_Init
+  32 0012 0028     	 cmp r0,#0
+  33 0014 4DD1     	 bne .L19
+  34 0016 2948     	 ldr r0,.L21+8
+  35 0018 FFF7FEFF 	 bl BUS_IO_Init
+  36 001c 0028     	 cmp r0,#0
+  37 001e 48D1     	 bne .L19
+  38 0020 2748     	 ldr r0,.L21+12
+  39 0022 FFF7FEFF 	 bl WATCHDOG_Init
+  40 0026 0028     	 cmp r0,#0
+  41 0028 43D1     	 bne .L19
+  42 002a 2648     	 ldr r0,.L21+16
+  43 002c FFF7FEFF 	 bl DIGITAL_IO_Init
+  44 0030 0028     	 cmp r0,#0
+  45 0032 3ED1     	 bne .L19
+  46 0034 2448     	 ldr r0,.L21+20
+  47 0036 FFF7FEFF 	 bl CAN_NODE_Init
+  48 003a 0028     	 cmp r0,#0
+  49 003c 39D1     	 bne .L19
+  50 003e 2348     	 ldr r0,.L21+24
+  51 0040 FFF7FEFF 	 bl PWM_Init
+  52 0044 0028     	 cmp r0,#0
+  53 0046 34D1     	 bne .L19
+  54 0048 2148     	 ldr r0,.L21+28
+  55 004a FFF7FEFF 	 bl PWM_Init
+  56 004e 80BB     	 cbnz r0,.L19
+  57 0050 2048     	 ldr r0,.L21+32
+  58 0052 FFF7FEFF 	 bl PWM_Init
+  59 0056 60BB     	 cbnz r0,.L19
+  60 0058 1F48     	 ldr r0,.L21+36
+  61 005a FFF7FEFF 	 bl PWM_Init
+  62 005e 40BB     	 cbnz r0,.L19
+  63 0060 1E48     	 ldr r0,.L21+40
+  64 0062 FFF7FEFF 	 bl PWM_Init
+  65 0066 20BB     	 cbnz r0,.L19
+  66 0068 1D48     	 ldr r0,.L21+44
+  67 006a FFF7FEFF 	 bl ADC_MEASUREMENT_Init
+  68 006e 00BB     	 cbnz r0,.L19
+  69 0070 1C48     	 ldr r0,.L21+48
+  70 0072 FFF7FEFF 	 bl DIGITAL_IO_Init
+  71 0076 E0B9     	 cbnz r0,.L19
+  72 0078 1B48     	 ldr r0,.L21+52
+  73 007a FFF7FEFF 	 bl DIGITAL_IO_Init
+  74 007e C0B9     	 cbnz r0,.L19
+  75 0080 1A48     	 ldr r0,.L21+56
+  76 0082 FFF7FEFF 	 bl EVENT_DETECTOR_Init
+  77 0086 A0B9     	 cbnz r0,.L19
+  78 0088 1948     	 ldr r0,.L21+60
+  79 008a FFF7FEFF 	 bl EVENT_GENERATOR_Init
+  80 008e 80B9     	 cbnz r0,.L19
+  81 0090 1848     	 ldr r0,.L21+64
+  82 0092 FFF7FEFF 	 bl INTERRUPT_Init
+  83 0096 60B9     	 cbnz r0,.L19
+  84 0098 1748     	 ldr r0,.L21+68
+  85 009a FFF7FEFF 	 bl DIGITAL_IO_Init
+  86 009e 40B9     	 cbnz r0,.L19
+  87 00a0 1648     	 ldr r0,.L21+72
+  88 00a2 FFF7FEFF 	 bl DIGITAL_IO_Init
+  89 00a6 20B9     	 cbnz r0,.L19
+  90 00a8 1548     	 ldr r0,.L21+76
+  91 00aa BDE80840 	 pop {r3,lr}
+  92 00ae FFF7FEBF 	 b BUS_IO_Init
+  93              	.L19:
+  94 00b2 08BD     	 pop {r3,pc}
+  95              	.L22:
+  96              	 .align 2
+  97              	.L21:
+  98 00b4 00000000 	 .word CLOCK_XMC4_0
+  99 00b8 00000000 	 .word CAN_1
+ 100 00bc 00000000 	 .word BUS_IO
+ 101 00c0 00000000 	 .word WATCHDOG
+ 102 00c4 00000000 	 .word DIGITAL_IO_Debug_LED
+ 103 00c8 00000000 	 .word CAN_2
+ 104 00cc 00000000 	 .word PWM_MHJ9_IN
+ 105 00d0 00000000 	 .word PWM_MHJ9_OUT
+ 106 00d4 00000000 	 .word PWM_Waterpump
+ 107 00d8 00000000 	 .word PWM_Fans1
+ 108 00dc 00000000 	 .word PWM_Fans2
+ 109 00e0 00000000 	 .word ADC_MEASUREMENT
+ 110 00e4 00000000 	 .word CAN1_Res
+ 111 00e8 00000000 	 .word CAN2_Res
+ 112 00ec 00000000 	 .word EVENT_DETECTOR_Shifting
+ 113 00f0 00000000 	 .word EVENT_GENERATOR_Shifting
+ 114 00f4 00000000 	 .word INTERRUPT_Shifting
+ 115 00f8 00000000 	 .word Signal_DownShift
+ 116 00fc 00000000 	 .word Signal_UpShift
+ 117 0100 00000000 	 .word BUS_IO_Input
+ 119              	 .ident "GCC: (GNU Tools for ARM Embedded Processors) 4.9.3 20141119 (release) [ARM/embedded-4_9-branch revision 218278]"
+DEFINED SYMBOLS
+                            *ABS*:00000000 DAVE.c
+    {standard input}:17     .text.DAVE_Init:00000000 $t
+    {standard input}:22     .text.DAVE_Init:00000000 DAVE_Init
+    {standard input}:98     .text.DAVE_Init:000000b4 $d
+
+UNDEFINED SYMBOLS
+CLOCK_XMC4_Init
+CAN_NODE_Init
+BUS_IO_Init
+WATCHDOG_Init
+DIGITAL_IO_Init
+PWM_Init
+ADC_MEASUREMENT_Init
+EVENT_DETECTOR_Init
+EVENT_GENERATOR_Init
+INTERRUPT_Init
+CLOCK_XMC4_0
+CAN_1
+BUS_IO
+WATCHDOG
+DIGITAL_IO_Debug_LED
+CAN_2
+PWM_MHJ9_IN
+PWM_MHJ9_OUT
+PWM_Waterpump
+PWM_Fans1
+PWM_Fans2
+ADC_MEASUREMENT
+CAN1_Res
+CAN2_Res
+EVENT_DETECTOR_Shifting
+EVENT_GENERATOR_Shifting
+INTERRUPT_Shifting
+Signal_DownShift
+Signal_UpShift
+BUS_IO_Input

@@ -1,0 +1,701 @@
+   1              	 .syntax unified
+   2              	 .cpu cortex-m4
+   3              	 .eabi_attribute 27,3
+   4              	 .fpu fpv4-sp-d16
+   5              	 .eabi_attribute 20,1
+   6              	 .eabi_attribute 21,1
+   7              	 .eabi_attribute 23,3
+   8              	 .eabi_attribute 24,1
+   9              	 .eabi_attribute 25,1
+  10              	 .eabi_attribute 26,1
+  11              	 .eabi_attribute 30,4
+  12              	 .eabi_attribute 34,1
+  13              	 .eabi_attribute 18,4
+  14              	 .thumb
+  15              	 .file "RTOS_Handling.c"
+  16              	 .section .text.vCallback_SuspendTransmission,"ax",%progbits
+  17              	 .align 1
+  18              	 .thumb
+  19              	 .thumb_func
+  21              	vCallback_SuspendTransmission:
+  22              	 
+  23              	 
+  24              	 
+  25 0000 044A     	 ldr r2,.L2
+  26 0002 0023     	 movs r3,#0
+  27 0004 1370     	 strb r3,[r2]
+  28 0006 044A     	 ldr r2,.L2+4
+  29 0008 1370     	 strb r3,[r2]
+  30 000a 044B     	 ldr r3,.L2+8
+  31 000c 0122     	 movs r2,#1
+  32 000e 1A70     	 strb r2,[r3]
+  33 0010 7047     	 bx lr
+  34              	.L3:
+  35 0012 00BF     	 .align 2
+  36              	.L2:
+  37 0014 00000000 	 .word shiftDownInterrupt
+  38 0018 00000000 	 .word shiftUpInterrupt
+  39 001c 00000000 	 .word .LANCHOR0
+  41              	 .section .text.Task_Transmit,"ax",%progbits
+  42              	 .align 1
+  43              	 .global Task_Transmit
+  44              	 .thumb
+  45              	 .thumb_func
+  47              	Task_Transmit:
+  48              	 
+  49              	 
+  50              	 
+  51 0000 08B5     	 push {r3,lr}
+  52              	.L5:
+  53 0002 FFF7FEFF 	 bl FUNC_OutputData
+  54 0006 FFF7FEFF 	 bl CAN_1_Transmit
+  55 000a FFF7FEFF 	 bl CAN_2_Transmit
+  56 000e FFF7FEFF 	 bl IOPort_setDOUTS
+  57 0012 FFF7FEFF 	 bl IOPort_setPWMOUTS
+  58 0016 064B     	 ldr r3,.L7
+  59 0018 0122     	 movs r2,#1
+  60 001a 5A70     	 strb r2,[r3,#1]
+  61 001c 054B     	 ldr r3,.L7+4
+  62 001e 1B78     	 ldrb r3,[r3]
+  63 0020 4FF47A70 	 mov r0,#1000
+  64 0024 4343     	 muls r3,r0,r3
+  65 0026 B3FBF0F0 	 udiv r0,r3,r0
+  66 002a FFF7FEFF 	 bl vTaskDelay
+  67 002e E8E7     	 b .L5
+  68              	.L8:
+  69              	 .align 2
+  70              	.L7:
+  71 0030 00000000 	 .word .LANCHOR1
+  72 0034 00000000 	 .word .LANCHOR2
+  74              	 .section .text.Task_LowPrioTask,"ax",%progbits
+  75              	 .align 1
+  76              	 .global Task_LowPrioTask
+  77              	 .thumb
+  78              	 .thumb_func
+  80              	Task_LowPrioTask:
+  81              	 
+  82              	 
+  83              	 
+  84 0000 08B5     	 push {r3,lr}
+  85              	.L10:
+  86 0002 FFF7FEFF 	 bl FUNC_PumpAndFans
+  87 0006 FFF7FEFF 	 bl FUNC_Brakelight
+  88 000a FFF7FEFF 	 bl FUNC_Safety
+  89 000e 064B     	 ldr r3,.L11
+  90 0010 0122     	 movs r2,#1
+  91 0012 1A70     	 strb r2,[r3]
+  92 0014 054B     	 ldr r3,.L11+4
+  93 0016 1B78     	 ldrb r3,[r3]
+  94 0018 4FF47A70 	 mov r0,#1000
+  95 001c 4343     	 muls r3,r0,r3
+  96 001e B3FBF0F0 	 udiv r0,r3,r0
+  97 0022 FFF7FEFF 	 bl vTaskDelay
+  98 0026 ECE7     	 b .L10
+  99              	.L12:
+ 100              	 .align 2
+ 101              	.L11:
+ 102 0028 00000000 	 .word .LANCHOR1
+ 103 002c 00000000 	 .word .LANCHOR3
+ 105              	 .section .text.Task_OneLoop,"ax",%progbits
+ 106              	 .align 1
+ 107              	 .global Task_OneLoop
+ 108              	 .thumb
+ 109              	 .thumb_func
+ 111              	Task_OneLoop:
+ 112              	 
+ 113              	 
+ 114              	 
+ 115 0000 08B5     	 push {r3,lr}
+ 116              	.L14:
+ 117 0002 FFF7FEFF 	 bl CAN_1_Receive
+ 118 0006 FFF7FEFF 	 bl CAN_2_Receive
+ 119 000a FFF7FEFF 	 bl IOPort_readDINS
+ 120 000e FFF7FEFF 	 bl IOPort_readAINS
+ 121 0012 FFF7FEFF 	 bl FUNC_InputData
+ 122 0016 FFF7FEFF 	 bl FUNC_Transmission
+ 123 001a FFF7FEFF 	 bl FUNC_PumpAndFans
+ 124 001e FFF7FEFF 	 bl FUNC_Brakelight
+ 125 0022 FFF7FEFF 	 bl FUNC_OutputData
+ 126 0026 FFF7FEFF 	 bl FUNC_Safety
+ 127 002a FFF7FEFF 	 bl CAN_1_Transmit
+ 128 002e FFF7FEFF 	 bl CAN_2_Transmit
+ 129 0032 FFF7FEFF 	 bl IOPort_setDOUTS
+ 130 0036 FFF7FEFF 	 bl IOPort_setPWMOUTS
+ 131 003a FFF7FEFF 	 bl Watchdog_Reset
+ 132 003e E0E7     	 b .L14
+ 134              	 .global __aeabi_i2d
+ 135              	 .global __aeabi_dcmplt
+ 136              	 .section .text.Task_Reveive,"ax",%progbits
+ 137              	 .align 1
+ 138              	 .global Task_Reveive
+ 139              	 .thumb
+ 140              	 .thumb_func
+ 142              	Task_Reveive:
+ 143              	 
+ 144              	 
+ 145              	 
+ 146 0000 83B5     	 push {r0,r1,r7,lr}
+ 147              	.L17:
+ 148 0002 374A     	 ldr r2,.L30
+ 149 0004 374C     	 ldr r4,.L30+4
+ 150 0006 1368     	 ldr r3,[r2]
+ 151 0008 127C     	 ldrb r2,[r2,#16]
+ 152 000a 5B6A     	 ldr r3,[r3,#36]
+ 153 000c D340     	 lsrs r3,r3,r2
+ 154 000e 364A     	 ldr r2,.L30+8
+ 155 0010 03F00103 	 and r3,r3,#1
+ 156 0014 1370     	 strb r3,[r2]
+ 157 0016 354A     	 ldr r2,.L30+12
+ 158 0018 1368     	 ldr r3,[r2]
+ 159 001a 127C     	 ldrb r2,[r2,#16]
+ 160 001c 5B6A     	 ldr r3,[r3,#36]
+ 161 001e D340     	 lsrs r3,r3,r2
+ 162 0020 334A     	 ldr r2,.L30+16
+ 163 0022 03F00103 	 and r3,r3,#1
+ 164 0026 1370     	 strb r3,[r2]
+ 165 0028 FFF7FEFF 	 bl CAN_1_Receive
+ 166 002c FFF7FEFF 	 bl CAN_2_Receive
+ 167 0030 FFF7FEFF 	 bl IOPort_readDINS
+ 168 0034 FFF7FEFF 	 bl IOPort_readAINS
+ 169 0038 FFF7FEFF 	 bl FUNC_InputData
+ 170 003c 6278     	 ldrb r2,[r4,#1]
+ 171 003e 2378     	 ldrb r3,[r4]
+ 172 0040 1A42     	 tst r2,r3
+ 173 0042 04D0     	 beq .L16
+ 174 0044 FFF7FEFF 	 bl Watchdog_Reset
+ 175 0048 0023     	 movs r3,#0
+ 176 004a 2370     	 strb r3,[r4]
+ 177 004c 6370     	 strb r3,[r4,#1]
+ 178              	.L16:
+ 179 004e 294B     	 ldr r3,.L30+20
+ 180 0050 294F     	 ldr r7,.L30+24
+ 181 0052 1E78     	 ldrb r6,[r3]
+ 182 0054 294B     	 ldr r3,.L30+28
+ 183 0056 1D78     	 ldrb r5,[r3]
+ 184 0058 BB6E     	 ldr r3,[r7,#104]
+ 185 005a 1C78     	 ldrb r4,[r3]
+ 186 005c 7B6E     	 ldr r3,[r7,#100]
+ 187 005e 1B78     	 ldrb r3,[r3]
+ 188 0060 012B     	 cmp r3,#1
+ 189 0062 18BF     	 it ne
+ 190 0064 012C     	 cmpne r4,#1
+ 191 0066 264B     	 ldr r3,.L30+32
+ 192 0068 D3F83490 	 ldr r9,[r3,#52]
+ 193 006c 254B     	 ldr r3,.L30+36
+ 194 006e 1888     	 ldrh r0,[r3]
+ 195 0070 0CBF     	 ite eq
+ 196 0072 4FF00108 	 moveq r8,#1
+ 197 0076 4FF00008 	 movne r8,#0
+ 198 007a FFF7FEFF 	 bl __aeabi_i2d
+ 199 007e 0246     	 mov r2,r0
+ 200 0080 0B46     	 mov r3,r1
+ 201 0082 D9E90001 	 ldrd r0,[r9]
+ 202 0086 4FF00104 	 mov r4,#1
+ 203 008a FFF7FEFF 	 bl __aeabi_dcmplt
+ 204 008e 00B9     	 cbnz r0,.L18
+ 205 0090 0446     	 mov r4,r0
+ 206              	.L18:
+ 207 0092 D7F8B020 	 ldr r2,[r7,#176]
+ 208 0096 1278     	 ldrb r2,[r2]
+ 209 0098 48EA0404 	 orr r4,r8,r4
+ 210 009c 45EA0603 	 orr r3,r5,r6
+ 211 00a0 E4B2     	 uxtb r4,r4
+ 212 00a2 1343     	 orrs r3,r3,r2
+ 213 00a4 2343     	 orrs r3,r4,r3
+ 214 00a6 ACD0     	 beq .L17
+ 215 00a8 26B1     	 cbz r6,.L19
+ 216 00aa 174B     	 ldr r3,.L30+40
+ 217 00ac 0122     	 movs r2,#1
+ 218 00ae 83F83121 	 strb r2,[r3,#305]
+ 219 00b2 04E0     	 b .L20
+ 220              	.L19:
+ 221 00b4 1DB1     	 cbz r5,.L20
+ 222 00b6 144B     	 ldr r3,.L30+40
+ 223 00b8 0122     	 movs r2,#1
+ 224 00ba 83F83021 	 strb r2,[r3,#304]
+ 225              	.L20:
+ 226 00be 134B     	 ldr r3,.L30+44
+ 227 00c0 1C68     	 ldr r4,[r3]
+ 228 00c2 FFF7FEFF 	 bl xTaskGetTickCount
+ 229 00c6 0023     	 movs r3,#0
+ 230 00c8 0246     	 mov r2,r0
+ 231 00ca 0093     	 str r3,[sp]
+ 232 00cc 2046     	 mov r0,r4
+ 233 00ce 0221     	 movs r1,#2
+ 234 00d0 FFF7FEFF 	 bl xTimerGenericCommand
+ 235 00d4 0E4B     	 ldr r3,.L30+48
+ 236 00d6 1868     	 ldr r0,[r3]
+ 237 00d8 FFF7FEFF 	 bl vTaskResume
+ 238 00dc 91E7     	 b .L17
+ 239              	.L31:
+ 240 00de 00BF     	 .align 2
+ 241              	.L30:
+ 242 00e0 00000000 	 .word Signal_UpShift
+ 243 00e4 00000000 	 .word .LANCHOR1
+ 244 00e8 00000000 	 .word .LANCHOR4
+ 245 00ec 00000000 	 .word Signal_DownShift
+ 246 00f0 00000000 	 .word .LANCHOR5
+ 247 00f4 00000000 	 .word shiftDownInterrupt
+ 248 00f8 00000000 	 .word canData
+ 249 00fc 00000000 	 .word shiftUpInterrupt
+ 250 0100 00000000 	 .word IOportData
+ 251 0104 00000000 	 .word .LANCHOR6
+ 252 0108 00000000 	 .word VCU_DW
+ 253 010c 00000000 	 .word .LANCHOR7
+ 254 0110 00000000 	 .word .LANCHOR8
+ 256              	 .section .text.Task_Transmission,"ax",%progbits
+ 257              	 .align 1
+ 258              	 .global Task_Transmission
+ 259              	 .thumb
+ 260              	 .thumb_func
+ 262              	Task_Transmission:
+ 263              	 
+ 264              	 
+ 265              	 
+ 266 0000 83B5     	 push {r0,r1,r7,lr}
+ 267              	.L36:
+ 268 0002 3E4D     	 ldr r5,.L46
+ 269 0004 3E4F     	 ldr r7,.L46+4
+ 270 0006 3F4E     	 ldr r6,.L46+8
+ 271 0008 0123     	 movs r3,#1
+ 272 000a 2B70     	 strb r3,[r5]
+ 273 000c FFF7FEFF 	 bl FUNC_Brakelight
+ 274 0010 FFF7FEFF 	 bl FUNC_Safety
+ 275 0014 FFF7FEFF 	 bl FUNC_Transmission
+ 276 0018 FFF7FEFF 	 bl FUNC_OutputData
+ 277 001c FFF7FEFF 	 bl CAN_1_Transmit
+ 278 0020 FFF7FEFF 	 bl CAN_2_Transmit
+ 279 0024 FFF7FEFF 	 bl IOPort_setDOUTS
+ 280 0028 FFF7FEFF 	 bl IOPort_setPWMOUTS
+ 281 002c FFF7FEFF 	 bl CAN_1_Receive
+ 282 0030 FFF7FEFF 	 bl CAN_2_Receive
+ 283 0034 FFF7FEFF 	 bl IOPort_readAINS
+ 284 0038 FFF7FEFF 	 bl IOPort_readDINS
+ 285 003c 3A78     	 ldrb r2,[r7]
+ 286 003e 3378     	 ldrb r3,[r6]
+ 287 0040 1343     	 orrs r3,r2,r3
+ 288 0042 12D0     	 beq .L33
+ 289 0044 3049     	 ldr r1,.L46+12
+ 290 0046 314A     	 ldr r2,.L46+16
+ 291 0048 0B68     	 ldr r3,[r1]
+ 292 004a 097C     	 ldrb r1,[r1,#16]
+ 293 004c 5B6A     	 ldr r3,[r3,#36]
+ 294 004e CB40     	 lsrs r3,r3,r1
+ 295 0050 2F49     	 ldr r1,.L46+20
+ 296 0052 03F00103 	 and r3,r3,#1
+ 297 0056 82F83031 	 strb r3,[r2,#304]
+ 298 005a 0B68     	 ldr r3,[r1]
+ 299 005c 097C     	 ldrb r1,[r1,#16]
+ 300 005e 5B6A     	 ldr r3,[r3,#36]
+ 301 0060 CB40     	 lsrs r3,r3,r1
+ 302 0062 03F00103 	 and r3,r3,#1
+ 303 0066 82F83131 	 strb r3,[r2,#305]
+ 304              	.L33:
+ 305 006a DFF8BC80 	 ldr r8,.L46+44
+ 306 006e FFF7FEFF 	 bl FUNC_InputData
+ 307 0072 D8F86830 	 ldr r3,[r8,#104]
+ 308 0076 1C78     	 ldrb r4,[r3]
+ 309 0078 D8F86430 	 ldr r3,[r8,#100]
+ 310 007c 1B78     	 ldrb r3,[r3]
+ 311 007e 012B     	 cmp r3,#1
+ 312 0080 18BF     	 it ne
+ 313 0082 012C     	 cmpne r4,#1
+ 314 0084 234B     	 ldr r3,.L46+24
+ 315 0086 D3F834A0 	 ldr r10,[r3,#52]
+ 316 008a 234B     	 ldr r3,.L46+28
+ 317 008c 1888     	 ldrh r0,[r3]
+ 318 008e 0CBF     	 ite eq
+ 319 0090 4FF00109 	 moveq r9,#1
+ 320 0094 4FF00009 	 movne r9,#0
+ 321 0098 FFF7FEFF 	 bl __aeabi_i2d
+ 322 009c 0246     	 mov r2,r0
+ 323 009e 0B46     	 mov r3,r1
+ 324 00a0 DAE90001 	 ldrd r0,[r10]
+ 325 00a4 4FF00104 	 mov r4,#1
+ 326 00a8 FFF7FEFF 	 bl __aeabi_dcmplt
+ 327 00ac 00B9     	 cbnz r0,.L35
+ 328 00ae 0446     	 mov r4,r0
+ 329              	.L35:
+ 330 00b0 3378     	 ldrb r3,[r6]
+ 331 00b2 3A78     	 ldrb r2,[r7]
+ 332 00b4 1A43     	 orrs r2,r2,r3
+ 333 00b6 D8F8B030 	 ldr r3,[r8,#176]
+ 334 00ba 1B78     	 ldrb r3,[r3]
+ 335 00bc 49EA0404 	 orr r4,r9,r4
+ 336 00c0 E4B2     	 uxtb r4,r4
+ 337 00c2 1343     	 orrs r3,r3,r2
+ 338 00c4 2343     	 orrs r3,r4,r3
+ 339 00c6 0CD0     	 beq .L34
+ 340 00c8 FFF7FEFF 	 bl Watchdog_Reset
+ 341 00cc 134B     	 ldr r3,.L46+32
+ 342 00ce 1C68     	 ldr r4,[r3]
+ 343 00d0 FFF7FEFF 	 bl xTaskGetTickCount
+ 344 00d4 0023     	 movs r3,#0
+ 345 00d6 0246     	 mov r2,r0
+ 346 00d8 0093     	 str r3,[sp]
+ 347 00da 2046     	 mov r0,r4
+ 348 00dc 0221     	 movs r1,#2
+ 349 00de FFF7FEFF 	 bl xTimerGenericCommand
+ 350              	.L34:
+ 351 00e2 0F4B     	 ldr r3,.L46+36
+ 352 00e4 1A78     	 ldrb r2,[r3]
+ 353 00e6 002A     	 cmp r2,#0
+ 354 00e8 8BD0     	 beq .L36
+ 355 00ea 0022     	 movs r2,#0
+ 356 00ec 1A70     	 strb r2,[r3]
+ 357 00ee 0D4B     	 ldr r3,.L46+40
+ 358 00f0 2A70     	 strb r2,[r5]
+ 359 00f2 1868     	 ldr r0,[r3]
+ 360 00f4 FFF7FEFF 	 bl vTaskSuspend
+ 361 00f8 83E7     	 b .L36
+ 362              	.L47:
+ 363 00fa 00BF     	 .align 2
+ 364              	.L46:
+ 365 00fc 00000000 	 .word .LANCHOR9
+ 366 0100 00000000 	 .word shiftUpInterrupt
+ 367 0104 00000000 	 .word shiftDownInterrupt
+ 368 0108 00000000 	 .word Signal_UpShift
+ 369 010c 00000000 	 .word VCU_DW
+ 370 0110 00000000 	 .word Signal_DownShift
+ 371 0114 00000000 	 .word IOportData
+ 372 0118 00000000 	 .word .LANCHOR6
+ 373 011c 00000000 	 .word .LANCHOR7
+ 374 0120 00000000 	 .word .LANCHOR0
+ 375 0124 00000000 	 .word .LANCHOR8
+ 376 0128 00000000 	 .word canData
+ 378              	 .section .text.RTOS_Handling_ini,"ax",%progbits
+ 379              	 .align 1
+ 380              	 .global RTOS_Handling_ini
+ 381              	 .thumb
+ 382              	 .thumb_func
+ 384              	RTOS_Handling_ini:
+ 385              	 
+ 386              	 
+ 387 0000 2DE9F743 	 push {r0,r1,r2,r4,r5,r6,r7,r8,r9,lr}
+ 388 0004 324B     	 ldr r3,.L53
+ 389 0006 334E     	 ldr r6,.L53+4
+ 390 0008 3349     	 ldr r1,.L53+8
+ 391 000a 3448     	 ldr r0,.L53+12
+ 392 000c 344F     	 ldr r7,.L53+16
+ 393 000e DFF81081 	 ldr r8,.L53+80
+ 394 0012 DFF81091 	 ldr r9,.L53+84
+ 395 0016 334D     	 ldr r5,.L53+20
+ 396 0018 0024     	 movs r4,#0
+ 397 001a 1C70     	 strb r4,[r3]
+ 398 001c 324B     	 ldr r3,.L53+24
+ 399 001e C822     	 movs r2,#200
+ 400 0020 1C70     	 strb r4,[r3]
+ 401 0022 2346     	 mov r3,r4
+ 402 0024 0094     	 str r4,[sp]
+ 403 0026 0196     	 str r6,[sp,#4]
+ 404 0028 FFF7FEFF 	 bl xTaskCreate
+ 405 002c 0123     	 movs r3,#1
+ 406 002e 0093     	 str r3,[sp]
+ 407 0030 2E49     	 ldr r1,.L53+28
+ 408 0032 0197     	 str r7,[sp,#4]
+ 409 0034 C822     	 movs r2,#200
+ 410 0036 2346     	 mov r3,r4
+ 411 0038 2D48     	 ldr r0,.L53+32
+ 412 003a FFF7FEFF 	 bl xTaskCreate
+ 413 003e 0223     	 movs r3,#2
+ 414 0040 0093     	 str r3,[sp]
+ 415 0042 2C49     	 ldr r1,.L53+36
+ 416 0044 CDF80480 	 str r8,[sp,#4]
+ 417 0048 C822     	 movs r2,#200
+ 418 004a 2346     	 mov r3,r4
+ 419 004c 2A48     	 ldr r0,.L53+40
+ 420 004e FFF7FEFF 	 bl xTaskCreate
+ 421 0052 0323     	 movs r3,#3
+ 422 0054 0093     	 str r3,[sp]
+ 423 0056 2949     	 ldr r1,.L53+44
+ 424 0058 CDF80490 	 str r9,[sp,#4]
+ 425 005c C822     	 movs r2,#200
+ 426 005e 2346     	 mov r3,r4
+ 427 0060 2748     	 ldr r0,.L53+48
+ 428 0062 FFF7FEFF 	 bl xTaskCreate
+ 429 0066 0423     	 movs r3,#4
+ 430 0068 0093     	 str r3,[sp]
+ 431 006a 2649     	 ldr r1,.L53+52
+ 432 006c 0195     	 str r5,[sp,#4]
+ 433 006e C822     	 movs r2,#200
+ 434 0070 2346     	 mov r3,r4
+ 435 0072 2548     	 ldr r0,.L53+56
+ 436 0074 FFF7FEFF 	 bl xTaskCreate
+ 437 0078 244B     	 ldr r3,.L53+60
+ 438 007a 254A     	 ldr r2,.L53+64
+ 439 007c 1B88     	 ldrh r3,[r3]
+ 440 007e 2548     	 ldr r0,.L53+68
+ 441 0080 0092     	 str r2,[sp]
+ 442 0082 4FF47A71 	 mov r1,#1000
+ 443 0086 2246     	 mov r2,r4
+ 444 0088 4B43     	 muls r3,r1,r3
+ 445 008a B3FBF1F1 	 udiv r1,r3,r1
+ 446 008e 2346     	 mov r3,r4
+ 447 0090 FFF7FEFF 	 bl xTimerCreate
+ 448 0094 204B     	 ldr r3,.L53+72
+ 449 0096 1860     	 str r0,[r3]
+ 450 0098 2868     	 ldr r0,[r5]
+ 451 009a FFF7FEFF 	 bl vTaskSuspend
+ 452 009e D9F80000 	 ldr r0,[r9]
+ 453 00a2 FFF7FEFF 	 bl vTaskSuspend
+ 454 00a6 1D4B     	 ldr r3,.L53+76
+ 455 00a8 1B78     	 ldrb r3,[r3]
+ 456 00aa 63B1     	 cbz r3,.L49
+ 457 00ac D8F80000 	 ldr r0,[r8]
+ 458 00b0 FFF7FEFF 	 bl vTaskSuspend
+ 459 00b4 3868     	 ldr r0,[r7]
+ 460 00b6 FFF7FEFF 	 bl vTaskSuspend
+ 461 00ba 3068     	 ldr r0,[r6]
+ 462 00bc FFF7FEFF 	 bl vTaskSuspend
+ 463 00c0 2868     	 ldr r0,[r5]
+ 464 00c2 FFF7FEFF 	 bl vTaskResume
+ 465              	.L49:
+ 466 00c6 03B0     	 add sp,sp,#12
+ 467              	 
+ 468 00c8 BDE8F043 	 pop {r4,r5,r6,r7,r8,r9,lr}
+ 469 00cc FFF7FEBF 	 b vTaskStartScheduler
+ 470              	.L54:
+ 471              	 .align 2
+ 472              	.L53:
+ 473 00d0 00000000 	 .word shiftDownInterrupt
+ 474 00d4 00000000 	 .word .LANCHOR10
+ 475 00d8 00000000 	 .word .LC0
+ 476 00dc 00000000 	 .word Task_Reveive
+ 477 00e0 00000000 	 .word .LANCHOR11
+ 478 00e4 00000000 	 .word .LANCHOR13
+ 479 00e8 00000000 	 .word shiftUpInterrupt
+ 480 00ec 0D000000 	 .word .LC1
+ 481 00f0 00000000 	 .word Task_LowPrioTask
+ 482 00f4 1E000000 	 .word .LC2
+ 483 00f8 00000000 	 .word Task_Transmit
+ 484 00fc 2C000000 	 .word .LC3
+ 485 0100 00000000 	 .word Task_Transmission
+ 486 0104 3E000000 	 .word .LC4
+ 487 0108 00000000 	 .word Task_OneLoop
+ 488 010c 00000000 	 .word .LANCHOR14
+ 489 0110 00000000 	 .word vCallback_SuspendTransmission
+ 490 0114 4F000000 	 .word .LC5
+ 491 0118 00000000 	 .word .LANCHOR7
+ 492 011c 00000000 	 .word .LANCHOR15
+ 493 0120 00000000 	 .word .LANCHOR12
+ 494 0124 00000000 	 .word .LANCHOR8
+ 496              	 .global transActive
+ 497              	 .global test2
+ 498              	 .global test1
+ 499              	 .global oneloopmode
+ 500              	 .global TransmissionTask_Stop
+ 501              	 .global clutch_STW_threshold
+ 502              	 .global runtime_for_transmission
+ 503              	 .global delay_for_lowPrioTasks
+ 504              	 .global delay_for_transmitting
+ 505              	 .global wachdog_reset
+ 506              	 .global TimerHandle_Transmission
+ 507              	 .global TaskHandle_OneLoopTask
+ 508              	 .global TaskHandle_LowPrioTasks
+ 509              	 .global TaskHandle_Transmission
+ 510              	 .global TaskHandle_Transmit
+ 511              	 .global TaskHandle_Receive
+ 512              	 .comm shiftDownInterrupt,1,1
+ 513              	 .comm shiftUpInterrupt,1,1
+ 514              	 .comm VAR_TR3_VSense_FAN2,8,8
+ 515              	 .comm VAR_TR2_VSense_FAN1,8,8
+ 516              	 .comm VAR_TR1_VSense_WP,8,8
+ 517              	 .comm VAR_boardTemp,8,8
+ 518              	 .section .bss.TaskHandle_Transmit,"aw",%nobits
+ 519              	 .align 2
+ 520              	 .set .LANCHOR12,.+0
+ 523              	TaskHandle_Transmit:
+ 524 0000 00000000 	 .space 4
+ 525              	 .section .data.delay_for_lowPrioTasks,"aw",%progbits
+ 526              	 .set .LANCHOR3,.+0
+ 529              	delay_for_lowPrioTasks:
+ 530 0000 64       	 .byte 100
+ 531              	 .section .bss.transActive,"aw",%nobits
+ 532              	 .set .LANCHOR9,.+0
+ 535              	transActive:
+ 536 0000 00       	 .space 1
+ 537              	 .section .bss.oneloopmode,"aw",%nobits
+ 538              	 .set .LANCHOR15,.+0
+ 541              	oneloopmode:
+ 542 0000 00       	 .space 1
+ 543              	 .section .rodata.str1.1,"aMS",%progbits,1
+ 544              	.LC0:
+ 545 0000 5461736B 	 .ascii "Task_Reveive\000"
+ 545      5F526576 
+ 545      65697665 
+ 545      00
+ 546              	.LC1:
+ 547 000d 5461736B 	 .ascii "Task_LowPrioTask\000"
+ 547      5F4C6F77 
+ 547      5072696F 
+ 547      5461736B 
+ 547      00
+ 548              	.LC2:
+ 549 001e 5461736B 	 .ascii "Task_Transmit\000"
+ 549      5F547261 
+ 549      6E736D69 
+ 549      7400
+ 550              	.LC3:
+ 551 002c 5461736B 	 .ascii "Task_Transmission\000"
+ 551      5F547261 
+ 551      6E736D69 
+ 551      7373696F 
+ 551      6E00
+ 552              	.LC4:
+ 553 003e 5461736B 	 .ascii "Task_OneLoopTask\000"
+ 553      5F4F6E65 
+ 553      4C6F6F70 
+ 553      5461736B 
+ 553      00
+ 554              	.LC5:
+ 555 004f 54696D65 	 .ascii "Timer_Transmission\000"
+ 555      725F5472 
+ 555      616E736D 
+ 555      69737369 
+ 555      6F6E00
+ 556              	 .section .data.delay_for_transmitting,"aw",%progbits
+ 557              	 .set .LANCHOR2,.+0
+ 560              	delay_for_transmitting:
+ 561 0000 64       	 .byte 100
+ 562              	 .section .bss.wachdog_reset,"aw",%nobits
+ 563              	 .set .LANCHOR1,.+0
+ 566              	wachdog_reset:
+ 567 0000 0000     	 .space 2
+ 568              	 .section .bss.TaskHandle_Receive,"aw",%nobits
+ 569              	 .align 2
+ 570              	 .set .LANCHOR10,.+0
+ 573              	TaskHandle_Receive:
+ 574 0000 00000000 	 .space 4
+ 575              	 .section .bss.TaskHandle_LowPrioTasks,"aw",%nobits
+ 576              	 .align 2
+ 577              	 .set .LANCHOR11,.+0
+ 580              	TaskHandle_LowPrioTasks:
+ 581 0000 00000000 	 .space 4
+ 582              	 .section .bss.TransmissionTask_Stop,"aw",%nobits
+ 583              	 .set .LANCHOR0,.+0
+ 586              	TransmissionTask_Stop:
+ 587 0000 00       	 .space 1
+ 588              	 .section .data.clutch_STW_threshold,"aw",%progbits
+ 589              	 .align 1
+ 590              	 .set .LANCHOR6,.+0
+ 593              	clutch_STW_threshold:
+ 594 0000 2413     	 .short 4900
+ 595              	 .section .bss.TaskHandle_Transmission,"aw",%nobits
+ 596              	 .align 2
+ 597              	 .set .LANCHOR8,.+0
+ 600              	TaskHandle_Transmission:
+ 601 0000 00000000 	 .space 4
+ 602              	 .section .bss.test1,"aw",%nobits
+ 603              	 .set .LANCHOR4,.+0
+ 606              	test1:
+ 607 0000 00       	 .space 1
+ 608              	 .section .bss.test2,"aw",%nobits
+ 609              	 .set .LANCHOR5,.+0
+ 612              	test2:
+ 613 0000 00       	 .space 1
+ 614              	 .section .data.runtime_for_transmission,"aw",%progbits
+ 615              	 .align 1
+ 616              	 .set .LANCHOR14,.+0
+ 619              	runtime_for_transmission:
+ 620 0000 5802     	 .short 600
+ 621              	 .section .bss.TaskHandle_OneLoopTask,"aw",%nobits
+ 622              	 .align 2
+ 623              	 .set .LANCHOR13,.+0
+ 626              	TaskHandle_OneLoopTask:
+ 627 0000 00000000 	 .space 4
+ 628              	 .section .bss.TimerHandle_Transmission,"aw",%nobits
+ 629              	 .align 2
+ 630              	 .set .LANCHOR7,.+0
+ 633              	TimerHandle_Transmission:
+ 634 0000 00000000 	 .space 4
+ 635              	 .ident "GCC: (GNU Tools for ARM Embedded Processors) 4.9.3 20141119 (release) [ARM/embedded-4_9-branch revision 218278]"
+DEFINED SYMBOLS
+                            *ABS*:00000000 RTOS_Handling.c
+    {standard input}:17     .text.vCallback_SuspendTransmission:00000000 $t
+    {standard input}:21     .text.vCallback_SuspendTransmission:00000000 vCallback_SuspendTransmission
+    {standard input}:37     .text.vCallback_SuspendTransmission:00000014 $d
+                            *COM*:00000001 shiftDownInterrupt
+                            *COM*:00000001 shiftUpInterrupt
+    {standard input}:42     .text.Task_Transmit:00000000 $t
+    {standard input}:47     .text.Task_Transmit:00000000 Task_Transmit
+    {standard input}:71     .text.Task_Transmit:00000030 $d
+    {standard input}:75     .text.Task_LowPrioTask:00000000 $t
+    {standard input}:80     .text.Task_LowPrioTask:00000000 Task_LowPrioTask
+    {standard input}:102    .text.Task_LowPrioTask:00000028 $d
+    {standard input}:106    .text.Task_OneLoop:00000000 $t
+    {standard input}:111    .text.Task_OneLoop:00000000 Task_OneLoop
+    {standard input}:137    .text.Task_Reveive:00000000 $t
+    {standard input}:142    .text.Task_Reveive:00000000 Task_Reveive
+    {standard input}:242    .text.Task_Reveive:000000e0 $d
+    {standard input}:257    .text.Task_Transmission:00000000 $t
+    {standard input}:262    .text.Task_Transmission:00000000 Task_Transmission
+    {standard input}:365    .text.Task_Transmission:000000fc $d
+    {standard input}:379    .text.RTOS_Handling_ini:00000000 $t
+    {standard input}:384    .text.RTOS_Handling_ini:00000000 RTOS_Handling_ini
+    {standard input}:473    .text.RTOS_Handling_ini:000000d0 $d
+    {standard input}:535    .bss.transActive:00000000 transActive
+    {standard input}:612    .bss.test2:00000000 test2
+    {standard input}:606    .bss.test1:00000000 test1
+    {standard input}:541    .bss.oneloopmode:00000000 oneloopmode
+    {standard input}:586    .bss.TransmissionTask_Stop:00000000 TransmissionTask_Stop
+    {standard input}:593    .data.clutch_STW_threshold:00000000 clutch_STW_threshold
+    {standard input}:619    .data.runtime_for_transmission:00000000 runtime_for_transmission
+    {standard input}:529    .data.delay_for_lowPrioTasks:00000000 delay_for_lowPrioTasks
+    {standard input}:560    .data.delay_for_transmitting:00000000 delay_for_transmitting
+    {standard input}:566    .bss.wachdog_reset:00000000 wachdog_reset
+    {standard input}:633    .bss.TimerHandle_Transmission:00000000 TimerHandle_Transmission
+    {standard input}:626    .bss.TaskHandle_OneLoopTask:00000000 TaskHandle_OneLoopTask
+    {standard input}:580    .bss.TaskHandle_LowPrioTasks:00000000 TaskHandle_LowPrioTasks
+    {standard input}:600    .bss.TaskHandle_Transmission:00000000 TaskHandle_Transmission
+    {standard input}:523    .bss.TaskHandle_Transmit:00000000 TaskHandle_Transmit
+    {standard input}:573    .bss.TaskHandle_Receive:00000000 TaskHandle_Receive
+                            *COM*:00000008 VAR_TR3_VSense_FAN2
+                            *COM*:00000008 VAR_TR2_VSense_FAN1
+                            *COM*:00000008 VAR_TR1_VSense_WP
+                            *COM*:00000008 VAR_boardTemp
+    {standard input}:519    .bss.TaskHandle_Transmit:00000000 $d
+    {standard input}:536    .bss.transActive:00000000 $d
+    {standard input}:542    .bss.oneloopmode:00000000 $d
+    {standard input}:567    .bss.wachdog_reset:00000000 $d
+    {standard input}:569    .bss.TaskHandle_Receive:00000000 $d
+    {standard input}:576    .bss.TaskHandle_LowPrioTasks:00000000 $d
+    {standard input}:587    .bss.TransmissionTask_Stop:00000000 $d
+    {standard input}:589    .data.clutch_STW_threshold:00000000 $d
+    {standard input}:596    .bss.TaskHandle_Transmission:00000000 $d
+    {standard input}:607    .bss.test1:00000000 $d
+    {standard input}:613    .bss.test2:00000000 $d
+    {standard input}:615    .data.runtime_for_transmission:00000000 $d
+    {standard input}:622    .bss.TaskHandle_OneLoopTask:00000000 $d
+    {standard input}:629    .bss.TimerHandle_Transmission:00000000 $d
+
+UNDEFINED SYMBOLS
+FUNC_OutputData
+CAN_1_Transmit
+CAN_2_Transmit
+IOPort_setDOUTS
+IOPort_setPWMOUTS
+vTaskDelay
+FUNC_PumpAndFans
+FUNC_Brakelight
+FUNC_Safety
+CAN_1_Receive
+CAN_2_Receive
+IOPort_readDINS
+IOPort_readAINS
+FUNC_InputData
+FUNC_Transmission
+Watchdog_Reset
+__aeabi_i2d
+__aeabi_dcmplt
+xTaskGetTickCount
+xTimerGenericCommand
+vTaskResume
+Signal_UpShift
+Signal_DownShift
+canData
+IOportData
+VCU_DW
+vTaskSuspend
+xTaskCreate
+xTimerCreate
+vTaskStartScheduler

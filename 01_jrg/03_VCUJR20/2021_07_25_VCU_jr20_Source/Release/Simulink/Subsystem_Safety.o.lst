@@ -1,0 +1,98 @@
+   1              	 .syntax unified
+   2              	 .cpu cortex-m4
+   3              	 .eabi_attribute 27,3
+   4              	 .fpu fpv4-sp-d16
+   5              	 .eabi_attribute 20,1
+   6              	 .eabi_attribute 21,1
+   7              	 .eabi_attribute 23,3
+   8              	 .eabi_attribute 24,1
+   9              	 .eabi_attribute 25,1
+  10              	 .eabi_attribute 26,1
+  11              	 .eabi_attribute 30,4
+  12              	 .eabi_attribute 34,1
+  13              	 .eabi_attribute 18,4
+  14              	 .thumb
+  15              	 .file "Subsystem_Safety.c"
+  16              	 .global __aeabi_dcmpgt
+  17              	 .global __aeabi_dcmplt
+  18              	 .section .text.FUNC_Safety,"ax",%progbits
+  19              	 .align 1
+  20              	 .global FUNC_Safety
+  21              	 .thumb
+  22              	 .thumb_func
+  24              	FUNC_Safety:
+  25              	 
+  26              	 
+  27 0000 244B     	 ldr r3,.L5
+  28 0002 2DE9F041 	 push {r4,r5,r6,r7,r8,lr}
+  29 0006 D3E90067 	 ldrd r6,[r3]
+  30 000a 0022     	 movs r2,#0
+  31 000c 3046     	 mov r0,r6
+  32 000e 3946     	 mov r1,r7
+  33 0010 214B     	 ldr r3,.L5+4
+  34 0012 4FF00104 	 mov r4,#1
+  35 0016 FFF7FEFF 	 bl __aeabi_dcmpgt
+  36 001a 00B9     	 cbnz r0,.L2
+  37 001c 0446     	 mov r4,r0
+  38              	.L2:
+  39 001e DFF88880 	 ldr r8,.L5+20
+  40 0022 1E4B     	 ldr r3,.L5+8
+  41 0024 88F87547 	 strb r4,[r8,#1909]
+  42 0028 3046     	 mov r0,r6
+  43 002a 3946     	 mov r1,r7
+  44 002c 0022     	 movs r2,#0
+  45 002e FFF7FEFF 	 bl __aeabi_dcmplt
+  46 0032 E5B2     	 uxtb r5,r4
+  47 0034 4346     	 mov r3,r8
+  48 0036 4FF00104 	 mov r4,#1
+  49 003a 00B9     	 cbnz r0,.L3
+  50 003c 0446     	 mov r4,r0
+  51              	.L3:
+  52 003e 1848     	 ldr r0,.L5+12
+  53 0040 83F87647 	 strb r4,[r3,#1910]
+  54 0044 90F84611 	 ldrb r1,[r0,#326]
+  55 0048 83F87717 	 strb r1,[r3,#1911]
+  56 004c 6A00     	 lsls r2,r5,#1
+  57 004e 52FA84F2 	 uxtab r2,r2,r4
+  58 0052 01EB4201 	 add r1,r1,r2,lsl#1
+  59 0056 134A     	 ldr r2,.L5+16
+  60 0058 0A44     	 add r2,r2,r1
+  61 005a 92F83013 	 ldrb r1,[r2,#816]
+  62 005e 92F83823 	 ldrb r2,[r2,#824]
+  63 0062 83F87927 	 strb r2,[r3,#1913]
+  64 0066 93F8B726 	 ldrb r2,[r3,#1719]
+  65 006a 83F87817 	 strb r1,[r3,#1912]
+  66 006e 941E     	 subs r4,r2,#2
+  67 0070 6242     	 rsbs r2,r4,#0
+  68 0072 6241     	 adcs r2,r2,r4
+  69 0074 83F87A27 	 strb r2,[r3,#1914]
+  70 0078 D3F87827 	 ldr r2,[r3,#1912]
+  71 007c 80F84611 	 strb r1,[r0,#326]
+  72 0080 12F0FF1F 	 tst r2,#16711935
+  73 0084 14BF     	 ite ne
+  74 0086 0122     	 movne r2,#1
+  75 0088 0022     	 moveq r2,#0
+  76 008a 83F87B27 	 strb r2,[r3,#1915]
+  77 008e BDE8F081 	 pop {r4,r5,r6,r7,r8,pc}
+  78              	.L6:
+  79 0092 00BF     	 .align 2
+  80              	.L5:
+  81 0094 88050000 	 .word VCU_B+1416
+  82 0098 00006940 	 .word 1080623104
+  83 009c 00003E40 	 .word 1077805056
+  84 00a0 00000000 	 .word VCU_DW
+  85 00a4 00000000 	 .word VCU_ConstP
+  86 00a8 00000000 	 .word VCU_B
+  88              	 .ident "GCC: (GNU Tools for ARM Embedded Processors) 4.9.3 20141119 (release) [ARM/embedded-4_9-branch revision 218278]"
+DEFINED SYMBOLS
+                            *ABS*:00000000 Subsystem_Safety.c
+    {standard input}:19     .text.FUNC_Safety:00000000 $t
+    {standard input}:24     .text.FUNC_Safety:00000000 FUNC_Safety
+    {standard input}:81     .text.FUNC_Safety:00000094 $d
+
+UNDEFINED SYMBOLS
+__aeabi_dcmpgt
+__aeabi_dcmplt
+VCU_B
+VCU_DW
+VCU_ConstP

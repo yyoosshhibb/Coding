@@ -94,7 +94,7 @@ all: AudioFilter_Callback_BF706Mini_18_old.dxe
 AudioFilter_Callback_BF706Mini_18_old.dxe: $(LDF_SRCS) $(SRC_OBJS)
 	@echo 'Building target: $@'
 	@echo 'Invoking: CrossCore Blackfin Linker'
-	ccblkfn -proc ADSP-BF706 -si-revision any -TD:/Dokumente/GitHub/Software/02_FH/03_DSP/AudioFilter_Callback_BF706Mini_18_old/system/startup_ldf/app.ldf -no-mem -LD:/Dokumente/GitHub/Software/02_FH/03_DSP/AudioFilter_Callback_BF706Mini_18_old/Debug/system/startup_ldf -flags-link -MDDEBUG,-MDNO_UTILITY_ROM,-MDCORE0 -flags-link -e -add-debug-libpaths -no-utility-rom -o AudioFilter_Callback_BF706Mini_18_old.dxe @input-file.txt  -flags-link -od,.\.
+	ccblkfn -proc ADSP-BF706 -si-revision any -TC:/Users/Yoshi/Documents/GitHub/Software/02_FH/03_DSP/AudioFilter_Callback_BF706Mini_18_old/system/startup_ldf/app.ldf -no-mem -LC:/Users/Yoshi/Documents/GitHub/Software/02_FH/03_DSP/AudioFilter_Callback_BF706Mini_18_old/Debug/system/startup_ldf -flags-link -MDDEBUG,-MDNO_UTILITY_ROM,-MDCORE0 -flags-link -e -add-debug-libpaths -no-utility-rom -o AudioFilter_Callback_BF706Mini_18_old.dxe @input-file.txt  -flags-link -od,.\.
 	@echo 'Finished building target: $@'
 	@echo ' '
 

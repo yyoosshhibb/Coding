@@ -1,0 +1,38 @@
+
+OpenDocument="Ozone_Debug_Clutch.jdebug", FilePath="D:/Daten/FH Joanneum/Joanneum Racing/DAVE/Workspace/2020_02_09_VCU_jr20_Source/Ozone/Ozone_Debug_Clutch.jdebug", Line=0
+OpenDocument="main.c", FilePath="D:/Daten/FH Joanneum/Joanneum Racing/DAVE/Workspace/2020_02_09_VCU_jr20_Source/main.c", Line=0
+OpenDocument="startup_XMC4500.S", FilePath="D:/Daten/FH Joanneum/Joanneum Racing/DAVE/Workspace/2020_02_09_VCU_jr20_Source/Startup/startup_XMC4500.S", Line=228
+OpenDocument="Subsystem_OutputData.c", FilePath="D:/Daten/FH Joanneum/Joanneum Racing/DAVE/Workspace/2020_02_09_VCU_jr20_Source/Simulink/Subsystem_OutputData.c", Line=278
+OpenDocument="CAN_2.c", FilePath="D:/Daten/FH Joanneum/Joanneum Racing/DAVE/Workspace/2020_02_09_VCU_jr20_Source/CAN_2.c", Line=113
+OpenDocument="RTOS_Handling.c", FilePath="D:/Daten/FH Joanneum/Joanneum Racing/DAVE/Workspace/2020_02_09_VCU_jr20_Source/RTOS_Handling.c", Line=2
+OpenDocument="tasks.c", FilePath="D:/Daten/FH Joanneum/Joanneum Racing/DAVE/Workspace/2020_02_09_VCU_jr20_Source/Dave/Generated/FREERTOS/tasks.c", Line=1820
+OpenDocument="xmc_can.c", FilePath="D:/Daten/FH Joanneum/Joanneum Racing/DAVE/Workspace/2020_02_09_VCU_jr20_Source/Libraries/XMCLib/src/xmc_can.c", Line=738
+OpenDocument="CAN_1.c", FilePath="D:/Daten/FH Joanneum/Joanneum Racing/DAVE/Workspace/2020_02_09_VCU_jr20_Source/CAN_1.c", Line=108
+OpenDocument="Error_Handling.c", FilePath="D:/Daten/FH Joanneum/Joanneum Racing/DAVE/Workspace/2020_02_09_VCU_jr20_Source/Error_Handling.c", Line=118
+OpenDocument="rt_nonfinite.c", FilePath="D:/Daten/FH Joanneum/Joanneum Racing/DAVE/Workspace/2020_02_09_VCU_jr20_Source/Simulink/rt_nonfinite.c", Line=27
+OpenDocument="IO_Port.c", FilePath="D:/Daten/FH Joanneum/Joanneum Racing/DAVE/Workspace/2020_02_09_VCU_jr20_Source/IO_Port.c", Line=0
+OpenToolbar="Debug", Floating=0, x=0, y=0
+OpenWindow="Registers 1", DockArea=RIGHT, x=0, y=2, w=572, h=166, FilterBarShown=0, ToolBarShown=0, FilteredItems=[], RefreshRate=1
+OpenWindow="Disassembly", DockArea=RIGHT, x=0, y=0, w=572, h=166, FilterBarShown=0, ToolBarShown=0, ExecCountersShown=0, InstEncodingsShown=0
+OpenWindow="Source", x=0, y=0, w=0, h=0, FilterBarShown=0, ToolBarShown=0, ExecCountersShown=0
+OpenWindow="Memory 1", DockArea=BOTTOM, x=2, y=0, w=551, h=249, FilterBarShown=0, ToolBarShown=0, EditorAddress=0x20001058
+OpenWindow="Watched Data", DockArea=RIGHT, x=0, y=1, w=572, h=347, FilterBarShown=0, ToolBarShown=0
+OpenWindow="Functions", DockArea=LEFT, x=0, y=0, w=311, h=681, FilterBarShown=1, ToolBarShown=0
+OpenWindow="Data Graph", DockArea=BOTTOM, x=1, y=0, w=851, h=249, FilterBarShown=0, ToolBarShown=0, VisibleTab=0, SamplingFreq=1 kHz, ClearEvent=RESUME, LegendShown=0, UniformSampleSpacing=0, PinCursor=-1, TimePerDiv=1000000
+OpenWindow="Console", DockArea=BOTTOM, x=0, y=0, w=276, h=249, FilterBarShown=0, ToolBarShown=0
+TableHeader="Watched Data", SortCol="Expression", SortOrder="ASCENDING", VisibleCols=["Expression";"Value";"Location";"Refresh"], ColWidths=[271;98;98;105]
+TableHeader="Functions", SortCol="Source", SortOrder="ASCENDING", VisibleCols=["Name";"Source"], ColWidths=[134;176]
+TableHeader="Data Graph", SortCol="Index", SortOrder="ASCENDING", VisibleCols=["Index";"Time                    "], ColWidths=[27;73]
+TableHeader="Data Graph", SortCol="Expression", SortOrder="ASCENDING", VisibleCols=["Expression";"Type";"Value";"Min";"Max";"Average";"# Changes";"Min. Change";"Max. Change"], ColWidths=[302;48;50;41;45;66;78;85;136]
+TableHeader="Power Graph", SortCol="Index", SortOrder="ASCENDING", VisibleCols=["Index";"Time";"Channel 0"], ColWidths=[72;102;108]
+TableHeader="Registers 1", SortCol="Name", SortOrder="ASCENDING", VisibleCols=["Name";"Value";"Description"], ColWidths=[82;105;368]
+TableHeader="RegisterSelectionDialog", SortCol="Name", SortOrder="ASCENDING", VisibleCols=["Auto";"Name";"Address";"Description"], ColWidths=[27;27;27;31]
+WatchedExpression="*IOportData.x_clutch_STW", RefreshRate=1
+WatchedExpression="*IOportData.x_clutch", RefreshRate=1
+WatchedExpression="*IOportData.VOVG_IN", RefreshRate=1
+WatchedExpression="*IOportData.VOVG_OUT", RefreshRate=1
+WatchedExpression="*IOportData.MHJ9_IN", RefreshRate=1
+WatchedExpression="*IOportData.MHJ9_OUT", RefreshRate=1
+WatchedExpression="(*IOportData.x_clutch_STW)*(-25/4900.0)+25", RefreshRate=1
+WatchedExpression="*IOportData.x_clutch*(-25/1900.0)+100/1.9", RefreshRate=1
+WatchedExpression="((*IOportData.x_clutch_STW)*(-25/4900.0)+25)-(*IOportData.x_clutch*(-25/1900.0)+100/1.9)", RefreshRate=1

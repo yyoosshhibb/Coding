@@ -1,0 +1,909 @@
+   1              	 .syntax unified
+   2              	 .cpu cortex-m4
+   3              	 .eabi_attribute 27,3
+   4              	 .fpu fpv4-sp-d16
+   5              	 .eabi_attribute 20,1
+   6              	 .eabi_attribute 21,1
+   7              	 .eabi_attribute 23,3
+   8              	 .eabi_attribute 24,1
+   9              	 .eabi_attribute 25,1
+  10              	 .eabi_attribute 26,1
+  11              	 .eabi_attribute 30,4
+  12              	 .eabi_attribute 34,1
+  13              	 .eabi_attribute 18,4
+  14              	 .thumb
+  15              	 .file "IO_Port.c"
+  16              	 .section .text.IOPort_ini,"ax",%progbits
+  17              	 .align 1
+  18              	 .global IOPort_ini
+  19              	 .thumb
+  20              	 .thumb_func
+  22              	IOPort_ini:
+  23              	 
+  24              	 
+  25 0000 2F4A     	 ldr r2,.L2
+  26 0002 304B     	 ldr r3,.L2+4
+  27 0004 02F10801 	 add r1,r2,#8
+  28 0008 10B5     	 push {r4,lr}
+  29 000a 5960     	 str r1,[r3,#4]
+  30 000c 02F12801 	 add r1,r2,#40
+  31 0010 D960     	 str r1,[r3,#12]
+  32 0012 02F13001 	 add r1,r2,#48
+  33 0016 1961     	 str r1,[r3,#16]
+  34 0018 02F13801 	 add r1,r2,#56
+  35 001c 5961     	 str r1,[r3,#20]
+  36 001e 02F14001 	 add r1,r2,#64
+  37 0022 9961     	 str r1,[r3,#24]
+  38 0024 02F14801 	 add r1,r2,#72
+  39 0028 D961     	 str r1,[r3,#28]
+  40 002a 02F15001 	 add r1,r2,#80
+  41 002e 1962     	 str r1,[r3,#32]
+  42 0030 02F15801 	 add r1,r2,#88
+  43 0034 5962     	 str r1,[r3,#36]
+  44 0036 02F11001 	 add r1,r2,#16
+  45 003a 9962     	 str r1,[r3,#40]
+  46 003c 02F11801 	 add r1,r2,#24
+  47 0040 D962     	 str r1,[r3,#44]
+  48 0042 02F12001 	 add r1,r2,#32
+  49 0046 1963     	 str r1,[r3,#48]
+  50 0048 1F4C     	 ldr r4,.L2+8
+  51 004a 9C63     	 str r4,[r3,#56]
+  52 004c A2F10801 	 sub r1,r2,#8
+  53 0050 0020     	 movs r0,#0
+  54 0052 5963     	 str r1,[r3,#52]
+  55 0054 0021     	 movs r1,#0
+  56 0056 C4E90001 	 strd r0,[r4]
+  57 005a 1C4C     	 ldr r4,.L2+12
+  58 005c DC63     	 str r4,[r3,#60]
+  59 005e C4E90001 	 strd r0,[r4]
+  60 0062 1B4C     	 ldr r4,.L2+16
+  61 0064 1C64     	 str r4,[r3,#64]
+  62 0066 C4E90001 	 strd r0,[r4]
+  63 006a 1A4C     	 ldr r4,.L2+20
+  64 006c 1A60     	 str r2,[r3]
+  65 006e C4E90001 	 strd r0,[r4]
+  66 0072 02F20F11 	 addw r1,r2,#271
+  67 0076 9964     	 str r1,[r3,#72]
+  68 0078 02F58871 	 add r1,r2,#272
+  69 007c D964     	 str r1,[r3,#76]
+  70 007e 02F58971 	 add r1,r2,#274
+  71 0082 1965     	 str r1,[r3,#80]
+  72 0084 02F21311 	 addw r1,r2,#275
+  73 0088 5965     	 str r1,[r3,#84]
+  74 008a 02F58A71 	 add r1,r2,#276
+  75 008e 9965     	 str r1,[r3,#88]
+  76 0090 02F17C01 	 add r1,r2,#124
+  77 0094 D965     	 str r1,[r3,#92]
+  78 0096 02F17E01 	 add r1,r2,#126
+  79 009a 1966     	 str r1,[r3,#96]
+  80 009c 02F21511 	 addw r1,r2,#277
+  81 00a0 5966     	 str r1,[r3,#100]
+  82 00a2 02F18001 	 add r1,r2,#128
+  83 00a6 9966     	 str r1,[r3,#104]
+  84 00a8 02F18201 	 add r1,r2,#130
+  85 00ac 7A32     	 adds r2,r2,#122
+  86 00ae 1A67     	 str r2,[r3,#112]
+  87 00b0 094A     	 ldr r2,.L2+24
+  88 00b2 5C64     	 str r4,[r3,#68]
+  89 00b4 D966     	 str r1,[r3,#108]
+  90 00b6 0023     	 movs r3,#0
+  91 00b8 1360     	 str r3,[r2]
+  92 00ba 084A     	 ldr r2,.L2+28
+  93 00bc 1380     	 strh r3,[r2]
+  94 00be 10BD     	 pop {r4,pc}
+  95              	.L3:
+  96              	 .align 2
+  97              	.L2:
+  98 00c0 38000000 	 .word VCU_DW+56
+  99 00c4 00000000 	 .word IOportData
+ 100 00c8 00000000 	 .word VAR_boardTemp
+ 101 00cc 00000000 	 .word VAR_TR1_VSense_WP
+ 102 00d0 00000000 	 .word VAR_TR2_VSense_FAN1
+ 103 00d4 00000000 	 .word VAR_TR3_VSense_FAN2
+ 104 00d8 00000000 	 .word output_pins
+ 105 00dc 00000000 	 .word busio_read
+ 107              	 .section .text.IOPort_readDINS,"ax",%progbits
+ 108              	 .align 1
+ 109              	 .global IOPort_readDINS
+ 110              	 .thumb
+ 111              	 .thumb_func
+ 113              	IOPort_readDINS:
+ 114              	 
+ 115              	 
+ 116 0000 70B5     	 push {r4,r5,r6,lr}
+ 117 0002 0D48     	 ldr r0,.L5
+ 118 0004 0D4C     	 ldr r4,.L5+4
+ 119 0006 0E4D     	 ldr r5,.L5+8
+ 120 0008 FFF7FEFF 	 bl BUS_IO_Read
+ 121 000c 0121     	 movs r1,#1
+ 122 000e 0A46     	 mov r2,r1
+ 123 0010 2E68     	 ldr r6,[r5]
+ 124 0012 2080     	 strh r0,[r4]
+ 125 0014 FFF7FEFF 	 bl getbits
+ 126 0018 0121     	 movs r1,#1
+ 127 001a FFF7FEFF 	 bl checkRangePlausi
+ 128 001e 3070     	 strb r0,[r6]
+ 129 0020 0021     	 movs r1,#0
+ 130 0022 0122     	 movs r2,#1
+ 131 0024 2088     	 ldrh r0,[r4]
+ 132 0026 2D6A     	 ldr r5,[r5,#32]
+ 133 0028 FFF7FEFF 	 bl getbits
+ 134 002c 0521     	 movs r1,#5
+ 135 002e FFF7FEFF 	 bl checkRangePlausi
+ 136 0032 2870     	 strb r0,[r5]
+ 137 0034 70BD     	 pop {r4,r5,r6,pc}
+ 138              	.L6:
+ 139 0036 00BF     	 .align 2
+ 140              	.L5:
+ 141 0038 00000000 	 .word BUS_IO_Input
+ 142 003c 00000000 	 .word busio_read
+ 143 0040 00000000 	 .word IOportData
+ 145              	 .section .text.ERU0_3_IRQHandler,"ax",%progbits
+ 146              	 .align 1
+ 147              	 .global ERU0_3_IRQHandler
+ 148              	 .thumb
+ 149              	 .thumb_func
+ 151              	ERU0_3_IRQHandler:
+ 152              	 
+ 153              	 
+ 154              	 
+ 155 0000 094A     	 ldr r2,.L8
+ 156 0002 1368     	 ldr r3,[r2]
+ 157 0004 127C     	 ldrb r2,[r2,#16]
+ 158 0006 5B6A     	 ldr r3,[r3,#36]
+ 159 0008 D340     	 lsrs r3,r3,r2
+ 160 000a 084A     	 ldr r2,.L8+4
+ 161 000c 03F00103 	 and r3,r3,#1
+ 162 0010 1370     	 strb r3,[r2]
+ 163 0012 074A     	 ldr r2,.L8+8
+ 164 0014 1368     	 ldr r3,[r2]
+ 165 0016 127C     	 ldrb r2,[r2,#16]
+ 166 0018 5B6A     	 ldr r3,[r3,#36]
+ 167 001a D340     	 lsrs r3,r3,r2
+ 168 001c 054A     	 ldr r2,.L8+12
+ 169 001e 03F00103 	 and r3,r3,#1
+ 170 0022 1370     	 strb r3,[r2]
+ 171 0024 7047     	 bx lr
+ 172              	.L9:
+ 173 0026 00BF     	 .align 2
+ 174              	.L8:
+ 175 0028 00000000 	 .word Signal_UpShift
+ 176 002c 00000000 	 .word shiftUpInterrupt
+ 177 0030 00000000 	 .word Signal_DownShift
+ 178 0034 00000000 	 .word shiftDownInterrupt
+ 180              	 .section .text.ManualControl_setDOUTS,"ax",%progbits
+ 181              	 .align 1
+ 182              	 .global ManualControl_setDOUTS
+ 183              	 .thumb
+ 184              	 .thumb_func
+ 186              	ManualControl_setDOUTS:
+ 187              	 
+ 188              	 
+ 189              	 
+ 190 0000 164B     	 ldr r3,.L32
+ 191 0002 93F85F21 	 ldrb r2,[r3,#351]
+ 192 0006 22B1     	 cbz r2,.L11
+ 193 0008 154A     	 ldr r2,.L32+4
+ 194 000a 93F86911 	 ldrb r1,[r3,#361]
+ 195 000e 926C     	 ldr r2,[r2,#72]
+ 196 0010 1170     	 strb r1,[r2]
+ 197              	.L11:
+ 198 0012 93F85E21 	 ldrb r2,[r3,#350]
+ 199 0016 2AB1     	 cbz r2,.L12
+ 200 0018 114A     	 ldr r2,.L32+4
+ 201 001a 1049     	 ldr r1,.L32
+ 202 001c D26C     	 ldr r2,[r2,#76]
+ 203 001e 91F86811 	 ldrb r1,[r1,#360]
+ 204 0022 1170     	 strb r1,[r2]
+ 205              	.L12:
+ 206 0024 93F86021 	 ldrb r2,[r3,#352]
+ 207 0028 2AB1     	 cbz r2,.L13
+ 208 002a 0D4A     	 ldr r2,.L32+4
+ 209 002c 0B49     	 ldr r1,.L32
+ 210 002e 126D     	 ldr r2,[r2,#80]
+ 211 0030 91F86A11 	 ldrb r1,[r1,#362]
+ 212 0034 1170     	 strb r1,[r2]
+ 213              	.L13:
+ 214 0036 93F86121 	 ldrb r2,[r3,#353]
+ 215 003a 2AB1     	 cbz r2,.L14
+ 216 003c 084A     	 ldr r2,.L32+4
+ 217 003e 0749     	 ldr r1,.L32
+ 218 0040 526D     	 ldr r2,[r2,#84]
+ 219 0042 91F86B11 	 ldrb r1,[r1,#363]
+ 220 0046 1170     	 strb r1,[r2]
+ 221              	.L14:
+ 222 0048 93F86231 	 ldrb r3,[r3,#354]
+ 223 004c 2BB1     	 cbz r3,.L10
+ 224 004e 044B     	 ldr r3,.L32+4
+ 225 0050 024A     	 ldr r2,.L32
+ 226 0052 9B6D     	 ldr r3,[r3,#88]
+ 227 0054 92F86C21 	 ldrb r2,[r2,#364]
+ 228 0058 1A70     	 strb r2,[r3]
+ 229              	.L10:
+ 230 005a 7047     	 bx lr
+ 231              	.L33:
+ 232              	 .align 2
+ 233              	.L32:
+ 234 005c 00000000 	 .word canData
+ 235 0060 00000000 	 .word IOportData
+ 237              	 .section .text.IOPort_setDOUTS,"ax",%progbits
+ 238              	 .align 1
+ 239              	 .global IOPort_setDOUTS
+ 240              	 .thumb
+ 241              	 .thumb_func
+ 243              	IOPort_setDOUTS:
+ 244              	 
+ 245              	 
+ 246 0000 08B5     	 push {r3,lr}
+ 247 0002 104B     	 ldr r3,.L39
+ 248 0004 93F85831 	 ldrb r3,[r3,#344]
+ 249 0008 0BB1     	 cbz r3,.L35
+ 250 000a FFF7FEFF 	 bl ManualControl_setDOUTS
+ 251              	.L35:
+ 252 000e 0E4A     	 ldr r2,.L39+4
+ 253 0010 0E48     	 ldr r0,.L39+8
+ 254 0012 116D     	 ldr r1,[r2,#80]
+ 255 0014 D36C     	 ldr r3,[r2,#76]
+ 256 0016 0978     	 ldrb r1,[r1]
+ 257 0018 1B78     	 ldrb r3,[r3]
+ 258 001a 8900     	 lsls r1,r1,#2
+ 259 001c 41EA4301 	 orr r1,r1,r3,lsl#1
+ 260 0020 936C     	 ldr r3,[r2,#72]
+ 261 0022 1B78     	 ldrb r3,[r3]
+ 262 0024 1943     	 orrs r1,r1,r3
+ 263 0026 536D     	 ldr r3,[r2,#84]
+ 264 0028 1B78     	 ldrb r3,[r3]
+ 265 002a 41EAC301 	 orr r1,r1,r3,lsl#3
+ 266 002e 936D     	 ldr r3,[r2,#88]
+ 267 0030 1B78     	 ldrb r3,[r3]
+ 268 0032 41EA0311 	 orr r1,r1,r3,lsl#4
+ 269 0036 064B     	 ldr r3,.L39+12
+ 270 0038 1960     	 str r1,[r3]
+ 271 003a C9B2     	 uxtb r1,r1
+ 272 003c BDE80840 	 pop {r3,lr}
+ 273 0040 FFF7FEBF 	 b BUS_IO_Write
+ 274              	.L40:
+ 275              	 .align 2
+ 276              	.L39:
+ 277 0044 00000000 	 .word canData
+ 278 0048 00000000 	 .word IOportData
+ 279 004c 00000000 	 .word BUS_IO
+ 280 0050 00000000 	 .word output_pins
+ 282              	 .section .text.ManualControl_setPWMOUTS,"ax",%progbits
+ 283              	 .align 1
+ 284              	 .global ManualControl_setPWMOUTS
+ 285              	 .thumb
+ 286              	 .thumb_func
+ 288              	ManualControl_setPWMOUTS:
+ 289              	 
+ 290              	 
+ 291              	 
+ 292 0000 3E4A     	 ldr r2,.L62
+ 293 0002 92F85931 	 ldrb r3,[r2,#345]
+ 294 0006 A3B1     	 cbz r3,.L42
+ 295 0008 3D4B     	 ldr r3,.L62+4
+ 296 000a 9FED3E7A 	 flds s14,.L62+8
+ 297 000e D96D     	 ldr r1,[r3,#92]
+ 298 0010 92F86331 	 ldrb r3,[r2,#355]
+ 299 0014 07EE903A 	 fmsr s15,r3
+ 300 0018 F8EE677A 	 fuitos s15,s15
+ 301 001c C7EE877A 	 fdivs s15,s15,s14
+ 302 0020 9FED397A 	 flds s14,.L62+12
+ 303 0024 67EE877A 	 fmuls s15,s15,s14
+ 304 0028 FCEEE77A 	 ftouizs s15,s15
+ 305 002c 17EE903A 	 fmrs r3,s15
+ 306 0030 0B80     	 strh r3,[r1]
+ 307              	.L42:
+ 308 0032 92F85A31 	 ldrb r3,[r2,#346]
+ 309 0036 ABB1     	 cbz r3,.L43
+ 310 0038 314B     	 ldr r3,.L62+4
+ 311 003a 9FED327A 	 flds s14,.L62+8
+ 312 003e 196E     	 ldr r1,[r3,#96]
+ 313 0040 2E4B     	 ldr r3,.L62
+ 314 0042 93F86431 	 ldrb r3,[r3,#356]
+ 315 0046 07EE903A 	 fmsr s15,r3
+ 316 004a F8EE677A 	 fuitos s15,s15
+ 317 004e C7EE877A 	 fdivs s15,s15,s14
+ 318 0052 9FED2D7A 	 flds s14,.L62+12
+ 319 0056 67EE877A 	 fmuls s15,s15,s14
+ 320 005a FCEEE77A 	 ftouizs s15,s15
+ 321 005e 17EE903A 	 fmrs r3,s15
+ 322 0062 0B80     	 strh r3,[r1]
+ 323              	.L43:
+ 324 0064 92F85B31 	 ldrb r3,[r2,#347]
+ 325 0068 ABB1     	 cbz r3,.L44
+ 326 006a 254B     	 ldr r3,.L62+4
+ 327 006c 9FED257A 	 flds s14,.L62+8
+ 328 0070 996E     	 ldr r1,[r3,#104]
+ 329 0072 224B     	 ldr r3,.L62
+ 330 0074 93F86531 	 ldrb r3,[r3,#357]
+ 331 0078 07EE903A 	 fmsr s15,r3
+ 332 007c F8EE677A 	 fuitos s15,s15
+ 333 0080 C7EE877A 	 fdivs s15,s15,s14
+ 334 0084 9FED207A 	 flds s14,.L62+12
+ 335 0088 67EE877A 	 fmuls s15,s15,s14
+ 336 008c FCEEE77A 	 ftouizs s15,s15
+ 337 0090 17EE903A 	 fmrs r3,s15
+ 338 0094 0B80     	 strh r3,[r1]
+ 339              	.L44:
+ 340 0096 92F85C31 	 ldrb r3,[r2,#348]
+ 341 009a ABB1     	 cbz r3,.L45
+ 342 009c 184B     	 ldr r3,.L62+4
+ 343 009e 9FED197A 	 flds s14,.L62+8
+ 344 00a2 D96E     	 ldr r1,[r3,#108]
+ 345 00a4 154B     	 ldr r3,.L62
+ 346 00a6 93F86631 	 ldrb r3,[r3,#358]
+ 347 00aa 07EE903A 	 fmsr s15,r3
+ 348 00ae F8EE677A 	 fuitos s15,s15
+ 349 00b2 C7EE877A 	 fdivs s15,s15,s14
+ 350 00b6 9FED147A 	 flds s14,.L62+12
+ 351 00ba 67EE877A 	 fmuls s15,s15,s14
+ 352 00be FCEEE77A 	 ftouizs s15,s15
+ 353 00c2 17EE903A 	 fmrs r3,s15
+ 354 00c6 0B80     	 strh r3,[r1]
+ 355              	.L45:
+ 356 00c8 92F85D31 	 ldrb r3,[r2,#349]
+ 357 00cc ABB1     	 cbz r3,.L41
+ 358 00ce 0C4B     	 ldr r3,.L62+4
+ 359 00d0 9FED0C7A 	 flds s14,.L62+8
+ 360 00d4 1A6F     	 ldr r2,[r3,#112]
+ 361 00d6 094B     	 ldr r3,.L62
+ 362 00d8 93F86731 	 ldrb r3,[r3,#359]
+ 363 00dc 07EE903A 	 fmsr s15,r3
+ 364 00e0 F8EE677A 	 fuitos s15,s15
+ 365 00e4 C7EE877A 	 fdivs s15,s15,s14
+ 366 00e8 9FED077A 	 flds s14,.L62+12
+ 367 00ec 67EE877A 	 fmuls s15,s15,s14
+ 368 00f0 FCEEE77A 	 ftouizs s15,s15
+ 369 00f4 17EE903A 	 fmrs r3,s15
+ 370 00f8 1380     	 strh r3,[r2]
+ 371              	.L41:
+ 372 00fa 7047     	 bx lr
+ 373              	.L63:
+ 374              	 .align 2
+ 375              	.L62:
+ 376 00fc 00000000 	 .word canData
+ 377 0100 00000000 	 .word IOportData
+ 378 0104 0000C842 	 .word 1120403456
+ 379 0108 00008047 	 .word 1199570944
+ 381              	 .section .text.IOPort_setPWMOUTS,"ax",%progbits
+ 382              	 .align 1
+ 383              	 .global IOPort_setPWMOUTS
+ 384              	 .thumb
+ 385              	 .thumb_func
+ 387              	IOPort_setPWMOUTS:
+ 388              	 
+ 389              	 
+ 390 0000 10B5     	 push {r4,lr}
+ 391 0002 2DED028B 	 fstmfdd sp!,{d8}
+ 392 0006 324B     	 ldr r3,.L69
+ 393 0008 93F85831 	 ldrb r3,[r3,#344]
+ 394 000c 0BB1     	 cbz r3,.L65
+ 395 000e FFF7FEFF 	 bl ManualControl_setPWMOUTS
+ 396              	.L65:
+ 397 0012 304C     	 ldr r4,.L69+4
+ 398 0014 DFED308A 	 flds s17,.L69+8
+ 399 0018 E36D     	 ldr r3,[r4,#92]
+ 400 001a 9FED308A 	 flds s16,.L69+12
+ 401 001e 1B88     	 ldrh r3,[r3]
+ 402 0020 2F48     	 ldr r0,.L69+16
+ 403 0022 07EE903A 	 fmsr s15,r3
+ 404 0026 F8EE677A 	 fuitos s15,s15
+ 405 002a 67EEA87A 	 fmuls s15,s15,s17
+ 406 002e 67EE887A 	 fmuls s15,s15,s16
+ 407 0032 FCEEE77A 	 ftouizs s15,s15
+ 408 0036 17EE901A 	 fmrs r1,s15
+ 409 003a FFF7FEFF 	 bl PWM_SetDutyCycle
+ 410 003e 236E     	 ldr r3,[r4,#96]
+ 411 0040 2848     	 ldr r0,.L69+20
+ 412 0042 1B88     	 ldrh r3,[r3]
+ 413 0044 07EE903A 	 fmsr s15,r3
+ 414 0048 F8EE677A 	 fuitos s15,s15
+ 415 004c 67EEA87A 	 fmuls s15,s15,s17
+ 416 0050 67EE887A 	 fmuls s15,s15,s16
+ 417 0054 FCEEE77A 	 ftouizs s15,s15
+ 418 0058 17EE901A 	 fmrs r1,s15
+ 419 005c FFF7FEFF 	 bl PWM_SetDutyCycle
+ 420 0060 A36E     	 ldr r3,[r4,#104]
+ 421 0062 2148     	 ldr r0,.L69+24
+ 422 0064 1B88     	 ldrh r3,[r3]
+ 423 0066 07EE903A 	 fmsr s15,r3
+ 424 006a F8EE677A 	 fuitos s15,s15
+ 425 006e 67EEA87A 	 fmuls s15,s15,s17
+ 426 0072 67EE887A 	 fmuls s15,s15,s16
+ 427 0076 FCEEE77A 	 ftouizs s15,s15
+ 428 007a 17EE901A 	 fmrs r1,s15
+ 429 007e FFF7FEFF 	 bl PWM_SetDutyCycle
+ 430 0082 E36E     	 ldr r3,[r4,#108]
+ 431 0084 1948     	 ldr r0,.L69+28
+ 432 0086 1B88     	 ldrh r3,[r3]
+ 433 0088 07EE903A 	 fmsr s15,r3
+ 434 008c F8EE677A 	 fuitos s15,s15
+ 435 0090 67EEA87A 	 fmuls s15,s15,s17
+ 436 0094 67EE887A 	 fmuls s15,s15,s16
+ 437 0098 FCEEE77A 	 ftouizs s15,s15
+ 438 009c 17EE901A 	 fmrs r1,s15
+ 439 00a0 FFF7FEFF 	 bl PWM_SetDutyCycle
+ 440 00a4 236F     	 ldr r3,[r4,#112]
+ 441 00a6 1248     	 ldr r0,.L69+32
+ 442 00a8 1B88     	 ldrh r3,[r3]
+ 443 00aa 07EE903A 	 fmsr s15,r3
+ 444 00ae F8EE677A 	 fuitos s15,s15
+ 445 00b2 67EEA87A 	 fmuls s15,s15,s17
+ 446 00b6 67EE887A 	 fmuls s15,s15,s16
+ 447 00ba BDEC028B 	 fldmfdd sp!,{d8}
+ 448 00be FCEEE77A 	 ftouizs s15,s15
+ 449 00c2 BDE81040 	 pop {r4,lr}
+ 450 00c6 17EE901A 	 fmrs r1,s15
+ 451 00ca FFF7FEBF 	 b PWM_SetDutyCycle
+ 452              	.L70:
+ 453 00ce 00BF     	 .align 2
+ 454              	.L69:
+ 455 00d0 00000000 	 .word canData
+ 456 00d4 00000000 	 .word IOportData
+ 457 00d8 00008037 	 .word 931135488
+ 458 00dc 00401C46 	 .word 1176256512
+ 459 00e0 00000000 	 .word PWM_MHJ9_IN
+ 460 00e4 00000000 	 .word PWM_MHJ9_OUT
+ 461 00e8 00000000 	 .word PWM_Waterpump
+ 462 00ec 00000000 	 .word PWM_Fans1
+ 463 00f0 00000000 	 .word PWM_Fans2
+ 465              	 .global __aeabi_dmul
+ 466              	 .global __aeabi_ddiv
+ 467              	 .global __aeabi_d2uiz
+ 468              	 .global __aeabi_f2d
+ 469              	 .section .text.NTC_Calc,"ax",%progbits
+ 470              	 .align 1
+ 471              	 .global NTC_Calc
+ 472              	 .thumb
+ 473              	 .thumb_func
+ 475              	NTC_Calc:
+ 476              	 
+ 477              	 
+ 478 0000 30B5     	 push {r4,r5,lr}
+ 479 0002 8DB0     	 sub sp,sp,#52
+ 480 0004 0446     	 mov r4,r0
+ 481 0006 0D46     	 mov r5,r1
+ 482 0008 1822     	 movs r2,#24
+ 483 000a 0021     	 movs r1,#0
+ 484 000c 6846     	 mov r0,sp
+ 485 000e FFF7FEFF 	 bl memset
+ 486 0012 0021     	 movs r1,#0
+ 487 0014 1822     	 movs r2,#24
+ 488 0016 06A8     	 add r0,sp,#24
+ 489 0018 FFF7FEFF 	 bl memset
+ 490 001c 8C20     	 movs r0,#140
+ 491 001e 40F21B11 	 movw r1,#283
+ 492 0022 40F25A22 	 movw r2,#602
+ 493 0026 4FF4A163 	 mov r3,#1288
+ 494 002a 8DE80F00 	 stmia sp,{r0,r1,r2,r3}
+ 495 002e 40F6C413 	 movw r3,#2500
+ 496 0032 0493     	 str r3,[sp,#16]
+ 497 0034 40F60A73 	 movw r3,#3850
+ 498 0038 0593     	 str r3,[sp,#20]
+ 499 003a 314B     	 ldr r3,.L79+16
+ 500 003c 0693     	 str r3,[sp,#24]
+ 501 003e 314B     	 ldr r3,.L79+20
+ 502 0040 0793     	 str r3,[sp,#28]
+ 503 0042 314B     	 ldr r3,.L79+24
+ 504 0044 0893     	 str r3,[sp,#32]
+ 505 0046 314B     	 ldr r3,.L79+28
+ 506 0048 0993     	 str r3,[sp,#36]
+ 507 004a 314B     	 ldr r3,.L79+32
+ 508 004c 0A93     	 str r3,[sp,#40]
+ 509 004e 2046     	 mov r0,r4
+ 510 0050 27A3     	 adr r3,.L79
+ 511 0052 D3E90023 	 ldrd r2,[r3]
+ 512 0056 2946     	 mov r1,r5
+ 513 0058 FFF7FEFF 	 bl __aeabi_dmul
+ 514 005c 26A3     	 adr r3,.L79+8
+ 515 005e D3E90023 	 ldrd r2,[r3]
+ 516 0062 FFF7FEFF 	 bl __aeabi_ddiv
+ 517 0066 FFF7FEFF 	 bl __aeabi_d2uiz
+ 518 006a 0023     	 movs r3,#0
+ 519 006c 80B2     	 uxth r0,r0
+ 520              	.L72:
+ 521 006e 5DF82320 	 ldr r2,[sp,r3,lsl#2]
+ 522 0072 8242     	 cmp r2,r0
+ 523 0074 0BD8     	 bhi .L78
+ 524 0076 0133     	 adds r3,r3,#1
+ 525 0078 062B     	 cmp r3,#6
+ 526 007a F8D1     	 bne .L72
+ 527 007c DFED257A 	 flds s15,.L79+36
+ 528 0080 9FED257A 	 flds s14,.L79+40
+ 529 0084 9FED256A 	 flds s12,.L79+44
+ 530 0088 F3EE096A 	 fconsts s13,#57
+ 531 008c 1BE0     	 b .L73
+ 532              	.L78:
+ 533 008e 93B1     	 cbz r3,.L76
+ 534 0090 591E     	 subs r1,r3,#1
+ 535 0092 0CAC     	 add r4,sp,#48
+ 536 0094 04EB8101 	 add r1,r4,r1,lsl#2
+ 537 0098 51ED0C7A 	 flds s15,[r1,#-48]
+ 538 009c 51ED066A 	 flds s13,[r1,#-24]
+ 539 00a0 B8EE676A 	 fuitos s12,s15
+ 540 00a4 07EE902A 	 fmsr s15,r2
+ 541 00a8 04EB8303 	 add r3,r4,r3,lsl#2
+ 542 00ac B8EE677A 	 fuitos s14,s15
+ 543 00b0 53ED067A 	 flds s15,[r3,#-24]
+ 544 00b4 07E0     	 b .L73
+ 545              	.L76:
+ 546 00b6 DFED1A7A 	 flds s15,.L79+48
+ 547 00ba 9FED1A7A 	 flds s14,.L79+52
+ 548 00be DFED1A6A 	 flds s13,.L79+56
+ 549 00c2 9FED1A6A 	 flds s12,.L79+60
+ 550              	.L73:
+ 551 00c6 37EE467A 	 fsubs s14,s14,s12
+ 552 00ca 77EEE67A 	 fsubs s15,s15,s13
+ 553 00ce C7EE877A 	 fdivs s15,s15,s14
+ 554 00d2 07EE100A 	 fmsr s14,r0
+ 555 00d6 E7EEC66A 	 vfms.f32 s13,s15,s12
+ 556 00da B8EEC77A 	 fsitos s14,s14
+ 557 00de E7EE876A 	 vfma.f32 s13,s15,s14
+ 558 00e2 16EE900A 	 fmrs r0,s13
+ 559 00e6 FFF7FEFF 	 bl __aeabi_f2d
+ 560 00ea 0DB0     	 add sp,sp,#52
+ 561              	 
+ 562 00ec 30BD     	 pop {r4,r5,pc}
+ 563              	.L80:
+ 564 00ee 00BF     	 .align 3
+ 565              	.L79:
+ 566 00f0 00000000 	 .word 0
+ 567 00f4 0088B340 	 .word 1085507584
+ 568 00f8 00000000 	 .word 0
+ 569 00fc 00FEAF40 	 .word 1085275648
+ 570 0100 0000FA42 	 .word 1123680256
+ 571 0104 0000C842 	 .word 1120403456
+ 572 0108 00009642 	 .word 1117126656
+ 573 010c 00004842 	 .word 1112014848
+ 574 0110 0000C841 	 .word 1103626240
+ 575 0114 00000000 	 .word 0
+ 576 0118 00A07045 	 .word 1165008896
+ 577 011c 00401C45 	 .word 1159479296
+ 578 0120 0000C842 	 .word 1120403456
+ 579 0124 00808D43 	 .word 1133346816
+ 580 0128 0000FA42 	 .word 1123680256
+ 581 012c 00000C43 	 .word 1124859904
+ 583              	 .global __aeabi_i2d
+ 584              	 .global __aeabi_ui2d
+ 585              	 .section .text.IOPort_readAINS,"ax",%progbits
+ 586              	 .align 1
+ 587              	 .global IOPort_readAINS
+ 588              	 .thumb
+ 589              	 .thumb_func
+ 591              	IOPort_readAINS:
+ 592              	 
+ 593              	 
+ 594 0000 38B5     	 push {r3,r4,r5,lr}
+ 595 0002 774C     	 ldr r4,.L82+24
+ 596 0004 7748     	 ldr r0,.L82+28
+ 597 0006 656B     	 ldr r5,[r4,#52]
+ 598 0008 FFF7FEFF 	 bl ADC_MEASUREMENT_GetResult
+ 599 000c FFF7FEFF 	 bl __aeabi_i2d
+ 600 0010 6DA3     	 adr r3,.L82
+ 601 0012 D3E90023 	 ldrd r2,[r3]
+ 602 0016 FFF7FEFF 	 bl __aeabi_ddiv
+ 603 001a 0022     	 movs r2,#0
+ 604 001c 724B     	 ldr r3,.L82+32
+ 605 001e FFF7FEFF 	 bl __aeabi_dmul
+ 606 0022 0022     	 movs r2,#0
+ 607 0024 714B     	 ldr r3,.L82+36
+ 608 0026 FFF7FEFF 	 bl __aeabi_dmul
+ 609 002a C5E90001 	 strd r0,[r5]
+ 610 002e 7048     	 ldr r0,.L82+40
+ 611 0030 256B     	 ldr r5,[r4,#48]
+ 612 0032 FFF7FEFF 	 bl ADC_MEASUREMENT_GetResult
+ 613 0036 FFF7FEFF 	 bl __aeabi_i2d
+ 614 003a 63A3     	 adr r3,.L82
+ 615 003c D3E90023 	 ldrd r2,[r3]
+ 616 0040 FFF7FEFF 	 bl __aeabi_ddiv
+ 617 0044 62A3     	 adr r3,.L82+8
+ 618 0046 D3E90023 	 ldrd r2,[r3]
+ 619 004a FFF7FEFF 	 bl __aeabi_dmul
+ 620 004e 0022     	 movs r2,#0
+ 621 0050 664B     	 ldr r3,.L82+36
+ 622 0052 FFF7FEFF 	 bl __aeabi_dmul
+ 623 0056 C5E90001 	 strd r0,[r5]
+ 624 005a 6648     	 ldr r0,.L82+44
+ 625 005c 656A     	 ldr r5,[r4,#36]
+ 626 005e FFF7FEFF 	 bl ADC_MEASUREMENT_GetResult
+ 627 0062 FFF7FEFF 	 bl __aeabi_i2d
+ 628 0066 58A3     	 adr r3,.L82
+ 629 0068 D3E90023 	 ldrd r2,[r3]
+ 630 006c FFF7FEFF 	 bl __aeabi_ddiv
+ 631 0070 0022     	 movs r2,#0
+ 632 0072 614B     	 ldr r3,.L82+48
+ 633 0074 FFF7FEFF 	 bl __aeabi_dmul
+ 634 0078 0022     	 movs r2,#0
+ 635 007a 5C4B     	 ldr r3,.L82+36
+ 636 007c FFF7FEFF 	 bl __aeabi_dmul
+ 637 0080 C5E90001 	 strd r0,[r5]
+ 638 0084 5D48     	 ldr r0,.L82+52
+ 639 0086 6569     	 ldr r5,[r4,#20]
+ 640 0088 FFF7FEFF 	 bl ADC_MEASUREMENT_GetResult
+ 641 008c FFF7FEFF 	 bl __aeabi_i2d
+ 642 0090 4DA3     	 adr r3,.L82
+ 643 0092 D3E90023 	 ldrd r2,[r3]
+ 644 0096 FFF7FEFF 	 bl __aeabi_ddiv
+ 645 009a 0022     	 movs r2,#0
+ 646 009c 524B     	 ldr r3,.L82+32
+ 647 009e FFF7FEFF 	 bl __aeabi_dmul
+ 648 00a2 0022     	 movs r2,#0
+ 649 00a4 514B     	 ldr r3,.L82+36
+ 650 00a6 FFF7FEFF 	 bl __aeabi_dmul
+ 651 00aa C5E90001 	 strd r0,[r5]
+ 652 00ae 5448     	 ldr r0,.L82+56
+ 653 00b0 2569     	 ldr r5,[r4,#16]
+ 654 00b2 FFF7FEFF 	 bl ADC_MEASUREMENT_GetResult
+ 655 00b6 FFF7FEFF 	 bl __aeabi_i2d
+ 656 00ba 43A3     	 adr r3,.L82
+ 657 00bc D3E90023 	 ldrd r2,[r3]
+ 658 00c0 FFF7FEFF 	 bl __aeabi_ddiv
+ 659 00c4 0022     	 movs r2,#0
+ 660 00c6 484B     	 ldr r3,.L82+32
+ 661 00c8 FFF7FEFF 	 bl __aeabi_dmul
+ 662 00cc 0022     	 movs r2,#0
+ 663 00ce 474B     	 ldr r3,.L82+36
+ 664 00d0 FFF7FEFF 	 bl __aeabi_dmul
+ 665 00d4 C5E90001 	 strd r0,[r5]
+ 666 00d8 4A48     	 ldr r0,.L82+60
+ 667 00da E568     	 ldr r5,[r4,#12]
+ 668 00dc FFF7FEFF 	 bl ADC_MEASUREMENT_GetResult
+ 669 00e0 FFF7FEFF 	 bl __aeabi_i2d
+ 670 00e4 38A3     	 adr r3,.L82
+ 671 00e6 D3E90023 	 ldrd r2,[r3]
+ 672 00ea FFF7FEFF 	 bl __aeabi_ddiv
+ 673 00ee 0022     	 movs r2,#0
+ 674 00f0 3D4B     	 ldr r3,.L82+32
+ 675 00f2 FFF7FEFF 	 bl __aeabi_dmul
+ 676 00f6 0022     	 movs r2,#0
+ 677 00f8 3C4B     	 ldr r3,.L82+36
+ 678 00fa FFF7FEFF 	 bl __aeabi_dmul
+ 679 00fe C5E90001 	 strd r0,[r5]
+ 680 0102 4148     	 ldr r0,.L82+64
+ 681 0104 6568     	 ldr r5,[r4,#4]
+ 682 0106 FFF7FEFF 	 bl ADC_MEASUREMENT_GetResult
+ 683 010a FFF7FEFF 	 bl __aeabi_i2d
+ 684 010e 2EA3     	 adr r3,.L82
+ 685 0110 D3E90023 	 ldrd r2,[r3]
+ 686 0114 FFF7FEFF 	 bl __aeabi_ddiv
+ 687 0118 0022     	 movs r2,#0
+ 688 011a 334B     	 ldr r3,.L82+32
+ 689 011c FFF7FEFF 	 bl __aeabi_dmul
+ 690 0120 0022     	 movs r2,#0
+ 691 0122 324B     	 ldr r3,.L82+36
+ 692 0124 FFF7FEFF 	 bl __aeabi_dmul
+ 693 0128 C5E90001 	 strd r0,[r5]
+ 694 012c 3748     	 ldr r0,.L82+68
+ 695 012e A56B     	 ldr r5,[r4,#56]
+ 696 0130 FFF7FEFF 	 bl ADC_MEASUREMENT_GetResult
+ 697 0134 FFF7FEFF 	 bl __aeabi_ui2d
+ 698 0138 FFF7FEFF 	 bl NTC_Calc
+ 699 013c C5E90001 	 strd r0,[r5]
+ 700 0140 3348     	 ldr r0,.L82+72
+ 701 0142 E56B     	 ldr r5,[r4,#60]
+ 702 0144 FFF7FEFF 	 bl ADC_MEASUREMENT_GetResult
+ 703 0148 FFF7FEFF 	 bl __aeabi_i2d
+ 704 014c 1EA3     	 adr r3,.L82
+ 705 014e D3E90023 	 ldrd r2,[r3]
+ 706 0152 FFF7FEFF 	 bl __aeabi_ddiv
+ 707 0156 20A3     	 adr r3,.L82+16
+ 708 0158 D3E90023 	 ldrd r2,[r3]
+ 709 015c FFF7FEFF 	 bl __aeabi_dmul
+ 710 0160 0022     	 movs r2,#0
+ 711 0162 224B     	 ldr r3,.L82+36
+ 712 0164 FFF7FEFF 	 bl __aeabi_dmul
+ 713 0168 C5E90001 	 strd r0,[r5]
+ 714 016c 2948     	 ldr r0,.L82+76
+ 715 016e 256C     	 ldr r5,[r4,#64]
+ 716 0170 FFF7FEFF 	 bl ADC_MEASUREMENT_GetResult
+ 717 0174 FFF7FEFF 	 bl __aeabi_i2d
+ 718 0178 13A3     	 adr r3,.L82
+ 719 017a D3E90023 	 ldrd r2,[r3]
+ 720 017e FFF7FEFF 	 bl __aeabi_ddiv
+ 721 0182 15A3     	 adr r3,.L82+16
+ 722 0184 D3E90023 	 ldrd r2,[r3]
+ 723 0188 FFF7FEFF 	 bl __aeabi_dmul
+ 724 018c 0022     	 movs r2,#0
+ 725 018e 174B     	 ldr r3,.L82+36
+ 726 0190 FFF7FEFF 	 bl __aeabi_dmul
+ 727 0194 C5E90001 	 strd r0,[r5]
+ 728 0198 1F48     	 ldr r0,.L82+80
+ 729 019a 646C     	 ldr r4,[r4,#68]
+ 730 019c FFF7FEFF 	 bl ADC_MEASUREMENT_GetResult
+ 731 01a0 FFF7FEFF 	 bl __aeabi_i2d
+ 732 01a4 08A3     	 adr r3,.L82
+ 733 01a6 D3E90023 	 ldrd r2,[r3]
+ 734 01aa FFF7FEFF 	 bl __aeabi_ddiv
+ 735 01ae 0AA3     	 adr r3,.L82+16
+ 736 01b0 D3E90023 	 ldrd r2,[r3]
+ 737 01b4 FFF7FEFF 	 bl __aeabi_dmul
+ 738 01b8 0022     	 movs r2,#0
+ 739 01ba 0C4B     	 ldr r3,.L82+36
+ 740 01bc FFF7FEFF 	 bl __aeabi_dmul
+ 741 01c0 C4E90001 	 strd r0,[r4]
+ 742 01c4 38BD     	 pop {r3,r4,r5,pc}
+ 743              	.L83:
+ 744 01c6 00BF     	 .align 3
+ 745              	.L82:
+ 746 01c8 00000000 	 .word 0
+ 747 01cc 00FEAF40 	 .word 1085275648
+ 748 01d0 9A999999 	 .word -1717986918
+ 749 01d4 99992D40 	 .word 1076730265
+ 750 01d8 66666666 	 .word 1717986918
+ 751 01dc 66660A40 	 .word 1074423398
+ 752 01e0 00000000 	 .word IOportData
+ 753 01e4 00000000 	 .word ADC_MEASUREMENT_Channel_A_handle
+ 754 01e8 00001440 	 .word 1075052544
+ 755 01ec 00408F40 	 .word 1083129856
+ 756 01f0 00000000 	 .word ADC_MEASUREMENT_Channel_B_handle
+ 757 01f4 00000000 	 .word ADC_MEASUREMENT_Channel_C_handle
+ 758 01f8 00002840 	 .word 1076363264
+ 759 01fc 00000000 	 .word ADC_MEASUREMENT_Channel_D_handle
+ 760 0200 00000000 	 .word ADC_MEASUREMENT_Channel_E_handle
+ 761 0204 00000000 	 .word ADC_MEASUREMENT_Channel_F_handle
+ 762 0208 00000000 	 .word ADC_MEASUREMENT_Channel_G_handle
+ 763 020c 00000000 	 .word ADC_MEASUREMENT_Channel_H_handle
+ 764 0210 00000000 	 .word ADC_MEASUREMENT_Channel_I_handle
+ 765 0214 00000000 	 .word ADC_MEASUREMENT_Channel_J_handle
+ 766 0218 00000000 	 .word ADC_MEASUREMENT_Channel_K_handle
+ 768 021c AFF30080 	 .section .text.setMHJ9Freq,"ax",%progbits
+ 769              	 .align 1
+ 770              	 .global setMHJ9Freq
+ 771              	 .thumb
+ 772              	 .thumb_func
+ 774              	setMHJ9Freq:
+ 775              	 
+ 776              	 
+ 777 0000 10B5     	 push {r4,lr}
+ 778 0002 234C     	 ldr r4,.L90+8
+ 779 0004 E36D     	 ldr r3,[r4,#92]
+ 780 0006 1888     	 ldrh r0,[r3]
+ 781 0008 41F65733 	 movw r3,#6999
+ 782 000c 9842     	 cmp r0,r3
+ 783 000e 19D8     	 bhi .L85
+ 784 0010 FFF7FEFF 	 bl __aeabi_i2d
+ 785 0014 1CA3     	 adr r3,.L90
+ 786 0016 D3E90023 	 ldrd r2,[r3]
+ 787 001a FFF7FEFF 	 bl __aeabi_ddiv
+ 788 001e 0022     	 movs r2,#0
+ 789 0020 1C4B     	 ldr r3,.L90+12
+ 790 0022 FFF7FEFF 	 bl __aeabi_dmul
+ 791 0026 FFF7FEFF 	 bl __aeabi_d2uiz
+ 792 002a 0146     	 mov r1,r0
+ 793 002c 1A48     	 ldr r0,.L90+16
+ 794 002e FFF7FEFF 	 bl PWM_SetFreq
+ 795 0032 E36D     	 ldr r3,[r4,#92]
+ 796 0034 1A88     	 ldrh r2,[r3]
+ 797 0036 40F6B733 	 movw r3,#2999
+ 798 003a 9A42     	 cmp r2,r3
+ 799 003c 06D8     	 bhi .L86
+ 800 003e 1648     	 ldr r0,.L90+16
+ 801 0040 0F21     	 movs r1,#15
+ 802 0042 01E0     	 b .L88
+ 803              	.L85:
+ 804 0044 1448     	 ldr r0,.L90+16
+ 805 0046 6421     	 movs r1,#100
+ 806              	.L88:
+ 807 0048 FFF7FEFF 	 bl PWM_SetFreq
+ 808              	.L86:
+ 809 004c 236E     	 ldr r3,[r4,#96]
+ 810 004e 1888     	 ldrh r0,[r3]
+ 811 0050 41F65733 	 movw r3,#6999
+ 812 0054 9842     	 cmp r0,r3
+ 813 0056 0FD8     	 bhi .L87
+ 814 0058 FFF7FEFF 	 bl __aeabi_i2d
+ 815 005c 0AA3     	 adr r3,.L90
+ 816 005e D3E90023 	 ldrd r2,[r3]
+ 817 0062 FFF7FEFF 	 bl __aeabi_ddiv
+ 818 0066 0022     	 movs r2,#0
+ 819 0068 0A4B     	 ldr r3,.L90+12
+ 820 006a FFF7FEFF 	 bl __aeabi_dmul
+ 821 006e FFF7FEFF 	 bl __aeabi_d2uiz
+ 822 0072 0146     	 mov r1,r0
+ 823 0074 0948     	 ldr r0,.L90+20
+ 824 0076 01E0     	 b .L89
+ 825              	.L87:
+ 826 0078 0848     	 ldr r0,.L90+20
+ 827 007a 6421     	 movs r1,#100
+ 828              	.L89:
+ 829 007c BDE81040 	 pop {r4,lr}
+ 830 0080 FFF7FEBF 	 b PWM_SetFreq
+ 831              	.L91:
+ 832 0084 AFF30080 	 .align 3
+ 833              	.L90:
+ 834 0088 00000000 	 .word 0
+ 835 008c 0058BB40 	 .word 1086019584
+ 836 0090 00000000 	 .word IOportData
+ 837 0094 00005940 	 .word 1079574528
+ 838 0098 00000000 	 .word PWM_MHJ9_IN
+ 839 009c 00000000 	 .word PWM_MHJ9_OUT
+ 841              	 .comm busio_read,2,2
+ 842              	 .comm output_pins,4,4
+ 843              	 .comm shiftDownInterrupt,1,1
+ 844              	 .comm shiftUpInterrupt,1,1
+ 845              	 .comm VAR_TR3_VSense_FAN2,8,8
+ 846              	 .comm VAR_TR2_VSense_FAN1,8,8
+ 847              	 .comm VAR_TR1_VSense_WP,8,8
+ 848              	 .comm VAR_boardTemp,8,8
+ 849              	 .ident "GCC: (GNU Tools for ARM Embedded Processors) 4.9.3 20141119 (release) [ARM/embedded-4_9-branch revision 218278]"
+DEFINED SYMBOLS
+                            *ABS*:00000000 IO_Port.c
+    {standard input}:17     .text.IOPort_ini:00000000 $t
+    {standard input}:22     .text.IOPort_ini:00000000 IOPort_ini
+    {standard input}:98     .text.IOPort_ini:000000c0 $d
+                            *COM*:00000008 VAR_boardTemp
+                            *COM*:00000008 VAR_TR1_VSense_WP
+                            *COM*:00000008 VAR_TR2_VSense_FAN1
+                            *COM*:00000008 VAR_TR3_VSense_FAN2
+                            *COM*:00000004 output_pins
+                            *COM*:00000002 busio_read
+    {standard input}:108    .text.IOPort_readDINS:00000000 $t
+    {standard input}:113    .text.IOPort_readDINS:00000000 IOPort_readDINS
+    {standard input}:141    .text.IOPort_readDINS:00000038 $d
+    {standard input}:146    .text.ERU0_3_IRQHandler:00000000 $t
+    {standard input}:151    .text.ERU0_3_IRQHandler:00000000 ERU0_3_IRQHandler
+    {standard input}:175    .text.ERU0_3_IRQHandler:00000028 $d
+                            *COM*:00000001 shiftUpInterrupt
+                            *COM*:00000001 shiftDownInterrupt
+    {standard input}:181    .text.ManualControl_setDOUTS:00000000 $t
+    {standard input}:186    .text.ManualControl_setDOUTS:00000000 ManualControl_setDOUTS
+    {standard input}:234    .text.ManualControl_setDOUTS:0000005c $d
+    {standard input}:238    .text.IOPort_setDOUTS:00000000 $t
+    {standard input}:243    .text.IOPort_setDOUTS:00000000 IOPort_setDOUTS
+    {standard input}:277    .text.IOPort_setDOUTS:00000044 $d
+    {standard input}:283    .text.ManualControl_setPWMOUTS:00000000 $t
+    {standard input}:288    .text.ManualControl_setPWMOUTS:00000000 ManualControl_setPWMOUTS
+    {standard input}:376    .text.ManualControl_setPWMOUTS:000000fc $d
+    {standard input}:382    .text.IOPort_setPWMOUTS:00000000 $t
+    {standard input}:387    .text.IOPort_setPWMOUTS:00000000 IOPort_setPWMOUTS
+    {standard input}:455    .text.IOPort_setPWMOUTS:000000d0 $d
+    {standard input}:470    .text.NTC_Calc:00000000 $t
+    {standard input}:475    .text.NTC_Calc:00000000 NTC_Calc
+    {standard input}:566    .text.NTC_Calc:000000f0 $d
+    {standard input}:586    .text.IOPort_readAINS:00000000 $t
+    {standard input}:591    .text.IOPort_readAINS:00000000 IOPort_readAINS
+    {standard input}:746    .text.IOPort_readAINS:000001c8 $d
+    {standard input}:769    .text.setMHJ9Freq:00000000 $t
+    {standard input}:774    .text.setMHJ9Freq:00000000 setMHJ9Freq
+    {standard input}:834    .text.setMHJ9Freq:00000088 $d
+    {standard input}:768    .text.IOPort_readAINS:0000021c $t
+
+UNDEFINED SYMBOLS
+VCU_DW
+IOportData
+BUS_IO_Read
+getbits
+checkRangePlausi
+BUS_IO_Input
+Signal_UpShift
+Signal_DownShift
+canData
+BUS_IO_Write
+BUS_IO
+PWM_SetDutyCycle
+PWM_MHJ9_IN
+PWM_MHJ9_OUT
+PWM_Waterpump
+PWM_Fans1
+PWM_Fans2
+__aeabi_dmul
+__aeabi_ddiv
+__aeabi_d2uiz
+__aeabi_f2d
+memset
+__aeabi_i2d
+__aeabi_ui2d
+ADC_MEASUREMENT_GetResult
+ADC_MEASUREMENT_Channel_A_handle
+ADC_MEASUREMENT_Channel_B_handle
+ADC_MEASUREMENT_Channel_C_handle
+ADC_MEASUREMENT_Channel_D_handle
+ADC_MEASUREMENT_Channel_E_handle
+ADC_MEASUREMENT_Channel_F_handle
+ADC_MEASUREMENT_Channel_G_handle
+ADC_MEASUREMENT_Channel_H_handle
+ADC_MEASUREMENT_Channel_I_handle
+ADC_MEASUREMENT_Channel_J_handle
+ADC_MEASUREMENT_Channel_K_handle
+PWM_SetFreq

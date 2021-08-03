@@ -1,0 +1,102 @@
+   1              	 .syntax unified
+   2              	 .cpu cortex-m4
+   3              	 .eabi_attribute 27,3
+   4              	 .fpu fpv4-sp-d16
+   5              	 .eabi_attribute 20,1
+   6              	 .eabi_attribute 21,1
+   7              	 .eabi_attribute 23,3
+   8              	 .eabi_attribute 24,1
+   9              	 .eabi_attribute 25,1
+  10              	 .eabi_attribute 26,1
+  11              	 .eabi_attribute 30,6
+  12              	 .eabi_attribute 34,1
+  13              	 .eabi_attribute 18,4
+  14              	 .thumb
+  15              	 .file "digital_io_conf.c"
+  16              	 .text
+  17              	.Ltext0:
+  18              	 .cfi_sections .debug_frame
+  19              	 .global DIGITAL_IO_Debug_LED
+  20              	 .section .rodata.DIGITAL_IO_Debug_LED,"a",%progbits
+  21              	 .align 2
+  24              	DIGITAL_IO_Debug_LED:
+  25 0000 00800248 	 .word 1208123392
+  26 0004 80       	 .byte -128
+  27 0005 000000   	 .space 3
+  28 0008 01000000 	 .word 1
+  29 000c 00000000 	 .space 4
+  30 0010 02       	 .byte 2
+  31 0011 00       	 .byte 0
+  32 0012 0000     	 .space 2
+  33              	 .global CAN1_Res
+  34              	 .section .rodata.CAN1_Res,"a",%progbits
+  35              	 .align 2
+  38              	CAN1_Res:
+  39 0000 00810248 	 .word 1208123648
+  40 0004 80       	 .byte -128
+  41 0005 000000   	 .space 3
+  42 0008 01000000 	 .word 1
+  43 000c 00000000 	 .space 4
+  44 0010 06       	 .byte 6
+  45 0011 00       	 .byte 0
+  46 0012 0000     	 .space 2
+  47              	 .global CAN2_Res
+  48              	 .section .rodata.CAN2_Res,"a",%progbits
+  49              	 .align 2
+  52              	CAN2_Res:
+  53 0000 00810248 	 .word 1208123648
+  54 0004 80       	 .byte -128
+  55 0005 000000   	 .space 3
+  56 0008 01000000 	 .word 1
+  57 000c 00000000 	 .space 4
+  58 0010 0E       	 .byte 14
+  59 0011 00       	 .byte 0
+  60 0012 0000     	 .space 2
+  61              	 .global Signal_DownShift
+  62              	 .section .rodata.Signal_DownShift,"a",%progbits
+  63              	 .align 2
+  66              	Signal_DownShift:
+  67 0000 00830248 	 .word 1208124160
+  68 0004 08       	 .byte 8
+  69 0005 00000000 	 .space 11
+  69      00000000 
+  69      000000
+  70 0010 02       	 .byte 2
+  71 0011 00       	 .byte 0
+  72 0012 0000     	 .space 2
+  73              	 .global Signal_UpShift
+  74              	 .section .rodata.Signal_UpShift,"a",%progbits
+  75              	 .align 2
+  78              	Signal_UpShift:
+  79 0000 00830248 	 .word 1208124160
+  80 0004 08       	 .byte 8
+  81 0005 00000000 	 .space 11
+  81      00000000 
+  81      000000
+  82 0010 01       	 .byte 1
+  83 0011 00       	 .byte 0
+  84 0012 0000     	 .space 2
+  85              	 .text
+  86              	.Letext0:
+  87              	 .file 1 "c:\\dave\\dave-ide-4.4.2-64bit\\eclipse\\arm-gcc-49\\arm-none-eabi\\include\\machine\\_default_types.h"
+  88              	 .file 2 "c:\\dave\\dave-ide-4.4.2-64bit\\eclipse\\arm-gcc-49\\arm-none-eabi\\include\\stdint.h"
+  89              	 .file 3 "C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_07_21_VCU_jr20_Source/2021_07_21_VCU_jr20_Source/Libraries/XMCLib/inc/xmc_gpio.h"
+  90              	 .file 4 "C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_07_21_VCU_jr20_Source/2021_07_21_VCU_jr20_Source/Libraries/XMCLib/inc/xmc4_gpio.h"
+  91              	 .file 5 "../Dave/Generated/DIGITAL_IO/digital_io.h"
+  92              	 .file 6 "C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_07_21_VCU_jr20_Source/2021_07_21_VCU_jr20_Source/Libraries/CMSIS/Include/cmsis_gcc.h"
+  93              	 .file 7 "C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/03_VCUJR20/2021_07_21_VCU_jr20_Source/2021_07_21_VCU_jr20_Source/Libraries/CMSIS/Include/core_cm4.h"
+  94              	 .file 8 "../Dave/Generated/DIGITAL_IO/digital_io_conf.c"
+DEFINED SYMBOLS
+                            *ABS*:00000000 digital_io_conf.c
+    {standard input}:24     .rodata.DIGITAL_IO_Debug_LED:00000000 DIGITAL_IO_Debug_LED
+    {standard input}:21     .rodata.DIGITAL_IO_Debug_LED:00000000 $d
+    {standard input}:38     .rodata.CAN1_Res:00000000 CAN1_Res
+    {standard input}:35     .rodata.CAN1_Res:00000000 $d
+    {standard input}:52     .rodata.CAN2_Res:00000000 CAN2_Res
+    {standard input}:49     .rodata.CAN2_Res:00000000 $d
+    {standard input}:66     .rodata.Signal_DownShift:00000000 Signal_DownShift
+    {standard input}:63     .rodata.Signal_DownShift:00000000 $d
+    {standard input}:78     .rodata.Signal_UpShift:00000000 Signal_UpShift
+    {standard input}:75     .rodata.Signal_UpShift:00000000 $d
+
+NO UNDEFINED SYMBOLS

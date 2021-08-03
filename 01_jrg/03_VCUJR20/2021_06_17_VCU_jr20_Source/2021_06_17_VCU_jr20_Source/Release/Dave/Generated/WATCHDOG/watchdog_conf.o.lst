@@ -1,0 +1,40 @@
+   1              	 .syntax unified
+   2              	 .cpu cortex-m4
+   3              	 .eabi_attribute 27,3
+   4              	 .fpu fpv4-sp-d16
+   5              	 .eabi_attribute 20,1
+   6              	 .eabi_attribute 21,1
+   7              	 .eabi_attribute 23,3
+   8              	 .eabi_attribute 24,1
+   9              	 .eabi_attribute 25,1
+  10              	 .eabi_attribute 26,1
+  11              	 .eabi_attribute 30,4
+  12              	 .eabi_attribute 34,1
+  13              	 .eabi_attribute 18,4
+  14              	 .thumb
+  15              	 .file "watchdog_conf.c"
+  16              	 .global WATCHDOG
+  17              	 .global WATCHDOG_Config
+  18              	 .section .data.WATCHDOG,"aw",%progbits
+  19              	 .align 2
+  22              	WATCHDOG:
+  23 0000 00000000 	 .word WATCHDOG_Config
+  24 0004 00       	 .byte 0
+  25 0005 000000   	 .space 3
+  26              	 .section .data.WATCHDOG_Config,"aw",%progbits
+  27              	 .align 2
+  30              	WATCHDOG_Config:
+  31 0000 00A24A04 	 .word 72000000
+  32 0004 00000000 	 .word 0
+  33 0008 02       	 .byte 2
+  34 0009 00       	 .byte 0
+  35 000a 0000     	 .space 2
+  36              	 .ident "GCC: (GNU Tools for ARM Embedded Processors) 4.9.3 20141119 (release) [ARM/embedded-4_9-branch revision 218278]"
+DEFINED SYMBOLS
+                            *ABS*:00000000 watchdog_conf.c
+    {standard input}:22     .data.WATCHDOG:00000000 WATCHDOG
+    {standard input}:30     .data.WATCHDOG_Config:00000000 WATCHDOG_Config
+    {standard input}:19     .data.WATCHDOG:00000000 $d
+    {standard input}:27     .data.WATCHDOG_Config:00000000 $d
+
+NO UNDEFINED SYMBOLS

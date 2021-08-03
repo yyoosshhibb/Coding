@@ -1,0 +1,346 @@
+   1              	 .syntax unified
+   2              	 .cpu cortex-m4
+   3              	 .eabi_attribute 27,3
+   4              	 .fpu fpv4-sp-d16
+   5              	 .eabi_attribute 20,1
+   6              	 .eabi_attribute 21,1
+   7              	 .eabi_attribute 23,3
+   8              	 .eabi_attribute 24,1
+   9              	 .eabi_attribute 25,1
+  10              	 .eabi_attribute 26,1
+  11              	 .eabi_attribute 30,4
+  12              	 .eabi_attribute 34,1
+  13              	 .eabi_attribute 18,4
+  14              	 .thumb
+  15              	 .file "Error_Handling.c"
+  16              	 .section .text.Watchdog_Start,"ax",%progbits
+  17              	 .align 1
+  18              	 .global Watchdog_Start
+  19              	 .thumb
+  20              	 .thumb_func
+  22              	Watchdog_Start:
+  23              	 
+  24              	 
+  25              	 
+  26 0000 024A     	 ldr r2,.L2
+  27 0002 5368     	 ldr r3,[r2,#4]
+  28 0004 43F00103 	 orr r3,r3,#1
+  29 0008 5360     	 str r3,[r2,#4]
+  30 000a 7047     	 bx lr
+  31              	.L3:
+  32              	 .align 2
+  33              	.L2:
+  34 000c 00800050 	 .word 1342210048
+  36              	 .section .text.Watchdog_Reset,"ax",%progbits
+  37              	 .align 1
+  38              	 .global Watchdog_Reset
+  39              	 .thumb
+  40              	 .thumb_func
+  42              	Watchdog_Reset:
+  43              	 
+  44              	 
+  45              	 
+  46 0000 024B     	 ldr r3,.L5
+  47 0002 0122     	 movs r2,#1
+  48 0004 DA61     	 str r2,[r3,#28]
+  49 0006 024A     	 ldr r2,.L5+4
+  50 0008 9A60     	 str r2,[r3,#8]
+  51 000a 7047     	 bx lr
+  52              	.L6:
+  53              	 .align 2
+  54              	.L5:
+  55 000c 00800050 	 .word 1342210048
+  56 0010 FECAADAB 	 .word -1414673666
+  58              	 .section .text.NMI_Handler,"ax",%progbits
+  59              	 .align 1
+  60              	 .global NMI_Handler
+  61              	 .thumb
+  62              	 .thumb_func
+  64              	NMI_Handler:
+  65              	 
+  66              	 
+  67 0000 104B     	 ldr r3,.L11
+  68 0002 1148     	 ldr r0,.L11+4
+  69 0004 197C     	 ldrb r1,[r3,#16]
+  70 0006 1A68     	 ldr r2,[r3]
+  71 0008 4FF48033 	 mov r3,#65536
+  72 000c 8B40     	 lsls r3,r3,r1
+  73 000e 10B5     	 push {r4,lr}
+  74 0010 3F21     	 movs r1,#63
+  75 0012 5360     	 str r3,[r2,#4]
+  76 0014 FFF7FEFF 	 bl setbitTrue
+  77 0018 0024     	 movs r4,#0
+  78              	.L8:
+  79 001a 0B4B     	 ldr r3,.L11+4
+  80 001c E200     	 lsls r2,r4,#3
+  81 001e D3E90001 	 ldrd r0,[r3]
+  82 0022 0732     	 adds r2,r2,#7
+  83 0024 0823     	 movs r3,#8
+  84 0026 FFF7FEFF 	 bl getbits64
+  85 002a 0849     	 ldr r1,.L11+8
+  86 002c 0855     	 strb r0,[r1,r4]
+  87 002e 0134     	 adds r4,r4,#1
+  88 0030 082C     	 cmp r4,#8
+  89 0032 F2D1     	 bne .L8
+  90 0034 0648     	 ldr r0,.L11+12
+  91 0036 FFF7FEFF 	 bl CAN_NODE_MO_UpdateData
+  92 003a 0548     	 ldr r0,.L11+12
+  93 003c BDE81040 	 pop {r4,lr}
+  94 0040 FFF7FEBF 	 b CAN_NODE_MO_Transmit
+  95              	.L12:
+  96              	 .align 2
+  97              	.L11:
+  98 0044 00000000 	 .word DIGITAL_IO_Debug_LED
+  99 0048 50010000 	 .word canData+336
+ 100 004c 00000000 	 .word .LANCHOR0
+ 101 0050 00000000 	 .word CAN_2_LMO_11_Config
+ 103              	 .global __aeabi_d2uiz
+ 104              	 .section .text.checkRangePlausi,"ax",%progbits
+ 105              	 .align 1
+ 106              	 .global checkRangePlausi
+ 107              	 .thumb
+ 108              	 .thumb_func
+ 110              	checkRangePlausi:
+ 111              	 
+ 112              	 
+ 113 0000 70B5     	 push {r4,r5,r6,lr}
+ 114 0002 504A     	 ldr r2,.L48
+ 115 0004 1278     	 ldrb r2,[r2]
+ 116 0006 0646     	 mov r6,r0
+ 117 0008 002A     	 cmp r2,#0
+ 118 000a 00F09880 	 beq .L41
+ 119 000e 4D1E     	 subs r5,r1,#1
+ 120 0010 162D     	 cmp r5,#22
+ 121 0012 00F28180 	 bhi .L15
+ 122 0016 DFE805F0 	 tbb [pc,r5]
+ 123              	.L17:
+ 124 001a 0C       	 .byte (.L16-.L17)/2
+ 125 001b 0F       	 .byte (.L18-.L17)/2
+ 126 001c 13       	 .byte (.L19-.L17)/2
+ 127 001d 1A       	 .byte (.L20-.L17)/2
+ 128 001e 1F       	 .byte (.L21-.L17)/2
+ 129 001f 24       	 .byte (.L22-.L17)/2
+ 130 0020 2A       	 .byte (.L23-.L17)/2
+ 131 0021 2E       	 .byte (.L24-.L17)/2
+ 132 0022 35       	 .byte (.L25-.L17)/2
+ 133 0023 39       	 .byte (.L26-.L17)/2
+ 134 0024 3D       	 .byte (.L27-.L17)/2
+ 135 0025 40       	 .byte (.L28-.L17)/2
+ 136 0026 46       	 .byte (.L29-.L17)/2
+ 137 0027 4A       	 .byte (.L30-.L17)/2
+ 138 0028 54       	 .byte (.L31-.L17)/2
+ 139 0029 58       	 .byte (.L32-.L17)/2
+ 140 002a 5E       	 .byte (.L33-.L17)/2
+ 141 002b 61       	 .byte (.L34-.L17)/2
+ 142 002c 64       	 .byte (.L36-.L17)/2
+ 143 002d 64       	 .byte (.L36-.L17)/2
+ 144 002e 69       	 .byte (.L37-.L17)/2
+ 145 002f 73       	 .byte (.L38-.L17)/2
+ 146 0030 76       	 .byte (.L39-.L17)/2
+ 147 0031 00       	 .p2align 1
+ 148              	.L16:
+ 149 0032 454B     	 ldr r3,.L48+4
+ 150 0034 1B68     	 ldr r3,[r3]
+ 151 0036 11E0     	 b .L42
+ 152              	.L18:
+ 153 0038 444B     	 ldr r3,.L48+8
+ 154 003a D3F8D830 	 ldr r3,[r3,#216]
+ 155 003e 02E0     	 b .L44
+ 156              	.L19:
+ 157 0040 424B     	 ldr r3,.L48+8
+ 158 0042 D3F8D430 	 ldr r3,[r3,#212]
+ 159              	.L44:
+ 160 0046 1C88     	 ldrh r4,[r3]
+ 161              	.L46:
+ 162 0048 4FF4FA43 	 mov r3,#32000
+ 163 004c 64E0     	 b .L15
+ 164              	.L20:
+ 165 004e 3F4B     	 ldr r3,.L48+8
+ 166 0050 DB68     	 ldr r3,[r3,#12]
+ 167 0052 1C78     	 ldrb r4,[r3]
+ 168 0054 1823     	 movs r3,#24
+ 169 0056 5FE0     	 b .L15
+ 170              	.L21:
+ 171 0058 3B4B     	 ldr r3,.L48+4
+ 172 005a 1B6A     	 ldr r3,[r3,#32]
+ 173              	.L42:
+ 174 005c 1C78     	 ldrb r4,[r3]
+ 175 005e 0123     	 movs r3,#1
+ 176 0060 5AE0     	 b .L15
+ 177              	.L22:
+ 178 0062 3A4B     	 ldr r3,.L48+8
+ 179 0064 9B68     	 ldr r3,[r3,#8]
+ 180 0066 1C88     	 ldrh r4,[r3]
+ 181 0068 42F21073 	 movw r3,#10000
+ 182 006c 54E0     	 b .L15
+ 183              	.L23:
+ 184 006e 374B     	 ldr r3,.L48+8
+ 185 0070 D3F8C430 	 ldr r3,[r3,#196]
+ 186 0074 02E0     	 b .L45
+ 187              	.L24:
+ 188 0076 354B     	 ldr r3,.L48+8
+ 189 0078 D3F8C830 	 ldr r3,[r3,#200]
+ 190              	.L45:
+ 191 007c 1C88     	 ldrh r4,[r3]
+ 192 007e 4FF47063 	 mov r3,#3840
+ 193 0082 49E0     	 b .L15
+ 194              	.L25:
+ 195 0084 314B     	 ldr r3,.L48+8
+ 196 0086 D3F8CC30 	 ldr r3,[r3,#204]
+ 197 008a F7E7     	 b .L45
+ 198              	.L26:
+ 199 008c 2F4B     	 ldr r3,.L48+8
+ 200 008e D3F8D030 	 ldr r3,[r3,#208]
+ 201 0092 F3E7     	 b .L45
+ 202              	.L27:
+ 203 0094 2D4B     	 ldr r3,.L48+8
+ 204 0096 1B68     	 ldr r3,[r3]
+ 205 0098 01E0     	 b .L47
+ 206              	.L28:
+ 207 009a 2C4B     	 ldr r3,.L48+8
+ 208 009c 5B68     	 ldr r3,[r3,#4]
+ 209              	.L47:
+ 210 009e 1C78     	 ldrb r4,[r3]
+ 211 00a0 4FF47A73 	 mov r3,#1000
+ 212 00a4 38E0     	 b .L15
+ 213              	.L29:
+ 214 00a6 294B     	 ldr r3,.L48+8
+ 215 00a8 D3F88C30 	 ldr r3,[r3,#140]
+ 216 00ac CBE7     	 b .L44
+ 217              	.L30:
+ 218 00ae 264B     	 ldr r3,.L48+4
+ 219 00b0 5B68     	 ldr r3,[r3,#4]
+ 220 00b2 D3E90001 	 ldrd r0,[r3]
+ 221 00b6 FFF7FEFF 	 bl __aeabi_d2uiz
+ 222 00ba 41F27073 	 movw r3,#6000
+ 223 00be 0446     	 mov r4,r0
+ 224 00c0 2AE0     	 b .L15
+ 225              	.L31:
+ 226 00c2 224B     	 ldr r3,.L48+8
+ 227 00c4 9B6F     	 ldr r3,[r3,#120]
+ 228 00c6 1C78     	 ldrb r4,[r3]
+ 229 00c8 BEE7     	 b .L46
+ 230              	.L32:
+ 231 00ca 204B     	 ldr r3,.L48+8
+ 232 00cc D3F88030 	 ldr r3,[r3,#128]
+ 233 00d0 1C78     	 ldrb r4,[r3]
+ 234 00d2 6423     	 movs r3,#100
+ 235 00d4 20E0     	 b .L15
+ 236              	.L33:
+ 237 00d6 1D4B     	 ldr r3,.L48+8
+ 238 00d8 9B6E     	 ldr r3,[r3,#104]
+ 239 00da BFE7     	 b .L42
+ 240              	.L34:
+ 241 00dc 1B4B     	 ldr r3,.L48+8
+ 242 00de 5B6E     	 ldr r3,[r3,#100]
+ 243 00e0 BCE7     	 b .L42
+ 244              	.L36:
+ 245 00e2 1A4B     	 ldr r3,.L48+8
+ 246 00e4 9B6B     	 ldr r3,[r3,#56]
+ 247 00e6 1C78     	 ldrb r4,[r3]
+ 248 00e8 FA23     	 movs r3,#250
+ 249 00ea 15E0     	 b .L15
+ 250              	.L37:
+ 251 00ec 164B     	 ldr r3,.L48+4
+ 252 00ee 1B6B     	 ldr r3,[r3,#48]
+ 253 00f0 D3E90001 	 ldrd r0,[r3]
+ 254 00f4 FFF7FEFF 	 bl __aeabi_d2uiz
+ 255 00f8 44F62063 	 movw r3,#20000
+ 256 00fc 0446     	 mov r4,r0
+ 257 00fe 0BE0     	 b .L15
+ 258              	.L38:
+ 259 0100 114B     	 ldr r3,.L48+4
+ 260 0102 DB68     	 ldr r3,[r3,#12]
+ 261 0104 01E0     	 b .L43
+ 262              	.L39:
+ 263 0106 104B     	 ldr r3,.L48+4
+ 264 0108 5B6B     	 ldr r3,[r3,#52]
+ 265              	.L43:
+ 266 010a D3E90001 	 ldrd r0,[r3]
+ 267 010e FFF7FEFF 	 bl __aeabi_d2uiz
+ 268 0112 41F28833 	 movw r3,#5000
+ 269 0116 0446     	 mov r4,r0
+ 270              	.L15:
+ 271 0118 9E42     	 cmp r6,r3
+ 272 011a 09D8     	 bhi .L40
+ 273 011c 6D00     	 lsls r5,r5,#1
+ 274 011e 2946     	 mov r1,r5
+ 275 0120 0B48     	 ldr r0,.L48+12
+ 276 0122 FFF7FEFF 	 bl setbitFalse
+ 277 0126 0A48     	 ldr r0,.L48+12
+ 278 0128 691C     	 adds r1,r5,#1
+ 279 012a FFF7FEFF 	 bl setbitFalse
+ 280 012e 06E0     	 b .L41
+ 281              	.L40:
+ 282 0130 6900     	 lsls r1,r5,#1
+ 283 0132 0748     	 ldr r0,.L48+12
+ 284 0134 0131     	 adds r1,r1,#1
+ 285 0136 FFF7FEFF 	 bl setbitTrue
+ 286 013a 2046     	 mov r0,r4
+ 287 013c 70BD     	 pop {r4,r5,r6,pc}
+ 288              	.L41:
+ 289 013e 3046     	 mov r0,r6
+ 290 0140 70BD     	 pop {r4,r5,r6,pc}
+ 291              	.L49:
+ 292 0142 00BF     	 .align 2
+ 293              	.L48:
+ 294 0144 00000000 	 .word .LANCHOR1
+ 295 0148 00000000 	 .word IOportData
+ 296 014c 00000000 	 .word canData
+ 297 0150 50010000 	 .word canData+336
+ 299              	 .global checkRangePlausi_active
+ 300              	 .global plausi_error_array
+ 301              	 .comm shiftDownInterrupt,1,1
+ 302              	 .comm shiftUpInterrupt,1,1
+ 303              	 .comm VAR_TR3_VSense_FAN2,8,8
+ 304              	 .comm VAR_TR2_VSense_FAN1,8,8
+ 305              	 .comm VAR_TR1_VSense_WP,8,8
+ 306              	 .comm VAR_boardTemp,8,8
+ 307              	 .section .data.checkRangePlausi_active,"aw",%progbits
+ 308              	 .set .LANCHOR1,.+0
+ 311              	checkRangePlausi_active:
+ 312 0000 01       	 .byte 1
+ 313              	 .section .bss.plausi_error_array,"aw",%nobits
+ 314              	 .set .LANCHOR0,.+0
+ 317              	plausi_error_array:
+ 318 0000 00000000 	 .space 8
+ 318      00000000 
+ 319              	 .ident "GCC: (GNU Tools for ARM Embedded Processors) 4.9.3 20141119 (release) [ARM/embedded-4_9-branch revision 218278]"
+DEFINED SYMBOLS
+                            *ABS*:00000000 Error_Handling.c
+    {standard input}:17     .text.Watchdog_Start:00000000 $t
+    {standard input}:22     .text.Watchdog_Start:00000000 Watchdog_Start
+    {standard input}:34     .text.Watchdog_Start:0000000c $d
+    {standard input}:37     .text.Watchdog_Reset:00000000 $t
+    {standard input}:42     .text.Watchdog_Reset:00000000 Watchdog_Reset
+    {standard input}:55     .text.Watchdog_Reset:0000000c $d
+    {standard input}:59     .text.NMI_Handler:00000000 $t
+    {standard input}:64     .text.NMI_Handler:00000000 NMI_Handler
+    {standard input}:98     .text.NMI_Handler:00000044 $d
+    {standard input}:105    .text.checkRangePlausi:00000000 $t
+    {standard input}:110    .text.checkRangePlausi:00000000 checkRangePlausi
+    {standard input}:124    .text.checkRangePlausi:0000001a $d
+    {standard input}:294    .text.checkRangePlausi:00000144 $d
+    {standard input}:311    .data.checkRangePlausi_active:00000000 checkRangePlausi_active
+    {standard input}:317    .bss.plausi_error_array:00000000 plausi_error_array
+                            *COM*:00000001 shiftDownInterrupt
+                            *COM*:00000001 shiftUpInterrupt
+                            *COM*:00000008 VAR_TR3_VSense_FAN2
+                            *COM*:00000008 VAR_TR2_VSense_FAN1
+                            *COM*:00000008 VAR_TR1_VSense_WP
+                            *COM*:00000008 VAR_boardTemp
+    {standard input}:318    .bss.plausi_error_array:00000000 $d
+    {standard input}:147    .text.checkRangePlausi:00000031 $d
+    {standard input}:147    .text.checkRangePlausi:00000032 $t
+
+UNDEFINED SYMBOLS
+setbitTrue
+getbits64
+CAN_NODE_MO_UpdateData
+CAN_NODE_MO_Transmit
+DIGITAL_IO_Debug_LED
+canData
+CAN_2_LMO_11_Config
+__aeabi_d2uiz
+setbitFalse
+IOportData

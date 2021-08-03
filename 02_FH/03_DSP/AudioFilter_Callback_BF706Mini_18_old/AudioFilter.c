@@ -22,14 +22,17 @@ uint8_t i;
 
 extern fract16 CircBuffer[buffer_size];
 uint8_t n, buffer_index=0;
-fract32 out_buf;
+fract32 out_buf, out_bufB;
 fract16 coeff_ar[no_coeff]={
 #include "tabs.h"
 		};
-fract16 delay[5];
+fract16 delay[2]={-12176, -6664};			//5 for IIR Filter, 2 for IIR-Oscillator{-12176, -6664}
+fract16 delayB[2]={-7692, -1143};
 fract16 coeff_IIR_F[5]={1130, 2259, 1130};
 fract16 coeff_IIR_R[2]={-32767, 12353};
 fract16 coeff_IIR[5]={1130, 32767, 2259, -12353, 1130};			//A0, -B1, A1, -B2, A2	change sign of backwards coeffs because they get subtracted in the sum
+fract16 coeff_OSC[2] = {-16384, 29934};
+
 
 
 /* Compute filter response  */
@@ -45,12 +48,28 @@ void AudioFilter( fract32 dataIn[], fract32 dataOut[])
 	buffer_index = circindex(buffer_index,1,NO_SAMPLES);	//ensures that buffer_index is always between border
 
 */
-	delay[buffer_index] = (fract16)(dataIn[0]>>8);
+	//delay[buffer_index] = (fract16)(dataIn[0]>>8);
 
 	//n = buffer_index;
 
 	out_buf = 0;
+	out_bufB = 0;
 
+	for(i=0; i<2; i++)
+	{
+		out_buf += delay[buffer_index]*coeff_OSC[i]<<1;
+		out_bufB += delayB[buffer_index]*coeff_OSC[i]<<1;
+		buffer_index = circindex(buffer_index, 1, 2);
+	}
+
+	//out_buf = out_buf<<1;
+	//buffer_index = circindex(buffer_index, 1, 2);
+	delay[buffer_index]=out_buf>>15;
+	delayB[buffer_index]=out_bufB>>15;
+	dataOut[0] = out_buf >> 7;
+	dataOut[1] = out_bufB >> 7;
+	buffer_index = circindex(buffer_index, 1, 2);
+	/* IIR Filter
 	for(i = 0; i<5; i++)
 	{
 		out_buf += delay[buffer_index]*coeff_IIR[i]<<1;
@@ -63,7 +82,7 @@ void AudioFilter( fract32 dataIn[], fract32 dataOut[])
 
 	dataOut[0] = dataIn[0];
 	dataOut[1] = out_buf >> 8;
-
+	*/
 	/*FIR Filter
 	for(i=0; i<no_coeff; i++)
 	{

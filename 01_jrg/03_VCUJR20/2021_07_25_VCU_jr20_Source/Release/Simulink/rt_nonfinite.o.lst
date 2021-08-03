@@ -1,0 +1,189 @@
+   1              	 .syntax unified
+   2              	 .cpu cortex-m4
+   3              	 .eabi_attribute 27,3
+   4              	 .fpu fpv4-sp-d16
+   5              	 .eabi_attribute 20,1
+   6              	 .eabi_attribute 21,1
+   7              	 .eabi_attribute 23,3
+   8              	 .eabi_attribute 24,1
+   9              	 .eabi_attribute 25,1
+  10              	 .eabi_attribute 26,1
+  11              	 .eabi_attribute 30,4
+  12              	 .eabi_attribute 34,1
+  13              	 .eabi_attribute 18,4
+  14              	 .thumb
+  15              	 .file "rt_nonfinite.c"
+  16              	 .section .text.rt_InitInfAndNaN,"ax",%progbits
+  17              	 .align 1
+  18              	 .global rt_InitInfAndNaN
+  19              	 .thumb
+  20              	 .thumb_func
+  22              	rt_InitInfAndNaN:
+  23              	 
+  24              	 
+  25 0000 08B5     	 push {r3,lr}
+  26 0002 FFF7FEFF 	 bl rtGetNaN
+  27 0006 0D4B     	 ldr r3,.L2
+  28 0008 C3E90001 	 strd r0,[r3]
+  29 000c FFF7FEFF 	 bl rtGetNaNF
+  30 0010 0B4B     	 ldr r3,.L2+4
+  31 0012 1860     	 str r0,[r3]
+  32 0014 FFF7FEFF 	 bl rtGetInf
+  33 0018 0A4B     	 ldr r3,.L2+8
+  34 001a C3E90001 	 strd r0,[r3]
+  35 001e FFF7FEFF 	 bl rtGetInfF
+  36 0022 094B     	 ldr r3,.L2+12
+  37 0024 1860     	 str r0,[r3]
+  38 0026 FFF7FEFF 	 bl rtGetMinusInf
+  39 002a 084B     	 ldr r3,.L2+16
+  40 002c C3E90001 	 strd r0,[r3]
+  41 0030 FFF7FEFF 	 bl rtGetMinusInfF
+  42 0034 064B     	 ldr r3,.L2+20
+  43 0036 1860     	 str r0,[r3]
+  44 0038 08BD     	 pop {r3,pc}
+  45              	.L3:
+  46 003a 00BF     	 .align 2
+  47              	.L2:
+  48 003c 00000000 	 .word rtNaN
+  49 0040 00000000 	 .word rtNaNF
+  50 0044 00000000 	 .word rtInf
+  51 0048 00000000 	 .word rtInfF
+  52 004c 00000000 	 .word rtMinusInf
+  53 0050 00000000 	 .word rtMinusInfF
+  55              	 .global __aeabi_dcmpeq
+  56              	 .section .text.rtIsInf,"ax",%progbits
+  57              	 .align 1
+  58              	 .global rtIsInf
+  59              	 .thumb
+  60              	 .thumb_func
+  62              	rtIsInf:
+  63              	 
+  64              	 
+  65 0000 0B4B     	 ldr r3,.L9
+  66 0002 D0B5     	 push {r4,r6,r7,lr}
+  67 0004 D3E90023 	 ldrd r2,[r3]
+  68 0008 0646     	 mov r6,r0
+  69 000a 0F46     	 mov r7,r1
+  70 000c FFF7FEFF 	 bl __aeabi_dcmpeq
+  71 0010 60B9     	 cbnz r0,.L7
+  72 0012 084B     	 ldr r3,.L9+4
+  73 0014 3046     	 mov r0,r6
+  74 0016 3946     	 mov r1,r7
+  75 0018 D3E90023 	 ldrd r2,[r3]
+  76 001c 4FF00104 	 mov r4,#1
+  77 0020 FFF7FEFF 	 bl __aeabi_dcmpeq
+  78 0024 00B9     	 cbnz r0,.L6
+  79 0026 0446     	 mov r4,r0
+  80              	.L6:
+  81 0028 E0B2     	 uxtb r0,r4
+  82 002a D0BD     	 pop {r4,r6,r7,pc}
+  83              	.L7:
+  84 002c 0120     	 movs r0,#1
+  85 002e D0BD     	 pop {r4,r6,r7,pc}
+  86              	.L10:
+  87              	 .align 2
+  88              	.L9:
+  89 0030 00000000 	 .word rtInf
+  90 0034 00000000 	 .word rtMinusInf
+  92              	 .section .text.rtIsInfF,"ax",%progbits
+  93              	 .align 1
+  94              	 .global rtIsInfF
+  95              	 .thumb
+  96              	 .thumb_func
+  98              	rtIsInfF:
+  99              	 
+ 100              	 
+ 101              	 
+ 102 0000 0B4B     	 ldr r3,.L14
+ 103 0002 07EE900A 	 fmsr s15,r0
+ 104 0006 93ED007A 	 flds s14,[r3]
+ 105 000a F4EE477A 	 fcmps s15,s14
+ 106 000e F1EE10FA 	 fmstat
+ 107 0012 0AD0     	 beq .L13
+ 108 0014 074B     	 ldr r3,.L14+4
+ 109 0016 93ED007A 	 flds s14,[r3]
+ 110 001a F4EE477A 	 fcmps s15,s14
+ 111 001e F1EE10FA 	 fmstat
+ 112 0022 0CBF     	 ite eq
+ 113 0024 0120     	 moveq r0,#1
+ 114 0026 0020     	 movne r0,#0
+ 115 0028 7047     	 bx lr
+ 116              	.L13:
+ 117 002a 0120     	 movs r0,#1
+ 118 002c 7047     	 bx lr
+ 119              	.L15:
+ 120 002e 00BF     	 .align 2
+ 121              	.L14:
+ 122 0030 00000000 	 .word rtInfF
+ 123 0034 00000000 	 .word rtMinusInfF
+ 125              	 .section .text.rtIsNaN,"ax",%progbits
+ 126              	 .align 1
+ 127              	 .global rtIsNaN
+ 128              	 .thumb
+ 129              	 .thumb_func
+ 131              	rtIsNaN:
+ 132              	 
+ 133              	 
+ 134 0000 10B5     	 push {r4,lr}
+ 135 0002 0246     	 mov r2,r0
+ 136 0004 0B46     	 mov r3,r1
+ 137 0006 4FF00104 	 mov r4,#1
+ 138 000a FFF7FEFF 	 bl __aeabi_dcmpeq
+ 139 000e 08B1     	 cbz r0,.L17
+ 140 0010 4FF00004 	 mov r4,#0
+ 141              	.L17:
+ 142 0014 04F00100 	 and r0,r4,#1
+ 143 0018 10BD     	 pop {r4,pc}
+ 145              	 .section .text.rtIsNaNF,"ax",%progbits
+ 146              	 .align 1
+ 147              	 .global rtIsNaNF
+ 148              	 .thumb
+ 149              	 .thumb_func
+ 151              	rtIsNaNF:
+ 152              	 
+ 153              	 
+ 154              	 
+ 155 0000 07EE900A 	 fmsr s15,r0
+ 156 0004 F4EE677A 	 fcmps s15,s15
+ 157 0008 F1EE10FA 	 fmstat
+ 158 000c 14BF     	 ite ne
+ 159 000e 0120     	 movne r0,#1
+ 160 0010 0020     	 moveq r0,#0
+ 161 0012 7047     	 bx lr
+ 163              	 .comm rtNaNF,4,4
+ 164              	 .comm rtMinusInfF,4,4
+ 165              	 .comm rtInfF,4,4
+ 166              	 .comm rtNaN,8,8
+ 167              	 .comm rtMinusInf,8,8
+ 168              	 .comm rtInf,8,8
+ 169              	 .ident "GCC: (GNU Tools for ARM Embedded Processors) 4.9.3 20141119 (release) [ARM/embedded-4_9-branch revision 218278]"
+DEFINED SYMBOLS
+                            *ABS*:00000000 rt_nonfinite.c
+    {standard input}:17     .text.rt_InitInfAndNaN:00000000 $t
+    {standard input}:22     .text.rt_InitInfAndNaN:00000000 rt_InitInfAndNaN
+    {standard input}:48     .text.rt_InitInfAndNaN:0000003c $d
+                            *COM*:00000008 rtNaN
+                            *COM*:00000004 rtNaNF
+                            *COM*:00000008 rtInf
+                            *COM*:00000004 rtInfF
+                            *COM*:00000008 rtMinusInf
+                            *COM*:00000004 rtMinusInfF
+    {standard input}:57     .text.rtIsInf:00000000 $t
+    {standard input}:62     .text.rtIsInf:00000000 rtIsInf
+    {standard input}:89     .text.rtIsInf:00000030 $d
+    {standard input}:93     .text.rtIsInfF:00000000 $t
+    {standard input}:98     .text.rtIsInfF:00000000 rtIsInfF
+    {standard input}:122    .text.rtIsInfF:00000030 $d
+    {standard input}:126    .text.rtIsNaN:00000000 $t
+    {standard input}:131    .text.rtIsNaN:00000000 rtIsNaN
+    {standard input}:146    .text.rtIsNaNF:00000000 $t
+    {standard input}:151    .text.rtIsNaNF:00000000 rtIsNaNF
+
+UNDEFINED SYMBOLS
+rtGetNaN
+rtGetNaNF
+rtGetInf
+rtGetInfF
+rtGetMinusInf
+rtGetMinusInfF
+__aeabi_dcmpeq

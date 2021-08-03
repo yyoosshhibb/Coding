@@ -1,0 +1,90 @@
+   1              	 .syntax unified
+   2              	 .cpu cortex-m4
+   3              	 .eabi_attribute 27,3
+   4              	 .fpu fpv4-sp-d16
+   5              	 .eabi_attribute 20,1
+   6              	 .eabi_attribute 21,1
+   7              	 .eabi_attribute 23,3
+   8              	 .eabi_attribute 24,1
+   9              	 .eabi_attribute 25,1
+  10              	 .eabi_attribute 26,1
+  11              	 .eabi_attribute 30,4
+  12              	 .eabi_attribute 34,1
+  13              	 .eabi_attribute 18,4
+  14              	 .thumb
+  15              	 .file "digital_io_conf.c"
+  16              	 .global Signal_UpShift
+  17              	 .global Signal_DownShift
+  18              	 .global CAN2_Res
+  19              	 .global CAN1_Res
+  20              	 .global DIGITAL_IO_Debug_LED
+  21              	 .section .rodata.Signal_DownShift,"a",%progbits
+  22              	 .align 2
+  25              	Signal_DownShift:
+  26 0000 00830248 	 .word 1208124160
+  27 0004 08       	 .byte 8
+  28 0005 00000000 	 .space 11
+  28      00000000 
+  28      000000
+  29 0010 02       	 .byte 2
+  30 0011 00       	 .byte 0
+  31 0012 0000     	 .space 2
+  32              	 .section .rodata.CAN1_Res,"a",%progbits
+  33              	 .align 2
+  36              	CAN1_Res:
+  37 0000 00810248 	 .word 1208123648
+  38 0004 80       	 .byte -128
+  39 0005 000000   	 .space 3
+  40 0008 01000000 	 .word 1
+  41 000c 00000000 	 .space 4
+  42 0010 06       	 .byte 6
+  43 0011 00       	 .byte 0
+  44 0012 0000     	 .space 2
+  45              	 .section .rodata.CAN2_Res,"a",%progbits
+  46              	 .align 2
+  49              	CAN2_Res:
+  50 0000 00810248 	 .word 1208123648
+  51 0004 80       	 .byte -128
+  52 0005 000000   	 .space 3
+  53 0008 01000000 	 .word 1
+  54 000c 00000000 	 .space 4
+  55 0010 0E       	 .byte 14
+  56 0011 00       	 .byte 0
+  57 0012 0000     	 .space 2
+  58              	 .section .rodata.Signal_UpShift,"a",%progbits
+  59              	 .align 2
+  62              	Signal_UpShift:
+  63 0000 00830248 	 .word 1208124160
+  64 0004 08       	 .byte 8
+  65 0005 00000000 	 .space 11
+  65      00000000 
+  65      000000
+  66 0010 01       	 .byte 1
+  67 0011 00       	 .byte 0
+  68 0012 0000     	 .space 2
+  69              	 .section .rodata.DIGITAL_IO_Debug_LED,"a",%progbits
+  70              	 .align 2
+  73              	DIGITAL_IO_Debug_LED:
+  74 0000 00800248 	 .word 1208123392
+  75 0004 80       	 .byte -128
+  76 0005 000000   	 .space 3
+  77 0008 01000000 	 .word 1
+  78 000c 00000000 	 .space 4
+  79 0010 02       	 .byte 2
+  80 0011 00       	 .byte 0
+  81 0012 0000     	 .space 2
+  82              	 .ident "GCC: (GNU Tools for ARM Embedded Processors) 4.9.3 20141119 (release) [ARM/embedded-4_9-branch revision 218278]"
+DEFINED SYMBOLS
+                            *ABS*:00000000 digital_io_conf.c
+    {standard input}:62     .rodata.Signal_UpShift:00000000 Signal_UpShift
+    {standard input}:25     .rodata.Signal_DownShift:00000000 Signal_DownShift
+    {standard input}:49     .rodata.CAN2_Res:00000000 CAN2_Res
+    {standard input}:36     .rodata.CAN1_Res:00000000 CAN1_Res
+    {standard input}:73     .rodata.DIGITAL_IO_Debug_LED:00000000 DIGITAL_IO_Debug_LED
+    {standard input}:22     .rodata.Signal_DownShift:00000000 $d
+    {standard input}:33     .rodata.CAN1_Res:00000000 $d
+    {standard input}:46     .rodata.CAN2_Res:00000000 $d
+    {standard input}:59     .rodata.Signal_UpShift:00000000 $d
+    {standard input}:70     .rodata.DIGITAL_IO_Debug_LED:00000000 $d
+
+NO UNDEFINED SYMBOLS

@@ -1,0 +1,36 @@
+   1              	 .syntax unified
+   2              	 .cpu cortex-m4
+   3              	 .eabi_attribute 27,3
+   4              	 .fpu fpv4-sp-d16
+   5              	 .eabi_attribute 20,1
+   6              	 .eabi_attribute 21,1
+   7              	 .eabi_attribute 23,3
+   8              	 .eabi_attribute 24,1
+   9              	 .eabi_attribute 25,1
+  10              	 .eabi_attribute 26,1
+  11              	 .eabi_attribute 30,4
+  12              	 .eabi_attribute 34,1
+  13              	 .eabi_attribute 18,4
+  14              	 .thumb
+  15              	 .file "analog_io_conf.c"
+  16              	 .global ANALOG_IO_0
+  17              	 .section .rodata.ANALOG_IO_0,"a",%progbits
+  18              	 .align 2
+  21              	ANALOG_IO_0:
+  22 0000 00000000 	 .word 0
+  23 0004 00000000 	 .word ANALOG_IO_0_state
+  24 0008 008E0248 	 .word 1208126976
+  25 000c 04       	 .byte 4
+  26 000d 000000   	 .space 3
+  27              	 .section .bss.ANALOG_IO_0_state,"aw",%nobits
+  30              	ANALOG_IO_0_state:
+  31 0000 00       	 .space 1
+  32              	 .ident "GCC: (GNU Tools for ARM Embedded Processors) 4.9.3 20141119 (release) [ARM/embedded-4_9-branch revision 218278]"
+DEFINED SYMBOLS
+                            *ABS*:00000000 analog_io_conf.c
+    {standard input}:21     .rodata.ANALOG_IO_0:00000000 ANALOG_IO_0
+    {standard input}:18     .rodata.ANALOG_IO_0:00000000 $d
+    {standard input}:30     .bss.ANALOG_IO_0_state:00000000 ANALOG_IO_0_state
+    {standard input}:31     .bss.ANALOG_IO_0_state:00000000 $d
+
+NO UNDEFINED SYMBOLS

@@ -1,0 +1,375 @@
+   1              	 .syntax unified
+   2              	 .cpu cortex-m4
+   3              	 .eabi_attribute 27,3
+   4              	 .fpu fpv4-sp-d16
+   5              	 .eabi_attribute 20,1
+   6              	 .eabi_attribute 21,1
+   7              	 .eabi_attribute 23,3
+   8              	 .eabi_attribute 24,1
+   9              	 .eabi_attribute 25,1
+  10              	 .eabi_attribute 26,1
+  11              	 .eabi_attribute 30,6
+  12              	 .eabi_attribute 34,1
+  13              	 .eabi_attribute 18,4
+  14              	 .thumb
+  15              	 .file "rtGetInf.c"
+  16              	 .text
+  17              	.Ltext0:
+  18              	 .cfi_sections .debug_frame
+  19              	 .global __aeabi_f2d
+  20              	 .section .text.rtGetInf,"ax",%progbits
+  21              	 .align 2
+  22              	 .global rtGetInf
+  23              	 .thumb
+  24              	 .thumb_func
+  26              	rtGetInf:
+  27              	.LFB0:
+  28              	 .file 1 "../Simulink/rtGetInf.c"
+   1:../Simulink/rtGetInf.c **** /*
+   2:../Simulink/rtGetInf.c ****  * Academic License - for use in teaching, academic research, and meeting
+   3:../Simulink/rtGetInf.c ****  * course requirements at degree granting institutions only.  Not for
+   4:../Simulink/rtGetInf.c ****  * government, commercial, or other organizational use.
+   5:../Simulink/rtGetInf.c ****  *
+   6:../Simulink/rtGetInf.c ****  * File: rtGetInf.c
+   7:../Simulink/rtGetInf.c ****  *
+   8:../Simulink/rtGetInf.c ****  * Code generated for Simulink model : VCU.
+   9:../Simulink/rtGetInf.c ****  * Model version      : 1.313
+  10:../Simulink/rtGetInf.c ****  * Simulink Coder version    : 8.14 (R2018a) 06-Feb-2018
+  11:../Simulink/rtGetInf.c ****  * TLC version       : 8.14 (Feb 22 2018)
+  12:../Simulink/rtGetInf.c ****  * C/C++ source code generated on  : Sun Jul 25 17:15:57 2021
+  13:../Simulink/rtGetInf.c ****  *
+  14:../Simulink/rtGetInf.c ****  * Target selection: Infineon_XMC_Family.tlc
+  15:../Simulink/rtGetInf.c ****  * Embedded hardware selection: ARM Compatible->ARM Cortex
+  16:../Simulink/rtGetInf.c ****  * Code generation objectives: Unspecified
+  17:../Simulink/rtGetInf.c ****  * Validation result: Not run
+  18:../Simulink/rtGetInf.c ****  */
+  19:../Simulink/rtGetInf.c **** 
+  20:../Simulink/rtGetInf.c **** /*
+  21:../Simulink/rtGetInf.c ****  * Abstract:
+  22:../Simulink/rtGetInf.c ****  *      Function to initialize non-finite, Inf
+  23:../Simulink/rtGetInf.c ****  */
+  24:../Simulink/rtGetInf.c **** #include "rtGetInf.h"
+  25:../Simulink/rtGetInf.c **** #define NumBitsPerChar                 8U
+  26:../Simulink/rtGetInf.c **** 
+  27:../Simulink/rtGetInf.c **** /*
+  28:../Simulink/rtGetInf.c ****  * Initialize rtInf needed by the generated code.
+  29:../Simulink/rtGetInf.c ****  * Inf is initialized as non-signaling. Assumes IEEE.
+  30:../Simulink/rtGetInf.c ****  */
+  31:../Simulink/rtGetInf.c **** real_T rtGetInf(void)
+  32:../Simulink/rtGetInf.c **** {
+  29              	 .loc 1 32 0
+  30              	 .cfi_startproc
+  31              	 
+  32              	 
+  33 0000 80B5     	 push {r7,lr}
+  34              	.LCFI0:
+  35              	 .cfi_def_cfa_offset 8
+  36              	 .cfi_offset 7,-8
+  37              	 .cfi_offset 14,-4
+  38 0002 86B0     	 sub sp,sp,#24
+  39              	.LCFI1:
+  40              	 .cfi_def_cfa_offset 32
+  41 0004 00AF     	 add r7,sp,#0
+  42              	.LCFI2:
+  43              	 .cfi_def_cfa_register 7
+  33:../Simulink/rtGetInf.c ****   size_t bitsPerReal = sizeof(real_T) * (NumBitsPerChar);
+  44              	 .loc 1 33 0
+  45 0006 4023     	 movs r3,#64
+  46 0008 FB60     	 str r3,[r7,#12]
+  34:../Simulink/rtGetInf.c ****   real_T inf = 0.0;
+  47              	 .loc 1 34 0
+  48 000a 4FF00002 	 mov r2,#0
+  49 000e 4FF00003 	 mov r3,#0
+  50 0012 C7E90423 	 strd r2,[r7,#16]
+  35:../Simulink/rtGetInf.c ****   if (bitsPerReal == 32U) {
+  51              	 .loc 1 35 0
+  52 0016 FB68     	 ldr r3,[r7,#12]
+  53 0018 202B     	 cmp r3,#32
+  54 001a 0AD1     	 bne .L2
+  36:../Simulink/rtGetInf.c ****     inf = rtGetInfF();
+  55              	 .loc 1 36 0
+  56 001c FFF7FEFF 	 bl rtGetInfF
+  57 0020 0346     	 mov r3,r0
+  58 0022 1846     	 mov r0,r3
+  59 0024 FFF7FEFF 	 bl __aeabi_f2d
+  60 0028 0246     	 mov r2,r0
+  61 002a 0B46     	 mov r3,r1
+  62 002c C7E90423 	 strd r2,[r7,#16]
+  63 0030 07E0     	 b .L3
+  64              	.L2:
+  65              	.LBB2:
+  37:../Simulink/rtGetInf.c ****   } else {
+  38:../Simulink/rtGetInf.c ****     union {
+  39:../Simulink/rtGetInf.c ****       LittleEndianIEEEDouble bitVal;
+  40:../Simulink/rtGetInf.c ****       real_T fltVal;
+  41:../Simulink/rtGetInf.c ****     } tmpVal;
+  42:../Simulink/rtGetInf.c **** 
+  43:../Simulink/rtGetInf.c ****     tmpVal.bitVal.words.wordH = 0x7FF00000U;
+  66              	 .loc 1 43 0
+  67 0032 074B     	 ldr r3,.L5
+  68 0034 7B60     	 str r3,[r7,#4]
+  44:../Simulink/rtGetInf.c ****     tmpVal.bitVal.words.wordL = 0x00000000U;
+  69              	 .loc 1 44 0
+  70 0036 0023     	 movs r3,#0
+  71 0038 3B60     	 str r3,[r7]
+  45:../Simulink/rtGetInf.c ****     inf = tmpVal.fltVal;
+  72              	 .loc 1 45 0
+  73 003a D7E90023 	 ldrd r2,[r7]
+  74 003e C7E90423 	 strd r2,[r7,#16]
+  75              	.L3:
+  76              	.LBE2:
+  46:../Simulink/rtGetInf.c ****   }
+  47:../Simulink/rtGetInf.c **** 
+  48:../Simulink/rtGetInf.c ****   return inf;
+  77              	 .loc 1 48 0
+  78 0042 D7E90423 	 ldrd r2,[r7,#16]
+  49:../Simulink/rtGetInf.c **** }
+  79              	 .loc 1 49 0
+  80 0046 1046     	 mov r0,r2
+  81 0048 1946     	 mov r1,r3
+  82 004a 1837     	 adds r7,r7,#24
+  83              	.LCFI3:
+  84              	 .cfi_def_cfa_offset 8
+  85 004c BD46     	 mov sp,r7
+  86              	.LCFI4:
+  87              	 .cfi_def_cfa_register 13
+  88              	 
+  89 004e 80BD     	 pop {r7,pc}
+  90              	.L6:
+  91              	 .align 2
+  92              	.L5:
+  93 0050 0000F07F 	 .word 2146435072
+  94              	 .cfi_endproc
+  95              	.LFE0:
+  97              	 .section .text.rtGetInfF,"ax",%progbits
+  98              	 .align 2
+  99              	 .global rtGetInfF
+ 100              	 .thumb
+ 101              	 .thumb_func
+ 103              	rtGetInfF:
+ 104              	.LFB1:
+  50:../Simulink/rtGetInf.c **** 
+  51:../Simulink/rtGetInf.c **** /*
+  52:../Simulink/rtGetInf.c ****  * Initialize rtInfF needed by the generated code.
+  53:../Simulink/rtGetInf.c ****  * Inf is initialized as non-signaling. Assumes IEEE.
+  54:../Simulink/rtGetInf.c ****  */
+  55:../Simulink/rtGetInf.c **** real32_T rtGetInfF(void)
+  56:../Simulink/rtGetInf.c **** {
+ 105              	 .loc 1 56 0
+ 106              	 .cfi_startproc
+ 107              	 
+ 108              	 
+ 109              	 
+ 110 0000 80B4     	 push {r7}
+ 111              	.LCFI5:
+ 112              	 .cfi_def_cfa_offset 4
+ 113              	 .cfi_offset 7,-4
+ 114 0002 83B0     	 sub sp,sp,#12
+ 115              	.LCFI6:
+ 116              	 .cfi_def_cfa_offset 16
+ 117 0004 00AF     	 add r7,sp,#0
+ 118              	.LCFI7:
+ 119              	 .cfi_def_cfa_register 7
+  57:../Simulink/rtGetInf.c ****   IEEESingle infF;
+  58:../Simulink/rtGetInf.c ****   infF.wordL.wordLuint = 0x7F800000U;
+ 120              	 .loc 1 58 0
+ 121 0006 4FF0FF43 	 mov r3,#2139095040
+ 122 000a 7B60     	 str r3,[r7,#4]
+  59:../Simulink/rtGetInf.c ****   return infF.wordL.wordLreal;
+ 123              	 .loc 1 59 0
+ 124 000c 7B68     	 ldr r3,[r7,#4]
+  60:../Simulink/rtGetInf.c **** }
+ 125              	 .loc 1 60 0
+ 126 000e 1846     	 mov r0,r3
+ 127 0010 0C37     	 adds r7,r7,#12
+ 128              	.LCFI8:
+ 129              	 .cfi_def_cfa_offset 4
+ 130 0012 BD46     	 mov sp,r7
+ 131              	.LCFI9:
+ 132              	 .cfi_def_cfa_register 13
+ 133              	 
+ 134 0014 5DF8047B 	 ldr r7,[sp],#4
+ 135              	.LCFI10:
+ 136              	 .cfi_restore 7
+ 137              	 .cfi_def_cfa_offset 0
+ 138 0018 7047     	 bx lr
+ 139              	 .cfi_endproc
+ 140              	.LFE1:
+ 142 001a 00BF     	 .section .text.rtGetMinusInf,"ax",%progbits
+ 143              	 .align 2
+ 144              	 .global rtGetMinusInf
+ 145              	 .thumb
+ 146              	 .thumb_func
+ 148              	rtGetMinusInf:
+ 149              	.LFB2:
+  61:../Simulink/rtGetInf.c **** 
+  62:../Simulink/rtGetInf.c **** /*
+  63:../Simulink/rtGetInf.c ****  * Initialize rtMinusInf needed by the generated code.
+  64:../Simulink/rtGetInf.c ****  * Inf is initialized as non-signaling. Assumes IEEE.
+  65:../Simulink/rtGetInf.c ****  */
+  66:../Simulink/rtGetInf.c **** real_T rtGetMinusInf(void)
+  67:../Simulink/rtGetInf.c **** {
+ 150              	 .loc 1 67 0
+ 151              	 .cfi_startproc
+ 152              	 
+ 153              	 
+ 154 0000 80B5     	 push {r7,lr}
+ 155              	.LCFI11:
+ 156              	 .cfi_def_cfa_offset 8
+ 157              	 .cfi_offset 7,-8
+ 158              	 .cfi_offset 14,-4
+ 159 0002 86B0     	 sub sp,sp,#24
+ 160              	.LCFI12:
+ 161              	 .cfi_def_cfa_offset 32
+ 162 0004 00AF     	 add r7,sp,#0
+ 163              	.LCFI13:
+ 164              	 .cfi_def_cfa_register 7
+  68:../Simulink/rtGetInf.c ****   size_t bitsPerReal = sizeof(real_T) * (NumBitsPerChar);
+ 165              	 .loc 1 68 0
+ 166 0006 4023     	 movs r3,#64
+ 167 0008 FB60     	 str r3,[r7,#12]
+  69:../Simulink/rtGetInf.c ****   real_T minf = 0.0;
+ 168              	 .loc 1 69 0
+ 169 000a 4FF00002 	 mov r2,#0
+ 170 000e 4FF00003 	 mov r3,#0
+ 171 0012 C7E90423 	 strd r2,[r7,#16]
+  70:../Simulink/rtGetInf.c ****   if (bitsPerReal == 32U) {
+ 172              	 .loc 1 70 0
+ 173 0016 FB68     	 ldr r3,[r7,#12]
+ 174 0018 202B     	 cmp r3,#32
+ 175 001a 0AD1     	 bne .L10
+  71:../Simulink/rtGetInf.c ****     minf = rtGetMinusInfF();
+ 176              	 .loc 1 71 0
+ 177 001c FFF7FEFF 	 bl rtGetMinusInfF
+ 178 0020 0346     	 mov r3,r0
+ 179 0022 1846     	 mov r0,r3
+ 180 0024 FFF7FEFF 	 bl __aeabi_f2d
+ 181 0028 0246     	 mov r2,r0
+ 182 002a 0B46     	 mov r3,r1
+ 183 002c C7E90423 	 strd r2,[r7,#16]
+ 184 0030 07E0     	 b .L11
+ 185              	.L10:
+ 186              	.LBB3:
+  72:../Simulink/rtGetInf.c ****   } else {
+  73:../Simulink/rtGetInf.c ****     union {
+  74:../Simulink/rtGetInf.c ****       LittleEndianIEEEDouble bitVal;
+  75:../Simulink/rtGetInf.c ****       real_T fltVal;
+  76:../Simulink/rtGetInf.c ****     } tmpVal;
+  77:../Simulink/rtGetInf.c **** 
+  78:../Simulink/rtGetInf.c ****     tmpVal.bitVal.words.wordH = 0xFFF00000U;
+ 187              	 .loc 1 78 0
+ 188 0032 074B     	 ldr r3,.L13
+ 189 0034 7B60     	 str r3,[r7,#4]
+  79:../Simulink/rtGetInf.c ****     tmpVal.bitVal.words.wordL = 0x00000000U;
+ 190              	 .loc 1 79 0
+ 191 0036 0023     	 movs r3,#0
+ 192 0038 3B60     	 str r3,[r7]
+  80:../Simulink/rtGetInf.c ****     minf = tmpVal.fltVal;
+ 193              	 .loc 1 80 0
+ 194 003a D7E90023 	 ldrd r2,[r7]
+ 195 003e C7E90423 	 strd r2,[r7,#16]
+ 196              	.L11:
+ 197              	.LBE3:
+  81:../Simulink/rtGetInf.c ****   }
+  82:../Simulink/rtGetInf.c **** 
+  83:../Simulink/rtGetInf.c ****   return minf;
+ 198              	 .loc 1 83 0
+ 199 0042 D7E90423 	 ldrd r2,[r7,#16]
+  84:../Simulink/rtGetInf.c **** }
+ 200              	 .loc 1 84 0
+ 201 0046 1046     	 mov r0,r2
+ 202 0048 1946     	 mov r1,r3
+ 203 004a 1837     	 adds r7,r7,#24
+ 204              	.LCFI14:
+ 205              	 .cfi_def_cfa_offset 8
+ 206 004c BD46     	 mov sp,r7
+ 207              	.LCFI15:
+ 208              	 .cfi_def_cfa_register 13
+ 209              	 
+ 210 004e 80BD     	 pop {r7,pc}
+ 211              	.L14:
+ 212              	 .align 2
+ 213              	.L13:
+ 214 0050 0000F0FF 	 .word -1048576
+ 215              	 .cfi_endproc
+ 216              	.LFE2:
+ 218              	 .section .text.rtGetMinusInfF,"ax",%progbits
+ 219              	 .align 2
+ 220              	 .global rtGetMinusInfF
+ 221              	 .thumb
+ 222              	 .thumb_func
+ 224              	rtGetMinusInfF:
+ 225              	.LFB3:
+  85:../Simulink/rtGetInf.c **** 
+  86:../Simulink/rtGetInf.c **** /*
+  87:../Simulink/rtGetInf.c ****  * Initialize rtMinusInfF needed by the generated code.
+  88:../Simulink/rtGetInf.c ****  * Inf is initialized as non-signaling. Assumes IEEE.
+  89:../Simulink/rtGetInf.c ****  */
+  90:../Simulink/rtGetInf.c **** real32_T rtGetMinusInfF(void)
+  91:../Simulink/rtGetInf.c **** {
+ 226              	 .loc 1 91 0
+ 227              	 .cfi_startproc
+ 228              	 
+ 229              	 
+ 230              	 
+ 231 0000 80B4     	 push {r7}
+ 232              	.LCFI16:
+ 233              	 .cfi_def_cfa_offset 4
+ 234              	 .cfi_offset 7,-4
+ 235 0002 83B0     	 sub sp,sp,#12
+ 236              	.LCFI17:
+ 237              	 .cfi_def_cfa_offset 16
+ 238 0004 00AF     	 add r7,sp,#0
+ 239              	.LCFI18:
+ 240              	 .cfi_def_cfa_register 7
+  92:../Simulink/rtGetInf.c ****   IEEESingle minfF;
+  93:../Simulink/rtGetInf.c ****   minfF.wordL.wordLuint = 0xFF800000U;
+ 241              	 .loc 1 93 0
+ 242 0006 044B     	 ldr r3,.L17
+ 243 0008 7B60     	 str r3,[r7,#4]
+  94:../Simulink/rtGetInf.c ****   return minfF.wordL.wordLreal;
+ 244              	 .loc 1 94 0
+ 245 000a 7B68     	 ldr r3,[r7,#4]
+  95:../Simulink/rtGetInf.c **** }
+ 246              	 .loc 1 95 0
+ 247 000c 1846     	 mov r0,r3
+ 248 000e 0C37     	 adds r7,r7,#12
+ 249              	.LCFI19:
+ 250              	 .cfi_def_cfa_offset 4
+ 251 0010 BD46     	 mov sp,r7
+ 252              	.LCFI20:
+ 253              	 .cfi_def_cfa_register 13
+ 254              	 
+ 255 0012 5DF8047B 	 ldr r7,[sp],#4
+ 256              	.LCFI21:
+ 257              	 .cfi_restore 7
+ 258              	 .cfi_def_cfa_offset 0
+ 259 0016 7047     	 bx lr
+ 260              	.L18:
+ 261              	 .align 2
+ 262              	.L17:
+ 263 0018 000080FF 	 .word -8388608
+ 264              	 .cfi_endproc
+ 265              	.LFE3:
+ 267              	 .text
+ 268              	.Letext0:
+ 269              	 .file 2 "c:\\dave\\dave-ide-4.4.2-64bit\\eclipse\\arm-gcc-49\\lib\\gcc\\arm-none-eabi\\4.9.3\\include\\stddef.h"
+ 270              	 .file 3 "../Simulink/rtwtypes.h"
+ 271              	 .file 4 "../Simulink/rt_nonfinite.h"
+DEFINED SYMBOLS
+                            *ABS*:00000000 rtGetInf.c
+    {standard input}:21     .text.rtGetInf:00000000 $t
+    {standard input}:26     .text.rtGetInf:00000000 rtGetInf
+    {standard input}:103    .text.rtGetInfF:00000000 rtGetInfF
+    {standard input}:93     .text.rtGetInf:00000050 $d
+    {standard input}:98     .text.rtGetInfF:00000000 $t
+    {standard input}:143    .text.rtGetMinusInf:00000000 $t
+    {standard input}:148    .text.rtGetMinusInf:00000000 rtGetMinusInf
+    {standard input}:224    .text.rtGetMinusInfF:00000000 rtGetMinusInfF
+    {standard input}:214    .text.rtGetMinusInf:00000050 $d
+    {standard input}:219    .text.rtGetMinusInfF:00000000 $t
+    {standard input}:263    .text.rtGetMinusInfF:00000018 $d
+                     .debug_frame:00000010 $d
+
+UNDEFINED SYMBOLS
+__aeabi_f2d

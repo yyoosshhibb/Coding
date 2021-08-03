@@ -1,0 +1,636 @@
+   1              	 .syntax unified
+   2              	 .cpu cortex-m4
+   3              	 .eabi_attribute 27,3
+   4              	 .fpu fpv4-sp-d16
+   5              	 .eabi_attribute 20,1
+   6              	 .eabi_attribute 21,1
+   7              	 .eabi_attribute 23,3
+   8              	 .eabi_attribute 24,1
+   9              	 .eabi_attribute 25,1
+  10              	 .eabi_attribute 26,1
+  11              	 .eabi_attribute 30,4
+  12              	 .eabi_attribute 34,1
+  13              	 .eabi_attribute 18,4
+  14              	 .thumb
+  15              	 .file "port.c"
+  16              	 .section .text.prvTaskExitError,"ax",%progbits
+  17              	 .align 1
+  18              	 .thumb
+  19              	 .thumb_func
+  21              	prvTaskExitError:
+  22              	 
+  23              	 
+  24              	 
+  25 0000 82B0     	 sub sp,sp,#8
+  26 0002 0023     	 movs r3,#0
+  27 0004 0193     	 str r3,[sp,#4]
+  28 0006 0D4B     	 ldr r3,.L8
+  29 0008 1B68     	 ldr r3,[r3]
+  30 000a 0133     	 adds r3,r3,#1
+  31 000c 08D0     	 beq .L2
+  32              	
+  33 000e 4FF0FC03 	 mov r3,#252
+  34 0012 83F31188 	 msr basepri,r3
+  35 0016 BFF36F8F 	 isb 
+  36 001a BFF34F8F 	 dsb 
+  37              	
+  38              	
+  39              	 .thumb
+  40              	.L3:
+  41 001e FEE7     	 b .L3
+  42              	.L2:
+  43              	
+  44 0020 4FF0FC03 	 mov r3,#252
+  45 0024 83F31188 	 msr basepri,r3
+  46 0028 BFF36F8F 	 isb 
+  47 002c BFF34F8F 	 dsb 
+  48              	
+  49              	
+  50              	 .thumb
+  51              	.L4:
+  52 0030 019B     	 ldr r3,[sp,#4]
+  53 0032 002B     	 cmp r3,#0
+  54 0034 FCD0     	 beq .L4
+  55 0036 02B0     	 add sp,sp,#8
+  56              	 
+  57 0038 7047     	 bx lr
+  58              	.L9:
+  59 003a 00BF     	 .align 2
+  60              	.L8:
+  61 003c 00000000 	 .word .LANCHOR0
+  63              	 .section .text.unlikely.prvPortStartFirstTask,"ax",%progbits
+  64              	 .align 1
+  65              	 .thumb
+  66              	 .thumb_func
+  68              	prvPortStartFirstTask:
+  69              	 
+  70              	 
+  71              	 
+  72              	
+  73 0000 0848     	 ldr r0,=0xE000ED08
+  74 0002 0068     	 ldr r0,[r0]
+  75 0004 0068     	 ldr r0,[r0]
+  76 0006 80F30888 	 msr msp,r0
+  77 000a 4FF00000 	 mov r0,#0
+  78 000e 80F31488 	 msr control,r0
+  79 0012 62B6     	 cpsie i
+  80 0014 61B6     	 cpsie f
+  81 0016 BFF34F8F 	 dsb 
+  82 001a BFF36F8F 	 isb 
+  83 001e 00DF     	 svc 0
+  84 0020 00BF     	 nop 
+  85              	
+  86              	
+  87              	 .thumb
+  89 0022 0000     	 .section .text.unlikely.vPortEnableVFP,"ax",%progbits
+  90              	 .align 1
+  91              	 .thumb
+  92              	 .thumb_func
+  94              	vPortEnableVFP:
+  95              	 
+  96              	 
+  97              	 
+  98              	
+  99 0000 DFF80C00 	 ldr.w r0,=0xE000ED88
+ 100 0004 0168     	 ldr r1,[r0]
+ 101              	 
+ 102 0006 41F47001 	 orr r1,r1,#(0xf<<20)
+ 103 000a 0160     	 str r1,[r0]
+ 104 000c 7047     	 bx r14
+ 105              	
+ 106              	 .thumb
+ 108 000e 0000     	 .section .text.pxPortInitialiseStack,"ax",%progbits
+ 109              	 .align 1
+ 110              	 .global pxPortInitialiseStack
+ 111              	 .thumb
+ 112              	 .thumb_func
+ 114              	pxPortInitialiseStack:
+ 115              	 
+ 116              	 
+ 117              	 
+ 118 0000 4FF08073 	 mov r3,#16777216
+ 119 0004 40F8043C 	 str r3,[r0,#-4]
+ 120 0008 074B     	 ldr r3,.L13
+ 121 000a 40F80C3C 	 str r3,[r0,#-12]
+ 122 000e 21F00101 	 bic r1,r1,#1
+ 123 0012 6FF00203 	 mvn r3,#2
+ 124 0016 40F8081C 	 str r1,[r0,#-8]
+ 125 001a 40F8202C 	 str r2,[r0,#-32]
+ 126 001e 40F8243C 	 str r3,[r0,#-36]
+ 127 0022 4438     	 subs r0,r0,#68
+ 128 0024 7047     	 bx lr
+ 129              	.L14:
+ 130 0026 00BF     	 .align 2
+ 131              	.L13:
+ 132 0028 00000000 	 .word prvTaskExitError
+ 134              	 .section .text.SVC_Handler,"ax",%progbits
+ 135              	 .align 1
+ 136              	 .global SVC_Handler
+ 137              	 .thumb
+ 138              	 .thumb_func
+ 140              	SVC_Handler:
+ 141              	 
+ 142              	 
+ 143              	 
+ 144              	
+ 145 0000 074B     	 ldr r3,pxCurrentTCBConst2
+ 146 0002 1968     	 ldr r1,[r3]
+ 147 0004 0868     	 ldr r0,[r1]
+ 148 0006 B0E8F04F 	 ldmia r0!,{r4-r11,r14}
+ 149 000a 80F30988 	 msr psp,r0
+ 150 000e BFF36F8F 	 isb 
+ 151 0012 4FF00000 	 mov r0,#0
+ 152 0016 80F31188 	 msr basepri,r0
+ 153 001a 7047     	 bx r14
+ 154              	 
+ 155 001c AFF30080 	 .align 4
+ 156 0020 00000000 	pxCurrentTCBConst2:.word pxCurrentTCB
+ 157              	
+ 158              	
+ 159              	 .thumb
+ 161 0024 AFF30080 	 .section .text.vPortEndScheduler,"ax",%progbits
+ 161      AFF30080 
+ 161      AFF30080 
+ 162              	 .align 1
+ 163              	 .global vPortEndScheduler
+ 164              	 .thumb
+ 165              	 .thumb_func
+ 167              	vPortEndScheduler:
+ 168              	 
+ 169              	 
+ 170              	 
+ 171 0000 074B     	 ldr r3,.L19
+ 172 0002 1B68     	 ldr r3,[r3]
+ 173 0004 B3F57A7F 	 cmp r3,#1000
+ 174 0008 08D0     	 beq .L16
+ 175              	
+ 176 000a 4FF0FC03 	 mov r3,#252
+ 177 000e 83F31188 	 msr basepri,r3
+ 178 0012 BFF36F8F 	 isb 
+ 179 0016 BFF34F8F 	 dsb 
+ 180              	
+ 181              	
+ 182              	 .thumb
+ 183              	.L18:
+ 184 001a FEE7     	 b .L18
+ 185              	.L16:
+ 186 001c 7047     	 bx lr
+ 187              	.L20:
+ 188 001e 00BF     	 .align 2
+ 189              	.L19:
+ 190 0020 00000000 	 .word .LANCHOR0
+ 192              	 .section .text.vPortEnterCritical,"ax",%progbits
+ 193              	 .align 1
+ 194              	 .global vPortEnterCritical
+ 195              	 .thumb
+ 196              	 .thumb_func
+ 198              	vPortEnterCritical:
+ 199              	 
+ 200              	 
+ 201              	 
+ 202              	
+ 203 0000 4FF0FC03 	 mov r3,#252
+ 204 0004 83F31188 	 msr basepri,r3
+ 205 0008 BFF36F8F 	 isb 
+ 206 000c BFF34F8F 	 dsb 
+ 207              	
+ 208              	
+ 209              	 .thumb
+ 210 0010 0A4A     	 ldr r2,.L27
+ 211 0012 1368     	 ldr r3,[r2]
+ 212 0014 0133     	 adds r3,r3,#1
+ 213 0016 012B     	 cmp r3,#1
+ 214 0018 1360     	 str r3,[r2]
+ 215 001a 0DD1     	 bne .L21
+ 216 001c 084B     	 ldr r3,.L27+4
+ 217 001e 1B68     	 ldr r3,[r3]
+ 218 0020 13F0FF0F 	 tst r3,#255
+ 219 0024 08D0     	 beq .L21
+ 220              	
+ 221 0026 4FF0FC03 	 mov r3,#252
+ 222 002a 83F31188 	 msr basepri,r3
+ 223 002e BFF36F8F 	 isb 
+ 224 0032 BFF34F8F 	 dsb 
+ 225              	
+ 226              	
+ 227              	 .thumb
+ 228              	.L23:
+ 229 0036 FEE7     	 b .L23
+ 230              	.L21:
+ 231 0038 7047     	 bx lr
+ 232              	.L28:
+ 233 003a 00BF     	 .align 2
+ 234              	.L27:
+ 235 003c 00000000 	 .word .LANCHOR0
+ 236 0040 04ED00E0 	 .word -536810236
+ 238              	 .section .text.vPortExitCritical,"ax",%progbits
+ 239              	 .align 1
+ 240              	 .global vPortExitCritical
+ 241              	 .thumb
+ 242              	 .thumb_func
+ 244              	vPortExitCritical:
+ 245              	 
+ 246              	 
+ 247              	 
+ 248 0000 084A     	 ldr r2,.L33
+ 249 0002 1368     	 ldr r3,[r2]
+ 250 0004 43B9     	 cbnz r3,.L30
+ 251              	
+ 252 0006 4FF0FC03 	 mov r3,#252
+ 253 000a 83F31188 	 msr basepri,r3
+ 254 000e BFF36F8F 	 isb 
+ 255 0012 BFF34F8F 	 dsb 
+ 256              	
+ 257              	
+ 258              	 .thumb
+ 259              	.L31:
+ 260 0016 FEE7     	 b .L31
+ 261              	.L30:
+ 262 0018 013B     	 subs r3,r3,#1
+ 263 001a 1360     	 str r3,[r2]
+ 264 001c 0BB9     	 cbnz r3,.L29
+ 265              	
+ 266 001e 83F31188 	 msr basepri,r3
+ 267              	
+ 268              	 .thumb
+ 269              	.L29:
+ 270 0022 7047     	 bx lr
+ 271              	.L34:
+ 272              	 .align 2
+ 273              	.L33:
+ 274 0024 00000000 	 .word .LANCHOR0
+ 276              	 .section .text.PendSV_Handler,"ax",%progbits
+ 277              	 .align 1
+ 278              	 .global PendSV_Handler
+ 279              	 .thumb
+ 280              	 .thumb_func
+ 282              	PendSV_Handler:
+ 283              	 
+ 284              	 
+ 285              	 
+ 286              	
+ 287 0000 EFF30980 	 mrs r0,psp
+ 288 0004 BFF36F8F 	 isb 
+ 289              	 
+ 290 0008 154B     	 ldr r3,pxCurrentTCBConst
+ 291 000a 1A68     	 ldr r2,[r3]
+ 292              	 
+ 293 000c 1EF0100F 	 tst r14,#0x10
+ 294 0010 08BF     	 it eq
+ 295 0012 20ED108A 	 vstmdbeq r0!,{s16-s31}
+ 296              	 
+ 297 0016 20E9F04F 	 stmdb r0!,{r4-r11,r14}
+ 298 001a 1060     	 str r0,[r2]
+ 299              	 
+ 300 001c 2DE90900 	 stmdb sp!,{r0,r3}
+ 301 0020 4FF0FC00 	 mov r0,#252
+ 302 0024 80F31188 	 msr basepri,r0
+ 303 0028 BFF34F8F 	 dsb 
+ 304 002c BFF36F8F 	 isb 
+ 305 0030 FFF7FEFF 	 bl vTaskSwitchContext
+ 306 0034 4FF00000 	 mov r0,#0
+ 307 0038 80F31188 	 msr basepri,r0
+ 308 003c 09BC     	 ldmia sp!,{r0,r3}
+ 309              	 
+ 310 003e 1968     	 ldr r1,[r3]
+ 311 0040 0868     	 ldr r0,[r1]
+ 312              	 
+ 313 0042 B0E8F04F 	 ldmia r0!,{r4-r11,r14}
+ 314              	 
+ 315 0046 1EF0100F 	 tst r14,#0x10
+ 316 004a 08BF     	 it eq
+ 317 004c B0EC108A 	 vldmiaeq r0!,{s16-s31}
+ 318              	 
+ 319 0050 80F30988 	 msr psp,r0
+ 320 0054 BFF36F8F 	 isb 
+ 321              	 
+ 322              	 
+ 323 0058 7047     	 bx r14
+ 324              	 
+ 325 005a 00BFAFF3 	 .align 4
+ 325      0080
+ 326 0060 00000000 	pxCurrentTCBConst:.word pxCurrentTCB
+ 327              	
+ 328              	
+ 329              	 .thumb
+ 331 0064 AFF30080 	 .section .text.SysTick_Handler,"ax",%progbits
+ 331      AFF30080 
+ 331      AFF30080 
+ 332              	 .align 1
+ 333              	 .global SysTick_Handler
+ 334              	 .thumb
+ 335              	 .thumb_func
+ 337              	SysTick_Handler:
+ 338              	 
+ 339              	 
+ 340 0000 08B5     	 push {r3,lr}
+ 341              	
+ 342 0002 4FF0FC03 	 mov r3,#252
+ 343 0006 83F31188 	 msr basepri,r3
+ 344 000a BFF36F8F 	 isb 
+ 345 000e BFF34F8F 	 dsb 
+ 346              	
+ 347              	
+ 348              	 .thumb
+ 349 0012 FFF7FEFF 	 bl xTaskIncrementTick
+ 350 0016 18B1     	 cbz r0,.L37
+ 351 0018 034B     	 ldr r3,.L41
+ 352 001a 4FF08052 	 mov r2,#268435456
+ 353 001e 1A60     	 str r2,[r3]
+ 354              	.L37:
+ 355 0020 0023     	 movs r3,#0
+ 356              	
+ 357 0022 83F31188 	 msr basepri,r3
+ 358              	
+ 359              	 .thumb
+ 360 0026 08BD     	 pop {r3,pc}
+ 361              	.L42:
+ 362              	 .align 2
+ 363              	.L41:
+ 364 0028 04ED00E0 	 .word -536810236
+ 366              	 .section .text.vPortSetupTimerInterrupt,"ax",%progbits
+ 367              	 .align 1
+ 368              	 .weak vPortSetupTimerInterrupt
+ 369              	 .thumb
+ 370              	 .thumb_func
+ 372              	vPortSetupTimerInterrupt:
+ 373              	 
+ 374              	 
+ 375              	 
+ 376 0000 084A     	 ldr r2,.L44
+ 377 0002 0949     	 ldr r1,.L44+4
+ 378 0004 0023     	 movs r3,#0
+ 379 0006 1360     	 str r3,[r2]
+ 380 0008 0B60     	 str r3,[r1]
+ 381 000a 084B     	 ldr r3,.L44+8
+ 382 000c 4FF47A71 	 mov r1,#1000
+ 383 0010 1B68     	 ldr r3,[r3]
+ 384 0012 B3FBF1F3 	 udiv r3,r3,r1
+ 385 0016 0649     	 ldr r1,.L44+12
+ 386 0018 013B     	 subs r3,r3,#1
+ 387 001a 0B60     	 str r3,[r1]
+ 388 001c 0723     	 movs r3,#7
+ 389 001e 1360     	 str r3,[r2]
+ 390 0020 7047     	 bx lr
+ 391              	.L45:
+ 392 0022 00BF     	 .align 2
+ 393              	.L44:
+ 394 0024 10E000E0 	 .word -536813552
+ 395 0028 18E000E0 	 .word -536813544
+ 396 002c 00000000 	 .word SystemCoreClock
+ 397 0030 14E000E0 	 .word -536813548
+ 399              	 .section .text.xPortStartScheduler,"ax",%progbits
+ 400              	 .align 1
+ 401              	 .global xPortStartScheduler
+ 402              	 .thumb
+ 403              	 .thumb_func
+ 405              	xPortStartScheduler:
+ 406              	 
+ 407              	 
+ 408 0000 374B     	 ldr r3,.L56
+ 409 0002 384A     	 ldr r2,.L56+4
+ 410 0004 13B5     	 push {r0,r1,r4,lr}
+ 411 0006 1968     	 ldr r1,[r3]
+ 412 0008 9142     	 cmp r1,r2
+ 413 000a 08D1     	 bne .L47
+ 414              	
+ 415 000c 4FF0FC03 	 mov r3,#252
+ 416 0010 83F31188 	 msr basepri,r3
+ 417 0014 BFF36F8F 	 isb 
+ 418 0018 BFF34F8F 	 dsb 
+ 419              	
+ 420              	
+ 421              	 .thumb
+ 422              	.L48:
+ 423 001c FEE7     	 b .L48
+ 424              	.L47:
+ 425 001e 1A68     	 ldr r2,[r3]
+ 426 0020 314B     	 ldr r3,.L56+8
+ 427 0022 9A42     	 cmp r2,r3
+ 428 0024 08D1     	 bne .L49
+ 429              	
+ 430 0026 4FF0FC03 	 mov r3,#252
+ 431 002a 83F31188 	 msr basepri,r3
+ 432 002e BFF36F8F 	 isb 
+ 433 0032 BFF34F8F 	 dsb 
+ 434              	
+ 435              	
+ 436              	 .thumb
+ 437              	.L50:
+ 438 0036 FEE7     	 b .L50
+ 439              	.L49:
+ 440 0038 2C4B     	 ldr r3,.L56+12
+ 441 003a 1A78     	 ldrb r2,[r3]
+ 442 003c D2B2     	 uxtb r2,r2
+ 443 003e 0192     	 str r2,[sp,#4]
+ 444 0040 FF22     	 movs r2,#255
+ 445 0042 1A70     	 strb r2,[r3]
+ 446 0044 1B78     	 ldrb r3,[r3]
+ 447 0046 2A4A     	 ldr r2,.L56+16
+ 448 0048 DBB2     	 uxtb r3,r3
+ 449 004a 8DF80330 	 strb r3,[sp,#3]
+ 450 004e 9DF80330 	 ldrb r3,[sp,#3]
+ 451 0052 03F0FC03 	 and r3,r3,#252
+ 452 0056 1370     	 strb r3,[r2]
+ 453 0058 264A     	 ldr r2,.L56+20
+ 454 005a 0723     	 movs r3,#7
+ 455 005c 1360     	 str r3,[r2]
+ 456              	.L51:
+ 457 005e 9DF80310 	 ldrb r1,[sp,#3]
+ 458 0062 0906     	 lsls r1,r1,#24
+ 459 0064 03F1FF30 	 add r0,r3,#-1
+ 460 0068 07D5     	 bpl .L55
+ 461 006a 9DF80330 	 ldrb r3,[sp,#3]
+ 462 006e 5B00     	 lsls r3,r3,#1
+ 463 0070 DBB2     	 uxtb r3,r3
+ 464 0072 8DF80330 	 strb r3,[sp,#3]
+ 465 0076 0346     	 mov r3,r0
+ 466 0078 F1E7     	 b .L51
+ 467              	.L55:
+ 468 007a 012B     	 cmp r3,#1
+ 469 007c 1360     	 str r3,[r2]
+ 470 007e 08D0     	 beq .L53
+ 471              	
+ 472 0080 4FF0FC03 	 mov r3,#252
+ 473 0084 83F31188 	 msr basepri,r3
+ 474 0088 BFF36F8F 	 isb 
+ 475 008c BFF34F8F 	 dsb 
+ 476              	
+ 477              	
+ 478              	 .thumb
+ 479              	.L54:
+ 480 0090 FEE7     	 b .L54
+ 481              	.L53:
+ 482 0092 184A     	 ldr r2,.L56+20
+ 483 0094 1B02     	 lsls r3,r3,#8
+ 484 0096 03F4E063 	 and r3,r3,#1792
+ 485 009a 1360     	 str r3,[r2]
+ 486 009c 019B     	 ldr r3,[sp,#4]
+ 487 009e 134A     	 ldr r2,.L56+12
+ 488 00a0 DBB2     	 uxtb r3,r3
+ 489 00a2 1370     	 strb r3,[r2]
+ 490 00a4 144B     	 ldr r3,.L56+24
+ 491 00a6 1A68     	 ldr r2,[r3]
+ 492 00a8 42F47C02 	 orr r2,r2,#16515072
+ 493 00ac 1A60     	 str r2,[r3]
+ 494 00ae 1A68     	 ldr r2,[r3]
+ 495 00b0 42F07C42 	 orr r2,r2,#-67108864
+ 496 00b4 1A60     	 str r2,[r3]
+ 497 00b6 FFF7FEFF 	 bl vPortSetupTimerInterrupt
+ 498 00ba 104B     	 ldr r3,.L56+28
+ 499 00bc 0024     	 movs r4,#0
+ 500 00be 1C60     	 str r4,[r3]
+ 501 00c0 FFF7FEFF 	 bl vPortEnableVFP
+ 502 00c4 0E4A     	 ldr r2,.L56+32
+ 503 00c6 1368     	 ldr r3,[r2]
+ 504 00c8 43F04043 	 orr r3,r3,#-1073741824
+ 505 00cc 1360     	 str r3,[r2]
+ 506 00ce FFF7FEFF 	 bl prvPortStartFirstTask
+ 507 00d2 FFF7FEFF 	 bl vTaskSwitchContext
+ 508 00d6 FFF7FEFF 	 bl prvTaskExitError
+ 509 00da 2046     	 mov r0,r4
+ 510 00dc 02B0     	 add sp,sp,#8
+ 511              	 
+ 512 00de 10BD     	 pop {r4,pc}
+ 513              	.L57:
+ 514              	 .align 2
+ 515              	.L56:
+ 516 00e0 00ED00E0 	 .word -536810240
+ 517 00e4 71C20F41 	 .word 1091551857
+ 518 00e8 70C20F41 	 .word 1091551856
+ 519 00ec 00E400E0 	 .word -536812544
+ 520 00f0 00000000 	 .word .LANCHOR1
+ 521 00f4 00000000 	 .word .LANCHOR2
+ 522 00f8 20ED00E0 	 .word -536810208
+ 523 00fc 00000000 	 .word .LANCHOR0
+ 524 0100 34EF00E0 	 .word -536809676
+ 526              	 .section .text.vPortValidateInterruptPriority,"ax",%progbits
+ 527              	 .align 1
+ 528              	 .global vPortValidateInterruptPriority
+ 529              	 .thumb
+ 530              	 .thumb_func
+ 532              	vPortValidateInterruptPriority:
+ 533              	 
+ 534              	 
+ 535              	 
+ 536              	
+ 537 0000 EFF30583 	 mrs r3,ipsr
+ 538              	
+ 539              	 .thumb
+ 540 0004 0F2B     	 cmp r3,#15
+ 541 0006 0ED9     	 bls .L59
+ 542 0008 104A     	 ldr r2,.L63
+ 543 000a 9B5C     	 ldrb r3,[r3,r2]
+ 544 000c 104A     	 ldr r2,.L63+4
+ 545 000e 1278     	 ldrb r2,[r2]
+ 546 0010 9A42     	 cmp r2,r3
+ 547 0012 08D9     	 bls .L59
+ 548              	
+ 549 0014 4FF0FC03 	 mov r3,#252
+ 550 0018 83F31188 	 msr basepri,r3
+ 551 001c BFF36F8F 	 isb 
+ 552 0020 BFF34F8F 	 dsb 
+ 553              	
+ 554              	
+ 555              	 .thumb
+ 556              	.L60:
+ 557 0024 FEE7     	 b .L60
+ 558              	.L59:
+ 559 0026 0B4B     	 ldr r3,.L63+8
+ 560 0028 0B4A     	 ldr r2,.L63+12
+ 561 002a 1B68     	 ldr r3,[r3]
+ 562 002c 1268     	 ldr r2,[r2]
+ 563 002e 03F4E063 	 and r3,r3,#1792
+ 564 0032 9342     	 cmp r3,r2
+ 565 0034 08D9     	 bls .L58
+ 566              	
+ 567 0036 4FF0FC03 	 mov r3,#252
+ 568 003a 83F31188 	 msr basepri,r3
+ 569 003e BFF36F8F 	 isb 
+ 570 0042 BFF34F8F 	 dsb 
+ 571              	
+ 572              	
+ 573              	 .thumb
+ 574              	.L62:
+ 575 0046 FEE7     	 b .L62
+ 576              	.L58:
+ 577 0048 7047     	 bx lr
+ 578              	.L64:
+ 579 004a 00BF     	 .align 2
+ 580              	.L63:
+ 581 004c F0E300E0 	 .word -536812560
+ 582 0050 00000000 	 .word .LANCHOR1
+ 583 0054 0CED00E0 	 .word -536810228
+ 584 0058 00000000 	 .word .LANCHOR2
+ 586              	 .section .bss.ucMaxSysCallPriority,"aw",%nobits
+ 587              	 .set .LANCHOR1,.+0
+ 590              	ucMaxSysCallPriority:
+ 591 0000 00       	 .space 1
+ 592              	 .section .bss.ulMaxPRIGROUPValue,"aw",%nobits
+ 593              	 .align 2
+ 594              	 .set .LANCHOR2,.+0
+ 597              	ulMaxPRIGROUPValue:
+ 598 0000 00000000 	 .space 4
+ 599              	 .section .data.uxCriticalNesting,"aw",%progbits
+ 600              	 .align 2
+ 601              	 .set .LANCHOR0,.+0
+ 604              	uxCriticalNesting:
+ 605 0000 AAAAAAAA 	 .word -1431655766
+ 606              	 .ident "GCC: (GNU Tools for ARM Embedded Processors) 4.9.3 20141119 (release) [ARM/embedded-4_9-branch revision 218278]"
+DEFINED SYMBOLS
+                            *ABS*:00000000 port.c
+    {standard input}:17     .text.prvTaskExitError:00000000 $t
+    {standard input}:21     .text.prvTaskExitError:00000000 prvTaskExitError
+    {standard input}:61     .text.prvTaskExitError:0000003c $d
+    {standard input}:64     .text.unlikely.prvPortStartFirstTask:00000000 $t
+    {standard input}:68     .text.unlikely.prvPortStartFirstTask:00000000 prvPortStartFirstTask
+    {standard input}:90     .text.unlikely.vPortEnableVFP:00000000 $t
+    {standard input}:94     .text.unlikely.vPortEnableVFP:00000000 vPortEnableVFP
+    {standard input}:109    .text.pxPortInitialiseStack:00000000 $t
+    {standard input}:114    .text.pxPortInitialiseStack:00000000 pxPortInitialiseStack
+    {standard input}:132    .text.pxPortInitialiseStack:00000028 $d
+    {standard input}:135    .text.SVC_Handler:00000000 $t
+    {standard input}:140    .text.SVC_Handler:00000000 SVC_Handler
+    {standard input}:156    .text.SVC_Handler:00000020 pxCurrentTCBConst2
+    {standard input}:156    .text.SVC_Handler:00000020 $d
+    {standard input}:162    .text.vPortEndScheduler:00000000 $t
+    {standard input}:167    .text.vPortEndScheduler:00000000 vPortEndScheduler
+    {standard input}:190    .text.vPortEndScheduler:00000020 $d
+    {standard input}:193    .text.vPortEnterCritical:00000000 $t
+    {standard input}:198    .text.vPortEnterCritical:00000000 vPortEnterCritical
+    {standard input}:235    .text.vPortEnterCritical:0000003c $d
+    {standard input}:239    .text.vPortExitCritical:00000000 $t
+    {standard input}:244    .text.vPortExitCritical:00000000 vPortExitCritical
+    {standard input}:274    .text.vPortExitCritical:00000024 $d
+    {standard input}:277    .text.PendSV_Handler:00000000 $t
+    {standard input}:282    .text.PendSV_Handler:00000000 PendSV_Handler
+    {standard input}:326    .text.PendSV_Handler:00000060 pxCurrentTCBConst
+    {standard input}:326    .text.PendSV_Handler:00000060 $d
+    {standard input}:332    .text.SysTick_Handler:00000000 $t
+    {standard input}:337    .text.SysTick_Handler:00000000 SysTick_Handler
+    {standard input}:364    .text.SysTick_Handler:00000028 $d
+    {standard input}:367    .text.vPortSetupTimerInterrupt:00000000 $t
+    {standard input}:372    .text.vPortSetupTimerInterrupt:00000000 vPortSetupTimerInterrupt
+    {standard input}:394    .text.vPortSetupTimerInterrupt:00000024 $d
+    {standard input}:400    .text.xPortStartScheduler:00000000 $t
+    {standard input}:405    .text.xPortStartScheduler:00000000 xPortStartScheduler
+    {standard input}:516    .text.xPortStartScheduler:000000e0 $d
+    {standard input}:527    .text.vPortValidateInterruptPriority:00000000 $t
+    {standard input}:532    .text.vPortValidateInterruptPriority:00000000 vPortValidateInterruptPriority
+    {standard input}:581    .text.vPortValidateInterruptPriority:0000004c $d
+    {standard input}:590    .bss.ucMaxSysCallPriority:00000000 ucMaxSysCallPriority
+    {standard input}:591    .bss.ucMaxSysCallPriority:00000000 $d
+    {standard input}:593    .bss.ulMaxPRIGROUPValue:00000000 $d
+    {standard input}:597    .bss.ulMaxPRIGROUPValue:00000000 ulMaxPRIGROUPValue
+    {standard input}:600    .data.uxCriticalNesting:00000000 $d
+    {standard input}:604    .data.uxCriticalNesting:00000000 uxCriticalNesting
+    {standard input}:108    .text.unlikely.vPortEnableVFP:0000000e $d
+    {standard input}:89     .text.unlikely.prvPortStartFirstTask:00000022 $d
+    {standard input}:161    .text.SVC_Handler:00000024 $t
+    {standard input}:331    .text.PendSV_Handler:00000064 $t
+
+UNDEFINED SYMBOLS
+pxCurrentTCB
+vTaskSwitchContext
+xTaskIncrementTick
+SystemCoreClock

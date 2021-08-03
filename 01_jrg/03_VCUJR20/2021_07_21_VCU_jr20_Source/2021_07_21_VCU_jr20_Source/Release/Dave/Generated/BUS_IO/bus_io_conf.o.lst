@@ -1,0 +1,85 @@
+   1              	 .syntax unified
+   2              	 .cpu cortex-m4
+   3              	 .eabi_attribute 27,3
+   4              	 .fpu fpv4-sp-d16
+   5              	 .eabi_attribute 20,1
+   6              	 .eabi_attribute 21,1
+   7              	 .eabi_attribute 23,3
+   8              	 .eabi_attribute 24,1
+   9              	 .eabi_attribute 25,1
+  10              	 .eabi_attribute 26,1
+  11              	 .eabi_attribute 30,4
+  12              	 .eabi_attribute 34,1
+  13              	 .eabi_attribute 18,4
+  14              	 .thumb
+  15              	 .file "bus_io_conf.c"
+  16              	 .global BUS_IO_Input
+  17              	 .global BUS_IO_Input_pin_list
+  18              	 .global BUS_IO
+  19              	 .global BUS_IO_pin_list
+  20              	 .section .data.BUS_IO,"aw",%progbits
+  21              	 .align 2
+  24              	BUS_IO:
+  25 0000 00000000 	 .word BUS_IO_pin_list
+  26 0004 80       	 .byte -128
+  27 0005 000000   	 .space 3
+  28 0008 00000100 	 .word 65536
+  29 000c 00000000 	 .space 4
+  30 0010 07       	 .byte 7
+  31 0011 000000   	 .space 3
+  32              	 .section .data.BUS_IO_Input,"aw",%progbits
+  33              	 .align 2
+  36              	BUS_IO_Input:
+  37 0000 00000000 	 .word BUS_IO_Input_pin_list
+  38 0004 00       	 .byte 0
+  39 0005 00000000 	 .space 11
+  39      00000000 
+  39      000000
+  40 0010 02       	 .byte 2
+  41 0011 000000   	 .space 3
+  42              	 .section .rodata.BUS_IO_Input_pin_list,"a",%progbits
+  43              	 .align 2
+  46              	BUS_IO_Input_pin_list:
+  47 0000 00800248 	 .word 1208123392
+  48 0004 07       	 .byte 7
+  49 0005 000000   	 .space 3
+  50 0008 00800248 	 .word 1208123392
+  51 000c 08       	 .byte 8
+  52 000d 000000   	 .space 3
+  53              	 .section .rodata.BUS_IO_pin_list,"a",%progbits
+  54              	 .align 2
+  57              	BUS_IO_pin_list:
+  58 0000 00800248 	 .word 1208123392
+  59 0004 09       	 .byte 9
+  60 0005 000000   	 .space 3
+  61 0008 00800248 	 .word 1208123392
+  62 000c 0A       	 .byte 10
+  63 000d 000000   	 .space 3
+  64 0010 00800248 	 .word 1208123392
+  65 0014 04       	 .byte 4
+  66 0015 000000   	 .space 3
+  67 0018 00800248 	 .word 1208123392
+  68 001c 05       	 .byte 5
+  69 001d 000000   	 .space 3
+  70 0020 00800248 	 .word 1208123392
+  71 0024 06       	 .byte 6
+  72 0025 000000   	 .space 3
+  73 0028 00850248 	 .word 1208124672
+  74 002c 02       	 .byte 2
+  75 002d 000000   	 .space 3
+  76 0030 00850248 	 .word 1208124672
+  77 0034 07       	 .byte 7
+  78 0035 000000   	 .space 3
+  79              	 .ident "GCC: (GNU Tools for ARM Embedded Processors) 4.9.3 20141119 (release) [ARM/embedded-4_9-branch revision 218278]"
+DEFINED SYMBOLS
+                            *ABS*:00000000 bus_io_conf.c
+    {standard input}:36     .data.BUS_IO_Input:00000000 BUS_IO_Input
+    {standard input}:46     .rodata.BUS_IO_Input_pin_list:00000000 BUS_IO_Input_pin_list
+    {standard input}:24     .data.BUS_IO:00000000 BUS_IO
+    {standard input}:57     .rodata.BUS_IO_pin_list:00000000 BUS_IO_pin_list
+    {standard input}:21     .data.BUS_IO:00000000 $d
+    {standard input}:33     .data.BUS_IO_Input:00000000 $d
+    {standard input}:43     .rodata.BUS_IO_Input_pin_list:00000000 $d
+    {standard input}:54     .rodata.BUS_IO_pin_list:00000000 $d
+
+NO UNDEFINED SYMBOLS

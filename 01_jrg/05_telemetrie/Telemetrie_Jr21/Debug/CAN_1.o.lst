@@ -1,0 +1,895 @@
+   1              	 .syntax unified
+   2              	 .cpu cortex-m4
+   3              	 .eabi_attribute 27,3
+   4              	 .fpu fpv4-sp-d16
+   5              	 .eabi_attribute 20,1
+   6              	 .eabi_attribute 21,1
+   7              	 .eabi_attribute 23,3
+   8              	 .eabi_attribute 24,1
+   9              	 .eabi_attribute 25,1
+  10              	 .eabi_attribute 26,1
+  11              	 .eabi_attribute 30,6
+  12              	 .eabi_attribute 34,1
+  13              	 .eabi_attribute 18,4
+  14              	 .thumb
+  15              	 .file "CAN_1.c"
+  16              	 .text
+  17              	.Ltext0:
+  18              	 .cfi_sections .debug_frame
+  19              	 .global CAN_data_Tx
+  20              	 .section .bss.CAN_data_Tx,"aw",%nobits
+  21              	 .align 2
+  24              	CAN_data_Tx:
+  25 0000 00000000 	 .space 8
+  25      00000000 
+  26              	 .global p_air_22
+  27              	 .section .bss.p_air_22,"aw",%nobits
+  28              	 .align 2
+  31              	p_air_22:
+  32 0000 00000000 	 .space 4
+  33              	 .global n_engine
+  34              	 .section .bss.n_engine,"aw",%nobits
+  35              	 .align 2
+  38              	n_engine:
+  39 0000 00000000 	 .space 4
+  40              	 .global gear
+  41              	 .section .bss.gear,"aw",%nobits
+  42              	 .align 2
+  45              	gear:
+  46 0000 00000000 	 .space 4
+  47              	 .global gear_1
+  48              	 .section .bss.gear_1,"aw",%nobits
+  51              	gear_1:
+  52 0000 00       	 .space 1
+  53              	 .global ign_angle
+  54              	 .section .bss.ign_angle,"aw",%nobits
+  55              	 .align 2
+  58              	ign_angle:
+  59 0000 00000000 	 .space 4
+  60              	 .global ign_angle_1
+  61              	 .section .bss.ign_angle_1,"aw",%nobits
+  62              	 .align 1
+  65              	ign_angle_1:
+  66 0000 0000     	 .space 2
+  67              	 .global shift_up
+  68              	 .section .bss.shift_up,"aw",%nobits
+  71              	shift_up:
+  72 0000 00       	 .space 1
+  73              	 .global shift_down
+  74              	 .section .bss.shift_down,"aw",%nobits
+  77              	shift_down:
+  78 0000 00       	 .space 1
+  79              	 .global eng_map
+  80              	 .section .bss.eng_map,"aw",%nobits
+  83              	eng_map:
+  84 0000 00       	 .space 1
+  85              	 .global p_pneu
+  86              	 .section .bss.p_pneu,"aw",%nobits
+  87              	 .align 2
+  90              	p_pneu:
+  91 0000 00000000 	 .space 4
+  92              	 .global x_RH_RL
+  93              	 .section .bss.x_RH_RL,"aw",%nobits
+  94              	 .align 2
+  97              	x_RH_RL:
+  98 0000 00000000 	 .space 4
+  99              	 .global x_RH_RR
+ 100              	 .section .bss.x_RH_RR,"aw",%nobits
+ 101              	 .align 2
+ 104              	x_RH_RR:
+ 105 0000 00000000 	 .space 4
+ 106              	 .global t_oil_gb
+ 107              	 .section .bss.t_oil_gb,"aw",%nobits
+ 108              	 .align 2
+ 111              	t_oil_gb:
+ 112 0000 00000000 	 .space 4
+ 113              	 .global t_canmod
+ 114              	 .section .bss.t_canmod,"aw",%nobits
+ 115              	 .align 2
+ 118              	t_canmod:
+ 119 0000 00000000 	 .space 4
+ 120              	 .global p_oil
+ 121              	 .section .bss.p_oil,"aw",%nobits
+ 122              	 .align 2
+ 125              	p_oil:
+ 126 0000 00000000 	 .space 4
+ 127              	 .global p_fuel_rail
+ 128              	 .section .bss.p_fuel_rail,"aw",%nobits
+ 129              	 .align 2
+ 132              	p_fuel_rail:
+ 133 0000 00000000 	 .space 4
+ 134              	 .global a_ath
+ 135              	 .section .bss.a_ath,"aw",%nobits
+ 136              	 .align 2
+ 139              	a_ath:
+ 140 0000 00000000 	 .space 4
+ 141              	 .global t_water_engine
+ 142              	 .section .bss.t_water_engine,"aw",%nobits
+ 143              	 .align 2
+ 146              	t_water_engine:
+ 147 0000 00000000 	 .space 4
+ 148              	 .global t_air_22
+ 149              	 .section .bss.t_air_22,"aw",%nobits
+ 150              	 .align 2
+ 153              	t_air_22:
+ 154 0000 00000000 	 .space 4
+ 155              	 .global t_oil_engine
+ 156              	 .section .bss.t_oil_engine,"aw",%nobits
+ 157              	 .align 2
+ 160              	t_oil_engine:
+ 161 0000 00000000 	 .space 4
+ 162              	 .global lambda1
+ 163              	 .section .bss.lambda1,"aw",%nobits
+ 164              	 .align 2
+ 167              	lambda1:
+ 168 0000 00000000 	 .space 4
+ 169              	 .global lambda
+ 170              	 .section .bss.lambda,"aw",%nobits
+ 171              	 .align 1
+ 174              	lambda:
+ 175 0000 0000     	 .space 2
+ 176              	 .global trigger_error
+ 177              	 .section .bss.trigger_error,"aw",%nobits
+ 178              	 .align 2
+ 181              	trigger_error:
+ 182 0000 00000000 	 .space 4
+ 183              	 .global p_brake_rear
+ 184              	 .section .bss.p_brake_rear,"aw",%nobits
+ 185              	 .align 2
+ 188              	p_brake_rear:
+ 189 0000 00000000 	 .space 4
+ 190              	 .section .text.CAN_1_Receive,"ax",%progbits
+ 191              	 .align 2
+ 192              	 .global CAN_1_Receive
+ 193              	 .thumb
+ 194              	 .thumb_func
+ 196              	CAN_1_Receive:
+ 197              	.LFB471:
+ 198              	 .file 1 "../CAN_1.c"
+   1:../CAN_1.c    **** /*
+   2:../CAN_1.c    ****  * CAN_1.c
+   3:../CAN_1.c    ****  *
+   4:../CAN_1.c    ****  *  Created on: 15 Jun 2018
+   5:../CAN_1.c    ****  *      Author: Lukas
+   6:../CAN_1.c    ****  */
+   7:../CAN_1.c    **** 
+   8:../CAN_1.c    **** 
+   9:../CAN_1.c    **** #include "Tele.h"
+  10:../CAN_1.c    **** 
+  11:../CAN_1.c    **** 	extern struct data_tele carData;
+  12:../CAN_1.c    **** 	uint8_t CAN_data_Tx[8] = {0};
+  13:../CAN_1.c    **** 	//CAN 1
+  14:../CAN_1.c    **** 	// LMO_01, 0x10
+  15:../CAN_1.c    **** 	// Link4_1_boost_gear
+  16:../CAN_1.c    **** 		uint8_t* p_air_22=0;
+  17:../CAN_1.c    **** 		uint16_t* n_engine=0;
+  18:../CAN_1.c    **** 		uint8_t* gear=0; //NEU
+  19:../CAN_1.c    **** 		uint8_t gear_1=0;
+  20:../CAN_1.c    **** 
+  21:../CAN_1.c    **** 		uint32_t* ign_angle=0; //NEU
+  22:../CAN_1.c    **** 		uint16_t ign_angle_1=0;
+  23:../CAN_1.c    **** 
+  24:../CAN_1.c    **** 	//LMO_02, 0x8
+  25:../CAN_1.c    **** 	//STW
+  26:../CAN_1.c    **** 		uint8_t shift_up=0;
+  27:../CAN_1.c    **** 		uint8_t shift_down=0;
+  28:../CAN_1.c    **** 		uint8_t eng_map=0;
+  29:../CAN_1.c    **** 
+  30:../CAN_1.c    **** 	//LMO_03, 0x7E1
+  31:../CAN_1.c    **** 	//CAN Module Measurement
+  32:../CAN_1.c    **** 		uint8_t* p_pneu=0;
+  33:../CAN_1.c    **** 		uint8_t* x_RH_RL=0;
+  34:../CAN_1.c    **** 		uint8_t* x_RH_RR=0;
+  35:../CAN_1.c    **** 		uint8_t* t_oil_gb=0;
+  36:../CAN_1.c    **** 		uint8_t* t_canmod=0;
+  37:../CAN_1.c    **** 
+  38:../CAN_1.c    **** 	// LMO_04, 0x771
+  39:../CAN_1.c    **** 	// Link4_2_press_temp
+  40:../CAN_1.c    **** 		uint8_t* p_oil=0;
+  41:../CAN_1.c    **** 		uint8_t* p_fuel_rail=0;
+  42:../CAN_1.c    **** 		uint8_t* a_ath=0;
+  43:../CAN_1.c    **** 		uint8_t* t_water_engine=0;
+  44:../CAN_1.c    **** 		uint8_t* t_air_22=0;
+  45:../CAN_1.c    **** 		uint8_t* t_oil_engine=0;
+  46:../CAN_1.c    **** 
+  47:../CAN_1.c    **** 	// LMO_05, 0x772
+  48:../CAN_1.c    **** 	// Link4_3_inj_lambda_error
+  49:../CAN_1.c    **** 		uint32_t* lambda1=0;
+  50:../CAN_1.c    **** 		uint16_t lambda=0;
+  51:../CAN_1.c    **** 		uint8_t* trigger_error=0; //NEU
+  52:../CAN_1.c    **** 
+  53:../CAN_1.c    **** 	// LMO_06, 0x7F0
+  54:../CAN_1.c    **** 	//TTC_LaunchControl
+  55:../CAN_1.c    **** 		uint8_t* p_brake_rear = 0;
+  56:../CAN_1.c    **** 		//uint8_t* LC_clutch_pos_des = 0;
+  57:../CAN_1.c    **** 
+  58:../CAN_1.c    **** void CAN_1_Receive()
+  59:../CAN_1.c    **** 	{
+ 199              	 .loc 1 59 0
+ 200              	 .cfi_startproc
+ 201              	 
+ 202              	 
+ 203 0000 80B5     	 push {r7,lr}
+ 204              	.LCFI0:
+ 205              	 .cfi_def_cfa_offset 8
+ 206              	 .cfi_offset 7,-8
+ 207              	 .cfi_offset 14,-4
+ 208 0002 82B0     	 sub sp,sp,#8
+ 209              	.LCFI1:
+ 210              	 .cfi_def_cfa_offset 16
+ 211 0004 00AF     	 add r7,sp,#0
+ 212              	.LCFI2:
+ 213              	 .cfi_def_cfa_register 7
+  60:../CAN_1.c    **** 	//LINK_1_boost_gear 0x10 LMO1
+  61:../CAN_1.c    **** 	CAN_NODE_MO_Receive((CAN_NODE_LMO_t*)&CAN_1_LMO_01_Config);
+ 214              	 .loc 1 61 0
+ 215 0006 A748     	 ldr r0,.L2
+ 216 0008 FFF7FEFF 	 bl CAN_NODE_MO_Receive
+  62:../CAN_1.c    **** 
+  63:../CAN_1.c    **** 	p_air_22 = &(CAN_1_LMO_01_Config.mo_ptr->can_data_byte[0]);
+ 217              	 .loc 1 63 0
+ 218 000c A54B     	 ldr r3,.L2
+ 219 000e 1B68     	 ldr r3,[r3]
+ 220 0010 1033     	 adds r3,r3,#16
+ 221 0012 A54A     	 ldr r2,.L2+4
+ 222 0014 1360     	 str r3,[r2]
+  64:../CAN_1.c    **** 	n_engine = &(CAN_1_LMO_01_Config.mo_ptr->can_data_word[1]);
+ 223              	 .loc 1 64 0
+ 224 0016 A34B     	 ldr r3,.L2
+ 225 0018 1B68     	 ldr r3,[r3]
+ 226 001a 1233     	 adds r3,r3,#18
+ 227 001c A34A     	 ldr r2,.L2+8
+ 228 001e 1360     	 str r3,[r2]
+  65:../CAN_1.c    **** 	gear =  &(CAN_1_LMO_01_Config.mo_ptr->can_data_byte[4]); // ACHTUNG MOTOROLA und nur 5 bit NEU
+ 229              	 .loc 1 65 0
+ 230 0020 A04B     	 ldr r3,.L2
+ 231 0022 1B68     	 ldr r3,[r3]
+ 232 0024 1433     	 adds r3,r3,#20
+ 233 0026 A24A     	 ldr r2,.L2+12
+ 234 0028 1360     	 str r3,[r2]
+  66:../CAN_1.c    **** 
+  67:../CAN_1.c    **** 	gear_1 = *gear >> 3;
+ 235              	 .loc 1 67 0
+ 236 002a A14B     	 ldr r3,.L2+12
+ 237 002c 1B68     	 ldr r3,[r3]
+ 238 002e 1B78     	 ldrb r3,[r3]
+ 239 0030 DB08     	 lsrs r3,r3,#3
+ 240 0032 DAB2     	 uxtb r2,r3
+ 241 0034 9F4B     	 ldr r3,.L2+16
+ 242 0036 1A70     	 strb r2,[r3]
+  68:../CAN_1.c    **** 	ign_angle =  &(CAN_1_LMO_01_Config.mo_ptr->can_data[1]); //NEU
+ 243              	 .loc 1 68 0
+ 244 0038 9A4B     	 ldr r3,.L2
+ 245 003a 1B68     	 ldr r3,[r3]
+ 246 003c 1433     	 adds r3,r3,#20
+ 247 003e 9E4A     	 ldr r2,.L2+20
+ 248 0040 1360     	 str r3,[r2]
+  69:../CAN_1.c    **** 	ign_angle_1 = getbits(*ign_angle,23,16);
+ 249              	 .loc 1 69 0
+ 250 0042 9D4B     	 ldr r3,.L2+20
+ 251 0044 1B68     	 ldr r3,[r3]
+ 252 0046 1B68     	 ldr r3,[r3]
+ 253 0048 1846     	 mov r0,r3
+ 254 004a 1721     	 movs r1,#23
+ 255 004c 1022     	 movs r2,#16
+ 256 004e FFF7FEFF 	 bl getbits
+ 257 0052 0346     	 mov r3,r0
+ 258 0054 9AB2     	 uxth r2,r3
+ 259 0056 994B     	 ldr r3,.L2+24
+ 260 0058 1A80     	 strh r2,[r3]
+  70:../CAN_1.c    **** 
+  71:../CAN_1.c    **** 
+  72:../CAN_1.c    **** 	//STW 0x08 LM02
+  73:../CAN_1.c    **** 	CAN_NODE_MO_Receive((CAN_NODE_LMO_t*)&CAN_1_LMO_02_Config);
+ 261              	 .loc 1 73 0
+ 262 005a 9948     	 ldr r0,.L2+28
+ 263 005c FFF7FEFF 	 bl CAN_NODE_MO_Receive
+  74:../CAN_1.c    **** 
+  75:../CAN_1.c    **** 	uint8_t* temp= &(CAN_1_LMO_02_Config.mo_ptr->can_data[0]);
+ 264              	 .loc 1 75 0
+ 265 0060 974B     	 ldr r3,.L2+28
+ 266 0062 1B68     	 ldr r3,[r3]
+ 267 0064 1033     	 adds r3,r3,#16
+ 268 0066 7B60     	 str r3,[r7,#4]
+  76:../CAN_1.c    **** 	shift_up=temp&&0x01;
+ 269              	 .loc 1 76 0
+ 270 0068 7B68     	 ldr r3,[r7,#4]
+ 271 006a 002B     	 cmp r3,#0
+ 272 006c 14BF     	 ite ne
+ 273 006e 0123     	 movne r3,#1
+ 274 0070 0023     	 moveq r3,#0
+ 275 0072 DBB2     	 uxtb r3,r3
+ 276 0074 1A46     	 mov r2,r3
+ 277 0076 934B     	 ldr r3,.L2+32
+ 278 0078 1A70     	 strb r2,[r3]
+  77:../CAN_1.c    **** 	shift_down=temp&&0x02;
+ 279              	 .loc 1 77 0
+ 280 007a 7B68     	 ldr r3,[r7,#4]
+ 281 007c 002B     	 cmp r3,#0
+ 282 007e 14BF     	 ite ne
+ 283 0080 0123     	 movne r3,#1
+ 284 0082 0023     	 moveq r3,#0
+ 285 0084 DBB2     	 uxtb r3,r3
+ 286 0086 1A46     	 mov r2,r3
+ 287 0088 8F4B     	 ldr r3,.L2+36
+ 288 008a 1A70     	 strb r2,[r3]
+  78:../CAN_1.c    **** 	eng_map=temp&&0x04;
+ 289              	 .loc 1 78 0
+ 290 008c 7B68     	 ldr r3,[r7,#4]
+ 291 008e 002B     	 cmp r3,#0
+ 292 0090 14BF     	 ite ne
+ 293 0092 0123     	 movne r3,#1
+ 294 0094 0023     	 moveq r3,#0
+ 295 0096 DBB2     	 uxtb r3,r3
+ 296 0098 1A46     	 mov r2,r3
+ 297 009a 8C4B     	 ldr r3,.L2+40
+ 298 009c 1A70     	 strb r2,[r3]
+  79:../CAN_1.c    **** 
+  80:../CAN_1.c    **** 
+  81:../CAN_1.c    **** 	//CAN Module Measurement 0x7E1 LM03
+  82:../CAN_1.c    **** 	CAN_NODE_MO_Receive((CAN_NODE_LMO_t*)&CAN_1_LMO_03_Config);
+ 299              	 .loc 1 82 0
+ 300 009e 8C48     	 ldr r0,.L2+44
+ 301 00a0 FFF7FEFF 	 bl CAN_NODE_MO_Receive
+  83:../CAN_1.c    **** 	p_pneu = &(CAN_1_LMO_03_Config.mo_ptr->can_data_byte[0]);
+ 302              	 .loc 1 83 0
+ 303 00a4 8A4B     	 ldr r3,.L2+44
+ 304 00a6 1B68     	 ldr r3,[r3]
+ 305 00a8 1033     	 adds r3,r3,#16
+ 306 00aa 8A4A     	 ldr r2,.L2+48
+ 307 00ac 1360     	 str r3,[r2]
+  84:../CAN_1.c    **** 	x_RH_RL= &(CAN_1_LMO_03_Config.mo_ptr->can_data_byte[1]);
+ 308              	 .loc 1 84 0
+ 309 00ae 884B     	 ldr r3,.L2+44
+ 310 00b0 1B68     	 ldr r3,[r3]
+ 311 00b2 1133     	 adds r3,r3,#17
+ 312 00b4 884A     	 ldr r2,.L2+52
+ 313 00b6 1360     	 str r3,[r2]
+  85:../CAN_1.c    **** 	x_RH_RR= &(CAN_1_LMO_03_Config.mo_ptr->can_data_byte[2]);
+ 314              	 .loc 1 85 0
+ 315 00b8 854B     	 ldr r3,.L2+44
+ 316 00ba 1B68     	 ldr r3,[r3]
+ 317 00bc 1233     	 adds r3,r3,#18
+ 318 00be 874A     	 ldr r2,.L2+56
+ 319 00c0 1360     	 str r3,[r2]
+  86:../CAN_1.c    **** 	t_oil_gb= &(CAN_1_LMO_03_Config.mo_ptr->can_data_byte[5]);
+ 320              	 .loc 1 86 0
+ 321 00c2 834B     	 ldr r3,.L2+44
+ 322 00c4 1B68     	 ldr r3,[r3]
+ 323 00c6 1533     	 adds r3,r3,#21
+ 324 00c8 854A     	 ldr r2,.L2+60
+ 325 00ca 1360     	 str r3,[r2]
+  87:../CAN_1.c    **** 	t_canmod=&(CAN_1_LMO_03_Config.mo_ptr->can_data_byte[6]);
+ 326              	 .loc 1 87 0
+ 327 00cc 804B     	 ldr r3,.L2+44
+ 328 00ce 1B68     	 ldr r3,[r3]
+ 329 00d0 1633     	 adds r3,r3,#22
+ 330 00d2 844A     	 ldr r2,.L2+64
+ 331 00d4 1360     	 str r3,[r2]
+  88:../CAN_1.c    **** 
+  89:../CAN_1.c    **** 
+  90:../CAN_1.c    **** 
+  91:../CAN_1.c    **** 
+  92:../CAN_1.c    **** 	//0x771 Link press temp LMO4
+  93:../CAN_1.c    **** 	CAN_NODE_MO_Receive((CAN_NODE_LMO_t*)&CAN_1_LMO_04_Config);
+ 332              	 .loc 1 93 0
+ 333 00d6 8448     	 ldr r0,.L2+68
+ 334 00d8 FFF7FEFF 	 bl CAN_NODE_MO_Receive
+  94:../CAN_1.c    **** 
+  95:../CAN_1.c    **** 	p_oil = &(CAN_1_LMO_04_Config.mo_ptr->can_data_byte[0]);
+ 335              	 .loc 1 95 0
+ 336 00dc 824B     	 ldr r3,.L2+68
+ 337 00de 1B68     	 ldr r3,[r3]
+ 338 00e0 1033     	 adds r3,r3,#16
+ 339 00e2 824A     	 ldr r2,.L2+72
+ 340 00e4 1360     	 str r3,[r2]
+  96:../CAN_1.c    **** 	p_fuel_rail =  &(CAN_1_LMO_04_Config.mo_ptr->can_data_byte[1]);
+ 341              	 .loc 1 96 0
+ 342 00e6 804B     	 ldr r3,.L2+68
+ 343 00e8 1B68     	 ldr r3,[r3]
+ 344 00ea 1133     	 adds r3,r3,#17
+ 345 00ec 804A     	 ldr r2,.L2+76
+ 346 00ee 1360     	 str r3,[r2]
+  97:../CAN_1.c    **** 	a_ath = &(CAN_1_LMO_04_Config.mo_ptr->can_data_byte[2]); //x_throttleValve
+ 347              	 .loc 1 97 0
+ 348 00f0 7D4B     	 ldr r3,.L2+68
+ 349 00f2 1B68     	 ldr r3,[r3]
+ 350 00f4 1233     	 adds r3,r3,#18
+ 351 00f6 7F4A     	 ldr r2,.L2+80
+ 352 00f8 1360     	 str r3,[r2]
+  98:../CAN_1.c    **** 	t_water_engine = &(CAN_1_LMO_04_Config.mo_ptr->can_data_byte[3]);
+ 353              	 .loc 1 98 0
+ 354 00fa 7B4B     	 ldr r3,.L2+68
+ 355 00fc 1B68     	 ldr r3,[r3]
+ 356 00fe 1333     	 adds r3,r3,#19
+ 357 0100 7D4A     	 ldr r2,.L2+84
+ 358 0102 1360     	 str r3,[r2]
+  99:../CAN_1.c    **** 	t_air_22 = &(CAN_1_LMO_04_Config.mo_ptr->can_data_byte[4]);
+ 359              	 .loc 1 99 0
+ 360 0104 784B     	 ldr r3,.L2+68
+ 361 0106 1B68     	 ldr r3,[r3]
+ 362 0108 1433     	 adds r3,r3,#20
+ 363 010a 7C4A     	 ldr r2,.L2+88
+ 364 010c 1360     	 str r3,[r2]
+ 100:../CAN_1.c    **** 	t_oil_engine =  &(CAN_1_LMO_04_Config.mo_ptr->can_data_byte[5]);
+ 365              	 .loc 1 100 0
+ 366 010e 764B     	 ldr r3,.L2+68
+ 367 0110 1B68     	 ldr r3,[r3]
+ 368 0112 1533     	 adds r3,r3,#21
+ 369 0114 7A4A     	 ldr r2,.L2+92
+ 370 0116 1360     	 str r3,[r2]
+ 101:../CAN_1.c    **** 
+ 102:../CAN_1.c    **** 
+ 103:../CAN_1.c    **** 	//LIMK_LAMBDA 0x772 LMO5
+ 104:../CAN_1.c    **** 
+ 105:../CAN_1.c    **** 	CAN_NODE_MO_Receive((CAN_NODE_LMO_t*)&CAN_1_LMO_05_Config);
+ 371              	 .loc 1 105 0
+ 372 0118 7A48     	 ldr r0,.L2+96
+ 373 011a FFF7FEFF 	 bl CAN_NODE_MO_Receive
+ 106:../CAN_1.c    **** 
+ 107:../CAN_1.c    **** 	lambda1 = &(CAN_1_LMO_05_Config.mo_ptr->can_data[0]);
+ 374              	 .loc 1 107 0
+ 375 011e 794B     	 ldr r3,.L2+96
+ 376 0120 1B68     	 ldr r3,[r3]
+ 377 0122 1033     	 adds r3,r3,#16
+ 378 0124 784A     	 ldr r2,.L2+100
+ 379 0126 1360     	 str r3,[r2]
+ 108:../CAN_1.c    **** 	lambda = getbits(*lambda1,23,16);
+ 380              	 .loc 1 108 0
+ 381 0128 774B     	 ldr r3,.L2+100
+ 382 012a 1B68     	 ldr r3,[r3]
+ 383 012c 1B68     	 ldr r3,[r3]
+ 384 012e 1846     	 mov r0,r3
+ 385 0130 1721     	 movs r1,#23
+ 386 0132 1022     	 movs r2,#16
+ 387 0134 FFF7FEFF 	 bl getbits
+ 388 0138 0346     	 mov r3,r0
+ 389 013a 9AB2     	 uxth r2,r3
+ 390 013c 734B     	 ldr r3,.L2+104
+ 391 013e 1A80     	 strh r2,[r3]
+ 109:../CAN_1.c    **** 	trigger_error= &(CAN_1_LMO_05_Config.mo_ptr->can_data_byte[6]); //NEU
+ 392              	 .loc 1 109 0
+ 393 0140 704B     	 ldr r3,.L2+96
+ 394 0142 1B68     	 ldr r3,[r3]
+ 395 0144 1633     	 adds r3,r3,#22
+ 396 0146 724A     	 ldr r2,.L2+108
+ 397 0148 1360     	 str r3,[r2]
+ 110:../CAN_1.c    **** 
+ 111:../CAN_1.c    **** 	//VCU_LaunchControl LMO6
+ 112:../CAN_1.c    **** 	CAN_NODE_MO_Receive((CAN_NODE_LMO_t*)&CAN_1_LMO_06_Config);
+ 398              	 .loc 1 112 0
+ 399 014a 7248     	 ldr r0,.L2+112
+ 400 014c FFF7FEFF 	 bl CAN_NODE_MO_Receive
+ 113:../CAN_1.c    **** 
+ 114:../CAN_1.c    **** 	p_brake_rear = &(CAN_1_LMO_06_Config.mo_ptr->can_data_byte[0]);
+ 401              	 .loc 1 114 0
+ 402 0150 704B     	 ldr r3,.L2+112
+ 403 0152 1B68     	 ldr r3,[r3]
+ 404 0154 1033     	 adds r3,r3,#16
+ 405 0156 704A     	 ldr r2,.L2+116
+ 406 0158 1360     	 str r3,[r2]
+ 115:../CAN_1.c    **** 	//LC_clutch_pos_des = &(CAN_1_LMO_06_Config.mo_ptr->can_data_byte[2]);
+ 116:../CAN_1.c    **** 
+ 117:../CAN_1.c    **** //######################################################################
+ 118:../CAN_1.c    **** //################ calculation and write to struct #####################
+ 119:../CAN_1.c    **** 	//LMO1
+ 120:../CAN_1.c    **** 	carData.p_air_22 =(float)*p_air_22*0.01f;
+ 407              	 .loc 1 120 0
+ 408 015a 534B     	 ldr r3,.L2+4
+ 409 015c 1B68     	 ldr r3,[r3]
+ 410 015e 1B78     	 ldrb r3,[r3]
+ 411 0160 07EE903A 	 fmsr s15,r3
+ 412 0164 F8EE677A 	 fuitos s15,s15
+ 413 0168 9FED6C7A 	 flds s14,.L2+120
+ 414 016c 67EE877A 	 fmuls s15,s15,s14
+ 415 0170 6B4B     	 ldr r3,.L2+124
+ 416 0172 17EE902A 	 fmrs r2,s15
+ 417 0176 5A60     	 str r2,[r3,#4]
+ 121:../CAN_1.c    **** 	carData.n_engine =*n_engine;
+ 418              	 .loc 1 121 0
+ 419 0178 4C4B     	 ldr r3,.L2+8
+ 420 017a 1B68     	 ldr r3,[r3]
+ 421 017c 1A88     	 ldrh r2,[r3]
+ 422 017e 684B     	 ldr r3,.L2+124
+ 423 0180 5A80     	 strh r2,[r3,#2]
+ 122:../CAN_1.c    **** 	carData.gear = gear_1;
+ 424              	 .loc 1 122 0
+ 425 0182 4C4B     	 ldr r3,.L2+16
+ 426 0184 1A78     	 ldrb r2,[r3]
+ 427 0186 664B     	 ldr r3,.L2+124
+ 428 0188 1A72     	 strb r2,[r3,#8]
+ 123:../CAN_1.c    **** 	carData.ign_angle =(((float)ign_angle_1*0.1f)-100);
+ 429              	 .loc 1 123 0
+ 430 018a 4C4B     	 ldr r3,.L2+24
+ 431 018c 1B88     	 ldrh r3,[r3]
+ 432 018e 07EE903A 	 fmsr s15,r3
+ 433 0192 F8EE677A 	 fuitos s15,s15
+ 434 0196 9FED637A 	 flds s14,.L2+128
+ 435 019a 67EE877A 	 fmuls s15,s15,s14
+ 436 019e 9FED627A 	 flds s14,.L2+132
+ 437 01a2 77EEC77A 	 fsubs s15,s15,s14
+ 438 01a6 5E4B     	 ldr r3,.L2+124
+ 439 01a8 0933     	 adds r3,r3,#9
+ 440 01aa 17EE902A 	 fmrs r2,s15
+ 441 01ae 1A60     	 str r2,[r3]
+ 124:../CAN_1.c    **** 
+ 125:../CAN_1.c    **** 
+ 126:../CAN_1.c    **** 	//LM02
+ 127:../CAN_1.c    **** 	carData.shift_up = shift_up;
+ 442              	 .loc 1 127 0
+ 443 01b0 444B     	 ldr r3,.L2+32
+ 444 01b2 1A78     	 ldrb r2,[r3]
+ 445 01b4 5A4B     	 ldr r3,.L2+124
+ 446 01b6 5A73     	 strb r2,[r3,#13]
+ 128:../CAN_1.c    **** 	carData.shift_down = shift_down;
+ 447              	 .loc 1 128 0
+ 448 01b8 434B     	 ldr r3,.L2+36
+ 449 01ba 1A78     	 ldrb r2,[r3]
+ 450 01bc 584B     	 ldr r3,.L2+124
+ 451 01be 9A73     	 strb r2,[r3,#14]
+ 129:../CAN_1.c    **** 	carData.eng_map = eng_map;
+ 452              	 .loc 1 129 0
+ 453 01c0 424B     	 ldr r3,.L2+40
+ 454 01c2 1A78     	 ldrb r2,[r3]
+ 455 01c4 564B     	 ldr r3,.L2+124
+ 456 01c6 DA73     	 strb r2,[r3,#15]
+ 130:../CAN_1.c    **** 
+ 131:../CAN_1.c    **** 	//LM03
+ 132:../CAN_1.c    **** 	carData.p_pneu = (float)*p_pneu*0.04f;
+ 457              	 .loc 1 132 0
+ 458 01c8 424B     	 ldr r3,.L2+48
+ 459 01ca 1B68     	 ldr r3,[r3]
+ 460 01cc 1B78     	 ldrb r3,[r3]
+ 461 01ce 07EE903A 	 fmsr s15,r3
+ 462 01d2 F8EE677A 	 fuitos s15,s15
+ 463 01d6 9FED557A 	 flds s14,.L2+136
+ 464 01da 67EE877A 	 fmuls s15,s15,s14
+ 465 01de 504B     	 ldr r3,.L2+124
+ 466 01e0 17EE902A 	 fmrs r2,s15
+ 467 01e4 1A61     	 str r2,[r3,#16]
+ 133:../CAN_1.c    **** 	carData.x_RH_RL = (float)*x_RH_RL*0.5f;
+ 468              	 .loc 1 133 0
+ 469 01e6 3C4B     	 ldr r3,.L2+52
+ 470 01e8 1B68     	 ldr r3,[r3]
+ 471 01ea 1B78     	 ldrb r3,[r3]
+ 472 01ec 07EE903A 	 fmsr s15,r3
+ 473 01f0 F8EE677A 	 fuitos s15,s15
+ 474 01f4 B6EE007A 	 fconsts s14,#96
+ 475 01f8 67EE877A 	 fmuls s15,s15,s14
+ 476 01fc 484B     	 ldr r3,.L2+124
+ 477 01fe 17EE902A 	 fmrs r2,s15
+ 478 0202 5A61     	 str r2,[r3,#20]
+ 134:../CAN_1.c    **** 	carData.x_RH_RR = (float)*x_RH_RR*0.5f;
+ 479              	 .loc 1 134 0
+ 480 0204 354B     	 ldr r3,.L2+56
+ 481 0206 1B68     	 ldr r3,[r3]
+ 482 0208 1B78     	 ldrb r3,[r3]
+ 483 020a 07EE903A 	 fmsr s15,r3
+ 484 020e F8EE677A 	 fuitos s15,s15
+ 485 0212 B6EE007A 	 fconsts s14,#96
+ 486 0216 67EE877A 	 fmuls s15,s15,s14
+ 487 021a 414B     	 ldr r3,.L2+124
+ 488 021c 17EE902A 	 fmrs r2,s15
+ 489 0220 9A61     	 str r2,[r3,#24]
+ 135:../CAN_1.c    **** 	carData.t_oil_gb = *t_oil_gb;
+ 490              	 .loc 1 135 0
+ 491 0222 2F4B     	 ldr r3,.L2+60
+ 492 0224 1B68     	 ldr r3,[r3]
+ 493 0226 1A78     	 ldrb r2,[r3]
+ 494 0228 3D4B     	 ldr r3,.L2+124
+ 495 022a 1A77     	 strb r2,[r3,#28]
+ 136:../CAN_1.c    **** 	carData.t_canmod = *t_canmod;
+ 496              	 .loc 1 136 0
+ 497 022c 2D4B     	 ldr r3,.L2+64
+ 498 022e 1B68     	 ldr r3,[r3]
+ 499 0230 1A78     	 ldrb r2,[r3]
+ 500 0232 3B4B     	 ldr r3,.L2+124
+ 501 0234 5A77     	 strb r2,[r3,#29]
+ 137:../CAN_1.c    **** 
+ 138:../CAN_1.c    **** 	//LMO4
+ 139:../CAN_1.c    **** 	carData.p_oil =(float)*p_oil*0.032f;
+ 502              	 .loc 1 139 0
+ 503 0236 2D4B     	 ldr r3,.L2+72
+ 504 0238 1B68     	 ldr r3,[r3]
+ 505 023a 1B78     	 ldrb r3,[r3]
+ 506 023c 07EE903A 	 fmsr s15,r3
+ 507 0240 F8EE677A 	 fuitos s15,s15
+ 508 0244 9FED3A7A 	 flds s14,.L2+140
+ 509 0248 67EE877A 	 fmuls s15,s15,s14
+ 510 024c 344B     	 ldr r3,.L2+124
+ 511 024e 1E33     	 adds r3,r3,#30
+ 512 0250 17EE902A 	 fmrs r2,s15
+ 513 0254 1A60     	 str r2,[r3]
+ 140:../CAN_1.c    **** 	carData.p_fuel_rail =(float)*p_fuel_rail*0.032f;
+ 514              	 .loc 1 140 0
+ 515 0256 264B     	 ldr r3,.L2+76
+ 516 0258 1B68     	 ldr r3,[r3]
+ 517 025a 1B78     	 ldrb r3,[r3]
+ 518 025c 07EE903A 	 fmsr s15,r3
+ 519 0260 F8EE677A 	 fuitos s15,s15
+ 520 0264 9FED327A 	 flds s14,.L2+140
+ 521 0268 67EE877A 	 fmuls s15,s15,s14
+ 522 026c 2C4B     	 ldr r3,.L2+124
+ 523 026e 2233     	 adds r3,r3,#34
+ 524 0270 17EE902A 	 fmrs r2,s15
+ 525 0274 1A60     	 str r2,[r3]
+ 141:../CAN_1.c    **** 	carData.x_throttle_valve =(float)*a_ath*0.4f;
+ 526              	 .loc 1 141 0
+ 527 0276 1F4B     	 ldr r3,.L2+80
+ 528 0278 1B68     	 ldr r3,[r3]
+ 529 027a 1B78     	 ldrb r3,[r3]
+ 530 027c 07EE903A 	 fmsr s15,r3
+ 531 0280 F8EE677A 	 fuitos s15,s15
+ 532 0284 9FED2B7A 	 flds s14,.L2+144
+ 533 0288 67EE877A 	 fmuls s15,s15,s14
+ 534 028c 244B     	 ldr r3,.L2+124
+ 535 028e 2633     	 adds r3,r3,#38
+ 536 0290 17EE902A 	 fmrs r2,s15
+ 537 0294 1A60     	 str r2,[r3]
+ 142:../CAN_1.c    **** 	carData.t_water_engine =*t_water_engine-50;
+ 538              	 .loc 1 142 0
+ 539 0296 184B     	 ldr r3,.L2+84
+ 540 0298 1B68     	 ldr r3,[r3]
+ 541 029a 1B78     	 ldrb r3,[r3]
+ 542 029c 9BB2     	 uxth r3,r3
+ 543 029e 323B     	 subs r3,r3,#50
+ 544 02a0 4AE0     	 b .L3
+ 545              	.L4:
+ 546 02a2 00BF     	 .align 2
+ 547              	.L2:
+ 548 02a4 00000000 	 .word CAN_1_LMO_01_Config
+ 549 02a8 00000000 	 .word p_air_22
+ 550 02ac 00000000 	 .word n_engine
+ 551 02b0 00000000 	 .word gear
+ 552 02b4 00000000 	 .word gear_1
+ 553 02b8 00000000 	 .word ign_angle
+ 554 02bc 00000000 	 .word ign_angle_1
+ 555 02c0 00000000 	 .word CAN_1_LMO_02_Config
+ 556 02c4 00000000 	 .word shift_up
+ 557 02c8 00000000 	 .word shift_down
+ 558 02cc 00000000 	 .word eng_map
+ 559 02d0 00000000 	 .word CAN_1_LMO_03_Config
+ 560 02d4 00000000 	 .word p_pneu
+ 561 02d8 00000000 	 .word x_RH_RL
+ 562 02dc 00000000 	 .word x_RH_RR
+ 563 02e0 00000000 	 .word t_oil_gb
+ 564 02e4 00000000 	 .word t_canmod
+ 565 02e8 00000000 	 .word CAN_1_LMO_04_Config
+ 566 02ec 00000000 	 .word p_oil
+ 567 02f0 00000000 	 .word p_fuel_rail
+ 568 02f4 00000000 	 .word a_ath
+ 569 02f8 00000000 	 .word t_water_engine
+ 570 02fc 00000000 	 .word t_air_22
+ 571 0300 00000000 	 .word t_oil_engine
+ 572 0304 00000000 	 .word CAN_1_LMO_05_Config
+ 573 0308 00000000 	 .word lambda1
+ 574 030c 00000000 	 .word lambda
+ 575 0310 00000000 	 .word trigger_error
+ 576 0314 00000000 	 .word CAN_1_LMO_06_Config
+ 577 0318 00000000 	 .word p_brake_rear
+ 578 031c 0AD7233C 	 .word 1008981770
+ 579 0320 00000000 	 .word carData
+ 580 0324 CDCCCC3D 	 .word 1036831949
+ 581 0328 0000C842 	 .word 1120403456
+ 582 032c 0AD7233D 	 .word 1025758986
+ 583 0330 6F12033D 	 .word 1023611503
+ 584 0334 CDCCCC3E 	 .word 1053609165
+ 585              	.L3:
+ 586 0338 9AB2     	 uxth r2,r3
+ 587 033a 1A4B     	 ldr r3,.L5
+ 588 033c 5A85     	 strh r2,[r3,#42]
+ 143:../CAN_1.c    **** 	carData.t_air_22 = *t_air_22-50;
+ 589              	 .loc 1 143 0
+ 590 033e 1A4B     	 ldr r3,.L5+4
+ 591 0340 1B68     	 ldr r3,[r3]
+ 592 0342 1B78     	 ldrb r3,[r3]
+ 593 0344 9BB2     	 uxth r3,r3
+ 594 0346 323B     	 subs r3,r3,#50
+ 595 0348 9AB2     	 uxth r2,r3
+ 596 034a 164B     	 ldr r3,.L5
+ 597 034c 9A85     	 strh r2,[r3,#44]
+ 144:../CAN_1.c    **** 	carData.t_oil_engine = *t_oil_engine-50;
+ 598              	 .loc 1 144 0
+ 599 034e 174B     	 ldr r3,.L5+8
+ 600 0350 1B68     	 ldr r3,[r3]
+ 601 0352 1B78     	 ldrb r3,[r3]
+ 602 0354 9BB2     	 uxth r3,r3
+ 603 0356 323B     	 subs r3,r3,#50
+ 604 0358 9AB2     	 uxth r2,r3
+ 605 035a 124B     	 ldr r3,.L5
+ 606 035c DA85     	 strh r2,[r3,#46]
+ 145:../CAN_1.c    **** 
+ 146:../CAN_1.c    **** 	//LMO5
+ 147:../CAN_1.c    **** 	carData.lambda = (float)lambda * 0.001f;
+ 607              	 .loc 1 147 0
+ 608 035e 144B     	 ldr r3,.L5+12
+ 609 0360 1B88     	 ldrh r3,[r3]
+ 610 0362 07EE903A 	 fmsr s15,r3
+ 611 0366 F8EE677A 	 fuitos s15,s15
+ 612 036a 9FED127A 	 flds s14,.L5+16
+ 613 036e 67EE877A 	 fmuls s15,s15,s14
+ 614 0372 0C4B     	 ldr r3,.L5
+ 615 0374 17EE902A 	 fmrs r2,s15
+ 616 0378 1A63     	 str r2,[r3,#48]
+ 148:../CAN_1.c    **** 	carData.trigger_error = *trigger_error;
+ 617              	 .loc 1 148 0
+ 618 037a 0F4B     	 ldr r3,.L5+20
+ 619 037c 1B68     	 ldr r3,[r3]
+ 620 037e 1A78     	 ldrb r2,[r3]
+ 621 0380 084B     	 ldr r3,.L5
+ 622 0382 83F83420 	 strb r2,[r3,#52]
+ 149:../CAN_1.c    **** 
+ 150:../CAN_1.c    **** 	//LMO6
+ 151:../CAN_1.c    **** 	carData.p_brake_rear = (float)*p_brake_rear;
+ 623              	 .loc 1 151 0
+ 624 0386 0D4B     	 ldr r3,.L5+24
+ 625 0388 1B68     	 ldr r3,[r3]
+ 626 038a 1B78     	 ldrb r3,[r3]
+ 627 038c 07EE903A 	 fmsr s15,r3
+ 628 0390 F8EE677A 	 fuitos s15,s15
+ 629 0394 034B     	 ldr r3,.L5
+ 630 0396 3533     	 adds r3,r3,#53
+ 631 0398 17EE902A 	 fmrs r2,s15
+ 632 039c 1A60     	 str r2,[r3]
+ 152:../CAN_1.c    **** 	//carData.LC_clutch_pos_des = 44;// (float)*LC_clutch_pos_des*10;
+ 153:../CAN_1.c    **** 
+ 154:../CAN_1.c    **** 	//CAN_NODE_MO_Transmit(&CAN_1_LMO_07_Config);
+ 155:../CAN_1.c    **** }
+ 633              	 .loc 1 155 0
+ 634 039e 0837     	 adds r7,r7,#8
+ 635              	.LCFI3:
+ 636              	 .cfi_def_cfa_offset 8
+ 637 03a0 BD46     	 mov sp,r7
+ 638              	.LCFI4:
+ 639              	 .cfi_def_cfa_register 13
+ 640              	 
+ 641 03a2 80BD     	 pop {r7,pc}
+ 642              	.L6:
+ 643              	 .align 2
+ 644              	.L5:
+ 645 03a4 00000000 	 .word carData
+ 646 03a8 00000000 	 .word t_air_22
+ 647 03ac 00000000 	 .word t_oil_engine
+ 648 03b0 00000000 	 .word lambda
+ 649 03b4 6F12833A 	 .word 981668463
+ 650 03b8 00000000 	 .word trigger_error
+ 651 03bc 00000000 	 .word p_brake_rear
+ 652              	 .cfi_endproc
+ 653              	.LFE471:
+ 655              	 .section .text.CAN_1_Transmit,"ax",%progbits
+ 656              	 .align 2
+ 657              	 .global CAN_1_Transmit
+ 658              	 .thumb
+ 659              	 .thumb_func
+ 661              	CAN_1_Transmit:
+ 662              	.LFB472:
+ 156:../CAN_1.c    **** 
+ 157:../CAN_1.c    **** 
+ 158:../CAN_1.c    **** void CAN_1_Transmit(uint8_t ok) //ID 2032
+ 159:../CAN_1.c    **** {
+ 663              	 .loc 1 159 0
+ 664              	 .cfi_startproc
+ 665              	 
+ 666              	 
+ 667              	 
+ 668 0000 80B4     	 push {r7}
+ 669              	.LCFI5:
+ 670              	 .cfi_def_cfa_offset 4
+ 671              	 .cfi_offset 7,-4
+ 672 0002 83B0     	 sub sp,sp,#12
+ 673              	.LCFI6:
+ 674              	 .cfi_def_cfa_offset 16
+ 675 0004 00AF     	 add r7,sp,#0
+ 676              	.LCFI7:
+ 677              	 .cfi_def_cfa_register 7
+ 678 0006 0346     	 mov r3,r0
+ 679 0008 FB71     	 strb r3,[r7,#7]
+ 160:../CAN_1.c    **** //	CAN_data_Tx[0]=carData.Launch_1;
+ 161:../CAN_1.c    **** //	CAN_data_Tx[1]=carData.Launch_2;
+ 162:../CAN_1.c    **** //	CAN_data_Tx[2]=carData.Launch_3;
+ 163:../CAN_1.c    **** //	CAN_data_Tx[3]=carData.Launch_4;
+ 164:../CAN_1.c    **** 	if(ok == 1)
+ 165:../CAN_1.c    **** 	{
+ 166:../CAN_1.c    **** 	//CAN_NODE_MO_UpdateData(&CAN_1_LMO_07_Config, CAN_data_Tx);
+ 167:../CAN_1.c    **** 	//CAN_NODE_MO_Transmit(&CAN_1_LMO_07_Config);
+ 168:../CAN_1.c    **** 	//ok = 0;
+ 169:../CAN_1.c    **** 	}
+ 170:../CAN_1.c    **** }
+ 680              	 .loc 1 170 0
+ 681 000a 0C37     	 adds r7,r7,#12
+ 682              	.LCFI8:
+ 683              	 .cfi_def_cfa_offset 4
+ 684 000c BD46     	 mov sp,r7
+ 685              	.LCFI9:
+ 686              	 .cfi_def_cfa_register 13
+ 687              	 
+ 688 000e 5DF8047B 	 ldr r7,[sp],#4
+ 689              	.LCFI10:
+ 690              	 .cfi_restore 7
+ 691              	 .cfi_def_cfa_offset 0
+ 692 0012 7047     	 bx lr
+ 693              	 .cfi_endproc
+ 694              	.LFE472:
+ 696              	 .text
+ 697              	.Letext0:
+ 698              	 .file 2 "c:\\dave\\dave-ide-4.4.2-64bit\\eclipse\\arm-gcc-49\\arm-none-eabi\\include\\machine\\_default_types.h"
+ 699              	 .file 3 "c:\\dave\\dave-ide-4.4.2-64bit\\eclipse\\arm-gcc-49\\arm-none-eabi\\include\\stdint.h"
+ 700              	 .file 4 "C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/05_telemetrie/Telemetrie_Jr21/Libraries/CMSIS/Infineon/XMC4500_series/Include/XMC4500.h"
+ 701              	 .file 5 "C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/05_telemetrie/Telemetrie_Jr21/Libraries/XMCLib/inc/xmc_can.h"
+ 702              	 .file 6 "C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/05_telemetrie/Telemetrie_Jr21/Dave/Generated/CAN_NODE/can_node.h"
+ 703              	 .file 7 "C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/05_telemetrie/Telemetrie_Jr21/Libraries/XMCLib/inc/xmc_usic.h"
+ 704              	 .file 8 "../Tele.h"
+ 705              	 .file 9 "C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/05_telemetrie/Telemetrie_Jr21/Libraries/CMSIS/Include/core_cm4.h"
+ 706              	 .file 10 "C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/05_telemetrie/Telemetrie_Jr21/Libraries/CMSIS/Infineon/XMC4500_series/Include/system_XMC4500.h"
+ 707              	 .file 11 "C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/05_telemetrie/Telemetrie_Jr21/Dave/Generated/CAN_NODE/can_node_extern.h"
+DEFINED SYMBOLS
+                            *ABS*:00000000 CAN_1.c
+    {standard input}:24     .bss.CAN_data_Tx:00000000 CAN_data_Tx
+    {standard input}:21     .bss.CAN_data_Tx:00000000 $d
+    {standard input}:31     .bss.p_air_22:00000000 p_air_22
+    {standard input}:28     .bss.p_air_22:00000000 $d
+    {standard input}:38     .bss.n_engine:00000000 n_engine
+    {standard input}:35     .bss.n_engine:00000000 $d
+    {standard input}:45     .bss.gear:00000000 gear
+    {standard input}:42     .bss.gear:00000000 $d
+    {standard input}:51     .bss.gear_1:00000000 gear_1
+    {standard input}:52     .bss.gear_1:00000000 $d
+    {standard input}:58     .bss.ign_angle:00000000 ign_angle
+    {standard input}:55     .bss.ign_angle:00000000 $d
+    {standard input}:65     .bss.ign_angle_1:00000000 ign_angle_1
+    {standard input}:62     .bss.ign_angle_1:00000000 $d
+    {standard input}:71     .bss.shift_up:00000000 shift_up
+    {standard input}:72     .bss.shift_up:00000000 $d
+    {standard input}:77     .bss.shift_down:00000000 shift_down
+    {standard input}:78     .bss.shift_down:00000000 $d
+    {standard input}:83     .bss.eng_map:00000000 eng_map
+    {standard input}:84     .bss.eng_map:00000000 $d
+    {standard input}:90     .bss.p_pneu:00000000 p_pneu
+    {standard input}:87     .bss.p_pneu:00000000 $d
+    {standard input}:97     .bss.x_RH_RL:00000000 x_RH_RL
+    {standard input}:94     .bss.x_RH_RL:00000000 $d
+    {standard input}:104    .bss.x_RH_RR:00000000 x_RH_RR
+    {standard input}:101    .bss.x_RH_RR:00000000 $d
+    {standard input}:111    .bss.t_oil_gb:00000000 t_oil_gb
+    {standard input}:108    .bss.t_oil_gb:00000000 $d
+    {standard input}:118    .bss.t_canmod:00000000 t_canmod
+    {standard input}:115    .bss.t_canmod:00000000 $d
+    {standard input}:125    .bss.p_oil:00000000 p_oil
+    {standard input}:122    .bss.p_oil:00000000 $d
+    {standard input}:132    .bss.p_fuel_rail:00000000 p_fuel_rail
+    {standard input}:129    .bss.p_fuel_rail:00000000 $d
+    {standard input}:139    .bss.a_ath:00000000 a_ath
+    {standard input}:136    .bss.a_ath:00000000 $d
+    {standard input}:146    .bss.t_water_engine:00000000 t_water_engine
+    {standard input}:143    .bss.t_water_engine:00000000 $d
+    {standard input}:153    .bss.t_air_22:00000000 t_air_22
+    {standard input}:150    .bss.t_air_22:00000000 $d
+    {standard input}:160    .bss.t_oil_engine:00000000 t_oil_engine
+    {standard input}:157    .bss.t_oil_engine:00000000 $d
+    {standard input}:167    .bss.lambda1:00000000 lambda1
+    {standard input}:164    .bss.lambda1:00000000 $d
+    {standard input}:174    .bss.lambda:00000000 lambda
+    {standard input}:171    .bss.lambda:00000000 $d
+    {standard input}:181    .bss.trigger_error:00000000 trigger_error
+    {standard input}:178    .bss.trigger_error:00000000 $d
+    {standard input}:188    .bss.p_brake_rear:00000000 p_brake_rear
+    {standard input}:185    .bss.p_brake_rear:00000000 $d
+    {standard input}:191    .text.CAN_1_Receive:00000000 $t
+    {standard input}:196    .text.CAN_1_Receive:00000000 CAN_1_Receive
+    {standard input}:548    .text.CAN_1_Receive:000002a4 $d
+    {standard input}:586    .text.CAN_1_Receive:00000338 $t
+    {standard input}:645    .text.CAN_1_Receive:000003a4 $d
+    {standard input}:656    .text.CAN_1_Transmit:00000000 $t
+    {standard input}:661    .text.CAN_1_Transmit:00000000 CAN_1_Transmit
+                     .debug_frame:00000010 $d
+
+UNDEFINED SYMBOLS
+CAN_NODE_MO_Receive
+getbits
+CAN_1_LMO_01_Config
+CAN_1_LMO_02_Config
+CAN_1_LMO_03_Config
+CAN_1_LMO_04_Config
+CAN_1_LMO_05_Config
+CAN_1_LMO_06_Config
+carData
