@@ -253,6 +253,7 @@
     <enumValues xsi:type="ResourceModel:RegEnumValue" value="0b111" description="Interrupt output line INT_O7 is selected."/>
   </provided>
   <provided xsi:type="ResourceModel:ResourceGroup" name="32" URI="http://resources/0.1.28/peripheral/can/0/mo/32">
+    <upwardMapList xsi:type="ResourceModel:HWResource" href="../../APPS/CAN_NODE/v4_1_14/CAN_NODE_1.app#//@hwResources.4"/>
     <resourcesList name="mofcr" requiredResourceUri="http://resources/0.1.28/peripheral/can/0/mofcr32"/>
     <resourcesList name="mofgpr" requiredResourceUri="http://resources/0.1.28/peripheral/can/0/mofgpr32"/>
     <resourcesList name="moipr" requiredResourceUri="http://resources/0.1.28/peripheral/can/0/moipr32"/>

@@ -90,7 +90,9 @@
   <hwResources name="MO_1" URI="http://resources/4.1.14/app/CAN_NODE/1/hwres_can_mobj1" resourceGroupUri="peripheral/can/*/mo/*" mResGrpUri="peripheral/can/*/mo/*">
     <downwardMapList xsi:type="ResourceModel:ResourceGroup" href="../../../HW_RESOURCES/CAN/CAN_0.dd#//@provided.33"/>
   </hwResources>
-  <hwResources name="MO_2" URI="http://resources/4.1.14/app/CAN_NODE/1/hwres_can_mobj2" resourceGroupUri="" required="false" mResGrpUri="peripheral/can/*/mo/*"/>
+  <hwResources name="MO_2" URI="http://resources/4.1.14/app/CAN_NODE/1/hwres_can_mobj2" resourceGroupUri="peripheral/can/*/mo/*" mResGrpUri="peripheral/can/*/mo/*">
+    <downwardMapList xsi:type="ResourceModel:ResourceGroup" href="../../../HW_RESOURCES/CAN/CAN_0.dd#//@provided.25"/>
+  </hwResources>
   <hwResources name="MO_3" URI="http://resources/4.1.14/app/CAN_NODE/1/hwres_can_mobj3" resourceGroupUri="" required="false" mResGrpUri="peripheral/can/*/mo/*"/>
   <hwResources name="MO_4" URI="http://resources/4.1.14/app/CAN_NODE/1/hwres_can_mobj4" resourceGroupUri="" required="false" mResGrpUri="peripheral/can/*/mo/*"/>
   <hwResources name="MO_5" URI="http://resources/4.1.14/app/CAN_NODE/1/hwres_can_mobj5" resourceGroupUri="" required="false" mResGrpUri="peripheral/can/*/mo/*"/>
