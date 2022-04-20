@@ -1,0 +1,10 @@
+.\uvbuild\system_xmc4500.o: RTE\Device\XMC4500-F100x1024\system_XMC4500.c
+.\uvbuild\system_xmc4500.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\string.h
+.\uvbuild\system_xmc4500.o: C:\Users\Yoshi\AppData\Local\Arm\Packs\Infineon\XMC4000_DFP\2.13.0\Device\XMC4500_series\Include\XMC4500.h
+.\uvbuild\system_xmc4500.o: C:\Users\Yoshi\AppData\Local\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include\core_cm4.h
+.\uvbuild\system_xmc4500.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
+.\uvbuild\system_xmc4500.o: C:\Users\Yoshi\AppData\Local\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include\cmsis_version.h
+.\uvbuild\system_xmc4500.o: C:\Users\Yoshi\AppData\Local\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include\cmsis_compiler.h
+.\uvbuild\system_xmc4500.o: C:\Users\Yoshi\AppData\Local\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include\cmsis_armcc.h
+.\uvbuild\system_xmc4500.o: C:\Users\Yoshi\AppData\Local\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include\mpu_armv7.h
+.\uvbuild\system_xmc4500.o: C:\Users\Yoshi\AppData\Local\Arm\Packs\Infineon\XMC4000_DFP\2.13.0\Device\XMC4500_series\Include\system_XMC4500.h

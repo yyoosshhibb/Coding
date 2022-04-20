@@ -1,0 +1,1248 @@
+   1              	 .syntax unified
+   2              	 .cpu cortex-m4
+   3              	 .eabi_attribute 27,3
+   4              	 .fpu fpv4-sp-d16
+   5              	 .eabi_attribute 20,1
+   6              	 .eabi_attribute 21,1
+   7              	 .eabi_attribute 23,3
+   8              	 .eabi_attribute 24,1
+   9              	 .eabi_attribute 25,1
+  10              	 .eabi_attribute 26,1
+  11              	 .eabi_attribute 30,6
+  12              	 .eabi_attribute 34,1
+  13              	 .eabi_attribute 18,4
+  14              	 .thumb
+  15              	 .file "CAN_2.c"
+  16              	 .text
+  17              	.Ltext0:
+  18              	 .cfi_sections .debug_frame
+  19              	 .section .text.XMC_GPIO_SetOutputHigh,"ax",%progbits
+  20              	 .align 2
+  21              	 .thumb
+  22              	 .thumb_func
+  24              	XMC_GPIO_SetOutputHigh:
+  25              	.LFB177:
+  26              	 .file 1 "C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Libraries/XMCLib/inc/xmc_gpio.h"
+   1:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Libraries/XMCLib/inc\xmc_gpio.h **** /**
+   2:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Libraries/XMCLib/inc\xmc_gpio.h ****  * @file xmc_gpio.h
+   3:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Libraries/XMCLib/inc\xmc_gpio.h ****  * @date 2015-06-20
+   4:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Libraries/XMCLib/inc\xmc_gpio.h ****  *
+   5:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Libraries/XMCLib/inc\xmc_gpio.h ****  * @cond
+   6:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Libraries/XMCLib/inc\xmc_gpio.h ****  **************************************************************************************************
+   7:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Libraries/XMCLib/inc\xmc_gpio.h ****  * XMClib v2.1.24 - XMC Peripheral Driver Library 
+   8:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Libraries/XMCLib/inc\xmc_gpio.h ****  *
+   9:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Libraries/XMCLib/inc\xmc_gpio.h ****  * Copyright (c) 2015-2019, Infineon Technologies AG
+  10:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Libraries/XMCLib/inc\xmc_gpio.h ****  * All rights reserved.                        
+  11:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Libraries/XMCLib/inc\xmc_gpio.h ****  *                                             
+  12:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Libraries/XMCLib/inc\xmc_gpio.h ****  * Redistribution and use in source and binary forms, with or without modification,are permitted pr
+  13:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Libraries/XMCLib/inc\xmc_gpio.h ****  * following conditions are met:   
+  14:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Libraries/XMCLib/inc\xmc_gpio.h ****  *                                                                              
+  15:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Libraries/XMCLib/inc\xmc_gpio.h ****  * Redistributions of source code must retain the above copyright notice, this list of conditions a
+  16:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Libraries/XMCLib/inc\xmc_gpio.h ****  * disclaimer.                        
+  17:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Libraries/XMCLib/inc\xmc_gpio.h ****  * 
+  18:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Libraries/XMCLib/inc\xmc_gpio.h ****  * Redistributions in binary form must reproduce the above copyright notice, this list of condition
+  19:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Libraries/XMCLib/inc\xmc_gpio.h ****  * disclaimer in the documentation and/or other materials provided with the distribution.          
+  20:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Libraries/XMCLib/inc\xmc_gpio.h ****  * 
+  21:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Libraries/XMCLib/inc\xmc_gpio.h ****  * Neither the name of the copyright holders nor the names of its contributors may be used to endor
+  22:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Libraries/XMCLib/inc\xmc_gpio.h ****  * products derived from this software without specific prior written permission.                  
+  23:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Libraries/XMCLib/inc\xmc_gpio.h ****  *                                                                              
+  24:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Libraries/XMCLib/inc\xmc_gpio.h ****  * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND ANY EXPRESS OR I
+  25:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Libraries/XMCLib/inc\xmc_gpio.h ****  * INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTI
+  26:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Libraries/XMCLib/inc\xmc_gpio.h ****  * DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE  FOR ANY DIRECT, IN
+  27:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Libraries/XMCLib/inc\xmc_gpio.h ****  * SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBS
+  28:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Libraries/XMCLib/inc\xmc_gpio.h ****  * SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THE
+  29:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Libraries/XMCLib/inc\xmc_gpio.h ****  * WHETHER IN CONTRACT, STRICT LIABILITY,OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY
+  30:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Libraries/XMCLib/inc\xmc_gpio.h ****  * OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.                            
+  31:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Libraries/XMCLib/inc\xmc_gpio.h ****  *                                                                              
+  32:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Libraries/XMCLib/inc\xmc_gpio.h ****  * To improve the quality of the software, users are encouraged to share modifications, enhancement
+  33:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Libraries/XMCLib/inc\xmc_gpio.h ****  * Infineon Technologies AG dave@infineon.com).                                                    
+  34:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Libraries/XMCLib/inc\xmc_gpio.h ****  **************************************************************************************************
+  35:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Libraries/XMCLib/inc\xmc_gpio.h ****  *
+  36:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Libraries/XMCLib/inc\xmc_gpio.h ****  * Change History
+  37:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Libraries/XMCLib/inc\xmc_gpio.h ****  * --------------
+  38:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Libraries/XMCLib/inc\xmc_gpio.h ****  *
+  39:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Libraries/XMCLib/inc\xmc_gpio.h ****  * 2015-02-20:
+  40:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Libraries/XMCLib/inc\xmc_gpio.h ****  *     - Initial draft<br>
+  41:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Libraries/XMCLib/inc\xmc_gpio.h ****  *     - Documentation improved <br>
+  42:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Libraries/XMCLib/inc\xmc_gpio.h ****  *      
+  43:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Libraries/XMCLib/inc\xmc_gpio.h ****  * 2015-06-20:
+  44:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Libraries/XMCLib/inc\xmc_gpio.h ****  *     - Removed version macros and declaration of GetDriverVersion API
+  45:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Libraries/XMCLib/inc\xmc_gpio.h ****  *
+  46:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Libraries/XMCLib/inc\xmc_gpio.h ****  * @endcond
+  47:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Libraries/XMCLib/inc\xmc_gpio.h ****  *
+  48:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Libraries/XMCLib/inc\xmc_gpio.h ****  */
+  49:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Libraries/XMCLib/inc\xmc_gpio.h **** 
+  50:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Libraries/XMCLib/inc\xmc_gpio.h **** #ifndef XMC_GPIO_H
+  51:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Libraries/XMCLib/inc\xmc_gpio.h **** #define XMC_GPIO_H
+  52:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Libraries/XMCLib/inc\xmc_gpio.h **** 
+  53:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Libraries/XMCLib/inc\xmc_gpio.h **** /**************************************************************************************************
+  54:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Libraries/XMCLib/inc\xmc_gpio.h ****  * HEADER FILES
+  55:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Libraries/XMCLib/inc\xmc_gpio.h ****  **************************************************************************************************
+  56:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Libraries/XMCLib/inc\xmc_gpio.h **** 
+  57:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Libraries/XMCLib/inc\xmc_gpio.h **** #include "xmc_common.h"
+  58:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Libraries/XMCLib/inc\xmc_gpio.h **** 
+  59:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Libraries/XMCLib/inc\xmc_gpio.h **** /**
+  60:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Libraries/XMCLib/inc\xmc_gpio.h ****  * @addtogroup XMClib XMC Peripheral Library
+  61:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Libraries/XMCLib/inc\xmc_gpio.h ****  * @{
+  62:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Libraries/XMCLib/inc\xmc_gpio.h ****  */
+  63:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Libraries/XMCLib/inc\xmc_gpio.h **** 
+  64:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Libraries/XMCLib/inc\xmc_gpio.h **** /**
+  65:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Libraries/XMCLib/inc\xmc_gpio.h ****  * @addtogroup GPIO
+  66:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Libraries/XMCLib/inc\xmc_gpio.h ****  * @brief General Purpose Input Output (GPIO) driver for the XMC microcontroller family.
+  67:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Libraries/XMCLib/inc\xmc_gpio.h ****  *
+  68:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Libraries/XMCLib/inc\xmc_gpio.h ****  * GPIO driver provide a generic and very flexible software interface for all standard digital I/O 
+  69:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Libraries/XMCLib/inc\xmc_gpio.h ****  * Each port slice has individual interfaces for the operation as General Purpose I/O and it furthe
+  70:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Libraries/XMCLib/inc\xmc_gpio.h ****  * connectivity to the on-chip periphery and the control for the pad characteristics. 
+  71:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Libraries/XMCLib/inc\xmc_gpio.h ****  *
+  72:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Libraries/XMCLib/inc\xmc_gpio.h ****  * The driver is divided into Input and Output mode.
+  73:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Libraries/XMCLib/inc\xmc_gpio.h ****  *
+  74:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Libraries/XMCLib/inc\xmc_gpio.h ****  * Input mode features:
+  75:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Libraries/XMCLib/inc\xmc_gpio.h ****  * -# Configuration structure XMC_GPIO_CONFIG_t and initialization function XMC_GPIO_Init()
+  76:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Libraries/XMCLib/inc\xmc_gpio.h ****  * -# Allows the selection of weak pull-up or pull-down device. Configuration structure XMC_GPIO_MO
+  77:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Libraries/XMCLib/inc\xmc_gpio.h ****  * \if XMC1
+  78:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Libraries/XMCLib/inc\xmc_gpio.h ****  * -# Allows the selection of input hysteresis. XMC_GPIO_SetInputHysteresis()
+  79:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Libraries/XMCLib/inc\xmc_gpio.h ****  * \endif
+  80:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Libraries/XMCLib/inc\xmc_gpio.h ****  *
+  81:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Libraries/XMCLib/inc\xmc_gpio.h ****  * 
+  82:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Libraries/XMCLib/inc\xmc_gpio.h ****  * Output mode features:
+  83:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Libraries/XMCLib/inc\xmc_gpio.h ****  * -# Allows the selection of push pull/open drain and Alternate output. Configuration structure XM
+  84:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Libraries/XMCLib/inc\xmc_gpio.h ****  * \if XMC4
+  85:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Libraries/XMCLib/inc\xmc_gpio.h ****  * -# Allows the selection of pad driver strength. Configuration structure XMC_GPIO_OUTPUT_STRENGTH
+  86:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Libraries/XMCLib/inc\xmc_gpio.h ****  * \endif
+  87:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Libraries/XMCLib/inc\xmc_gpio.h ****  *
+  88:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Libraries/XMCLib/inc\xmc_gpio.h ****  * -# Allows the selection of initial output level. Configuration structure XMC_GPIO_OUTPUT_LEVEL_t
+  89:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Libraries/XMCLib/inc\xmc_gpio.h ****  *
+  90:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Libraries/XMCLib/inc\xmc_gpio.h ****  *@{
+  91:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Libraries/XMCLib/inc\xmc_gpio.h ****  */
+  92:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Libraries/XMCLib/inc\xmc_gpio.h ****  
+  93:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Libraries/XMCLib/inc\xmc_gpio.h **** /**************************************************************************************************
+  94:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Libraries/XMCLib/inc\xmc_gpio.h ****  * MACROS
+  95:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Libraries/XMCLib/inc\xmc_gpio.h ****  **************************************************************************************************
+  96:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Libraries/XMCLib/inc\xmc_gpio.h **** 
+  97:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Libraries/XMCLib/inc\xmc_gpio.h **** #define PORT_IOCR_PC_Pos PORT0_IOCR0_PC0_Pos
+  98:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Libraries/XMCLib/inc\xmc_gpio.h **** #define PORT_IOCR_PC_Msk PORT0_IOCR0_PC0_Msk
+  99:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Libraries/XMCLib/inc\xmc_gpio.h **** 
+ 100:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Libraries/XMCLib/inc\xmc_gpio.h **** #define PORT_IOCR_PC_Size 				(8U)
+ 101:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Libraries/XMCLib/inc\xmc_gpio.h **** 											
+ 102:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Libraries/XMCLib/inc\xmc_gpio.h **** 
+ 103:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Libraries/XMCLib/inc\xmc_gpio.h **** #define XMC_GPIO_CHECK_OUTPUT_LEVEL(level) ((level == XMC_GPIO_OUTPUT_LEVEL_LOW) || \
+ 104:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Libraries/XMCLib/inc\xmc_gpio.h ****                                             (level == XMC_GPIO_OUTPUT_LEVEL_HIGH))
+ 105:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Libraries/XMCLib/inc\xmc_gpio.h ****                                             
+ 106:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Libraries/XMCLib/inc\xmc_gpio.h **** #define XMC_GPIO_CHECK_HWCTRL(hwctrl) ((hwctrl == XMC_GPIO_HWCTRL_DISABLED) || \
+ 107:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Libraries/XMCLib/inc\xmc_gpio.h ****                                        (hwctrl == XMC_GPIO_HWCTRL_PERIPHERAL1) || \
+ 108:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Libraries/XMCLib/inc\xmc_gpio.h ****                                        (hwctrl == XMC_GPIO_HWCTRL_PERIPHERAL2))                    
+ 109:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Libraries/XMCLib/inc\xmc_gpio.h ****                                             
+ 110:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Libraries/XMCLib/inc\xmc_gpio.h **** /**************************************************************************************************
+ 111:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Libraries/XMCLib/inc\xmc_gpio.h ****  * ENUMS
+ 112:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Libraries/XMCLib/inc\xmc_gpio.h ****  **************************************************************************************************
+ 113:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Libraries/XMCLib/inc\xmc_gpio.h **** 
+ 114:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Libraries/XMCLib/inc\xmc_gpio.h **** 
+ 115:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Libraries/XMCLib/inc\xmc_gpio.h **** /**
+ 116:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Libraries/XMCLib/inc\xmc_gpio.h ****  * Defines output level of a pin. Use type \a XMC_GPIO_OUTPUT_LEVEL_t for this enum.
+ 117:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Libraries/XMCLib/inc\xmc_gpio.h ****  */
+ 118:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Libraries/XMCLib/inc\xmc_gpio.h **** typedef enum XMC_GPIO_OUTPUT_LEVEL
+ 119:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Libraries/XMCLib/inc\xmc_gpio.h **** {
+ 120:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Libraries/XMCLib/inc\xmc_gpio.h ****   XMC_GPIO_OUTPUT_LEVEL_LOW  = 0x10000U, /**<  Reset bit */
+ 121:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Libraries/XMCLib/inc\xmc_gpio.h ****   XMC_GPIO_OUTPUT_LEVEL_HIGH = 0x1U, 	/**< Set bit  */
+ 122:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Libraries/XMCLib/inc\xmc_gpio.h **** } XMC_GPIO_OUTPUT_LEVEL_t;
+ 123:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Libraries/XMCLib/inc\xmc_gpio.h **** 
+ 124:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Libraries/XMCLib/inc\xmc_gpio.h **** /**
+ 125:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Libraries/XMCLib/inc\xmc_gpio.h ****  * Defines direct hardware control characteristics of the pin . Use type \a XMC_GPIO_HWCTRL_t for t
+ 126:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Libraries/XMCLib/inc\xmc_gpio.h ****  */
+ 127:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Libraries/XMCLib/inc\xmc_gpio.h **** typedef enum XMC_GPIO_HWCTRL
+ 128:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Libraries/XMCLib/inc\xmc_gpio.h **** {
+ 129:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Libraries/XMCLib/inc\xmc_gpio.h ****   XMC_GPIO_HWCTRL_DISABLED     = 0x0U, /**<  Software control only */
+ 130:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Libraries/XMCLib/inc\xmc_gpio.h ****   XMC_GPIO_HWCTRL_PERIPHERAL1  = 0x1U, /**<  HWI0/HWO0 control path can override the software confi
+ 131:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Libraries/XMCLib/inc\xmc_gpio.h ****   XMC_GPIO_HWCTRL_PERIPHERAL2  = 0x2U  /**<  HWI1/HWO1 control path can override the software confi
+ 132:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Libraries/XMCLib/inc\xmc_gpio.h **** } XMC_GPIO_HWCTRL_t;
+ 133:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Libraries/XMCLib/inc\xmc_gpio.h **** 
+ 134:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Libraries/XMCLib/inc\xmc_gpio.h **** /**************************************************************************************************
+ 135:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Libraries/XMCLib/inc\xmc_gpio.h ****  * DEVICE FAMILY EXTENSIONS
+ 136:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Libraries/XMCLib/inc\xmc_gpio.h ****  **************************************************************************************************
+ 137:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Libraries/XMCLib/inc\xmc_gpio.h **** 
+ 138:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Libraries/XMCLib/inc\xmc_gpio.h ****  #if UC_FAMILY == XMC1
+ 139:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Libraries/XMCLib/inc\xmc_gpio.h **** #include "xmc1_gpio.h"
+ 140:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Libraries/XMCLib/inc\xmc_gpio.h **** #elif UC_FAMILY == XMC4
+ 141:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Libraries/XMCLib/inc\xmc_gpio.h **** #include "xmc4_gpio.h"
+ 142:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Libraries/XMCLib/inc\xmc_gpio.h **** #else
+ 143:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Libraries/XMCLib/inc\xmc_gpio.h **** #error "xmc_gpio.h: family device not supported"
+ 144:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Libraries/XMCLib/inc\xmc_gpio.h **** #endif
+ 145:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Libraries/XMCLib/inc\xmc_gpio.h **** 
+ 146:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Libraries/XMCLib/inc\xmc_gpio.h **** /**************************************************************************************************
+ 147:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Libraries/XMCLib/inc\xmc_gpio.h ****  * API PROTOTYPES
+ 148:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Libraries/XMCLib/inc\xmc_gpio.h ****  **************************************************************************************************
+ 149:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Libraries/XMCLib/inc\xmc_gpio.h **** 
+ 150:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Libraries/XMCLib/inc\xmc_gpio.h **** #ifdef __cplusplus
+ 151:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Libraries/XMCLib/inc\xmc_gpio.h **** extern "C" {
+ 152:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Libraries/XMCLib/inc\xmc_gpio.h **** #endif
+ 153:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Libraries/XMCLib/inc\xmc_gpio.h **** 
+ 154:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Libraries/XMCLib/inc\xmc_gpio.h **** 
+ 155:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Libraries/XMCLib/inc\xmc_gpio.h **** /**
+ 156:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Libraries/XMCLib/inc\xmc_gpio.h ****  * @param  port	  Constant pointer pointing to GPIO port, to access port registers like Pn_OUT,Pn_O
+ 157:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Libraries/XMCLib/inc\xmc_gpio.h ****  * @param  pin	  Port pin number.
+ 158:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Libraries/XMCLib/inc\xmc_gpio.h ****  * @param  config GPIO configuration data structure. Refer data structure @ref XMC_GPIO_CONFIG_t fo
+ 159:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Libraries/XMCLib/inc\xmc_gpio.h ****  *
+ 160:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Libraries/XMCLib/inc\xmc_gpio.h ****  * @return None
+ 161:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Libraries/XMCLib/inc\xmc_gpio.h ****  *
+ 162:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Libraries/XMCLib/inc\xmc_gpio.h ****  * \par<b>Description:</b><br>
+ 163:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Libraries/XMCLib/inc\xmc_gpio.h ****  * \if XMC1
+ 164:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Libraries/XMCLib/inc\xmc_gpio.h ****  * Initializes input / output mode settings like, pull up / pull down devices,hysteresis, push pull
+ 165:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Libraries/XMCLib/inc\xmc_gpio.h ****  * Also configures alternate function outputs and clears hardware port control for a selected \a po
+ 166:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Libraries/XMCLib/inc\xmc_gpio.h ****  * \a config provides selected I/O settings. It configures hardware registers Pn_IOCR,Pn_OUT, Pn_OM
+ 167:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Libraries/XMCLib/inc\xmc_gpio.h ****  * \endif
+ 168:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Libraries/XMCLib/inc\xmc_gpio.h ****  * \if XMC4
+ 169:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Libraries/XMCLib/inc\xmc_gpio.h ****  * Initializes input / output mode settings like, pull up / pull down devices,push pull /open drain
+ 170:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Libraries/XMCLib/inc\xmc_gpio.h ****  * Also configures alternate function outputs and clears hardware port control for selected \a port
+ 171:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Libraries/XMCLib/inc\xmc_gpio.h ****  * It configures hardware registers Pn_IOCR,Pn_OUT,Pn_OMR,Pn_PDISC and Pn_PDR.\n
+ 172:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Libraries/XMCLib/inc\xmc_gpio.h ****  * \endif
+ 173:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Libraries/XMCLib/inc\xmc_gpio.h ****  *
+ 174:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Libraries/XMCLib/inc\xmc_gpio.h ****  * \par<b>Related APIs:</b><BR>
+ 175:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Libraries/XMCLib/inc\xmc_gpio.h ****  *  None
+ 176:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Libraries/XMCLib/inc\xmc_gpio.h ****  *
+ 177:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Libraries/XMCLib/inc\xmc_gpio.h ****  * \par<b>Note:</b><br>
+ 178:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Libraries/XMCLib/inc\xmc_gpio.h ****  * This API is called in definition of DAVE_init by code generation and therefore should not be exp
+ 179:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Libraries/XMCLib/inc\xmc_gpio.h ****  * for the normal operation. Use other APIs only after DAVE_init is called successfully (returns DA
+ 180:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Libraries/XMCLib/inc\xmc_gpio.h ****  *
+ 181:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Libraries/XMCLib/inc\xmc_gpio.h ****  *
+ 182:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Libraries/XMCLib/inc\xmc_gpio.h ****  */
+ 183:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Libraries/XMCLib/inc\xmc_gpio.h **** 
+ 184:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Libraries/XMCLib/inc\xmc_gpio.h ****  
+ 185:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Libraries/XMCLib/inc\xmc_gpio.h **** void XMC_GPIO_Init(XMC_GPIO_PORT_t *const port, const uint8_t pin, const XMC_GPIO_CONFIG_t *const c
+ 186:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Libraries/XMCLib/inc\xmc_gpio.h ****  
+ 187:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Libraries/XMCLib/inc\xmc_gpio.h **** /**
+ 188:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Libraries/XMCLib/inc\xmc_gpio.h ****  *
+ 189:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Libraries/XMCLib/inc\xmc_gpio.h ****  * @param  port	Constant pointer pointing to GPIO port, to access hardware register Pn_IOCR.
+ 190:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Libraries/XMCLib/inc\xmc_gpio.h ****  * @param  pin	Port pin number.
+ 191:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Libraries/XMCLib/inc\xmc_gpio.h ****  * @param  mode input / output functionality selection. Refer @ref XMC_GPIO_MODE_t for valid values
+ 192:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Libraries/XMCLib/inc\xmc_gpio.h ****  *
+ 193:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Libraries/XMCLib/inc\xmc_gpio.h ****  * @return None
+ 194:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Libraries/XMCLib/inc\xmc_gpio.h ****  *
+ 195:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Libraries/XMCLib/inc\xmc_gpio.h ****  * \par<b>Description:</b><br>
+ 196:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Libraries/XMCLib/inc\xmc_gpio.h ****  * Sets digital input and output driver functionality and characteristics of a GPIO port pin. It co
+ 197:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Libraries/XMCLib/inc\xmc_gpio.h ****  * registers Pn_IOCR. \a mode is initially configured during initialization in XMC_GPIO_Init(). Cal
+ 198:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Libraries/XMCLib/inc\xmc_gpio.h ****  * the port direction functionality as needed later in the program.
+ 199:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Libraries/XMCLib/inc\xmc_gpio.h ****  *
+ 200:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Libraries/XMCLib/inc\xmc_gpio.h ****  * \par<b>Related APIs:</b><BR>
+ 201:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Libraries/XMCLib/inc\xmc_gpio.h ****  *  None
+ 202:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Libraries/XMCLib/inc\xmc_gpio.h ****  *
+ 203:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Libraries/XMCLib/inc\xmc_gpio.h ****  */
+ 204:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Libraries/XMCLib/inc\xmc_gpio.h **** 
+ 205:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Libraries/XMCLib/inc\xmc_gpio.h **** void XMC_GPIO_SetMode(XMC_GPIO_PORT_t *const port, const uint8_t pin, const XMC_GPIO_MODE_t mode);
+ 206:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Libraries/XMCLib/inc\xmc_gpio.h **** 
+ 207:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Libraries/XMCLib/inc\xmc_gpio.h **** 
+ 208:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Libraries/XMCLib/inc\xmc_gpio.h **** /**
+ 209:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Libraries/XMCLib/inc\xmc_gpio.h ****  *
+ 210:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Libraries/XMCLib/inc\xmc_gpio.h ****  * @param  port	 Constant pointer pointing to GPIO port, to access hardware register Pn_OMR.
+ 211:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Libraries/XMCLib/inc\xmc_gpio.h ****  * @param  pin	 Port pin number.
+ 212:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Libraries/XMCLib/inc\xmc_gpio.h ****  * @param  level output level selection. Refer @ref XMC_GPIO_OUTPUT_LEVEL_t for valid values.
+ 213:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Libraries/XMCLib/inc\xmc_gpio.h ****  *
+ 214:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Libraries/XMCLib/inc\xmc_gpio.h ****  * @return None
+ 215:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Libraries/XMCLib/inc\xmc_gpio.h ****  *
+ 216:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Libraries/XMCLib/inc\xmc_gpio.h ****  * \par<b>Description:</b><br>
+ 217:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Libraries/XMCLib/inc\xmc_gpio.h ****  * Set port pin output level to high or low.It configures hardware registers Pn_OMR.\a level is ini
+ 218:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Libraries/XMCLib/inc\xmc_gpio.h ****  * configured during initialization in XMC_GPIO_Init(). Call this API to alter output level as need
+ 219:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Libraries/XMCLib/inc\xmc_gpio.h ****  *
+ 220:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Libraries/XMCLib/inc\xmc_gpio.h ****  * \par<b>Related APIs:</b><BR>
+ 221:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Libraries/XMCLib/inc\xmc_gpio.h ****  *  XMC_GPIO_SetOutputHigh(), XMC_GPIO_SetOutputLow().
+ 222:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Libraries/XMCLib/inc\xmc_gpio.h ****  *
+ 223:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Libraries/XMCLib/inc\xmc_gpio.h ****  * \par<b>Note:</b><br>
+ 224:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Libraries/XMCLib/inc\xmc_gpio.h ****  * Prior to this api, user has to configure port pin to output mode using XMC_GPIO_SetMode().
+ 225:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Libraries/XMCLib/inc\xmc_gpio.h ****  *
+ 226:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Libraries/XMCLib/inc\xmc_gpio.h ****  */
+ 227:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Libraries/XMCLib/inc\xmc_gpio.h **** 
+ 228:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Libraries/XMCLib/inc\xmc_gpio.h **** 
+ 229:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Libraries/XMCLib/inc\xmc_gpio.h **** __STATIC_INLINE void XMC_GPIO_SetOutputLevel(XMC_GPIO_PORT_t *const port, const uint8_t pin, const 
+ 230:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Libraries/XMCLib/inc\xmc_gpio.h **** {
+ 231:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Libraries/XMCLib/inc\xmc_gpio.h ****   XMC_ASSERT("XMC_GPIO_SetOutputLevel: Invalid port", XMC_GPIO_CHECK_OUTPUT_PORT(port));
+ 232:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Libraries/XMCLib/inc\xmc_gpio.h ****   XMC_ASSERT("XMC_GPIO_SetOutputLevel: Invalid output level", XMC_GPIO_CHECK_OUTPUT_LEVEL(level));
+ 233:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Libraries/XMCLib/inc\xmc_gpio.h ****   
+ 234:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Libraries/XMCLib/inc\xmc_gpio.h ****   port->OMR = (uint32_t)level << pin;
+ 235:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Libraries/XMCLib/inc\xmc_gpio.h **** }
+ 236:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Libraries/XMCLib/inc\xmc_gpio.h **** 
+ 237:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Libraries/XMCLib/inc\xmc_gpio.h **** 
+ 238:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Libraries/XMCLib/inc\xmc_gpio.h **** /**
+ 239:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Libraries/XMCLib/inc\xmc_gpio.h ****  * @param  port constant pointer pointing to GPIO port, to access hardware register Pn_OMR.
+ 240:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Libraries/XMCLib/inc\xmc_gpio.h ****  * @param  pin	Port pin number.
+ 241:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Libraries/XMCLib/inc\xmc_gpio.h ****  *
+ 242:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Libraries/XMCLib/inc\xmc_gpio.h ****  * @return None
+ 243:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Libraries/XMCLib/inc\xmc_gpio.h ****  *
+ 244:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Libraries/XMCLib/inc\xmc_gpio.h ****  * \par<b>Description:</b><br>
+ 245:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Libraries/XMCLib/inc\xmc_gpio.h ****  *  Sets port pin output to high. It configures hardware registers Pn_OMR.
+ 246:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Libraries/XMCLib/inc\xmc_gpio.h ****  *
+ 247:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Libraries/XMCLib/inc\xmc_gpio.h ****  *  \par<b>Related APIs:</b><BR>
+ 248:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Libraries/XMCLib/inc\xmc_gpio.h ****  *  XMC_GPIO_SetOutputLow()
+ 249:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Libraries/XMCLib/inc\xmc_gpio.h ****  *
+ 250:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Libraries/XMCLib/inc\xmc_gpio.h ****  * \par<b>Note:</b><br>
+ 251:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Libraries/XMCLib/inc\xmc_gpio.h ****  * Prior to this api, user has to configure port pin to output mode using XMC_GPIO_SetMode().\n
+ 252:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Libraries/XMCLib/inc\xmc_gpio.h ****  * Register Pn_OMR is virtual and does not contain any flip-flop. A read action delivers the value 
+ 253:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Libraries/XMCLib/inc\xmc_gpio.h ****  *
+ 254:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Libraries/XMCLib/inc\xmc_gpio.h ****  */
+ 255:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Libraries/XMCLib/inc\xmc_gpio.h **** 
+ 256:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Libraries/XMCLib/inc\xmc_gpio.h **** __STATIC_INLINE void XMC_GPIO_SetOutputHigh(XMC_GPIO_PORT_t *const port, const uint8_t pin)
+ 257:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Libraries/XMCLib/inc\xmc_gpio.h **** {
+  27              	 .loc 1 257 0
+  28              	 .cfi_startproc
+  29              	 
+  30              	 
+  31              	 
+  32 0000 80B4     	 push {r7}
+  33              	 .cfi_def_cfa_offset 4
+  34              	 .cfi_offset 7,-4
+  35 0002 83B0     	 sub sp,sp,#12
+  36              	 .cfi_def_cfa_offset 16
+  37 0004 00AF     	 add r7,sp,#0
+  38              	 .cfi_def_cfa_register 7
+  39 0006 7860     	 str r0,[r7,#4]
+  40 0008 0B46     	 mov r3,r1
+  41 000a FB70     	 strb r3,[r7,#3]
+ 258:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Libraries/XMCLib/inc\xmc_gpio.h ****   XMC_ASSERT("XMC_GPIO_SetOutputHigh: Invalid port", XMC_GPIO_CHECK_OUTPUT_PORT(port));
+ 259:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Libraries/XMCLib/inc\xmc_gpio.h **** 
+ 260:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Libraries/XMCLib/inc\xmc_gpio.h ****   port->OMR = (uint32_t)0x1U << pin;
+  42              	 .loc 1 260 0
+  43 000c FB78     	 ldrb r3,[r7,#3]
+  44 000e 0122     	 movs r2,#1
+  45 0010 9A40     	 lsls r2,r2,r3
+  46 0012 7B68     	 ldr r3,[r7,#4]
+  47 0014 5A60     	 str r2,[r3,#4]
+ 261:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Libraries/XMCLib/inc\xmc_gpio.h **** }
+  48              	 .loc 1 261 0
+  49 0016 0C37     	 adds r7,r7,#12
+  50              	 .cfi_def_cfa_offset 4
+  51 0018 BD46     	 mov sp,r7
+  52              	 .cfi_def_cfa_register 13
+  53              	 
+  54 001a 5DF8047B 	 ldr r7,[sp],#4
+  55              	 .cfi_restore 7
+  56              	 .cfi_def_cfa_offset 0
+  57 001e 7047     	 bx lr
+  58              	 .cfi_endproc
+  59              	.LFE177:
+  61              	 .section .text.XMC_GPIO_SetOutputLow,"ax",%progbits
+  62              	 .align 2
+  63              	 .thumb
+  64              	 .thumb_func
+  66              	XMC_GPIO_SetOutputLow:
+  67              	.LFB178:
+ 262:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Libraries/XMCLib/inc\xmc_gpio.h **** 
+ 263:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Libraries/XMCLib/inc\xmc_gpio.h **** /**
+ 264:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Libraries/XMCLib/inc\xmc_gpio.h ****  *
+ 265:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Libraries/XMCLib/inc\xmc_gpio.h ****  * @param  port	constant pointer pointing to GPIO port, to access hardware register Pn_OMR.
+ 266:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Libraries/XMCLib/inc\xmc_gpio.h ****  * @param  pin	port pin number.
+ 267:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Libraries/XMCLib/inc\xmc_gpio.h ****  *
+ 268:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Libraries/XMCLib/inc\xmc_gpio.h ****  * @return  None
+ 269:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Libraries/XMCLib/inc\xmc_gpio.h ****  *
+ 270:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Libraries/XMCLib/inc\xmc_gpio.h ****  *\par<b>Description:</b><br>
+ 271:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Libraries/XMCLib/inc\xmc_gpio.h ****  * Sets port pin output to low. It configures hardware registers Pn_OMR.\n
+ 272:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Libraries/XMCLib/inc\xmc_gpio.h ****  *
+ 273:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Libraries/XMCLib/inc\xmc_gpio.h ****  * \par<b>Related APIs:</b><BR>>
+ 274:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Libraries/XMCLib/inc\xmc_gpio.h ****  * XMC_GPIO_SetOutputHigh()
+ 275:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Libraries/XMCLib/inc\xmc_gpio.h ****  *
+ 276:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Libraries/XMCLib/inc\xmc_gpio.h ****  *\par<b>Note:</b><br>
+ 277:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Libraries/XMCLib/inc\xmc_gpio.h ****  * Prior to this api, user has to configure port pin to output mode using XMC_GPIO_SetMode().
+ 278:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Libraries/XMCLib/inc\xmc_gpio.h ****  * Register Pn_OMR is virtual and does not contain any flip-flop. A read action delivers the value 
+ 279:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Libraries/XMCLib/inc\xmc_gpio.h ****  *
+ 280:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Libraries/XMCLib/inc\xmc_gpio.h ****  */
+ 281:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Libraries/XMCLib/inc\xmc_gpio.h **** 
+ 282:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Libraries/XMCLib/inc\xmc_gpio.h **** __STATIC_INLINE void XMC_GPIO_SetOutputLow(XMC_GPIO_PORT_t *const port, const uint8_t pin)
+ 283:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Libraries/XMCLib/inc\xmc_gpio.h **** {
+  68              	 .loc 1 283 0
+  69              	 .cfi_startproc
+  70              	 
+  71              	 
+  72              	 
+  73 0000 80B4     	 push {r7}
+  74              	 .cfi_def_cfa_offset 4
+  75              	 .cfi_offset 7,-4
+  76 0002 83B0     	 sub sp,sp,#12
+  77              	 .cfi_def_cfa_offset 16
+  78 0004 00AF     	 add r7,sp,#0
+  79              	 .cfi_def_cfa_register 7
+  80 0006 7860     	 str r0,[r7,#4]
+  81 0008 0B46     	 mov r3,r1
+  82 000a FB70     	 strb r3,[r7,#3]
+ 284:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Libraries/XMCLib/inc\xmc_gpio.h ****   XMC_ASSERT("XMC_GPIO_SetOutputLow: Invalid port", XMC_GPIO_CHECK_OUTPUT_PORT(port));
+ 285:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Libraries/XMCLib/inc\xmc_gpio.h **** 
+ 286:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Libraries/XMCLib/inc\xmc_gpio.h ****   port->OMR = 0x10000U << pin;
+  83              	 .loc 1 286 0
+  84 000c FB78     	 ldrb r3,[r7,#3]
+  85 000e 4FF48032 	 mov r2,#65536
+  86 0012 9A40     	 lsls r2,r2,r3
+  87 0014 7B68     	 ldr r3,[r7,#4]
+  88 0016 5A60     	 str r2,[r3,#4]
+ 287:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Libraries/XMCLib/inc\xmc_gpio.h **** }
+  89              	 .loc 1 287 0
+  90 0018 0C37     	 adds r7,r7,#12
+  91              	 .cfi_def_cfa_offset 4
+  92 001a BD46     	 mov sp,r7
+  93              	 .cfi_def_cfa_register 13
+  94              	 
+  95 001c 5DF8047B 	 ldr r7,[sp],#4
+  96              	 .cfi_restore 7
+  97              	 .cfi_def_cfa_offset 0
+  98 0020 7047     	 bx lr
+  99              	 .cfi_endproc
+ 100              	.LFE178:
+ 102 0022 00BF     	 .section .text.DIGITAL_IO_SetOutputHigh,"ax",%progbits
+ 103              	 .align 2
+ 104              	 .thumb
+ 105              	 .thumb_func
+ 107              	DIGITAL_IO_SetOutputHigh:
+ 108              	.LFB383:
+ 109              	 .file 2 "C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Dave/Generated/DIGITAL_IO/digital_io.h"
+   1:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Dave/Generated/DIGITAL_IO\digital_io.h **** /*
+   2:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Dave/Generated/DIGITAL_IO\digital_io.h ****  *
+   3:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Dave/Generated/DIGITAL_IO\digital_io.h ****  * @file digital_io.h
+   4:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Dave/Generated/DIGITAL_IO\digital_io.h ****  * @date 2016-07-08
+   5:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Dave/Generated/DIGITAL_IO\digital_io.h ****  *
+   6:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Dave/Generated/DIGITAL_IO\digital_io.h ****  * NOTE:
+   7:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Dave/Generated/DIGITAL_IO\digital_io.h ****  * This file is generated by DAVE. Any manual modification done to this file will be lost when the 
+   8:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Dave/Generated/DIGITAL_IO\digital_io.h ****  *
+   9:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Dave/Generated/DIGITAL_IO\digital_io.h ****  * @cond
+  10:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Dave/Generated/DIGITAL_IO\digital_io.h ****  **************************************************************************************************
+  11:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Dave/Generated/DIGITAL_IO\digital_io.h ****  * DIGITAL_IO v4.0.16 - The DIGITAL_IO APP is used to configure a port pin as digital Input/Output.
+  12:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Dave/Generated/DIGITAL_IO\digital_io.h ****  *
+  13:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Dave/Generated/DIGITAL_IO\digital_io.h ****  * Copyright (c) 2015-2016, Infineon Technologies AG
+  14:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Dave/Generated/DIGITAL_IO\digital_io.h ****  * All rights reserved.
+  15:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Dave/Generated/DIGITAL_IO\digital_io.h ****  *
+  16:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Dave/Generated/DIGITAL_IO\digital_io.h ****  * Redistribution and use in source and binary forms, with or without modification,are permitted pr
+  17:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Dave/Generated/DIGITAL_IO\digital_io.h ****  * following conditions are met:
+  18:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Dave/Generated/DIGITAL_IO\digital_io.h ****  *
+  19:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Dave/Generated/DIGITAL_IO\digital_io.h ****  *   Redistributions of source code must retain the above copyright notice, this list of conditions
+  20:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Dave/Generated/DIGITAL_IO\digital_io.h ****  *   disclaimer.
+  21:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Dave/Generated/DIGITAL_IO\digital_io.h ****  *
+  22:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Dave/Generated/DIGITAL_IO\digital_io.h ****  *   Redistributions in binary form must reproduce the above copyright notice, this list of conditi
+  23:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Dave/Generated/DIGITAL_IO\digital_io.h ****  *   following disclaimer in the documentation and/or other materials provided with the distributio
+  24:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Dave/Generated/DIGITAL_IO\digital_io.h ****  *
+  25:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Dave/Generated/DIGITAL_IO\digital_io.h ****  *   Neither the name of the copyright holders nor the names of its contributors may be used to end
+  26:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Dave/Generated/DIGITAL_IO\digital_io.h ****  *   products derived from this software without specific prior written permission.
+  27:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Dave/Generated/DIGITAL_IO\digital_io.h ****  *
+  28:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Dave/Generated/DIGITAL_IO\digital_io.h ****  * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND ANY EXPRESS OR I
+  29:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Dave/Generated/DIGITAL_IO\digital_io.h ****  * INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTI
+  30:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Dave/Generated/DIGITAL_IO\digital_io.h ****  * DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE  FOR ANY DIRECT, IN
+  31:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Dave/Generated/DIGITAL_IO\digital_io.h ****  * SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBS
+  32:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Dave/Generated/DIGITAL_IO\digital_io.h ****  * SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THE
+  33:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Dave/Generated/DIGITAL_IO\digital_io.h ****  * WHETHER IN CONTRACT, STRICT LIABILITY,OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY
+  34:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Dave/Generated/DIGITAL_IO\digital_io.h ****  * USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+  35:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Dave/Generated/DIGITAL_IO\digital_io.h ****  *
+  36:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Dave/Generated/DIGITAL_IO\digital_io.h ****  * To improve the quality of the software, users are encouraged to share modifications, enhancement
+  37:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Dave/Generated/DIGITAL_IO\digital_io.h ****  * with Infineon Technologies AG (dave@infineon.com).
+  38:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Dave/Generated/DIGITAL_IO\digital_io.h ****  **************************************************************************************************
+  39:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Dave/Generated/DIGITAL_IO\digital_io.h ****  *
+  40:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Dave/Generated/DIGITAL_IO\digital_io.h ****  * Change History
+  41:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Dave/Generated/DIGITAL_IO\digital_io.h ****  * --------------
+  42:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Dave/Generated/DIGITAL_IO\digital_io.h ****  *
+  43:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Dave/Generated/DIGITAL_IO\digital_io.h ****  * 2015-02-16
+  44:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Dave/Generated/DIGITAL_IO\digital_io.h ****  *     - Initial version
+  45:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Dave/Generated/DIGITAL_IO\digital_io.h ****  *
+  46:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Dave/Generated/DIGITAL_IO\digital_io.h ****  * 2015-04-22
+  47:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Dave/Generated/DIGITAL_IO\digital_io.h ****  *     - XMC_ASSERT is added in static inline functions.<br>
+  48:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Dave/Generated/DIGITAL_IO\digital_io.h ****  *
+  49:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Dave/Generated/DIGITAL_IO\digital_io.h ****  * 2015-06-20
+  50:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Dave/Generated/DIGITAL_IO\digital_io.h ****  *     - Version check added for XMCLib dependency.<br>
+  51:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Dave/Generated/DIGITAL_IO\digital_io.h ****  *
+  52:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Dave/Generated/DIGITAL_IO\digital_io.h ****  * 2015-12-22
+  53:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Dave/Generated/DIGITAL_IO\digital_io.h ****  *     - Added hardware controlled IO feature.
+  54:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Dave/Generated/DIGITAL_IO\digital_io.h ****  * 2016-07-08:
+  55:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Dave/Generated/DIGITAL_IO\digital_io.h ****  *     - Fixed incorrect case for an included header.<br>
+  56:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Dave/Generated/DIGITAL_IO\digital_io.h ****  *
+  57:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Dave/Generated/DIGITAL_IO\digital_io.h ****  * @endcond
+  58:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Dave/Generated/DIGITAL_IO\digital_io.h ****  *
+  59:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Dave/Generated/DIGITAL_IO\digital_io.h ****  */
+  60:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Dave/Generated/DIGITAL_IO\digital_io.h **** 
+  61:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Dave/Generated/DIGITAL_IO\digital_io.h **** /**************************************************************************************************
+  62:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Dave/Generated/DIGITAL_IO\digital_io.h ****  * HEADER FILES
+  63:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Dave/Generated/DIGITAL_IO\digital_io.h ****  **************************************************************************************************
+  64:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Dave/Generated/DIGITAL_IO\digital_io.h **** 
+  65:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Dave/Generated/DIGITAL_IO\digital_io.h **** #ifndef DIGITAL_IO_H
+  66:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Dave/Generated/DIGITAL_IO\digital_io.h **** #define DIGITAL_IO_H
+  67:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Dave/Generated/DIGITAL_IO\digital_io.h **** 
+  68:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Dave/Generated/DIGITAL_IO\digital_io.h **** #include <xmc_gpio.h>
+  69:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Dave/Generated/DIGITAL_IO\digital_io.h **** #include <DAVE_Common.h>
+  70:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Dave/Generated/DIGITAL_IO\digital_io.h **** #include "digital_io_conf.h"
+  71:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Dave/Generated/DIGITAL_IO\digital_io.h **** 
+  72:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Dave/Generated/DIGITAL_IO\digital_io.h **** /**************************************************************************************************
+  73:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Dave/Generated/DIGITAL_IO\digital_io.h ****  * MACROS
+  74:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Dave/Generated/DIGITAL_IO\digital_io.h ****  **************************************************************************************************
+  75:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Dave/Generated/DIGITAL_IO\digital_io.h **** #if (!((XMC_LIB_MAJOR_VERSION == 2U) && \
+  76:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Dave/Generated/DIGITAL_IO\digital_io.h ****        (XMC_LIB_MINOR_VERSION >= 0U) && \
+  77:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Dave/Generated/DIGITAL_IO\digital_io.h ****        (XMC_LIB_PATCH_VERSION >= 0U)))
+  78:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Dave/Generated/DIGITAL_IO\digital_io.h **** #error "DIGITAL_IO requires XMC Peripheral Library v2.0.0 or higher"
+  79:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Dave/Generated/DIGITAL_IO\digital_io.h **** #endif
+  80:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Dave/Generated/DIGITAL_IO\digital_io.h **** 
+  81:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Dave/Generated/DIGITAL_IO\digital_io.h ****  /*************************************************************************************************
+  82:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Dave/Generated/DIGITAL_IO\digital_io.h ****  * ENUMS
+  83:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Dave/Generated/DIGITAL_IO\digital_io.h ****  **************************************************************************************************
+  84:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Dave/Generated/DIGITAL_IO\digital_io.h **** 
+  85:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Dave/Generated/DIGITAL_IO\digital_io.h **** /**
+  86:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Dave/Generated/DIGITAL_IO\digital_io.h **** * @ingroup DIGITAL_IO_enumerations
+  87:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Dave/Generated/DIGITAL_IO\digital_io.h **** * @{
+  88:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Dave/Generated/DIGITAL_IO\digital_io.h **** */
+  89:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Dave/Generated/DIGITAL_IO\digital_io.h **** 
+  90:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Dave/Generated/DIGITAL_IO\digital_io.h **** /**
+  91:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Dave/Generated/DIGITAL_IO\digital_io.h **** * @brief Initialization status of DIGITAL_IO APP.
+  92:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Dave/Generated/DIGITAL_IO\digital_io.h **** */
+  93:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Dave/Generated/DIGITAL_IO\digital_io.h **** typedef enum DIGITAL_IO_STATUS
+  94:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Dave/Generated/DIGITAL_IO\digital_io.h **** {
+  95:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Dave/Generated/DIGITAL_IO\digital_io.h ****   DIGITAL_IO_STATUS_OK = 0U,/**< 0=Status OK */
+  96:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Dave/Generated/DIGITAL_IO\digital_io.h ****   DIGITAL_IO_STATUS_FAILURE = 1U/**< 1=Status Failed */
+  97:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Dave/Generated/DIGITAL_IO\digital_io.h **** } DIGITAL_IO_STATUS_t;
+  98:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Dave/Generated/DIGITAL_IO\digital_io.h **** 
+  99:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Dave/Generated/DIGITAL_IO\digital_io.h **** /**
+ 100:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Dave/Generated/DIGITAL_IO\digital_io.h **** * @}
+ 101:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Dave/Generated/DIGITAL_IO\digital_io.h **** */
+ 102:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Dave/Generated/DIGITAL_IO\digital_io.h **** 
+ 103:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Dave/Generated/DIGITAL_IO\digital_io.h **** /**************************************************************************************************
+ 104:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Dave/Generated/DIGITAL_IO\digital_io.h ****  * DATA STRUCTURES
+ 105:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Dave/Generated/DIGITAL_IO\digital_io.h ****  **************************************************************************************************
+ 106:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Dave/Generated/DIGITAL_IO\digital_io.h **** /**
+ 107:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Dave/Generated/DIGITAL_IO\digital_io.h **** * @ingroup DIGITAL_IO_datastructures
+ 108:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Dave/Generated/DIGITAL_IO\digital_io.h **** * @{
+ 109:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Dave/Generated/DIGITAL_IO\digital_io.h **** */
+ 110:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Dave/Generated/DIGITAL_IO\digital_io.h **** 
+ 111:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Dave/Generated/DIGITAL_IO\digital_io.h **** /**
+ 112:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Dave/Generated/DIGITAL_IO\digital_io.h **** * @brief Initialization data structure of DIGITAL_IO APP
+ 113:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Dave/Generated/DIGITAL_IO\digital_io.h **** */
+ 114:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Dave/Generated/DIGITAL_IO\digital_io.h **** typedef struct DIGITAL_IO
+ 115:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Dave/Generated/DIGITAL_IO\digital_io.h **** {
+ 116:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Dave/Generated/DIGITAL_IO\digital_io.h ****   XMC_GPIO_PORT_t *const gpio_port;             /**< port number */
+ 117:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Dave/Generated/DIGITAL_IO\digital_io.h ****   const XMC_GPIO_CONFIG_t gpio_config;          /**< mode, initial output level and pad driver stre
+ 118:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Dave/Generated/DIGITAL_IO\digital_io.h ****   const uint8_t gpio_pin;                       /**< pin number */
+ 119:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Dave/Generated/DIGITAL_IO\digital_io.h ****   const XMC_GPIO_HWCTRL_t hwctrl;               /**< Hardware port control */
+ 120:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Dave/Generated/DIGITAL_IO\digital_io.h **** } DIGITAL_IO_t;
+ 121:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Dave/Generated/DIGITAL_IO\digital_io.h **** 
+ 122:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Dave/Generated/DIGITAL_IO\digital_io.h **** 
+ 123:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Dave/Generated/DIGITAL_IO\digital_io.h **** /**
+ 124:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Dave/Generated/DIGITAL_IO\digital_io.h **** * @}
+ 125:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Dave/Generated/DIGITAL_IO\digital_io.h **** */
+ 126:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Dave/Generated/DIGITAL_IO\digital_io.h **** 
+ 127:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Dave/Generated/DIGITAL_IO\digital_io.h **** 
+ 128:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Dave/Generated/DIGITAL_IO\digital_io.h **** /**************************************************************************************************
+ 129:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Dave/Generated/DIGITAL_IO\digital_io.h ****  * API Prototypes
+ 130:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Dave/Generated/DIGITAL_IO\digital_io.h ****  **************************************************************************************************
+ 131:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Dave/Generated/DIGITAL_IO\digital_io.h **** 
+ 132:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Dave/Generated/DIGITAL_IO\digital_io.h **** 
+ 133:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Dave/Generated/DIGITAL_IO\digital_io.h **** #ifdef __cplusplus
+ 134:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Dave/Generated/DIGITAL_IO\digital_io.h **** extern "C" {
+ 135:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Dave/Generated/DIGITAL_IO\digital_io.h **** #endif
+ 136:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Dave/Generated/DIGITAL_IO\digital_io.h **** 
+ 137:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Dave/Generated/DIGITAL_IO\digital_io.h **** /**
+ 138:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Dave/Generated/DIGITAL_IO\digital_io.h **** * @ingroup DIGITAL_IO_apidoc
+ 139:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Dave/Generated/DIGITAL_IO\digital_io.h **** * @{
+ 140:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Dave/Generated/DIGITAL_IO\digital_io.h **** */
+ 141:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Dave/Generated/DIGITAL_IO\digital_io.h **** 
+ 142:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Dave/Generated/DIGITAL_IO\digital_io.h **** 
+ 143:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Dave/Generated/DIGITAL_IO\digital_io.h **** 
+ 144:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Dave/Generated/DIGITAL_IO\digital_io.h **** /**
+ 145:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Dave/Generated/DIGITAL_IO\digital_io.h **** * @brief Get DIGITAL_IO APP version
+ 146:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Dave/Generated/DIGITAL_IO\digital_io.h **** * @return DAVE_APP_VERSION_t APP version information (major, minor and patch number)
+ 147:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Dave/Generated/DIGITAL_IO\digital_io.h **** *
+ 148:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Dave/Generated/DIGITAL_IO\digital_io.h **** * \par<b>Description: </b><br>
+ 149:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Dave/Generated/DIGITAL_IO\digital_io.h **** * The function can be used to check application software compatibility with a
+ 150:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Dave/Generated/DIGITAL_IO\digital_io.h **** * specific version of the APP.
+ 151:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Dave/Generated/DIGITAL_IO\digital_io.h **** *
+ 152:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Dave/Generated/DIGITAL_IO\digital_io.h **** * Example Usage:
+ 153:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Dave/Generated/DIGITAL_IO\digital_io.h **** *
+ 154:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Dave/Generated/DIGITAL_IO\digital_io.h **** * @code
+ 155:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Dave/Generated/DIGITAL_IO\digital_io.h **** * #include <DAVE.h>
+ 156:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Dave/Generated/DIGITAL_IO\digital_io.h **** *
+ 157:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Dave/Generated/DIGITAL_IO\digital_io.h **** * int main(void)
+ 158:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Dave/Generated/DIGITAL_IO\digital_io.h **** * {
+ 159:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Dave/Generated/DIGITAL_IO\digital_io.h **** *   DAVE_STATUS_t init_status;
+ 160:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Dave/Generated/DIGITAL_IO\digital_io.h **** *   DAVE_APP_VERSION_t version;
+ 161:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Dave/Generated/DIGITAL_IO\digital_io.h **** *
+ 162:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Dave/Generated/DIGITAL_IO\digital_io.h **** *   // Initialize DIGITAL_IO APP:
+ 163:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Dave/Generated/DIGITAL_IO\digital_io.h **** *   // DIGITAL_IO_Init() is called from within DAVE_Init().
+ 164:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Dave/Generated/DIGITAL_IO\digital_io.h **** *   init_status = DAVE_Init();
+ 165:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Dave/Generated/DIGITAL_IO\digital_io.h **** *   if(init_status == DAVE_STATUS_SUCCESS)
+ 166:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Dave/Generated/DIGITAL_IO\digital_io.h **** *   {
+ 167:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Dave/Generated/DIGITAL_IO\digital_io.h **** *     version = DIGITAL_IO_GetAppVersion();
+ 168:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Dave/Generated/DIGITAL_IO\digital_io.h **** *     if (version.major != 4U) {
+ 169:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Dave/Generated/DIGITAL_IO\digital_io.h **** *     // Probably, not the right version.
+ 170:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Dave/Generated/DIGITAL_IO\digital_io.h **** *     }
+ 171:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Dave/Generated/DIGITAL_IO\digital_io.h **** *   }
+ 172:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Dave/Generated/DIGITAL_IO\digital_io.h **** *
+ 173:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Dave/Generated/DIGITAL_IO\digital_io.h **** *     // More code here
+ 174:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Dave/Generated/DIGITAL_IO\digital_io.h **** *     while(1) {
+ 175:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Dave/Generated/DIGITAL_IO\digital_io.h **** *
+ 176:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Dave/Generated/DIGITAL_IO\digital_io.h **** *     }
+ 177:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Dave/Generated/DIGITAL_IO\digital_io.h **** *     return (1);
+ 178:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Dave/Generated/DIGITAL_IO\digital_io.h **** *  }
+ 179:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Dave/Generated/DIGITAL_IO\digital_io.h **** * @endcode<BR>
+ 180:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Dave/Generated/DIGITAL_IO\digital_io.h **** */
+ 181:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Dave/Generated/DIGITAL_IO\digital_io.h **** 
+ 182:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Dave/Generated/DIGITAL_IO\digital_io.h **** DAVE_APP_VERSION_t DIGITAL_IO_GetAppVersion(void);
+ 183:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Dave/Generated/DIGITAL_IO\digital_io.h **** 
+ 184:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Dave/Generated/DIGITAL_IO\digital_io.h **** /**
+ 185:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Dave/Generated/DIGITAL_IO\digital_io.h **** *
+ 186:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Dave/Generated/DIGITAL_IO\digital_io.h **** * @brief Function to initialize the port pin as per UI settings.
+ 187:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Dave/Generated/DIGITAL_IO\digital_io.h **** * @param handler Pointer pointing to APP data structure. Refer @ref DIGITAL_IO_t for details.
+ 188:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Dave/Generated/DIGITAL_IO\digital_io.h **** * @return DIGITAL_IO_STATUS_t DIGITAL_IO APP status. Refer @ref DIGITAL_IO_STATUS_t structure for d
+ 189:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Dave/Generated/DIGITAL_IO\digital_io.h **** *
+ 190:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Dave/Generated/DIGITAL_IO\digital_io.h **** * \par<b>Description:</b><br>
+ 191:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Dave/Generated/DIGITAL_IO\digital_io.h **** * This function initializes GPIO port registers IOCR,PDISC,OMR,PDR/PHCR to configure pin direction,
+ 192:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Dave/Generated/DIGITAL_IO\digital_io.h **** * and pad driver strength/hysteresis.
+ 193:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Dave/Generated/DIGITAL_IO\digital_io.h **** *
+ 194:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Dave/Generated/DIGITAL_IO\digital_io.h **** * \par<b>Related APIs:</b><BR>
+ 195:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Dave/Generated/DIGITAL_IO\digital_io.h **** * None
+ 196:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Dave/Generated/DIGITAL_IO\digital_io.h **** *
+ 197:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Dave/Generated/DIGITAL_IO\digital_io.h **** * Example Usage:
+ 198:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Dave/Generated/DIGITAL_IO\digital_io.h **** * @code
+ 199:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Dave/Generated/DIGITAL_IO\digital_io.h **** * #include <DAVE.h>//Declarations from DAVE Code Generation (includes SFR declaration)
+ 200:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Dave/Generated/DIGITAL_IO\digital_io.h **** * int main(void)
+ 201:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Dave/Generated/DIGITAL_IO\digital_io.h **** * {
+ 202:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Dave/Generated/DIGITAL_IO\digital_io.h **** *   DAVE_STATUS_t status;
+ 203:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Dave/Generated/DIGITAL_IO\digital_io.h **** *   status = DAVE_Init();  //(DAVE_STATUS_t)DIGITAL_IO_Init(&DIGITAL_IO_0) is called within DAVE_In
+ 204:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Dave/Generated/DIGITAL_IO\digital_io.h **** *   if(status == DAVE_STATUS_SUCCESS)
+ 205:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Dave/Generated/DIGITAL_IO\digital_io.h **** *   {
+ 206:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Dave/Generated/DIGITAL_IO\digital_io.h **** *     XMC_DEBUG("DAVE Apps initialization success\n");
+ 207:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Dave/Generated/DIGITAL_IO\digital_io.h **** *   }
+ 208:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Dave/Generated/DIGITAL_IO\digital_io.h **** *   else
+ 209:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Dave/Generated/DIGITAL_IO\digital_io.h **** *   {
+ 210:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Dave/Generated/DIGITAL_IO\digital_io.h **** *     XMC_DEBUG(("DAVE Apps initialization failed with status %d\n", status));
+ 211:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Dave/Generated/DIGITAL_IO\digital_io.h **** *     while(1U)
+ 212:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Dave/Generated/DIGITAL_IO\digital_io.h **** *     {
+ 213:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Dave/Generated/DIGITAL_IO\digital_io.h **** *     }
+ 214:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Dave/Generated/DIGITAL_IO\digital_io.h **** *   }
+ 215:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Dave/Generated/DIGITAL_IO\digital_io.h **** *   //Placeholder for user application code. The while loop below can be replaced with user applica
+ 216:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Dave/Generated/DIGITAL_IO\digital_io.h **** *   while(1U)
+ 217:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Dave/Generated/DIGITAL_IO\digital_io.h **** *   {
+ 218:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Dave/Generated/DIGITAL_IO\digital_io.h **** *   }
+ 219:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Dave/Generated/DIGITAL_IO\digital_io.h **** *   return 1U;
+ 220:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Dave/Generated/DIGITAL_IO\digital_io.h **** *  }
+ 221:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Dave/Generated/DIGITAL_IO\digital_io.h **** *  @endcode
+ 222:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Dave/Generated/DIGITAL_IO\digital_io.h **** */
+ 223:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Dave/Generated/DIGITAL_IO\digital_io.h **** 
+ 224:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Dave/Generated/DIGITAL_IO\digital_io.h **** DIGITAL_IO_STATUS_t DIGITAL_IO_Init(const DIGITAL_IO_t *const handler);
+ 225:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Dave/Generated/DIGITAL_IO\digital_io.h **** 
+ 226:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Dave/Generated/DIGITAL_IO\digital_io.h **** /**
+ 227:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Dave/Generated/DIGITAL_IO\digital_io.h **** *
+ 228:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Dave/Generated/DIGITAL_IO\digital_io.h **** * @brief Function to set port pin high.
+ 229:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Dave/Generated/DIGITAL_IO\digital_io.h **** * @param handler Pointer pointing to APP data structure. Refer @ref DIGITAL_IO_t for details.
+ 230:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Dave/Generated/DIGITAL_IO\digital_io.h **** * @return None
+ 231:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Dave/Generated/DIGITAL_IO\digital_io.h **** *
+ 232:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Dave/Generated/DIGITAL_IO\digital_io.h **** * \par<b>Description:</b><br>
+ 233:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Dave/Generated/DIGITAL_IO\digital_io.h **** * This function configures port output modification register Pn_OMR, to make port pin to high level
+ 234:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Dave/Generated/DIGITAL_IO\digital_io.h **** *
+ 235:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Dave/Generated/DIGITAL_IO\digital_io.h **** * \par<b>Related APIs:</b><BR>
+ 236:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Dave/Generated/DIGITAL_IO\digital_io.h **** *  DIGITAL_IO_SetOutputLow()
+ 237:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Dave/Generated/DIGITAL_IO\digital_io.h **** *
+ 238:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Dave/Generated/DIGITAL_IO\digital_io.h **** * Example Usage:
+ 239:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Dave/Generated/DIGITAL_IO\digital_io.h **** * @code
+ 240:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Dave/Generated/DIGITAL_IO\digital_io.h **** * #include <DAVE.h>//Declarations from DAVE Code Generation (includes SFR declaration)
+ 241:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Dave/Generated/DIGITAL_IO\digital_io.h **** * int main(void)
+ 242:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Dave/Generated/DIGITAL_IO\digital_io.h **** * {
+ 243:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Dave/Generated/DIGITAL_IO\digital_io.h **** *   DAVE_STATUS_t status;
+ 244:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Dave/Generated/DIGITAL_IO\digital_io.h **** *   status = DAVE_Init();  //(DAVE_STATUS_t)DIGITAL_IO_Init(&DIGITAL_IO_0) is called within DAVE_In
+ 245:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Dave/Generated/DIGITAL_IO\digital_io.h **** *   if(status == DAVE_STATUS_SUCCESS)
+ 246:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Dave/Generated/DIGITAL_IO\digital_io.h **** *   {
+ 247:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Dave/Generated/DIGITAL_IO\digital_io.h **** *     XMC_DEBUG("DAVE Apps initialization success\n");
+ 248:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Dave/Generated/DIGITAL_IO\digital_io.h **** *   }
+ 249:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Dave/Generated/DIGITAL_IO\digital_io.h **** *   else
+ 250:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Dave/Generated/DIGITAL_IO\digital_io.h **** *   {
+ 251:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Dave/Generated/DIGITAL_IO\digital_io.h **** *     XMC_DEBUG(("DAVE Apps initialization failed with status %d\n", status));
+ 252:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Dave/Generated/DIGITAL_IO\digital_io.h **** *     while(1U)
+ 253:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Dave/Generated/DIGITAL_IO\digital_io.h **** *     {
+ 254:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Dave/Generated/DIGITAL_IO\digital_io.h **** *     }
+ 255:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Dave/Generated/DIGITAL_IO\digital_io.h **** *   }
+ 256:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Dave/Generated/DIGITAL_IO\digital_io.h **** *   //Placeholder for user application code. The while loop below can be replaced with user applica
+ 257:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Dave/Generated/DIGITAL_IO\digital_io.h **** *   DIGITAL_IO_SetOutputHigh(&DIGITAL_IO_0);
+ 258:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Dave/Generated/DIGITAL_IO\digital_io.h **** *   while(1U)
+ 259:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Dave/Generated/DIGITAL_IO\digital_io.h **** *   {
+ 260:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Dave/Generated/DIGITAL_IO\digital_io.h **** *     // Add application code here
+ 261:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Dave/Generated/DIGITAL_IO\digital_io.h **** *   }
+ 262:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Dave/Generated/DIGITAL_IO\digital_io.h **** *
+ 263:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Dave/Generated/DIGITAL_IO\digital_io.h **** *   return (1);
+ 264:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Dave/Generated/DIGITAL_IO\digital_io.h **** * }
+ 265:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Dave/Generated/DIGITAL_IO\digital_io.h **** *  @endcode
+ 266:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Dave/Generated/DIGITAL_IO\digital_io.h **** */
+ 267:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Dave/Generated/DIGITAL_IO\digital_io.h **** 
+ 268:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Dave/Generated/DIGITAL_IO\digital_io.h **** __STATIC_INLINE void DIGITAL_IO_SetOutputHigh(const DIGITAL_IO_t *const handler)
+ 269:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Dave/Generated/DIGITAL_IO\digital_io.h **** {
+ 110              	 .loc 2 269 0
+ 111              	 .cfi_startproc
+ 112              	 
+ 113              	 
+ 114 0000 80B5     	 push {r7,lr}
+ 115              	 .cfi_def_cfa_offset 8
+ 116              	 .cfi_offset 7,-8
+ 117              	 .cfi_offset 14,-4
+ 118 0002 82B0     	 sub sp,sp,#8
+ 119              	 .cfi_def_cfa_offset 16
+ 120 0004 00AF     	 add r7,sp,#0
+ 121              	 .cfi_def_cfa_register 7
+ 122 0006 7860     	 str r0,[r7,#4]
+ 270:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Dave/Generated/DIGITAL_IO\digital_io.h ****   XMC_ASSERT("DIGITAL_IO_SetOutputHigh: handler null pointer", handler != NULL);
+ 271:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Dave/Generated/DIGITAL_IO\digital_io.h ****   XMC_GPIO_SetOutputHigh(handler->gpio_port, handler->gpio_pin);
+ 123              	 .loc 2 271 0
+ 124 0008 7B68     	 ldr r3,[r7,#4]
+ 125 000a 1A68     	 ldr r2,[r3]
+ 126 000c 7B68     	 ldr r3,[r7,#4]
+ 127 000e 1B7C     	 ldrb r3,[r3,#16]
+ 128 0010 1046     	 mov r0,r2
+ 129 0012 1946     	 mov r1,r3
+ 130 0014 FFF7FEFF 	 bl XMC_GPIO_SetOutputHigh
+ 272:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Dave/Generated/DIGITAL_IO\digital_io.h **** }
+ 131              	 .loc 2 272 0
+ 132 0018 0837     	 adds r7,r7,#8
+ 133              	 .cfi_def_cfa_offset 8
+ 134 001a BD46     	 mov sp,r7
+ 135              	 .cfi_def_cfa_register 13
+ 136              	 
+ 137 001c 80BD     	 pop {r7,pc}
+ 138              	 .cfi_endproc
+ 139              	.LFE383:
+ 141 001e 00BF     	 .section .text.DIGITAL_IO_SetOutputLow,"ax",%progbits
+ 142              	 .align 2
+ 143              	 .thumb
+ 144              	 .thumb_func
+ 146              	DIGITAL_IO_SetOutputLow:
+ 147              	.LFB384:
+ 273:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Dave/Generated/DIGITAL_IO\digital_io.h **** 
+ 274:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Dave/Generated/DIGITAL_IO\digital_io.h **** /**
+ 275:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Dave/Generated/DIGITAL_IO\digital_io.h **** * @brief Function to reset port pin.
+ 276:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Dave/Generated/DIGITAL_IO\digital_io.h **** * @param handler Pointer pointing to APP data structure. Refer @ref DIGITAL_IO_t for details.
+ 277:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Dave/Generated/DIGITAL_IO\digital_io.h **** * @return None
+ 278:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Dave/Generated/DIGITAL_IO\digital_io.h **** *
+ 279:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Dave/Generated/DIGITAL_IO\digital_io.h **** * \par<b>Description:</b><br>
+ 280:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Dave/Generated/DIGITAL_IO\digital_io.h **** * This function configures port output modification register Pn_OMR, to make port pin to low level.
+ 281:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Dave/Generated/DIGITAL_IO\digital_io.h **** *
+ 282:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Dave/Generated/DIGITAL_IO\digital_io.h **** * \par<b>Related APIs:</b><BR>
+ 283:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Dave/Generated/DIGITAL_IO\digital_io.h **** * DIGITAL_IO_SetOutputHigh()
+ 284:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Dave/Generated/DIGITAL_IO\digital_io.h **** *
+ 285:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Dave/Generated/DIGITAL_IO\digital_io.h **** * Example Usage:
+ 286:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Dave/Generated/DIGITAL_IO\digital_io.h **** * @code
+ 287:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Dave/Generated/DIGITAL_IO\digital_io.h **** *  #include <DAVE.h>//Declarations from DAVE Code Generation (includes SFR declaration)
+ 288:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Dave/Generated/DIGITAL_IO\digital_io.h **** *  int main(void)
+ 289:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Dave/Generated/DIGITAL_IO\digital_io.h **** *  {
+ 290:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Dave/Generated/DIGITAL_IO\digital_io.h **** *    DAVE_STATUS_t status;
+ 291:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Dave/Generated/DIGITAL_IO\digital_io.h **** *    status = DAVE_Init();  //(DAVE_STATUS_t)DIGITAL_IO_Init(&DIGITAL_IO_0) is called within DAVE_I
+ 292:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Dave/Generated/DIGITAL_IO\digital_io.h **** *    if(status == DAVE_STATUS_SUCCESS)
+ 293:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Dave/Generated/DIGITAL_IO\digital_io.h **** *    {
+ 294:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Dave/Generated/DIGITAL_IO\digital_io.h **** *      XMC_DEBUG("DAVE Apps initialization success\n");
+ 295:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Dave/Generated/DIGITAL_IO\digital_io.h **** *    }
+ 296:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Dave/Generated/DIGITAL_IO\digital_io.h **** *    else
+ 297:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Dave/Generated/DIGITAL_IO\digital_io.h **** *    {
+ 298:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Dave/Generated/DIGITAL_IO\digital_io.h **** *      XMC_DEBUG(("DAVE Apps initialization failed with status %d\n", status));
+ 299:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Dave/Generated/DIGITAL_IO\digital_io.h **** *      while(1U)
+ 300:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Dave/Generated/DIGITAL_IO\digital_io.h **** *      {
+ 301:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Dave/Generated/DIGITAL_IO\digital_io.h **** *      }
+ 302:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Dave/Generated/DIGITAL_IO\digital_io.h **** *    }
+ 303:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Dave/Generated/DIGITAL_IO\digital_io.h **** *    //Placeholder for user application code. The while loop below can be replaced with user applic
+ 304:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Dave/Generated/DIGITAL_IO\digital_io.h **** *    DIGITAL_IO_SetOutputLow(&DIGITAL_IO_0);
+ 305:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Dave/Generated/DIGITAL_IO\digital_io.h **** *    while(1U)
+ 306:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Dave/Generated/DIGITAL_IO\digital_io.h **** *    {
+ 307:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Dave/Generated/DIGITAL_IO\digital_io.h **** *      // Add application code here
+ 308:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Dave/Generated/DIGITAL_IO\digital_io.h **** *    }
+ 309:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Dave/Generated/DIGITAL_IO\digital_io.h **** *
+ 310:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Dave/Generated/DIGITAL_IO\digital_io.h **** *   return (1);
+ 311:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Dave/Generated/DIGITAL_IO\digital_io.h **** * }
+ 312:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Dave/Generated/DIGITAL_IO\digital_io.h **** *  @endcode
+ 313:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Dave/Generated/DIGITAL_IO\digital_io.h **** */
+ 314:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Dave/Generated/DIGITAL_IO\digital_io.h **** 
+ 315:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Dave/Generated/DIGITAL_IO\digital_io.h **** __STATIC_INLINE void DIGITAL_IO_SetOutputLow(const DIGITAL_IO_t *const handler)
+ 316:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Dave/Generated/DIGITAL_IO\digital_io.h **** {
+ 148              	 .loc 2 316 0
+ 149              	 .cfi_startproc
+ 150              	 
+ 151              	 
+ 152 0000 80B5     	 push {r7,lr}
+ 153              	 .cfi_def_cfa_offset 8
+ 154              	 .cfi_offset 7,-8
+ 155              	 .cfi_offset 14,-4
+ 156 0002 82B0     	 sub sp,sp,#8
+ 157              	 .cfi_def_cfa_offset 16
+ 158 0004 00AF     	 add r7,sp,#0
+ 159              	 .cfi_def_cfa_register 7
+ 160 0006 7860     	 str r0,[r7,#4]
+ 317:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Dave/Generated/DIGITAL_IO\digital_io.h ****   XMC_ASSERT("DIGITAL_IO_SetOutputLow: handler null pointer", handler != NULL);
+ 318:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Dave/Generated/DIGITAL_IO\digital_io.h ****   XMC_GPIO_SetOutputLow(handler->gpio_port,handler->gpio_pin);
+ 161              	 .loc 2 318 0
+ 162 0008 7B68     	 ldr r3,[r7,#4]
+ 163 000a 1A68     	 ldr r2,[r3]
+ 164 000c 7B68     	 ldr r3,[r7,#4]
+ 165 000e 1B7C     	 ldrb r3,[r3,#16]
+ 166 0010 1046     	 mov r0,r2
+ 167 0012 1946     	 mov r1,r3
+ 168 0014 FFF7FEFF 	 bl XMC_GPIO_SetOutputLow
+ 319:C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Dave/Generated/DIGITAL_IO\digital_io.h **** }
+ 169              	 .loc 2 319 0
+ 170 0018 0837     	 adds r7,r7,#8
+ 171              	 .cfi_def_cfa_offset 8
+ 172 001a BD46     	 mov sp,r7
+ 173              	 .cfi_def_cfa_register 13
+ 174              	 
+ 175 001c 80BD     	 pop {r7,pc}
+ 176              	 .cfi_endproc
+ 177              	.LFE384:
+ 179              	 .comm time,4,4
+ 180              	 .comm T_Oil,44,4
+ 181              	 .comm T_Water,44,4
+ 182              	 .comm p_Oil,44,4
+ 183              	 .comm p_Pneu,44,4
+ 184              	 .comm x_DP_RL,44,4
+ 185              	 .comm x_DP_RR,44,4
+ 186              	 .comm x_RH_RL,44,4
+ 187              	 .comm x_RH_RR,44,4
+ 188              	 .comm f_LC_RL,44,4
+ 189              	 .comm f_LC_RR,44,4
+ 190              	 .comm T_Board,44,4
+ 191              	 .comm u_12V_Meas,44,4
+ 192              	 .comm u_5V_ANA_Meas,44,4
+ 193              	 .comm u_OUT1_Meas,44,4
+ 194              	 .comm u_OUT2_Meas,44,4
+ 195              	 .comm NTC1,44,4
+ 196              	 .global CAN2_data_Tx_LM01
+ 197 001e 00BF     	 .section .bss.CAN2_data_Tx_LM01,"aw",%nobits
+ 198              	 .align 2
+ 201              	CAN2_data_Tx_LM01:
+ 202 0000 00000000 	 .space 8
+ 202      00000000 
+ 203              	 .global delay_for_CAN2_Transmit
+ 204              	 .section .data.delay_for_CAN2_Transmit,"aw",%progbits
+ 207              	delay_for_CAN2_Transmit:
+ 208 0000 05       	 .byte 5
+ 209              	 .global delay_for_CAN2_Receive
+ 210              	 .section .data.delay_for_CAN2_Receive,"aw",%progbits
+ 213              	delay_for_CAN2_Receive:
+ 214 0000 01       	 .byte 1
+ 215              	 .section .text.CAN2_INIT,"ax",%progbits
+ 216              	 .align 2
+ 217              	 .global CAN2_INIT
+ 218              	 .thumb
+ 219              	 .thumb_func
+ 221              	CAN2_INIT:
+ 222              	.LFB387:
+ 223              	 .file 3 "../CAN_2.c"
+   1:../CAN_2.c    **** /*
+   2:../CAN_2.c    ****  * CAN_2.c
+   3:../CAN_2.c    ****  *
+   4:../CAN_2.c    ****  *  Created on: 08 Jan 2020
+   5:../CAN_2.c    ****  *      Author: Clovis
+   6:../CAN_2.c    ****  */
+   7:../CAN_2.c    **** 
+   8:../CAN_2.c    **** #include "Header.h"
+   9:../CAN_2.c    **** 
+  10:../CAN_2.c    **** #define CAN_2_RES ENABLED       // "ENABLED" for activation and "DISABLED" for deactivation
+  11:../CAN_2.c    **** 
+  12:../CAN_2.c    **** uint8_t CAN2_data_Tx_LM01[8] = {0};
+  13:../CAN_2.c    **** 
+  14:../CAN_2.c    **** uint8_t delay_for_CAN2_Transmit = 5; //ms
+  15:../CAN_2.c    **** uint8_t delay_for_CAN2_Receive = 1; //ms
+  16:../CAN_2.c    **** 
+  17:../CAN_2.c    **** void CAN2_INIT()
+  18:../CAN_2.c    **** {
+ 224              	 .loc 3 18 0
+ 225              	 .cfi_startproc
+ 226              	 
+ 227              	 
+ 228 0000 80B5     	 push {r7,lr}
+ 229              	 .cfi_def_cfa_offset 8
+ 230              	 .cfi_offset 7,-8
+ 231              	 .cfi_offset 14,-4
+ 232 0002 00AF     	 add r7,sp,#0
+ 233              	 .cfi_def_cfa_register 7
+  19:../CAN_2.c    **** 
+  20:../CAN_2.c    **** 	if (CAN_2_RES == ENABLED)
+  21:../CAN_2.c    **** 		DIGITAL_IO_SetOutputHigh (&CAN_2_RES_CTRL);
+ 234              	 .loc 3 21 0
+ 235 0004 0148     	 ldr r0,.L6
+ 236 0006 FFF7FEFF 	 bl DIGITAL_IO_SetOutputHigh
+  22:../CAN_2.c    **** 
+  23:../CAN_2.c    **** 	else
+  24:../CAN_2.c    **** 		DIGITAL_IO_SetOutputLow (&CAN_2_RES_CTRL);
+  25:../CAN_2.c    **** 
+  26:../CAN_2.c    **** }
+ 237              	 .loc 3 26 0
+ 238 000a 80BD     	 pop {r7,pc}
+ 239              	.L7:
+ 240              	 .align 2
+ 241              	.L6:
+ 242 000c 00000000 	 .word CAN_2_RES_CTRL
+ 243              	 .cfi_endproc
+ 244              	.LFE387:
+ 246              	 .section .text.Task_CAN_2_Receive,"ax",%progbits
+ 247              	 .align 2
+ 248              	 .global Task_CAN_2_Receive
+ 249              	 .thumb
+ 250              	 .thumb_func
+ 252              	Task_CAN_2_Receive:
+ 253              	.LFB388:
+  27:../CAN_2.c    **** 
+  28:../CAN_2.c    **** void Task_CAN_2_Receive()
+  29:../CAN_2.c    **** {
+ 254              	 .loc 3 29 0
+ 255              	 .cfi_startproc
+ 256              	 
+ 257              	 
+ 258 0000 80B5     	 push {r7,lr}
+ 259              	 .cfi_def_cfa_offset 8
+ 260              	 .cfi_offset 7,-8
+ 261              	 .cfi_offset 14,-4
+ 262 0002 82B0     	 sub sp,sp,#8
+ 263              	 .cfi_def_cfa_offset 16
+ 264 0004 00AF     	 add r7,sp,#0
+ 265              	 .cfi_def_cfa_register 7
+  30:../CAN_2.c    **** 	uint8_t Brake_Light_Value=0;
+ 266              	 .loc 3 30 0
+ 267 0006 0023     	 movs r3,#0
+ 268 0008 FB71     	 strb r3,[r7,#7]
+ 269              	.L11:
+  31:../CAN_2.c    **** 
+  32:../CAN_2.c    **** 	while(1){
+  33:../CAN_2.c    **** 
+  34:../CAN_2.c    **** 	//------VCU 0x7E2------
+  35:../CAN_2.c    **** 	CAN_NODE_MO_Receive((CAN_NODE_LMO_t*)&CAN_2_LMO_02_Config);
+ 270              	 .loc 3 35 0
+ 271 000a 1048     	 ldr r0,.L12
+ 272 000c FFF7FEFF 	 bl CAN_NODE_MO_Receive
+  36:../CAN_2.c    **** 
+  37:../CAN_2.c    **** 	Brake_Light_Value = CAN_2_LMO_02_Config.mo_ptr->can_data_byte[0];
+ 273              	 .loc 3 37 0
+ 274 0010 0E4B     	 ldr r3,.L12
+ 275 0012 1B68     	 ldr r3,[r3]
+ 276 0014 1B7C     	 ldrb r3,[r3,#16]
+ 277 0016 FB71     	 strb r3,[r7,#7]
+  38:../CAN_2.c    **** 
+  39:../CAN_2.c    **** 	if(Brake_Light_Value==0x80){
+ 278              	 .loc 3 39 0
+ 279 0018 FB79     	 ldrb r3,[r7,#7]
+ 280 001a 802B     	 cmp r3,#128
+ 281 001c 03D1     	 bne .L9
+  40:../CAN_2.c    **** 		DIGITAL_IO_SetOutputHigh (&Brake_Light);
+ 282              	 .loc 3 40 0
+ 283 001e 0C48     	 ldr r0,.L12+4
+ 284 0020 FFF7FEFF 	 bl DIGITAL_IO_SetOutputHigh
+ 285 0024 02E0     	 b .L10
+ 286              	.L9:
+  41:../CAN_2.c    **** 	}
+  42:../CAN_2.c    **** 	else{
+  43:../CAN_2.c    **** 		DIGITAL_IO_SetOutputLow (&Brake_Light);
+ 287              	 .loc 3 43 0
+ 288 0026 0A48     	 ldr r0,.L12+4
+ 289 0028 FFF7FEFF 	 bl DIGITAL_IO_SetOutputLow
+ 290              	.L10:
+  44:../CAN_2.c    **** 	}
+  45:../CAN_2.c    **** 	vTaskDelay(pdMS_TO_TICKS(delay_for_CAN2_Receive));
+ 291              	 .loc 3 45 0
+ 292 002c 094B     	 ldr r3,.L12+8
+ 293 002e 1B78     	 ldrb r3,[r3]
+ 294 0030 1A46     	 mov r2,r3
+ 295 0032 42F21073 	 movw r3,#10000
+ 296 0036 03FB02F3 	 mul r3,r3,r2
+ 297 003a 074A     	 ldr r2,.L12+12
+ 298 003c A2FB0323 	 umull r2,r3,r2,r3
+ 299 0040 9B09     	 lsrs r3,r3,#6
+ 300 0042 1846     	 mov r0,r3
+ 301 0044 FFF7FEFF 	 bl vTaskDelay
+  46:../CAN_2.c    **** 	}
+ 302              	 .loc 3 46 0
+ 303 0048 DFE7     	 b .L11
+ 304              	.L13:
+ 305 004a 00BF     	 .align 2
+ 306              	.L12:
+ 307 004c 00000000 	 .word CAN_2_LMO_02_Config
+ 308 0050 00000000 	 .word Brake_Light
+ 309 0054 00000000 	 .word delay_for_CAN2_Receive
+ 310 0058 D34D6210 	 .word 274877907
+ 311              	 .cfi_endproc
+ 312              	.LFE388:
+ 314              	 .section .text.Task_CAN_2_Transmit,"ax",%progbits
+ 315              	 .align 2
+ 316              	 .global Task_CAN_2_Transmit
+ 317              	 .thumb
+ 318              	 .thumb_func
+ 320              	Task_CAN_2_Transmit:
+ 321              	.LFB389:
+  47:../CAN_2.c    **** }
+  48:../CAN_2.c    **** 
+  49:../CAN_2.c    **** void Task_CAN_2_Transmit()
+  50:../CAN_2.c    **** {
+ 322              	 .loc 3 50 0
+ 323              	 .cfi_startproc
+ 324              	 
+ 325              	 
+ 326 0000 80B5     	 push {r7,lr}
+ 327              	 .cfi_def_cfa_offset 8
+ 328              	 .cfi_offset 7,-8
+ 329              	 .cfi_offset 14,-4
+ 330 0002 82B0     	 sub sp,sp,#8
+ 331              	 .cfi_def_cfa_offset 16
+ 332 0004 00AF     	 add r7,sp,#0
+ 333              	 .cfi_def_cfa_register 7
+ 334              	.L15:
+ 335              	.LBB2:
+  51:../CAN_2.c    **** 	while(1){
+  52:../CAN_2.c    **** 
+  53:../CAN_2.c    **** 	uint16_t Buffer;
+  54:../CAN_2.c    **** 
+  55:../CAN_2.c    **** 	/*
+  56:../CAN_2.c    **** 	T_Oil.CAN_Data[0] = (uint8_t)T_Oil.UnitValue;
+  57:../CAN_2.c    **** 	T_Water.CAN_Data[0] = (uint8_t)T_Water.UnitValue;
+  58:../CAN_2.c    **** 	T_Board.CAN_Data[0] = (uint8_t)T_Board.UnitValue;
+  59:../CAN_2.c    **** 	p_Oil.CAN_Data[0] = (uint8_t)p_Oil.UnitValue;
+  60:../CAN_2.c    **** 	p_Pneu.CAN_Data[0] = (uint8_t)p_Pneu.UnitValue;
+  61:../CAN_2.c    **** 	x_RH_RL.CAN_Data[0] = (uint8_t)x_RH_RL.UnitValue;
+  62:../CAN_2.c    **** 	x_RH_RR.CAN_Data[0] = (uint8_t)x_RH_RR.UnitValue;
+  63:../CAN_2.c    **** 	u_12V_Meas.CAN_Data[0] = (uint8_t)u_12V_Meas.UnitValue;
+  64:../CAN_2.c    **** 	u_5V_ANA_Meas.CAN_Data[0] = (uint8_t)u_5V_ANA_Meas.UnitValue;
+  65:../CAN_2.c    **** 	u_OUT1_Meas.CAN_Data[0] = (uint8_t)u_OUT1_Meas.UnitValue;
+  66:../CAN_2.c    **** 	u_OUT2_Meas.CAN_Data[0] = (uint8_t)u_OUT2_Meas.UnitValue;
+  67:../CAN_2.c    **** 	*/
+  68:../CAN_2.c    **** 
+  69:../CAN_2.c    **** 	Buffer = (uint16_t)x_DP_RL.UnitValue;
+ 336              	 .loc 3 69 0 discriminator 1
+ 337 0006 354B     	 ldr r3,.L16
+ 338 0008 DB8A     	 ldrh r3,[r3,#22]
+ 339 000a FB80     	 strh r3,[r7,#6]
+  70:../CAN_2.c    **** 
+  71:../CAN_2.c    **** 	x_DP_RL.CAN_Data[0] = Buffer&0xFF;
+ 340              	 .loc 3 71 0 discriminator 1
+ 341 000c FB88     	 ldrh r3,[r7,#6]
+ 342 000e DAB2     	 uxtb r2,r3
+ 343 0010 324B     	 ldr r3,.L16
+ 344 0012 1A76     	 strb r2,[r3,#24]
+  72:../CAN_2.c    **** 	x_DP_RL.CAN_Data[1] = (Buffer>>8)&0xFF;
+ 345              	 .loc 3 72 0 discriminator 1
+ 346 0014 FB88     	 ldrh r3,[r7,#6]
+ 347 0016 1B0A     	 lsrs r3,r3,#8
+ 348 0018 9BB2     	 uxth r3,r3
+ 349 001a DAB2     	 uxtb r2,r3
+ 350 001c 2F4B     	 ldr r3,.L16
+ 351 001e 5A76     	 strb r2,[r3,#25]
+  73:../CAN_2.c    **** 
+  74:../CAN_2.c    **** 	Buffer = (uint16_t)x_DP_RR.UnitValue;
+ 352              	 .loc 3 74 0 discriminator 1
+ 353 0020 2F4B     	 ldr r3,.L16+4
+ 354 0022 DB8A     	 ldrh r3,[r3,#22]
+ 355 0024 FB80     	 strh r3,[r7,#6]
+  75:../CAN_2.c    **** 
+  76:../CAN_2.c    **** 	x_DP_RR.CAN_Data[0] = Buffer&0xFF;
+ 356              	 .loc 3 76 0 discriminator 1
+ 357 0026 FB88     	 ldrh r3,[r7,#6]
+ 358 0028 DAB2     	 uxtb r2,r3
+ 359 002a 2D4B     	 ldr r3,.L16+4
+ 360 002c 1A76     	 strb r2,[r3,#24]
+  77:../CAN_2.c    **** 	x_DP_RR.CAN_Data[1] = (Buffer>>8)&0xFF;
+ 361              	 .loc 3 77 0 discriminator 1
+ 362 002e FB88     	 ldrh r3,[r7,#6]
+ 363 0030 1B0A     	 lsrs r3,r3,#8
+ 364 0032 9BB2     	 uxth r3,r3
+ 365 0034 DAB2     	 uxtb r2,r3
+ 366 0036 2A4B     	 ldr r3,.L16+4
+ 367 0038 5A76     	 strb r2,[r3,#25]
+  78:../CAN_2.c    **** 
+  79:../CAN_2.c    **** 	Buffer = (uint16_t)f_LC_RL.UnitValue;
+ 368              	 .loc 3 79 0 discriminator 1
+ 369 003a 2A4B     	 ldr r3,.L16+8
+ 370 003c DB8A     	 ldrh r3,[r3,#22]
+ 371 003e FB80     	 strh r3,[r7,#6]
+  80:../CAN_2.c    **** 
+  81:../CAN_2.c    **** 	f_LC_RL.CAN_Data[0] = Buffer&0xFF;
+ 372              	 .loc 3 81 0 discriminator 1
+ 373 0040 FB88     	 ldrh r3,[r7,#6]
+ 374 0042 DAB2     	 uxtb r2,r3
+ 375 0044 274B     	 ldr r3,.L16+8
+ 376 0046 1A76     	 strb r2,[r3,#24]
+  82:../CAN_2.c    **** 	f_LC_RL.CAN_Data[1] = (Buffer>>8)&0xFF;
+ 377              	 .loc 3 82 0 discriminator 1
+ 378 0048 FB88     	 ldrh r3,[r7,#6]
+ 379 004a 1B0A     	 lsrs r3,r3,#8
+ 380 004c 9BB2     	 uxth r3,r3
+ 381 004e DAB2     	 uxtb r2,r3
+ 382 0050 244B     	 ldr r3,.L16+8
+ 383 0052 5A76     	 strb r2,[r3,#25]
+  83:../CAN_2.c    **** 
+  84:../CAN_2.c    **** 	Buffer = (uint16_t)f_LC_RR.UnitValue;
+ 384              	 .loc 3 84 0 discriminator 1
+ 385 0054 244B     	 ldr r3,.L16+12
+ 386 0056 DB8A     	 ldrh r3,[r3,#22]
+ 387 0058 FB80     	 strh r3,[r7,#6]
+  85:../CAN_2.c    **** 
+  86:../CAN_2.c    **** 	f_LC_RR.CAN_Data[0] = Buffer&0xFF;
+ 388              	 .loc 3 86 0 discriminator 1
+ 389 005a FB88     	 ldrh r3,[r7,#6]
+ 390 005c DAB2     	 uxtb r2,r3
+ 391 005e 224B     	 ldr r3,.L16+12
+ 392 0060 1A76     	 strb r2,[r3,#24]
+  87:../CAN_2.c    **** 	f_LC_RR.CAN_Data[1] = (Buffer>>8)&0xFF;
+ 393              	 .loc 3 87 0 discriminator 1
+ 394 0062 FB88     	 ldrh r3,[r7,#6]
+ 395 0064 1B0A     	 lsrs r3,r3,#8
+ 396 0066 9BB2     	 uxth r3,r3
+ 397 0068 DAB2     	 uxtb r2,r3
+ 398 006a 1F4B     	 ldr r3,.L16+12
+ 399 006c 5A76     	 strb r2,[r3,#25]
+  88:../CAN_2.c    **** 
+  89:../CAN_2.c    **** 	//Measuremenet 0x7E1 LM01
+  90:../CAN_2.c    **** 	/*
+  91:../CAN_2.c    **** 	CAN2_data_Tx_LM01[0] = p_Pneu.CAN_Data[0];
+  92:../CAN_2.c    **** 	CAN2_data_Tx_LM01[1] = x_RH_RL.CAN_Data[0];
+  93:../CAN_2.c    **** 	CAN2_data_Tx_LM01[2] = x_RH_RR.CAN_Data[0];
+  94:../CAN_2.c    **** 	CAN2_data_Tx_LM01[3] = T_Water.CAN_Data[0];
+  95:../CAN_2.c    **** 	CAN2_data_Tx_LM01[4] = p_Oil.CAN_Data[0];
+  96:../CAN_2.c    **** 	CAN2_data_Tx_LM01[5] = T_Oil.CAN_Data[0];
+  97:../CAN_2.c    **** 	CAN2_data_Tx_LM01[6] = T_Board.CAN_Data[0];
+  98:../CAN_2.c    **** 	CAN2_data_Tx_LM01[7] = u_12V_Meas.CAN_Data[0];
+  99:../CAN_2.c    **** 
+ 100:../CAN_2.c    **** 	CAN_NODE_MO_UpdateData(&CAN_2_LMO_01_Config, CAN2_data_Tx_LM01);
+ 101:../CAN_2.c    **** 	CAN_NODE_MO_Transmit(&CAN_2_LMO_01_Config);
+ 102:../CAN_2.c    **** 	*/
+ 103:../CAN_2.c    **** 
+ 104:../CAN_2.c    **** 	//WheelForce 0x7DF LM01
+ 105:../CAN_2.c    **** 	CAN2_data_Tx_LM01[0] = f_LC_RL.CAN_Data[0];
+ 400              	 .loc 3 105 0 discriminator 1
+ 401 006e 1D4B     	 ldr r3,.L16+8
+ 402 0070 1A7E     	 ldrb r2,[r3,#24]
+ 403 0072 1E4B     	 ldr r3,.L16+16
+ 404 0074 1A70     	 strb r2,[r3]
+ 106:../CAN_2.c    **** 	CAN2_data_Tx_LM01[1] = f_LC_RL.CAN_Data[1];
+ 405              	 .loc 3 106 0 discriminator 1
+ 406 0076 1B4B     	 ldr r3,.L16+8
+ 407 0078 5A7E     	 ldrb r2,[r3,#25]
+ 408 007a 1C4B     	 ldr r3,.L16+16
+ 409 007c 5A70     	 strb r2,[r3,#1]
+ 107:../CAN_2.c    **** 	CAN2_data_Tx_LM01[2] = f_LC_RR.CAN_Data[0];
+ 410              	 .loc 3 107 0 discriminator 1
+ 411 007e 1A4B     	 ldr r3,.L16+12
+ 412 0080 1A7E     	 ldrb r2,[r3,#24]
+ 413 0082 1A4B     	 ldr r3,.L16+16
+ 414 0084 9A70     	 strb r2,[r3,#2]
+ 108:../CAN_2.c    **** 	CAN2_data_Tx_LM01[3] = f_LC_RR.CAN_Data[1];
+ 415              	 .loc 3 108 0 discriminator 1
+ 416 0086 184B     	 ldr r3,.L16+12
+ 417 0088 5A7E     	 ldrb r2,[r3,#25]
+ 418 008a 184B     	 ldr r3,.L16+16
+ 419 008c DA70     	 strb r2,[r3,#3]
+ 109:../CAN_2.c    **** 	CAN2_data_Tx_LM01[4] = x_DP_RL.CAN_Data[0];
+ 420              	 .loc 3 109 0 discriminator 1
+ 421 008e 134B     	 ldr r3,.L16
+ 422 0090 1A7E     	 ldrb r2,[r3,#24]
+ 423 0092 164B     	 ldr r3,.L16+16
+ 424 0094 1A71     	 strb r2,[r3,#4]
+ 110:../CAN_2.c    **** 	CAN2_data_Tx_LM01[5] = x_DP_RL.CAN_Data[1];
+ 425              	 .loc 3 110 0 discriminator 1
+ 426 0096 114B     	 ldr r3,.L16
+ 427 0098 5A7E     	 ldrb r2,[r3,#25]
+ 428 009a 144B     	 ldr r3,.L16+16
+ 429 009c 5A71     	 strb r2,[r3,#5]
+ 111:../CAN_2.c    **** 	CAN2_data_Tx_LM01[6] = x_DP_RR.CAN_Data[0];
+ 430              	 .loc 3 111 0 discriminator 1
+ 431 009e 104B     	 ldr r3,.L16+4
+ 432 00a0 1A7E     	 ldrb r2,[r3,#24]
+ 433 00a2 124B     	 ldr r3,.L16+16
+ 434 00a4 9A71     	 strb r2,[r3,#6]
+ 112:../CAN_2.c    **** 	CAN2_data_Tx_LM01[7] = x_DP_RR.CAN_Data[1];
+ 435              	 .loc 3 112 0 discriminator 1
+ 436 00a6 0E4B     	 ldr r3,.L16+4
+ 437 00a8 5A7E     	 ldrb r2,[r3,#25]
+ 438 00aa 104B     	 ldr r3,.L16+16
+ 439 00ac DA71     	 strb r2,[r3,#7]
+ 113:../CAN_2.c    **** 
+ 114:../CAN_2.c    **** 	CAN_NODE_MO_UpdateData(&CAN_2_LMO_01_Config, CAN2_data_Tx_LM01);
+ 440              	 .loc 3 114 0 discriminator 1
+ 441 00ae 1048     	 ldr r0,.L16+20
+ 442 00b0 0E49     	 ldr r1,.L16+16
+ 443 00b2 FFF7FEFF 	 bl CAN_NODE_MO_UpdateData
+ 115:../CAN_2.c    **** 	CAN_NODE_MO_Transmit(&CAN_2_LMO_01_Config);
+ 444              	 .loc 3 115 0 discriminator 1
+ 445 00b6 0E48     	 ldr r0,.L16+20
+ 446 00b8 FFF7FEFF 	 bl CAN_NODE_MO_Transmit
+ 116:../CAN_2.c    **** 
+ 117:../CAN_2.c    **** 	vTaskDelay(pdMS_TO_TICKS(delay_for_CAN2_Transmit));
+ 447              	 .loc 3 117 0 discriminator 1
+ 448 00bc 0D4B     	 ldr r3,.L16+24
+ 449 00be 1B78     	 ldrb r3,[r3]
+ 450 00c0 1A46     	 mov r2,r3
+ 451 00c2 42F21073 	 movw r3,#10000
+ 452 00c6 03FB02F3 	 mul r3,r3,r2
+ 453 00ca 0B4A     	 ldr r2,.L16+28
+ 454 00cc A2FB0323 	 umull r2,r3,r2,r3
+ 455 00d0 9B09     	 lsrs r3,r3,#6
+ 456 00d2 1846     	 mov r0,r3
+ 457 00d4 FFF7FEFF 	 bl vTaskDelay
+ 458              	.LBE2:
+ 118:../CAN_2.c    **** 	}
+ 459              	 .loc 3 118 0 discriminator 1
+ 460 00d8 95E7     	 b .L15
+ 461              	.L17:
+ 462 00da 00BF     	 .align 2
+ 463              	.L16:
+ 464 00dc 00000000 	 .word x_DP_RL
+ 465 00e0 00000000 	 .word x_DP_RR
+ 466 00e4 00000000 	 .word f_LC_RL
+ 467 00e8 00000000 	 .word f_LC_RR
+ 468 00ec 00000000 	 .word CAN2_data_Tx_LM01
+ 469 00f0 00000000 	 .word CAN_2_LMO_01_Config
+ 470 00f4 00000000 	 .word delay_for_CAN2_Transmit
+ 471 00f8 D34D6210 	 .word 274877907
+ 472              	 .cfi_endproc
+ 473              	.LFE389:
+ 475              	 .text
+ 476              	.Letext0:
+ 477              	 .file 4 "c:\\infineon\\tools\\dave ide\\4.5.0.202105191637\\eclipse\\arm-gcc-49\\arm-none-eabi\\include\\machine\\_default_types.h"
+ 478              	 .file 5 "c:\\infineon\\tools\\dave ide\\4.5.0.202105191637\\eclipse\\arm-gcc-49\\arm-none-eabi\\include\\stdint.h"
+ 479              	 .file 6 "C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Libraries/CMSIS/Infineon/XMC4500_series/Include/XMC4500.h"
+ 480              	 .file 7 "C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Libraries/XMCLib/inc/xmc4_gpio.h"
+ 481              	 .file 8 "C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Libraries/XMCLib/inc/xmc_vadc.h"
+ 482              	 .file 9 "C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Dave/Generated/ANALOG_IO/analog_io.h"
+ 483              	 .file 10 "C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Dave/Generated/ADC_MEASUREMENT/adc_measurement.h"
+ 484              	 .file 11 "C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Dave/Generated/FREERTOS/portable/GCC/portmacro.h"
+ 485              	 .file 12 "C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Libraries/XMCLib/inc/xmc_can.h"
+ 486              	 .file 13 "C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Dave/Generated/CAN_NODE/can_node.h"
+ 487              	 .file 14 "../Header.h"
+ 488              	 .file 15 "C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Libraries/CMSIS/Include/cmsis_gcc.h"
+ 489              	 .file 16 "C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Libraries/CMSIS/Include/core_cm4.h"
+ 490              	 .file 17 "C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Libraries/CMSIS/Infineon/XMC4500_series/Include/system_XMC4500.h"
+ 491              	 .file 18 "C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Dave/Generated/CAN_NODE/can_node_extern.h"
+ 492              	 .file 19 "C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/04_CANModule/CAN_Modul_keckvale_AH/Dave/Generated/DIGITAL_IO/digital_io_extern.h"
+DEFINED SYMBOLS
+                            *ABS*:00000000 CAN_2.c
+    {standard input}:20     .text.XMC_GPIO_SetOutputHigh:00000000 $t
+    {standard input}:24     .text.XMC_GPIO_SetOutputHigh:00000000 XMC_GPIO_SetOutputHigh
+    {standard input}:62     .text.XMC_GPIO_SetOutputLow:00000000 $t
+    {standard input}:66     .text.XMC_GPIO_SetOutputLow:00000000 XMC_GPIO_SetOutputLow
+    {standard input}:103    .text.DIGITAL_IO_SetOutputHigh:00000000 $t
+    {standard input}:107    .text.DIGITAL_IO_SetOutputHigh:00000000 DIGITAL_IO_SetOutputHigh
+    {standard input}:142    .text.DIGITAL_IO_SetOutputLow:00000000 $t
+    {standard input}:146    .text.DIGITAL_IO_SetOutputLow:00000000 DIGITAL_IO_SetOutputLow
+                            *COM*:00000004 time
+                            *COM*:0000002c T_Oil
+                            *COM*:0000002c T_Water
+                            *COM*:0000002c p_Oil
+                            *COM*:0000002c p_Pneu
+                            *COM*:0000002c x_DP_RL
+                            *COM*:0000002c x_DP_RR
+                            *COM*:0000002c x_RH_RL
+                            *COM*:0000002c x_RH_RR
+                            *COM*:0000002c f_LC_RL
+                            *COM*:0000002c f_LC_RR
+                            *COM*:0000002c T_Board
+                            *COM*:0000002c u_12V_Meas
+                            *COM*:0000002c u_5V_ANA_Meas
+                            *COM*:0000002c u_OUT1_Meas
+                            *COM*:0000002c u_OUT2_Meas
+                            *COM*:0000002c NTC1
+    {standard input}:201    .bss.CAN2_data_Tx_LM01:00000000 CAN2_data_Tx_LM01
+    {standard input}:198    .bss.CAN2_data_Tx_LM01:00000000 $d
+    {standard input}:207    .data.delay_for_CAN2_Transmit:00000000 delay_for_CAN2_Transmit
+    {standard input}:213    .data.delay_for_CAN2_Receive:00000000 delay_for_CAN2_Receive
+    {standard input}:216    .text.CAN2_INIT:00000000 $t
+    {standard input}:221    .text.CAN2_INIT:00000000 CAN2_INIT
+    {standard input}:242    .text.CAN2_INIT:0000000c $d
+    {standard input}:247    .text.Task_CAN_2_Receive:00000000 $t
+    {standard input}:252    .text.Task_CAN_2_Receive:00000000 Task_CAN_2_Receive
+    {standard input}:307    .text.Task_CAN_2_Receive:0000004c $d
+    {standard input}:315    .text.Task_CAN_2_Transmit:00000000 $t
+    {standard input}:320    .text.Task_CAN_2_Transmit:00000000 Task_CAN_2_Transmit
+    {standard input}:464    .text.Task_CAN_2_Transmit:000000dc $d
+                     .debug_frame:00000010 $d
+
+UNDEFINED SYMBOLS
+CAN_2_RES_CTRL
+CAN_NODE_MO_Receive
+vTaskDelay
+CAN_2_LMO_02_Config
+Brake_Light
+CAN_NODE_MO_UpdateData
+CAN_NODE_MO_Transmit
+CAN_2_LMO_01_Config

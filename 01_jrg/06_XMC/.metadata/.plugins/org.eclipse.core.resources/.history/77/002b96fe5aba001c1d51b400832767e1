@@ -1,0 +1,29 @@
+/*
+ * Analog.h
+ *
+ *  Created on: 12 Apr 2022
+ *      Author: Yoshi
+ */
+
+#ifndef ANALOG_H_
+#define ANALOG_H_
+
+typedef struct
+{
+	uint16_t 						value;							//ADC Value
+	uint16_t 						value_filtered;					//ADC Value filtered
+	ADC_MEASUREMENT_CHANNEL_t 		*Channel;						//ADC Channel from DAVE
+	uint16_t 						buffer[5];						//Buffer for filter
+	uint8_t							index;							//Index for buffer
+	float							value_unit;						//Value in whatever unit
+}; analog_sensor_t;
+
+
+	//Sensors
+	analog_sensor_t temp_sensor_1;
+
+
+	analog_sensor_t voltage_cell_1;
+
+
+#endif /* ANALOG_H_ */

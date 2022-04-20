@@ -1,0 +1,1252 @@
+Dependencies for Project 'jr22_LV_BMS_bauerjoh_AA', Target 'XMC4500-F100x1024': (DO NOT MODIFY !)
+CompilerVersion: 5060750::V5.06 update 6 (build 750)::ARMCC
+F (.\main.c)(0x62557F1A)(-c --cpu Cortex-M4.fp.sp -D__EVAL -g -O0 --apcs=interwork --split_sections-I.\Dave\Generated-I.\Dave\Generated\ADC_MEASUREMENT-I.\Dave\Generated\ANALOG_IO-I.\Dave\Generated\CAN_NODE-I.\Dave\Generated\CLOCK_XMC4-I.\Dave\Generated\CPU_CTRL_XMC4-I.\Dave\Generated\DIGITAL_IO-I.\Dave\Generated\FREERTOS-I.\Dave\Generated\FREERTOS\portable\GCC-I.\Dave\Generated\FREERTOS\portable\IAR-I.\Dave\Generated\FREERTOS\portable\Keil-I.\Dave\Generated\GLOBAL_ADC-I.\Dave\Generated\GLOBAL_CAN-I.\RTE\_XMC4500-F100x1024-IC:\Users\Yoshi\Documents\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include-IC:\Users\Yoshi\Documents\Arm\Packs\Infineon\XMC4000_DFP\2.13.0\Device\XMC4500_series\Include-IC:\Users\Yoshi\Documents\Arm\Packs\Infineon\XMC4000_DFP\2.13.0\Device\XMClib\inc-D__UVISION_VERSION="529" -D_RTE_ -DXMC4500_F100x1024 --C99-o .\uvbuild\main.o --omf_browse .\uvbuild\main.crf --depend .\uvbuild\main.d)
+I (.\Dave\Generated\DAVE.h)(0x62558113)
+I (C:\Users\Yoshi\Documents\Arm\Packs\Infineon\XMC4000_DFP\2.13.0\Device\XMClib\inc\xmc_common.h)(0x5D286C2E)
+I (C:\Keil_v5\ARM\ARMCC\include\stddef.h)(0x5D9B2678)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x5D9B2678)
+I (C:\Keil_v5\ARM\ARMCC\include\stdbool.h)(0x5D9B2678)
+I (C:\Keil_v5\ARM\ARMCC\include\string.h)(0x5D9B2678)
+I (C:\Users\Yoshi\Documents\Arm\Packs\Infineon\XMC4000_DFP\2.13.0\Device\XMClib\inc\xmc_device.h)(0x5D3BF384)
+I (C:\Users\Yoshi\Documents\Arm\Packs\Infineon\XMC4000_DFP\2.13.0\Device\XMC4500_series\Include\XMC4500.h)(0x59477BB0)
+I (C:\Users\Yoshi\Documents\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include\core_cm4.h)(0x60D43D42)
+I (C:\Users\Yoshi\Documents\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include\cmsis_version.h)(0x60D43D42)
+I (C:\Users\Yoshi\Documents\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include\cmsis_compiler.h)(0x60D43D42)
+I (C:\Users\Yoshi\Documents\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include\cmsis_armcc.h)(0x60D43D42)
+I (C:\Users\Yoshi\Documents\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include\mpu_armv7.h)(0x60D43D42)
+I (C:\Users\Yoshi\Documents\Arm\Packs\Infineon\XMC4000_DFP\2.13.0\Device\XMC4500_series\Include\system_XMC4500.h)(0x5787563C)
+I (.\Dave\Generated\CLOCK_XMC4/clock_xmc4.h)(0x60A53048)
+I (C:\Users\Yoshi\Documents\Arm\Packs\Infineon\XMC4000_DFP\2.13.0\Device\XMClib\inc\xmc_scu.h)(0x5D286BF6)
+I (C:\Users\Yoshi\Documents\Arm\Packs\Infineon\XMC4000_DFP\2.13.0\Device\XMClib\inc\xmc4_scu.h)(0x5D286BF8)
+I (C:\Users\Yoshi\Documents\Arm\Packs\Infineon\XMC4000_DFP\2.13.0\Device\XMClib\inc\xmc_gpio.h)(0x5D286BF6)
+I (C:\Users\Yoshi\Documents\Arm\Packs\Infineon\XMC4000_DFP\2.13.0\Device\XMClib\inc\xmc4_gpio.h)(0x5D286BF8)
+I (C:\Users\Yoshi\Documents\Arm\Packs\Infineon\XMC4000_DFP\2.13.0\Device\XMClib\inc\xmc4_gpio_map.h)(0x5D286BF8)
+I (.\Dave\Generated\DAVE_Common.h)(0x60A5303A)
+I (.\Dave\Generated\CLOCK_XMC4/clock_xmc4_conf.h)(0x62556C25)
+I (.\Dave\Generated\CLOCK_XMC4/clock_xmc4_extern.h)(0x62556C25)
+I (.\Dave\Generated\GLOBAL_CAN/global_can.h)(0x60A53048)
+I (C:\Users\Yoshi\Documents\Arm\Packs\Infineon\XMC4000_DFP\2.13.0\Device\XMClib\inc\xmc_can.h)(0x5D417B9E)
+I (C:\Users\Yoshi\Documents\Arm\Packs\Infineon\XMC4000_DFP\2.13.0\Device\XMClib\inc\xmc_can_map.h)(0x5D417ED8)
+I (.\Dave\Generated\GLOBAL_CAN/global_can_conf.h)(0x62556C25)
+I (.\Dave\Generated\GLOBAL_CAN/global_can_extern.h)(0x62556C25)
+I (.\Dave\Generated\CAN_NODE/can_node.h)(0x60A5304A)
+I (.\Dave\Generated\CAN_NODE/can_node_conf.h)(0x62556C25)
+I (.\Dave\Generated\CAN_NODE/can_node_extern.h)(0x62556C25)
+I (.\Dave\Generated\CPU_CTRL_XMC4/cpu_ctrl_xmc4.h)(0x60A53046)
+I (.\Dave\Generated\CPU_CTRL_XMC4/cpu_ctrl_xmc4_conf.h)(0x62556C25)
+I (.\Dave\Generated\CPU_CTRL_XMC4/cpu_ctrl_xmc4_extern.h)(0x62556C25)
+I (.\Dave\Generated\FREERTOS/freertos.h)(0x60A53048)
+I (.\Dave\Generated\FREERTOS/FreeRTOSConfig.h)(0x62556C25)
+I (.\Dave\Generated\FREERTOS/projdefs.h)(0x60A53048)
+I (.\Dave\Generated\FREERTOS/freertos_conf.h)(0x62556C25)
+I (.\Dave\Generated\FREERTOS/portable.h)(0x60A53048)
+I (.\Dave\Generated\FREERTOS/deprecated_definitions.h)(0x60A53048)
+F (.\Analog.c)(0x62559EAD)(-c --cpu Cortex-M4.fp.sp -D__EVAL -g -O0 --apcs=interwork --split_sections-I.\Dave\Generated-I.\Dave\Generated\ADC_MEASUREMENT-I.\Dave\Generated\ANALOG_IO-I.\Dave\Generated\CAN_NODE-I.\Dave\Generated\CLOCK_XMC4-I.\Dave\Generated\CPU_CTRL_XMC4-I.\Dave\Generated\DIGITAL_IO-I.\Dave\Generated\FREERTOS-I.\Dave\Generated\FREERTOS\portable\GCC-I.\Dave\Generated\FREERTOS\portable\IAR-I.\Dave\Generated\FREERTOS\portable\Keil-I.\Dave\Generated\GLOBAL_ADC-I.\Dave\Generated\GLOBAL_CAN-I.\RTE\_XMC4500-F100x1024-IC:\Users\Yoshi\Documents\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include-IC:\Users\Yoshi\Documents\Arm\Packs\Infineon\XMC4000_DFP\2.13.0\Device\XMC4500_series\Include-IC:\Users\Yoshi\Documents\Arm\Packs\Infineon\XMC4000_DFP\2.13.0\Device\XMClib\inc-D__UVISION_VERSION="529" -D_RTE_ -DXMC4500_F100x1024 --C99-o .\uvbuild\analog.o --omf_browse .\uvbuild\analog.crf --depend .\uvbuild\analog.d)
+I (Analog.h)(0x62559D12)
+I (Header.h)(0x62557F1F)
+I (.\Dave\Generated\DAVE.h)(0x62558113)
+I (C:\Users\Yoshi\Documents\Arm\Packs\Infineon\XMC4000_DFP\2.13.0\Device\XMClib\inc\xmc_common.h)(0x5D286C2E)
+I (C:\Keil_v5\ARM\ARMCC\include\stddef.h)(0x5D9B2678)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x5D9B2678)
+I (C:\Keil_v5\ARM\ARMCC\include\stdbool.h)(0x5D9B2678)
+I (C:\Keil_v5\ARM\ARMCC\include\string.h)(0x5D9B2678)
+I (C:\Users\Yoshi\Documents\Arm\Packs\Infineon\XMC4000_DFP\2.13.0\Device\XMClib\inc\xmc_device.h)(0x5D3BF384)
+I (C:\Users\Yoshi\Documents\Arm\Packs\Infineon\XMC4000_DFP\2.13.0\Device\XMC4500_series\Include\XMC4500.h)(0x59477BB0)
+I (C:\Users\Yoshi\Documents\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include\core_cm4.h)(0x60D43D42)
+I (C:\Users\Yoshi\Documents\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include\cmsis_version.h)(0x60D43D42)
+I (C:\Users\Yoshi\Documents\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include\cmsis_compiler.h)(0x60D43D42)
+I (C:\Users\Yoshi\Documents\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include\cmsis_armcc.h)(0x60D43D42)
+I (C:\Users\Yoshi\Documents\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include\mpu_armv7.h)(0x60D43D42)
+I (C:\Users\Yoshi\Documents\Arm\Packs\Infineon\XMC4000_DFP\2.13.0\Device\XMC4500_series\Include\system_XMC4500.h)(0x5787563C)
+I (.\Dave\Generated\CLOCK_XMC4/clock_xmc4.h)(0x60A53048)
+I (C:\Users\Yoshi\Documents\Arm\Packs\Infineon\XMC4000_DFP\2.13.0\Device\XMClib\inc\xmc_scu.h)(0x5D286BF6)
+I (C:\Users\Yoshi\Documents\Arm\Packs\Infineon\XMC4000_DFP\2.13.0\Device\XMClib\inc\xmc4_scu.h)(0x5D286BF8)
+I (C:\Users\Yoshi\Documents\Arm\Packs\Infineon\XMC4000_DFP\2.13.0\Device\XMClib\inc\xmc_gpio.h)(0x5D286BF6)
+I (C:\Users\Yoshi\Documents\Arm\Packs\Infineon\XMC4000_DFP\2.13.0\Device\XMClib\inc\xmc4_gpio.h)(0x5D286BF8)
+I (C:\Users\Yoshi\Documents\Arm\Packs\Infineon\XMC4000_DFP\2.13.0\Device\XMClib\inc\xmc4_gpio_map.h)(0x5D286BF8)
+I (.\Dave\Generated\DAVE_Common.h)(0x60A5303A)
+I (.\Dave\Generated\CLOCK_XMC4/clock_xmc4_conf.h)(0x62556C25)
+I (.\Dave\Generated\CLOCK_XMC4/clock_xmc4_extern.h)(0x62556C25)
+I (.\Dave\Generated\GLOBAL_CAN/global_can.h)(0x60A53048)
+I (C:\Users\Yoshi\Documents\Arm\Packs\Infineon\XMC4000_DFP\2.13.0\Device\XMClib\inc\xmc_can.h)(0x5D417B9E)
+I (C:\Users\Yoshi\Documents\Arm\Packs\Infineon\XMC4000_DFP\2.13.0\Device\XMClib\inc\xmc_can_map.h)(0x5D417ED8)
+I (.\Dave\Generated\GLOBAL_CAN/global_can_conf.h)(0x62556C25)
+I (.\Dave\Generated\GLOBAL_CAN/global_can_extern.h)(0x62556C25)
+I (.\Dave\Generated\CAN_NODE/can_node.h)(0x60A5304A)
+I (.\Dave\Generated\CAN_NODE/can_node_conf.h)(0x62556C25)
+I (.\Dave\Generated\CAN_NODE/can_node_extern.h)(0x62556C25)
+I (.\Dave\Generated\CPU_CTRL_XMC4/cpu_ctrl_xmc4.h)(0x60A53046)
+I (.\Dave\Generated\CPU_CTRL_XMC4/cpu_ctrl_xmc4_conf.h)(0x62556C25)
+I (.\Dave\Generated\CPU_CTRL_XMC4/cpu_ctrl_xmc4_extern.h)(0x62556C25)
+I (.\Dave\Generated\FREERTOS/freertos.h)(0x60A53048)
+I (.\Dave\Generated\FREERTOS/FreeRTOSConfig.h)(0x62556C25)
+I (.\Dave\Generated\FREERTOS/projdefs.h)(0x60A53048)
+I (.\Dave\Generated\FREERTOS/freertos_conf.h)(0x62556C25)
+I (.\Dave\Generated\FREERTOS/portable.h)(0x60A53048)
+I (.\Dave\Generated\FREERTOS/deprecated_definitions.h)(0x60A53048)
+F (.\CAN.c)(0x62556C79)(-c --cpu Cortex-M4.fp.sp -D__EVAL -g -O0 --apcs=interwork --split_sections-I.\Dave\Generated-I.\Dave\Generated\ADC_MEASUREMENT-I.\Dave\Generated\ANALOG_IO-I.\Dave\Generated\CAN_NODE-I.\Dave\Generated\CLOCK_XMC4-I.\Dave\Generated\CPU_CTRL_XMC4-I.\Dave\Generated\DIGITAL_IO-I.\Dave\Generated\FREERTOS-I.\Dave\Generated\FREERTOS\portable\GCC-I.\Dave\Generated\FREERTOS\portable\IAR-I.\Dave\Generated\FREERTOS\portable\Keil-I.\Dave\Generated\GLOBAL_ADC-I.\Dave\Generated\GLOBAL_CAN-I.\RTE\_XMC4500-F100x1024-IC:\Users\Yoshi\Documents\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include-IC:\Users\Yoshi\Documents\Arm\Packs\Infineon\XMC4000_DFP\2.13.0\Device\XMC4500_series\Include-IC:\Users\Yoshi\Documents\Arm\Packs\Infineon\XMC4000_DFP\2.13.0\Device\XMClib\inc-D__UVISION_VERSION="529" -D_RTE_ -DXMC4500_F100x1024 --C99-o .\uvbuild\can.o --omf_browse .\uvbuild\can.crf --depend .\uvbuild\can.d)
+F (C:\Users\Yoshi\Documents\GitHub\Software\01_jrg\06_XMC\jr22_LV_BMS_bauerjoh_AA\Dave\Generated\ADC_MEASUREMENT\adc_measurement.c)(0x60A5304A)(-c --cpu Cortex-M4.fp.sp -D__EVAL -g -O0 --apcs=interwork --split_sections-I.\Dave\Generated-I.\Dave\Generated\ADC_MEASUREMENT-I.\Dave\Generated\ANALOG_IO-I.\Dave\Generated\CAN_NODE-I.\Dave\Generated\CLOCK_XMC4-I.\Dave\Generated\CPU_CTRL_XMC4-I.\Dave\Generated\DIGITAL_IO-I.\Dave\Generated\FREERTOS-I.\Dave\Generated\FREERTOS\portable\GCC-I.\Dave\Generated\FREERTOS\portable\IAR-I.\Dave\Generated\FREERTOS\portable\Keil-I.\Dave\Generated\GLOBAL_ADC-I.\Dave\Generated\GLOBAL_CAN-I.\RTE\_XMC4500-F100x1024-IC:\Users\Yoshi\Documents\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include-IC:\Users\Yoshi\Documents\Arm\Packs\Infineon\XMC4000_DFP\2.13.0\Device\XMC4500_series\Include-IC:\Users\Yoshi\Documents\Arm\Packs\Infineon\XMC4000_DFP\2.13.0\Device\XMClib\inc-D__UVISION_VERSION="529" -D_RTE_ -DXMC4500_F100x1024 --C99-o .\uvbuild\adc_measurement.o --omf_browse .\uvbuild\adc_measurement.crf --depend .\uvbuild\adc_measurement.d)
+I (C:\Users\Yoshi\Documents\GitHub\Software\01_jrg\06_XMC\jr22_LV_BMS_bauerjoh_AA\Dave\Generated\ADC_MEASUREMENT\adc_measurement.h)(0x60A5304A)
+I (.\Dave\Generated\GLOBAL_ADC/global_adc.h)(0x60A53048)
+I (C:\Users\Yoshi\Documents\Arm\Packs\Infineon\XMC4000_DFP\2.13.0\Device\XMClib\inc\xmc_vadc.h)(0x5D286BF6)
+I (C:\Users\Yoshi\Documents\Arm\Packs\Infineon\XMC4000_DFP\2.13.0\Device\XMClib\inc\xmc_common.h)(0x5D286C2E)
+I (C:\Keil_v5\ARM\ARMCC\include\stddef.h)(0x5D9B2678)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x5D9B2678)
+I (C:\Keil_v5\ARM\ARMCC\include\stdbool.h)(0x5D9B2678)
+I (C:\Keil_v5\ARM\ARMCC\include\string.h)(0x5D9B2678)
+I (C:\Users\Yoshi\Documents\Arm\Packs\Infineon\XMC4000_DFP\2.13.0\Device\XMClib\inc\xmc_device.h)(0x5D3BF384)
+I (C:\Users\Yoshi\Documents\Arm\Packs\Infineon\XMC4000_DFP\2.13.0\Device\XMC4500_series\Include\XMC4500.h)(0x59477BB0)
+I (C:\Users\Yoshi\Documents\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include\core_cm4.h)(0x60D43D42)
+I (C:\Users\Yoshi\Documents\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include\cmsis_version.h)(0x60D43D42)
+I (C:\Users\Yoshi\Documents\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include\cmsis_compiler.h)(0x60D43D42)
+I (C:\Users\Yoshi\Documents\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include\cmsis_armcc.h)(0x60D43D42)
+I (C:\Users\Yoshi\Documents\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include\mpu_armv7.h)(0x60D43D42)
+I (C:\Users\Yoshi\Documents\Arm\Packs\Infineon\XMC4000_DFP\2.13.0\Device\XMC4500_series\Include\system_XMC4500.h)(0x5787563C)
+I (C:\Users\Yoshi\Documents\Arm\Packs\Infineon\XMC4000_DFP\2.13.0\Device\XMClib\inc\xmc_scu.h)(0x5D286BF6)
+I (C:\Users\Yoshi\Documents\Arm\Packs\Infineon\XMC4000_DFP\2.13.0\Device\XMClib\inc\xmc4_scu.h)(0x5D286BF8)
+I (C:\Users\Yoshi\Documents\Arm\Packs\Infineon\XMC4000_DFP\2.13.0\Device\XMClib\inc\xmc_vadc_map.h)(0x5D417D5E)
+I (.\Dave\Generated\GLOBAL_ADC/global_adc_conf.h)(0x62556C25)
+I (.\Dave\Generated\DAVE_Common.h)(0x60A5303A)
+I (.\Dave\Generated\GLOBAL_ADC/global_adc_extern.h)(0x62556C25)
+I (C:\Users\Yoshi\Documents\GitHub\Software\01_jrg\06_XMC\jr22_LV_BMS_bauerjoh_AA\Dave\Generated\ADC_MEASUREMENT\adc_measurement_conf.h)(0x62558114)
+I (.\Dave\Generated\ANALOG_IO/analog_io.h)(0x60A53046)
+I (C:\Users\Yoshi\Documents\Arm\Packs\Infineon\XMC4000_DFP\2.13.0\Device\XMClib\inc\xmc_gpio.h)(0x5D286BF6)
+I (C:\Users\Yoshi\Documents\Arm\Packs\Infineon\XMC4000_DFP\2.13.0\Device\XMClib\inc\xmc4_gpio.h)(0x5D286BF8)
+I (C:\Users\Yoshi\Documents\Arm\Packs\Infineon\XMC4000_DFP\2.13.0\Device\XMClib\inc\xmc4_gpio_map.h)(0x5D286BF8)
+I (.\Dave\Generated\ANALOG_IO/analog_io_conf.h)(0x62556C25)
+I (.\Dave\Generated\ANALOG_IO/analog_io_extern.h)(0x625570FD)
+I (C:\Users\Yoshi\Documents\GitHub\Software\01_jrg\06_XMC\jr22_LV_BMS_bauerjoh_AA\Dave\Generated\ADC_MEASUREMENT\adc_measurement_extern.h)(0x62558114)
+F (C:\Users\Yoshi\Documents\GitHub\Software\01_jrg\06_XMC\jr22_LV_BMS_bauerjoh_AA\Dave\Generated\ADC_MEASUREMENT\adc_measurement_conf.c)(0x625584ED)(-c --cpu Cortex-M4.fp.sp -D__EVAL -g -O0 --apcs=interwork --split_sections-I.\Dave\Generated-I.\Dave\Generated\ADC_MEASUREMENT-I.\Dave\Generated\ANALOG_IO-I.\Dave\Generated\CAN_NODE-I.\Dave\Generated\CLOCK_XMC4-I.\Dave\Generated\CPU_CTRL_XMC4-I.\Dave\Generated\DIGITAL_IO-I.\Dave\Generated\FREERTOS-I.\Dave\Generated\FREERTOS\portable\GCC-I.\Dave\Generated\FREERTOS\portable\IAR-I.\Dave\Generated\FREERTOS\portable\Keil-I.\Dave\Generated\GLOBAL_ADC-I.\Dave\Generated\GLOBAL_CAN-I.\RTE\_XMC4500-F100x1024-IC:\Users\Yoshi\Documents\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include-IC:\Users\Yoshi\Documents\Arm\Packs\Infineon\XMC4000_DFP\2.13.0\Device\XMC4500_series\Include-IC:\Users\Yoshi\Documents\Arm\Packs\Infineon\XMC4000_DFP\2.13.0\Device\XMClib\inc-D__UVISION_VERSION="529" -D_RTE_ -DXMC4500_F100x1024 --C99-o .\uvbuild\adc_measurement_conf.o --omf_browse .\uvbuild\adc_measurement_conf.crf --depend .\uvbuild\adc_measurement_conf.d)
+I (C:\Users\Yoshi\Documents\GitHub\Software\01_jrg\06_XMC\jr22_LV_BMS_bauerjoh_AA\Dave\Generated\ADC_MEASUREMENT\adc_measurement.h)(0x60A5304A)
+I (.\Dave\Generated\GLOBAL_ADC/global_adc.h)(0x60A53048)
+I (C:\Users\Yoshi\Documents\Arm\Packs\Infineon\XMC4000_DFP\2.13.0\Device\XMClib\inc\xmc_vadc.h)(0x5D286BF6)
+I (C:\Users\Yoshi\Documents\Arm\Packs\Infineon\XMC4000_DFP\2.13.0\Device\XMClib\inc\xmc_common.h)(0x5D286C2E)
+I (C:\Keil_v5\ARM\ARMCC\include\stddef.h)(0x5D9B2678)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x5D9B2678)
+I (C:\Keil_v5\ARM\ARMCC\include\stdbool.h)(0x5D9B2678)
+I (C:\Keil_v5\ARM\ARMCC\include\string.h)(0x5D9B2678)
+I (C:\Users\Yoshi\Documents\Arm\Packs\Infineon\XMC4000_DFP\2.13.0\Device\XMClib\inc\xmc_device.h)(0x5D3BF384)
+I (C:\Users\Yoshi\Documents\Arm\Packs\Infineon\XMC4000_DFP\2.13.0\Device\XMC4500_series\Include\XMC4500.h)(0x59477BB0)
+I (C:\Users\Yoshi\Documents\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include\core_cm4.h)(0x60D43D42)
+I (C:\Users\Yoshi\Documents\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include\cmsis_version.h)(0x60D43D42)
+I (C:\Users\Yoshi\Documents\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include\cmsis_compiler.h)(0x60D43D42)
+I (C:\Users\Yoshi\Documents\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include\cmsis_armcc.h)(0x60D43D42)
+I (C:\Users\Yoshi\Documents\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include\mpu_armv7.h)(0x60D43D42)
+I (C:\Users\Yoshi\Documents\Arm\Packs\Infineon\XMC4000_DFP\2.13.0\Device\XMC4500_series\Include\system_XMC4500.h)(0x5787563C)
+I (C:\Users\Yoshi\Documents\Arm\Packs\Infineon\XMC4000_DFP\2.13.0\Device\XMClib\inc\xmc_scu.h)(0x5D286BF6)
+I (C:\Users\Yoshi\Documents\Arm\Packs\Infineon\XMC4000_DFP\2.13.0\Device\XMClib\inc\xmc4_scu.h)(0x5D286BF8)
+I (C:\Users\Yoshi\Documents\Arm\Packs\Infineon\XMC4000_DFP\2.13.0\Device\XMClib\inc\xmc_vadc_map.h)(0x5D417D5E)
+I (.\Dave\Generated\GLOBAL_ADC/global_adc_conf.h)(0x62556C25)
+I (.\Dave\Generated\DAVE_Common.h)(0x60A5303A)
+I (.\Dave\Generated\GLOBAL_ADC/global_adc_extern.h)(0x62556C25)
+I (C:\Users\Yoshi\Documents\GitHub\Software\01_jrg\06_XMC\jr22_LV_BMS_bauerjoh_AA\Dave\Generated\ADC_MEASUREMENT\adc_measurement_conf.h)(0x62558114)
+I (.\Dave\Generated\ANALOG_IO/analog_io.h)(0x60A53046)
+I (C:\Users\Yoshi\Documents\Arm\Packs\Infineon\XMC4000_DFP\2.13.0\Device\XMClib\inc\xmc_gpio.h)(0x5D286BF6)
+I (C:\Users\Yoshi\Documents\Arm\Packs\Infineon\XMC4000_DFP\2.13.0\Device\XMClib\inc\xmc4_gpio.h)(0x5D286BF8)
+I (C:\Users\Yoshi\Documents\Arm\Packs\Infineon\XMC4000_DFP\2.13.0\Device\XMClib\inc\xmc4_gpio_map.h)(0x5D286BF8)
+I (.\Dave\Generated\ANALOG_IO/analog_io_conf.h)(0x62556C25)
+I (.\Dave\Generated\ANALOG_IO/analog_io_extern.h)(0x625570FD)
+I (C:\Users\Yoshi\Documents\GitHub\Software\01_jrg\06_XMC\jr22_LV_BMS_bauerjoh_AA\Dave\Generated\ADC_MEASUREMENT\adc_measurement_extern.h)(0x62558114)
+F (C:\Users\Yoshi\Documents\GitHub\Software\01_jrg\06_XMC\jr22_LV_BMS_bauerjoh_AA\Dave\Generated\ANALOG_IO\analog_io.c)(0x60A53046)(-c --cpu Cortex-M4.fp.sp -D__EVAL -g -O0 --apcs=interwork --split_sections-I.\Dave\Generated-I.\Dave\Generated\ADC_MEASUREMENT-I.\Dave\Generated\ANALOG_IO-I.\Dave\Generated\CAN_NODE-I.\Dave\Generated\CLOCK_XMC4-I.\Dave\Generated\CPU_CTRL_XMC4-I.\Dave\Generated\DIGITAL_IO-I.\Dave\Generated\FREERTOS-I.\Dave\Generated\FREERTOS\portable\GCC-I.\Dave\Generated\FREERTOS\portable\IAR-I.\Dave\Generated\FREERTOS\portable\Keil-I.\Dave\Generated\GLOBAL_ADC-I.\Dave\Generated\GLOBAL_CAN-I.\RTE\_XMC4500-F100x1024-IC:\Users\Yoshi\Documents\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include-IC:\Users\Yoshi\Documents\Arm\Packs\Infineon\XMC4000_DFP\2.13.0\Device\XMC4500_series\Include-IC:\Users\Yoshi\Documents\Arm\Packs\Infineon\XMC4000_DFP\2.13.0\Device\XMClib\inc-D__UVISION_VERSION="529" -D_RTE_ -DXMC4500_F100x1024 --C99-o .\uvbuild\analog_io.o --omf_browse .\uvbuild\analog_io.crf --depend .\uvbuild\analog_io.d)
+I (C:\Users\Yoshi\Documents\GitHub\Software\01_jrg\06_XMC\jr22_LV_BMS_bauerjoh_AA\Dave\Generated\ANALOG_IO\analog_io.h)(0x60A53046)
+I (C:\Users\Yoshi\Documents\Arm\Packs\Infineon\XMC4000_DFP\2.13.0\Device\XMClib\inc\xmc_gpio.h)(0x5D286BF6)
+I (C:\Users\Yoshi\Documents\Arm\Packs\Infineon\XMC4000_DFP\2.13.0\Device\XMClib\inc\xmc_common.h)(0x5D286C2E)
+I (C:\Keil_v5\ARM\ARMCC\include\stddef.h)(0x5D9B2678)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x5D9B2678)
+I (C:\Keil_v5\ARM\ARMCC\include\stdbool.h)(0x5D9B2678)
+I (C:\Keil_v5\ARM\ARMCC\include\string.h)(0x5D9B2678)
+I (C:\Users\Yoshi\Documents\Arm\Packs\Infineon\XMC4000_DFP\2.13.0\Device\XMClib\inc\xmc_device.h)(0x5D3BF384)
+I (C:\Users\Yoshi\Documents\Arm\Packs\Infineon\XMC4000_DFP\2.13.0\Device\XMC4500_series\Include\XMC4500.h)(0x59477BB0)
+I (C:\Users\Yoshi\Documents\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include\core_cm4.h)(0x60D43D42)
+I (C:\Users\Yoshi\Documents\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include\cmsis_version.h)(0x60D43D42)
+I (C:\Users\Yoshi\Documents\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include\cmsis_compiler.h)(0x60D43D42)
+I (C:\Users\Yoshi\Documents\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include\cmsis_armcc.h)(0x60D43D42)
+I (C:\Users\Yoshi\Documents\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include\mpu_armv7.h)(0x60D43D42)
+I (C:\Users\Yoshi\Documents\Arm\Packs\Infineon\XMC4000_DFP\2.13.0\Device\XMC4500_series\Include\system_XMC4500.h)(0x5787563C)
+I (C:\Users\Yoshi\Documents\Arm\Packs\Infineon\XMC4000_DFP\2.13.0\Device\XMClib\inc\xmc4_gpio.h)(0x5D286BF8)
+I (C:\Users\Yoshi\Documents\Arm\Packs\Infineon\XMC4000_DFP\2.13.0\Device\XMClib\inc\xmc4_gpio_map.h)(0x5D286BF8)
+I (.\Dave\Generated\DAVE_Common.h)(0x60A5303A)
+I (C:\Users\Yoshi\Documents\GitHub\Software\01_jrg\06_XMC\jr22_LV_BMS_bauerjoh_AA\Dave\Generated\ANALOG_IO\analog_io_conf.h)(0x62556C25)
+I (C:\Users\Yoshi\Documents\GitHub\Software\01_jrg\06_XMC\jr22_LV_BMS_bauerjoh_AA\Dave\Generated\ANALOG_IO\analog_io_extern.h)(0x625570FD)
+F (C:\Users\Yoshi\Documents\GitHub\Software\01_jrg\06_XMC\jr22_LV_BMS_bauerjoh_AA\Dave\Generated\ANALOG_IO\analog_io_conf.c)(0x62558114)(-c --cpu Cortex-M4.fp.sp -D__EVAL -g -O0 --apcs=interwork --split_sections-I.\Dave\Generated-I.\Dave\Generated\ADC_MEASUREMENT-I.\Dave\Generated\ANALOG_IO-I.\Dave\Generated\CAN_NODE-I.\Dave\Generated\CLOCK_XMC4-I.\Dave\Generated\CPU_CTRL_XMC4-I.\Dave\Generated\DIGITAL_IO-I.\Dave\Generated\FREERTOS-I.\Dave\Generated\FREERTOS\portable\GCC-I.\Dave\Generated\FREERTOS\portable\IAR-I.\Dave\Generated\FREERTOS\portable\Keil-I.\Dave\Generated\GLOBAL_ADC-I.\Dave\Generated\GLOBAL_CAN-I.\RTE\_XMC4500-F100x1024-IC:\Users\Yoshi\Documents\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include-IC:\Users\Yoshi\Documents\Arm\Packs\Infineon\XMC4000_DFP\2.13.0\Device\XMC4500_series\Include-IC:\Users\Yoshi\Documents\Arm\Packs\Infineon\XMC4000_DFP\2.13.0\Device\XMClib\inc-D__UVISION_VERSION="529" -D_RTE_ -DXMC4500_F100x1024 --C99-o .\uvbuild\analog_io_conf.o --omf_browse .\uvbuild\analog_io_conf.crf --depend .\uvbuild\analog_io_conf.d)
+I (C:\Users\Yoshi\Documents\GitHub\Software\01_jrg\06_XMC\jr22_LV_BMS_bauerjoh_AA\Dave\Generated\ANALOG_IO\analog_io.h)(0x60A53046)
+I (C:\Users\Yoshi\Documents\Arm\Packs\Infineon\XMC4000_DFP\2.13.0\Device\XMClib\inc\xmc_gpio.h)(0x5D286BF6)
+I (C:\Users\Yoshi\Documents\Arm\Packs\Infineon\XMC4000_DFP\2.13.0\Device\XMClib\inc\xmc_common.h)(0x5D286C2E)
+I (C:\Keil_v5\ARM\ARMCC\include\stddef.h)(0x5D9B2678)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x5D9B2678)
+I (C:\Keil_v5\ARM\ARMCC\include\stdbool.h)(0x5D9B2678)
+I (C:\Keil_v5\ARM\ARMCC\include\string.h)(0x5D9B2678)
+I (C:\Users\Yoshi\Documents\Arm\Packs\Infineon\XMC4000_DFP\2.13.0\Device\XMClib\inc\xmc_device.h)(0x5D3BF384)
+I (C:\Users\Yoshi\Documents\Arm\Packs\Infineon\XMC4000_DFP\2.13.0\Device\XMC4500_series\Include\XMC4500.h)(0x59477BB0)
+I (C:\Users\Yoshi\Documents\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include\core_cm4.h)(0x60D43D42)
+I (C:\Users\Yoshi\Documents\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include\cmsis_version.h)(0x60D43D42)
+I (C:\Users\Yoshi\Documents\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include\cmsis_compiler.h)(0x60D43D42)
+I (C:\Users\Yoshi\Documents\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include\cmsis_armcc.h)(0x60D43D42)
+I (C:\Users\Yoshi\Documents\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include\mpu_armv7.h)(0x60D43D42)
+I (C:\Users\Yoshi\Documents\Arm\Packs\Infineon\XMC4000_DFP\2.13.0\Device\XMC4500_series\Include\system_XMC4500.h)(0x5787563C)
+I (C:\Users\Yoshi\Documents\Arm\Packs\Infineon\XMC4000_DFP\2.13.0\Device\XMClib\inc\xmc4_gpio.h)(0x5D286BF8)
+I (C:\Users\Yoshi\Documents\Arm\Packs\Infineon\XMC4000_DFP\2.13.0\Device\XMClib\inc\xmc4_gpio_map.h)(0x5D286BF8)
+I (.\Dave\Generated\DAVE_Common.h)(0x60A5303A)
+I (C:\Users\Yoshi\Documents\GitHub\Software\01_jrg\06_XMC\jr22_LV_BMS_bauerjoh_AA\Dave\Generated\ANALOG_IO\analog_io_conf.h)(0x62556C25)
+I (C:\Users\Yoshi\Documents\GitHub\Software\01_jrg\06_XMC\jr22_LV_BMS_bauerjoh_AA\Dave\Generated\ANALOG_IO\analog_io_extern.h)(0x625570FD)
+F (C:\Users\Yoshi\Documents\GitHub\Software\01_jrg\06_XMC\jr22_LV_BMS_bauerjoh_AA\Dave\Generated\CAN_NODE\can_node.c)(0x60A5304A)(-c --cpu Cortex-M4.fp.sp -D__EVAL -g -O0 --apcs=interwork --split_sections-I.\Dave\Generated-I.\Dave\Generated\ADC_MEASUREMENT-I.\Dave\Generated\ANALOG_IO-I.\Dave\Generated\CAN_NODE-I.\Dave\Generated\CLOCK_XMC4-I.\Dave\Generated\CPU_CTRL_XMC4-I.\Dave\Generated\DIGITAL_IO-I.\Dave\Generated\FREERTOS-I.\Dave\Generated\FREERTOS\portable\GCC-I.\Dave\Generated\FREERTOS\portable\IAR-I.\Dave\Generated\FREERTOS\portable\Keil-I.\Dave\Generated\GLOBAL_ADC-I.\Dave\Generated\GLOBAL_CAN-I.\RTE\_XMC4500-F100x1024-IC:\Users\Yoshi\Documents\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include-IC:\Users\Yoshi\Documents\Arm\Packs\Infineon\XMC4000_DFP\2.13.0\Device\XMC4500_series\Include-IC:\Users\Yoshi\Documents\Arm\Packs\Infineon\XMC4000_DFP\2.13.0\Device\XMClib\inc-D__UVISION_VERSION="529" -D_RTE_ -DXMC4500_F100x1024 --C99-o .\uvbuild\can_node.o --omf_browse .\uvbuild\can_node.crf --depend .\uvbuild\can_node.d)
+I (C:\Users\Yoshi\Documents\GitHub\Software\01_jrg\06_XMC\jr22_LV_BMS_bauerjoh_AA\Dave\Generated\CAN_NODE\can_node.h)(0x60A5304A)
+I (C:\Users\Yoshi\Documents\Arm\Packs\Infineon\XMC4000_DFP\2.13.0\Device\XMClib\inc\xmc_can.h)(0x5D417B9E)
+I (C:\Users\Yoshi\Documents\Arm\Packs\Infineon\XMC4000_DFP\2.13.0\Device\XMClib\inc\xmc_common.h)(0x5D286C2E)
+I (C:\Keil_v5\ARM\ARMCC\include\stddef.h)(0x5D9B2678)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x5D9B2678)
+I (C:\Keil_v5\ARM\ARMCC\include\stdbool.h)(0x5D9B2678)
+I (C:\Keil_v5\ARM\ARMCC\include\string.h)(0x5D9B2678)
+I (C:\Users\Yoshi\Documents\Arm\Packs\Infineon\XMC4000_DFP\2.13.0\Device\XMClib\inc\xmc_device.h)(0x5D3BF384)
+I (C:\Users\Yoshi\Documents\Arm\Packs\Infineon\XMC4000_DFP\2.13.0\Device\XMC4500_series\Include\XMC4500.h)(0x59477BB0)
+I (C:\Users\Yoshi\Documents\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include\core_cm4.h)(0x60D43D42)
+I (C:\Users\Yoshi\Documents\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include\cmsis_version.h)(0x60D43D42)
+I (C:\Users\Yoshi\Documents\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include\cmsis_compiler.h)(0x60D43D42)
+I (C:\Users\Yoshi\Documents\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include\cmsis_armcc.h)(0x60D43D42)
+I (C:\Users\Yoshi\Documents\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include\mpu_armv7.h)(0x60D43D42)
+I (C:\Users\Yoshi\Documents\Arm\Packs\Infineon\XMC4000_DFP\2.13.0\Device\XMC4500_series\Include\system_XMC4500.h)(0x5787563C)
+I (C:\Users\Yoshi\Documents\Arm\Packs\Infineon\XMC4000_DFP\2.13.0\Device\XMClib\inc\xmc_scu.h)(0x5D286BF6)
+I (C:\Users\Yoshi\Documents\Arm\Packs\Infineon\XMC4000_DFP\2.13.0\Device\XMClib\inc\xmc4_scu.h)(0x5D286BF8)
+I (C:\Users\Yoshi\Documents\Arm\Packs\Infineon\XMC4000_DFP\2.13.0\Device\XMClib\inc\xmc_can_map.h)(0x5D417ED8)
+I (C:\Users\Yoshi\Documents\Arm\Packs\Infineon\XMC4000_DFP\2.13.0\Device\XMClib\inc\xmc_gpio.h)(0x5D286BF6)
+I (C:\Users\Yoshi\Documents\Arm\Packs\Infineon\XMC4000_DFP\2.13.0\Device\XMClib\inc\xmc4_gpio.h)(0x5D286BF8)
+I (C:\Users\Yoshi\Documents\Arm\Packs\Infineon\XMC4000_DFP\2.13.0\Device\XMClib\inc\xmc4_gpio_map.h)(0x5D286BF8)
+I (.\Dave\Generated\GLOBAL_CAN/global_can.h)(0x60A53048)
+I (.\Dave\Generated\GLOBAL_CAN/global_can_conf.h)(0x62556C25)
+I (.\Dave\Generated\DAVE_Common.h)(0x60A5303A)
+I (.\Dave\Generated\GLOBAL_CAN/global_can_extern.h)(0x62556C25)
+I (C:\Users\Yoshi\Documents\GitHub\Software\01_jrg\06_XMC\jr22_LV_BMS_bauerjoh_AA\Dave\Generated\CAN_NODE\can_node_conf.h)(0x62556C25)
+I (C:\Users\Yoshi\Documents\GitHub\Software\01_jrg\06_XMC\jr22_LV_BMS_bauerjoh_AA\Dave\Generated\CAN_NODE\can_node_extern.h)(0x62556C25)
+F (C:\Users\Yoshi\Documents\GitHub\Software\01_jrg\06_XMC\jr22_LV_BMS_bauerjoh_AA\Dave\Generated\CAN_NODE\can_node_conf.c)(0x62558114)(-c --cpu Cortex-M4.fp.sp -D__EVAL -g -O0 --apcs=interwork --split_sections-I.\Dave\Generated-I.\Dave\Generated\ADC_MEASUREMENT-I.\Dave\Generated\ANALOG_IO-I.\Dave\Generated\CAN_NODE-I.\Dave\Generated\CLOCK_XMC4-I.\Dave\Generated\CPU_CTRL_XMC4-I.\Dave\Generated\DIGITAL_IO-I.\Dave\Generated\FREERTOS-I.\Dave\Generated\FREERTOS\portable\GCC-I.\Dave\Generated\FREERTOS\portable\IAR-I.\Dave\Generated\FREERTOS\portable\Keil-I.\Dave\Generated\GLOBAL_ADC-I.\Dave\Generated\GLOBAL_CAN-I.\RTE\_XMC4500-F100x1024-IC:\Users\Yoshi\Documents\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include-IC:\Users\Yoshi\Documents\Arm\Packs\Infineon\XMC4000_DFP\2.13.0\Device\XMC4500_series\Include-IC:\Users\Yoshi\Documents\Arm\Packs\Infineon\XMC4000_DFP\2.13.0\Device\XMClib\inc-D__UVISION_VERSION="529" -D_RTE_ -DXMC4500_F100x1024 --C99-o .\uvbuild\can_node_conf.o --omf_browse .\uvbuild\can_node_conf.crf --depend .\uvbuild\can_node_conf.d)
+I (C:\Users\Yoshi\Documents\GitHub\Software\01_jrg\06_XMC\jr22_LV_BMS_bauerjoh_AA\Dave\Generated\CAN_NODE\can_node.h)(0x60A5304A)
+I (C:\Users\Yoshi\Documents\Arm\Packs\Infineon\XMC4000_DFP\2.13.0\Device\XMClib\inc\xmc_can.h)(0x5D417B9E)
+I (C:\Users\Yoshi\Documents\Arm\Packs\Infineon\XMC4000_DFP\2.13.0\Device\XMClib\inc\xmc_common.h)(0x5D286C2E)
+I (C:\Keil_v5\ARM\ARMCC\include\stddef.h)(0x5D9B2678)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x5D9B2678)
+I (C:\Keil_v5\ARM\ARMCC\include\stdbool.h)(0x5D9B2678)
+I (C:\Keil_v5\ARM\ARMCC\include\string.h)(0x5D9B2678)
+I (C:\Users\Yoshi\Documents\Arm\Packs\Infineon\XMC4000_DFP\2.13.0\Device\XMClib\inc\xmc_device.h)(0x5D3BF384)
+I (C:\Users\Yoshi\Documents\Arm\Packs\Infineon\XMC4000_DFP\2.13.0\Device\XMC4500_series\Include\XMC4500.h)(0x59477BB0)
+I (C:\Users\Yoshi\Documents\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include\core_cm4.h)(0x60D43D42)
+I (C:\Users\Yoshi\Documents\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include\cmsis_version.h)(0x60D43D42)
+I (C:\Users\Yoshi\Documents\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include\cmsis_compiler.h)(0x60D43D42)
+I (C:\Users\Yoshi\Documents\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include\cmsis_armcc.h)(0x60D43D42)
+I (C:\Users\Yoshi\Documents\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include\mpu_armv7.h)(0x60D43D42)
+I (C:\Users\Yoshi\Documents\Arm\Packs\Infineon\XMC4000_DFP\2.13.0\Device\XMC4500_series\Include\system_XMC4500.h)(0x5787563C)
+I (C:\Users\Yoshi\Documents\Arm\Packs\Infineon\XMC4000_DFP\2.13.0\Device\XMClib\inc\xmc_scu.h)(0x5D286BF6)
+I (C:\Users\Yoshi\Documents\Arm\Packs\Infineon\XMC4000_DFP\2.13.0\Device\XMClib\inc\xmc4_scu.h)(0x5D286BF8)
+I (C:\Users\Yoshi\Documents\Arm\Packs\Infineon\XMC4000_DFP\2.13.0\Device\XMClib\inc\xmc_can_map.h)(0x5D417ED8)
+I (C:\Users\Yoshi\Documents\Arm\Packs\Infineon\XMC4000_DFP\2.13.0\Device\XMClib\inc\xmc_gpio.h)(0x5D286BF6)
+I (C:\Users\Yoshi\Documents\Arm\Packs\Infineon\XMC4000_DFP\2.13.0\Device\XMClib\inc\xmc4_gpio.h)(0x5D286BF8)
+I (C:\Users\Yoshi\Documents\Arm\Packs\Infineon\XMC4000_DFP\2.13.0\Device\XMClib\inc\xmc4_gpio_map.h)(0x5D286BF8)
+I (.\Dave\Generated\GLOBAL_CAN/global_can.h)(0x60A53048)
+I (.\Dave\Generated\GLOBAL_CAN/global_can_conf.h)(0x62556C25)
+I (.\Dave\Generated\DAVE_Common.h)(0x60A5303A)
+I (.\Dave\Generated\GLOBAL_CAN/global_can_extern.h)(0x62556C25)
+I (C:\Users\Yoshi\Documents\GitHub\Software\01_jrg\06_XMC\jr22_LV_BMS_bauerjoh_AA\Dave\Generated\CAN_NODE\can_node_conf.h)(0x62556C25)
+I (C:\Users\Yoshi\Documents\GitHub\Software\01_jrg\06_XMC\jr22_LV_BMS_bauerjoh_AA\Dave\Generated\CAN_NODE\can_node_extern.h)(0x62556C25)
+F (C:\Users\Yoshi\Documents\GitHub\Software\01_jrg\06_XMC\jr22_LV_BMS_bauerjoh_AA\Dave\Generated\CLOCK_XMC4\clock_xmc4.c)(0x60A53048)(-c --cpu Cortex-M4.fp.sp -D__EVAL -g -O0 --apcs=interwork --split_sections-I.\Dave\Generated-I.\Dave\Generated\ADC_MEASUREMENT-I.\Dave\Generated\ANALOG_IO-I.\Dave\Generated\CAN_NODE-I.\Dave\Generated\CLOCK_XMC4-I.\Dave\Generated\CPU_CTRL_XMC4-I.\Dave\Generated\DIGITAL_IO-I.\Dave\Generated\FREERTOS-I.\Dave\Generated\FREERTOS\portable\GCC-I.\Dave\Generated\FREERTOS\portable\IAR-I.\Dave\Generated\FREERTOS\portable\Keil-I.\Dave\Generated\GLOBAL_ADC-I.\Dave\Generated\GLOBAL_CAN-I.\RTE\_XMC4500-F100x1024-IC:\Users\Yoshi\Documents\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include-IC:\Users\Yoshi\Documents\Arm\Packs\Infineon\XMC4000_DFP\2.13.0\Device\XMC4500_series\Include-IC:\Users\Yoshi\Documents\Arm\Packs\Infineon\XMC4000_DFP\2.13.0\Device\XMClib\inc-D__UVISION_VERSION="529" -D_RTE_ -DXMC4500_F100x1024 --C99-o .\uvbuild\clock_xmc4.o --omf_browse .\uvbuild\clock_xmc4.crf --depend .\uvbuild\clock_xmc4.d)
+I (C:\Users\Yoshi\Documents\GitHub\Software\01_jrg\06_XMC\jr22_LV_BMS_bauerjoh_AA\Dave\Generated\CLOCK_XMC4\clock_xmc4.h)(0x60A53048)
+I (C:\Users\Yoshi\Documents\Arm\Packs\Infineon\XMC4000_DFP\2.13.0\Device\XMClib\inc\xmc_scu.h)(0x5D286BF6)
+I (C:\Users\Yoshi\Documents\Arm\Packs\Infineon\XMC4000_DFP\2.13.0\Device\XMClib\inc\xmc_common.h)(0x5D286C2E)
+I (C:\Keil_v5\ARM\ARMCC\include\stddef.h)(0x5D9B2678)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x5D9B2678)
+I (C:\Keil_v5\ARM\ARMCC\include\stdbool.h)(0x5D9B2678)
+I (C:\Keil_v5\ARM\ARMCC\include\string.h)(0x5D9B2678)
+I (C:\Users\Yoshi\Documents\Arm\Packs\Infineon\XMC4000_DFP\2.13.0\Device\XMClib\inc\xmc_device.h)(0x5D3BF384)
+I (C:\Users\Yoshi\Documents\Arm\Packs\Infineon\XMC4000_DFP\2.13.0\Device\XMC4500_series\Include\XMC4500.h)(0x59477BB0)
+I (C:\Users\Yoshi\Documents\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include\core_cm4.h)(0x60D43D42)
+I (C:\Users\Yoshi\Documents\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include\cmsis_version.h)(0x60D43D42)
+I (C:\Users\Yoshi\Documents\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include\cmsis_compiler.h)(0x60D43D42)
+I (C:\Users\Yoshi\Documents\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include\cmsis_armcc.h)(0x60D43D42)
+I (C:\Users\Yoshi\Documents\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include\mpu_armv7.h)(0x60D43D42)
+I (C:\Users\Yoshi\Documents\Arm\Packs\Infineon\XMC4000_DFP\2.13.0\Device\XMC4500_series\Include\system_XMC4500.h)(0x5787563C)
+I (C:\Users\Yoshi\Documents\Arm\Packs\Infineon\XMC4000_DFP\2.13.0\Device\XMClib\inc\xmc4_scu.h)(0x5D286BF8)
+I (C:\Users\Yoshi\Documents\Arm\Packs\Infineon\XMC4000_DFP\2.13.0\Device\XMClib\inc\xmc_gpio.h)(0x5D286BF6)
+I (C:\Users\Yoshi\Documents\Arm\Packs\Infineon\XMC4000_DFP\2.13.0\Device\XMClib\inc\xmc4_gpio.h)(0x5D286BF8)
+I (C:\Users\Yoshi\Documents\Arm\Packs\Infineon\XMC4000_DFP\2.13.0\Device\XMClib\inc\xmc4_gpio_map.h)(0x5D286BF8)
+I (.\Dave\Generated\DAVE_Common.h)(0x60A5303A)
+I (C:\Users\Yoshi\Documents\GitHub\Software\01_jrg\06_XMC\jr22_LV_BMS_bauerjoh_AA\Dave\Generated\CLOCK_XMC4\clock_xmc4_conf.h)(0x62556C25)
+I (C:\Users\Yoshi\Documents\GitHub\Software\01_jrg\06_XMC\jr22_LV_BMS_bauerjoh_AA\Dave\Generated\CLOCK_XMC4\clock_xmc4_extern.h)(0x62556C25)
+F (C:\Users\Yoshi\Documents\GitHub\Software\01_jrg\06_XMC\jr22_LV_BMS_bauerjoh_AA\Dave\Generated\CLOCK_XMC4\clock_xmc4_conf.c)(0x62556C25)(-c --cpu Cortex-M4.fp.sp -D__EVAL -g -O0 --apcs=interwork --split_sections-I.\Dave\Generated-I.\Dave\Generated\ADC_MEASUREMENT-I.\Dave\Generated\ANALOG_IO-I.\Dave\Generated\CAN_NODE-I.\Dave\Generated\CLOCK_XMC4-I.\Dave\Generated\CPU_CTRL_XMC4-I.\Dave\Generated\DIGITAL_IO-I.\Dave\Generated\FREERTOS-I.\Dave\Generated\FREERTOS\portable\GCC-I.\Dave\Generated\FREERTOS\portable\IAR-I.\Dave\Generated\FREERTOS\portable\Keil-I.\Dave\Generated\GLOBAL_ADC-I.\Dave\Generated\GLOBAL_CAN-I.\RTE\_XMC4500-F100x1024-IC:\Users\Yoshi\Documents\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include-IC:\Users\Yoshi\Documents\Arm\Packs\Infineon\XMC4000_DFP\2.13.0\Device\XMC4500_series\Include-IC:\Users\Yoshi\Documents\Arm\Packs\Infineon\XMC4000_DFP\2.13.0\Device\XMClib\inc-D__UVISION_VERSION="529" -D_RTE_ -DXMC4500_F100x1024 --C99-o .\uvbuild\clock_xmc4_conf.o --omf_browse .\uvbuild\clock_xmc4_conf.crf --depend .\uvbuild\clock_xmc4_conf.d)
+I (C:\Users\Yoshi\Documents\GitHub\Software\01_jrg\06_XMC\jr22_LV_BMS_bauerjoh_AA\Dave\Generated\CLOCK_XMC4\clock_xmc4.h)(0x60A53048)
+I (C:\Users\Yoshi\Documents\Arm\Packs\Infineon\XMC4000_DFP\2.13.0\Device\XMClib\inc\xmc_scu.h)(0x5D286BF6)
+I (C:\Users\Yoshi\Documents\Arm\Packs\Infineon\XMC4000_DFP\2.13.0\Device\XMClib\inc\xmc_common.h)(0x5D286C2E)
+I (C:\Keil_v5\ARM\ARMCC\include\stddef.h)(0x5D9B2678)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x5D9B2678)
+I (C:\Keil_v5\ARM\ARMCC\include\stdbool.h)(0x5D9B2678)
+I (C:\Keil_v5\ARM\ARMCC\include\string.h)(0x5D9B2678)
+I (C:\Users\Yoshi\Documents\Arm\Packs\Infineon\XMC4000_DFP\2.13.0\Device\XMClib\inc\xmc_device.h)(0x5D3BF384)
+I (C:\Users\Yoshi\Documents\Arm\Packs\Infineon\XMC4000_DFP\2.13.0\Device\XMC4500_series\Include\XMC4500.h)(0x59477BB0)
+I (C:\Users\Yoshi\Documents\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include\core_cm4.h)(0x60D43D42)
+I (C:\Users\Yoshi\Documents\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include\cmsis_version.h)(0x60D43D42)
+I (C:\Users\Yoshi\Documents\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include\cmsis_compiler.h)(0x60D43D42)
+I (C:\Users\Yoshi\Documents\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include\cmsis_armcc.h)(0x60D43D42)
+I (C:\Users\Yoshi\Documents\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include\mpu_armv7.h)(0x60D43D42)
+I (C:\Users\Yoshi\Documents\Arm\Packs\Infineon\XMC4000_DFP\2.13.0\Device\XMC4500_series\Include\system_XMC4500.h)(0x5787563C)
+I (C:\Users\Yoshi\Documents\Arm\Packs\Infineon\XMC4000_DFP\2.13.0\Device\XMClib\inc\xmc4_scu.h)(0x5D286BF8)
+I (C:\Users\Yoshi\Documents\Arm\Packs\Infineon\XMC4000_DFP\2.13.0\Device\XMClib\inc\xmc_gpio.h)(0x5D286BF6)
+I (C:\Users\Yoshi\Documents\Arm\Packs\Infineon\XMC4000_DFP\2.13.0\Device\XMClib\inc\xmc4_gpio.h)(0x5D286BF8)
+I (C:\Users\Yoshi\Documents\Arm\Packs\Infineon\XMC4000_DFP\2.13.0\Device\XMClib\inc\xmc4_gpio_map.h)(0x5D286BF8)
+I (.\Dave\Generated\DAVE_Common.h)(0x60A5303A)
+I (C:\Users\Yoshi\Documents\GitHub\Software\01_jrg\06_XMC\jr22_LV_BMS_bauerjoh_AA\Dave\Generated\CLOCK_XMC4\clock_xmc4_conf.h)(0x62556C25)
+I (C:\Users\Yoshi\Documents\GitHub\Software\01_jrg\06_XMC\jr22_LV_BMS_bauerjoh_AA\Dave\Generated\CLOCK_XMC4\clock_xmc4_extern.h)(0x62556C25)
+F (C:\Users\Yoshi\Documents\GitHub\Software\01_jrg\06_XMC\jr22_LV_BMS_bauerjoh_AA\Dave\Generated\CPU_CTRL_XMC4\cpu_ctrl_xmc4.c)(0x60A53046)(-c --cpu Cortex-M4.fp.sp -D__EVAL -g -O0 --apcs=interwork --split_sections-I.\Dave\Generated-I.\Dave\Generated\ADC_MEASUREMENT-I.\Dave\Generated\ANALOG_IO-I.\Dave\Generated\CAN_NODE-I.\Dave\Generated\CLOCK_XMC4-I.\Dave\Generated\CPU_CTRL_XMC4-I.\Dave\Generated\DIGITAL_IO-I.\Dave\Generated\FREERTOS-I.\Dave\Generated\FREERTOS\portable\GCC-I.\Dave\Generated\FREERTOS\portable\IAR-I.\Dave\Generated\FREERTOS\portable\Keil-I.\Dave\Generated\GLOBAL_ADC-I.\Dave\Generated\GLOBAL_CAN-I.\RTE\_XMC4500-F100x1024-IC:\Users\Yoshi\Documents\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include-IC:\Users\Yoshi\Documents\Arm\Packs\Infineon\XMC4000_DFP\2.13.0\Device\XMC4500_series\Include-IC:\Users\Yoshi\Documents\Arm\Packs\Infineon\XMC4000_DFP\2.13.0\Device\XMClib\inc-D__UVISION_VERSION="529" -D_RTE_ -DXMC4500_F100x1024 --C99-o .\uvbuild\cpu_ctrl_xmc4.o --omf_browse .\uvbuild\cpu_ctrl_xmc4.crf --depend .\uvbuild\cpu_ctrl_xmc4.d)
+I (C:\Users\Yoshi\Documents\GitHub\Software\01_jrg\06_XMC\jr22_LV_BMS_bauerjoh_AA\Dave\Generated\CPU_CTRL_XMC4\cpu_ctrl_xmc4.h)(0x60A53046)
+I (C:\Users\Yoshi\Documents\Arm\Packs\Infineon\XMC4000_DFP\2.13.0\Device\XMClib\inc\xmc_common.h)(0x5D286C2E)
+I (C:\Keil_v5\ARM\ARMCC\include\stddef.h)(0x5D9B2678)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x5D9B2678)
+I (C:\Keil_v5\ARM\ARMCC\include\stdbool.h)(0x5D9B2678)
+I (C:\Keil_v5\ARM\ARMCC\include\string.h)(0x5D9B2678)
+I (C:\Users\Yoshi\Documents\Arm\Packs\Infineon\XMC4000_DFP\2.13.0\Device\XMClib\inc\xmc_device.h)(0x5D3BF384)
+I (C:\Users\Yoshi\Documents\Arm\Packs\Infineon\XMC4000_DFP\2.13.0\Device\XMC4500_series\Include\XMC4500.h)(0x59477BB0)
+I (C:\Users\Yoshi\Documents\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include\core_cm4.h)(0x60D43D42)
+I (C:\Users\Yoshi\Documents\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include\cmsis_version.h)(0x60D43D42)
+I (C:\Users\Yoshi\Documents\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include\cmsis_compiler.h)(0x60D43D42)
+I (C:\Users\Yoshi\Documents\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include\cmsis_armcc.h)(0x60D43D42)
+I (C:\Users\Yoshi\Documents\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include\mpu_armv7.h)(0x60D43D42)
+I (C:\Users\Yoshi\Documents\Arm\Packs\Infineon\XMC4000_DFP\2.13.0\Device\XMC4500_series\Include\system_XMC4500.h)(0x5787563C)
+I (.\Dave\Generated\DAVE_Common.h)(0x60A5303A)
+I (C:\Users\Yoshi\Documents\GitHub\Software\01_jrg\06_XMC\jr22_LV_BMS_bauerjoh_AA\Dave\Generated\CPU_CTRL_XMC4\cpu_ctrl_xmc4_conf.h)(0x62556C25)
+I (C:\Users\Yoshi\Documents\GitHub\Software\01_jrg\06_XMC\jr22_LV_BMS_bauerjoh_AA\Dave\Generated\CPU_CTRL_XMC4\cpu_ctrl_xmc4_extern.h)(0x62556C25)
+F (C:\Users\Yoshi\Documents\GitHub\Software\01_jrg\06_XMC\jr22_LV_BMS_bauerjoh_AA\Dave\Generated\CPU_CTRL_XMC4\cpu_ctrl_xmc4_conf.c)(0x62556C25)(-c --cpu Cortex-M4.fp.sp -D__EVAL -g -O0 --apcs=interwork --split_sections-I.\Dave\Generated-I.\Dave\Generated\ADC_MEASUREMENT-I.\Dave\Generated\ANALOG_IO-I.\Dave\Generated\CAN_NODE-I.\Dave\Generated\CLOCK_XMC4-I.\Dave\Generated\CPU_CTRL_XMC4-I.\Dave\Generated\DIGITAL_IO-I.\Dave\Generated\FREERTOS-I.\Dave\Generated\FREERTOS\portable\GCC-I.\Dave\Generated\FREERTOS\portable\IAR-I.\Dave\Generated\FREERTOS\portable\Keil-I.\Dave\Generated\GLOBAL_ADC-I.\Dave\Generated\GLOBAL_CAN-I.\RTE\_XMC4500-F100x1024-IC:\Users\Yoshi\Documents\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include-IC:\Users\Yoshi\Documents\Arm\Packs\Infineon\XMC4000_DFP\2.13.0\Device\XMC4500_series\Include-IC:\Users\Yoshi\Documents\Arm\Packs\Infineon\XMC4000_DFP\2.13.0\Device\XMClib\inc-D__UVISION_VERSION="529" -D_RTE_ -DXMC4500_F100x1024 --C99-o .\uvbuild\cpu_ctrl_xmc4_conf.o --omf_browse .\uvbuild\cpu_ctrl_xmc4_conf.crf --depend .\uvbuild\cpu_ctrl_xmc4_conf.d)
+I (C:\Users\Yoshi\Documents\Arm\Packs\Infineon\XMC4000_DFP\2.13.0\Device\XMClib\inc\xmc_scu.h)(0x5D286BF6)
+I (C:\Users\Yoshi\Documents\Arm\Packs\Infineon\XMC4000_DFP\2.13.0\Device\XMClib\inc\xmc_common.h)(0x5D286C2E)
+I (C:\Keil_v5\ARM\ARMCC\include\stddef.h)(0x5D9B2678)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x5D9B2678)
+I (C:\Keil_v5\ARM\ARMCC\include\stdbool.h)(0x5D9B2678)
+I (C:\Keil_v5\ARM\ARMCC\include\string.h)(0x5D9B2678)
+I (C:\Users\Yoshi\Documents\Arm\Packs\Infineon\XMC4000_DFP\2.13.0\Device\XMClib\inc\xmc_device.h)(0x5D3BF384)
+I (C:\Users\Yoshi\Documents\Arm\Packs\Infineon\XMC4000_DFP\2.13.0\Device\XMC4500_series\Include\XMC4500.h)(0x59477BB0)
+I (C:\Users\Yoshi\Documents\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include\core_cm4.h)(0x60D43D42)
+I (C:\Users\Yoshi\Documents\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include\cmsis_version.h)(0x60D43D42)
+I (C:\Users\Yoshi\Documents\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include\cmsis_compiler.h)(0x60D43D42)
+I (C:\Users\Yoshi\Documents\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include\cmsis_armcc.h)(0x60D43D42)
+I (C:\Users\Yoshi\Documents\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include\mpu_armv7.h)(0x60D43D42)
+I (C:\Users\Yoshi\Documents\Arm\Packs\Infineon\XMC4000_DFP\2.13.0\Device\XMC4500_series\Include\system_XMC4500.h)(0x5787563C)
+I (C:\Users\Yoshi\Documents\Arm\Packs\Infineon\XMC4000_DFP\2.13.0\Device\XMClib\inc\xmc4_scu.h)(0x5D286BF8)
+I (C:\Users\Yoshi\Documents\Arm\Packs\Infineon\XMC4000_DFP\2.13.0\Device\XMClib\inc\xmc_gpio.h)(0x5D286BF6)
+I (C:\Users\Yoshi\Documents\Arm\Packs\Infineon\XMC4000_DFP\2.13.0\Device\XMClib\inc\xmc4_gpio.h)(0x5D286BF8)
+I (C:\Users\Yoshi\Documents\Arm\Packs\Infineon\XMC4000_DFP\2.13.0\Device\XMClib\inc\xmc4_gpio_map.h)(0x5D286BF8)
+I (C:\Users\Yoshi\Documents\GitHub\Software\01_jrg\06_XMC\jr22_LV_BMS_bauerjoh_AA\Dave\Generated\CPU_CTRL_XMC4\cpu_ctrl_xmc4.h)(0x60A53046)
+I (.\Dave\Generated\DAVE_Common.h)(0x60A5303A)
+I (C:\Users\Yoshi\Documents\GitHub\Software\01_jrg\06_XMC\jr22_LV_BMS_bauerjoh_AA\Dave\Generated\CPU_CTRL_XMC4\cpu_ctrl_xmc4_conf.h)(0x62556C25)
+I (C:\Users\Yoshi\Documents\GitHub\Software\01_jrg\06_XMC\jr22_LV_BMS_bauerjoh_AA\Dave\Generated\CPU_CTRL_XMC4\cpu_ctrl_xmc4_extern.h)(0x62556C25)
+F (C:\Users\Yoshi\Documents\GitHub\Software\01_jrg\06_XMC\jr22_LV_BMS_bauerjoh_AA\Dave\Generated\DAVE.c)(0x62558113)(-c --cpu Cortex-M4.fp.sp -D__EVAL -g -O0 --apcs=interwork --split_sections-I.\Dave\Generated-I.\Dave\Generated\ADC_MEASUREMENT-I.\Dave\Generated\ANALOG_IO-I.\Dave\Generated\CAN_NODE-I.\Dave\Generated\CLOCK_XMC4-I.\Dave\Generated\CPU_CTRL_XMC4-I.\Dave\Generated\DIGITAL_IO-I.\Dave\Generated\FREERTOS-I.\Dave\Generated\FREERTOS\portable\GCC-I.\Dave\Generated\FREERTOS\portable\IAR-I.\Dave\Generated\FREERTOS\portable\Keil-I.\Dave\Generated\GLOBAL_ADC-I.\Dave\Generated\GLOBAL_CAN-I.\RTE\_XMC4500-F100x1024-IC:\Users\Yoshi\Documents\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include-IC:\Users\Yoshi\Documents\Arm\Packs\Infineon\XMC4000_DFP\2.13.0\Device\XMC4500_series\Include-IC:\Users\Yoshi\Documents\Arm\Packs\Infineon\XMC4000_DFP\2.13.0\Device\XMClib\inc-D__UVISION_VERSION="529" -D_RTE_ -DXMC4500_F100x1024 --C99-o .\uvbuild\dave.o --omf_browse .\uvbuild\dave.crf --depend .\uvbuild\dave.d)
+I (C:\Users\Yoshi\Documents\GitHub\Software\01_jrg\06_XMC\jr22_LV_BMS_bauerjoh_AA\Dave\Generated\DAVE.h)(0x62558113)
+I (C:\Users\Yoshi\Documents\Arm\Packs\Infineon\XMC4000_DFP\2.13.0\Device\XMClib\inc\xmc_common.h)(0x5D286C2E)
+I (C:\Keil_v5\ARM\ARMCC\include\stddef.h)(0x5D9B2678)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x5D9B2678)
+I (C:\Keil_v5\ARM\ARMCC\include\stdbool.h)(0x5D9B2678)
+I (C:\Keil_v5\ARM\ARMCC\include\string.h)(0x5D9B2678)
+I (C:\Users\Yoshi\Documents\Arm\Packs\Infineon\XMC4000_DFP\2.13.0\Device\XMClib\inc\xmc_device.h)(0x5D3BF384)
+I (C:\Users\Yoshi\Documents\Arm\Packs\Infineon\XMC4000_DFP\2.13.0\Device\XMC4500_series\Include\XMC4500.h)(0x59477BB0)
+I (C:\Users\Yoshi\Documents\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include\core_cm4.h)(0x60D43D42)
+I (C:\Users\Yoshi\Documents\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include\cmsis_version.h)(0x60D43D42)
+I (C:\Users\Yoshi\Documents\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include\cmsis_compiler.h)(0x60D43D42)
+I (C:\Users\Yoshi\Documents\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include\cmsis_armcc.h)(0x60D43D42)
+I (C:\Users\Yoshi\Documents\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include\mpu_armv7.h)(0x60D43D42)
+I (C:\Users\Yoshi\Documents\Arm\Packs\Infineon\XMC4000_DFP\2.13.0\Device\XMC4500_series\Include\system_XMC4500.h)(0x5787563C)
+I (C:\Users\Yoshi\Documents\GitHub\Software\01_jrg\06_XMC\jr22_LV_BMS_bauerjoh_AA\Dave\Generated\CLOCK_XMC4\clock_xmc4.h)(0x60A53048)
+I (C:\Users\Yoshi\Documents\Arm\Packs\Infineon\XMC4000_DFP\2.13.0\Device\XMClib\inc\xmc_scu.h)(0x5D286BF6)
+I (C:\Users\Yoshi\Documents\Arm\Packs\Infineon\XMC4000_DFP\2.13.0\Device\XMClib\inc\xmc4_scu.h)(0x5D286BF8)
+I (C:\Users\Yoshi\Documents\Arm\Packs\Infineon\XMC4000_DFP\2.13.0\Device\XMClib\inc\xmc_gpio.h)(0x5D286BF6)
+I (C:\Users\Yoshi\Documents\Arm\Packs\Infineon\XMC4000_DFP\2.13.0\Device\XMClib\inc\xmc4_gpio.h)(0x5D286BF8)
+I (C:\Users\Yoshi\Documents\Arm\Packs\Infineon\XMC4000_DFP\2.13.0\Device\XMClib\inc\xmc4_gpio_map.h)(0x5D286BF8)
+I (.\Dave\Generated\DAVE_Common.h)(0x60A5303A)
+I (C:\Users\Yoshi\Documents\GitHub\Software\01_jrg\06_XMC\jr22_LV_BMS_bauerjoh_AA\Dave\Generated\CLOCK_XMC4\clock_xmc4_conf.h)(0x62556C25)
+I (C:\Users\Yoshi\Documents\GitHub\Software\01_jrg\06_XMC\jr22_LV_BMS_bauerjoh_AA\Dave\Generated\CLOCK_XMC4\clock_xmc4_extern.h)(0x62556C25)
+I (C:\Users\Yoshi\Documents\GitHub\Software\01_jrg\06_XMC\jr22_LV_BMS_bauerjoh_AA\Dave\Generated\GLOBAL_CAN\global_can.h)(0x60A53048)
+I (C:\Users\Yoshi\Documents\Arm\Packs\Infineon\XMC4000_DFP\2.13.0\Device\XMClib\inc\xmc_can.h)(0x5D417B9E)
+I (C:\Users\Yoshi\Documents\Arm\Packs\Infineon\XMC4000_DFP\2.13.0\Device\XMClib\inc\xmc_can_map.h)(0x5D417ED8)
+I (C:\Users\Yoshi\Documents\GitHub\Software\01_jrg\06_XMC\jr22_LV_BMS_bauerjoh_AA\Dave\Generated\GLOBAL_CAN\global_can_conf.h)(0x62556C25)
+I (C:\Users\Yoshi\Documents\GitHub\Software\01_jrg\06_XMC\jr22_LV_BMS_bauerjoh_AA\Dave\Generated\GLOBAL_CAN\global_can_extern.h)(0x62556C25)
+I (C:\Users\Yoshi\Documents\GitHub\Software\01_jrg\06_XMC\jr22_LV_BMS_bauerjoh_AA\Dave\Generated\CAN_NODE\can_node.h)(0x60A5304A)
+I (C:\Users\Yoshi\Documents\GitHub\Software\01_jrg\06_XMC\jr22_LV_BMS_bauerjoh_AA\Dave\Generated\CAN_NODE\can_node_conf.h)(0x62556C25)
+I (C:\Users\Yoshi\Documents\GitHub\Software\01_jrg\06_XMC\jr22_LV_BMS_bauerjoh_AA\Dave\Generated\CAN_NODE\can_node_extern.h)(0x62556C25)
+I (C:\Users\Yoshi\Documents\GitHub\Software\01_jrg\06_XMC\jr22_LV_BMS_bauerjoh_AA\Dave\Generated\CPU_CTRL_XMC4\cpu_ctrl_xmc4.h)(0x60A53046)
+I (C:\Users\Yoshi\Documents\GitHub\Software\01_jrg\06_XMC\jr22_LV_BMS_bauerjoh_AA\Dave\Generated\CPU_CTRL_XMC4\cpu_ctrl_xmc4_conf.h)(0x62556C25)
+I (C:\Users\Yoshi\Documents\GitHub\Software\01_jrg\06_XMC\jr22_LV_BMS_bauerjoh_AA\Dave\Generated\CPU_CTRL_XMC4\cpu_ctrl_xmc4_extern.h)(0x62556C25)
+I (C:\Users\Yoshi\Documents\GitHub\Software\01_jrg\06_XMC\jr22_LV_BMS_bauerjoh_AA\Dave\Generated\FREERTOS\freertos.h)(0x60A53048)
+I (C:\Users\Yoshi\Documents\GitHub\Software\01_jrg\06_XMC\jr22_LV_BMS_bauerjoh_AA\Dave\Generated\FREERTOS\FreeRTOSConfig.h)(0x62556C25)
+I (C:\Users\Yoshi\Documents\GitHub\Software\01_jrg\06_XMC\jr22_LV_BMS_bauerjoh_AA\Dave\Generated\FREERTOS\projdefs.h)(0x60A53048)
+I (C:\Users\Yoshi\Documents\GitHub\Software\01_jrg\06_XMC\jr22_LV_BMS_bauerjoh_AA\Dave\Generated\FREERTOS\freertos_conf.h)(0x62556C25)
+I (C:\Users\Yoshi\Documents\GitHub\Software\01_jrg\06_XMC\jr22_LV_BMS_bauerjoh_AA\Dave\Generated\FREERTOS\portable.h)(0x60A53048)
+I (C:\Users\Yoshi\Documents\GitHub\Software\01_jrg\06_XMC\jr22_LV_BMS_bauerjoh_AA\Dave\Generated\FREERTOS\deprecated_definitions.h)(0x60A53048)
+F (C:\Users\Yoshi\Documents\GitHub\Software\01_jrg\06_XMC\jr22_LV_BMS_bauerjoh_AA\Dave\Generated\DIGITAL_IO\digital_io.c)(0x60A53046)(-c --cpu Cortex-M4.fp.sp -D__EVAL -g -O0 --apcs=interwork --split_sections-I.\Dave\Generated-I.\Dave\Generated\ADC_MEASUREMENT-I.\Dave\Generated\ANALOG_IO-I.\Dave\Generated\CAN_NODE-I.\Dave\Generated\CLOCK_XMC4-I.\Dave\Generated\CPU_CTRL_XMC4-I.\Dave\Generated\DIGITAL_IO-I.\Dave\Generated\FREERTOS-I.\Dave\Generated\FREERTOS\portable\GCC-I.\Dave\Generated\FREERTOS\portable\IAR-I.\Dave\Generated\FREERTOS\portable\Keil-I.\Dave\Generated\GLOBAL_ADC-I.\Dave\Generated\GLOBAL_CAN-I.\RTE\_XMC4500-F100x1024-IC:\Users\Yoshi\Documents\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include-IC:\Users\Yoshi\Documents\Arm\Packs\Infineon\XMC4000_DFP\2.13.0\Device\XMC4500_series\Include-IC:\Users\Yoshi\Documents\Arm\Packs\Infineon\XMC4000_DFP\2.13.0\Device\XMClib\inc-D__UVISION_VERSION="529" -D_RTE_ -DXMC4500_F100x1024 --C99-o .\uvbuild\digital_io.o --omf_browse .\uvbuild\digital_io.crf --depend .\uvbuild\digital_io.d)
+I (C:\Users\Yoshi\Documents\GitHub\Software\01_jrg\06_XMC\jr22_LV_BMS_bauerjoh_AA\Dave\Generated\DIGITAL_IO\digital_io.h)(0x60A53046)
+I (C:\Users\Yoshi\Documents\Arm\Packs\Infineon\XMC4000_DFP\2.13.0\Device\XMClib\inc\xmc_gpio.h)(0x5D286BF6)
+I (C:\Users\Yoshi\Documents\Arm\Packs\Infineon\XMC4000_DFP\2.13.0\Device\XMClib\inc\xmc_common.h)(0x5D286C2E)
+I (C:\Keil_v5\ARM\ARMCC\include\stddef.h)(0x5D9B2678)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x5D9B2678)
+I (C:\Keil_v5\ARM\ARMCC\include\stdbool.h)(0x5D9B2678)
+I (C:\Keil_v5\ARM\ARMCC\include\string.h)(0x5D9B2678)
+I (C:\Users\Yoshi\Documents\Arm\Packs\Infineon\XMC4000_DFP\2.13.0\Device\XMClib\inc\xmc_device.h)(0x5D3BF384)
+I (C:\Users\Yoshi\Documents\Arm\Packs\Infineon\XMC4000_DFP\2.13.0\Device\XMC4500_series\Include\XMC4500.h)(0x59477BB0)
+I (C:\Users\Yoshi\Documents\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include\core_cm4.h)(0x60D43D42)
+I (C:\Users\Yoshi\Documents\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include\cmsis_version.h)(0x60D43D42)
+I (C:\Users\Yoshi\Documents\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include\cmsis_compiler.h)(0x60D43D42)
+I (C:\Users\Yoshi\Documents\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include\cmsis_armcc.h)(0x60D43D42)
+I (C:\Users\Yoshi\Documents\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include\mpu_armv7.h)(0x60D43D42)
+I (C:\Users\Yoshi\Documents\Arm\Packs\Infineon\XMC4000_DFP\2.13.0\Device\XMC4500_series\Include\system_XMC4500.h)(0x5787563C)
+I (C:\Users\Yoshi\Documents\Arm\Packs\Infineon\XMC4000_DFP\2.13.0\Device\XMClib\inc\xmc4_gpio.h)(0x5D286BF8)
+I (C:\Users\Yoshi\Documents\Arm\Packs\Infineon\XMC4000_DFP\2.13.0\Device\XMClib\inc\xmc4_gpio_map.h)(0x5D286BF8)
+I (.\Dave\Generated\DAVE_Common.h)(0x60A5303A)
+I (C:\Users\Yoshi\Documents\GitHub\Software\01_jrg\06_XMC\jr22_LV_BMS_bauerjoh_AA\Dave\Generated\DIGITAL_IO\digital_io_conf.h)(0x62556C25)
+I (C:\Users\Yoshi\Documents\GitHub\Software\01_jrg\06_XMC\jr22_LV_BMS_bauerjoh_AA\Dave\Generated\DIGITAL_IO\digital_io_extern.h)(0x62556C25)
+F (C:\Users\Yoshi\Documents\GitHub\Software\01_jrg\06_XMC\jr22_LV_BMS_bauerjoh_AA\Dave\Generated\DIGITAL_IO\digital_io_conf.c)(0x62558113)(-c --cpu Cortex-M4.fp.sp -D__EVAL -g -O0 --apcs=interwork --split_sections-I.\Dave\Generated-I.\Dave\Generated\ADC_MEASUREMENT-I.\Dave\Generated\ANALOG_IO-I.\Dave\Generated\CAN_NODE-I.\Dave\Generated\CLOCK_XMC4-I.\Dave\Generated\CPU_CTRL_XMC4-I.\Dave\Generated\DIGITAL_IO-I.\Dave\Generated\FREERTOS-I.\Dave\Generated\FREERTOS\portable\GCC-I.\Dave\Generated\FREERTOS\portable\IAR-I.\Dave\Generated\FREERTOS\portable\Keil-I.\Dave\Generated\GLOBAL_ADC-I.\Dave\Generated\GLOBAL_CAN-I.\RTE\_XMC4500-F100x1024-IC:\Users\Yoshi\Documents\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include-IC:\Users\Yoshi\Documents\Arm\Packs\Infineon\XMC4000_DFP\2.13.0\Device\XMC4500_series\Include-IC:\Users\Yoshi\Documents\Arm\Packs\Infineon\XMC4000_DFP\2.13.0\Device\XMClib\inc-D__UVISION_VERSION="529" -D_RTE_ -DXMC4500_F100x1024 --C99-o .\uvbuild\digital_io_conf.o --omf_browse .\uvbuild\digital_io_conf.crf --depend .\uvbuild\digital_io_conf.d)
+I (C:\Users\Yoshi\Documents\GitHub\Software\01_jrg\06_XMC\jr22_LV_BMS_bauerjoh_AA\Dave\Generated\DIGITAL_IO\digital_io.h)(0x60A53046)
+I (C:\Users\Yoshi\Documents\Arm\Packs\Infineon\XMC4000_DFP\2.13.0\Device\XMClib\inc\xmc_gpio.h)(0x5D286BF6)
+I (C:\Users\Yoshi\Documents\Arm\Packs\Infineon\XMC4000_DFP\2.13.0\Device\XMClib\inc\xmc_common.h)(0x5D286C2E)
+I (C:\Keil_v5\ARM\ARMCC\include\stddef.h)(0x5D9B2678)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x5D9B2678)
+I (C:\Keil_v5\ARM\ARMCC\include\stdbool.h)(0x5D9B2678)
+I (C:\Keil_v5\ARM\ARMCC\include\string.h)(0x5D9B2678)
+I (C:\Users\Yoshi\Documents\Arm\Packs\Infineon\XMC4000_DFP\2.13.0\Device\XMClib\inc\xmc_device.h)(0x5D3BF384)
+I (C:\Users\Yoshi\Documents\Arm\Packs\Infineon\XMC4000_DFP\2.13.0\Device\XMC4500_series\Include\XMC4500.h)(0x59477BB0)
+I (C:\Users\Yoshi\Documents\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include\core_cm4.h)(0x60D43D42)
+I (C:\Users\Yoshi\Documents\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include\cmsis_version.h)(0x60D43D42)
+I (C:\Users\Yoshi\Documents\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include\cmsis_compiler.h)(0x60D43D42)
+I (C:\Users\Yoshi\Documents\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include\cmsis_armcc.h)(0x60D43D42)
+I (C:\Users\Yoshi\Documents\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include\mpu_armv7.h)(0x60D43D42)
+I (C:\Users\Yoshi\Documents\Arm\Packs\Infineon\XMC4000_DFP\2.13.0\Device\XMC4500_series\Include\system_XMC4500.h)(0x5787563C)
+I (C:\Users\Yoshi\Documents\Arm\Packs\Infineon\XMC4000_DFP\2.13.0\Device\XMClib\inc\xmc4_gpio.h)(0x5D286BF8)
+I (C:\Users\Yoshi\Documents\Arm\Packs\Infineon\XMC4000_DFP\2.13.0\Device\XMClib\inc\xmc4_gpio_map.h)(0x5D286BF8)
+I (.\Dave\Generated\DAVE_Common.h)(0x60A5303A)
+I (C:\Users\Yoshi\Documents\GitHub\Software\01_jrg\06_XMC\jr22_LV_BMS_bauerjoh_AA\Dave\Generated\DIGITAL_IO\digital_io_conf.h)(0x62556C25)
+I (C:\Users\Yoshi\Documents\GitHub\Software\01_jrg\06_XMC\jr22_LV_BMS_bauerjoh_AA\Dave\Generated\DIGITAL_IO\digital_io_extern.h)(0x62556C25)
+F (C:\Users\Yoshi\Documents\GitHub\Software\01_jrg\06_XMC\jr22_LV_BMS_bauerjoh_AA\Dave\Generated\FREERTOS\croutine.c)(0x60A53048)(-c --cpu Cortex-M4.fp.sp -D__EVAL -g -O0 --apcs=interwork --split_sections-I.\Dave\Generated-I.\Dave\Generated\ADC_MEASUREMENT-I.\Dave\Generated\ANALOG_IO-I.\Dave\Generated\CAN_NODE-I.\Dave\Generated\CLOCK_XMC4-I.\Dave\Generated\CPU_CTRL_XMC4-I.\Dave\Generated\DIGITAL_IO-I.\Dave\Generated\FREERTOS-I.\Dave\Generated\FREERTOS\portable\GCC-I.\Dave\Generated\FREERTOS\portable\IAR-I.\Dave\Generated\FREERTOS\portable\Keil-I.\Dave\Generated\GLOBAL_ADC-I.\Dave\Generated\GLOBAL_CAN-I.\RTE\_XMC4500-F100x1024-IC:\Users\Yoshi\Documents\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include-IC:\Users\Yoshi\Documents\Arm\Packs\Infineon\XMC4000_DFP\2.13.0\Device\XMC4500_series\Include-IC:\Users\Yoshi\Documents\Arm\Packs\Infineon\XMC4000_DFP\2.13.0\Device\XMClib\inc-D__UVISION_VERSION="529" -D_RTE_ -DXMC4500_F100x1024 --C99-o .\uvbuild\croutine.o --omf_browse .\uvbuild\croutine.crf --depend .\uvbuild\croutine.d)
+I (C:\Users\Yoshi\Documents\GitHub\Software\01_jrg\06_XMC\jr22_LV_BMS_bauerjoh_AA\Dave\Generated\FREERTOS\FreeRTOS.h)(0x60A53048)
+I (C:\Keil_v5\ARM\ARMCC\include\stddef.h)(0x5D9B2678)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x5D9B2678)
+I (C:\Users\Yoshi\Documents\GitHub\Software\01_jrg\06_XMC\jr22_LV_BMS_bauerjoh_AA\Dave\Generated\FREERTOS\FreeRTOSConfig.h)(0x62556C25)
+I (C:\Users\Yoshi\Documents\Arm\Packs\Infineon\XMC4000_DFP\2.13.0\Device\XMClib\inc\xmc_device.h)(0x5D3BF384)
+I (C:\Users\Yoshi\Documents\Arm\Packs\Infineon\XMC4000_DFP\2.13.0\Device\XMC4500_series\Include\XMC4500.h)(0x59477BB0)
+I (C:\Users\Yoshi\Documents\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include\core_cm4.h)(0x60D43D42)
+I (C:\Users\Yoshi\Documents\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include\cmsis_version.h)(0x60D43D42)
+I (C:\Users\Yoshi\Documents\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include\cmsis_compiler.h)(0x60D43D42)
+I (C:\Users\Yoshi\Documents\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include\cmsis_armcc.h)(0x60D43D42)
+I (C:\Users\Yoshi\Documents\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include\mpu_armv7.h)(0x60D43D42)
+I (C:\Users\Yoshi\Documents\Arm\Packs\Infineon\XMC4000_DFP\2.13.0\Device\XMC4500_series\Include\system_XMC4500.h)(0x5787563C)
+I (C:\Users\Yoshi\Documents\GitHub\Software\01_jrg\06_XMC\jr22_LV_BMS_bauerjoh_AA\Dave\Generated\FREERTOS\projdefs.h)(0x60A53048)
+I (.\Dave\Generated\DAVE_Common.h)(0x60A5303A)
+I (C:\Users\Yoshi\Documents\GitHub\Software\01_jrg\06_XMC\jr22_LV_BMS_bauerjoh_AA\Dave\Generated\FREERTOS\freertos_conf.h)(0x62556C25)
+I (C:\Users\Yoshi\Documents\GitHub\Software\01_jrg\06_XMC\jr22_LV_BMS_bauerjoh_AA\Dave\Generated\FREERTOS\portable.h)(0x60A53048)
+I (C:\Users\Yoshi\Documents\GitHub\Software\01_jrg\06_XMC\jr22_LV_BMS_bauerjoh_AA\Dave\Generated\FREERTOS\deprecated_definitions.h)(0x60A53048)
+F (C:\Users\Yoshi\Documents\GitHub\Software\01_jrg\06_XMC\jr22_LV_BMS_bauerjoh_AA\Dave\Generated\FREERTOS\event_groups.c)(0x60A53048)(-c --cpu Cortex-M4.fp.sp -D__EVAL -g -O0 --apcs=interwork --split_sections-I.\Dave\Generated-I.\Dave\Generated\ADC_MEASUREMENT-I.\Dave\Generated\ANALOG_IO-I.\Dave\Generated\CAN_NODE-I.\Dave\Generated\CLOCK_XMC4-I.\Dave\Generated\CPU_CTRL_XMC4-I.\Dave\Generated\DIGITAL_IO-I.\Dave\Generated\FREERTOS-I.\Dave\Generated\FREERTOS\portable\GCC-I.\Dave\Generated\FREERTOS\portable\IAR-I.\Dave\Generated\FREERTOS\portable\Keil-I.\Dave\Generated\GLOBAL_ADC-I.\Dave\Generated\GLOBAL_CAN-I.\RTE\_XMC4500-F100x1024-IC:\Users\Yoshi\Documents\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include-IC:\Users\Yoshi\Documents\Arm\Packs\Infineon\XMC4000_DFP\2.13.0\Device\XMC4500_series\Include-IC:\Users\Yoshi\Documents\Arm\Packs\Infineon\XMC4000_DFP\2.13.0\Device\XMClib\inc-D__UVISION_VERSION="529" -D_RTE_ -DXMC4500_F100x1024 --C99-o .\uvbuild\event_groups.o --omf_browse .\uvbuild\event_groups.crf --depend .\uvbuild\event_groups.d)
+I (C:\Keil_v5\ARM\ARMCC\include\stdlib.h)(0x5D9B267A)
+I (C:\Users\Yoshi\Documents\GitHub\Software\01_jrg\06_XMC\jr22_LV_BMS_bauerjoh_AA\Dave\Generated\FREERTOS\FreeRTOS.h)(0x60A53048)
+I (C:\Keil_v5\ARM\ARMCC\include\stddef.h)(0x5D9B2678)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x5D9B2678)
+I (C:\Users\Yoshi\Documents\GitHub\Software\01_jrg\06_XMC\jr22_LV_BMS_bauerjoh_AA\Dave\Generated\FREERTOS\FreeRTOSConfig.h)(0x62556C25)
+I (C:\Users\Yoshi\Documents\Arm\Packs\Infineon\XMC4000_DFP\2.13.0\Device\XMClib\inc\xmc_device.h)(0x5D3BF384)
+I (C:\Users\Yoshi\Documents\Arm\Packs\Infineon\XMC4000_DFP\2.13.0\Device\XMC4500_series\Include\XMC4500.h)(0x59477BB0)
+I (C:\Users\Yoshi\Documents\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include\core_cm4.h)(0x60D43D42)
+I (C:\Users\Yoshi\Documents\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include\cmsis_version.h)(0x60D43D42)
+I (C:\Users\Yoshi\Documents\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include\cmsis_compiler.h)(0x60D43D42)
+I (C:\Users\Yoshi\Documents\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include\cmsis_armcc.h)(0x60D43D42)
+I (C:\Users\Yoshi\Documents\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include\mpu_armv7.h)(0x60D43D42)
+I (C:\Users\Yoshi\Documents\Arm\Packs\Infineon\XMC4000_DFP\2.13.0\Device\XMC4500_series\Include\system_XMC4500.h)(0x5787563C)
+I (C:\Users\Yoshi\Documents\GitHub\Software\01_jrg\06_XMC\jr22_LV_BMS_bauerjoh_AA\Dave\Generated\FREERTOS\projdefs.h)(0x60A53048)
+I (.\Dave\Generated\DAVE_Common.h)(0x60A5303A)
+I (C:\Users\Yoshi\Documents\GitHub\Software\01_jrg\06_XMC\jr22_LV_BMS_bauerjoh_AA\Dave\Generated\FREERTOS\freertos_conf.h)(0x62556C25)
+I (C:\Users\Yoshi\Documents\GitHub\Software\01_jrg\06_XMC\jr22_LV_BMS_bauerjoh_AA\Dave\Generated\FREERTOS\portable.h)(0x60A53048)
+I (C:\Users\Yoshi\Documents\GitHub\Software\01_jrg\06_XMC\jr22_LV_BMS_bauerjoh_AA\Dave\Generated\FREERTOS\deprecated_definitions.h)(0x60A53048)
+F (C:\Users\Yoshi\Documents\GitHub\Software\01_jrg\06_XMC\jr22_LV_BMS_bauerjoh_AA\Dave\Generated\FREERTOS\freertos.c)(0x60A53048)(-c --cpu Cortex-M4.fp.sp -D__EVAL -g -O0 --apcs=interwork --split_sections-I.\Dave\Generated-I.\Dave\Generated\ADC_MEASUREMENT-I.\Dave\Generated\ANALOG_IO-I.\Dave\Generated\CAN_NODE-I.\Dave\Generated\CLOCK_XMC4-I.\Dave\Generated\CPU_CTRL_XMC4-I.\Dave\Generated\DIGITAL_IO-I.\Dave\Generated\FREERTOS-I.\Dave\Generated\FREERTOS\portable\GCC-I.\Dave\Generated\FREERTOS\portable\IAR-I.\Dave\Generated\FREERTOS\portable\Keil-I.\Dave\Generated\GLOBAL_ADC-I.\Dave\Generated\GLOBAL_CAN-I.\RTE\_XMC4500-F100x1024-IC:\Users\Yoshi\Documents\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include-IC:\Users\Yoshi\Documents\Arm\Packs\Infineon\XMC4000_DFP\2.13.0\Device\XMC4500_series\Include-IC:\Users\Yoshi\Documents\Arm\Packs\Infineon\XMC4000_DFP\2.13.0\Device\XMClib\inc-D__UVISION_VERSION="529" -D_RTE_ -DXMC4500_F100x1024 --C99-o .\uvbuild\freertos.o --omf_browse .\uvbuild\freertos.crf --depend .\uvbuild\freertos.d)
+I (C:\Users\Yoshi\Documents\GitHub\Software\01_jrg\06_XMC\jr22_LV_BMS_bauerjoh_AA\Dave\Generated\FREERTOS\freertos.h)(0x60A53048)
+I (C:\Keil_v5\ARM\ARMCC\include\stddef.h)(0x5D9B2678)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x5D9B2678)
+I (C:\Users\Yoshi\Documents\GitHub\Software\01_jrg\06_XMC\jr22_LV_BMS_bauerjoh_AA\Dave\Generated\FREERTOS\FreeRTOSConfig.h)(0x62556C25)
+I (C:\Users\Yoshi\Documents\Arm\Packs\Infineon\XMC4000_DFP\2.13.0\Device\XMClib\inc\xmc_device.h)(0x5D3BF384)
+I (C:\Users\Yoshi\Documents\Arm\Packs\Infineon\XMC4000_DFP\2.13.0\Device\XMC4500_series\Include\XMC4500.h)(0x59477BB0)
+I (C:\Users\Yoshi\Documents\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include\core_cm4.h)(0x60D43D42)
+I (C:\Users\Yoshi\Documents\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include\cmsis_version.h)(0x60D43D42)
+I (C:\Users\Yoshi\Documents\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include\cmsis_compiler.h)(0x60D43D42)
+I (C:\Users\Yoshi\Documents\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include\cmsis_armcc.h)(0x60D43D42)
+I (C:\Users\Yoshi\Documents\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include\mpu_armv7.h)(0x60D43D42)
+I (C:\Users\Yoshi\Documents\Arm\Packs\Infineon\XMC4000_DFP\2.13.0\Device\XMC4500_series\Include\system_XMC4500.h)(0x5787563C)
+I (C:\Users\Yoshi\Documents\GitHub\Software\01_jrg\06_XMC\jr22_LV_BMS_bauerjoh_AA\Dave\Generated\FREERTOS\projdefs.h)(0x60A53048)
+I (.\Dave\Generated\DAVE_Common.h)(0x60A5303A)
+I (C:\Users\Yoshi\Documents\GitHub\Software\01_jrg\06_XMC\jr22_LV_BMS_bauerjoh_AA\Dave\Generated\FREERTOS\freertos_conf.h)(0x62556C25)
+I (C:\Users\Yoshi\Documents\GitHub\Software\01_jrg\06_XMC\jr22_LV_BMS_bauerjoh_AA\Dave\Generated\FREERTOS\portable.h)(0x60A53048)
+I (C:\Users\Yoshi\Documents\GitHub\Software\01_jrg\06_XMC\jr22_LV_BMS_bauerjoh_AA\Dave\Generated\FREERTOS\deprecated_definitions.h)(0x60A53048)
+F (C:\Users\Yoshi\Documents\GitHub\Software\01_jrg\06_XMC\jr22_LV_BMS_bauerjoh_AA\Dave\Generated\FREERTOS\heap.c)(0x60A53048)(-c --cpu Cortex-M4.fp.sp -D__EVAL -g -O0 --apcs=interwork --split_sections-I.\Dave\Generated-I.\Dave\Generated\ADC_MEASUREMENT-I.\Dave\Generated\ANALOG_IO-I.\Dave\Generated\CAN_NODE-I.\Dave\Generated\CLOCK_XMC4-I.\Dave\Generated\CPU_CTRL_XMC4-I.\Dave\Generated\DIGITAL_IO-I.\Dave\Generated\FREERTOS-I.\Dave\Generated\FREERTOS\portable\GCC-I.\Dave\Generated\FREERTOS\portable\IAR-I.\Dave\Generated\FREERTOS\portable\Keil-I.\Dave\Generated\GLOBAL_ADC-I.\Dave\Generated\GLOBAL_CAN-I.\RTE\_XMC4500-F100x1024-IC:\Users\Yoshi\Documents\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include-IC:\Users\Yoshi\Documents\Arm\Packs\Infineon\XMC4000_DFP\2.13.0\Device\XMC4500_series\Include-IC:\Users\Yoshi\Documents\Arm\Packs\Infineon\XMC4000_DFP\2.13.0\Device\XMClib\inc-D__UVISION_VERSION="529" -D_RTE_ -DXMC4500_F100x1024 --C99-o .\uvbuild\heap.o --omf_browse .\uvbuild\heap.crf --depend .\uvbuild\heap.d)
+I (C:\Users\Yoshi\Documents\GitHub\Software\01_jrg\06_XMC\jr22_LV_BMS_bauerjoh_AA\Dave\Generated\FREERTOS\FreeRTOSConfig.h)(0x62556C25)
+I (C:\Users\Yoshi\Documents\Arm\Packs\Infineon\XMC4000_DFP\2.13.0\Device\XMClib\inc\xmc_device.h)(0x5D3BF384)
+I (C:\Users\Yoshi\Documents\Arm\Packs\Infineon\XMC4000_DFP\2.13.0\Device\XMC4500_series\Include\XMC4500.h)(0x59477BB0)
+I (C:\Users\Yoshi\Documents\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include\core_cm4.h)(0x60D43D42)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x5D9B2678)
+I (C:\Users\Yoshi\Documents\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include\cmsis_version.h)(0x60D43D42)
+I (C:\Users\Yoshi\Documents\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include\cmsis_compiler.h)(0x60D43D42)
+I (C:\Users\Yoshi\Documents\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include\cmsis_armcc.h)(0x60D43D42)
+I (C:\Users\Yoshi\Documents\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include\mpu_armv7.h)(0x60D43D42)
+I (C:\Users\Yoshi\Documents\Arm\Packs\Infineon\XMC4000_DFP\2.13.0\Device\XMC4500_series\Include\system_XMC4500.h)(0x5787563C)
+I (C:\Users\Yoshi\Documents\GitHub\Software\01_jrg\06_XMC\jr22_LV_BMS_bauerjoh_AA\Dave\Generated\FREERTOS\heap_3.h)(0x60A53048)
+I (C:\Keil_v5\ARM\ARMCC\include\stdlib.h)(0x5D9B267A)
+I (C:\Users\Yoshi\Documents\GitHub\Software\01_jrg\06_XMC\jr22_LV_BMS_bauerjoh_AA\Dave\Generated\FREERTOS\FreeRTOS.h)(0x60A53048)
+I (C:\Keil_v5\ARM\ARMCC\include\stddef.h)(0x5D9B2678)
+I (C:\Users\Yoshi\Documents\GitHub\Software\01_jrg\06_XMC\jr22_LV_BMS_bauerjoh_AA\Dave\Generated\FREERTOS\projdefs.h)(0x60A53048)
+I (.\Dave\Generated\DAVE_Common.h)(0x60A5303A)
+I (C:\Users\Yoshi\Documents\GitHub\Software\01_jrg\06_XMC\jr22_LV_BMS_bauerjoh_AA\Dave\Generated\FREERTOS\freertos_conf.h)(0x62556C25)
+I (C:\Users\Yoshi\Documents\GitHub\Software\01_jrg\06_XMC\jr22_LV_BMS_bauerjoh_AA\Dave\Generated\FREERTOS\portable.h)(0x60A53048)
+I (C:\Users\Yoshi\Documents\GitHub\Software\01_jrg\06_XMC\jr22_LV_BMS_bauerjoh_AA\Dave\Generated\FREERTOS\deprecated_definitions.h)(0x60A53048)
+F (C:\Users\Yoshi\Documents\GitHub\Software\01_jrg\06_XMC\jr22_LV_BMS_bauerjoh_AA\Dave\Generated\FREERTOS\list.c)(0x60A53048)(-c --cpu Cortex-M4.fp.sp -D__EVAL -g -O0 --apcs=interwork --split_sections-I.\Dave\Generated-I.\Dave\Generated\ADC_MEASUREMENT-I.\Dave\Generated\ANALOG_IO-I.\Dave\Generated\CAN_NODE-I.\Dave\Generated\CLOCK_XMC4-I.\Dave\Generated\CPU_CTRL_XMC4-I.\Dave\Generated\DIGITAL_IO-I.\Dave\Generated\FREERTOS-I.\Dave\Generated\FREERTOS\portable\GCC-I.\Dave\Generated\FREERTOS\portable\IAR-I.\Dave\Generated\FREERTOS\portable\Keil-I.\Dave\Generated\GLOBAL_ADC-I.\Dave\Generated\GLOBAL_CAN-I.\RTE\_XMC4500-F100x1024-IC:\Users\Yoshi\Documents\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include-IC:\Users\Yoshi\Documents\Arm\Packs\Infineon\XMC4000_DFP\2.13.0\Device\XMC4500_series\Include-IC:\Users\Yoshi\Documents\Arm\Packs\Infineon\XMC4000_DFP\2.13.0\Device\XMClib\inc-D__UVISION_VERSION="529" -D_RTE_ -DXMC4500_F100x1024 --C99-o .\uvbuild\list.o --omf_browse .\uvbuild\list.crf --depend .\uvbuild\list.d)
+I (C:\Keil_v5\ARM\ARMCC\include\stdlib.h)(0x5D9B267A)
+I (C:\Users\Yoshi\Documents\GitHub\Software\01_jrg\06_XMC\jr22_LV_BMS_bauerjoh_AA\Dave\Generated\FREERTOS\FreeRTOS.h)(0x60A53048)
+I (C:\Keil_v5\ARM\ARMCC\include\stddef.h)(0x5D9B2678)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x5D9B2678)
+I (C:\Users\Yoshi\Documents\GitHub\Software\01_jrg\06_XMC\jr22_LV_BMS_bauerjoh_AA\Dave\Generated\FREERTOS\FreeRTOSConfig.h)(0x62556C25)
+I (C:\Users\Yoshi\Documents\Arm\Packs\Infineon\XMC4000_DFP\2.13.0\Device\XMClib\inc\xmc_device.h)(0x5D3BF384)
+I (C:\Users\Yoshi\Documents\Arm\Packs\Infineon\XMC4000_DFP\2.13.0\Device\XMC4500_series\Include\XMC4500.h)(0x59477BB0)
+I (C:\Users\Yoshi\Documents\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include\core_cm4.h)(0x60D43D42)
+I (C:\Users\Yoshi\Documents\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include\cmsis_version.h)(0x60D43D42)
+I (C:\Users\Yoshi\Documents\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include\cmsis_compiler.h)(0x60D43D42)
+I (C:\Users\Yoshi\Documents\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include\cmsis_armcc.h)(0x60D43D42)
+I (C:\Users\Yoshi\Documents\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include\mpu_armv7.h)(0x60D43D42)
+I (C:\Users\Yoshi\Documents\Arm\Packs\Infineon\XMC4000_DFP\2.13.0\Device\XMC4500_series\Include\system_XMC4500.h)(0x5787563C)
+I (C:\Users\Yoshi\Documents\GitHub\Software\01_jrg\06_XMC\jr22_LV_BMS_bauerjoh_AA\Dave\Generated\FREERTOS\projdefs.h)(0x60A53048)
+I (.\Dave\Generated\DAVE_Common.h)(0x60A5303A)
+I (C:\Users\Yoshi\Documents\GitHub\Software\01_jrg\06_XMC\jr22_LV_BMS_bauerjoh_AA\Dave\Generated\FREERTOS\freertos_conf.h)(0x62556C25)
+I (C:\Users\Yoshi\Documents\GitHub\Software\01_jrg\06_XMC\jr22_LV_BMS_bauerjoh_AA\Dave\Generated\FREERTOS\portable.h)(0x60A53048)
+I (C:\Users\Yoshi\Documents\GitHub\Software\01_jrg\06_XMC\jr22_LV_BMS_bauerjoh_AA\Dave\Generated\FREERTOS\deprecated_definitions.h)(0x60A53048)
+F (C:\Users\Yoshi\Documents\GitHub\Software\01_jrg\06_XMC\jr22_LV_BMS_bauerjoh_AA\Dave\Generated\FREERTOS\mpu_wrappers.c)(0x60A53048)(-c --cpu Cortex-M4.fp.sp -D__EVAL -g -O0 --apcs=interwork --split_sections-I.\Dave\Generated-I.\Dave\Generated\ADC_MEASUREMENT-I.\Dave\Generated\ANALOG_IO-I.\Dave\Generated\CAN_NODE-I.\Dave\Generated\CLOCK_XMC4-I.\Dave\Generated\CPU_CTRL_XMC4-I.\Dave\Generated\DIGITAL_IO-I.\Dave\Generated\FREERTOS-I.\Dave\Generated\FREERTOS\portable\GCC-I.\Dave\Generated\FREERTOS\portable\IAR-I.\Dave\Generated\FREERTOS\portable\Keil-I.\Dave\Generated\GLOBAL_ADC-I.\Dave\Generated\GLOBAL_CAN-I.\RTE\_XMC4500-F100x1024-IC:\Users\Yoshi\Documents\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include-IC:\Users\Yoshi\Documents\Arm\Packs\Infineon\XMC4000_DFP\2.13.0\Device\XMC4500_series\Include-IC:\Users\Yoshi\Documents\Arm\Packs\Infineon\XMC4000_DFP\2.13.0\Device\XMClib\inc-D__UVISION_VERSION="529" -D_RTE_ -DXMC4500_F100x1024 --C99-o .\uvbuild\mpu_wrappers.o --omf_browse .\uvbuild\mpu_wrappers.crf --depend .\uvbuild\mpu_wrappers.d)
+I (C:\Users\Yoshi\Documents\GitHub\Software\01_jrg\06_XMC\jr22_LV_BMS_bauerjoh_AA\Dave\Generated\FREERTOS\FreeRTOS.h)(0x60A53048)
+I (C:\Keil_v5\ARM\ARMCC\include\stddef.h)(0x5D9B2678)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x5D9B2678)
+I (C:\Users\Yoshi\Documents\GitHub\Software\01_jrg\06_XMC\jr22_LV_BMS_bauerjoh_AA\Dave\Generated\FREERTOS\FreeRTOSConfig.h)(0x62556C25)
+I (C:\Users\Yoshi\Documents\Arm\Packs\Infineon\XMC4000_DFP\2.13.0\Device\XMClib\inc\xmc_device.h)(0x5D3BF384)
+I (C:\Users\Yoshi\Documents\Arm\Packs\Infineon\XMC4000_DFP\2.13.0\Device\XMC4500_series\Include\XMC4500.h)(0x59477BB0)
+I (C:\Users\Yoshi\Documents\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include\core_cm4.h)(0x60D43D42)
+I (C:\Users\Yoshi\Documents\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include\cmsis_version.h)(0x60D43D42)
+I (C:\Users\Yoshi\Documents\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include\cmsis_compiler.h)(0x60D43D42)
+I (C:\Users\Yoshi\Documents\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include\cmsis_armcc.h)(0x60D43D42)
+I (C:\Users\Yoshi\Documents\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include\mpu_armv7.h)(0x60D43D42)
+I (C:\Users\Yoshi\Documents\Arm\Packs\Infineon\XMC4000_DFP\2.13.0\Device\XMC4500_series\Include\system_XMC4500.h)(0x5787563C)
+I (C:\Users\Yoshi\Documents\GitHub\Software\01_jrg\06_XMC\jr22_LV_BMS_bauerjoh_AA\Dave\Generated\FREERTOS\projdefs.h)(0x60A53048)
+I (.\Dave\Generated\DAVE_Common.h)(0x60A5303A)
+I (C:\Users\Yoshi\Documents\GitHub\Software\01_jrg\06_XMC\jr22_LV_BMS_bauerjoh_AA\Dave\Generated\FREERTOS\freertos_conf.h)(0x62556C25)
+I (C:\Users\Yoshi\Documents\GitHub\Software\01_jrg\06_XMC\jr22_LV_BMS_bauerjoh_AA\Dave\Generated\FREERTOS\portable.h)(0x60A53048)
+I (C:\Users\Yoshi\Documents\GitHub\Software\01_jrg\06_XMC\jr22_LV_BMS_bauerjoh_AA\Dave\Generated\FREERTOS\deprecated_definitions.h)(0x60A53048)
+F (C:\Users\Yoshi\Documents\GitHub\Software\01_jrg\06_XMC\jr22_LV_BMS_bauerjoh_AA\Dave\Generated\FREERTOS\portable\GCC\port.c)(0x60A53048)(-c --cpu Cortex-M4.fp.sp -D__EVAL -g -O0 --apcs=interwork --split_sections-I.\Dave\Generated-I.\Dave\Generated\ADC_MEASUREMENT-I.\Dave\Generated\ANALOG_IO-I.\Dave\Generated\CAN_NODE-I.\Dave\Generated\CLOCK_XMC4-I.\Dave\Generated\CPU_CTRL_XMC4-I.\Dave\Generated\DIGITAL_IO-I.\Dave\Generated\FREERTOS-I.\Dave\Generated\FREERTOS\portable\GCC-I.\Dave\Generated\FREERTOS\portable\IAR-I.\Dave\Generated\FREERTOS\portable\Keil-I.\Dave\Generated\GLOBAL_ADC-I.\Dave\Generated\GLOBAL_CAN-I.\RTE\_XMC4500-F100x1024-IC:\Users\Yoshi\Documents\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include-IC:\Users\Yoshi\Documents\Arm\Packs\Infineon\XMC4000_DFP\2.13.0\Device\XMC4500_series\Include-IC:\Users\Yoshi\Documents\Arm\Packs\Infineon\XMC4000_DFP\2.13.0\Device\XMClib\inc-D__UVISION_VERSION="529" -D_RTE_ -DXMC4500_F100x1024 --C99-o .\uvbuild\port.o --omf_browse .\uvbuild\port.crf --depend .\uvbuild\port.d)
+F (C:\Users\Yoshi\Documents\GitHub\Software\01_jrg\06_XMC\jr22_LV_BMS_bauerjoh_AA\Dave\Generated\FREERTOS\portable\IAR\port.c)(0x60A53048)(-c --cpu Cortex-M4.fp.sp -D__EVAL -g -O0 --apcs=interwork --split_sections-I.\Dave\Generated-I.\Dave\Generated\ADC_MEASUREMENT-I.\Dave\Generated\ANALOG_IO-I.\Dave\Generated\CAN_NODE-I.\Dave\Generated\CLOCK_XMC4-I.\Dave\Generated\CPU_CTRL_XMC4-I.\Dave\Generated\DIGITAL_IO-I.\Dave\Generated\FREERTOS-I.\Dave\Generated\FREERTOS\portable\GCC-I.\Dave\Generated\FREERTOS\portable\IAR-I.\Dave\Generated\FREERTOS\portable\Keil-I.\Dave\Generated\GLOBAL_ADC-I.\Dave\Generated\GLOBAL_CAN-I.\RTE\_XMC4500-F100x1024-IC:\Users\Yoshi\Documents\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include-IC:\Users\Yoshi\Documents\Arm\Packs\Infineon\XMC4000_DFP\2.13.0\Device\XMC4500_series\Include-IC:\Users\Yoshi\Documents\Arm\Packs\Infineon\XMC4000_DFP\2.13.0\Device\XMClib\inc-D__UVISION_VERSION="529" -D_RTE_ -DXMC4500_F100x1024 --C99-o .\uvbuild\port_1.o --omf_browse .\uvbuild\port_1.crf --depend .\uvbuild\port_1.d)
+F (C:\Users\Yoshi\Documents\GitHub\Software\01_jrg\06_XMC\jr22_LV_BMS_bauerjoh_AA\Dave\Generated\FREERTOS\portable\IAR\portasm.s)(0x60A53048)(--cpu Cortex-M4.fp.sp --pd "__EVAL SETA 1" -g --apcs=interwork -I.\Dave\Generated-I.\Dave\Generated\ADC_MEASUREMENT-I.\Dave\Generated\ANALOG_IO-I.\Dave\Generated\CAN_NODE-I.\Dave\Generated\CLOCK_XMC4-I.\Dave\Generated\CPU_CTRL_XMC4-I.\Dave\Generated\DIGITAL_IO-I.\Dave\Generated\FREERTOS-I.\Dave\Generated\FREERTOS\portable\GCC-I.\Dave\Generated\FREERTOS\portable\IAR-I.\Dave\Generated\FREERTOS\portable\Keil-I.\Dave\Generated\GLOBAL_ADC-I.\Dave\Generated\GLOBAL_CAN-I.\RTE\_XMC4500-F100x1024-IC:\Users\Yoshi\Documents\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include-IC:\Users\Yoshi\Documents\Arm\Packs\Infineon\XMC4000_DFP\2.13.0\Device\XMC4500_series\Include-IC:\Users\Yoshi\Documents\Arm\Packs\Infineon\XMC4000_DFP\2.13.0\Device\XMClib\inc--pd "__UVISION_VERSION SETA 529" --pd "_RTE_ SETA 1" --pd "XMC4500_F100x1024 SETA 1"--list .\portasm.lst --xref -o .\uvbuild\portasm.o --depend .\uvbuild\portasm.d)
+F (C:\Users\Yoshi\Documents\GitHub\Software\01_jrg\06_XMC\jr22_LV_BMS_bauerjoh_AA\Dave\Generated\FREERTOS\portable\Keil\port.c)(0x60A53048)(-c --cpu Cortex-M4.fp.sp -D__EVAL -g -O0 --apcs=interwork --split_sections-I.\Dave\Generated-I.\Dave\Generated\ADC_MEASUREMENT-I.\Dave\Generated\ANALOG_IO-I.\Dave\Generated\CAN_NODE-I.\Dave\Generated\CLOCK_XMC4-I.\Dave\Generated\CPU_CTRL_XMC4-I.\Dave\Generated\DIGITAL_IO-I.\Dave\Generated\FREERTOS-I.\Dave\Generated\FREERTOS\portable\GCC-I.\Dave\Generated\FREERTOS\portable\IAR-I.\Dave\Generated\FREERTOS\portable\Keil-I.\Dave\Generated\GLOBAL_ADC-I.\Dave\Generated\GLOBAL_CAN-I.\RTE\_XMC4500-F100x1024-IC:\Users\Yoshi\Documents\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include-IC:\Users\Yoshi\Documents\Arm\Packs\Infineon\XMC4000_DFP\2.13.0\Device\XMC4500_series\Include-IC:\Users\Yoshi\Documents\Arm\Packs\Infineon\XMC4000_DFP\2.13.0\Device\XMClib\inc-D__UVISION_VERSION="529" -D_RTE_ -DXMC4500_F100x1024 --C99-o .\uvbuild\port_2.o --omf_browse .\uvbuild\port_2.crf --depend .\uvbuild\port_2.d)
+I (.\Dave\Generated\FREERTOS/FreeRTOS.h)(0x60A53048)
+I (C:\Keil_v5\ARM\ARMCC\include\stddef.h)(0x5D9B2678)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x5D9B2678)
+I (.\Dave\Generated\FREERTOS/FreeRTOSConfig.h)(0x62556C25)
+I (C:\Users\Yoshi\Documents\Arm\Packs\Infineon\XMC4000_DFP\2.13.0\Device\XMClib\inc\xmc_device.h)(0x5D3BF384)
+I (C:\Users\Yoshi\Documents\Arm\Packs\Infineon\XMC4000_DFP\2.13.0\Device\XMC4500_series\Include\XMC4500.h)(0x59477BB0)
+I (C:\Users\Yoshi\Documents\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include\core_cm4.h)(0x60D43D42)
+I (C:\Users\Yoshi\Documents\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include\cmsis_version.h)(0x60D43D42)
+I (C:\Users\Yoshi\Documents\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include\cmsis_compiler.h)(0x60D43D42)
+I (C:\Users\Yoshi\Documents\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include\cmsis_armcc.h)(0x60D43D42)
+I (C:\Users\Yoshi\Documents\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include\mpu_armv7.h)(0x60D43D42)
+I (C:\Users\Yoshi\Documents\Arm\Packs\Infineon\XMC4000_DFP\2.13.0\Device\XMC4500_series\Include\system_XMC4500.h)(0x5787563C)
+I (.\Dave\Generated\FREERTOS/projdefs.h)(0x60A53048)
+I (.\Dave\Generated\DAVE_Common.h)(0x60A5303A)
+I (.\Dave\Generated\FREERTOS/freertos_conf.h)(0x62556C25)
+I (.\Dave\Generated\FREERTOS/portable.h)(0x60A53048)
+I (.\Dave\Generated\FREERTOS/deprecated_definitions.h)(0x60A53048)
+F (C:\Users\Yoshi\Documents\GitHub\Software\01_jrg\06_XMC\jr22_LV_BMS_bauerjoh_AA\Dave\Generated\FREERTOS\queue.c)(0x60A53048)(-c --cpu Cortex-M4.fp.sp -D__EVAL -g -O0 --apcs=interwork --split_sections-I.\Dave\Generated-I.\Dave\Generated\ADC_MEASUREMENT-I.\Dave\Generated\ANALOG_IO-I.\Dave\Generated\CAN_NODE-I.\Dave\Generated\CLOCK_XMC4-I.\Dave\Generated\CPU_CTRL_XMC4-I.\Dave\Generated\DIGITAL_IO-I.\Dave\Generated\FREERTOS-I.\Dave\Generated\FREERTOS\portable\GCC-I.\Dave\Generated\FREERTOS\portable\IAR-I.\Dave\Generated\FREERTOS\portable\Keil-I.\Dave\Generated\GLOBAL_ADC-I.\Dave\Generated\GLOBAL_CAN-I.\RTE\_XMC4500-F100x1024-IC:\Users\Yoshi\Documents\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include-IC:\Users\Yoshi\Documents\Arm\Packs\Infineon\XMC4000_DFP\2.13.0\Device\XMC4500_series\Include-IC:\Users\Yoshi\Documents\Arm\Packs\Infineon\XMC4000_DFP\2.13.0\Device\XMClib\inc-D__UVISION_VERSION="529" -D_RTE_ -DXMC4500_F100x1024 --C99-o .\uvbuild\queue.o --omf_browse .\uvbuild\queue.crf --depend .\uvbuild\queue.d)
+I (C:\Keil_v5\ARM\ARMCC\include\stdlib.h)(0x5D9B267A)
+I (C:\Keil_v5\ARM\ARMCC\include\string.h)(0x5D9B2678)
+I (C:\Users\Yoshi\Documents\GitHub\Software\01_jrg\06_XMC\jr22_LV_BMS_bauerjoh_AA\Dave\Generated\FREERTOS\FreeRTOS.h)(0x60A53048)
+I (C:\Keil_v5\ARM\ARMCC\include\stddef.h)(0x5D9B2678)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x5D9B2678)
+I (C:\Users\Yoshi\Documents\GitHub\Software\01_jrg\06_XMC\jr22_LV_BMS_bauerjoh_AA\Dave\Generated\FREERTOS\FreeRTOSConfig.h)(0x62556C25)
+I (C:\Users\Yoshi\Documents\Arm\Packs\Infineon\XMC4000_DFP\2.13.0\Device\XMClib\inc\xmc_device.h)(0x5D3BF384)
+I (C:\Users\Yoshi\Documents\Arm\Packs\Infineon\XMC4000_DFP\2.13.0\Device\XMC4500_series\Include\XMC4500.h)(0x59477BB0)
+I (C:\Users\Yoshi\Documents\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include\core_cm4.h)(0x60D43D42)
+I (C:\Users\Yoshi\Documents\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include\cmsis_version.h)(0x60D43D42)
+I (C:\Users\Yoshi\Documents\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include\cmsis_compiler.h)(0x60D43D42)
+I (C:\Users\Yoshi\Documents\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include\cmsis_armcc.h)(0x60D43D42)
+I (C:\Users\Yoshi\Documents\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include\mpu_armv7.h)(0x60D43D42)
+I (C:\Users\Yoshi\Documents\Arm\Packs\Infineon\XMC4000_DFP\2.13.0\Device\XMC4500_series\Include\system_XMC4500.h)(0x5787563C)
+I (C:\Users\Yoshi\Documents\GitHub\Software\01_jrg\06_XMC\jr22_LV_BMS_bauerjoh_AA\Dave\Generated\FREERTOS\projdefs.h)(0x60A53048)
+I (.\Dave\Generated\DAVE_Common.h)(0x60A5303A)
+I (C:\Users\Yoshi\Documents\GitHub\Software\01_jrg\06_XMC\jr22_LV_BMS_bauerjoh_AA\Dave\Generated\FREERTOS\freertos_conf.h)(0x62556C25)
+I (C:\Users\Yoshi\Documents\GitHub\Software\01_jrg\06_XMC\jr22_LV_BMS_bauerjoh_AA\Dave\Generated\FREERTOS\portable.h)(0x60A53048)
+I (C:\Users\Yoshi\Documents\GitHub\Software\01_jrg\06_XMC\jr22_LV_BMS_bauerjoh_AA\Dave\Generated\FREERTOS\deprecated_definitions.h)(0x60A53048)
+F (C:\Users\Yoshi\Documents\GitHub\Software\01_jrg\06_XMC\jr22_LV_BMS_bauerjoh_AA\Dave\Generated\FREERTOS\stream_buffer.c)(0x60A53048)(-c --cpu Cortex-M4.fp.sp -D__EVAL -g -O0 --apcs=interwork --split_sections-I.\Dave\Generated-I.\Dave\Generated\ADC_MEASUREMENT-I.\Dave\Generated\ANALOG_IO-I.\Dave\Generated\CAN_NODE-I.\Dave\Generated\CLOCK_XMC4-I.\Dave\Generated\CPU_CTRL_XMC4-I.\Dave\Generated\DIGITAL_IO-I.\Dave\Generated\FREERTOS-I.\Dave\Generated\FREERTOS\portable\GCC-I.\Dave\Generated\FREERTOS\portable\IAR-I.\Dave\Generated\FREERTOS\portable\Keil-I.\Dave\Generated\GLOBAL_ADC-I.\Dave\Generated\GLOBAL_CAN-I.\RTE\_XMC4500-F100x1024-IC:\Users\Yoshi\Documents\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include-IC:\Users\Yoshi\Documents\Arm\Packs\Infineon\XMC4000_DFP\2.13.0\Device\XMC4500_series\Include-IC:\Users\Yoshi\Documents\Arm\Packs\Infineon\XMC4000_DFP\2.13.0\Device\XMClib\inc-D__UVISION_VERSION="529" -D_RTE_ -DXMC4500_F100x1024 --C99-o .\uvbuild\stream_buffer.o --omf_browse .\uvbuild\stream_buffer.crf --depend .\uvbuild\stream_buffer.d)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x5D9B2678)
+I (C:\Keil_v5\ARM\ARMCC\include\string.h)(0x5D9B2678)
+I (C:\Users\Yoshi\Documents\GitHub\Software\01_jrg\06_XMC\jr22_LV_BMS_bauerjoh_AA\Dave\Generated\FREERTOS\FreeRTOS.h)(0x60A53048)
+I (C:\Keil_v5\ARM\ARMCC\include\stddef.h)(0x5D9B2678)
+I (C:\Users\Yoshi\Documents\GitHub\Software\01_jrg\06_XMC\jr22_LV_BMS_bauerjoh_AA\Dave\Generated\FREERTOS\FreeRTOSConfig.h)(0x62556C25)
+I (C:\Users\Yoshi\Documents\Arm\Packs\Infineon\XMC4000_DFP\2.13.0\Device\XMClib\inc\xmc_device.h)(0x5D3BF384)
+I (C:\Users\Yoshi\Documents\Arm\Packs\Infineon\XMC4000_DFP\2.13.0\Device\XMC4500_series\Include\XMC4500.h)(0x59477BB0)
+I (C:\Users\Yoshi\Documents\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include\core_cm4.h)(0x60D43D42)
+I (C:\Users\Yoshi\Documents\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include\cmsis_version.h)(0x60D43D42)
+I (C:\Users\Yoshi\Documents\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include\cmsis_compiler.h)(0x60D43D42)
+I (C:\Users\Yoshi\Documents\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include\cmsis_armcc.h)(0x60D43D42)
+I (C:\Users\Yoshi\Documents\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include\mpu_armv7.h)(0x60D43D42)
+I (C:\Users\Yoshi\Documents\Arm\Packs\Infineon\XMC4000_DFP\2.13.0\Device\XMC4500_series\Include\system_XMC4500.h)(0x5787563C)
+I (C:\Users\Yoshi\Documents\GitHub\Software\01_jrg\06_XMC\jr22_LV_BMS_bauerjoh_AA\Dave\Generated\FREERTOS\projdefs.h)(0x60A53048)
+I (.\Dave\Generated\DAVE_Common.h)(0x60A5303A)
+I (C:\Users\Yoshi\Documents\GitHub\Software\01_jrg\06_XMC\jr22_LV_BMS_bauerjoh_AA\Dave\Generated\FREERTOS\freertos_conf.h)(0x62556C25)
+I (C:\Users\Yoshi\Documents\GitHub\Software\01_jrg\06_XMC\jr22_LV_BMS_bauerjoh_AA\Dave\Generated\FREERTOS\portable.h)(0x60A53048)
+I (C:\Users\Yoshi\Documents\GitHub\Software\01_jrg\06_XMC\jr22_LV_BMS_bauerjoh_AA\Dave\Generated\FREERTOS\deprecated_definitions.h)(0x60A53048)
+F (C:\Users\Yoshi\Documents\GitHub\Software\01_jrg\06_XMC\jr22_LV_BMS_bauerjoh_AA\Dave\Generated\FREERTOS\tasks.c)(0x60A53048)(-c --cpu Cortex-M4.fp.sp -D__EVAL -g -O0 --apcs=interwork --split_sections-I.\Dave\Generated-I.\Dave\Generated\ADC_MEASUREMENT-I.\Dave\Generated\ANALOG_IO-I.\Dave\Generated\CAN_NODE-I.\Dave\Generated\CLOCK_XMC4-I.\Dave\Generated\CPU_CTRL_XMC4-I.\Dave\Generated\DIGITAL_IO-I.\Dave\Generated\FREERTOS-I.\Dave\Generated\FREERTOS\portable\GCC-I.\Dave\Generated\FREERTOS\portable\IAR-I.\Dave\Generated\FREERTOS\portable\Keil-I.\Dave\Generated\GLOBAL_ADC-I.\Dave\Generated\GLOBAL_CAN-I.\RTE\_XMC4500-F100x1024-IC:\Users\Yoshi\Documents\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include-IC:\Users\Yoshi\Documents\Arm\Packs\Infineon\XMC4000_DFP\2.13.0\Device\XMC4500_series\Include-IC:\Users\Yoshi\Documents\Arm\Packs\Infineon\XMC4000_DFP\2.13.0\Device\XMClib\inc-D__UVISION_VERSION="529" -D_RTE_ -DXMC4500_F100x1024 --C99-o .\uvbuild\tasks.o --omf_browse .\uvbuild\tasks.crf --depend .\uvbuild\tasks.d)
+I (C:\Keil_v5\ARM\ARMCC\include\stdlib.h)(0x5D9B267A)
+I (C:\Keil_v5\ARM\ARMCC\include\string.h)(0x5D9B2678)
+I (C:\Users\Yoshi\Documents\GitHub\Software\01_jrg\06_XMC\jr22_LV_BMS_bauerjoh_AA\Dave\Generated\FREERTOS\FreeRTOS.h)(0x60A53048)
+I (C:\Keil_v5\ARM\ARMCC\include\stddef.h)(0x5D9B2678)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x5D9B2678)
+I (C:\Users\Yoshi\Documents\GitHub\Software\01_jrg\06_XMC\jr22_LV_BMS_bauerjoh_AA\Dave\Generated\FREERTOS\FreeRTOSConfig.h)(0x62556C25)
+I (C:\Users\Yoshi\Documents\Arm\Packs\Infineon\XMC4000_DFP\2.13.0\Device\XMClib\inc\xmc_device.h)(0x5D3BF384)
+I (C:\Users\Yoshi\Documents\Arm\Packs\Infineon\XMC4000_DFP\2.13.0\Device\XMC4500_series\Include\XMC4500.h)(0x59477BB0)
+I (C:\Users\Yoshi\Documents\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include\core_cm4.h)(0x60D43D42)
+I (C:\Users\Yoshi\Documents\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include\cmsis_version.h)(0x60D43D42)
+I (C:\Users\Yoshi\Documents\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include\cmsis_compiler.h)(0x60D43D42)
+I (C:\Users\Yoshi\Documents\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include\cmsis_armcc.h)(0x60D43D42)
+I (C:\Users\Yoshi\Documents\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include\mpu_armv7.h)(0x60D43D42)
+I (C:\Users\Yoshi\Documents\Arm\Packs\Infineon\XMC4000_DFP\2.13.0\Device\XMC4500_series\Include\system_XMC4500.h)(0x5787563C)
+I (C:\Users\Yoshi\Documents\GitHub\Software\01_jrg\06_XMC\jr22_LV_BMS_bauerjoh_AA\Dave\Generated\FREERTOS\projdefs.h)(0x60A53048)
+I (.\Dave\Generated\DAVE_Common.h)(0x60A5303A)
+I (C:\Users\Yoshi\Documents\GitHub\Software\01_jrg\06_XMC\jr22_LV_BMS_bauerjoh_AA\Dave\Generated\FREERTOS\freertos_conf.h)(0x62556C25)
+I (C:\Users\Yoshi\Documents\GitHub\Software\01_jrg\06_XMC\jr22_LV_BMS_bauerjoh_AA\Dave\Generated\FREERTOS\portable.h)(0x60A53048)
+I (C:\Users\Yoshi\Documents\GitHub\Software\01_jrg\06_XMC\jr22_LV_BMS_bauerjoh_AA\Dave\Generated\FREERTOS\deprecated_definitions.h)(0x60A53048)
+F (C:\Users\Yoshi\Documents\GitHub\Software\01_jrg\06_XMC\jr22_LV_BMS_bauerjoh_AA\Dave\Generated\FREERTOS\timers.c)(0x60A53048)(-c --cpu Cortex-M4.fp.sp -D__EVAL -g -O0 --apcs=interwork --split_sections-I.\Dave\Generated-I.\Dave\Generated\ADC_MEASUREMENT-I.\Dave\Generated\ANALOG_IO-I.\Dave\Generated\CAN_NODE-I.\Dave\Generated\CLOCK_XMC4-I.\Dave\Generated\CPU_CTRL_XMC4-I.\Dave\Generated\DIGITAL_IO-I.\Dave\Generated\FREERTOS-I.\Dave\Generated\FREERTOS\portable\GCC-I.\Dave\Generated\FREERTOS\portable\IAR-I.\Dave\Generated\FREERTOS\portable\Keil-I.\Dave\Generated\GLOBAL_ADC-I.\Dave\Generated\GLOBAL_CAN-I.\RTE\_XMC4500-F100x1024-IC:\Users\Yoshi\Documents\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include-IC:\Users\Yoshi\Documents\Arm\Packs\Infineon\XMC4000_DFP\2.13.0\Device\XMC4500_series\Include-IC:\Users\Yoshi\Documents\Arm\Packs\Infineon\XMC4000_DFP\2.13.0\Device\XMClib\inc-D__UVISION_VERSION="529" -D_RTE_ -DXMC4500_F100x1024 --C99-o .\uvbuild\timers.o --omf_browse .\uvbuild\timers.crf --depend .\uvbuild\timers.d)
+I (C:\Keil_v5\ARM\ARMCC\include\stdlib.h)(0x5D9B267A)
+I (C:\Users\Yoshi\Documents\GitHub\Software\01_jrg\06_XMC\jr22_LV_BMS_bauerjoh_AA\Dave\Generated\FREERTOS\FreeRTOS.h)(0x60A53048)
+I (C:\Keil_v5\ARM\ARMCC\include\stddef.h)(0x5D9B2678)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x5D9B2678)
+I (C:\Users\Yoshi\Documents\GitHub\Software\01_jrg\06_XMC\jr22_LV_BMS_bauerjoh_AA\Dave\Generated\FREERTOS\FreeRTOSConfig.h)(0x62556C25)
+I (C:\Users\Yoshi\Documents\Arm\Packs\Infineon\XMC4000_DFP\2.13.0\Device\XMClib\inc\xmc_device.h)(0x5D3BF384)
+I (C:\Users\Yoshi\Documents\Arm\Packs\Infineon\XMC4000_DFP\2.13.0\Device\XMC4500_series\Include\XMC4500.h)(0x59477BB0)
+I (C:\Users\Yoshi\Documents\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include\core_cm4.h)(0x60D43D42)
+I (C:\Users\Yoshi\Documents\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include\cmsis_version.h)(0x60D43D42)
+I (C:\Users\Yoshi\Documents\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include\cmsis_compiler.h)(0x60D43D42)
+I (C:\Users\Yoshi\Documents\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include\cmsis_armcc.h)(0x60D43D42)
+I (C:\Users\Yoshi\Documents\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include\mpu_armv7.h)(0x60D43D42)
+I (C:\Users\Yoshi\Documents\Arm\Packs\Infineon\XMC4000_DFP\2.13.0\Device\XMC4500_series\Include\system_XMC4500.h)(0x5787563C)
+I (C:\Users\Yoshi\Documents\GitHub\Software\01_jrg\06_XMC\jr22_LV_BMS_bauerjoh_AA\Dave\Generated\FREERTOS\projdefs.h)(0x60A53048)
+I (.\Dave\Generated\DAVE_Common.h)(0x60A5303A)
+I (C:\Users\Yoshi\Documents\GitHub\Software\01_jrg\06_XMC\jr22_LV_BMS_bauerjoh_AA\Dave\Generated\FREERTOS\freertos_conf.h)(0x62556C25)
+I (C:\Users\Yoshi\Documents\GitHub\Software\01_jrg\06_XMC\jr22_LV_BMS_bauerjoh_AA\Dave\Generated\FREERTOS\portable.h)(0x60A53048)
+I (C:\Users\Yoshi\Documents\GitHub\Software\01_jrg\06_XMC\jr22_LV_BMS_bauerjoh_AA\Dave\Generated\FREERTOS\deprecated_definitions.h)(0x60A53048)
+F (C:\Users\Yoshi\Documents\GitHub\Software\01_jrg\06_XMC\jr22_LV_BMS_bauerjoh_AA\Dave\Generated\GLOBAL_ADC\global_adc.c)(0x60A53048)(-c --cpu Cortex-M4.fp.sp -D__EVAL -g -O0 --apcs=interwork --split_sections-I.\Dave\Generated-I.\Dave\Generated\ADC_MEASUREMENT-I.\Dave\Generated\ANALOG_IO-I.\Dave\Generated\CAN_NODE-I.\Dave\Generated\CLOCK_XMC4-I.\Dave\Generated\CPU_CTRL_XMC4-I.\Dave\Generated\DIGITAL_IO-I.\Dave\Generated\FREERTOS-I.\Dave\Generated\FREERTOS\portable\GCC-I.\Dave\Generated\FREERTOS\portable\IAR-I.\Dave\Generated\FREERTOS\portable\Keil-I.\Dave\Generated\GLOBAL_ADC-I.\Dave\Generated\GLOBAL_CAN-I.\RTE\_XMC4500-F100x1024-IC:\Users\Yoshi\Documents\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include-IC:\Users\Yoshi\Documents\Arm\Packs\Infineon\XMC4000_DFP\2.13.0\Device\XMC4500_series\Include-IC:\Users\Yoshi\Documents\Arm\Packs\Infineon\XMC4000_DFP\2.13.0\Device\XMClib\inc-D__UVISION_VERSION="529" -D_RTE_ -DXMC4500_F100x1024 --C99-o .\uvbuild\global_adc.o --omf_browse .\uvbuild\global_adc.crf --depend .\uvbuild\global_adc.d)
+I (C:\Users\Yoshi\Documents\GitHub\Software\01_jrg\06_XMC\jr22_LV_BMS_bauerjoh_AA\Dave\Generated\GLOBAL_ADC\global_adc.h)(0x60A53048)
+I (C:\Users\Yoshi\Documents\Arm\Packs\Infineon\XMC4000_DFP\2.13.0\Device\XMClib\inc\xmc_vadc.h)(0x5D286BF6)
+I (C:\Users\Yoshi\Documents\Arm\Packs\Infineon\XMC4000_DFP\2.13.0\Device\XMClib\inc\xmc_common.h)(0x5D286C2E)
+I (C:\Keil_v5\ARM\ARMCC\include\stddef.h)(0x5D9B2678)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x5D9B2678)
+I (C:\Keil_v5\ARM\ARMCC\include\stdbool.h)(0x5D9B2678)
+I (C:\Keil_v5\ARM\ARMCC\include\string.h)(0x5D9B2678)
+I (C:\Users\Yoshi\Documents\Arm\Packs\Infineon\XMC4000_DFP\2.13.0\Device\XMClib\inc\xmc_device.h)(0x5D3BF384)
+I (C:\Users\Yoshi\Documents\Arm\Packs\Infineon\XMC4000_DFP\2.13.0\Device\XMC4500_series\Include\XMC4500.h)(0x59477BB0)
+I (C:\Users\Yoshi\Documents\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include\core_cm4.h)(0x60D43D42)
+I (C:\Users\Yoshi\Documents\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include\cmsis_version.h)(0x60D43D42)
+I (C:\Users\Yoshi\Documents\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include\cmsis_compiler.h)(0x60D43D42)
+I (C:\Users\Yoshi\Documents\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include\cmsis_armcc.h)(0x60D43D42)
+I (C:\Users\Yoshi\Documents\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include\mpu_armv7.h)(0x60D43D42)
+I (C:\Users\Yoshi\Documents\Arm\Packs\Infineon\XMC4000_DFP\2.13.0\Device\XMC4500_series\Include\system_XMC4500.h)(0x5787563C)
+I (C:\Users\Yoshi\Documents\Arm\Packs\Infineon\XMC4000_DFP\2.13.0\Device\XMClib\inc\xmc_scu.h)(0x5D286BF6)
+I (C:\Users\Yoshi\Documents\Arm\Packs\Infineon\XMC4000_DFP\2.13.0\Device\XMClib\inc\xmc4_scu.h)(0x5D286BF8)
+I (C:\Users\Yoshi\Documents\Arm\Packs\Infineon\XMC4000_DFP\2.13.0\Device\XMClib\inc\xmc_vadc_map.h)(0x5D417D5E)
+I (C:\Users\Yoshi\Documents\GitHub\Software\01_jrg\06_XMC\jr22_LV_BMS_bauerjoh_AA\Dave\Generated\GLOBAL_ADC\global_adc_conf.h)(0x62556C25)
+I (.\Dave\Generated\DAVE_Common.h)(0x60A5303A)
+I (C:\Users\Yoshi\Documents\GitHub\Software\01_jrg\06_XMC\jr22_LV_BMS_bauerjoh_AA\Dave\Generated\GLOBAL_ADC\global_adc_extern.h)(0x62556C25)
+F (C:\Users\Yoshi\Documents\GitHub\Software\01_jrg\06_XMC\jr22_LV_BMS_bauerjoh_AA\Dave\Generated\GLOBAL_ADC\global_adc_conf.c)(0x62556C25)(-c --cpu Cortex-M4.fp.sp -D__EVAL -g -O0 --apcs=interwork --split_sections-I.\Dave\Generated-I.\Dave\Generated\ADC_MEASUREMENT-I.\Dave\Generated\ANALOG_IO-I.\Dave\Generated\CAN_NODE-I.\Dave\Generated\CLOCK_XMC4-I.\Dave\Generated\CPU_CTRL_XMC4-I.\Dave\Generated\DIGITAL_IO-I.\Dave\Generated\FREERTOS-I.\Dave\Generated\FREERTOS\portable\GCC-I.\Dave\Generated\FREERTOS\portable\IAR-I.\Dave\Generated\FREERTOS\portable\Keil-I.\Dave\Generated\GLOBAL_ADC-I.\Dave\Generated\GLOBAL_CAN-I.\RTE\_XMC4500-F100x1024-IC:\Users\Yoshi\Documents\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include-IC:\Users\Yoshi\Documents\Arm\Packs\Infineon\XMC4000_DFP\2.13.0\Device\XMC4500_series\Include-IC:\Users\Yoshi\Documents\Arm\Packs\Infineon\XMC4000_DFP\2.13.0\Device\XMClib\inc-D__UVISION_VERSION="529" -D_RTE_ -DXMC4500_F100x1024 --C99-o .\uvbuild\global_adc_conf.o --omf_browse .\uvbuild\global_adc_conf.crf --depend .\uvbuild\global_adc_conf.d)
+I (C:\Users\Yoshi\Documents\GitHub\Software\01_jrg\06_XMC\jr22_LV_BMS_bauerjoh_AA\Dave\Generated\GLOBAL_ADC\global_adc.h)(0x60A53048)
+I (C:\Users\Yoshi\Documents\Arm\Packs\Infineon\XMC4000_DFP\2.13.0\Device\XMClib\inc\xmc_vadc.h)(0x5D286BF6)
+I (C:\Users\Yoshi\Documents\Arm\Packs\Infineon\XMC4000_DFP\2.13.0\Device\XMClib\inc\xmc_common.h)(0x5D286C2E)
+I (C:\Keil_v5\ARM\ARMCC\include\stddef.h)(0x5D9B2678)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x5D9B2678)
+I (C:\Keil_v5\ARM\ARMCC\include\stdbool.h)(0x5D9B2678)
+I (C:\Keil_v5\ARM\ARMCC\include\string.h)(0x5D9B2678)
+I (C:\Users\Yoshi\Documents\Arm\Packs\Infineon\XMC4000_DFP\2.13.0\Device\XMClib\inc\xmc_device.h)(0x5D3BF384)
+I (C:\Users\Yoshi\Documents\Arm\Packs\Infineon\XMC4000_DFP\2.13.0\Device\XMC4500_series\Include\XMC4500.h)(0x59477BB0)
+I (C:\Users\Yoshi\Documents\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include\core_cm4.h)(0x60D43D42)
+I (C:\Users\Yoshi\Documents\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include\cmsis_version.h)(0x60D43D42)
+I (C:\Users\Yoshi\Documents\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include\cmsis_compiler.h)(0x60D43D42)
+I (C:\Users\Yoshi\Documents\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include\cmsis_armcc.h)(0x60D43D42)
+I (C:\Users\Yoshi\Documents\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include\mpu_armv7.h)(0x60D43D42)
+I (C:\Users\Yoshi\Documents\Arm\Packs\Infineon\XMC4000_DFP\2.13.0\Device\XMC4500_series\Include\system_XMC4500.h)(0x5787563C)
+I (C:\Users\Yoshi\Documents\Arm\Packs\Infineon\XMC4000_DFP\2.13.0\Device\XMClib\inc\xmc_scu.h)(0x5D286BF6)
+I (C:\Users\Yoshi\Documents\Arm\Packs\Infineon\XMC4000_DFP\2.13.0\Device\XMClib\inc\xmc4_scu.h)(0x5D286BF8)
+I (C:\Users\Yoshi\Documents\Arm\Packs\Infineon\XMC4000_DFP\2.13.0\Device\XMClib\inc\xmc_vadc_map.h)(0x5D417D5E)
+I (C:\Users\Yoshi\Documents\GitHub\Software\01_jrg\06_XMC\jr22_LV_BMS_bauerjoh_AA\Dave\Generated\GLOBAL_ADC\global_adc_conf.h)(0x62556C25)
+I (.\Dave\Generated\DAVE_Common.h)(0x60A5303A)
+I (C:\Users\Yoshi\Documents\GitHub\Software\01_jrg\06_XMC\jr22_LV_BMS_bauerjoh_AA\Dave\Generated\GLOBAL_ADC\global_adc_extern.h)(0x62556C25)
+F (C:\Users\Yoshi\Documents\GitHub\Software\01_jrg\06_XMC\jr22_LV_BMS_bauerjoh_AA\Dave\Generated\GLOBAL_CAN\global_can.c)(0x60A53048)(-c --cpu Cortex-M4.fp.sp -D__EVAL -g -O0 --apcs=interwork --split_sections-I.\Dave\Generated-I.\Dave\Generated\ADC_MEASUREMENT-I.\Dave\Generated\ANALOG_IO-I.\Dave\Generated\CAN_NODE-I.\Dave\Generated\CLOCK_XMC4-I.\Dave\Generated\CPU_CTRL_XMC4-I.\Dave\Generated\DIGITAL_IO-I.\Dave\Generated\FREERTOS-I.\Dave\Generated\FREERTOS\portable\GCC-I.\Dave\Generated\FREERTOS\portable\IAR-I.\Dave\Generated\FREERTOS\portable\Keil-I.\Dave\Generated\GLOBAL_ADC-I.\Dave\Generated\GLOBAL_CAN-I.\RTE\_XMC4500-F100x1024-IC:\Users\Yoshi\Documents\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include-IC:\Users\Yoshi\Documents\Arm\Packs\Infineon\XMC4000_DFP\2.13.0\Device\XMC4500_series\Include-IC:\Users\Yoshi\Documents\Arm\Packs\Infineon\XMC4000_DFP\2.13.0\Device\XMClib\inc-D__UVISION_VERSION="529" -D_RTE_ -DXMC4500_F100x1024 --C99-o .\uvbuild\global_can.o --omf_browse .\uvbuild\global_can.crf --depend .\uvbuild\global_can.d)
+I (C:\Users\Yoshi\Documents\GitHub\Software\01_jrg\06_XMC\jr22_LV_BMS_bauerjoh_AA\Dave\Generated\GLOBAL_CAN\global_can.h)(0x60A53048)
+I (C:\Users\Yoshi\Documents\Arm\Packs\Infineon\XMC4000_DFP\2.13.0\Device\XMClib\inc\xmc_can.h)(0x5D417B9E)
+I (C:\Users\Yoshi\Documents\Arm\Packs\Infineon\XMC4000_DFP\2.13.0\Device\XMClib\inc\xmc_common.h)(0x5D286C2E)
+I (C:\Keil_v5\ARM\ARMCC\include\stddef.h)(0x5D9B2678)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x5D9B2678)
+I (C:\Keil_v5\ARM\ARMCC\include\stdbool.h)(0x5D9B2678)
+I (C:\Keil_v5\ARM\ARMCC\include\string.h)(0x5D9B2678)
+I (C:\Users\Yoshi\Documents\Arm\Packs\Infineon\XMC4000_DFP\2.13.0\Device\XMClib\inc\xmc_device.h)(0x5D3BF384)
+I (C:\Users\Yoshi\Documents\Arm\Packs\Infineon\XMC4000_DFP\2.13.0\Device\XMC4500_series\Include\XMC4500.h)(0x59477BB0)
+I (C:\Users\Yoshi\Documents\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include\core_cm4.h)(0x60D43D42)
+I (C:\Users\Yoshi\Documents\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include\cmsis_version.h)(0x60D43D42)
+I (C:\Users\Yoshi\Documents\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include\cmsis_compiler.h)(0x60D43D42)
+I (C:\Users\Yoshi\Documents\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include\cmsis_armcc.h)(0x60D43D42)
+I (C:\Users\Yoshi\Documents\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include\mpu_armv7.h)(0x60D43D42)
+I (C:\Users\Yoshi\Documents\Arm\Packs\Infineon\XMC4000_DFP\2.13.0\Device\XMC4500_series\Include\system_XMC4500.h)(0x5787563C)
+I (C:\Users\Yoshi\Documents\Arm\Packs\Infineon\XMC4000_DFP\2.13.0\Device\XMClib\inc\xmc_scu.h)(0x5D286BF6)
+I (C:\Users\Yoshi\Documents\Arm\Packs\Infineon\XMC4000_DFP\2.13.0\Device\XMClib\inc\xmc4_scu.h)(0x5D286BF8)
+I (C:\Users\Yoshi\Documents\Arm\Packs\Infineon\XMC4000_DFP\2.13.0\Device\XMClib\inc\xmc_can_map.h)(0x5D417ED8)
+I (C:\Users\Yoshi\Documents\GitHub\Software\01_jrg\06_XMC\jr22_LV_BMS_bauerjoh_AA\Dave\Generated\GLOBAL_CAN\global_can_conf.h)(0x62556C25)
+I (.\Dave\Generated\DAVE_Common.h)(0x60A5303A)
+I (C:\Users\Yoshi\Documents\GitHub\Software\01_jrg\06_XMC\jr22_LV_BMS_bauerjoh_AA\Dave\Generated\GLOBAL_CAN\global_can_extern.h)(0x62556C25)
+F (C:\Users\Yoshi\Documents\GitHub\Software\01_jrg\06_XMC\jr22_LV_BMS_bauerjoh_AA\Dave\Generated\GLOBAL_CAN\global_can_conf.c)(0x62556C25)(-c --cpu Cortex-M4.fp.sp -D__EVAL -g -O0 --apcs=interwork --split_sections-I.\Dave\Generated-I.\Dave\Generated\ADC_MEASUREMENT-I.\Dave\Generated\ANALOG_IO-I.\Dave\Generated\CAN_NODE-I.\Dave\Generated\CLOCK_XMC4-I.\Dave\Generated\CPU_CTRL_XMC4-I.\Dave\Generated\DIGITAL_IO-I.\Dave\Generated\FREERTOS-I.\Dave\Generated\FREERTOS\portable\GCC-I.\Dave\Generated\FREERTOS\portable\IAR-I.\Dave\Generated\FREERTOS\portable\Keil-I.\Dave\Generated\GLOBAL_ADC-I.\Dave\Generated\GLOBAL_CAN-I.\RTE\_XMC4500-F100x1024-IC:\Users\Yoshi\Documents\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include-IC:\Users\Yoshi\Documents\Arm\Packs\Infineon\XMC4000_DFP\2.13.0\Device\XMC4500_series\Include-IC:\Users\Yoshi\Documents\Arm\Packs\Infineon\XMC4000_DFP\2.13.0\Device\XMClib\inc-D__UVISION_VERSION="529" -D_RTE_ -DXMC4500_F100x1024 --C99-o .\uvbuild\global_can_conf.o --omf_browse .\uvbuild\global_can_conf.crf --depend .\uvbuild\global_can_conf.d)
+I (C:\Users\Yoshi\Documents\GitHub\Software\01_jrg\06_XMC\jr22_LV_BMS_bauerjoh_AA\Dave\Generated\GLOBAL_CAN\global_can.h)(0x60A53048)
+I (C:\Users\Yoshi\Documents\Arm\Packs\Infineon\XMC4000_DFP\2.13.0\Device\XMClib\inc\xmc_can.h)(0x5D417B9E)
+I (C:\Users\Yoshi\Documents\Arm\Packs\Infineon\XMC4000_DFP\2.13.0\Device\XMClib\inc\xmc_common.h)(0x5D286C2E)
+I (C:\Keil_v5\ARM\ARMCC\include\stddef.h)(0x5D9B2678)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x5D9B2678)
+I (C:\Keil_v5\ARM\ARMCC\include\stdbool.h)(0x5D9B2678)
+I (C:\Keil_v5\ARM\ARMCC\include\string.h)(0x5D9B2678)
+I (C:\Users\Yoshi\Documents\Arm\Packs\Infineon\XMC4000_DFP\2.13.0\Device\XMClib\inc\xmc_device.h)(0x5D3BF384)
+I (C:\Users\Yoshi\Documents\Arm\Packs\Infineon\XMC4000_DFP\2.13.0\Device\XMC4500_series\Include\XMC4500.h)(0x59477BB0)
+I (C:\Users\Yoshi\Documents\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include\core_cm4.h)(0x60D43D42)
+I (C:\Users\Yoshi\Documents\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include\cmsis_version.h)(0x60D43D42)
+I (C:\Users\Yoshi\Documents\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include\cmsis_compiler.h)(0x60D43D42)
+I (C:\Users\Yoshi\Documents\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include\cmsis_armcc.h)(0x60D43D42)
+I (C:\Users\Yoshi\Documents\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include\mpu_armv7.h)(0x60D43D42)
+I (C:\Users\Yoshi\Documents\Arm\Packs\Infineon\XMC4000_DFP\2.13.0\Device\XMC4500_series\Include\system_XMC4500.h)(0x5787563C)
+I (C:\Users\Yoshi\Documents\Arm\Packs\Infineon\XMC4000_DFP\2.13.0\Device\XMClib\inc\xmc_scu.h)(0x5D286BF6)
+I (C:\Users\Yoshi\Documents\Arm\Packs\Infineon\XMC4000_DFP\2.13.0\Device\XMClib\inc\xmc4_scu.h)(0x5D286BF8)
+I (C:\Users\Yoshi\Documents\Arm\Packs\Infineon\XMC4000_DFP\2.13.0\Device\XMClib\inc\xmc_can_map.h)(0x5D417ED8)
+I (C:\Users\Yoshi\Documents\GitHub\Software\01_jrg\06_XMC\jr22_LV_BMS_bauerjoh_AA\Dave\Generated\GLOBAL_CAN\global_can_conf.h)(0x62556C25)
+I (.\Dave\Generated\DAVE_Common.h)(0x60A5303A)
+I (C:\Users\Yoshi\Documents\GitHub\Software\01_jrg\06_XMC\jr22_LV_BMS_bauerjoh_AA\Dave\Generated\GLOBAL_CAN\global_can_extern.h)(0x62556C25)
+F (RTE\Device\XMC4500-F100x1024\startup_XMC4500.s)(0x57877B9E)(--cpu Cortex-M4.fp.sp --pd "__EVAL SETA 1" -g --apcs=interwork -I.\Dave\Generated-I.\Dave\Generated\ADC_MEASUREMENT-I.\Dave\Generated\ANALOG_IO-I.\Dave\Generated\CAN_NODE-I.\Dave\Generated\CLOCK_XMC4-I.\Dave\Generated\CPU_CTRL_XMC4-I.\Dave\Generated\DIGITAL_IO-I.\Dave\Generated\FREERTOS-I.\Dave\Generated\FREERTOS\portable\GCC-I.\Dave\Generated\FREERTOS\portable\IAR-I.\Dave\Generated\FREERTOS\portable\Keil-I.\Dave\Generated\GLOBAL_ADC-I.\Dave\Generated\GLOBAL_CAN-I.\RTE\_XMC4500-F100x1024-IC:\Users\Yoshi\Documents\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include-IC:\Users\Yoshi\Documents\Arm\Packs\Infineon\XMC4000_DFP\2.13.0\Device\XMC4500_series\Include-IC:\Users\Yoshi\Documents\Arm\Packs\Infineon\XMC4000_DFP\2.13.0\Device\XMClib\inc--pd "__UVISION_VERSION SETA 529" --pd "_RTE_ SETA 1" --pd "XMC4500_F100x1024 SETA 1"--list .\startup_xmc4500.lst --xref -o .\uvbuild\startup_xmc4500.o --depend .\uvbuild\startup_xmc4500.d)
+F (RTE\Device\XMC4500-F100x1024\system_XMC4500.c)(0x5BD70FCA)(-c --cpu Cortex-M4.fp.sp -D__EVAL -g -O0 --apcs=interwork --split_sections-I.\Dave\Generated-I.\Dave\Generated\ADC_MEASUREMENT-I.\Dave\Generated\ANALOG_IO-I.\Dave\Generated\CAN_NODE-I.\Dave\Generated\CLOCK_XMC4-I.\Dave\Generated\CPU_CTRL_XMC4-I.\Dave\Generated\DIGITAL_IO-I.\Dave\Generated\FREERTOS-I.\Dave\Generated\FREERTOS\portable\GCC-I.\Dave\Generated\FREERTOS\portable\IAR-I.\Dave\Generated\FREERTOS\portable\Keil-I.\Dave\Generated\GLOBAL_ADC-I.\Dave\Generated\GLOBAL_CAN-I.\RTE\_XMC4500-F100x1024-IC:\Users\Yoshi\Documents\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include-IC:\Users\Yoshi\Documents\Arm\Packs\Infineon\XMC4000_DFP\2.13.0\Device\XMC4500_series\Include-IC:\Users\Yoshi\Documents\Arm\Packs\Infineon\XMC4000_DFP\2.13.0\Device\XMClib\inc-D__UVISION_VERSION="529" -D_RTE_ -DXMC4500_F100x1024 --C99-o .\uvbuild\system_xmc4500.o --omf_browse .\uvbuild\system_xmc4500.crf --depend .\uvbuild\system_xmc4500.d)
+I (C:\Keil_v5\ARM\ARMCC\include\string.h)(0x5D9B2678)
+I (C:\Users\Yoshi\Documents\Arm\Packs\Infineon\XMC4000_DFP\2.13.0\Device\XMC4500_series\Include\XMC4500.h)(0x59477BB0)
+I (C:\Users\Yoshi\Documents\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include\core_cm4.h)(0x60D43D42)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x5D9B2678)
+I (C:\Users\Yoshi\Documents\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include\cmsis_version.h)(0x60D43D42)
+I (C:\Users\Yoshi\Documents\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include\cmsis_compiler.h)(0x60D43D42)
+I (C:\Users\Yoshi\Documents\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include\cmsis_armcc.h)(0x60D43D42)
+I (C:\Users\Yoshi\Documents\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include\mpu_armv7.h)(0x60D43D42)
+I (C:\Users\Yoshi\Documents\Arm\Packs\Infineon\XMC4000_DFP\2.13.0\Device\XMC4500_series\Include\system_XMC4500.h)(0x5787563C)
+F (C:\Users\Yoshi\Documents\Arm\Packs\Infineon\XMC4000_DFP\2.13.0\Device\XMClib\src\xmc4_eru.c)(0x5D286C00)(-c --cpu Cortex-M4.fp.sp -D__EVAL -g -O0 --apcs=interwork --split_sections-I.\Dave\Generated-I.\Dave\Generated\ADC_MEASUREMENT-I.\Dave\Generated\ANALOG_IO-I.\Dave\Generated\CAN_NODE-I.\Dave\Generated\CLOCK_XMC4-I.\Dave\Generated\CPU_CTRL_XMC4-I.\Dave\Generated\DIGITAL_IO-I.\Dave\Generated\FREERTOS-I.\Dave\Generated\FREERTOS\portable\GCC-I.\Dave\Generated\FREERTOS\portable\IAR-I.\Dave\Generated\FREERTOS\portable\Keil-I.\Dave\Generated\GLOBAL_ADC-I.\Dave\Generated\GLOBAL_CAN-I.\RTE\_XMC4500-F100x1024-IC:\Users\Yoshi\Documents\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include-IC:\Users\Yoshi\Documents\Arm\Packs\Infineon\XMC4000_DFP\2.13.0\Device\XMC4500_series\Include-IC:\Users\Yoshi\Documents\Arm\Packs\Infineon\XMC4000_DFP\2.13.0\Device\XMClib\inc-D__UVISION_VERSION="529" -D_RTE_ -DXMC4500_F100x1024 --C99-o .\uvbuild\xmc4_eru.o --omf_browse .\uvbuild\xmc4_eru.crf --depend .\uvbuild\xmc4_eru.d)
+I (C:\Users\Yoshi\Documents\Arm\Packs\Infineon\XMC4000_DFP\2.13.0\Device\XMClib\inc\xmc_eru.h)(0x5D286BF6)
+I (C:\Users\Yoshi\Documents\Arm\Packs\Infineon\XMC4000_DFP\2.13.0\Device\XMClib\inc\xmc_common.h)(0x5D286C2E)
+I (C:\Keil_v5\ARM\ARMCC\include\stddef.h)(0x5D9B2678)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x5D9B2678)
+I (C:\Keil_v5\ARM\ARMCC\include\stdbool.h)(0x5D9B2678)
+I (C:\Keil_v5\ARM\ARMCC\include\string.h)(0x5D9B2678)
+I (C:\Users\Yoshi\Documents\Arm\Packs\Infineon\XMC4000_DFP\2.13.0\Device\XMClib\inc\xmc_device.h)(0x5D3BF384)
+I (C:\Users\Yoshi\Documents\Arm\Packs\Infineon\XMC4000_DFP\2.13.0\Device\XMC4500_series\Include\XMC4500.h)(0x59477BB0)
+I (C:\Users\Yoshi\Documents\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include\core_cm4.h)(0x60D43D42)
+I (C:\Users\Yoshi\Documents\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include\cmsis_version.h)(0x60D43D42)
+I (C:\Users\Yoshi\Documents\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include\cmsis_compiler.h)(0x60D43D42)
+I (C:\Users\Yoshi\Documents\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include\cmsis_armcc.h)(0x60D43D42)
+I (C:\Users\Yoshi\Documents\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include\mpu_armv7.h)(0x60D43D42)
+I (C:\Users\Yoshi\Documents\Arm\Packs\Infineon\XMC4000_DFP\2.13.0\Device\XMC4500_series\Include\system_XMC4500.h)(0x5787563C)
+I (C:\Users\Yoshi\Documents\Arm\Packs\Infineon\XMC4000_DFP\2.13.0\Device\XMClib\inc\xmc4_eru_map.h)(0x5D286BF8)
+I (C:\Users\Yoshi\Documents\Arm\Packs\Infineon\XMC4000_DFP\2.13.0\Device\XMClib\inc\xmc_scu.h)(0x5D286BF6)
+I (C:\Users\Yoshi\Documents\Arm\Packs\Infineon\XMC4000_DFP\2.13.0\Device\XMClib\inc\xmc4_scu.h)(0x5D286BF8)
+F (C:\Users\Yoshi\Documents\Arm\Packs\Infineon\XMC4000_DFP\2.13.0\Device\XMClib\src\xmc4_flash.c)(0x5D286C00)(-c --cpu Cortex-M4.fp.sp -D__EVAL -g -O0 --apcs=interwork --split_sections-I.\Dave\Generated-I.\Dave\Generated\ADC_MEASUREMENT-I.\Dave\Generated\ANALOG_IO-I.\Dave\Generated\CAN_NODE-I.\Dave\Generated\CLOCK_XMC4-I.\Dave\Generated\CPU_CTRL_XMC4-I.\Dave\Generated\DIGITAL_IO-I.\Dave\Generated\FREERTOS-I.\Dave\Generated\FREERTOS\portable\GCC-I.\Dave\Generated\FREERTOS\portable\IAR-I.\Dave\Generated\FREERTOS\portable\Keil-I.\Dave\Generated\GLOBAL_ADC-I.\Dave\Generated\GLOBAL_CAN-I.\RTE\_XMC4500-F100x1024-IC:\Users\Yoshi\Documents\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include-IC:\Users\Yoshi\Documents\Arm\Packs\Infineon\XMC4000_DFP\2.13.0\Device\XMC4500_series\Include-IC:\Users\Yoshi\Documents\Arm\Packs\Infineon\XMC4000_DFP\2.13.0\Device\XMClib\inc-D__UVISION_VERSION="529" -D_RTE_ -DXMC4500_F100x1024 --C99-o .\uvbuild\xmc4_flash.o --omf_browse .\uvbuild\xmc4_flash.crf --depend .\uvbuild\xmc4_flash.d)
+I (C:\Users\Yoshi\Documents\Arm\Packs\Infineon\XMC4000_DFP\2.13.0\Device\XMClib\inc\xmc_flash.h)(0x5D286BF6)
+I (C:\Users\Yoshi\Documents\Arm\Packs\Infineon\XMC4000_DFP\2.13.0\Device\XMClib\inc\xmc_common.h)(0x5D286C2E)
+I (C:\Keil_v5\ARM\ARMCC\include\stddef.h)(0x5D9B2678)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x5D9B2678)
+I (C:\Keil_v5\ARM\ARMCC\include\stdbool.h)(0x5D9B2678)
+I (C:\Keil_v5\ARM\ARMCC\include\string.h)(0x5D9B2678)
+I (C:\Users\Yoshi\Documents\Arm\Packs\Infineon\XMC4000_DFP\2.13.0\Device\XMClib\inc\xmc_device.h)(0x5D3BF384)
+I (C:\Users\Yoshi\Documents\Arm\Packs\Infineon\XMC4000_DFP\2.13.0\Device\XMC4500_series\Include\XMC4500.h)(0x59477BB0)
+I (C:\Users\Yoshi\Documents\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include\core_cm4.h)(0x60D43D42)
+I (C:\Users\Yoshi\Documents\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include\cmsis_version.h)(0x60D43D42)
+I (C:\Users\Yoshi\Documents\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include\cmsis_compiler.h)(0x60D43D42)
+I (C:\Users\Yoshi\Documents\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include\cmsis_armcc.h)(0x60D43D42)
+I (C:\Users\Yoshi\Documents\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include\mpu_armv7.h)(0x60D43D42)
+I (C:\Users\Yoshi\Documents\Arm\Packs\Infineon\XMC4000_DFP\2.13.0\Device\XMC4500_series\Include\system_XMC4500.h)(0x5787563C)
+I (C:\Users\Yoshi\Documents\Arm\Packs\Infineon\XMC4000_DFP\2.13.0\Device\XMClib\inc\xmc4_flash.h)(0x5D286BF8)
+F (C:\Users\Yoshi\Documents\Arm\Packs\Infineon\XMC4000_DFP\2.13.0\Device\XMClib\src\xmc4_gpio.c)(0x5D286C00)(-c --cpu Cortex-M4.fp.sp -D__EVAL -g -O0 --apcs=interwork --split_sections-I.\Dave\Generated-I.\Dave\Generated\ADC_MEASUREMENT-I.\Dave\Generated\ANALOG_IO-I.\Dave\Generated\CAN_NODE-I.\Dave\Generated\CLOCK_XMC4-I.\Dave\Generated\CPU_CTRL_XMC4-I.\Dave\Generated\DIGITAL_IO-I.\Dave\Generated\FREERTOS-I.\Dave\Generated\FREERTOS\portable\GCC-I.\Dave\Generated\FREERTOS\portable\IAR-I.\Dave\Generated\FREERTOS\portable\Keil-I.\Dave\Generated\GLOBAL_ADC-I.\Dave\Generated\GLOBAL_CAN-I.\RTE\_XMC4500-F100x1024-IC:\Users\Yoshi\Documents\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include-IC:\Users\Yoshi\Documents\Arm\Packs\Infineon\XMC4000_DFP\2.13.0\Device\XMC4500_series\Include-IC:\Users\Yoshi\Documents\Arm\Packs\Infineon\XMC4000_DFP\2.13.0\Device\XMClib\inc-D__UVISION_VERSION="529" -D_RTE_ -DXMC4500_F100x1024 --C99-o .\uvbuild\xmc4_gpio.o --omf_browse .\uvbuild\xmc4_gpio.crf --depend .\uvbuild\xmc4_gpio.d)
+I (C:\Users\Yoshi\Documents\Arm\Packs\Infineon\XMC4000_DFP\2.13.0\Device\XMClib\inc\xmc_gpio.h)(0x5D286BF6)
+I (C:\Users\Yoshi\Documents\Arm\Packs\Infineon\XMC4000_DFP\2.13.0\Device\XMClib\inc\xmc_common.h)(0x5D286C2E)
+I (C:\Keil_v5\ARM\ARMCC\include\stddef.h)(0x5D9B2678)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x5D9B2678)
+I (C:\Keil_v5\ARM\ARMCC\include\stdbool.h)(0x5D9B2678)
+I (C:\Keil_v5\ARM\ARMCC\include\string.h)(0x5D9B2678)
+I (C:\Users\Yoshi\Documents\Arm\Packs\Infineon\XMC4000_DFP\2.13.0\Device\XMClib\inc\xmc_device.h)(0x5D3BF384)
+I (C:\Users\Yoshi\Documents\Arm\Packs\Infineon\XMC4000_DFP\2.13.0\Device\XMC4500_series\Include\XMC4500.h)(0x59477BB0)
+I (C:\Users\Yoshi\Documents\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include\core_cm4.h)(0x60D43D42)
+I (C:\Users\Yoshi\Documents\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include\cmsis_version.h)(0x60D43D42)
+I (C:\Users\Yoshi\Documents\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include\cmsis_compiler.h)(0x60D43D42)
+I (C:\Users\Yoshi\Documents\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include\cmsis_armcc.h)(0x60D43D42)
+I (C:\Users\Yoshi\Documents\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include\mpu_armv7.h)(0x60D43D42)
+I (C:\Users\Yoshi\Documents\Arm\Packs\Infineon\XMC4000_DFP\2.13.0\Device\XMC4500_series\Include\system_XMC4500.h)(0x5787563C)
+I (C:\Users\Yoshi\Documents\Arm\Packs\Infineon\XMC4000_DFP\2.13.0\Device\XMClib\inc\xmc4_gpio.h)(0x5D286BF8)
+I (C:\Users\Yoshi\Documents\Arm\Packs\Infineon\XMC4000_DFP\2.13.0\Device\XMClib\inc\xmc4_gpio_map.h)(0x5D286BF8)
+F (C:\Users\Yoshi\Documents\Arm\Packs\Infineon\XMC4000_DFP\2.13.0\Device\XMClib\src\xmc4_rtc.c)(0x5D286C00)(-c --cpu Cortex-M4.fp.sp -D__EVAL -g -O0 --apcs=interwork --split_sections-I.\Dave\Generated-I.\Dave\Generated\ADC_MEASUREMENT-I.\Dave\Generated\ANALOG_IO-I.\Dave\Generated\CAN_NODE-I.\Dave\Generated\CLOCK_XMC4-I.\Dave\Generated\CPU_CTRL_XMC4-I.\Dave\Generated\DIGITAL_IO-I.\Dave\Generated\FREERTOS-I.\Dave\Generated\FREERTOS\portable\GCC-I.\Dave\Generated\FREERTOS\portable\IAR-I.\Dave\Generated\FREERTOS\portable\Keil-I.\Dave\Generated\GLOBAL_ADC-I.\Dave\Generated\GLOBAL_CAN-I.\RTE\_XMC4500-F100x1024-IC:\Users\Yoshi\Documents\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include-IC:\Users\Yoshi\Documents\Arm\Packs\Infineon\XMC4000_DFP\2.13.0\Device\XMC4500_series\Include-IC:\Users\Yoshi\Documents\Arm\Packs\Infineon\XMC4000_DFP\2.13.0\Device\XMClib\inc-D__UVISION_VERSION="529" -D_RTE_ -DXMC4500_F100x1024 --C99-o .\uvbuild\xmc4_rtc.o --omf_browse .\uvbuild\xmc4_rtc.crf --depend .\uvbuild\xmc4_rtc.d)
+I (C:\Users\Yoshi\Documents\Arm\Packs\Infineon\XMC4000_DFP\2.13.0\Device\XMClib\inc\xmc_rtc.h)(0x5D286BF6)
+I (C:\Users\Yoshi\Documents\Arm\Packs\Infineon\XMC4000_DFP\2.13.0\Device\XMClib\inc\xmc_common.h)(0x5D286C2E)
+I (C:\Keil_v5\ARM\ARMCC\include\stddef.h)(0x5D9B2678)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x5D9B2678)
+I (C:\Keil_v5\ARM\ARMCC\include\stdbool.h)(0x5D9B2678)
+I (C:\Keil_v5\ARM\ARMCC\include\string.h)(0x5D9B2678)
+I (C:\Users\Yoshi\Documents\Arm\Packs\Infineon\XMC4000_DFP\2.13.0\Device\XMClib\inc\xmc_device.h)(0x5D3BF384)
+I (C:\Users\Yoshi\Documents\Arm\Packs\Infineon\XMC4000_DFP\2.13.0\Device\XMC4500_series\Include\XMC4500.h)(0x59477BB0)
+I (C:\Users\Yoshi\Documents\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include\core_cm4.h)(0x60D43D42)
+I (C:\Users\Yoshi\Documents\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include\cmsis_version.h)(0x60D43D42)
+I (C:\Users\Yoshi\Documents\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include\cmsis_compiler.h)(0x60D43D42)
+I (C:\Users\Yoshi\Documents\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include\cmsis_armcc.h)(0x60D43D42)
+I (C:\Users\Yoshi\Documents\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include\mpu_armv7.h)(0x60D43D42)
+I (C:\Users\Yoshi\Documents\Arm\Packs\Infineon\XMC4000_DFP\2.13.0\Device\XMC4500_series\Include\system_XMC4500.h)(0x5787563C)
+I (C:\Keil_v5\ARM\ARMCC\include\time.h)(0x5D9B2672)
+I (C:\Users\Yoshi\Documents\Arm\Packs\Infineon\XMC4000_DFP\2.13.0\Device\XMClib\inc\xmc4_rtc.h)(0x5D286BF8)
+I (C:\Users\Yoshi\Documents\Arm\Packs\Infineon\XMC4000_DFP\2.13.0\Device\XMClib\inc\xmc_scu.h)(0x5D286BF6)
+I (C:\Users\Yoshi\Documents\Arm\Packs\Infineon\XMC4000_DFP\2.13.0\Device\XMClib\inc\xmc4_scu.h)(0x5D286BF8)
+F (C:\Users\Yoshi\Documents\Arm\Packs\Infineon\XMC4000_DFP\2.13.0\Device\XMClib\src\xmc4_scu.c)(0x5D286C00)(-c --cpu Cortex-M4.fp.sp -D__EVAL -g -O0 --apcs=interwork --split_sections-I.\Dave\Generated-I.\Dave\Generated\ADC_MEASUREMENT-I.\Dave\Generated\ANALOG_IO-I.\Dave\Generated\CAN_NODE-I.\Dave\Generated\CLOCK_XMC4-I.\Dave\Generated\CPU_CTRL_XMC4-I.\Dave\Generated\DIGITAL_IO-I.\Dave\Generated\FREERTOS-I.\Dave\Generated\FREERTOS\portable\GCC-I.\Dave\Generated\FREERTOS\portable\IAR-I.\Dave\Generated\FREERTOS\portable\Keil-I.\Dave\Generated\GLOBAL_ADC-I.\Dave\Generated\GLOBAL_CAN-I.\RTE\_XMC4500-F100x1024-IC:\Users\Yoshi\Documents\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include-IC:\Users\Yoshi\Documents\Arm\Packs\Infineon\XMC4000_DFP\2.13.0\Device\XMC4500_series\Include-IC:\Users\Yoshi\Documents\Arm\Packs\Infineon\XMC4000_DFP\2.13.0\Device\XMClib\inc-D__UVISION_VERSION="529" -D_RTE_ -DXMC4500_F100x1024 --C99-o .\uvbuild\xmc4_scu.o --omf_browse .\uvbuild\xmc4_scu.crf --depend .\uvbuild\xmc4_scu.d)
+I (C:\Users\Yoshi\Documents\Arm\Packs\Infineon\XMC4000_DFP\2.13.0\Device\XMClib\inc\xmc_scu.h)(0x5D286BF6)
+I (C:\Users\Yoshi\Documents\Arm\Packs\Infineon\XMC4000_DFP\2.13.0\Device\XMClib\inc\xmc_common.h)(0x5D286C2E)
+I (C:\Keil_v5\ARM\ARMCC\include\stddef.h)(0x5D9B2678)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x5D9B2678)
+I (C:\Keil_v5\ARM\ARMCC\include\stdbool.h)(0x5D9B2678)
+I (C:\Keil_v5\ARM\ARMCC\include\string.h)(0x5D9B2678)
+I (C:\Users\Yoshi\Documents\Arm\Packs\Infineon\XMC4000_DFP\2.13.0\Device\XMClib\inc\xmc_device.h)(0x5D3BF384)
+I (C:\Users\Yoshi\Documents\Arm\Packs\Infineon\XMC4000_DFP\2.13.0\Device\XMC4500_series\Include\XMC4500.h)(0x59477BB0)
+I (C:\Users\Yoshi\Documents\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include\core_cm4.h)(0x60D43D42)
+I (C:\Users\Yoshi\Documents\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include\cmsis_version.h)(0x60D43D42)
+I (C:\Users\Yoshi\Documents\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include\cmsis_compiler.h)(0x60D43D42)
+I (C:\Users\Yoshi\Documents\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include\cmsis_armcc.h)(0x60D43D42)
+I (C:\Users\Yoshi\Documents\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include\mpu_armv7.h)(0x60D43D42)
+I (C:\Users\Yoshi\Documents\Arm\Packs\Infineon\XMC4000_DFP\2.13.0\Device\XMC4500_series\Include\system_XMC4500.h)(0x5787563C)
+I (C:\Users\Yoshi\Documents\Arm\Packs\Infineon\XMC4000_DFP\2.13.0\Device\XMClib\inc\xmc4_scu.h)(0x5D286BF8)
+F (C:\Users\Yoshi\Documents\Arm\Packs\Infineon\XMC4000_DFP\2.13.0\Device\XMClib\src\xmc_can.c)(0x5D418240)(-c --cpu Cortex-M4.fp.sp -D__EVAL -g -O0 --apcs=interwork --split_sections-I.\Dave\Generated-I.\Dave\Generated\ADC_MEASUREMENT-I.\Dave\Generated\ANALOG_IO-I.\Dave\Generated\CAN_NODE-I.\Dave\Generated\CLOCK_XMC4-I.\Dave\Generated\CPU_CTRL_XMC4-I.\Dave\Generated\DIGITAL_IO-I.\Dave\Generated\FREERTOS-I.\Dave\Generated\FREERTOS\portable\GCC-I.\Dave\Generated\FREERTOS\portable\IAR-I.\Dave\Generated\FREERTOS\portable\Keil-I.\Dave\Generated\GLOBAL_ADC-I.\Dave\Generated\GLOBAL_CAN-I.\RTE\_XMC4500-F100x1024-IC:\Users\Yoshi\Documents\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include-IC:\Users\Yoshi\Documents\Arm\Packs\Infineon\XMC4000_DFP\2.13.0\Device\XMC4500_series\Include-IC:\Users\Yoshi\Documents\Arm\Packs\Infineon\XMC4000_DFP\2.13.0\Device\XMClib\inc-D__UVISION_VERSION="529" -D_RTE_ -DXMC4500_F100x1024 --C99-o .\uvbuild\xmc_can.o --omf_browse .\uvbuild\xmc_can.crf --depend .\uvbuild\xmc_can.d)
+I (C:\Users\Yoshi\Documents\Arm\Packs\Infineon\XMC4000_DFP\2.13.0\Device\XMClib\inc\xmc_can.h)(0x5D417B9E)
+I (C:\Users\Yoshi\Documents\Arm\Packs\Infineon\XMC4000_DFP\2.13.0\Device\XMClib\inc\xmc_common.h)(0x5D286C2E)
+I (C:\Keil_v5\ARM\ARMCC\include\stddef.h)(0x5D9B2678)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x5D9B2678)
+I (C:\Keil_v5\ARM\ARMCC\include\stdbool.h)(0x5D9B2678)
+I (C:\Keil_v5\ARM\ARMCC\include\string.h)(0x5D9B2678)
+I (C:\Users\Yoshi\Documents\Arm\Packs\Infineon\XMC4000_DFP\2.13.0\Device\XMClib\inc\xmc_device.h)(0x5D3BF384)
+I (C:\Users\Yoshi\Documents\Arm\Packs\Infineon\XMC4000_DFP\2.13.0\Device\XMC4500_series\Include\XMC4500.h)(0x59477BB0)
+I (C:\Users\Yoshi\Documents\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include\core_cm4.h)(0x60D43D42)
+I (C:\Users\Yoshi\Documents\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include\cmsis_version.h)(0x60D43D42)
+I (C:\Users\Yoshi\Documents\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include\cmsis_compiler.h)(0x60D43D42)
+I (C:\Users\Yoshi\Documents\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include\cmsis_armcc.h)(0x60D43D42)
+I (C:\Users\Yoshi\Documents\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include\mpu_armv7.h)(0x60D43D42)
+I (C:\Users\Yoshi\Documents\Arm\Packs\Infineon\XMC4000_DFP\2.13.0\Device\XMC4500_series\Include\system_XMC4500.h)(0x5787563C)
+I (C:\Users\Yoshi\Documents\Arm\Packs\Infineon\XMC4000_DFP\2.13.0\Device\XMClib\inc\xmc_scu.h)(0x5D286BF6)
+I (C:\Users\Yoshi\Documents\Arm\Packs\Infineon\XMC4000_DFP\2.13.0\Device\XMClib\inc\xmc4_scu.h)(0x5D286BF8)
+I (C:\Users\Yoshi\Documents\Arm\Packs\Infineon\XMC4000_DFP\2.13.0\Device\XMClib\inc\xmc_can_map.h)(0x5D417ED8)
+F (C:\Users\Yoshi\Documents\Arm\Packs\Infineon\XMC4000_DFP\2.13.0\Device\XMClib\src\xmc_ccu4.c)(0x5D286C00)(-c --cpu Cortex-M4.fp.sp -D__EVAL -g -O0 --apcs=interwork --split_sections-I.\Dave\Generated-I.\Dave\Generated\ADC_MEASUREMENT-I.\Dave\Generated\ANALOG_IO-I.\Dave\Generated\CAN_NODE-I.\Dave\Generated\CLOCK_XMC4-I.\Dave\Generated\CPU_CTRL_XMC4-I.\Dave\Generated\DIGITAL_IO-I.\Dave\Generated\FREERTOS-I.\Dave\Generated\FREERTOS\portable\GCC-I.\Dave\Generated\FREERTOS\portable\IAR-I.\Dave\Generated\FREERTOS\portable\Keil-I.\Dave\Generated\GLOBAL_ADC-I.\Dave\Generated\GLOBAL_CAN-I.\RTE\_XMC4500-F100x1024-IC:\Users\Yoshi\Documents\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include-IC:\Users\Yoshi\Documents\Arm\Packs\Infineon\XMC4000_DFP\2.13.0\Device\XMC4500_series\Include-IC:\Users\Yoshi\Documents\Arm\Packs\Infineon\XMC4000_DFP\2.13.0\Device\XMClib\inc-D__UVISION_VERSION="529" -D_RTE_ -DXMC4500_F100x1024 --C99-o .\uvbuild\xmc_ccu4.o --omf_browse .\uvbuild\xmc_ccu4.crf --depend .\uvbuild\xmc_ccu4.d)
+I (C:\Users\Yoshi\Documents\Arm\Packs\Infineon\XMC4000_DFP\2.13.0\Device\XMClib\inc\xmc_ccu4.h)(0x5D41C6CA)
+I (C:\Users\Yoshi\Documents\Arm\Packs\Infineon\XMC4000_DFP\2.13.0\Device\XMClib\inc\xmc_common.h)(0x5D286C2E)
+I (C:\Keil_v5\ARM\ARMCC\include\stddef.h)(0x5D9B2678)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x5D9B2678)
+I (C:\Keil_v5\ARM\ARMCC\include\stdbool.h)(0x5D9B2678)
+I (C:\Keil_v5\ARM\ARMCC\include\string.h)(0x5D9B2678)
+I (C:\Users\Yoshi\Documents\Arm\Packs\Infineon\XMC4000_DFP\2.13.0\Device\XMClib\inc\xmc_device.h)(0x5D3BF384)
+I (C:\Users\Yoshi\Documents\Arm\Packs\Infineon\XMC4000_DFP\2.13.0\Device\XMC4500_series\Include\XMC4500.h)(0x59477BB0)
+I (C:\Users\Yoshi\Documents\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include\core_cm4.h)(0x60D43D42)
+I (C:\Users\Yoshi\Documents\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include\cmsis_version.h)(0x60D43D42)
+I (C:\Users\Yoshi\Documents\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include\cmsis_compiler.h)(0x60D43D42)
+I (C:\Users\Yoshi\Documents\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include\cmsis_armcc.h)(0x60D43D42)
+I (C:\Users\Yoshi\Documents\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include\mpu_armv7.h)(0x60D43D42)
+I (C:\Users\Yoshi\Documents\Arm\Packs\Infineon\XMC4000_DFP\2.13.0\Device\XMC4500_series\Include\system_XMC4500.h)(0x5787563C)
+I (C:\Users\Yoshi\Documents\Arm\Packs\Infineon\XMC4000_DFP\2.13.0\Device\XMClib\inc\xmc4_ccu4_map.h)(0x5D286BF6)
+I (C:\Users\Yoshi\Documents\Arm\Packs\Infineon\XMC4000_DFP\2.13.0\Device\XMClib\inc\xmc_scu.h)(0x5D286BF6)
+I (C:\Users\Yoshi\Documents\Arm\Packs\Infineon\XMC4000_DFP\2.13.0\Device\XMClib\inc\xmc4_scu.h)(0x5D286BF8)
+F (C:\Users\Yoshi\Documents\Arm\Packs\Infineon\XMC4000_DFP\2.13.0\Device\XMClib\src\xmc_ccu8.c)(0x5D286C00)(-c --cpu Cortex-M4.fp.sp -D__EVAL -g -O0 --apcs=interwork --split_sections-I.\Dave\Generated-I.\Dave\Generated\ADC_MEASUREMENT-I.\Dave\Generated\ANALOG_IO-I.\Dave\Generated\CAN_NODE-I.\Dave\Generated\CLOCK_XMC4-I.\Dave\Generated\CPU_CTRL_XMC4-I.\Dave\Generated\DIGITAL_IO-I.\Dave\Generated\FREERTOS-I.\Dave\Generated\FREERTOS\portable\GCC-I.\Dave\Generated\FREERTOS\portable\IAR-I.\Dave\Generated\FREERTOS\portable\Keil-I.\Dave\Generated\GLOBAL_ADC-I.\Dave\Generated\GLOBAL_CAN-I.\RTE\_XMC4500-F100x1024-IC:\Users\Yoshi\Documents\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include-IC:\Users\Yoshi\Documents\Arm\Packs\Infineon\XMC4000_DFP\2.13.0\Device\XMC4500_series\Include-IC:\Users\Yoshi\Documents\Arm\Packs\Infineon\XMC4000_DFP\2.13.0\Device\XMClib\inc-D__UVISION_VERSION="529" -D_RTE_ -DXMC4500_F100x1024 --C99-o .\uvbuild\xmc_ccu8.o --omf_browse .\uvbuild\xmc_ccu8.crf --depend .\uvbuild\xmc_ccu8.d)
+I (C:\Users\Yoshi\Documents\Arm\Packs\Infineon\XMC4000_DFP\2.13.0\Device\XMClib\inc\xmc_ccu8.h)(0x5D41C6E6)
+I (C:\Users\Yoshi\Documents\Arm\Packs\Infineon\XMC4000_DFP\2.13.0\Device\XMClib\inc\xmc_common.h)(0x5D286C2E)
+I (C:\Keil_v5\ARM\ARMCC\include\stddef.h)(0x5D9B2678)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x5D9B2678)
+I (C:\Keil_v5\ARM\ARMCC\include\stdbool.h)(0x5D9B2678)
+I (C:\Keil_v5\ARM\ARMCC\include\string.h)(0x5D9B2678)
+I (C:\Users\Yoshi\Documents\Arm\Packs\Infineon\XMC4000_DFP\2.13.0\Device\XMClib\inc\xmc_device.h)(0x5D3BF384)
+I (C:\Users\Yoshi\Documents\Arm\Packs\Infineon\XMC4000_DFP\2.13.0\Device\XMC4500_series\Include\XMC4500.h)(0x59477BB0)
+I (C:\Users\Yoshi\Documents\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include\core_cm4.h)(0x60D43D42)
+I (C:\Users\Yoshi\Documents\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include\cmsis_version.h)(0x60D43D42)
+I (C:\Users\Yoshi\Documents\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include\cmsis_compiler.h)(0x60D43D42)
+I (C:\Users\Yoshi\Documents\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include\cmsis_armcc.h)(0x60D43D42)
+I (C:\Users\Yoshi\Documents\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include\mpu_armv7.h)(0x60D43D42)
+I (C:\Users\Yoshi\Documents\Arm\Packs\Infineon\XMC4000_DFP\2.13.0\Device\XMC4500_series\Include\system_XMC4500.h)(0x5787563C)
+I (C:\Users\Yoshi\Documents\Arm\Packs\Infineon\XMC4000_DFP\2.13.0\Device\XMClib\inc\xmc4_ccu8_map.h)(0x5D286BF6)
+I (C:\Users\Yoshi\Documents\Arm\Packs\Infineon\XMC4000_DFP\2.13.0\Device\XMClib\inc\xmc_scu.h)(0x5D286BF6)
+I (C:\Users\Yoshi\Documents\Arm\Packs\Infineon\XMC4000_DFP\2.13.0\Device\XMClib\inc\xmc4_scu.h)(0x5D286BF8)
+F (C:\Users\Yoshi\Documents\Arm\Packs\Infineon\XMC4000_DFP\2.13.0\Device\XMClib\src\xmc_common.c)(0x5D286C00)(-c --cpu Cortex-M4.fp.sp -D__EVAL -g -O0 --apcs=interwork --split_sections-I.\Dave\Generated-I.\Dave\Generated\ADC_MEASUREMENT-I.\Dave\Generated\ANALOG_IO-I.\Dave\Generated\CAN_NODE-I.\Dave\Generated\CLOCK_XMC4-I.\Dave\Generated\CPU_CTRL_XMC4-I.\Dave\Generated\DIGITAL_IO-I.\Dave\Generated\FREERTOS-I.\Dave\Generated\FREERTOS\portable\GCC-I.\Dave\Generated\FREERTOS\portable\IAR-I.\Dave\Generated\FREERTOS\portable\Keil-I.\Dave\Generated\GLOBAL_ADC-I.\Dave\Generated\GLOBAL_CAN-I.\RTE\_XMC4500-F100x1024-IC:\Users\Yoshi\Documents\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include-IC:\Users\Yoshi\Documents\Arm\Packs\Infineon\XMC4000_DFP\2.13.0\Device\XMC4500_series\Include-IC:\Users\Yoshi\Documents\Arm\Packs\Infineon\XMC4000_DFP\2.13.0\Device\XMClib\inc-D__UVISION_VERSION="529" -D_RTE_ -DXMC4500_F100x1024 --C99-o .\uvbuild\xmc_common.o --omf_browse .\uvbuild\xmc_common.crf --depend .\uvbuild\xmc_common.d)
+I (C:\Users\Yoshi\Documents\Arm\Packs\Infineon\XMC4000_DFP\2.13.0\Device\XMClib\inc\xmc_common.h)(0x5D286C2E)
+I (C:\Keil_v5\ARM\ARMCC\include\stddef.h)(0x5D9B2678)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x5D9B2678)
+I (C:\Keil_v5\ARM\ARMCC\include\stdbool.h)(0x5D9B2678)
+I (C:\Keil_v5\ARM\ARMCC\include\string.h)(0x5D9B2678)
+I (C:\Users\Yoshi\Documents\Arm\Packs\Infineon\XMC4000_DFP\2.13.0\Device\XMClib\inc\xmc_device.h)(0x5D3BF384)
+I (C:\Users\Yoshi\Documents\Arm\Packs\Infineon\XMC4000_DFP\2.13.0\Device\XMC4500_series\Include\XMC4500.h)(0x59477BB0)
+I (C:\Users\Yoshi\Documents\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include\core_cm4.h)(0x60D43D42)
+I (C:\Users\Yoshi\Documents\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include\cmsis_version.h)(0x60D43D42)
+I (C:\Users\Yoshi\Documents\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include\cmsis_compiler.h)(0x60D43D42)
+I (C:\Users\Yoshi\Documents\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include\cmsis_armcc.h)(0x60D43D42)
+I (C:\Users\Yoshi\Documents\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include\mpu_armv7.h)(0x60D43D42)
+I (C:\Users\Yoshi\Documents\Arm\Packs\Infineon\XMC4000_DFP\2.13.0\Device\XMC4500_series\Include\system_XMC4500.h)(0x5787563C)
+F (C:\Users\Yoshi\Documents\Arm\Packs\Infineon\XMC4000_DFP\2.13.0\Device\XMClib\src\xmc_dac.c)(0x5D286C00)(-c --cpu Cortex-M4.fp.sp -D__EVAL -g -O0 --apcs=interwork --split_sections-I.\Dave\Generated-I.\Dave\Generated\ADC_MEASUREMENT-I.\Dave\Generated\ANALOG_IO-I.\Dave\Generated\CAN_NODE-I.\Dave\Generated\CLOCK_XMC4-I.\Dave\Generated\CPU_CTRL_XMC4-I.\Dave\Generated\DIGITAL_IO-I.\Dave\Generated\FREERTOS-I.\Dave\Generated\FREERTOS\portable\GCC-I.\Dave\Generated\FREERTOS\portable\IAR-I.\Dave\Generated\FREERTOS\portable\Keil-I.\Dave\Generated\GLOBAL_ADC-I.\Dave\Generated\GLOBAL_CAN-I.\RTE\_XMC4500-F100x1024-IC:\Users\Yoshi\Documents\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include-IC:\Users\Yoshi\Documents\Arm\Packs\Infineon\XMC4000_DFP\2.13.0\Device\XMC4500_series\Include-IC:\Users\Yoshi\Documents\Arm\Packs\Infineon\XMC4000_DFP\2.13.0\Device\XMClib\inc-D__UVISION_VERSION="529" -D_RTE_ -DXMC4500_F100x1024 --C99-o .\uvbuild\xmc_dac.o --omf_browse .\uvbuild\xmc_dac.crf --depend .\uvbuild\xmc_dac.d)
+I (C:\Users\Yoshi\Documents\Arm\Packs\Infineon\XMC4000_DFP\2.13.0\Device\XMClib\inc\xmc_dac.h)(0x5D286BF6)
+I (C:\Users\Yoshi\Documents\Arm\Packs\Infineon\XMC4000_DFP\2.13.0\Device\XMClib\inc\xmc_common.h)(0x5D286C2E)
+I (C:\Keil_v5\ARM\ARMCC\include\stddef.h)(0x5D9B2678)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x5D9B2678)
+I (C:\Keil_v5\ARM\ARMCC\include\stdbool.h)(0x5D9B2678)
+I (C:\Keil_v5\ARM\ARMCC\include\string.h)(0x5D9B2678)
+I (C:\Users\Yoshi\Documents\Arm\Packs\Infineon\XMC4000_DFP\2.13.0\Device\XMClib\inc\xmc_device.h)(0x5D3BF384)
+I (C:\Users\Yoshi\Documents\Arm\Packs\Infineon\XMC4000_DFP\2.13.0\Device\XMC4500_series\Include\XMC4500.h)(0x59477BB0)
+I (C:\Users\Yoshi\Documents\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include\core_cm4.h)(0x60D43D42)
+I (C:\Users\Yoshi\Documents\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include\cmsis_version.h)(0x60D43D42)
+I (C:\Users\Yoshi\Documents\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include\cmsis_compiler.h)(0x60D43D42)
+I (C:\Users\Yoshi\Documents\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include\cmsis_armcc.h)(0x60D43D42)
+I (C:\Users\Yoshi\Documents\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include\mpu_armv7.h)(0x60D43D42)
+I (C:\Users\Yoshi\Documents\Arm\Packs\Infineon\XMC4000_DFP\2.13.0\Device\XMC4500_series\Include\system_XMC4500.h)(0x5787563C)
+I (C:\Users\Yoshi\Documents\Arm\Packs\Infineon\XMC4000_DFP\2.13.0\Device\XMClib\inc\xmc_scu.h)(0x5D286BF6)
+I (C:\Users\Yoshi\Documents\Arm\Packs\Infineon\XMC4000_DFP\2.13.0\Device\XMClib\inc\xmc4_scu.h)(0x5D286BF8)
+F (C:\Users\Yoshi\Documents\Arm\Packs\Infineon\XMC4000_DFP\2.13.0\Device\XMClib\src\xmc_dma.c)(0x5D286C00)(-c --cpu Cortex-M4.fp.sp -D__EVAL -g -O0 --apcs=interwork --split_sections-I.\Dave\Generated-I.\Dave\Generated\ADC_MEASUREMENT-I.\Dave\Generated\ANALOG_IO-I.\Dave\Generated\CAN_NODE-I.\Dave\Generated\CLOCK_XMC4-I.\Dave\Generated\CPU_CTRL_XMC4-I.\Dave\Generated\DIGITAL_IO-I.\Dave\Generated\FREERTOS-I.\Dave\Generated\FREERTOS\portable\GCC-I.\Dave\Generated\FREERTOS\portable\IAR-I.\Dave\Generated\FREERTOS\portable\Keil-I.\Dave\Generated\GLOBAL_ADC-I.\Dave\Generated\GLOBAL_CAN-I.\RTE\_XMC4500-F100x1024-IC:\Users\Yoshi\Documents\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include-IC:\Users\Yoshi\Documents\Arm\Packs\Infineon\XMC4000_DFP\2.13.0\Device\XMC4500_series\Include-IC:\Users\Yoshi\Documents\Arm\Packs\Infineon\XMC4000_DFP\2.13.0\Device\XMClib\inc-D__UVISION_VERSION="529" -D_RTE_ -DXMC4500_F100x1024 --C99-o .\uvbuild\xmc_dma.o --omf_browse .\uvbuild\xmc_dma.crf --depend .\uvbuild\xmc_dma.d)
+I (C:\Users\Yoshi\Documents\Arm\Packs\Infineon\XMC4000_DFP\2.13.0\Device\XMClib\inc\xmc_dma.h)(0x5D286BF6)
+I (C:\Users\Yoshi\Documents\Arm\Packs\Infineon\XMC4000_DFP\2.13.0\Device\XMClib\inc\xmc_common.h)(0x5D286C2E)
+I (C:\Keil_v5\ARM\ARMCC\include\stddef.h)(0x5D9B2678)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x5D9B2678)
+I (C:\Keil_v5\ARM\ARMCC\include\stdbool.h)(0x5D9B2678)
+I (C:\Keil_v5\ARM\ARMCC\include\string.h)(0x5D9B2678)
+I (C:\Users\Yoshi\Documents\Arm\Packs\Infineon\XMC4000_DFP\2.13.0\Device\XMClib\inc\xmc_device.h)(0x5D3BF384)
+I (C:\Users\Yoshi\Documents\Arm\Packs\Infineon\XMC4000_DFP\2.13.0\Device\XMC4500_series\Include\XMC4500.h)(0x59477BB0)
+I (C:\Users\Yoshi\Documents\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include\core_cm4.h)(0x60D43D42)
+I (C:\Users\Yoshi\Documents\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include\cmsis_version.h)(0x60D43D42)
+I (C:\Users\Yoshi\Documents\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include\cmsis_compiler.h)(0x60D43D42)
+I (C:\Users\Yoshi\Documents\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include\cmsis_armcc.h)(0x60D43D42)
+I (C:\Users\Yoshi\Documents\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include\mpu_armv7.h)(0x60D43D42)
+I (C:\Users\Yoshi\Documents\Arm\Packs\Infineon\XMC4000_DFP\2.13.0\Device\XMC4500_series\Include\system_XMC4500.h)(0x5787563C)
+I (C:\Users\Yoshi\Documents\Arm\Packs\Infineon\XMC4000_DFP\2.13.0\Device\XMClib\inc\xmc_dma_map.h)(0x5D286BF6)
+I (C:\Users\Yoshi\Documents\Arm\Packs\Infineon\XMC4000_DFP\2.13.0\Device\XMClib\inc\xmc_scu.h)(0x5D286BF6)
+I (C:\Users\Yoshi\Documents\Arm\Packs\Infineon\XMC4000_DFP\2.13.0\Device\XMClib\inc\xmc4_scu.h)(0x5D286BF8)
+F (C:\Users\Yoshi\Documents\Arm\Packs\Infineon\XMC4000_DFP\2.13.0\Device\XMClib\src\xmc_dsd.c)(0x5D286C00)(-c --cpu Cortex-M4.fp.sp -D__EVAL -g -O0 --apcs=interwork --split_sections-I.\Dave\Generated-I.\Dave\Generated\ADC_MEASUREMENT-I.\Dave\Generated\ANALOG_IO-I.\Dave\Generated\CAN_NODE-I.\Dave\Generated\CLOCK_XMC4-I.\Dave\Generated\CPU_CTRL_XMC4-I.\Dave\Generated\DIGITAL_IO-I.\Dave\Generated\FREERTOS-I.\Dave\Generated\FREERTOS\portable\GCC-I.\Dave\Generated\FREERTOS\portable\IAR-I.\Dave\Generated\FREERTOS\portable\Keil-I.\Dave\Generated\GLOBAL_ADC-I.\Dave\Generated\GLOBAL_CAN-I.\RTE\_XMC4500-F100x1024-IC:\Users\Yoshi\Documents\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include-IC:\Users\Yoshi\Documents\Arm\Packs\Infineon\XMC4000_DFP\2.13.0\Device\XMC4500_series\Include-IC:\Users\Yoshi\Documents\Arm\Packs\Infineon\XMC4000_DFP\2.13.0\Device\XMClib\inc-D__UVISION_VERSION="529" -D_RTE_ -DXMC4500_F100x1024 --C99-o .\uvbuild\xmc_dsd.o --omf_browse .\uvbuild\xmc_dsd.crf --depend .\uvbuild\xmc_dsd.d)
+I (C:\Users\Yoshi\Documents\Arm\Packs\Infineon\XMC4000_DFP\2.13.0\Device\XMClib\inc\xmc_dsd.h)(0x5D286BF6)
+I (C:\Users\Yoshi\Documents\Arm\Packs\Infineon\XMC4000_DFP\2.13.0\Device\XMClib\inc\xmc_common.h)(0x5D286C2E)
+I (C:\Keil_v5\ARM\ARMCC\include\stddef.h)(0x5D9B2678)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x5D9B2678)
+I (C:\Keil_v5\ARM\ARMCC\include\stdbool.h)(0x5D9B2678)
+I (C:\Keil_v5\ARM\ARMCC\include\string.h)(0x5D9B2678)
+I (C:\Users\Yoshi\Documents\Arm\Packs\Infineon\XMC4000_DFP\2.13.0\Device\XMClib\inc\xmc_device.h)(0x5D3BF384)
+I (C:\Users\Yoshi\Documents\Arm\Packs\Infineon\XMC4000_DFP\2.13.0\Device\XMC4500_series\Include\XMC4500.h)(0x59477BB0)
+I (C:\Users\Yoshi\Documents\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include\core_cm4.h)(0x60D43D42)
+I (C:\Users\Yoshi\Documents\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include\cmsis_version.h)(0x60D43D42)
+I (C:\Users\Yoshi\Documents\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include\cmsis_compiler.h)(0x60D43D42)
+I (C:\Users\Yoshi\Documents\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include\cmsis_armcc.h)(0x60D43D42)
+I (C:\Users\Yoshi\Documents\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include\mpu_armv7.h)(0x60D43D42)
+I (C:\Users\Yoshi\Documents\Arm\Packs\Infineon\XMC4000_DFP\2.13.0\Device\XMC4500_series\Include\system_XMC4500.h)(0x5787563C)
+I (C:\Users\Yoshi\Documents\Arm\Packs\Infineon\XMC4000_DFP\2.13.0\Device\XMClib\inc\xmc_scu.h)(0x5D286BF6)
+I (C:\Users\Yoshi\Documents\Arm\Packs\Infineon\XMC4000_DFP\2.13.0\Device\XMClib\inc\xmc4_scu.h)(0x5D286BF8)
+F (C:\Users\Yoshi\Documents\Arm\Packs\Infineon\XMC4000_DFP\2.13.0\Device\XMClib\src\xmc_ebu.c)(0x5D286C00)(-c --cpu Cortex-M4.fp.sp -D__EVAL -g -O0 --apcs=interwork --split_sections-I.\Dave\Generated-I.\Dave\Generated\ADC_MEASUREMENT-I.\Dave\Generated\ANALOG_IO-I.\Dave\Generated\CAN_NODE-I.\Dave\Generated\CLOCK_XMC4-I.\Dave\Generated\CPU_CTRL_XMC4-I.\Dave\Generated\DIGITAL_IO-I.\Dave\Generated\FREERTOS-I.\Dave\Generated\FREERTOS\portable\GCC-I.\Dave\Generated\FREERTOS\portable\IAR-I.\Dave\Generated\FREERTOS\portable\Keil-I.\Dave\Generated\GLOBAL_ADC-I.\Dave\Generated\GLOBAL_CAN-I.\RTE\_XMC4500-F100x1024-IC:\Users\Yoshi\Documents\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include-IC:\Users\Yoshi\Documents\Arm\Packs\Infineon\XMC4000_DFP\2.13.0\Device\XMC4500_series\Include-IC:\Users\Yoshi\Documents\Arm\Packs\Infineon\XMC4000_DFP\2.13.0\Device\XMClib\inc-D__UVISION_VERSION="529" -D_RTE_ -DXMC4500_F100x1024 --C99-o .\uvbuild\xmc_ebu.o --omf_browse .\uvbuild\xmc_ebu.crf --depend .\uvbuild\xmc_ebu.d)
+I (C:\Users\Yoshi\Documents\Arm\Packs\Infineon\XMC4000_DFP\2.13.0\Device\XMClib\inc\xmc_ebu.h)(0x5D286BF6)
+I (C:\Users\Yoshi\Documents\Arm\Packs\Infineon\XMC4000_DFP\2.13.0\Device\XMClib\inc\xmc_common.h)(0x5D286C2E)
+I (C:\Keil_v5\ARM\ARMCC\include\stddef.h)(0x5D9B2678)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x5D9B2678)
+I (C:\Keil_v5\ARM\ARMCC\include\stdbool.h)(0x5D9B2678)
+I (C:\Keil_v5\ARM\ARMCC\include\string.h)(0x5D9B2678)
+I (C:\Users\Yoshi\Documents\Arm\Packs\Infineon\XMC4000_DFP\2.13.0\Device\XMClib\inc\xmc_device.h)(0x5D3BF384)
+I (C:\Users\Yoshi\Documents\Arm\Packs\Infineon\XMC4000_DFP\2.13.0\Device\XMC4500_series\Include\XMC4500.h)(0x59477BB0)
+I (C:\Users\Yoshi\Documents\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include\core_cm4.h)(0x60D43D42)
+I (C:\Users\Yoshi\Documents\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include\cmsis_version.h)(0x60D43D42)
+I (C:\Users\Yoshi\Documents\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include\cmsis_compiler.h)(0x60D43D42)
+I (C:\Users\Yoshi\Documents\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include\cmsis_armcc.h)(0x60D43D42)
+I (C:\Users\Yoshi\Documents\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include\mpu_armv7.h)(0x60D43D42)
+I (C:\Users\Yoshi\Documents\Arm\Packs\Infineon\XMC4000_DFP\2.13.0\Device\XMC4500_series\Include\system_XMC4500.h)(0x5787563C)
+I (C:\Users\Yoshi\Documents\Arm\Packs\Infineon\XMC4000_DFP\2.13.0\Device\XMClib\inc\xmc_scu.h)(0x5D286BF6)
+I (C:\Users\Yoshi\Documents\Arm\Packs\Infineon\XMC4000_DFP\2.13.0\Device\XMClib\inc\xmc4_scu.h)(0x5D286BF8)
+F (C:\Users\Yoshi\Documents\Arm\Packs\Infineon\XMC4000_DFP\2.13.0\Device\XMClib\src\xmc_eru.c)(0x5D286C00)(-c --cpu Cortex-M4.fp.sp -D__EVAL -g -O0 --apcs=interwork --split_sections-I.\Dave\Generated-I.\Dave\Generated\ADC_MEASUREMENT-I.\Dave\Generated\ANALOG_IO-I.\Dave\Generated\CAN_NODE-I.\Dave\Generated\CLOCK_XMC4-I.\Dave\Generated\CPU_CTRL_XMC4-I.\Dave\Generated\DIGITAL_IO-I.\Dave\Generated\FREERTOS-I.\Dave\Generated\FREERTOS\portable\GCC-I.\Dave\Generated\FREERTOS\portable\IAR-I.\Dave\Generated\FREERTOS\portable\Keil-I.\Dave\Generated\GLOBAL_ADC-I.\Dave\Generated\GLOBAL_CAN-I.\RTE\_XMC4500-F100x1024-IC:\Users\Yoshi\Documents\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include-IC:\Users\Yoshi\Documents\Arm\Packs\Infineon\XMC4000_DFP\2.13.0\Device\XMC4500_series\Include-IC:\Users\Yoshi\Documents\Arm\Packs\Infineon\XMC4000_DFP\2.13.0\Device\XMClib\inc-D__UVISION_VERSION="529" -D_RTE_ -DXMC4500_F100x1024 --C99-o .\uvbuild\xmc_eru.o --omf_browse .\uvbuild\xmc_eru.crf --depend .\uvbuild\xmc_eru.d)
+I (C:\Users\Yoshi\Documents\Arm\Packs\Infineon\XMC4000_DFP\2.13.0\Device\XMClib\inc\xmc_eru.h)(0x5D286BF6)
+I (C:\Users\Yoshi\Documents\Arm\Packs\Infineon\XMC4000_DFP\2.13.0\Device\XMClib\inc\xmc_common.h)(0x5D286C2E)
+I (C:\Keil_v5\ARM\ARMCC\include\stddef.h)(0x5D9B2678)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x5D9B2678)
+I (C:\Keil_v5\ARM\ARMCC\include\stdbool.h)(0x5D9B2678)
+I (C:\Keil_v5\ARM\ARMCC\include\string.h)(0x5D9B2678)
+I (C:\Users\Yoshi\Documents\Arm\Packs\Infineon\XMC4000_DFP\2.13.0\Device\XMClib\inc\xmc_device.h)(0x5D3BF384)
+I (C:\Users\Yoshi\Documents\Arm\Packs\Infineon\XMC4000_DFP\2.13.0\Device\XMC4500_series\Include\XMC4500.h)(0x59477BB0)
+I (C:\Users\Yoshi\Documents\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include\core_cm4.h)(0x60D43D42)
+I (C:\Users\Yoshi\Documents\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include\cmsis_version.h)(0x60D43D42)
+I (C:\Users\Yoshi\Documents\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include\cmsis_compiler.h)(0x60D43D42)
+I (C:\Users\Yoshi\Documents\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include\cmsis_armcc.h)(0x60D43D42)
+I (C:\Users\Yoshi\Documents\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include\mpu_armv7.h)(0x60D43D42)
+I (C:\Users\Yoshi\Documents\Arm\Packs\Infineon\XMC4000_DFP\2.13.0\Device\XMC4500_series\Include\system_XMC4500.h)(0x5787563C)
+I (C:\Users\Yoshi\Documents\Arm\Packs\Infineon\XMC4000_DFP\2.13.0\Device\XMClib\inc\xmc4_eru_map.h)(0x5D286BF8)
+F (C:\Users\Yoshi\Documents\Arm\Packs\Infineon\XMC4000_DFP\2.13.0\Device\XMClib\src\xmc_eth_mac.c)(0x5D286C00)(-c --cpu Cortex-M4.fp.sp -D__EVAL -g -O0 --apcs=interwork --split_sections-I.\Dave\Generated-I.\Dave\Generated\ADC_MEASUREMENT-I.\Dave\Generated\ANALOG_IO-I.\Dave\Generated\CAN_NODE-I.\Dave\Generated\CLOCK_XMC4-I.\Dave\Generated\CPU_CTRL_XMC4-I.\Dave\Generated\DIGITAL_IO-I.\Dave\Generated\FREERTOS-I.\Dave\Generated\FREERTOS\portable\GCC-I.\Dave\Generated\FREERTOS\portable\IAR-I.\Dave\Generated\FREERTOS\portable\Keil-I.\Dave\Generated\GLOBAL_ADC-I.\Dave\Generated\GLOBAL_CAN-I.\RTE\_XMC4500-F100x1024-IC:\Users\Yoshi\Documents\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include-IC:\Users\Yoshi\Documents\Arm\Packs\Infineon\XMC4000_DFP\2.13.0\Device\XMC4500_series\Include-IC:\Users\Yoshi\Documents\Arm\Packs\Infineon\XMC4000_DFP\2.13.0\Device\XMClib\inc-D__UVISION_VERSION="529" -D_RTE_ -DXMC4500_F100x1024 --C99-o .\uvbuild\xmc_eth_mac.o --omf_browse .\uvbuild\xmc_eth_mac.crf --depend .\uvbuild\xmc_eth_mac.d)
+I (C:\Users\Yoshi\Documents\Arm\Packs\Infineon\XMC4000_DFP\2.13.0\Device\XMClib\inc\xmc_eth_mac.h)(0x5D286BF6)
+I (C:\Users\Yoshi\Documents\Arm\Packs\Infineon\XMC4000_DFP\2.13.0\Device\XMClib\inc\xmc_common.h)(0x5D286C2E)
+I (C:\Keil_v5\ARM\ARMCC\include\stddef.h)(0x5D9B2678)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x5D9B2678)
+I (C:\Keil_v5\ARM\ARMCC\include\stdbool.h)(0x5D9B2678)
+I (C:\Keil_v5\ARM\ARMCC\include\string.h)(0x5D9B2678)
+I (C:\Users\Yoshi\Documents\Arm\Packs\Infineon\XMC4000_DFP\2.13.0\Device\XMClib\inc\xmc_device.h)(0x5D3BF384)
+I (C:\Users\Yoshi\Documents\Arm\Packs\Infineon\XMC4000_DFP\2.13.0\Device\XMC4500_series\Include\XMC4500.h)(0x59477BB0)
+I (C:\Users\Yoshi\Documents\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include\core_cm4.h)(0x60D43D42)
+I (C:\Users\Yoshi\Documents\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include\cmsis_version.h)(0x60D43D42)
+I (C:\Users\Yoshi\Documents\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include\cmsis_compiler.h)(0x60D43D42)
+I (C:\Users\Yoshi\Documents\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include\cmsis_armcc.h)(0x60D43D42)
+I (C:\Users\Yoshi\Documents\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include\mpu_armv7.h)(0x60D43D42)
+I (C:\Users\Yoshi\Documents\Arm\Packs\Infineon\XMC4000_DFP\2.13.0\Device\XMC4500_series\Include\system_XMC4500.h)(0x5787563C)
+I (C:\Users\Yoshi\Documents\Arm\Packs\Infineon\XMC4000_DFP\2.13.0\Device\XMClib\inc\xmc_eth_mac_map.h)(0x5D286BF6)
+I (C:\Keil_v5\ARM\ARMCC\include\stdlib.h)(0x5D9B267A)
+I (C:\Users\Yoshi\Documents\Arm\Packs\Infineon\XMC4000_DFP\2.13.0\Device\XMClib\inc\xmc_scu.h)(0x5D286BF6)
+I (C:\Users\Yoshi\Documents\Arm\Packs\Infineon\XMC4000_DFP\2.13.0\Device\XMClib\inc\xmc4_scu.h)(0x5D286BF8)
+F (C:\Users\Yoshi\Documents\Arm\Packs\Infineon\XMC4000_DFP\2.13.0\Device\XMClib\src\xmc_fce.c)(0x5D286C00)(-c --cpu Cortex-M4.fp.sp -D__EVAL -g -O0 --apcs=interwork --split_sections-I.\Dave\Generated-I.\Dave\Generated\ADC_MEASUREMENT-I.\Dave\Generated\ANALOG_IO-I.\Dave\Generated\CAN_NODE-I.\Dave\Generated\CLOCK_XMC4-I.\Dave\Generated\CPU_CTRL_XMC4-I.\Dave\Generated\DIGITAL_IO-I.\Dave\Generated\FREERTOS-I.\Dave\Generated\FREERTOS\portable\GCC-I.\Dave\Generated\FREERTOS\portable\IAR-I.\Dave\Generated\FREERTOS\portable\Keil-I.\Dave\Generated\GLOBAL_ADC-I.\Dave\Generated\GLOBAL_CAN-I.\RTE\_XMC4500-F100x1024-IC:\Users\Yoshi\Documents\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include-IC:\Users\Yoshi\Documents\Arm\Packs\Infineon\XMC4000_DFP\2.13.0\Device\XMC4500_series\Include-IC:\Users\Yoshi\Documents\Arm\Packs\Infineon\XMC4000_DFP\2.13.0\Device\XMClib\inc-D__UVISION_VERSION="529" -D_RTE_ -DXMC4500_F100x1024 --C99-o .\uvbuild\xmc_fce.o --omf_browse .\uvbuild\xmc_fce.crf --depend .\uvbuild\xmc_fce.d)
+I (C:\Users\Yoshi\Documents\Arm\Packs\Infineon\XMC4000_DFP\2.13.0\Device\XMClib\inc\xmc_fce.h)(0x5D286BF6)
+I (C:\Users\Yoshi\Documents\Arm\Packs\Infineon\XMC4000_DFP\2.13.0\Device\XMClib\inc\xmc_common.h)(0x5D286C2E)
+I (C:\Keil_v5\ARM\ARMCC\include\stddef.h)(0x5D9B2678)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x5D9B2678)
+I (C:\Keil_v5\ARM\ARMCC\include\stdbool.h)(0x5D9B2678)
+I (C:\Keil_v5\ARM\ARMCC\include\string.h)(0x5D9B2678)
+I (C:\Users\Yoshi\Documents\Arm\Packs\Infineon\XMC4000_DFP\2.13.0\Device\XMClib\inc\xmc_device.h)(0x5D3BF384)
+I (C:\Users\Yoshi\Documents\Arm\Packs\Infineon\XMC4000_DFP\2.13.0\Device\XMC4500_series\Include\XMC4500.h)(0x59477BB0)
+I (C:\Users\Yoshi\Documents\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include\core_cm4.h)(0x60D43D42)
+I (C:\Users\Yoshi\Documents\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include\cmsis_version.h)(0x60D43D42)
+I (C:\Users\Yoshi\Documents\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include\cmsis_compiler.h)(0x60D43D42)
+I (C:\Users\Yoshi\Documents\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include\cmsis_armcc.h)(0x60D43D42)
+I (C:\Users\Yoshi\Documents\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include\mpu_armv7.h)(0x60D43D42)
+I (C:\Users\Yoshi\Documents\Arm\Packs\Infineon\XMC4000_DFP\2.13.0\Device\XMC4500_series\Include\system_XMC4500.h)(0x5787563C)
+I (C:\Users\Yoshi\Documents\Arm\Packs\Infineon\XMC4000_DFP\2.13.0\Device\XMClib\inc\xmc_scu.h)(0x5D286BF6)
+I (C:\Users\Yoshi\Documents\Arm\Packs\Infineon\XMC4000_DFP\2.13.0\Device\XMClib\inc\xmc4_scu.h)(0x5D286BF8)
+F (C:\Users\Yoshi\Documents\Arm\Packs\Infineon\XMC4000_DFP\2.13.0\Device\XMClib\src\xmc_gpio.c)(0x5D286C00)(-c --cpu Cortex-M4.fp.sp -D__EVAL -g -O0 --apcs=interwork --split_sections-I.\Dave\Generated-I.\Dave\Generated\ADC_MEASUREMENT-I.\Dave\Generated\ANALOG_IO-I.\Dave\Generated\CAN_NODE-I.\Dave\Generated\CLOCK_XMC4-I.\Dave\Generated\CPU_CTRL_XMC4-I.\Dave\Generated\DIGITAL_IO-I.\Dave\Generated\FREERTOS-I.\Dave\Generated\FREERTOS\portable\GCC-I.\Dave\Generated\FREERTOS\portable\IAR-I.\Dave\Generated\FREERTOS\portable\Keil-I.\Dave\Generated\GLOBAL_ADC-I.\Dave\Generated\GLOBAL_CAN-I.\RTE\_XMC4500-F100x1024-IC:\Users\Yoshi\Documents\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include-IC:\Users\Yoshi\Documents\Arm\Packs\Infineon\XMC4000_DFP\2.13.0\Device\XMC4500_series\Include-IC:\Users\Yoshi\Documents\Arm\Packs\Infineon\XMC4000_DFP\2.13.0\Device\XMClib\inc-D__UVISION_VERSION="529" -D_RTE_ -DXMC4500_F100x1024 --C99-o .\uvbuild\xmc_gpio.o --omf_browse .\uvbuild\xmc_gpio.crf --depend .\uvbuild\xmc_gpio.d)
+I (C:\Users\Yoshi\Documents\Arm\Packs\Infineon\XMC4000_DFP\2.13.0\Device\XMClib\inc\xmc_gpio.h)(0x5D286BF6)
+I (C:\Users\Yoshi\Documents\Arm\Packs\Infineon\XMC4000_DFP\2.13.0\Device\XMClib\inc\xmc_common.h)(0x5D286C2E)
+I (C:\Keil_v5\ARM\ARMCC\include\stddef.h)(0x5D9B2678)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x5D9B2678)
+I (C:\Keil_v5\ARM\ARMCC\include\stdbool.h)(0x5D9B2678)
+I (C:\Keil_v5\ARM\ARMCC\include\string.h)(0x5D9B2678)
+I (C:\Users\Yoshi\Documents\Arm\Packs\Infineon\XMC4000_DFP\2.13.0\Device\XMClib\inc\xmc_device.h)(0x5D3BF384)
+I (C:\Users\Yoshi\Documents\Arm\Packs\Infineon\XMC4000_DFP\2.13.0\Device\XMC4500_series\Include\XMC4500.h)(0x59477BB0)
+I (C:\Users\Yoshi\Documents\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include\core_cm4.h)(0x60D43D42)
+I (C:\Users\Yoshi\Documents\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include\cmsis_version.h)(0x60D43D42)
+I (C:\Users\Yoshi\Documents\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include\cmsis_compiler.h)(0x60D43D42)
+I (C:\Users\Yoshi\Documents\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include\cmsis_armcc.h)(0x60D43D42)
+I (C:\Users\Yoshi\Documents\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include\mpu_armv7.h)(0x60D43D42)
+I (C:\Users\Yoshi\Documents\Arm\Packs\Infineon\XMC4000_DFP\2.13.0\Device\XMC4500_series\Include\system_XMC4500.h)(0x5787563C)
+I (C:\Users\Yoshi\Documents\Arm\Packs\Infineon\XMC4000_DFP\2.13.0\Device\XMClib\inc\xmc4_gpio.h)(0x5D286BF8)
+I (C:\Users\Yoshi\Documents\Arm\Packs\Infineon\XMC4000_DFP\2.13.0\Device\XMClib\inc\xmc4_gpio_map.h)(0x5D286BF8)
+F (C:\Users\Yoshi\Documents\Arm\Packs\Infineon\XMC4000_DFP\2.13.0\Device\XMClib\src\xmc_hrpwm.c)(0x5D286C00)(-c --cpu Cortex-M4.fp.sp -D__EVAL -g -O0 --apcs=interwork --split_sections-I.\Dave\Generated-I.\Dave\Generated\ADC_MEASUREMENT-I.\Dave\Generated\ANALOG_IO-I.\Dave\Generated\CAN_NODE-I.\Dave\Generated\CLOCK_XMC4-I.\Dave\Generated\CPU_CTRL_XMC4-I.\Dave\Generated\DIGITAL_IO-I.\Dave\Generated\FREERTOS-I.\Dave\Generated\FREERTOS\portable\GCC-I.\Dave\Generated\FREERTOS\portable\IAR-I.\Dave\Generated\FREERTOS\portable\Keil-I.\Dave\Generated\GLOBAL_ADC-I.\Dave\Generated\GLOBAL_CAN-I.\RTE\_XMC4500-F100x1024-IC:\Users\Yoshi\Documents\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include-IC:\Users\Yoshi\Documents\Arm\Packs\Infineon\XMC4000_DFP\2.13.0\Device\XMC4500_series\Include-IC:\Users\Yoshi\Documents\Arm\Packs\Infineon\XMC4000_DFP\2.13.0\Device\XMClib\inc-D__UVISION_VERSION="529" -D_RTE_ -DXMC4500_F100x1024 --C99-o .\uvbuild\xmc_hrpwm.o --omf_browse .\uvbuild\xmc_hrpwm.crf --depend .\uvbuild\xmc_hrpwm.d)
+I (C:\Users\Yoshi\Documents\Arm\Packs\Infineon\XMC4000_DFP\2.13.0\Device\XMClib\inc\xmc_hrpwm.h)(0x5D286BF6)
+I (C:\Users\Yoshi\Documents\Arm\Packs\Infineon\XMC4000_DFP\2.13.0\Device\XMClib\inc\xmc_common.h)(0x5D286C2E)
+I (C:\Keil_v5\ARM\ARMCC\include\stddef.h)(0x5D9B2678)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x5D9B2678)
+I (C:\Keil_v5\ARM\ARMCC\include\stdbool.h)(0x5D9B2678)
+I (C:\Keil_v5\ARM\ARMCC\include\string.h)(0x5D9B2678)
+I (C:\Users\Yoshi\Documents\Arm\Packs\Infineon\XMC4000_DFP\2.13.0\Device\XMClib\inc\xmc_device.h)(0x5D3BF384)
+I (C:\Users\Yoshi\Documents\Arm\Packs\Infineon\XMC4000_DFP\2.13.0\Device\XMC4500_series\Include\XMC4500.h)(0x59477BB0)
+I (C:\Users\Yoshi\Documents\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include\core_cm4.h)(0x60D43D42)
+I (C:\Users\Yoshi\Documents\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include\cmsis_version.h)(0x60D43D42)
+I (C:\Users\Yoshi\Documents\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include\cmsis_compiler.h)(0x60D43D42)
+I (C:\Users\Yoshi\Documents\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include\cmsis_armcc.h)(0x60D43D42)
+I (C:\Users\Yoshi\Documents\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include\mpu_armv7.h)(0x60D43D42)
+I (C:\Users\Yoshi\Documents\Arm\Packs\Infineon\XMC4000_DFP\2.13.0\Device\XMC4500_series\Include\system_XMC4500.h)(0x5787563C)
+F (C:\Users\Yoshi\Documents\Arm\Packs\Infineon\XMC4000_DFP\2.13.0\Device\XMClib\src\xmc_i2c.c)(0x5D286C00)(-c --cpu Cortex-M4.fp.sp -D__EVAL -g -O0 --apcs=interwork --split_sections-I.\Dave\Generated-I.\Dave\Generated\ADC_MEASUREMENT-I.\Dave\Generated\ANALOG_IO-I.\Dave\Generated\CAN_NODE-I.\Dave\Generated\CLOCK_XMC4-I.\Dave\Generated\CPU_CTRL_XMC4-I.\Dave\Generated\DIGITAL_IO-I.\Dave\Generated\FREERTOS-I.\Dave\Generated\FREERTOS\portable\GCC-I.\Dave\Generated\FREERTOS\portable\IAR-I.\Dave\Generated\FREERTOS\portable\Keil-I.\Dave\Generated\GLOBAL_ADC-I.\Dave\Generated\GLOBAL_CAN-I.\RTE\_XMC4500-F100x1024-IC:\Users\Yoshi\Documents\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include-IC:\Users\Yoshi\Documents\Arm\Packs\Infineon\XMC4000_DFP\2.13.0\Device\XMC4500_series\Include-IC:\Users\Yoshi\Documents\Arm\Packs\Infineon\XMC4000_DFP\2.13.0\Device\XMClib\inc-D__UVISION_VERSION="529" -D_RTE_ -DXMC4500_F100x1024 --C99-o .\uvbuild\xmc_i2c.o --omf_browse .\uvbuild\xmc_i2c.crf --depend .\uvbuild\xmc_i2c.d)
+I (C:\Users\Yoshi\Documents\Arm\Packs\Infineon\XMC4000_DFP\2.13.0\Device\XMClib\inc\xmc_i2c.h)(0x5D286BF6)
+I (C:\Users\Yoshi\Documents\Arm\Packs\Infineon\XMC4000_DFP\2.13.0\Device\XMClib\inc\xmc_usic.h)(0x5D418170)
+I (C:\Users\Yoshi\Documents\Arm\Packs\Infineon\XMC4000_DFP\2.13.0\Device\XMClib\inc\xmc_common.h)(0x5D286C2E)
+I (C:\Keil_v5\ARM\ARMCC\include\stddef.h)(0x5D9B2678)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x5D9B2678)
+I (C:\Keil_v5\ARM\ARMCC\include\stdbool.h)(0x5D9B2678)
+I (C:\Keil_v5\ARM\ARMCC\include\string.h)(0x5D9B2678)
+I (C:\Users\Yoshi\Documents\Arm\Packs\Infineon\XMC4000_DFP\2.13.0\Device\XMClib\inc\xmc_device.h)(0x5D3BF384)
+I (C:\Users\Yoshi\Documents\Arm\Packs\Infineon\XMC4000_DFP\2.13.0\Device\XMC4500_series\Include\XMC4500.h)(0x59477BB0)
+I (C:\Users\Yoshi\Documents\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include\core_cm4.h)(0x60D43D42)
+I (C:\Users\Yoshi\Documents\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include\cmsis_version.h)(0x60D43D42)
+I (C:\Users\Yoshi\Documents\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include\cmsis_compiler.h)(0x60D43D42)
+I (C:\Users\Yoshi\Documents\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include\cmsis_armcc.h)(0x60D43D42)
+I (C:\Users\Yoshi\Documents\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include\mpu_armv7.h)(0x60D43D42)
+I (C:\Users\Yoshi\Documents\Arm\Packs\Infineon\XMC4000_DFP\2.13.0\Device\XMC4500_series\Include\system_XMC4500.h)(0x5787563C)
+I (C:\Users\Yoshi\Documents\Arm\Packs\Infineon\XMC4000_DFP\2.13.0\Device\XMClib\inc\xmc4_usic_map.h)(0x5D286BF8)
+F (C:\Users\Yoshi\Documents\Arm\Packs\Infineon\XMC4000_DFP\2.13.0\Device\XMClib\src\xmc_i2s.c)(0x5D286C00)(-c --cpu Cortex-M4.fp.sp -D__EVAL -g -O0 --apcs=interwork --split_sections-I.\Dave\Generated-I.\Dave\Generated\ADC_MEASUREMENT-I.\Dave\Generated\ANALOG_IO-I.\Dave\Generated\CAN_NODE-I.\Dave\Generated\CLOCK_XMC4-I.\Dave\Generated\CPU_CTRL_XMC4-I.\Dave\Generated\DIGITAL_IO-I.\Dave\Generated\FREERTOS-I.\Dave\Generated\FREERTOS\portable\GCC-I.\Dave\Generated\FREERTOS\portable\IAR-I.\Dave\Generated\FREERTOS\portable\Keil-I.\Dave\Generated\GLOBAL_ADC-I.\Dave\Generated\GLOBAL_CAN-I.\RTE\_XMC4500-F100x1024-IC:\Users\Yoshi\Documents\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include-IC:\Users\Yoshi\Documents\Arm\Packs\Infineon\XMC4000_DFP\2.13.0\Device\XMC4500_series\Include-IC:\Users\Yoshi\Documents\Arm\Packs\Infineon\XMC4000_DFP\2.13.0\Device\XMClib\inc-D__UVISION_VERSION="529" -D_RTE_ -DXMC4500_F100x1024 --C99-o .\uvbuild\xmc_i2s.o --omf_browse .\uvbuild\xmc_i2s.crf --depend .\uvbuild\xmc_i2s.d)
+I (C:\Users\Yoshi\Documents\Arm\Packs\Infineon\XMC4000_DFP\2.13.0\Device\XMClib\inc\xmc_scu.h)(0x5D286BF6)
+I (C:\Users\Yoshi\Documents\Arm\Packs\Infineon\XMC4000_DFP\2.13.0\Device\XMClib\inc\xmc_common.h)(0x5D286C2E)
+I (C:\Keil_v5\ARM\ARMCC\include\stddef.h)(0x5D9B2678)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x5D9B2678)
+I (C:\Keil_v5\ARM\ARMCC\include\stdbool.h)(0x5D9B2678)
+I (C:\Keil_v5\ARM\ARMCC\include\string.h)(0x5D9B2678)
+I (C:\Users\Yoshi\Documents\Arm\Packs\Infineon\XMC4000_DFP\2.13.0\Device\XMClib\inc\xmc_device.h)(0x5D3BF384)
+I (C:\Users\Yoshi\Documents\Arm\Packs\Infineon\XMC4000_DFP\2.13.0\Device\XMC4500_series\Include\XMC4500.h)(0x59477BB0)
+I (C:\Users\Yoshi\Documents\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include\core_cm4.h)(0x60D43D42)
+I (C:\Users\Yoshi\Documents\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include\cmsis_version.h)(0x60D43D42)
+I (C:\Users\Yoshi\Documents\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include\cmsis_compiler.h)(0x60D43D42)
+I (C:\Users\Yoshi\Documents\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include\cmsis_armcc.h)(0x60D43D42)
+I (C:\Users\Yoshi\Documents\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include\mpu_armv7.h)(0x60D43D42)
+I (C:\Users\Yoshi\Documents\Arm\Packs\Infineon\XMC4000_DFP\2.13.0\Device\XMC4500_series\Include\system_XMC4500.h)(0x5787563C)
+I (C:\Users\Yoshi\Documents\Arm\Packs\Infineon\XMC4000_DFP\2.13.0\Device\XMClib\inc\xmc4_scu.h)(0x5D286BF8)
+I (C:\Users\Yoshi\Documents\Arm\Packs\Infineon\XMC4000_DFP\2.13.0\Device\XMClib\inc\xmc_i2s.h)(0x5D286BF6)
+I (C:\Users\Yoshi\Documents\Arm\Packs\Infineon\XMC4000_DFP\2.13.0\Device\XMClib\inc\xmc_usic.h)(0x5D418170)
+I (C:\Users\Yoshi\Documents\Arm\Packs\Infineon\XMC4000_DFP\2.13.0\Device\XMClib\inc\xmc4_usic_map.h)(0x5D286BF8)
+F (C:\Users\Yoshi\Documents\Arm\Packs\Infineon\XMC4000_DFP\2.13.0\Device\XMClib\src\xmc_ledts.c)(0x5D286C00)(-c --cpu Cortex-M4.fp.sp -D__EVAL -g -O0 --apcs=interwork --split_sections-I.\Dave\Generated-I.\Dave\Generated\ADC_MEASUREMENT-I.\Dave\Generated\ANALOG_IO-I.\Dave\Generated\CAN_NODE-I.\Dave\Generated\CLOCK_XMC4-I.\Dave\Generated\CPU_CTRL_XMC4-I.\Dave\Generated\DIGITAL_IO-I.\Dave\Generated\FREERTOS-I.\Dave\Generated\FREERTOS\portable\GCC-I.\Dave\Generated\FREERTOS\portable\IAR-I.\Dave\Generated\FREERTOS\portable\Keil-I.\Dave\Generated\GLOBAL_ADC-I.\Dave\Generated\GLOBAL_CAN-I.\RTE\_XMC4500-F100x1024-IC:\Users\Yoshi\Documents\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include-IC:\Users\Yoshi\Documents\Arm\Packs\Infineon\XMC4000_DFP\2.13.0\Device\XMC4500_series\Include-IC:\Users\Yoshi\Documents\Arm\Packs\Infineon\XMC4000_DFP\2.13.0\Device\XMClib\inc-D__UVISION_VERSION="529" -D_RTE_ -DXMC4500_F100x1024 --C99-o .\uvbuild\xmc_ledts.o --omf_browse .\uvbuild\xmc_ledts.crf --depend .\uvbuild\xmc_ledts.d)
+I (C:\Users\Yoshi\Documents\Arm\Packs\Infineon\XMC4000_DFP\2.13.0\Device\XMClib\inc\xmc_ledts.h)(0x5D286BF6)
+I (C:\Users\Yoshi\Documents\Arm\Packs\Infineon\XMC4000_DFP\2.13.0\Device\XMClib\inc\xmc_common.h)(0x5D286C2E)
+I (C:\Keil_v5\ARM\ARMCC\include\stddef.h)(0x5D9B2678)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x5D9B2678)
+I (C:\Keil_v5\ARM\ARMCC\include\stdbool.h)(0x5D9B2678)
+I (C:\Keil_v5\ARM\ARMCC\include\string.h)(0x5D9B2678)
+I (C:\Users\Yoshi\Documents\Arm\Packs\Infineon\XMC4000_DFP\2.13.0\Device\XMClib\inc\xmc_device.h)(0x5D3BF384)
+I (C:\Users\Yoshi\Documents\Arm\Packs\Infineon\XMC4000_DFP\2.13.0\Device\XMC4500_series\Include\XMC4500.h)(0x59477BB0)
+I (C:\Users\Yoshi\Documents\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include\core_cm4.h)(0x60D43D42)
+I (C:\Users\Yoshi\Documents\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include\cmsis_version.h)(0x60D43D42)
+I (C:\Users\Yoshi\Documents\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include\cmsis_compiler.h)(0x60D43D42)
+I (C:\Users\Yoshi\Documents\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include\cmsis_armcc.h)(0x60D43D42)
+I (C:\Users\Yoshi\Documents\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include\mpu_armv7.h)(0x60D43D42)
+I (C:\Users\Yoshi\Documents\Arm\Packs\Infineon\XMC4000_DFP\2.13.0\Device\XMC4500_series\Include\system_XMC4500.h)(0x5787563C)
+I (C:\Users\Yoshi\Documents\Arm\Packs\Infineon\XMC4000_DFP\2.13.0\Device\XMClib\inc\xmc_scu.h)(0x5D286BF6)
+I (C:\Users\Yoshi\Documents\Arm\Packs\Infineon\XMC4000_DFP\2.13.0\Device\XMClib\inc\xmc4_scu.h)(0x5D286BF8)
+F (C:\Users\Yoshi\Documents\Arm\Packs\Infineon\XMC4000_DFP\2.13.0\Device\XMClib\src\xmc_posif.c)(0x5D286C00)(-c --cpu Cortex-M4.fp.sp -D__EVAL -g -O0 --apcs=interwork --split_sections-I.\Dave\Generated-I.\Dave\Generated\ADC_MEASUREMENT-I.\Dave\Generated\ANALOG_IO-I.\Dave\Generated\CAN_NODE-I.\Dave\Generated\CLOCK_XMC4-I.\Dave\Generated\CPU_CTRL_XMC4-I.\Dave\Generated\DIGITAL_IO-I.\Dave\Generated\FREERTOS-I.\Dave\Generated\FREERTOS\portable\GCC-I.\Dave\Generated\FREERTOS\portable\IAR-I.\Dave\Generated\FREERTOS\portable\Keil-I.\Dave\Generated\GLOBAL_ADC-I.\Dave\Generated\GLOBAL_CAN-I.\RTE\_XMC4500-F100x1024-IC:\Users\Yoshi\Documents\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include-IC:\Users\Yoshi\Documents\Arm\Packs\Infineon\XMC4000_DFP\2.13.0\Device\XMC4500_series\Include-IC:\Users\Yoshi\Documents\Arm\Packs\Infineon\XMC4000_DFP\2.13.0\Device\XMClib\inc-D__UVISION_VERSION="529" -D_RTE_ -DXMC4500_F100x1024 --C99-o .\uvbuild\xmc_posif.o --omf_browse .\uvbuild\xmc_posif.crf --depend .\uvbuild\xmc_posif.d)
+I (C:\Users\Yoshi\Documents\Arm\Packs\Infineon\XMC4000_DFP\2.13.0\Device\XMClib\inc\xmc_posif.h)(0x5D286BF6)
+I (C:\Users\Yoshi\Documents\Arm\Packs\Infineon\XMC4000_DFP\2.13.0\Device\XMClib\inc\xmc_common.h)(0x5D286C2E)
+I (C:\Keil_v5\ARM\ARMCC\include\stddef.h)(0x5D9B2678)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x5D9B2678)
+I (C:\Keil_v5\ARM\ARMCC\include\stdbool.h)(0x5D9B2678)
+I (C:\Keil_v5\ARM\ARMCC\include\string.h)(0x5D9B2678)
+I (C:\Users\Yoshi\Documents\Arm\Packs\Infineon\XMC4000_DFP\2.13.0\Device\XMClib\inc\xmc_device.h)(0x5D3BF384)
+I (C:\Users\Yoshi\Documents\Arm\Packs\Infineon\XMC4000_DFP\2.13.0\Device\XMC4500_series\Include\XMC4500.h)(0x59477BB0)
+I (C:\Users\Yoshi\Documents\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include\core_cm4.h)(0x60D43D42)
+I (C:\Users\Yoshi\Documents\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include\cmsis_version.h)(0x60D43D42)
+I (C:\Users\Yoshi\Documents\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include\cmsis_compiler.h)(0x60D43D42)
+I (C:\Users\Yoshi\Documents\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include\cmsis_armcc.h)(0x60D43D42)
+I (C:\Users\Yoshi\Documents\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include\mpu_armv7.h)(0x60D43D42)
+I (C:\Users\Yoshi\Documents\Arm\Packs\Infineon\XMC4000_DFP\2.13.0\Device\XMC4500_series\Include\system_XMC4500.h)(0x5787563C)
+I (C:\Users\Yoshi\Documents\Arm\Packs\Infineon\XMC4000_DFP\2.13.0\Device\XMClib\inc\xmc_scu.h)(0x5D286BF6)
+I (C:\Users\Yoshi\Documents\Arm\Packs\Infineon\XMC4000_DFP\2.13.0\Device\XMClib\inc\xmc4_scu.h)(0x5D286BF8)
+I (C:\Users\Yoshi\Documents\Arm\Packs\Infineon\XMC4000_DFP\2.13.0\Device\XMClib\inc\xmc_posif_map.h)(0x5D417EE8)
+F (C:\Users\Yoshi\Documents\Arm\Packs\Infineon\XMC4000_DFP\2.13.0\Device\XMClib\src\xmc_rtc.c)(0x5D286C00)(-c --cpu Cortex-M4.fp.sp -D__EVAL -g -O0 --apcs=interwork --split_sections-I.\Dave\Generated-I.\Dave\Generated\ADC_MEASUREMENT-I.\Dave\Generated\ANALOG_IO-I.\Dave\Generated\CAN_NODE-I.\Dave\Generated\CLOCK_XMC4-I.\Dave\Generated\CPU_CTRL_XMC4-I.\Dave\Generated\DIGITAL_IO-I.\Dave\Generated\FREERTOS-I.\Dave\Generated\FREERTOS\portable\GCC-I.\Dave\Generated\FREERTOS\portable\IAR-I.\Dave\Generated\FREERTOS\portable\Keil-I.\Dave\Generated\GLOBAL_ADC-I.\Dave\Generated\GLOBAL_CAN-I.\RTE\_XMC4500-F100x1024-IC:\Users\Yoshi\Documents\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include-IC:\Users\Yoshi\Documents\Arm\Packs\Infineon\XMC4000_DFP\2.13.0\Device\XMC4500_series\Include-IC:\Users\Yoshi\Documents\Arm\Packs\Infineon\XMC4000_DFP\2.13.0\Device\XMClib\inc-D__UVISION_VERSION="529" -D_RTE_ -DXMC4500_F100x1024 --C99-o .\uvbuild\xmc_rtc.o --omf_browse .\uvbuild\xmc_rtc.crf --depend .\uvbuild\xmc_rtc.d)
+I (C:\Users\Yoshi\Documents\Arm\Packs\Infineon\XMC4000_DFP\2.13.0\Device\XMClib\inc\xmc_scu.h)(0x5D286BF6)
+I (C:\Users\Yoshi\Documents\Arm\Packs\Infineon\XMC4000_DFP\2.13.0\Device\XMClib\inc\xmc_common.h)(0x5D286C2E)
+I (C:\Keil_v5\ARM\ARMCC\include\stddef.h)(0x5D9B2678)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x5D9B2678)
+I (C:\Keil_v5\ARM\ARMCC\include\stdbool.h)(0x5D9B2678)
+I (C:\Keil_v5\ARM\ARMCC\include\string.h)(0x5D9B2678)
+I (C:\Users\Yoshi\Documents\Arm\Packs\Infineon\XMC4000_DFP\2.13.0\Device\XMClib\inc\xmc_device.h)(0x5D3BF384)
+I (C:\Users\Yoshi\Documents\Arm\Packs\Infineon\XMC4000_DFP\2.13.0\Device\XMC4500_series\Include\XMC4500.h)(0x59477BB0)
+I (C:\Users\Yoshi\Documents\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include\core_cm4.h)(0x60D43D42)
+I (C:\Users\Yoshi\Documents\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include\cmsis_version.h)(0x60D43D42)
+I (C:\Users\Yoshi\Documents\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include\cmsis_compiler.h)(0x60D43D42)
+I (C:\Users\Yoshi\Documents\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include\cmsis_armcc.h)(0x60D43D42)
+I (C:\Users\Yoshi\Documents\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include\mpu_armv7.h)(0x60D43D42)
+I (C:\Users\Yoshi\Documents\Arm\Packs\Infineon\XMC4000_DFP\2.13.0\Device\XMC4500_series\Include\system_XMC4500.h)(0x5787563C)
+I (C:\Users\Yoshi\Documents\Arm\Packs\Infineon\XMC4000_DFP\2.13.0\Device\XMClib\inc\xmc4_scu.h)(0x5D286BF8)
+I (C:\Users\Yoshi\Documents\Arm\Packs\Infineon\XMC4000_DFP\2.13.0\Device\XMClib\inc\xmc_rtc.h)(0x5D286BF6)
+I (C:\Keil_v5\ARM\ARMCC\include\time.h)(0x5D9B2672)
+I (C:\Users\Yoshi\Documents\Arm\Packs\Infineon\XMC4000_DFP\2.13.0\Device\XMClib\inc\xmc4_rtc.h)(0x5D286BF8)
+F (C:\Users\Yoshi\Documents\Arm\Packs\Infineon\XMC4000_DFP\2.13.0\Device\XMClib\src\xmc_sdmmc.c)(0x5D286C00)(-c --cpu Cortex-M4.fp.sp -D__EVAL -g -O0 --apcs=interwork --split_sections-I.\Dave\Generated-I.\Dave\Generated\ADC_MEASUREMENT-I.\Dave\Generated\ANALOG_IO-I.\Dave\Generated\CAN_NODE-I.\Dave\Generated\CLOCK_XMC4-I.\Dave\Generated\CPU_CTRL_XMC4-I.\Dave\Generated\DIGITAL_IO-I.\Dave\Generated\FREERTOS-I.\Dave\Generated\FREERTOS\portable\GCC-I.\Dave\Generated\FREERTOS\portable\IAR-I.\Dave\Generated\FREERTOS\portable\Keil-I.\Dave\Generated\GLOBAL_ADC-I.\Dave\Generated\GLOBAL_CAN-I.\RTE\_XMC4500-F100x1024-IC:\Users\Yoshi\Documents\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include-IC:\Users\Yoshi\Documents\Arm\Packs\Infineon\XMC4000_DFP\2.13.0\Device\XMC4500_series\Include-IC:\Users\Yoshi\Documents\Arm\Packs\Infineon\XMC4000_DFP\2.13.0\Device\XMClib\inc-D__UVISION_VERSION="529" -D_RTE_ -DXMC4500_F100x1024 --C99-o .\uvbuild\xmc_sdmmc.o --omf_browse .\uvbuild\xmc_sdmmc.crf --depend .\uvbuild\xmc_sdmmc.d)
+I (C:\Users\Yoshi\Documents\Arm\Packs\Infineon\XMC4000_DFP\2.13.0\Device\XMClib\inc\xmc_sdmmc.h)(0x5D286BF6)
+I (C:\Users\Yoshi\Documents\Arm\Packs\Infineon\XMC4000_DFP\2.13.0\Device\XMClib\inc\xmc_common.h)(0x5D286C2E)
+I (C:\Keil_v5\ARM\ARMCC\include\stddef.h)(0x5D9B2678)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x5D9B2678)
+I (C:\Keil_v5\ARM\ARMCC\include\stdbool.h)(0x5D9B2678)
+I (C:\Keil_v5\ARM\ARMCC\include\string.h)(0x5D9B2678)
+I (C:\Users\Yoshi\Documents\Arm\Packs\Infineon\XMC4000_DFP\2.13.0\Device\XMClib\inc\xmc_device.h)(0x5D3BF384)
+I (C:\Users\Yoshi\Documents\Arm\Packs\Infineon\XMC4000_DFP\2.13.0\Device\XMC4500_series\Include\XMC4500.h)(0x59477BB0)
+I (C:\Users\Yoshi\Documents\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include\core_cm4.h)(0x60D43D42)
+I (C:\Users\Yoshi\Documents\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include\cmsis_version.h)(0x60D43D42)
+I (C:\Users\Yoshi\Documents\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include\cmsis_compiler.h)(0x60D43D42)
+I (C:\Users\Yoshi\Documents\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include\cmsis_armcc.h)(0x60D43D42)
+I (C:\Users\Yoshi\Documents\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include\mpu_armv7.h)(0x60D43D42)
+I (C:\Users\Yoshi\Documents\Arm\Packs\Infineon\XMC4000_DFP\2.13.0\Device\XMC4500_series\Include\system_XMC4500.h)(0x5787563C)
+I (C:\Users\Yoshi\Documents\Arm\Packs\Infineon\XMC4000_DFP\2.13.0\Device\XMClib\inc\xmc_scu.h)(0x5D286BF6)
+I (C:\Users\Yoshi\Documents\Arm\Packs\Infineon\XMC4000_DFP\2.13.0\Device\XMClib\inc\xmc4_scu.h)(0x5D286BF8)
+F (C:\Users\Yoshi\Documents\Arm\Packs\Infineon\XMC4000_DFP\2.13.0\Device\XMClib\src\xmc_spi.c)(0x5D286C00)(-c --cpu Cortex-M4.fp.sp -D__EVAL -g -O0 --apcs=interwork --split_sections-I.\Dave\Generated-I.\Dave\Generated\ADC_MEASUREMENT-I.\Dave\Generated\ANALOG_IO-I.\Dave\Generated\CAN_NODE-I.\Dave\Generated\CLOCK_XMC4-I.\Dave\Generated\CPU_CTRL_XMC4-I.\Dave\Generated\DIGITAL_IO-I.\Dave\Generated\FREERTOS-I.\Dave\Generated\FREERTOS\portable\GCC-I.\Dave\Generated\FREERTOS\portable\IAR-I.\Dave\Generated\FREERTOS\portable\Keil-I.\Dave\Generated\GLOBAL_ADC-I.\Dave\Generated\GLOBAL_CAN-I.\RTE\_XMC4500-F100x1024-IC:\Users\Yoshi\Documents\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include-IC:\Users\Yoshi\Documents\Arm\Packs\Infineon\XMC4000_DFP\2.13.0\Device\XMC4500_series\Include-IC:\Users\Yoshi\Documents\Arm\Packs\Infineon\XMC4000_DFP\2.13.0\Device\XMClib\inc-D__UVISION_VERSION="529" -D_RTE_ -DXMC4500_F100x1024 --C99-o .\uvbuild\xmc_spi.o --omf_browse .\uvbuild\xmc_spi.crf --depend .\uvbuild\xmc_spi.d)
+I (C:\Users\Yoshi\Documents\Arm\Packs\Infineon\XMC4000_DFP\2.13.0\Device\XMClib\inc\xmc_scu.h)(0x5D286BF6)
+I (C:\Users\Yoshi\Documents\Arm\Packs\Infineon\XMC4000_DFP\2.13.0\Device\XMClib\inc\xmc_common.h)(0x5D286C2E)
+I (C:\Keil_v5\ARM\ARMCC\include\stddef.h)(0x5D9B2678)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x5D9B2678)
+I (C:\Keil_v5\ARM\ARMCC\include\stdbool.h)(0x5D9B2678)
+I (C:\Keil_v5\ARM\ARMCC\include\string.h)(0x5D9B2678)
+I (C:\Users\Yoshi\Documents\Arm\Packs\Infineon\XMC4000_DFP\2.13.0\Device\XMClib\inc\xmc_device.h)(0x5D3BF384)
+I (C:\Users\Yoshi\Documents\Arm\Packs\Infineon\XMC4000_DFP\2.13.0\Device\XMC4500_series\Include\XMC4500.h)(0x59477BB0)
+I (C:\Users\Yoshi\Documents\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include\core_cm4.h)(0x60D43D42)
+I (C:\Users\Yoshi\Documents\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include\cmsis_version.h)(0x60D43D42)
+I (C:\Users\Yoshi\Documents\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include\cmsis_compiler.h)(0x60D43D42)
+I (C:\Users\Yoshi\Documents\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include\cmsis_armcc.h)(0x60D43D42)
+I (C:\Users\Yoshi\Documents\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include\mpu_armv7.h)(0x60D43D42)
+I (C:\Users\Yoshi\Documents\Arm\Packs\Infineon\XMC4000_DFP\2.13.0\Device\XMC4500_series\Include\system_XMC4500.h)(0x5787563C)
+I (C:\Users\Yoshi\Documents\Arm\Packs\Infineon\XMC4000_DFP\2.13.0\Device\XMClib\inc\xmc4_scu.h)(0x5D286BF8)
+I (C:\Users\Yoshi\Documents\Arm\Packs\Infineon\XMC4000_DFP\2.13.0\Device\XMClib\inc\xmc_spi.h)(0x5D286BF6)
+I (C:\Users\Yoshi\Documents\Arm\Packs\Infineon\XMC4000_DFP\2.13.0\Device\XMClib\inc\xmc_usic.h)(0x5D418170)
+I (C:\Users\Yoshi\Documents\Arm\Packs\Infineon\XMC4000_DFP\2.13.0\Device\XMClib\inc\xmc4_usic_map.h)(0x5D286BF8)
+F (C:\Users\Yoshi\Documents\Arm\Packs\Infineon\XMC4000_DFP\2.13.0\Device\XMClib\src\xmc_uart.c)(0x5D4182B2)(-c --cpu Cortex-M4.fp.sp -D__EVAL -g -O0 --apcs=interwork --split_sections-I.\Dave\Generated-I.\Dave\Generated\ADC_MEASUREMENT-I.\Dave\Generated\ANALOG_IO-I.\Dave\Generated\CAN_NODE-I.\Dave\Generated\CLOCK_XMC4-I.\Dave\Generated\CPU_CTRL_XMC4-I.\Dave\Generated\DIGITAL_IO-I.\Dave\Generated\FREERTOS-I.\Dave\Generated\FREERTOS\portable\GCC-I.\Dave\Generated\FREERTOS\portable\IAR-I.\Dave\Generated\FREERTOS\portable\Keil-I.\Dave\Generated\GLOBAL_ADC-I.\Dave\Generated\GLOBAL_CAN-I.\RTE\_XMC4500-F100x1024-IC:\Users\Yoshi\Documents\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include-IC:\Users\Yoshi\Documents\Arm\Packs\Infineon\XMC4000_DFP\2.13.0\Device\XMC4500_series\Include-IC:\Users\Yoshi\Documents\Arm\Packs\Infineon\XMC4000_DFP\2.13.0\Device\XMClib\inc-D__UVISION_VERSION="529" -D_RTE_ -DXMC4500_F100x1024 --C99-o .\uvbuild\xmc_uart.o --omf_browse .\uvbuild\xmc_uart.crf --depend .\uvbuild\xmc_uart.d)
+I (C:\Users\Yoshi\Documents\Arm\Packs\Infineon\XMC4000_DFP\2.13.0\Device\XMClib\inc\xmc_scu.h)(0x5D286BF6)
+I (C:\Users\Yoshi\Documents\Arm\Packs\Infineon\XMC4000_DFP\2.13.0\Device\XMClib\inc\xmc_common.h)(0x5D286C2E)
+I (C:\Keil_v5\ARM\ARMCC\include\stddef.h)(0x5D9B2678)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x5D9B2678)
+I (C:\Keil_v5\ARM\ARMCC\include\stdbool.h)(0x5D9B2678)
+I (C:\Keil_v5\ARM\ARMCC\include\string.h)(0x5D9B2678)
+I (C:\Users\Yoshi\Documents\Arm\Packs\Infineon\XMC4000_DFP\2.13.0\Device\XMClib\inc\xmc_device.h)(0x5D3BF384)
+I (C:\Users\Yoshi\Documents\Arm\Packs\Infineon\XMC4000_DFP\2.13.0\Device\XMC4500_series\Include\XMC4500.h)(0x59477BB0)
+I (C:\Users\Yoshi\Documents\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include\core_cm4.h)(0x60D43D42)
+I (C:\Users\Yoshi\Documents\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include\cmsis_version.h)(0x60D43D42)
+I (C:\Users\Yoshi\Documents\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include\cmsis_compiler.h)(0x60D43D42)
+I (C:\Users\Yoshi\Documents\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include\cmsis_armcc.h)(0x60D43D42)
+I (C:\Users\Yoshi\Documents\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include\mpu_armv7.h)(0x60D43D42)
+I (C:\Users\Yoshi\Documents\Arm\Packs\Infineon\XMC4000_DFP\2.13.0\Device\XMC4500_series\Include\system_XMC4500.h)(0x5787563C)
+I (C:\Users\Yoshi\Documents\Arm\Packs\Infineon\XMC4000_DFP\2.13.0\Device\XMClib\inc\xmc4_scu.h)(0x5D286BF8)
+I (C:\Users\Yoshi\Documents\Arm\Packs\Infineon\XMC4000_DFP\2.13.0\Device\XMClib\inc\xmc_uart.h)(0x5D286BF6)
+I (C:\Users\Yoshi\Documents\Arm\Packs\Infineon\XMC4000_DFP\2.13.0\Device\XMClib\inc\xmc_usic.h)(0x5D418170)
+I (C:\Users\Yoshi\Documents\Arm\Packs\Infineon\XMC4000_DFP\2.13.0\Device\XMClib\inc\xmc4_usic_map.h)(0x5D286BF8)
+F (C:\Users\Yoshi\Documents\Arm\Packs\Infineon\XMC4000_DFP\2.13.0\Device\XMClib\src\xmc_usbd.c)(0x5D286C00)(-c --cpu Cortex-M4.fp.sp -D__EVAL -g -O0 --apcs=interwork --split_sections-I.\Dave\Generated-I.\Dave\Generated\ADC_MEASUREMENT-I.\Dave\Generated\ANALOG_IO-I.\Dave\Generated\CAN_NODE-I.\Dave\Generated\CLOCK_XMC4-I.\Dave\Generated\CPU_CTRL_XMC4-I.\Dave\Generated\DIGITAL_IO-I.\Dave\Generated\FREERTOS-I.\Dave\Generated\FREERTOS\portable\GCC-I.\Dave\Generated\FREERTOS\portable\IAR-I.\Dave\Generated\FREERTOS\portable\Keil-I.\Dave\Generated\GLOBAL_ADC-I.\Dave\Generated\GLOBAL_CAN-I.\RTE\_XMC4500-F100x1024-IC:\Users\Yoshi\Documents\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include-IC:\Users\Yoshi\Documents\Arm\Packs\Infineon\XMC4000_DFP\2.13.0\Device\XMC4500_series\Include-IC:\Users\Yoshi\Documents\Arm\Packs\Infineon\XMC4000_DFP\2.13.0\Device\XMClib\inc-D__UVISION_VERSION="529" -D_RTE_ -DXMC4500_F100x1024 --C99-o .\uvbuild\xmc_usbd.o --omf_browse .\uvbuild\xmc_usbd.crf --depend .\uvbuild\xmc_usbd.d)
+I (C:\Users\Yoshi\Documents\Arm\Packs\Infineon\XMC4000_DFP\2.13.0\Device\XMClib\inc\xmc_usbd.h)(0x5D286BF6)
+I (C:\Users\Yoshi\Documents\Arm\Packs\Infineon\XMC4000_DFP\2.13.0\Device\XMClib\inc\xmc_common.h)(0x5D286C2E)
+I (C:\Keil_v5\ARM\ARMCC\include\stddef.h)(0x5D9B2678)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x5D9B2678)
+I (C:\Keil_v5\ARM\ARMCC\include\stdbool.h)(0x5D9B2678)
+I (C:\Keil_v5\ARM\ARMCC\include\string.h)(0x5D9B2678)
+I (C:\Users\Yoshi\Documents\Arm\Packs\Infineon\XMC4000_DFP\2.13.0\Device\XMClib\inc\xmc_device.h)(0x5D3BF384)
+I (C:\Users\Yoshi\Documents\Arm\Packs\Infineon\XMC4000_DFP\2.13.0\Device\XMC4500_series\Include\XMC4500.h)(0x59477BB0)
+I (C:\Users\Yoshi\Documents\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include\core_cm4.h)(0x60D43D42)
+I (C:\Users\Yoshi\Documents\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include\cmsis_version.h)(0x60D43D42)
+I (C:\Users\Yoshi\Documents\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include\cmsis_compiler.h)(0x60D43D42)
+I (C:\Users\Yoshi\Documents\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include\cmsis_armcc.h)(0x60D43D42)
+I (C:\Users\Yoshi\Documents\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include\mpu_armv7.h)(0x60D43D42)
+I (C:\Users\Yoshi\Documents\Arm\Packs\Infineon\XMC4000_DFP\2.13.0\Device\XMC4500_series\Include\system_XMC4500.h)(0x5787563C)
+I (C:\Keil_v5\ARM\ARMCC\include\stdlib.h)(0x5D9B267A)
+I (C:\Users\Yoshi\Documents\Arm\Packs\Infineon\XMC4000_DFP\2.13.0\Device\XMClib\inc\xmc_usbd_regs.h)(0x5D286BF6)
+I (C:\Users\Yoshi\Documents\Arm\Packs\Infineon\XMC4000_DFP\2.13.0\Device\XMClib\inc\xmc_scu.h)(0x5D286BF6)
+I (C:\Users\Yoshi\Documents\Arm\Packs\Infineon\XMC4000_DFP\2.13.0\Device\XMClib\inc\xmc4_scu.h)(0x5D286BF8)
+F (C:\Users\Yoshi\Documents\Arm\Packs\Infineon\XMC4000_DFP\2.13.0\Device\XMClib\src\xmc_usic.c)(0x5D418334)(-c --cpu Cortex-M4.fp.sp -D__EVAL -g -O0 --apcs=interwork --split_sections-I.\Dave\Generated-I.\Dave\Generated\ADC_MEASUREMENT-I.\Dave\Generated\ANALOG_IO-I.\Dave\Generated\CAN_NODE-I.\Dave\Generated\CLOCK_XMC4-I.\Dave\Generated\CPU_CTRL_XMC4-I.\Dave\Generated\DIGITAL_IO-I.\Dave\Generated\FREERTOS-I.\Dave\Generated\FREERTOS\portable\GCC-I.\Dave\Generated\FREERTOS\portable\IAR-I.\Dave\Generated\FREERTOS\portable\Keil-I.\Dave\Generated\GLOBAL_ADC-I.\Dave\Generated\GLOBAL_CAN-I.\RTE\_XMC4500-F100x1024-IC:\Users\Yoshi\Documents\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include-IC:\Users\Yoshi\Documents\Arm\Packs\Infineon\XMC4000_DFP\2.13.0\Device\XMC4500_series\Include-IC:\Users\Yoshi\Documents\Arm\Packs\Infineon\XMC4000_DFP\2.13.0\Device\XMClib\inc-D__UVISION_VERSION="529" -D_RTE_ -DXMC4500_F100x1024 --C99-o .\uvbuild\xmc_usic.o --omf_browse .\uvbuild\xmc_usic.crf --depend .\uvbuild\xmc_usic.d)
+I (C:\Users\Yoshi\Documents\Arm\Packs\Infineon\XMC4000_DFP\2.13.0\Device\XMClib\inc\xmc_usic.h)(0x5D418170)
+I (C:\Users\Yoshi\Documents\Arm\Packs\Infineon\XMC4000_DFP\2.13.0\Device\XMClib\inc\xmc_common.h)(0x5D286C2E)
+I (C:\Keil_v5\ARM\ARMCC\include\stddef.h)(0x5D9B2678)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x5D9B2678)
+I (C:\Keil_v5\ARM\ARMCC\include\stdbool.h)(0x5D9B2678)
+I (C:\Keil_v5\ARM\ARMCC\include\string.h)(0x5D9B2678)
+I (C:\Users\Yoshi\Documents\Arm\Packs\Infineon\XMC4000_DFP\2.13.0\Device\XMClib\inc\xmc_device.h)(0x5D3BF384)
+I (C:\Users\Yoshi\Documents\Arm\Packs\Infineon\XMC4000_DFP\2.13.0\Device\XMC4500_series\Include\XMC4500.h)(0x59477BB0)
+I (C:\Users\Yoshi\Documents\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include\core_cm4.h)(0x60D43D42)
+I (C:\Users\Yoshi\Documents\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include\cmsis_version.h)(0x60D43D42)
+I (C:\Users\Yoshi\Documents\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include\cmsis_compiler.h)(0x60D43D42)
+I (C:\Users\Yoshi\Documents\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include\cmsis_armcc.h)(0x60D43D42)
+I (C:\Users\Yoshi\Documents\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include\mpu_armv7.h)(0x60D43D42)
+I (C:\Users\Yoshi\Documents\Arm\Packs\Infineon\XMC4000_DFP\2.13.0\Device\XMC4500_series\Include\system_XMC4500.h)(0x5787563C)
+I (C:\Users\Yoshi\Documents\Arm\Packs\Infineon\XMC4000_DFP\2.13.0\Device\XMClib\inc\xmc4_usic_map.h)(0x5D286BF8)
+I (C:\Users\Yoshi\Documents\Arm\Packs\Infineon\XMC4000_DFP\2.13.0\Device\XMClib\inc\xmc_scu.h)(0x5D286BF6)
+I (C:\Users\Yoshi\Documents\Arm\Packs\Infineon\XMC4000_DFP\2.13.0\Device\XMClib\inc\xmc4_scu.h)(0x5D286BF8)
+I (C:\Keil_v5\ARM\ARMCC\include\stdlib.h)(0x5D9B267A)
+F (C:\Users\Yoshi\Documents\Arm\Packs\Infineon\XMC4000_DFP\2.13.0\Device\XMClib\src\xmc_vadc.c)(0x5D286C00)(-c --cpu Cortex-M4.fp.sp -D__EVAL -g -O0 --apcs=interwork --split_sections-I.\Dave\Generated-I.\Dave\Generated\ADC_MEASUREMENT-I.\Dave\Generated\ANALOG_IO-I.\Dave\Generated\CAN_NODE-I.\Dave\Generated\CLOCK_XMC4-I.\Dave\Generated\CPU_CTRL_XMC4-I.\Dave\Generated\DIGITAL_IO-I.\Dave\Generated\FREERTOS-I.\Dave\Generated\FREERTOS\portable\GCC-I.\Dave\Generated\FREERTOS\portable\IAR-I.\Dave\Generated\FREERTOS\portable\Keil-I.\Dave\Generated\GLOBAL_ADC-I.\Dave\Generated\GLOBAL_CAN-I.\RTE\_XMC4500-F100x1024-IC:\Users\Yoshi\Documents\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include-IC:\Users\Yoshi\Documents\Arm\Packs\Infineon\XMC4000_DFP\2.13.0\Device\XMC4500_series\Include-IC:\Users\Yoshi\Documents\Arm\Packs\Infineon\XMC4000_DFP\2.13.0\Device\XMClib\inc-D__UVISION_VERSION="529" -D_RTE_ -DXMC4500_F100x1024 --C99-o .\uvbuild\xmc_vadc.o --omf_browse .\uvbuild\xmc_vadc.crf --depend .\uvbuild\xmc_vadc.d)
+I (C:\Users\Yoshi\Documents\Arm\Packs\Infineon\XMC4000_DFP\2.13.0\Device\XMClib\inc\xmc_vadc.h)(0x5D286BF6)
+I (C:\Users\Yoshi\Documents\Arm\Packs\Infineon\XMC4000_DFP\2.13.0\Device\XMClib\inc\xmc_common.h)(0x5D286C2E)
+I (C:\Keil_v5\ARM\ARMCC\include\stddef.h)(0x5D9B2678)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x5D9B2678)
+I (C:\Keil_v5\ARM\ARMCC\include\stdbool.h)(0x5D9B2678)
+I (C:\Keil_v5\ARM\ARMCC\include\string.h)(0x5D9B2678)
+I (C:\Users\Yoshi\Documents\Arm\Packs\Infineon\XMC4000_DFP\2.13.0\Device\XMClib\inc\xmc_device.h)(0x5D3BF384)
+I (C:\Users\Yoshi\Documents\Arm\Packs\Infineon\XMC4000_DFP\2.13.0\Device\XMC4500_series\Include\XMC4500.h)(0x59477BB0)
+I (C:\Users\Yoshi\Documents\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include\core_cm4.h)(0x60D43D42)
+I (C:\Users\Yoshi\Documents\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include\cmsis_version.h)(0x60D43D42)
+I (C:\Users\Yoshi\Documents\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include\cmsis_compiler.h)(0x60D43D42)
+I (C:\Users\Yoshi\Documents\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include\cmsis_armcc.h)(0x60D43D42)
+I (C:\Users\Yoshi\Documents\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include\mpu_armv7.h)(0x60D43D42)
+I (C:\Users\Yoshi\Documents\Arm\Packs\Infineon\XMC4000_DFP\2.13.0\Device\XMC4500_series\Include\system_XMC4500.h)(0x5787563C)
+I (C:\Users\Yoshi\Documents\Arm\Packs\Infineon\XMC4000_DFP\2.13.0\Device\XMClib\inc\xmc_scu.h)(0x5D286BF6)
+I (C:\Users\Yoshi\Documents\Arm\Packs\Infineon\XMC4000_DFP\2.13.0\Device\XMClib\inc\xmc4_scu.h)(0x5D286BF8)
+I (C:\Users\Yoshi\Documents\Arm\Packs\Infineon\XMC4000_DFP\2.13.0\Device\XMClib\inc\xmc_vadc_map.h)(0x5D417D5E)
+F (C:\Users\Yoshi\Documents\Arm\Packs\Infineon\XMC4000_DFP\2.13.0\Device\XMClib\src\xmc_wdt.c)(0x5D286C00)(-c --cpu Cortex-M4.fp.sp -D__EVAL -g -O0 --apcs=interwork --split_sections-I.\Dave\Generated-I.\Dave\Generated\ADC_MEASUREMENT-I.\Dave\Generated\ANALOG_IO-I.\Dave\Generated\CAN_NODE-I.\Dave\Generated\CLOCK_XMC4-I.\Dave\Generated\CPU_CTRL_XMC4-I.\Dave\Generated\DIGITAL_IO-I.\Dave\Generated\FREERTOS-I.\Dave\Generated\FREERTOS\portable\GCC-I.\Dave\Generated\FREERTOS\portable\IAR-I.\Dave\Generated\FREERTOS\portable\Keil-I.\Dave\Generated\GLOBAL_ADC-I.\Dave\Generated\GLOBAL_CAN-I.\RTE\_XMC4500-F100x1024-IC:\Users\Yoshi\Documents\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include-IC:\Users\Yoshi\Documents\Arm\Packs\Infineon\XMC4000_DFP\2.13.0\Device\XMC4500_series\Include-IC:\Users\Yoshi\Documents\Arm\Packs\Infineon\XMC4000_DFP\2.13.0\Device\XMClib\inc-D__UVISION_VERSION="529" -D_RTE_ -DXMC4500_F100x1024 --C99-o .\uvbuild\xmc_wdt.o --omf_browse .\uvbuild\xmc_wdt.crf --depend .\uvbuild\xmc_wdt.d)
+I (C:\Users\Yoshi\Documents\Arm\Packs\Infineon\XMC4000_DFP\2.13.0\Device\XMClib\inc\xmc_wdt.h)(0x5D286BF6)
+I (C:\Users\Yoshi\Documents\Arm\Packs\Infineon\XMC4000_DFP\2.13.0\Device\XMClib\inc\xmc_common.h)(0x5D286C2E)
+I (C:\Keil_v5\ARM\ARMCC\include\stddef.h)(0x5D9B2678)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x5D9B2678)
+I (C:\Keil_v5\ARM\ARMCC\include\stdbool.h)(0x5D9B2678)
+I (C:\Keil_v5\ARM\ARMCC\include\string.h)(0x5D9B2678)
+I (C:\Users\Yoshi\Documents\Arm\Packs\Infineon\XMC4000_DFP\2.13.0\Device\XMClib\inc\xmc_device.h)(0x5D3BF384)
+I (C:\Users\Yoshi\Documents\Arm\Packs\Infineon\XMC4000_DFP\2.13.0\Device\XMC4500_series\Include\XMC4500.h)(0x59477BB0)
+I (C:\Users\Yoshi\Documents\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include\core_cm4.h)(0x60D43D42)
+I (C:\Users\Yoshi\Documents\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include\cmsis_version.h)(0x60D43D42)
+I (C:\Users\Yoshi\Documents\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include\cmsis_compiler.h)(0x60D43D42)
+I (C:\Users\Yoshi\Documents\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include\cmsis_armcc.h)(0x60D43D42)
+I (C:\Users\Yoshi\Documents\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include\mpu_armv7.h)(0x60D43D42)
+I (C:\Users\Yoshi\Documents\Arm\Packs\Infineon\XMC4000_DFP\2.13.0\Device\XMC4500_series\Include\system_XMC4500.h)(0x5787563C)
+I (C:\Users\Yoshi\Documents\Arm\Packs\Infineon\XMC4000_DFP\2.13.0\Device\XMClib\inc\xmc_scu.h)(0x5D286BF6)
+I (C:\Users\Yoshi\Documents\Arm\Packs\Infineon\XMC4000_DFP\2.13.0\Device\XMClib\inc\xmc4_scu.h)(0x5D286BF8)

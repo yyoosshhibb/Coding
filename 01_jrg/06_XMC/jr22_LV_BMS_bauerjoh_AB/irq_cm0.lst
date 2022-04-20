@@ -1,0 +1,311 @@
+
+
+
+ARM Macro Assembler    Page 1 
+
+
+    1 00000000         ;/*
+    2 00000000         ;;/*
+    3 00000000         ;; * Copyright (c) 2013-2018 Arm Limited. All rights res
+                       erved.
+    4 00000000         ;; *
+    5 00000000         ;; * SPDX-License-Identifier: Apache-2.0
+    6 00000000         ;; *
+    7 00000000         ;; * Licensed under the Apache License, Version 2.0 (the
+                        License); you may
+    8 00000000         ;; * not use this file except in compliance with the Lic
+                       ense.
+    9 00000000         ;; * You may obtain a copy of the License at
+   10 00000000         ;; *
+   11 00000000         ;; * www.apache.org/licenses/LICENSE-2.0
+   12 00000000         ;; *
+   13 00000000         ;; * Unless required by applicable law or agreed to in w
+                       riting, software
+   14 00000000         ;; * distributed under the License is distributed on an 
+                       AS IS BASIS, WITHOUT
+   15 00000000         ;; * WARRANTIES OR CONDITIONS OF ANY KIND, either expres
+                       s or implied.
+   16 00000000         ;; * See the License for the specific language governing
+                        permissions and
+   17 00000000         ;; * limitations under the License.
+   18 00000000         ;; *
+   19 00000000         ;; * ---------------------------------------------------
+                       --------------------------
+   20 00000000         ;; *
+   21 00000000         ;; * Project:     CMSIS-RTOS RTX
+   22 00000000         ;; * Title:       Cortex-M0 Exception handlers
+   23 00000000         ;; *
+   24 00000000         ;; * ---------------------------------------------------
+                       --------------------------
+   25 00000000         ;; */
+   26 00000000         
+   27 00000000         ;#if defined(__GNUC__)
+   28 00000000         ;        .end
+   29 00000000         ;#endif
+   30 00000000         
+   31 00000000         ;#if defined(__IASMARM__)
+   32 00000000         ;        END
+   33 00000000         ;#endif
+   34 00000000         ; 
+   35 00000000         ;#if defined(__CC_ARM)
+   36 00000000         ;#include "CMSIS_RTOS_RTX5/cmsis_rtos_rtx5_conf.h"
+   37 00000000         ;#if defined(__CORTEX_M0)
+   38 00000000         
+   39 00000000         ;I_T_RUN_OFS     EQU      20                     ; osRtx
+                       Info.thread.run offset
+   40 00000000         ;TCB_SP_OFS      EQU      56                     ; TCB.S
+                       P offset
+   41 00000000         
+   42 00000000         
+   43 00000000         ;                PRESERVE8
+   44 00000000         ;                THUMB
+   45 00000000         
+   46 00000000         
+   47 00000000         ;                AREA     |.constdata|, DATA, READONLY
+   48 00000000         ;                EXPORT   irqRtxLib
+
+
+
+ARM Macro Assembler    Page 2 
+
+
+   49 00000000         ;irqRtxLib       DCB      0                      ; Non w
+                       eak library reference
+   50 00000000         
+   51 00000000         
+   52 00000000         ;                AREA     |.text|, CODE, READONLY
+   53 00000000         
+   54 00000000         
+   55 00000000         ;SVC_Handler     PROC
+   56 00000000         ;                EXPORT   SVC_Handler
+   57 00000000         ;                IMPORT   osRtxUserSVC
+   58 00000000         ;                IMPORT   osRtxInfo
+   59 00000000         ;                IF       :DEF:MPU_LOAD
+   60 00000000         ;                IMPORT   osRtxMpuLoad
+   61 00000000         ;                ENDIF
+   62 00000000         
+   63 00000000         ;                MOV      R0,LR
+   64 00000000         ;                LSRS     R0,R0,#3               ; Deter
+                       mine return stack from EXC_RETURN bit 2
+   65 00000000         ;                BCC      SVC_MSP                ; Branc
+                       h if return stack is MSP
+   66 00000000         ;                MRS      R0,PSP                 ; Get P
+                       SP
+   67 00000000         
+   68 00000000         ;SVC_Number
+   69 00000000         ;                LDR      R1,[R0,#24]            ; Load 
+                       saved PC from stack
+   70 00000000         ;                SUBS     R1,R1,#2               ; Point
+                        to SVC instruction
+   71 00000000         ;                LDRB     R1,[R1]                ; Load 
+                       SVC number
+   72 00000000         ;                CMP      R1,#0
+   73 00000000         ;                BNE      SVC_User               ; Branc
+                       h if not SVC 0
+   74 00000000         
+   75 00000000         ;                PUSH     {R0,LR}                ; Save 
+                       SP and EXC_RETURN
+   76 00000000         ;                LDMIA    R0,{R0-R3}             ; Load 
+                       function parameters from stack
+   77 00000000         ;                BLX      R7                     ; Call 
+                       service function
+   78 00000000         ;                POP      {R2,R3}                ; Resto
+                       re SP and EXC_RETURN
+   79 00000000         ;                STMIA    R2!,{R0-R1}            ; Store
+                        function return values
+   80 00000000         ;                MOV      LR,R3                  ; Set E
+                       XC_RETURN
+   81 00000000         
+   82 00000000         ;SVC_Context
+   83 00000000         ;                LDR      R3,=osRtxInfo+I_T_RUN_OFS; Loa
+                       d address of osRtxInfo.run
+   84 00000000         ;                LDMIA    R3!,{R1,R2}            ; Load 
+                       osRtxInfo.thread.run: curr & next
+   85 00000000         ;                CMP      R1,R2                  ; Check
+                        if thread switch is required
+   86 00000000         ;                BEQ      SVC_Exit               ; Branc
+                       h when threads are the same
+   87 00000000         
+   88 00000000         ;                CMP      R1,#0
+   89 00000000         ;                BEQ      SVC_ContextSwitch      ; Branc
+
+
+
+ARM Macro Assembler    Page 3 
+
+
+                       h if running thread is deleted
+   90 00000000         
+   91 00000000         ;SVC_ContextSave
+   92 00000000         ;                MRS      R0,PSP                 ; Get P
+                       SP
+   93 00000000         ;                SUBS     R0,R0,#32              ; Calcu
+                       late SP
+   94 00000000         ;                STR      R0,[R1,#TCB_SP_OFS]    ; Store
+                        SP
+   95 00000000         ;                STMIA    R0!,{R4-R7}            ; Save 
+                       R4..R7
+   96 00000000         ;                MOV      R4,R8
+   97 00000000         ;                MOV      R5,R9
+   98 00000000         ;                MOV      R6,R10
+   99 00000000         ;                MOV      R7,R11
+  100 00000000         ;                STMIA    R0!,{R4-R7}            ; Save 
+                       R8..R11
+  101 00000000         
+  102 00000000         ;SVC_ContextSwitch
+  103 00000000         ;                SUBS     R3,R3,#8               ; Adjus
+                       t address
+  104 00000000         ;                STR      R2,[R3]                ; osRtx
+                       Info.thread.run: curr = next
+  105 00000000         
+  106 00000000         ;                IF       :DEF:MPU_LOAD
+  107 00000000         ;                PUSH     {R2,R3}                ; Save 
+                       registers
+  108 00000000         ;                MOV      R0,R2                  ; osRtx
+                       MpuLoad parameter
+  109 00000000         ;                BL       osRtxMpuLoad           ; Load 
+                       MPU for next thread
+  110 00000000         ;                POP      {R2,R3}                ; Resto
+                       re registers
+  111 00000000         ;                ENDIF
+  112 00000000         
+  113 00000000         ;SVC_ContextRestore
+  114 00000000         ;                LDR      R0,[R2,#TCB_SP_OFS]    ; Load 
+                       SP
+  115 00000000         ;                ADDS     R0,R0,#16              ; Adjus
+                       t address
+  116 00000000         ;                LDMIA    R0!,{R4-R7}            ; Resto
+                       re R8..R11
+  117 00000000         ;                MOV      R8,R4
+  118 00000000         ;                MOV      R9,R5
+  119 00000000         ;                MOV      R10,R6
+  120 00000000         ;                MOV      R11,R7
+  121 00000000         ;                MSR      PSP,R0                 ; Set P
+                       SP
+  122 00000000         ;                SUBS     R0,R0,#32              ; Adjus
+                       t address
+  123 00000000         ;                LDMIA    R0!,{R4-R7}            ; Resto
+                       re R4..R7
+  124 00000000         
+  125 00000000         ;                MOVS     R0,#~0xFFFFFFFD
+  126 00000000         ;                MVNS     R0,R0                  ; Set E
+                       XC_RETURN value
+  127 00000000         ;                BX       R0                     ; Exit 
+                       from handler
+  128 00000000         
+
+
+
+ARM Macro Assembler    Page 4 
+
+
+  129 00000000         ;SVC_MSP
+  130 00000000         ;                MRS      R0,MSP                 ; Get M
+                       SP
+  131 00000000         ;                B        SVC_Number
+  132 00000000         
+  133 00000000         ;SVC_Exit
+  134 00000000         ;                BX       LR                     ; Exit 
+                       from handler
+  135 00000000         
+  136 00000000         ;SVC_User
+  137 00000000         ;                LDR      R2,=osRtxUserSVC       ; Load 
+                       address of SVC table
+  138 00000000         ;                LDR      R3,[R2]                ; Load 
+                       SVC maximum number
+  139 00000000         ;                CMP      R1,R3                  ; Check
+                        SVC number range
+  140 00000000         ;                BHI      SVC_Exit               ; Branc
+                       h if out of range
+  141 00000000         
+  142 00000000         ;                PUSH     {R0,LR}                ; Save 
+                       SP and EXC_RETURN
+  143 00000000         ;                LSLS     R1,R1,#2
+  144 00000000         ;                LDR      R3,[R2,R1]             ; Load 
+                       address of SVC function
+  145 00000000         ;                MOV      R12,R3
+  146 00000000         ;                LDMIA    R0,{R0-R3}             ; Load 
+                       function parameters from stack
+  147 00000000         ;                BLX      R12                    ; Call 
+                       service function
+  148 00000000         ;                POP      {R2,R3}                ; Resto
+                       re SP and EXC_RETURN
+  149 00000000         ;                STR      R0,[R2]                ; Store
+                        function return value
+  150 00000000         ;                MOV      LR,R3                  ; Set E
+                       XC_RETURN
+  151 00000000         
+  152 00000000         ;                BX       LR                     ; Retur
+                       n from handler
+  153 00000000         
+  154 00000000         ;                ALIGN
+  155 00000000         ;                ENDP
+  156 00000000         
+  157 00000000         
+  158 00000000         ;PendSV_Handler  PROC
+  159 00000000         ;                EXPORT   PendSV_Handler
+  160 00000000         ;                IMPORT   osRtxPendSV_Handler
+  161 00000000         
+  162 00000000         ;                PUSH     {R0,LR}                ; Save 
+                       EXC_RETURN
+  163 00000000         ;                BL       osRtxPendSV_Handler    ; Call 
+                       osRtxPendSV_Handler
+  164 00000000         ;                POP      {R0,R1}                ; Resto
+                       re EXC_RETURN
+  165 00000000         ;                MOV      LR,R1                  ; Set E
+                       XC_RETURN
+  166 00000000         ;                B        SVC_Context
+  167 00000000         
+  168 00000000         ;                ALIGN
+  169 00000000         ;                ENDP
+
+
+
+ARM Macro Assembler    Page 5 
+
+
+  170 00000000         
+  171 00000000         
+  172 00000000         ;SysTick_Handler PROC
+  173 00000000         ;                EXPORT   SysTick_Handler
+  174 00000000         ;                IMPORT   osRtxTick_Handler
+  175 00000000         
+  176 00000000         ;                PUSH     {R0,LR}                ; Save 
+                       EXC_RETURN
+  177 00000000         ;                BL       osRtxTick_Handler      ; Call 
+                       osRtxTick_Handler
+  178 00000000         ;                POP      {R0,R1}                ; Resto
+                       re EXC_RETURN
+  179 00000000         ;                MOV      LR,R1                  ; Set E
+                       XC_RETURN
+  180 00000000         ;                B        SVC_Context
+  181 00000000         
+  182 00000000         ;                ALIGN
+  183 00000000         ;                ENDP
+  184 00000000         
+  185 00000000         
+  186 00000000         ;                END
+  187 00000000         ;#endif
+  188 00000000         ;#endif
+  189 00000000         
+                       
+Command Line: --debug --xref --diag_suppress=9931 --cpu=Cortex-M4.fp.sp --apcs=
+interwork --depend=.\uvbuild\irq_cm0.d -o.\uvbuild\irq_cm0.o -I.\Dave\Generated
+ -I.\Dave\Generated\ADC_MEASUREMENT -I.\Dave\Generated\ANALOG_IO -I.\Dave\Gener
+ated\CAN_NODE -I.\Dave\Generated\CLOCK_XMC4 -I.\Dave\Generated\CMSIS_RTOS_RTX5 
+-I.\Dave\Generated\CMSIS_RTOS_RTX5\Include -I.\Dave\Generated\CMSIS_RTOS_RTX5\R
+TX\Config -I.\Dave\Generated\CMSIS_RTOS_RTX5\RTX\Include -I.\Dave\Generated\CMS
+IS_RTOS_RTX5\RTX\Include1 -I.\Dave\Generated\CMSIS_RTOS_RTX5\RTX\Source -I.\Dav
+e\Generated\CPU_CTRL_XMC4 -I.\Dave\Generated\DIGITAL_IO -I.\Dave\Generated\GLOB
+AL_ADC -I.\Dave\Generated\GLOBAL_CAN -I.\RTE\CMSIS -I.\RTE\_XMC4500-F100x1024 -
+IC:\Users\Yoshi\AppData\Local\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include -IC:
+\Users\Yoshi\AppData\Local\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\RTOS2\Include -IC:\U
+sers\Yoshi\AppData\Local\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\RTOS2\RTX\Include -IC:
+\Users\Yoshi\AppData\Local\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\RTOS2\RTX\Include1 -
+IC:\Users\Yoshi\AppData\Local\Arm\Packs\Infineon\XMC4000_DFP\2.13.0\Device\XMC4
+500_series\Include -IC:\Users\Yoshi\AppData\Local\Arm\Packs\Infineon\XMC4000_DF
+P\2.13.0\Device\XMClib\inc --predefine="__RTX SETA 1" --predefine="__UVISION_VE
+RSION SETA 529" --predefine="_RTE_ SETA 1" --predefine="XMC4500_F100x1024 SETA 
+1" --list=.\irq_cm0.lst C:\Users\Yoshi\Documents\GitHub\Software\01_jrg\06_XMC\
+jr22_LV_BMS_bauerjoh_AB\Dave\Generated\CMSIS_RTOS_RTX5\RTX\Source\ARM\irq_cm0.s
+334 symbols in table

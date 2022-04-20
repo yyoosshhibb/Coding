@@ -1,0 +1,663 @@
+   1              	# 1 "../RTE/Device/XMC4500-F100x1024/startup_XMC4500.s"
+   1              	;*******************************************************************************
+   0              	
+   0              	
+   0              	
+   2              	;* @file     startup_XMC4500.s
+   3              	;* @brief    CMSIS Core Device Startup File for
+   4              	;*           Infineon XMC4500 Device Series
+   5              	;* @version  V1.7
+   6              	;* @date     June 2016
+   7              	;*
+   8              	;* @cond
+   9              	;**************************************************************************************************
+  10              	;* Copyright (c) 2012-2016, Infineon Technologies AG
+  11              	;* All rights reserved.                        
+  12              	;*                                             
+  13              	;* Redistribution and use in source and binary forms, with or without modification,are permitted pr
+  14              	;* following conditions are met:   
+  15              	;*                                                                              
+  16              	;* Redistributions of source code must retain the above copyright notice, this list of conditions a
+  17              	;* disclaimer.                        
+  18              	;* 
+  19              	;* Redistributions in binary form must reproduce the above copyright notice, this list of condition
+  20              	;* disclaimer in the documentation and/or other materials provided with the distribution.          
+  21              	;* 
+  22              	;* Neither the name of the copyright holders nor the names of its contributors may be used to endor
+  23              	;* products derived from this software without specific prior written permission.                  
+  24              	;*                                                                              
+  25              	;* THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND ANY EXPRESS OR I
+  26              	;* INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTI
+  27              	;* DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE  FOR ANY DIRECT, IN
+  28              	;* SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBS
+  29              	;* SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THE
+  30              	;* WHETHER IN CONTRACT, STRICT LIABILITY,OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY
+  31              	;* OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.                            
+  32              	;*                                                                              
+  33              	;* To improve the quality of the software, users are encouraged to share modifications, enhancement
+  34              	;* Infineon Technologies AG dave@infineon.com).                                                    
+  35              	;**************************************************************************************************
+  36              	;*
+  37              	;************************** Version History ************************************
+  38              	; V1.00, February 2012, First version
+  39              	; V1.10, August 2012, Adding Dave3 init function call
+  40              	; V1.20, February 2013, FIX for CPU prefetch bug implemented
+  41              	; V1.30, August 2013, Fix the bug of stack pointer alignment to a 8 byte boundary
+  42              	; V1.40, November 2014, Disable CPU workaround. 
+  43              	;                       To enable the workaround add to the ASM defines: 
+  44              	;                           ENABLE_PMU_CM_001_WORKAROUND 
+  45              	;                       Increased stack size. 
+  46              	;                       Removed DAVE3 dependency
+  47              	; V1.50, December 2014, Fix not available entries in vector table
+  48              	; V1.6 , March    2016, Fix weak definition of Veneers.
+  49              	;                       Only relevant for AA and AB step, which needs ENABLE_PMU_CM_001_WORKAROUND 
+  50              	; V1.7,  June     2016, Rename ENABLE_CPU_CM_001_WORKAROUND to ENABLE_PMU_CM_001_WORKAROUND
+  51              	;                       Action required: If using AA/AB step, use ENABLE_PMU_CM_001_WORKAROUND inst
+  52              	;*******************************************************************************
+  53              	;* @endcond
+  54              	
+  55              	; ------------------ <<< Use Configuration Wizard in Context Menu >>> ------------------
+  56              	           
+  57              	; <h> Stack Configuration
+  58              	;   <o> Stack Size (in Bytes) <0x0-0xFFFFFFFF:8>
+  59              	; </h>
+  60              	
+  61              	Stack_Size      EQU     0x00000800
+  62              	
+  63              	                AREA    STACK, NOINIT, READWRITE, ALIGN=3
+  64              	Stack_Mem       SPACE   Stack_Size
+  65              	__initial_sp
+  66              	
+  67              	
+  68              	; <h> Heap Configuration
+  69              	;   <o>  Heap Size (in Bytes) <0x0-0xFFFFFFFF:8>
+  70              	; </h>
+  71              	
+  72              	Heap_Size       EQU     0x00000200
+  73              	
+  74              	                AREA    HEAP, NOINIT, READWRITE, ALIGN=3
+  75              	__heap_base
+  76              	Heap_Mem        SPACE   Heap_Size
+  77              	__heap_limit
+  78              	
+  79              	                PRESERVE8
+  80              	                THUMB
+  81              	
+  82              	                IF    :DEF:ENABLE_PMU_CM_001_WORKAROUND
+  83              	                    MACRO
+  84              	                    Entry $Handler
+  85              	                    DCD   $Handler._Veneer
+  86              	                    MEND
+  87              	                ELSE
+  88              	                    MACRO
+  89              	                    Entry $Handler
+  90              	                    DCD   $Handler
+  91              	                    MEND
+  92              	                ENDIF
+  93              	
+  94              	; Vector Table Mapped to Address 0 at Reset
+  95              	
+  96              	                AREA    RESET, DATA, READONLY
+  97              	                EXPORT  __Vectors
+  98              	                EXPORT  __Vectors_End
+  99              	                EXPORT  __Vectors_Size
+ 100              	                
+ 101              	__Vectors       DCD     __initial_sp              ; 0 Top of Stack
+ 102              	                DCD     Reset_Handler             ; 1 Reset Handler
+ 103              	                Entry   NMI_Handler               ; 2 NMI Handler
+ 104              	                Entry   HardFault_Handler         ; 3 Hard Fault Handler
+ 105              	                Entry   MemManage_Handler         ; 4 MPU Fault Handler
+ 106              	                Entry   BusFault_Handler          ; 5 Bus Fault Handler
+ 107              	                Entry   UsageFault_Handler        ; 6 Usage Fault Handler
+ 108              	                DCD     0                         ; 7 Reserved
+ 109              	                DCD     0                         ; 8 Reserved
+ 110              	                DCD     0                         ; 9 Reserved
+ 111              	                DCD     0                         ; 10 Reserved
+ 112              	                Entry   SVC_Handler               ; 11 SVCall Handler
+ 113              	                Entry   DebugMon_Handler          ; 12 Debug Monitor Handler
+ 114              	                DCD     0                         ; 13 Reserved
+ 115              	                Entry   PendSV_Handler            ; 14 PendSV Handler
+ 116              	                Entry   SysTick_Handler           ; 15 SysTick Handler
+ 117              	
+ 118              	; Interrupt Handlers for Service Requests (SR) from XMC4500 Peripherals */
+ 119              	                Entry   SCU_0_IRQHandler            ; Handler name for SR SCU_0     
+ 120              	                Entry   ERU0_0_IRQHandler           ; Handler name for SR ERU0_0    
+ 121              	                Entry   ERU0_1_IRQHandler           ; Handler name for SR ERU0_1    
+ 122              	                Entry   ERU0_2_IRQHandler           ; Handler name for SR ERU0_2    
+ 123              	                Entry   ERU0_3_IRQHandler           ; Handler name for SR ERU0_3     
+ 124              	                Entry   ERU1_0_IRQHandler           ; Handler name for SR ERU1_0    
+ 125              	                Entry   ERU1_1_IRQHandler           ; Handler name for SR ERU1_1    
+ 126              	                Entry   ERU1_2_IRQHandler           ; Handler name for SR ERU1_2    
+ 127              	                Entry   ERU1_3_IRQHandler           ; Handler name for SR ERU1_3    
+ 128              	                DCD     0                           ; Not Available                 
+ 129              	                DCD     0                           ; Not Available                 
+ 130              	                DCD     0                           ; Not Available                 
+ 131              	                Entry   PMU0_0_IRQHandler           ; Handler name for SR PMU0_0    
+ 132              	                DCD     0                           ; Not Available                 
+ 133              	                Entry   VADC0_C0_0_IRQHandler       ; Handler name for SR VADC0_C0_0  
+ 134              	                Entry   VADC0_C0_1_IRQHandler       ; Handler name for SR VADC0_C0_1  
+ 135              	                Entry   VADC0_C0_2_IRQHandler       ; Handler name for SR VADC0_C0_1  
+ 136              	                Entry   VADC0_C0_3_IRQHandler       ; Handler name for SR VADC0_C0_3  
+ 137              	                Entry   VADC0_G0_0_IRQHandler       ; Handler name for SR VADC0_G0_0  
+ 138              	                Entry   VADC0_G0_1_IRQHandler       ; Handler name for SR VADC0_G0_1  
+ 139              	                Entry   VADC0_G0_2_IRQHandler       ; Handler name for SR VADC0_G0_2  
+ 140              	                Entry   VADC0_G0_3_IRQHandler       ; Handler name for SR VADC0_G0_3  
+ 141              	                Entry   VADC0_G1_0_IRQHandler       ; Handler name for SR VADC0_G1_0  
+ 142              	                Entry   VADC0_G1_1_IRQHandler       ; Handler name for SR VADC0_G1_1  
+ 143              	                Entry   VADC0_G1_2_IRQHandler       ; Handler name for SR VADC0_G1_2  
+ 144              	                Entry   VADC0_G1_3_IRQHandler       ; Handler name for SR VADC0_G1_3  
+ 145              	                Entry   VADC0_G2_0_IRQHandler       ; Handler name for SR VADC0_G2_0  
+ 146              	                Entry   VADC0_G2_1_IRQHandler       ; Handler name for SR VADC0_G2_1  
+ 147              	                Entry   VADC0_G2_2_IRQHandler       ; Handler name for SR VADC0_G2_2  
+ 148              	                Entry   VADC0_G2_3_IRQHandler       ; Handler name for SR VADC0_G2_3  
+ 149              	                Entry   VADC0_G3_0_IRQHandler       ; Handler name for SR VADC0_G3_0  
+ 150              	                Entry   VADC0_G3_1_IRQHandler       ; Handler name for SR VADC0_G3_1  
+ 151              	                Entry   VADC0_G3_2_IRQHandler       ; Handler name for SR VADC0_G3_2  
+ 152              	                Entry   VADC0_G3_3_IRQHandler       ; Handler name for SR VADC0_G3_3  
+ 153              	                Entry   DSD0_0_IRQHandler           ; Handler name for SR DSD_SRM_0 
+ 154              	                Entry   DSD0_1_IRQHandler           ; Handler name for SR DSD_SRM_1 
+ 155              	                Entry   DSD0_2_IRQHandler           ; Handler name for SR DSD_SRM_2 
+ 156              	                Entry   DSD0_3_IRQHandler           ; Handler name for SR DSD_SRM_3 
+ 157              	                Entry   DSD0_4_IRQHandler           ; Handler name for SR DSD_SRA_0 
+ 158              	                Entry   DSD0_5_IRQHandler           ; Handler name for SR DSD_SRA_1 
+ 159              	                Entry   DSD0_6_IRQHandler           ; Handler name for SR DSD_SRA_2 
+ 160              	                Entry   DSD0_7_IRQHandler           ; Handler name for SR DSD_SRA_3 
+ 161              	                Entry   DAC0_0_IRQHandler           ; Handler name for SR DAC0_0    
+ 162              	                Entry   DAC0_1_IRQHandler           ; Handler name for SR DAC0_1    
+ 163              	                Entry   CCU40_0_IRQHandler          ; Handler name for SR CCU40_0   
+ 164              	                Entry   CCU40_1_IRQHandler          ; Handler name for SR CCU40_1   
+ 165              	                Entry   CCU40_2_IRQHandler          ; Handler name for SR CCU40_2   
+ 166              	                Entry   CCU40_3_IRQHandler          ; Handler name for SR CCU40_3   
+ 167              	                Entry   CCU41_0_IRQHandler          ; Handler name for SR CCU41_0   
+ 168              	                Entry   CCU41_1_IRQHandler          ; Handler name for SR CCU41_1   
+ 169              	                Entry   CCU41_2_IRQHandler          ; Handler name for SR CCU41_2   
+ 170              	                Entry   CCU41_3_IRQHandler          ; Handler name for SR CCU41_3   
+ 171              	                Entry   CCU42_0_IRQHandler          ; Handler name for SR CCU42_0   
+ 172              	                Entry   CCU42_1_IRQHandler          ; Handler name for SR CCU42_1   
+ 173              	                Entry   CCU42_2_IRQHandler          ; Handler name for SR CCU42_2   
+ 174              	                Entry   CCU42_3_IRQHandler          ; Handler name for SR CCU42_3   
+ 175              	                Entry   CCU43_0_IRQHandler          ; Handler name for SR CCU43_0   
+ 176              	                Entry   CCU43_1_IRQHandler          ; Handler name for SR CCU43_1   
+ 177              	                Entry   CCU43_2_IRQHandler          ; Handler name for SR CCU43_2   
+ 178              	                Entry   CCU43_3_IRQHandler          ; Handler name for SR CCU43_3   
+ 179              	                Entry   CCU80_0_IRQHandler          ; Handler name for SR CCU80_0   
+ 180              	                Entry   CCU80_1_IRQHandler          ; Handler name for SR CCU80_1   
+ 181              	                Entry   CCU80_2_IRQHandler          ; Handler name for SR CCU80_2   
+ 182              	                Entry   CCU80_3_IRQHandler          ; Handler name for SR CCU80_3   
+ 183              	                Entry   CCU81_0_IRQHandler          ; Handler name for SR CCU81_0   
+ 184              	                Entry   CCU81_1_IRQHandler          ; Handler name for SR CCU81_1   
+ 185              	                Entry   CCU81_2_IRQHandler          ; Handler name for SR CCU81_2   
+ 186              	                Entry   CCU81_3_IRQHandler          ; Handler name for SR CCU81_3   
+ 187              	                Entry   POSIF0_0_IRQHandler         ; Handler name for SR POSIF0_0  
+ 188              	                Entry   POSIF0_1_IRQHandler         ; Handler name for SR POSIF0_1  
+ 189              	                Entry   POSIF1_0_IRQHandler         ; Handler name for SR POSIF1_0  
+ 190              	                Entry   POSIF1_1_IRQHandler         ; Handler name for SR POSIF1_1  
+ 191              	                DCD     0                           ; Not Available                 
+ 192              	                DCD     0                           ; Not Available                 
+ 193              	                DCD     0                           ; Not Available                 
+ 194              	                DCD     0                           ; Not Available                 
+ 195              	                Entry   CAN0_0_IRQHandler           ; Handler name for SR CAN0_0    
+ 196              	                Entry   CAN0_1_IRQHandler           ; Handler name for SR CAN0_1    
+ 197              	                Entry   CAN0_2_IRQHandler           ; Handler name for SR CAN0_2    
+ 198              	                Entry   CAN0_3_IRQHandler           ; Handler name for SR CAN0_3    
+ 199              	                Entry   CAN0_4_IRQHandler           ; Handler name for SR CAN0_4    
+ 200              	                Entry   CAN0_5_IRQHandler           ; Handler name for SR CAN0_5    
+ 201              	                Entry   CAN0_6_IRQHandler           ; Handler name for SR CAN0_6    
+ 202              	                Entry   CAN0_7_IRQHandler           ; Handler name for SR CAN0_7    
+ 203              	                Entry   USIC0_0_IRQHandler          ; Handler name for SR USIC0_0   
+ 204              	                Entry   USIC0_1_IRQHandler          ; Handler name for SR USIC0_1   
+ 205              	                Entry   USIC0_2_IRQHandler          ; Handler name for SR USIC0_2   
+ 206              	                Entry   USIC0_3_IRQHandler          ; Handler name for SR USIC0_3   
+ 207              	                Entry   USIC0_4_IRQHandler          ; Handler name for SR USIC0_4   
+ 208              	                Entry   USIC0_5_IRQHandler          ; Handler name for SR USIC0_5   
+ 209              	                Entry   USIC1_0_IRQHandler          ; Handler name for SR USIC1_0   
+ 210              	                Entry   USIC1_1_IRQHandler          ; Handler name for SR USIC1_1   
+ 211              	                Entry   USIC1_2_IRQHandler          ; Handler name for SR USIC1_2   
+ 212              	                Entry   USIC1_3_IRQHandler          ; Handler name for SR USIC1_3   
+ 213              	                Entry   USIC1_4_IRQHandler          ; Handler name for SR USIC1_4   
+ 214              	                Entry   USIC1_5_IRQHandler          ; Handler name for SR USIC1_5   
+ 215              	                Entry   USIC2_0_IRQHandler          ; Handler name for SR USIC2_0
+ 216              	                Entry   USIC2_1_IRQHandler          ; Handler name for SR USIC2_1                 
+ 217              	                Entry   USIC2_2_IRQHandler          ; Handler name for SR USIC2_2
+ 218              	                Entry   USIC2_3_IRQHandler          ; Handler name for SR USIC2_3
+ 219              	                Entry   USIC2_4_IRQHandler          ; Handler name for SR USIC2_4
+ 220              	                Entry   USIC2_5_IRQHandler          ; Handler name for SR USIC2_5
+ 221              	                Entry   LEDTS0_0_IRQHandler         ; Handler name for SR LEDTS0_0  
+ 222              	                DCD     0                           ; Not Available                 
+ 223              	                Entry   FCE0_0_IRQHandler           ; Handler name for SR FCE0_0    
+ 224              	                Entry   GPDMA0_0_IRQHandler         ; Handler name for SR GPDMA0_0  
+ 225              	                Entry   SDMMC0_0_IRQHandler         ; Handler name for SR SDMMC0_0                 
+ 226              	                Entry   USB0_0_IRQHandler           ; Handler name for SR USB0_0    
+ 227              	                Entry   ETH0_0_IRQHandler           ; Handler name for SR ETH0_0    
+ 228              	                DCD     0                           ; Not Available                 
+ 229              	                Entry   GPDMA1_0_IRQHandler         ; Handler name for SR GPDMA0_1
+ 230              	                DCD     0                           ; Not Available                 
+ 231              	__Vectors_End
+ 232              	
+ 233              	__Vectors_Size  EQU     __Vectors_End - __Vectors
+ 234              	
+ 235              	                AREA    |.text|, CODE, READONLY
+ 236              	
+ 237              	; Reset Handler
+ 238              	
+ 239              	Reset_Handler   PROC
+ 240              	                EXPORT  Reset_Handler           [WEAK]
+ 241              	                IMPORT  SystemInit
+ 242              	                IMPORT  __main
+ 243              	                LDR     SP, =__initial_sp
+ 244 ???? 0648     	                LDR     R0, =SystemInit
+ 245 ???? 8047     	                BLX     R0
+ 246 ???? 0648     	                LDR     R0, =__main
+ 247 ???? 0047     	                BX      R0
+ 248              	                ENDP
+ 249              	
+ 250              	; Dummy Exception Handlers (infinite loops which can be modified)
+ 251              	             
+ 252              	Default_Handler PROC
+ 253              	                EXPORT  NMI_Handler             [WEAK]
+ 254              	                EXPORT  HardFault_Handler       [WEAK]
+ 255              	                EXPORT  MemManage_Handler       [WEAK]
+ 256              	                EXPORT  BusFault_Handler        [WEAK]
+ 257              	                EXPORT  UsageFault_Handler      [WEAK]
+ 258              	                EXPORT  SVC_Handler             [WEAK]
+ 259              	                EXPORT  DebugMon_Handler        [WEAK]
+ 260              	                EXPORT  PendSV_Handler          [WEAK]
+ 261              	                EXPORT  SysTick_Handler         [WEAK]
+ 262              	                
+ 263              	                EXPORT  SCU_0_IRQHandler        [WEAK]
+ 264              	                EXPORT  ERU0_0_IRQHandler       [WEAK]
+ 265              	                EXPORT  ERU0_1_IRQHandler       [WEAK]
+ 266              	                EXPORT  ERU0_2_IRQHandler       [WEAK]
+ 267              	                EXPORT  ERU0_3_IRQHandler       [WEAK]
+ 268              	                EXPORT  ERU1_0_IRQHandler       [WEAK]
+ 269              	                EXPORT  ERU1_1_IRQHandler       [WEAK]
+ 270              	                EXPORT  ERU1_2_IRQHandler       [WEAK]
+ 271              	                EXPORT  ERU1_3_IRQHandler       [WEAK]
+ 272              	                EXPORT  PMU0_0_IRQHandler       [WEAK]
+ 273              	                EXPORT  VADC0_C0_0_IRQHandler   [WEAK]
+ 274              	                EXPORT  VADC0_C0_1_IRQHandler   [WEAK]
+ 275              	                EXPORT  VADC0_C0_2_IRQHandler   [WEAK]
+ 276              	                EXPORT  VADC0_C0_3_IRQHandler   [WEAK]
+ 277              	                EXPORT  VADC0_G0_0_IRQHandler   [WEAK]
+ 278              	                EXPORT  VADC0_G0_1_IRQHandler   [WEAK]
+ 279              	                EXPORT  VADC0_G0_2_IRQHandler   [WEAK]
+ 280              	                EXPORT  VADC0_G0_3_IRQHandler   [WEAK]
+ 281              	                EXPORT  VADC0_G1_0_IRQHandler   [WEAK]
+ 282              	                EXPORT  VADC0_G1_1_IRQHandler   [WEAK]
+ 283              	                EXPORT  VADC0_G1_2_IRQHandler   [WEAK]
+ 284              	                EXPORT  VADC0_G1_3_IRQHandler   [WEAK]
+ 285              	                EXPORT  VADC0_G2_0_IRQHandler   [WEAK]
+ 286              	                EXPORT  VADC0_G2_1_IRQHandler   [WEAK]
+ 287              	                EXPORT  VADC0_G2_2_IRQHandler   [WEAK]
+ 288              	                EXPORT  VADC0_G2_3_IRQHandler   [WEAK]
+ 289              	                EXPORT  VADC0_G3_0_IRQHandler   [WEAK]
+ 290              	                EXPORT  VADC0_G3_1_IRQHandler   [WEAK]
+ 291              	                EXPORT  VADC0_G3_2_IRQHandler   [WEAK]
+ 292              	                EXPORT  VADC0_G3_3_IRQHandler   [WEAK]
+ 293              	                EXPORT  DSD0_0_IRQHandler       [WEAK]
+ 294              	                EXPORT  DSD0_1_IRQHandler       [WEAK]
+ 295              	                EXPORT  DSD0_2_IRQHandler       [WEAK]
+ 296              	                EXPORT  DSD0_3_IRQHandler       [WEAK]
+ 297              	                EXPORT  DSD0_4_IRQHandler       [WEAK]
+ 298              	                EXPORT  DSD0_5_IRQHandler       [WEAK]
+ 299              	                EXPORT  DSD0_6_IRQHandler       [WEAK]
+ 300              	                EXPORT  DSD0_7_IRQHandler       [WEAK]
+ 301              	                EXPORT  DAC0_0_IRQHandler       [WEAK]
+ 302              	                EXPORT  DAC0_1_IRQHandler       [WEAK]
+ 303              	                EXPORT  CCU40_0_IRQHandler      [WEAK]
+ 304              	                EXPORT  CCU40_1_IRQHandler      [WEAK]
+ 305              	                EXPORT  CCU40_2_IRQHandler      [WEAK]
+ 306              	                EXPORT  CCU40_3_IRQHandler      [WEAK]
+ 307              	                EXPORT  CCU41_0_IRQHandler      [WEAK]
+ 308              	                EXPORT  CCU41_1_IRQHandler      [WEAK]
+ 309              	                EXPORT  CCU41_2_IRQHandler      [WEAK]
+ 310              	                EXPORT  CCU41_3_IRQHandler      [WEAK]
+ 311              	                EXPORT  CCU42_0_IRQHandler      [WEAK]
+ 312              	                EXPORT  CCU42_1_IRQHandler      [WEAK]
+ 313              	                EXPORT  CCU42_2_IRQHandler      [WEAK]
+ 314              	                EXPORT  CCU42_3_IRQHandler      [WEAK]
+ 315              	                EXPORT  CCU43_0_IRQHandler      [WEAK]
+ 316              	                EXPORT  CCU43_1_IRQHandler      [WEAK]
+ 317              	                EXPORT  CCU43_2_IRQHandler      [WEAK]
+ 318              	                EXPORT  CCU43_3_IRQHandler      [WEAK]
+ 319              	                EXPORT  CCU80_0_IRQHandler      [WEAK]
+ 320              	                EXPORT  CCU80_1_IRQHandler      [WEAK]
+ 321              	                EXPORT  CCU80_2_IRQHandler      [WEAK]
+ 322              	                EXPORT  CCU80_3_IRQHandler      [WEAK]
+ 323              	                EXPORT  CCU81_0_IRQHandler      [WEAK]
+ 324              	                EXPORT  CCU81_1_IRQHandler      [WEAK]
+ 325              	                EXPORT  CCU81_2_IRQHandler      [WEAK]
+ 326              	                EXPORT  CCU81_3_IRQHandler      [WEAK]
+ 327              	                EXPORT  POSIF0_0_IRQHandler     [WEAK]
+ 328              	                EXPORT  POSIF0_1_IRQHandler     [WEAK]
+ 329              	                EXPORT  POSIF1_0_IRQHandler     [WEAK]
+ 330              	                EXPORT  POSIF1_1_IRQHandler     [WEAK]
+ 331              	                EXPORT  CAN0_0_IRQHandler       [WEAK]
+ 332              	                EXPORT  CAN0_1_IRQHandler       [WEAK]
+ 333              	                EXPORT  CAN0_2_IRQHandler       [WEAK]
+ 334              	                EXPORT  CAN0_3_IRQHandler       [WEAK]
+ 335              	                EXPORT  CAN0_4_IRQHandler       [WEAK]
+ 336              	                EXPORT  CAN0_5_IRQHandler       [WEAK]
+ 337              	                EXPORT  CAN0_6_IRQHandler       [WEAK]
+ 338              	                EXPORT  CAN0_7_IRQHandler       [WEAK]
+ 339              	                EXPORT  USIC0_0_IRQHandler      [WEAK]
+ 340              	                EXPORT  USIC0_1_IRQHandler      [WEAK]
+ 341              	                EXPORT  USIC0_2_IRQHandler      [WEAK]
+ 342              	                EXPORT  USIC0_3_IRQHandler      [WEAK]
+ 343              	                EXPORT  USIC0_4_IRQHandler      [WEAK]
+ 344              	                EXPORT  USIC0_5_IRQHandler      [WEAK]
+ 345              	                EXPORT  USIC1_0_IRQHandler      [WEAK]
+ 346              	                EXPORT  USIC1_1_IRQHandler      [WEAK]
+ 347              	                EXPORT  USIC1_2_IRQHandler      [WEAK]
+ 348              	                EXPORT  USIC1_3_IRQHandler      [WEAK]
+ 349              	                EXPORT  USIC1_4_IRQHandler      [WEAK]
+ 350              	                EXPORT  USIC1_5_IRQHandler      [WEAK]
+ 351              	                EXPORT  USIC2_0_IRQHandler      [WEAK]
+ 352              	                EXPORT  USIC2_1_IRQHandler      [WEAK]
+ 353              	                EXPORT  USIC2_2_IRQHandler      [WEAK]
+ 354              	                EXPORT  USIC2_3_IRQHandler      [WEAK]
+ 355              	                EXPORT  USIC2_4_IRQHandler      [WEAK]
+ 356              	                EXPORT  USIC2_5_IRQHandler      [WEAK]
+ 357              	                EXPORT  LEDTS0_0_IRQHandler     [WEAK]
+ 358              	                EXPORT  FCE0_0_IRQHandler       [WEAK]
+ 359              	                EXPORT  GPDMA0_0_IRQHandler     [WEAK]
+ 360              	                EXPORT  SDMMC0_0_IRQHandler     [WEAK]
+ 361              	                EXPORT  USB0_0_IRQHandler       [WEAK]
+ 362              	                EXPORT  ETH0_0_IRQHandler       [WEAK]
+ 363              	                EXPORT  GPDMA1_0_IRQHandler     [WEAK]
+ 364              	
+ 365              	NMI_Handler
+ 366              	HardFault_Handler
+ 367              	MemManage_Handler
+ 368              	BusFault_Handler
+ 369              	UsageFault_Handler
+ 370              	SVC_Handler
+ 371              	DebugMon_Handler
+ 372              	PendSV_Handler
+ 373              	SysTick_Handler                
+ 374              	SCU_0_IRQHandler
+ 375              	ERU0_0_IRQHandler 
+ 376              	ERU0_1_IRQHandler 
+ 377              	ERU0_2_IRQHandler 
+ 378              	ERU0_3_IRQHandler 
+ 379              	ERU1_0_IRQHandler 
+ 380              	ERU1_1_IRQHandler 
+ 381              	ERU1_2_IRQHandler 
+ 382              	ERU1_3_IRQHandler 
+ 383              	PMU0_0_IRQHandler 
+ 384              	VADC0_C0_0_IRQHandler 
+ 385              	VADC0_C0_1_IRQHandler 
+ 386              	VADC0_C0_2_IRQHandler 
+ 387              	VADC0_C0_3_IRQHandler 
+ 388              	VADC0_G0_0_IRQHandler 
+ 389              	VADC0_G0_1_IRQHandler 
+ 390              	VADC0_G0_2_IRQHandler 
+ 391              	VADC0_G0_3_IRQHandler 
+ 392              	VADC0_G1_0_IRQHandler 
+ 393              	VADC0_G1_1_IRQHandler 
+ 394              	VADC0_G1_2_IRQHandler 
+ 395              	VADC0_G1_3_IRQHandler 
+ 396              	VADC0_G2_0_IRQHandler 
+ 397              	VADC0_G2_1_IRQHandler 
+ 398              	VADC0_G2_2_IRQHandler 
+ 399              	VADC0_G2_3_IRQHandler 
+ 400              	VADC0_G3_0_IRQHandler 
+ 401              	VADC0_G3_1_IRQHandler 
+ 402              	VADC0_G3_2_IRQHandler 
+ 403              	VADC0_G3_3_IRQHandler 
+ 404              	DSD0_0_IRQHandler 
+ 405              	DSD0_1_IRQHandler 
+ 406              	DSD0_2_IRQHandler 
+ 407              	DSD0_3_IRQHandler 
+ 408              	DSD0_4_IRQHandler 
+ 409              	DSD0_5_IRQHandler 
+ 410              	DSD0_6_IRQHandler 
+ 411              	DSD0_7_IRQHandler 
+ 412              	DAC0_0_IRQHandler 
+ 413              	DAC0_1_IRQHandler 
+ 414              	CCU40_0_IRQHandler
+ 415              	CCU40_1_IRQHandler
+ 416              	CCU40_2_IRQHandler
+ 417              	CCU40_3_IRQHandler
+ 418              	CCU41_0_IRQHandler
+ 419              	CCU41_1_IRQHandler
+ 420              	CCU41_2_IRQHandler
+ 421              	CCU41_3_IRQHandler
+ 422              	CCU42_0_IRQHandler
+ 423              	CCU42_1_IRQHandler
+ 424              	CCU42_2_IRQHandler
+ 425              	CCU42_3_IRQHandler
+ 426              	CCU43_0_IRQHandler
+ 427              	CCU43_1_IRQHandler
+ 428              	CCU43_2_IRQHandler
+ 429              	CCU43_3_IRQHandler
+ 430              	CCU80_0_IRQHandler
+ 431              	CCU80_1_IRQHandler
+ 432              	CCU80_2_IRQHandler
+ 433              	CCU80_3_IRQHandler
+ 434              	CCU81_0_IRQHandler
+ 435              	CCU81_1_IRQHandler
+ 436              	CCU81_2_IRQHandler
+ 437              	CCU81_3_IRQHandler
+ 438              	POSIF0_0_IRQHandler 
+ 439              	POSIF0_1_IRQHandler 
+ 440              	POSIF1_0_IRQHandler 
+ 441              	POSIF1_1_IRQHandler 
+ 442              	CAN0_0_IRQHandler 
+ 443              	CAN0_1_IRQHandler 
+ 444              	CAN0_2_IRQHandler 
+ 445              	CAN0_3_IRQHandler 
+ 446              	CAN0_4_IRQHandler 
+ 447              	CAN0_5_IRQHandler 
+ 448              	CAN0_6_IRQHandler 
+ 449              	CAN0_7_IRQHandler 
+ 450              	USIC0_0_IRQHandler
+ 451              	USIC0_1_IRQHandler
+ 452              	USIC0_2_IRQHandler
+ 453              	USIC0_3_IRQHandler
+ 454              	USIC0_4_IRQHandler
+ 455              	USIC0_5_IRQHandler
+ 456              	USIC1_0_IRQHandler
+ 457              	USIC1_1_IRQHandler
+ 458              	USIC1_2_IRQHandler
+ 459              	USIC1_3_IRQHandler
+ 460              	USIC1_4_IRQHandler
+ 461              	USIC1_5_IRQHandler
+ 462              	USIC2_0_IRQHandler
+ 463              	USIC2_1_IRQHandler
+ 464              	USIC2_2_IRQHandler
+ 465              	USIC2_3_IRQHandler
+ 466              	USIC2_4_IRQHandler
+ 467              	USIC2_5_IRQHandler
+ 468              	LEDTS0_0_IRQHandler 
+ 469              	FCE0_0_IRQHandler 
+ 470              	GPDMA0_0_IRQHandler
+ 471              	SDMMC0_0_IRQHandler
+ 472              	USB0_0_IRQHandler 
+ 473              	ETH0_0_IRQHandler 
+ 474              	GPDMA1_0_IRQHandler 
+ 475              	
+ 476 ???? FEE7     	                B       .
+ 477              	
+ 478              	                ENDP
+ 479              	
+ 480              	                IF     :DEF:ENABLE_PMU_CM_001_WORKAROUND
+ 481              	
+ 482              	                MACRO
+ 483              	                Insert_ExceptionHandlerVeneer $Handler_Func                    
+ 484              	$Handler_Func._Veneer\
+ 485              	                    PROC
+ 486              	                    EXPORT  $Handler_Func._Veneer [WEAK]
+ 487 ???? 0648     	                    LDR     R0, =$Handler_Func
+ 488 ???? 00B5     	                    PUSH    {LR}  ;/* Breaks AAPCS */
+ 489 ???? 81B0     	                    SUB     SP,#4     ;/* Restores AAPCS */
+ 490 ???? 8047     	                    BLX     R0
+ 491 ???? 01B0     	                    ADD     SP,#4
+ 492 ???? 00BD     	                    POP     {PC}
+ 493              	                    ALIGN
+ 494              	                    LTORG
+ 495              	                    ENDP
+ 496              	                MEND
+ 497              	                
+ 498              	                Insert_ExceptionHandlerVeneer  NMI_Handler
+ 499              	                Insert_ExceptionHandlerVeneer  HardFault_Handler
+ 500              	                Insert_ExceptionHandlerVeneer  MemManage_Handler
+ 501              	                Insert_ExceptionHandlerVeneer  BusFault_Handler 
+ 502              	                Insert_ExceptionHandlerVeneer  UsageFault_Handler
+ 503              	                Insert_ExceptionHandlerVeneer  SVC_Handler
+ 504              	                Insert_ExceptionHandlerVeneer  DebugMon_Handler
+ 505              	                Insert_ExceptionHandlerVeneer  PendSV_Handler
+ 506              	                Insert_ExceptionHandlerVeneer SysTick_Handler
+ 507              	
+ 508              	                Insert_ExceptionHandlerVeneer  SCU_0_IRQHandler
+ 509              	                Insert_ExceptionHandlerVeneer  ERU0_0_IRQHandler
+ 510              	                Insert_ExceptionHandlerVeneer  ERU0_1_IRQHandler
+ 511              	                Insert_ExceptionHandlerVeneer  ERU0_2_IRQHandler
+ 512              	                Insert_ExceptionHandlerVeneer  ERU0_3_IRQHandler
+ 513              	                Insert_ExceptionHandlerVeneer  ERU1_0_IRQHandler
+ 514              	                Insert_ExceptionHandlerVeneer  ERU1_1_IRQHandler
+ 515              	                Insert_ExceptionHandlerVeneer  ERU1_2_IRQHandler
+ 516              	                Insert_ExceptionHandlerVeneer  ERU1_3_IRQHandler
+ 517              	                Insert_ExceptionHandlerVeneer  PMU0_0_IRQHandler
+ 518              	                Insert_ExceptionHandlerVeneer  VADC0_C0_0_IRQHandler   
+ 519              	                Insert_ExceptionHandlerVeneer  VADC0_C0_1_IRQHandler   
+ 520              	                Insert_ExceptionHandlerVeneer  VADC0_C0_2_IRQHandler   
+ 521              	                Insert_ExceptionHandlerVeneer  VADC0_C0_3_IRQHandler   
+ 522              	                Insert_ExceptionHandlerVeneer  VADC0_G0_0_IRQHandler   
+ 523              	                Insert_ExceptionHandlerVeneer  VADC0_G0_1_IRQHandler   
+ 524              	                Insert_ExceptionHandlerVeneer  VADC0_G0_2_IRQHandler   
+ 525              	                Insert_ExceptionHandlerVeneer  VADC0_G0_3_IRQHandler   
+ 526              	                Insert_ExceptionHandlerVeneer  VADC0_G1_0_IRQHandler   
+ 527              	                Insert_ExceptionHandlerVeneer  VADC0_G1_1_IRQHandler   
+ 528              	                Insert_ExceptionHandlerVeneer  VADC0_G1_2_IRQHandler   
+ 529              	                Insert_ExceptionHandlerVeneer  VADC0_G1_3_IRQHandler   
+ 530              	                Insert_ExceptionHandlerVeneer  VADC0_G2_0_IRQHandler   
+ 531              	                Insert_ExceptionHandlerVeneer  VADC0_G2_1_IRQHandler   
+ 532              	                Insert_ExceptionHandlerVeneer  VADC0_G2_2_IRQHandler   
+ 533              	                Insert_ExceptionHandlerVeneer  VADC0_G2_3_IRQHandler   
+ 534              	                Insert_ExceptionHandlerVeneer  VADC0_G3_0_IRQHandler   
+ 535              	                Insert_ExceptionHandlerVeneer  VADC0_G3_1_IRQHandler   
+ 536              	                Insert_ExceptionHandlerVeneer  VADC0_G3_2_IRQHandler   
+ 537              	                Insert_ExceptionHandlerVeneer  VADC0_G3_3_IRQHandler   
+ 538              	                Insert_ExceptionHandlerVeneer  DSD0_0_IRQHandler       
+ 539              	                Insert_ExceptionHandlerVeneer  DSD0_1_IRQHandler       
+ 540              	                Insert_ExceptionHandlerVeneer  DSD0_2_IRQHandler       
+ 541              	                Insert_ExceptionHandlerVeneer  DSD0_3_IRQHandler       
+ 542              	                Insert_ExceptionHandlerVeneer  DSD0_4_IRQHandler       
+ 543              	                Insert_ExceptionHandlerVeneer  DSD0_5_IRQHandler       
+ 544              	                Insert_ExceptionHandlerVeneer  DSD0_6_IRQHandler       
+ 545              	                Insert_ExceptionHandlerVeneer  DSD0_7_IRQHandler       
+ 546              	                Insert_ExceptionHandlerVeneer  DAC0_0_IRQHandler       
+ 547              	                Insert_ExceptionHandlerVeneer  DAC0_1_IRQHandler       
+ 548              	                Insert_ExceptionHandlerVeneer  CCU40_0_IRQHandler      
+ 549              	                Insert_ExceptionHandlerVeneer  CCU40_1_IRQHandler      
+ 550              	                Insert_ExceptionHandlerVeneer  CCU40_2_IRQHandler      
+ 551              	                Insert_ExceptionHandlerVeneer  CCU40_3_IRQHandler      
+ 552              	                Insert_ExceptionHandlerVeneer  CCU41_0_IRQHandler      
+ 553              	                Insert_ExceptionHandlerVeneer  CCU41_1_IRQHandler      
+ 554              	                Insert_ExceptionHandlerVeneer  CCU41_2_IRQHandler      
+ 555              	                Insert_ExceptionHandlerVeneer  CCU41_3_IRQHandler      
+ 556              	                Insert_ExceptionHandlerVeneer  CCU42_0_IRQHandler      
+ 557              	                Insert_ExceptionHandlerVeneer  CCU42_1_IRQHandler      
+ 558              	                Insert_ExceptionHandlerVeneer  CCU42_2_IRQHandler      
+ 559              	                Insert_ExceptionHandlerVeneer  CCU42_3_IRQHandler      
+ 560              	                Insert_ExceptionHandlerVeneer  CCU43_0_IRQHandler      
+ 561              	                Insert_ExceptionHandlerVeneer  CCU43_1_IRQHandler      
+ 562              	                Insert_ExceptionHandlerVeneer  CCU43_2_IRQHandler      
+ 563              	                Insert_ExceptionHandlerVeneer  CCU43_3_IRQHandler      
+ 564              	                Insert_ExceptionHandlerVeneer  CCU80_0_IRQHandler      
+ 565              	                Insert_ExceptionHandlerVeneer  CCU80_1_IRQHandler      
+ 566              	                Insert_ExceptionHandlerVeneer  CCU80_2_IRQHandler      
+ 567              	                Insert_ExceptionHandlerVeneer  CCU80_3_IRQHandler      
+ 568              	                Insert_ExceptionHandlerVeneer  CCU81_0_IRQHandler      
+ 569              	                Insert_ExceptionHandlerVeneer  CCU81_1_IRQHandler      
+ 570              	                Insert_ExceptionHandlerVeneer  CCU81_2_IRQHandler      
+ 571              	                Insert_ExceptionHandlerVeneer  CCU81_3_IRQHandler      
+ 572              	                Insert_ExceptionHandlerVeneer  POSIF0_0_IRQHandler     
+ 573              	                Insert_ExceptionHandlerVeneer  POSIF0_1_IRQHandler     
+ 574              	                Insert_ExceptionHandlerVeneer  POSIF1_0_IRQHandler     
+ 575              	                Insert_ExceptionHandlerVeneer  POSIF1_1_IRQHandler     
+ 576              	                Insert_ExceptionHandlerVeneer  CAN0_0_IRQHandler       
+ 577              	                Insert_ExceptionHandlerVeneer  CAN0_1_IRQHandler       
+ 578              	                Insert_ExceptionHandlerVeneer  CAN0_2_IRQHandler       
+ 579              	                Insert_ExceptionHandlerVeneer  CAN0_3_IRQHandler       
+ 580              	                Insert_ExceptionHandlerVeneer  CAN0_4_IRQHandler       
+ 581              	                Insert_ExceptionHandlerVeneer  CAN0_5_IRQHandler       
+ 582              	                Insert_ExceptionHandlerVeneer  CAN0_6_IRQHandler       
+ 583              	                Insert_ExceptionHandlerVeneer  CAN0_7_IRQHandler       
+ 584              	                Insert_ExceptionHandlerVeneer  USIC0_0_IRQHandler      
+ 585              	                Insert_ExceptionHandlerVeneer  USIC0_1_IRQHandler      
+ 586              	                Insert_ExceptionHandlerVeneer  USIC0_2_IRQHandler      
+ 587              	                Insert_ExceptionHandlerVeneer  USIC0_3_IRQHandler      
+ 588              	                Insert_ExceptionHandlerVeneer  USIC0_4_IRQHandler      
+ 589              	                Insert_ExceptionHandlerVeneer  USIC0_5_IRQHandler      
+ 590              	                Insert_ExceptionHandlerVeneer  USIC1_0_IRQHandler      
+ 591              	                Insert_ExceptionHandlerVeneer  USIC1_1_IRQHandler      
+ 592              	                Insert_ExceptionHandlerVeneer  USIC1_2_IRQHandler      
+ 593              	                Insert_ExceptionHandlerVeneer  USIC1_3_IRQHandler      
+ 594              	                Insert_ExceptionHandlerVeneer  USIC1_4_IRQHandler      
+ 595              	                Insert_ExceptionHandlerVeneer  USIC1_5_IRQHandler      
+ 596              	                Insert_ExceptionHandlerVeneer  USIC2_0_IRQHandler      
+ 597              	                Insert_ExceptionHandlerVeneer  USIC2_1_IRQHandler      
+ 598              	                Insert_ExceptionHandlerVeneer  USIC2_2_IRQHandler      
+ 599              	                Insert_ExceptionHandlerVeneer  USIC2_3_IRQHandler      
+ 600              	                Insert_ExceptionHandlerVeneer  USIC2_4_IRQHandler      
+ 601              	                Insert_ExceptionHandlerVeneer  USIC2_5_IRQHandler                      
+ 602              	                Insert_ExceptionHandlerVeneer  LEDTS0_0_IRQHandler     
+ 603              	                Insert_ExceptionHandlerVeneer  FCE0_0_IRQHandler       
+ 604              	                Insert_ExceptionHandlerVeneer  GPDMA0_0_IRQHandler     
+ 605              	                Insert_ExceptionHandlerVeneer  SDMMC0_0_IRQHandler     
+ 606              	                Insert_ExceptionHandlerVeneer  USB0_0_IRQHandler       
+ 607              	                Insert_ExceptionHandlerVeneer  ETH0_0_IRQHandler 
+ 608              	                Insert_ExceptionHandlerVeneer  GPDMA1_0_IRQHandler     
+ 609              	                ENDIF
+ 610              	                
+ 611              	                ALIGN
+ 612              	
+ 613              	; User Initial Stack & Heap
+ 614              	
+ 615              	                IF      :DEF:__MICROLIB
+ 616              	
+ 617              	                EXPORT  __initial_sp
+ 618              	                EXPORT  __heap_base
+ 619              	                EXPORT  __heap_limit
+ 620              	
+ 621              	                ELSE
+ 622              	
+ 623              	                IMPORT  __use_two_region_memory
+ 624              	                EXPORT  __user_initial_stackheap
+ 625              	__user_initial_stackheap
+ 626              	
+ 627 ???? 0448     	                LDR     R0, =  Heap_Mem
+ 628              	                LDR     R1, =(Stack_Mem + Stack_Size)
+ 629              	                LDR     R2, = (Heap_Mem +  Heap_Size)
+ 630 ???? 044B     	                LDR     R3, = Stack_Mem
+ 631 ???? 7047     	                BX      LR
+ 632              	
+ 633              	                ALIGN
+ 634              	
+ 635              	                ENDIF
+ 636              	
+ 637              	
+ 638 ???? 00000000 	                END
+****  Error:bad instruction `end'
+ 638      00000000 
+ 638      00000000 
+ 638      00000000 
+ 638      00000000 
+DEFINED SYMBOLS
+../RTE/Device/XMC4500-F100x1024/startup_XMC4500.s:82     .text:00000000 IF
+../RTE/Device/XMC4500-F100x1024/startup_XMC4500.s:82     .text:00000000 DEF
+../RTE/Device/XMC4500-F100x1024/startup_XMC4500.s:244    .text:00000000 $t
+../RTE/Device/XMC4500-F100x1024/startup_XMC4500.s:638    .text:0000001c $d
+                   .debug_aranges:0000000c $d
+
+UNDEFINED SYMBOLS
+__initial_sp
+SystemInit
+__main
+$Handler_Func
+Heap_Mem
+Stack_Mem
+Stack_Size
+Heap_Size

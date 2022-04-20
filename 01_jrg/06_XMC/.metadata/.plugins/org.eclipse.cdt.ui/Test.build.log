@@ -1,0 +1,37 @@
+19:12:14 **** Build of configuration Debug for project Test ****
+"\"C:\\Infineon\\Tools\\DAVE IDE\\4.5.0.202105191637\\eclipse\\ARM-GCC-49\\bin\\make\"" --output-sync -j8 all 
+'Building file: ../ANA_Init.c'
+In file included from ../ANA_Init.c:9:0:
+'Invoking: ARM-GCC C Compiler'
+C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/06_XMC/Test/ANA_Init.h:15:1: warning: useless storage class specifier in empty declaration
+"C:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/ARM-GCC-49/bin/arm-none-eabi-gcc" -MMD -MT "ANA_Init.o" -DXMC4500_F100x1024 -I"C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/06_XMC/Test/Libraries/XMCLib/inc" -I"C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/06_XMC/Test/Libraries/CMSIS/Include" -I"C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/06_XMC/Test/Libraries/CMSIS/Infineon/XMC4500_series/Include" -I"C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/06_XMC/Test" -I"C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/06_XMC/Test/Dave/Generated" -I"C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/06_XMC/Test/Libraries" -O0 -ffunction-sections -fdata-sections -Wall -std=gnu99 -mfloat-abi=softfp -Wa,-adhlns="ANA_Init.o.lst" -pipe -c -fmessage-length=0 -MMD -MP -MF"ANA_Init.d" -MT"ANA_Init.d ANA_Init.o" -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mthumb -g -gdwarf-2 -o "ANA_Init.o" "../ANA_Init.c" 
+ };
+subdir.mk:21: recipe for target 'ANA_Init.o' failed
+ ^
+../ANA_Init.c: In function 'ANA_Init':
+../ANA_Init.c:14:2: error: 'poti' undeclared (first use in this function)
+  poti.Channel = &ADC_MEASUREMENT_ADV_0_Channel_A;
+  ^
+../ANA_Init.c:14:2: note: each undeclared identifier is reported only once for each function it appears in
+../ANA_Init.c:14:18: error: 'ADC_MEASUREMENT_ADV_0_Channel_A' undeclared (first use in this function)
+  poti.Channel = &ADC_MEASUREMENT_ADV_0_Channel_A;
+                  ^
+make: *** [ANA_Init.o] Error 1
+make: *** Waiting for unfinished jobs....
+'Building file: ../main.c'
+../main.c: In function 'main':
+'Invoking: ARM-GCC C Compiler'
+../main.c:28:3: warning: implicit declaration of function 'ANA_Init' [-Wimplicit-function-declaration]
+   ANA_Init();
+"C:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/ARM-GCC-49/bin/arm-none-eabi-gcc" -MMD -MT "main.o" -DXMC4500_F100x1024 -I"C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/06_XMC/Test/Libraries/XMCLib/inc" -I"C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/06_XMC/Test/Libraries/CMSIS/Include" -I"C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/06_XMC/Test/Libraries/CMSIS/Infineon/XMC4500_series/Include" -I"C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/06_XMC/Test" -I"C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/06_XMC/Test/Dave/Generated" -I"C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/06_XMC/Test/Libraries" -O0 -ffunction-sections -fdata-sections -Wall -std=gnu99 -mfloat-abi=softfp -Wa,-adhlns="main.o.lst" -pipe -c -fmessage-length=0 -MMD -MP -MF"main.d" -MT"main.d main.o" -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mthumb -g -gdwarf-2 -o "main.o" "../main.c" 
+   ^
+subdir.mk:21: recipe for target 'main.o' failed
+../main.c:44:4: error: 'poti' undeclared (first use in this function)
+    poti.value = ADC_MEASUREMENT_GetResult(poti.Channel);
+    ^
+../main.c:44:4: note: each undeclared identifier is reported only once for each function it appears in
+../main.c:44:4: warning: implicit declaration of function 'ADC_MEASUREMENT_GetResult' [-Wimplicit-function-declaration]
+make: *** [main.o] Error 1
+
+19:12:16 Build Finished (took 1s.600ms)
+

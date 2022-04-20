@@ -1,0 +1,120 @@
+package Model.APPS.CMSIS_RTOS_RTX5.v4_0_4;
+
+/* Import statements */
+import ifx.davex.app.manifest.*
+
+abstract class CMSIS_RTOS_RTX5_GUI extends AppManifest {
+	/* Begin : UI variable section */
+	 public GInteger ginteger_OS_DYNAMIC_MEM_SIZE;
+	 public GInteger ginteger_OS_TICK_FREQ;
+	 public GInteger ginteger_OS_ROBIN_TIMEOUT;
+	 public GInteger ginteger_OS_THREAD_NUM;
+	 public GInteger ginteger_OS_THREAD_DEF_STACK_NUM;
+	 public GInteger ginteger_OS_THREAD_USER_STACK_SIZE;
+	 public GInteger ginteger_OS_STACK_SIZE;
+	 public GInteger ginteger_OS_IDLE_THREAD_STACK_SIZE;
+	 public GInteger ginteger_OS_TIMER_NUM;
+	 public GInteger ginteger_OS_TIMER_THREAD_STACK_SIZE;
+	 public GInteger ginteger_OS_TIMER_CB_QUEUE;
+	 public GInteger ginteger_OS_EVFLAGS_NUM;
+	 public GInteger ginteger_OS_MUTEX_NUM;
+	 public GInteger ginteger_OS_SEMAPHORE_NUM;
+	 public GInteger ginteger_OS_MEMPOOL_NUM;
+	 public GInteger ginteger_OS_MEMPOOL_DATA_SIZE;
+	 public GInteger ginteger_OS_MSGQUEUE_NUM;
+	 public GInteger ginteger_OS_MSGQUEUE_DATA_SIZE;
+	 public GCombo gcombo_OS_ISR_FIFO_QUEUE;
+	 public GCombo gcombo_OS_PRIVILEGE_MODE;
+	 public GCombo gcombo_OS_TIMER_THREAD_PRIO;
+	 public GCheck gcheck_OS_ROBIN_ENABLE;
+	 public GCheck gcheck_OS_OBJ_MEM_USAGE;
+	 public GCheck gcheck_OS_THREAD_OBJ_MEM;
+	 public GCheck gcheck_OS_STACK_CHECK;
+	 public GCheck gcheck_OS_STACK_WATERMARK;
+	 public GCheck gcheck_OS_TIMER_OBJ_MEM;
+	 public GCheck gcheck_OS_EVFLAGS_OBJ_MEM;
+	 public GCheck gcheck_OS_MUTEX_OBJ_MEM;
+	 public GCheck gcheck_OS_SEMAPHORE_OBJ_MEM;
+	 public GCheck gcheck_OS_MEMPOOL_OBJ_MEM;
+	 public GCheck gcheck_OS_MSGQUEUE_OBJ_MEM;
+	 public GCheck gcheck_OS_EVR_INIT;
+	 public GCheck gcheck_OS_EVR_START;
+	 public GLabel glabel_127;
+	 public GLabel glabel_152;
+	 public GLabel glabel_176;
+	 public GLabel glabel_177;
+	 public GLabel glabel_203;
+	 public GLabel glabel_2031;
+	 public GLabel glabel_202;
+	 public GLabel glabel_2021;
+	 public GLabel glabel_207;
+	 public GLabel glabel_20211;
+	 public GLabel glabel_2071;
+	 public GMessage gmessage_global_dynamic_memory_size;
+	 public GMessage gmessage_thread_stack_size;
+	 public GMessage gmessage_timer_thread_stack_size;
+	 public GIndexCombo gindexcombo_event_type;
+	 public GIndexGroup gindexgroup_event_filter;
+	 public RArray<Gindexgroup_event_filter> rArraygindexgroup_event_filter = RArray(12);
+
+
+	 public CMSIS_RTOS_RTX5_GUI(DaveEnv daveEnv){
+
+	 ginteger_OS_DYNAMIC_MEM_SIZE = GInteger(widgetName:"ginteger_OS_DYNAMIC_MEM_SIZE", value:4096, minValue:0, maxValue:1073741824, enabled:true, visible:true, isMandatoryValue:false)
+	 ginteger_OS_TICK_FREQ = GInteger(widgetName:"ginteger_OS_TICK_FREQ", value:1000, minValue:1, maxValue:1000000, enabled:true, visible:true, isMandatoryValue:false)
+	 ginteger_OS_ROBIN_TIMEOUT = GInteger(widgetName:"ginteger_OS_ROBIN_TIMEOUT", value:5, minValue:1, maxValue:1000, enabled:true, visible:true, isMandatoryValue:false)
+	 ginteger_OS_THREAD_NUM = GInteger(widgetName:"ginteger_OS_THREAD_NUM", value:1, minValue:1, maxValue:1000, enabled:true, visible:true, isMandatoryValue:false)
+	 ginteger_OS_THREAD_DEF_STACK_NUM = GInteger(widgetName:"ginteger_OS_THREAD_DEF_STACK_NUM", value:0, minValue:0, maxValue:1000, enabled:true, visible:true, isMandatoryValue:false)
+	 ginteger_OS_THREAD_USER_STACK_SIZE = GInteger(widgetName:"ginteger_OS_THREAD_USER_STACK_SIZE", value:0, minValue:0, maxValue:1073741824, enabled:true, visible:true, isMandatoryValue:false)
+	 ginteger_OS_STACK_SIZE = GInteger(widgetName:"ginteger_OS_STACK_SIZE", value:256, minValue:96, maxValue:1073741824, enabled:true, visible:true, isMandatoryValue:false)
+	 ginteger_OS_IDLE_THREAD_STACK_SIZE = GInteger(widgetName:"ginteger_OS_IDLE_THREAD_STACK_SIZE", value:256, minValue:72, maxValue:1073741824, enabled:true, visible:true, isMandatoryValue:false)
+	 ginteger_OS_TIMER_NUM = GInteger(widgetName:"ginteger_OS_TIMER_NUM", value:1, minValue:1, maxValue:1000, enabled:true, visible:true, isMandatoryValue:false)
+	 ginteger_OS_TIMER_THREAD_STACK_SIZE = GInteger(widgetName:"ginteger_OS_TIMER_THREAD_STACK_SIZE", value:256, minValue:0, maxValue:1073741824, enabled:true, visible:true, isMandatoryValue:false)
+	 ginteger_OS_TIMER_CB_QUEUE = GInteger(widgetName:"ginteger_OS_TIMER_CB_QUEUE", value:4, minValue:0, maxValue:256, enabled:true, visible:true, isMandatoryValue:false)
+	 ginteger_OS_EVFLAGS_NUM = GInteger(widgetName:"ginteger_OS_EVFLAGS_NUM", value:1, minValue:1, maxValue:1000, enabled:true, visible:true, isMandatoryValue:false)
+	 ginteger_OS_MUTEX_NUM = GInteger(widgetName:"ginteger_OS_MUTEX_NUM", value:1, minValue:1, maxValue:1000, enabled:true, visible:true, isMandatoryValue:false)
+	 ginteger_OS_SEMAPHORE_NUM = GInteger(widgetName:"ginteger_OS_SEMAPHORE_NUM", value:1, minValue:1, maxValue:1000, enabled:true, visible:true, isMandatoryValue:false)
+	 ginteger_OS_MEMPOOL_NUM = GInteger(widgetName:"ginteger_OS_MEMPOOL_NUM", value:1, minValue:1, maxValue:1000, enabled:true, visible:true, isMandatoryValue:false)
+	 ginteger_OS_MEMPOOL_DATA_SIZE = GInteger(widgetName:"ginteger_OS_MEMPOOL_DATA_SIZE", value:0, minValue:0, maxValue:Long.MAX_VALUE, enabled:true, visible:true, isMandatoryValue:false)
+	 ginteger_OS_MSGQUEUE_NUM = GInteger(widgetName:"ginteger_OS_MSGQUEUE_NUM", value:1, minValue:1, maxValue:1000, enabled:true, visible:true, isMandatoryValue:false)
+	 ginteger_OS_MSGQUEUE_DATA_SIZE = GInteger(widgetName:"ginteger_OS_MSGQUEUE_DATA_SIZE", value:0, minValue:0, maxValue:Long.MAX_VALUE, enabled:true, visible:true, isMandatoryValue:false)
+	 gcombo_OS_ISR_FIFO_QUEUE = GCombo(widgetName:"gcombo_OS_ISR_FIFO_QUEUE", options:["4 entries","8 entries","12 entries","16 entries","24 entries","32 entries","48 entries","64 entries","96 entries","128 entries","196 entries","256 entries"], value:"16 entries", enabled:true, visible:true, isMandatoryValue:false)
+	 gcombo_OS_PRIVILEGE_MODE = GCombo(widgetName:"gcombo_OS_PRIVILEGE_MODE", options:["Unprivileged mode","Privileged mode"], value:"Privileged mode", enabled:true, visible:true, isMandatoryValue:false)
+	 gcombo_OS_TIMER_THREAD_PRIO = GCombo(widgetName:"gcombo_OS_TIMER_THREAD_PRIO", options:["Low","Below Normal","Normal","Above Normal","High","Realtime"], value:"High", enabled:true, visible:true, isMandatoryValue:false)
+	 gcheck_OS_ROBIN_ENABLE = GCheck(widgetName:"gcheck_OS_ROBIN_ENABLE", value:true, enabled:true, visible:true)
+	 gcheck_OS_OBJ_MEM_USAGE = GCheck(widgetName:"gcheck_OS_OBJ_MEM_USAGE", value:false, enabled:true, visible:true)
+	 gcheck_OS_THREAD_OBJ_MEM = GCheck(widgetName:"gcheck_OS_THREAD_OBJ_MEM", value:false, enabled:true, visible:true)
+	 gcheck_OS_STACK_CHECK = GCheck(widgetName:"gcheck_OS_STACK_CHECK", value:true, enabled:true, visible:true)
+	 gcheck_OS_STACK_WATERMARK = GCheck(widgetName:"gcheck_OS_STACK_WATERMARK", value:false, enabled:true, visible:true)
+	 gcheck_OS_TIMER_OBJ_MEM = GCheck(widgetName:"gcheck_OS_TIMER_OBJ_MEM", value:false, enabled:true, visible:true)
+	 gcheck_OS_EVFLAGS_OBJ_MEM = GCheck(widgetName:"gcheck_OS_EVFLAGS_OBJ_MEM", value:false, enabled:true, visible:true)
+	 gcheck_OS_MUTEX_OBJ_MEM = GCheck(widgetName:"gcheck_OS_MUTEX_OBJ_MEM", value:false, enabled:true, visible:true)
+	 gcheck_OS_SEMAPHORE_OBJ_MEM = GCheck(widgetName:"gcheck_OS_SEMAPHORE_OBJ_MEM", value:false, enabled:true, visible:true)
+	 gcheck_OS_MEMPOOL_OBJ_MEM = GCheck(widgetName:"gcheck_OS_MEMPOOL_OBJ_MEM", value:false, enabled:true, visible:true)
+	 gcheck_OS_MSGQUEUE_OBJ_MEM = GCheck(widgetName:"gcheck_OS_MSGQUEUE_OBJ_MEM", value:false, enabled:true, visible:true)
+	 gcheck_OS_EVR_INIT = GCheck(widgetName:"gcheck_OS_EVR_INIT", value:false, enabled:true, visible:true)
+	 gcheck_OS_EVR_START = GCheck(widgetName:"gcheck_OS_EVR_START", value:true, enabled:true, visible:true)
+	 glabel_127 = GLabel(widgetName:"glabel_127", text:"Default Thread Stack size [bytes]:", enabled:true, visible:true)
+	 glabel_152 = GLabel(widgetName:"glabel_152", text:"Number of Timer objects", enabled:true, visible:true)
+	 glabel_176 = GLabel(widgetName:"glabel_176", text:"Timer Thread Stack size [bytes]", enabled:true, visible:true)
+	 glabel_177 = GLabel(widgetName:"glabel_177", text:"Timer Callback Queue entries", enabled:true, visible:true)
+	 glabel_203 = GLabel(widgetName:"glabel_203", text:"Number of Event Flags objects", enabled:true, visible:true)
+	 glabel_2031 = GLabel(widgetName:"glabel_2031", text:"Number of Mutex objects", enabled:true, visible:true)
+	 glabel_202 = GLabel(widgetName:"glabel_202", text:"Number of Semaphore objects", enabled:true, visible:true)
+	 glabel_2021 = GLabel(widgetName:"glabel_2021", text:"Number of Memory Pool objects", enabled:true, visible:true)
+	 glabel_207 = GLabel(widgetName:"glabel_207", text:"Data Storage Memory size [bytes]", enabled:true, visible:true)
+	 glabel_20211 = GLabel(widgetName:"glabel_20211", text:"Number of Message Queue objects", enabled:true, visible:true)
+	 glabel_2071 = GLabel(widgetName:"glabel_2071", text:"Data Storage Memory size [bytes]", enabled:true, visible:true)
+	 gmessage_global_dynamic_memory_size = GMessage(widgetName:"gmessage_global_dynamic_memory_size", text:"Global Dynamic Memory size value need to be a multiple of 8", isError:false, visible:true)
+	 gmessage_thread_stack_size = GMessage(widgetName:"gmessage_thread_stack_size", text:"Stack size value need to be a multiple of 8", isError:false, visible:true)
+	 gmessage_timer_thread_stack_size = GMessage(widgetName:"gmessage_timer_thread_stack_size", text:"Stack size value need to be a multiple of 8", isError:false, visible:true)
+	 gindexcombo_event_type = GIndexCombo(widgetName:"gindexcombo_event_type", options:["Global","Memory Management","Kernel","Thread","Generic Wait","Thread Flags","Event Flags","Timer","Mutex","Semaphore","Memory Pool","Message Queue"], value:"Global")
+	 gindexgroup_event_filter = GIndexGroup(widgetName:"gindexgroup_event_filter", text:"Event Filter Setup", enabled:true, visible:true, gIndexCombo:gindexcombo_event_type, rArray:rArraygindexgroup_event_filter)
+	 for(int i=0; i<12; i++){
+		rArraygindexgroup_event_filter[i] = new Gindexgroup_event_filter(daveEnv, "gindexgroup_event_filter", i)
+	 }
+
+
+	 }
+	/* End : UI variable section */
+}

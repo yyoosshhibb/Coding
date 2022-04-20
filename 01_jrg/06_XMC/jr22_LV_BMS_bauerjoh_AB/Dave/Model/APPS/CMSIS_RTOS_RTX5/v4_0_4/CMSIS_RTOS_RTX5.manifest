@@ -1,0 +1,442 @@
+package Model.APPS.CMSIS_RTOS_RTX5.v4_0_4;
+
+/*
+ Copyright (c) 2015-2020, Infineon Technologies AG
+ All rights reserved.
+											
+ Redistribution and use in source and binary forms, with or without modification, are permitted provided that the
+ following conditions are met:
+																			 
+ Redistributions of source code must retain the above copyright notice, this list of conditions and the following
+ disclaimer.
+  
+ Redistributions in binary form must reproduce the above copyright notice, this list of conditions and the following
+ disclaimer in the documentation and/or other materials provided with the distribution.
+  
+ Neither the name of the copyright holders nor the names of its contributors may be used to endorse or promote
+ products derived from this software without specific prior written permission.
+																			 
+ THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES,
+ INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE
+ DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE  FOR ANY DIRECT, INDIRECT, INCIDENTAL,
+ SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR
+ SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY,
+ WHETHER IN CONTRACT, STRICT LIABILITY,OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
+ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+																			 
+ To improve the quality of the software, users are encouraged to share modifications, enhancements or bug fixes with
+ Infineon Technologies AG: dave@infineon.com. */
+
+
+/*************** Revision History **********************************************
+ Version        Date          Description
+
+ 4.0.2        03-Jul-2019   Initial version for DAVEv4 based on Keil RTX version 5 (RTX5) v5.5.1.<br>
+ 4.0.4        07-May-2020   Update to Keil RTX 5 (RTX5) v5.5.2.<br>
+ *******************************************************************************/
+ /* Import statements */
+ import ifx.davex.app.manifest.*
+
+class  CMSIS_RTOS_RTX5 extends CMSIS_RTOS_RTX5_GUI {
+
+ /* Note  : CMSIS_RTOS_RTX properties are mandatory and important
+ Begin : CMSIS_RTOS_RTX property section */
+	 
+ /**
+  * APP version
+  * Format: a string with three digit separated by a dot.
+  */
+ def version            = '4.0.4'
+
+ /**
+  * APP categories declaration.
+  * It is list of strings. Subcategories are separated by slash.
+  * No limits on number of categories and subcategories depth.
+  */
+ def categoriesDescription = ["System"]
+
+ /**
+  * Minimum DAVE version required for this APP.
+  *
+  * It is string with three digit separated by a dot.
+  */
+ def minDaveVersion           = '4.0.0'
+
+ /**
+  * Keywords used by search feature in APPs selection view
+  *
+  * It is a list of string.
+  */
+  def keywords      = ["RTOS", "CMSIS_RTOS", "RTX5", "ALL"]
+	
+ /**
+  * softwareIDs is used to declare which devices are compatible with this APP.
+  * It is a map with key a string containing a pattern that shall match the SW id of
+  * the device and as value the minimal version of the APP.
+  *
+  *
+  */
+ /* Any step, any variant and any packages of XMC4x and XMC1x device */
+ def softwareIDs       = [
+  "XMC4.8.*.*.*":"1.0.0",	 
+  "XMC4.7.*.*.*":"1.0.0",
+  "XMC4.5.*.*.*":"1.0.0",
+  "XMC4.4.*.*.*":"1.0.0",
+  "XMC4.3.*.*.*":"1.0.0",
+  "XMC4.2.*.*.*":"1.0.0",
+  "XMC4.1.*.*.*":"1.0.0",
+  "XMC1.4.*.*.*":"1.0.0",
+  "XMC1.3.*.*.*":"1.0.0",
+  "XMC1.2.*.*.*":"1.0.0",
+  "XMC1.1.*.*.*":"1.0.0"
+	]
+	
+ /**
+  * Singleton property:
+  * When it is true the APP can be instantiated only once.
+  */
+ def singleton     = true
+
+ /**
+  * initProvider property
+  * It shall be true to add a call to <AppName>_Init()
+  */
+ def initProvider  = true
+
+ /**
+  * Deprecated APP
+  * Set it to true to indicate that the APP shall be not used for new projects.
+  */
+ def deprecated    = false
+
+ /**
+  * Sharable property.
+  * It shall be true to allows multiple APPs to require the same instance of this APP.
+  */
+ def sharable      = true
+
+ /**
+  *  APP function description.
+  */
+ def description = "Keil RTX5 implementation of the CMSIS-RTOS API."
+	
+ /* End   : CMSIS_RTOS_RTX property section */
+	
+ /* Begin : User variable section */
+	
+	/* virtual resource group for System timer */
+	MVirtualResourceGroup hwres_systick
+	MVirtualResourceGroup hwres_exception_systick
+	MVirtualResourceGroup hwres_exception_pendsv
+	MVirtualResourceGroup hwres_exception_svcall
+
+	MRequiredApp appres_cpu
+	MRequiredApp appres_clk
+
+	GInteger g_cpuclock = GInteger(widgetName : "g_cpuclock", value : 0)
+	
+	/* End   : User APP property section */
+
+	/* APP Constructor */
+ public CMSIS_RTOS_RTX5(DaveEnv daveEnv) {
+    String family = daveEnv.project.selectedDevice.deviceId.family
+	
+	hwres_systick =  MVirtualResourceGroup("systick", ["peripheral", "cpu", "0", "systick"])
+	hwres_exception_systick =  MVirtualResourceGroup("systick_exception", ["peripheral", "cpu", "0", "exception", "systick"])
+	hwres_exception_pendsv =  MVirtualResourceGroup("pendsv_exception", ["peripheral", "cpu", "0", "exception", "pendsv"])
+	hwres_exception_svcall =  MVirtualResourceGroup("svcall_exception", ["peripheral", "cpu", "0", "exception", "svcall"])
+
+	if (family == "XMC4") {
+		appres_cpu =  MRequiredApp("CPU_CTRL_XMC4", "CPU_CTRL_XMC4", RSHARABLE, "4.0.2")
+		appres_clk =  MRequiredApp("CLOCK_XMC4", "CLOCK_XMC4", RSHARABLE, "4.0.2")
+	}
+
+	if (family == "XMC1") {
+		appres_cpu =  MRequiredApp("CPU_CTRL_XMC1", "CPU_CTRL_XMC1", RSHARABLE, "4.0.2")
+		appres_clk =  MRequiredApp("CLOCK_XMC1", "CLOCK_XMC1", RSHARABLE, "4.0.2")
+	}
+	
+	if (family == "XMC4") {
+		g_cpuclock.value = MF({appres_clk.getVal(["gfloat_cpuclkfreq", "value"]) as Integer}, Integer)
+
+	}
+	else {
+		g_cpuclock.value = MF({appres_clk.getVal(["gfloat_mclkactfrq", "value"]) as Integer}, Integer)
+	}
+	
+	/* UI logic */
+	/* control the widget properties */
+	ginteger_OS_ROBIN_TIMEOUT.enabled = MF({gcheck_OS_ROBIN_ENABLE.value}, Boolean)
+	
+	ginteger_OS_THREAD_NUM.enabled = MF({gcheck_OS_THREAD_OBJ_MEM.value}, Boolean)
+	ginteger_OS_THREAD_DEF_STACK_NUM.enabled = MF({gcheck_OS_THREAD_OBJ_MEM.value}, Boolean)
+	ginteger_OS_THREAD_USER_STACK_SIZE.enabled = MF({gcheck_OS_THREAD_OBJ_MEM.value}, Boolean)
+	
+	ginteger_OS_TIMER_NUM.enabled = MF({gcheck_OS_TIMER_OBJ_MEM.value}, Boolean)
+	
+	ginteger_OS_EVFLAGS_NUM.enabled = MF({gcheck_OS_EVFLAGS_OBJ_MEM.value}, Boolean)
+	ginteger_OS_MUTEX_NUM.enabled = MF({gcheck_OS_MUTEX_OBJ_MEM.value}, Boolean)
+	ginteger_OS_SEMAPHORE_NUM.enabled = MF({gcheck_OS_SEMAPHORE_OBJ_MEM.value}, Boolean)
+	ginteger_OS_MEMPOOL_NUM.enabled = MF({gcheck_OS_MEMPOOL_OBJ_MEM.value}, Boolean)
+	ginteger_OS_MEMPOOL_DATA_SIZE.enabled = MF({gcheck_OS_MEMPOOL_OBJ_MEM.value}, Boolean)
+	ginteger_OS_MSGQUEUE_NUM.enabled = MF({gcheck_OS_MSGQUEUE_OBJ_MEM.value}, Boolean)
+	ginteger_OS_MSGQUEUE_DATA_SIZE.enabled = MF({gcheck_OS_MSGQUEUE_OBJ_MEM.value}, Boolean)
+
+	gcheck_OS_EVR_START.enabled = MF({gcheck_OS_EVR_INIT.value}, Boolean)
+	
+    /* calculate maximum boundary value of SysTick interval   */
+    ginteger_OS_TICK_FREQ.maxValue = MF({
+      float  temp_interval = (16777216 / g_cpuclock.value); /* pow(2,24) *(1/fCPU) * 1E6,  where fCPU is in Hertz.*/
+      if(temp_interval > 16777216)
+      {
+        Math.round(16777216)
+  
+      }else
+      {
+	   return (temp_interval.round())
+      }
+    },Integer)
+	
+
+  /* throw error message when expected stack size value not multiple of 4  */
+  gmessage_global_dynamic_memory_size.visible = MF({
+	  Boolean temp
+	  if((ginteger_OS_DYNAMIC_MEM_SIZE.value % 8) != 0)
+	  {
+		temp = true
+	  }
+	  else
+	  {
+		
+		temp = false
+	  }
+	  return temp
+	}, Boolean)
+
+  gmessage_global_dynamic_memory_size.isError = MF({
+	  Boolean temp
+	  if((ginteger_OS_DYNAMIC_MEM_SIZE.value % 8) != 0)
+	  {
+		temp = true
+	  }
+	  else
+	  {
+		
+		temp = false
+	  }
+	  return temp
+	}, Boolean)
+  
+  
+  /* Controlling the visibility of gmessage based on stack size */
+  gmessage_thread_stack_size.visible = MF({
+	Boolean temp
+	if(((ginteger_OS_THREAD_USER_STACK_SIZE.value % 8) != 0) || ((ginteger_OS_STACK_SIZE.value % 8) != 0) || ((ginteger_OS_IDLE_THREAD_STACK_SIZE.value % 8) != 0))
+	{
+	  temp = true
+	}
+	else
+	{
+	  
+	  temp = false
+	}
+	return temp
+  }, Boolean)
+
+  gmessage_thread_stack_size.isError = MF({
+	  Boolean temp
+	  if(((ginteger_OS_THREAD_USER_STACK_SIZE.value % 8) != 0) || ((ginteger_OS_STACK_SIZE.value % 8) != 0) || ((ginteger_OS_IDLE_THREAD_STACK_SIZE.value % 8) != 0))
+	  {
+		temp = true
+	  }
+	  else
+	  {
+		
+		temp = false
+	  }
+	  return temp
+	}, Boolean)
+  
+  gmessage_timer_thread_stack_size.visible = MF({
+	Boolean temp
+	if((ginteger_OS_TIMER_THREAD_STACK_SIZE.value % 8) != 0)
+	{
+	  temp = true
+	}
+	else
+	{
+	  
+	  temp = false
+	}
+	return temp
+  }, Boolean)
+  
+  gmessage_timer_thread_stack_size.isError = MF({
+	  Boolean temp
+	  if((ginteger_OS_TIMER_THREAD_STACK_SIZE.value % 8) != 0)
+	  {
+		temp = true
+	  }
+	  else
+	  {
+		
+		temp = false
+	  }
+	  return temp
+	}, Boolean)
+  
+  // Global Event Filter Setup
+  rArraygindexgroup_event_filter[0].gcheck_event_filter_enable.enabled = false
+  rArraygindexgroup_event_filter[0].gcheck_event_filter_enable.value = true
+  rArraygindexgroup_event_filter[0].gcheck_event_filter_error.value = false
+  rArraygindexgroup_event_filter[0].gcheck_event_filter_api.value = false
+  rArraygindexgroup_event_filter[0].gcheck_event_filter_oper.value = false
+  rArraygindexgroup_event_filter[0].gcheck_event_filter_detail.value = false
+  rArraygindexgroup_event_filter[0].gcheck_event_filter_error.enabled = MF({rArraygindexgroup_event_filter[0].gcheck_event_filter_enable.value && gcheck_OS_EVR_INIT.value}, Boolean)
+  rArraygindexgroup_event_filter[0].gcheck_event_filter_api.enabled = MF({rArraygindexgroup_event_filter[0].gcheck_event_filter_enable.value && gcheck_OS_EVR_INIT.value}, Boolean)
+  rArraygindexgroup_event_filter[0].gcheck_event_filter_oper.enabled = MF({rArraygindexgroup_event_filter[0].gcheck_event_filter_enable.value && gcheck_OS_EVR_INIT.value}, Boolean)
+  rArraygindexgroup_event_filter[0].gcheck_event_filter_detail.enabled = MF({rArraygindexgroup_event_filter[0].gcheck_event_filter_enable.value && gcheck_OS_EVR_INIT.value}, Boolean)
+
+  // Memory Management Filter Setup
+  rArraygindexgroup_event_filter[1].gcheck_event_filter_enable.value = true
+  rArraygindexgroup_event_filter[1].gcheck_event_filter_error.value = true
+  rArraygindexgroup_event_filter[1].gcheck_event_filter_api.value = false
+  rArraygindexgroup_event_filter[1].gcheck_event_filter_oper.value = false
+  rArraygindexgroup_event_filter[1].gcheck_event_filter_detail.value = false
+  rArraygindexgroup_event_filter[1].gcheck_event_filter_error.enabled = MF({rArraygindexgroup_event_filter[1].gcheck_event_filter_enable.value && gcheck_OS_EVR_INIT.value}, Boolean)
+  rArraygindexgroup_event_filter[1].gcheck_event_filter_api.enabled = MF({rArraygindexgroup_event_filter[1].gcheck_event_filter_enable.value && gcheck_OS_EVR_INIT.value}, Boolean)
+  rArraygindexgroup_event_filter[1].gcheck_event_filter_oper.enabled = MF({rArraygindexgroup_event_filter[1].gcheck_event_filter_enable.value && gcheck_OS_EVR_INIT.value}, Boolean)
+  rArraygindexgroup_event_filter[1].gcheck_event_filter_detail.enabled = MF({rArraygindexgroup_event_filter[1].gcheck_event_filter_enable.value && gcheck_OS_EVR_INIT.value}, Boolean)
+  
+  // Kernel Filter Setup
+  rArraygindexgroup_event_filter[2].gcheck_event_filter_enable.value = true
+  rArraygindexgroup_event_filter[2].gcheck_event_filter_error.value = true
+  rArraygindexgroup_event_filter[2].gcheck_event_filter_api.value = false
+  rArraygindexgroup_event_filter[2].gcheck_event_filter_oper.value = false
+  rArraygindexgroup_event_filter[2].gcheck_event_filter_detail.value = false
+  rArraygindexgroup_event_filter[2].gcheck_event_filter_error.enabled = MF({rArraygindexgroup_event_filter[2].gcheck_event_filter_enable.value && gcheck_OS_EVR_INIT.value}, Boolean)
+  rArraygindexgroup_event_filter[2].gcheck_event_filter_api.enabled = MF({rArraygindexgroup_event_filter[2].gcheck_event_filter_enable.value && gcheck_OS_EVR_INIT.value}, Boolean)
+  rArraygindexgroup_event_filter[2].gcheck_event_filter_oper.enabled = MF({rArraygindexgroup_event_filter[2].gcheck_event_filter_enable.value && gcheck_OS_EVR_INIT.value}, Boolean)
+  rArraygindexgroup_event_filter[2].gcheck_event_filter_detail.enabled = MF({rArraygindexgroup_event_filter[2].gcheck_event_filter_enable.value && gcheck_OS_EVR_INIT.value}, Boolean)
+
+  // Thread Filter Setup
+  rArraygindexgroup_event_filter[3].gcheck_event_filter_enable.value = true
+  rArraygindexgroup_event_filter[3].gcheck_event_filter_error.value = true
+  rArraygindexgroup_event_filter[3].gcheck_event_filter_api.value = false
+  rArraygindexgroup_event_filter[3].gcheck_event_filter_oper.value = true
+  rArraygindexgroup_event_filter[3].gcheck_event_filter_detail.value = false
+  rArraygindexgroup_event_filter[3].gcheck_event_filter_error.enabled = MF({rArraygindexgroup_event_filter[3].gcheck_event_filter_enable.value && gcheck_OS_EVR_INIT.value}, Boolean)
+  rArraygindexgroup_event_filter[3].gcheck_event_filter_api.enabled = MF({rArraygindexgroup_event_filter[3].gcheck_event_filter_enable.value && gcheck_OS_EVR_INIT.value}, Boolean)
+  rArraygindexgroup_event_filter[3].gcheck_event_filter_oper.enabled = MF({rArraygindexgroup_event_filter[3].gcheck_event_filter_enable.value && gcheck_OS_EVR_INIT.value}, Boolean)
+  rArraygindexgroup_event_filter[3].gcheck_event_filter_detail.enabled = MF({rArraygindexgroup_event_filter[3].gcheck_event_filter_enable.value && gcheck_OS_EVR_INIT.value}, Boolean)
+
+  // Generic Wait Setup
+  rArraygindexgroup_event_filter[4].gcheck_event_filter_enable.value = true
+  rArraygindexgroup_event_filter[4].gcheck_event_filter_error.value = true
+  rArraygindexgroup_event_filter[4].gcheck_event_filter_api.value = false
+  rArraygindexgroup_event_filter[4].gcheck_event_filter_oper.value = false
+  rArraygindexgroup_event_filter[4].gcheck_event_filter_detail.value = false
+  rArraygindexgroup_event_filter[4].gcheck_event_filter_error.enabled = MF({rArraygindexgroup_event_filter[4].gcheck_event_filter_enable.value && gcheck_OS_EVR_INIT.value}, Boolean)
+  rArraygindexgroup_event_filter[4].gcheck_event_filter_api.enabled = MF({rArraygindexgroup_event_filter[4].gcheck_event_filter_enable.value && gcheck_OS_EVR_INIT.value}, Boolean)
+  rArraygindexgroup_event_filter[4].gcheck_event_filter_oper.enabled = MF({rArraygindexgroup_event_filter[4].gcheck_event_filter_enable.value && gcheck_OS_EVR_INIT.value}, Boolean)
+  rArraygindexgroup_event_filter[4].gcheck_event_filter_detail.enabled = MF({rArraygindexgroup_event_filter[4].gcheck_event_filter_enable.value && gcheck_OS_EVR_INIT.value}, Boolean)
+
+  // Thread Flags Setup
+  rArraygindexgroup_event_filter[5].gcheck_event_filter_enable.value = true
+  rArraygindexgroup_event_filter[5].gcheck_event_filter_error.value = true
+  rArraygindexgroup_event_filter[5].gcheck_event_filter_api.value = false
+  rArraygindexgroup_event_filter[5].gcheck_event_filter_oper.value = false
+  rArraygindexgroup_event_filter[5].gcheck_event_filter_detail.value = false
+  rArraygindexgroup_event_filter[5].gcheck_event_filter_error.enabled = MF({rArraygindexgroup_event_filter[5].gcheck_event_filter_enable.value && gcheck_OS_EVR_INIT.value}, Boolean)
+  rArraygindexgroup_event_filter[5].gcheck_event_filter_api.enabled = MF({rArraygindexgroup_event_filter[5].gcheck_event_filter_enable.value && gcheck_OS_EVR_INIT.value}, Boolean)
+  rArraygindexgroup_event_filter[5].gcheck_event_filter_oper.enabled = MF({rArraygindexgroup_event_filter[5].gcheck_event_filter_enable.value && gcheck_OS_EVR_INIT.value}, Boolean)
+  rArraygindexgroup_event_filter[5].gcheck_event_filter_detail.enabled = MF({rArraygindexgroup_event_filter[5].gcheck_event_filter_enable.value && gcheck_OS_EVR_INIT.value}, Boolean)
+
+  // Event Flags Setup
+  rArraygindexgroup_event_filter[6].gcheck_event_filter_enable.value = true
+  rArraygindexgroup_event_filter[6].gcheck_event_filter_error.value = true
+  rArraygindexgroup_event_filter[6].gcheck_event_filter_api.value = false
+  rArraygindexgroup_event_filter[6].gcheck_event_filter_oper.value = false
+  rArraygindexgroup_event_filter[6].gcheck_event_filter_detail.value = false
+  rArraygindexgroup_event_filter[6].gcheck_event_filter_error.enabled = MF({rArraygindexgroup_event_filter[6].gcheck_event_filter_enable.value && gcheck_OS_EVR_INIT.value}, Boolean)
+  rArraygindexgroup_event_filter[6].gcheck_event_filter_api.enabled = MF({rArraygindexgroup_event_filter[6].gcheck_event_filter_enable.value && gcheck_OS_EVR_INIT.value}, Boolean)
+  rArraygindexgroup_event_filter[6].gcheck_event_filter_oper.enabled = MF({rArraygindexgroup_event_filter[6].gcheck_event_filter_enable.value && gcheck_OS_EVR_INIT.value}, Boolean)
+  rArraygindexgroup_event_filter[6].gcheck_event_filter_detail.enabled = MF({rArraygindexgroup_event_filter[6].gcheck_event_filter_enable.value && gcheck_OS_EVR_INIT.value}, Boolean)
+
+  // Timer Setup
+  rArraygindexgroup_event_filter[7].gcheck_event_filter_enable.value = true
+  rArraygindexgroup_event_filter[7].gcheck_event_filter_error.value = true
+  rArraygindexgroup_event_filter[7].gcheck_event_filter_api.value = false
+  rArraygindexgroup_event_filter[7].gcheck_event_filter_oper.value = false
+  rArraygindexgroup_event_filter[7].gcheck_event_filter_detail.value = false
+  rArraygindexgroup_event_filter[7].gcheck_event_filter_error.enabled = MF({rArraygindexgroup_event_filter[7].gcheck_event_filter_enable.value && gcheck_OS_EVR_INIT.value}, Boolean)
+  rArraygindexgroup_event_filter[7].gcheck_event_filter_api.enabled = MF({rArraygindexgroup_event_filter[7].gcheck_event_filter_enable.value && gcheck_OS_EVR_INIT.value}, Boolean)
+  rArraygindexgroup_event_filter[7].gcheck_event_filter_oper.enabled = MF({rArraygindexgroup_event_filter[7].gcheck_event_filter_enable.value && gcheck_OS_EVR_INIT.value}, Boolean)
+  rArraygindexgroup_event_filter[7].gcheck_event_filter_detail.enabled = MF({rArraygindexgroup_event_filter[7].gcheck_event_filter_enable.value && gcheck_OS_EVR_INIT.value}, Boolean)
+
+  // Mutex Setup
+  rArraygindexgroup_event_filter[8].gcheck_event_filter_enable.value = true
+  rArraygindexgroup_event_filter[8].gcheck_event_filter_error.value = true
+  rArraygindexgroup_event_filter[8].gcheck_event_filter_api.value = false
+  rArraygindexgroup_event_filter[8].gcheck_event_filter_oper.value = false
+  rArraygindexgroup_event_filter[8].gcheck_event_filter_detail.value = false
+  rArraygindexgroup_event_filter[8].gcheck_event_filter_error.enabled = MF({rArraygindexgroup_event_filter[8].gcheck_event_filter_enable.value && gcheck_OS_EVR_INIT.value}, Boolean)
+  rArraygindexgroup_event_filter[8].gcheck_event_filter_api.enabled = MF({rArraygindexgroup_event_filter[8].gcheck_event_filter_enable.value && gcheck_OS_EVR_INIT.value}, Boolean)
+  rArraygindexgroup_event_filter[8].gcheck_event_filter_oper.enabled = MF({rArraygindexgroup_event_filter[8].gcheck_event_filter_enable.value && gcheck_OS_EVR_INIT.value}, Boolean)
+  rArraygindexgroup_event_filter[8].gcheck_event_filter_detail.enabled = MF({rArraygindexgroup_event_filter[8].gcheck_event_filter_enable.value && gcheck_OS_EVR_INIT.value}, Boolean)
+
+  // Semaphore Setup
+  rArraygindexgroup_event_filter[9].gcheck_event_filter_enable.value = true
+  rArraygindexgroup_event_filter[9].gcheck_event_filter_error.value = true
+  rArraygindexgroup_event_filter[9].gcheck_event_filter_api.value = false
+  rArraygindexgroup_event_filter[9].gcheck_event_filter_oper.value = false
+  rArraygindexgroup_event_filter[9].gcheck_event_filter_detail.value = false
+  rArraygindexgroup_event_filter[9].gcheck_event_filter_error.enabled = MF({rArraygindexgroup_event_filter[9].gcheck_event_filter_enable.value && gcheck_OS_EVR_INIT.value}, Boolean)
+  rArraygindexgroup_event_filter[9].gcheck_event_filter_api.enabled = MF({rArraygindexgroup_event_filter[9].gcheck_event_filter_enable.value && gcheck_OS_EVR_INIT.value}, Boolean)
+  rArraygindexgroup_event_filter[9].gcheck_event_filter_oper.enabled = MF({rArraygindexgroup_event_filter[9].gcheck_event_filter_enable.value && gcheck_OS_EVR_INIT.value}, Boolean)
+  rArraygindexgroup_event_filter[9].gcheck_event_filter_detail.enabled = MF({rArraygindexgroup_event_filter[9].gcheck_event_filter_enable.value && gcheck_OS_EVR_INIT.value}, Boolean)
+
+  // Memory Pool Setup
+  rArraygindexgroup_event_filter[10].gcheck_event_filter_enable.value = true
+  rArraygindexgroup_event_filter[10].gcheck_event_filter_error.value = true
+  rArraygindexgroup_event_filter[10].gcheck_event_filter_api.value = false
+  rArraygindexgroup_event_filter[10].gcheck_event_filter_oper.value = false
+  rArraygindexgroup_event_filter[10].gcheck_event_filter_detail.value = false
+  rArraygindexgroup_event_filter[10].gcheck_event_filter_error.enabled = MF({rArraygindexgroup_event_filter[10].gcheck_event_filter_enable.value && gcheck_OS_EVR_INIT.value}, Boolean)
+  rArraygindexgroup_event_filter[10].gcheck_event_filter_api.enabled = MF({rArraygindexgroup_event_filter[10].gcheck_event_filter_enable.value && gcheck_OS_EVR_INIT.value}, Boolean)
+  rArraygindexgroup_event_filter[10].gcheck_event_filter_oper.enabled = MF({rArraygindexgroup_event_filter[10].gcheck_event_filter_enable.value && gcheck_OS_EVR_INIT.value}, Boolean)
+  rArraygindexgroup_event_filter[10].gcheck_event_filter_detail.enabled = MF({rArraygindexgroup_event_filter[10].gcheck_event_filter_enable.value && gcheck_OS_EVR_INIT.value}, Boolean)
+
+  // Message Queue Setup
+  rArraygindexgroup_event_filter[11].gcheck_event_filter_enable.value = true
+  rArraygindexgroup_event_filter[11].gcheck_event_filter_error.value = true
+  rArraygindexgroup_event_filter[11].gcheck_event_filter_api.value = false
+  rArraygindexgroup_event_filter[11].gcheck_event_filter_oper.value = false
+  rArraygindexgroup_event_filter[11].gcheck_event_filter_detail.value = false
+  rArraygindexgroup_event_filter[11].gcheck_event_filter_error.enabled = MF({rArraygindexgroup_event_filter[11].gcheck_event_filter_enable.value && gcheck_OS_EVR_INIT.value}, Boolean)
+  rArraygindexgroup_event_filter[11].gcheck_event_filter_api.enabled = MF({rArraygindexgroup_event_filter[11].gcheck_event_filter_enable.value && gcheck_OS_EVR_INIT.value}, Boolean)
+  rArraygindexgroup_event_filter[11].gcheck_event_filter_oper.enabled = MF({rArraygindexgroup_event_filter[11].gcheck_event_filter_enable.value && gcheck_OS_EVR_INIT.value}, Boolean)
+  rArraygindexgroup_event_filter[11].gcheck_event_filter_detail.enabled = MF({rArraygindexgroup_event_filter[11].gcheck_event_filter_enable.value && gcheck_OS_EVR_INIT.value}, Boolean)
+
+}
+	
+	/* File Generation */
+ def generateFiles(){
+	copy("Include", "Include")
+	copy("RTX", "RTX")
+	copy("Source", "Source")
+	
+	copy("LICENSE.txt", "LICENSE.txt")
+	copy("cmsis_rtos_rtx5.c", "cmsis_rtos_rtx5.c")
+	copy("cmsis_rtos_rtx5.h", "cmsis_rtos_rtx5.h")
+
+	generate("cmsis_rtos_rtx5_confh.tmpl", "cmsis_rtos_rtx5_conf.h")
+	generate("cmsis_rtos_rtx5_confc.tmpl", "cmsis_rtos_rtx5_conf.c")
+	generate("cmsis_rtos_rtx5_externh.tmpl", "cmsis_rtos_rtx5_extern.h")
+	generate("RTX_Configh.tmpl", "RTX/Config/RTX_Config.h")
+}
+	
+	/**
+	 * Add main code here
+	 */
+}

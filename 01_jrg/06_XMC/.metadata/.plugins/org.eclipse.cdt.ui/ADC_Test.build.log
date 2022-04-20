@@ -1,0 +1,29 @@
+19:46:09 **** Incremental Build of configuration Debug for project ADC_Test ****
+"\"C:\\Infineon\\Tools\\DAVE IDE\\4.5.0.202105191637\\eclipse\\ARM-GCC-49\\bin\\make\"" --output-sync -j8 all 
+'Building file: ../Dave/Generated/ANALOG_IO/analog_io_conf.c'
+'Invoking: ARM-GCC C Compiler'
+"C:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/ARM-GCC-49/bin/arm-none-eabi-gcc" -MMD -MT "Dave/Generated/ANALOG_IO/analog_io_conf.o" -DXMC4500_F100x1024 -I"C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/06_XMC/ADC_Test/Libraries/XMCLib/inc" -I"C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/06_XMC/ADC_Test/Libraries/CMSIS/Include" -I"C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/06_XMC/ADC_Test/Libraries/CMSIS/Infineon/XMC4500_series/Include" -I"C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/06_XMC/ADC_Test" -I"C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/06_XMC/ADC_Test/Dave/Generated" -I"C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/06_XMC/ADC_Test/Libraries" -O0 -ffunction-sections -fdata-sections -Wall -std=gnu99 -mfloat-abi=softfp -Wa,-adhlns="Dave/Generated/ANALOG_IO/analog_io_conf.o.lst" -pipe -c -fmessage-length=0 -MMD -MP -MF"Dave/Generated/ANALOG_IO/analog_io_conf.d" -MT"Dave/Generated/ANALOG_IO/analog_io_conf.d Dave/Generated/ANALOG_IO/analog_io_conf.o" -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mthumb -g -gdwarf-2 -o "Dave/Generated/ANALOG_IO/analog_io_conf.o" "../Dave/Generated/ANALOG_IO/analog_io_conf.c" 
+'Finished building: ../Dave/Generated/ANALOG_IO/analog_io_conf.c'
+
+'Building target: ADC_Test.elf'
+'Invoking: ARM-GCC C Linker'
+"C:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/ARM-GCC-49/bin/arm-none-eabi-gcc" -T"../linker_script.ld" -nostartfiles -Xlinker --gc-sections -specs=nano.specs -specs=nosys.specs -Wl,-Map,"ADC_Test.map" -mfloat-abi=softfp -mfpu=fpv4-sp-d16 -mcpu=cortex-m4 -mthumb -g -gdwarf-2 -o "ADC_Test.elf" "@objects.rsp"  -lm
+'Finished building target: ADC_Test.elf'
+
+'Invoking: ARM-GCC Create Flash Image'
+"C:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/ARM-GCC-49/bin/arm-none-eabi-objcopy" -O ihex "ADC_Test.elf" "ADC_Test.hex"
+'Finished building: ADC_Test.hex'
+
+'Invoking: ARM-GCC Print Size'
+"C:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/ARM-GCC-49/bin/arm-none-eabi-size" --format=berkeley "ADC_Test.elf"
+   text	   data	    bss	    dec	    hex	filename
+   6396	    176	   2092	   8664	   21d8	ADC_Test.elf
+'Finished building: ADC_Test.siz'
+
+'Invoking: ARM-GCC Create Listing'
+"C:/Infineon/Tools/DAVE IDE/4.5.0.202105191637/eclipse/ARM-GCC-49/bin/arm-none-eabi-objdump" -h -S "ADC_Test.elf" > "ADC_Test.lst"
+'Finished building: ADC_Test.lst'
+
+
+19:46:10 Build Finished (took 1s.848ms)
+

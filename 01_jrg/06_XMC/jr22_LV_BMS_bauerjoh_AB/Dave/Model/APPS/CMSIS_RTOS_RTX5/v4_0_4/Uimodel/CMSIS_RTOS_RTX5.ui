@@ -1,0 +1,269 @@
+<p1:Tab  xmlns="http://www.eclipse.org/xwt/presentation" xmlns:x="http://www.eclipse.org/xwt" xmlns:p1="clr-namespace:com.ifx.davex.ui.controls.app" x:Class="e" layout="{x:Null}">
+	<p1:TabFolder bounds="5, 5, 600, 500">
+		<p1:GTab text="System Settings" visible="true" enabled="true" widgetName="gtab_system">
+			<p1:GTab.control>
+				<p1:Tab widgetName="composite_2">
+					<p1:Tab.layout>
+						<GridLayout numColumns="2"/>
+					</p1:Tab.layout>
+					<p1:GLabel text="Global Dynamic Memory size [bytes]:" visible="true" widgetName="glabel_12" description="" toolTipText=""/>
+					<p1:GInteger x:Style="NONE" minValue="0" maxValue="1073741824" mandatory="(com.ifx.davex.ui.controls.util.AppUiConstants).FALSE" format="(com.ifx.davex.ui.controls.util.AppUiConstants).DEC" manifestObj="true" widgetName="ginteger_OS_DYNAMIC_MEM_SIZE" value="4096" description="Defines the combined global dynamic memory size." toolTipText="Defines the combined global dynamic memory size">
+						<p1:GInteger.layoutData>
+							<GridData widthHint="73"/>
+						</p1:GInteger.layoutData>
+					</p1:GInteger>
+					<p1:GLabel text="Kernel Tick Frequency [Hz]:" visible="true" widgetName="glabel_13" description="" toolTipText=""/>
+					<p1:GInteger x:Style="NONE" minValue="1" maxValue="1000000" mandatory="(com.ifx.davex.ui.controls.util.AppUiConstants).FALSE" format="(com.ifx.davex.ui.controls.util.AppUiConstants).DEC" widgetName="ginteger_OS_TICK_FREQ" manifestObj="true" value="1000" description="Defines base time unit for delays and timeouts." toolTipText="Defines base time unit for delays and timeouts">
+						<p1:GInteger.layoutData>
+							<GridData widthHint="72"/>
+						</p1:GInteger.layoutData>
+					</p1:GInteger>
+					<p1:GCheck text="Round-Robin Thread switching" manifestObj="true" widgetName="gcheck_OS_ROBIN_ENABLE" value="true" toolTipText="Enables Round-Robin Thread switching" description="Enables Round-Robin Thread switching"/>
+					<Label/>
+					<p1:GLabel text="Round-Robin Timeout:" visible="true" widgetName="glabel_14" description="" toolTipText=""/>
+					<p1:GInteger x:Style="NONE" minValue="1" maxValue="1000" mandatory="(com.ifx.davex.ui.controls.util.AppUiConstants).FALSE" format="(com.ifx.davex.ui.controls.util.AppUiConstants).DEC" manifestObj="true" widgetName="ginteger_OS_ROBIN_TIMEOUT" value="5" description="Defines how many ticks a thread will execute before a thread switch." toolTipText="Defines how many ticks a thread will execute before a thread switch">
+						<p1:GInteger.layoutData>
+							<GridData widthHint="72"/>
+						</p1:GInteger.layoutData>
+					</p1:GInteger>
+					<p1:GLabel text="ISR FIFO Queue:" visible="true" widgetName="glabel_30" description="" toolTipText=""/>
+					<p1:GCombo mandatory="(com.ifx.davex.ui.controls.util.AppUiConstants).FALSE" manifestObj="true" widgetName="gcombo_OS_ISR_FIFO_QUEUE" options="4 entries&#13;&#10;8 entries&#13;&#10;12 entries&#13;&#10;16 entries&#13;&#10;24 entries&#13;&#10;32 entries&#13;&#10;48 entries&#13;&#10;64 entries&#13;&#10;96 entries&#13;&#10;128 entries&#13;&#10;196 entries&#13;&#10;256 entries" value="16 entries" description="RTOS Functions called from ISR store requests to this buffer." toolTipText="RTOS Functions called from ISR store requests to this buffer">
+						<p1:GCombo.layoutData>
+							<GridData grabExcessHorizontalSpace="true" horizontalAlignment="FILL"/>
+						</p1:GCombo.layoutData>
+					</p1:GCombo>
+					<p1:GCheck text="Object Memory usage counters" manifestObj="true" widgetName="gcheck_OS_OBJ_MEM_USAGE" description="Enables object memory usage counters" toolTipText="Enables object memory usage counters"/>
+					<Label/>
+					<p1:GMessage isError="false" manifestObj="true" text="Global Dynamic Memory size value need to be a multiple of 8" widgetName="gmessage_global_dynamic_memory_size">
+						<p1:GMessage.layoutData>
+							<GridData grabExcessHorizontalSpace="true" horizontalAlignment="FILL" horizontalSpan="2"/>
+						</p1:GMessage.layoutData>
+					</p1:GMessage>
+					<Label/>
+				</p1:Tab>
+			</p1:GTab.control>
+		</p1:GTab>
+		<p1:GTab text="Thread Settings" visible="true" enabled="true" widgetName="gtab_thread">
+			<p1:GTab.control>
+				<p1:Tab widgetName="composite_11">
+					<p1:Tab.layout>
+						<GridLayout numColumns="2"/>
+					</p1:Tab.layout>
+					<p1:GCheck text="Object specific Memory allocation" manifestObj="true" widgetName="gcheck_OS_THREAD_OBJ_MEM" description="Enables object specific memory allocation" toolTipText="Enables object specific memory allocation"/>
+					<Label/>
+					<p1:GLabel text="Number of user Threads:" visible="true" widgetName="glabel_123" description="" toolTipText=""/>
+					<p1:GInteger x:Style="NONE" minValue="1" maxValue="1000" mandatory="(com.ifx.davex.ui.controls.util.AppUiConstants).FALSE" format="(com.ifx.davex.ui.controls.util.AppUiConstants).DEC" manifestObj="true" widgetName="ginteger_OS_THREAD_NUM" value="1" description="Defines maximum number of user threads that can be active at the same time.&#13;&#10;Applies to user threads with system provided memory for control blocks." toolTipText="Defines maximum number of user threads that can be active at the same time">
+						<p1:GInteger.layoutData>
+							<GridData widthHint="68"/>
+						</p1:GInteger.layoutData>
+					</p1:GInteger>
+					<p1:GLabel text="Number of user Threads with default Stack size:" visible="true" widgetName="glabel_124" description="" toolTipText=""/>
+					<p1:GInteger x:Style="NONE" minValue="0" maxValue="1000" mandatory="(com.ifx.davex.ui.controls.util.AppUiConstants).FALSE" format="(com.ifx.davex.ui.controls.util.AppUiConstants).DEC" manifestObj="true" widgetName="ginteger_OS_THREAD_DEF_STACK_NUM" value="0" description="Defines maximum number of user threads with default stack size.&#13;&#10;Applies to user threads with zero stack size specified." toolTipText="Defines maximum number of user threads with default stack size">
+						<p1:GInteger.layoutData>
+							<GridData widthHint="68"/>
+						</p1:GInteger.layoutData>
+					</p1:GInteger>
+					<p1:GLabel text="Total Stack size [bytes] for user Threads with user-provided Stack size:" visible="true" widgetName="glabel_126" description="" toolTipText=""/>
+					<p1:GInteger x:Style="NONE" minValue="0" maxValue="1073741824" mandatory="(com.ifx.davex.ui.controls.util.AppUiConstants).FALSE" format="(com.ifx.davex.ui.controls.util.AppUiConstants).DEC" manifestObj="true" widgetName="ginteger_OS_THREAD_USER_STACK_SIZE" value="0" description="Defines the combined stack size for user threads with user-provided stack size.&#13;&#10;Applies to user threads with user-provided stack size and system provided memory for stack." toolTipText="Defines the combined stack size for user threads with user-provided stack size">
+						<p1:GInteger.layoutData>
+							<GridData widthHint="67"/>
+						</p1:GInteger.layoutData>
+					</p1:GInteger>
+					<p1:GLabel text="Default Thread Stack size [bytes]:" visible="true" manifestObj="true" widgetName="glabel_127"/>
+					<p1:GInteger x:Style="NONE" minValue="96" maxValue="1073741824" mandatory="(com.ifx.davex.ui.controls.util.AppUiConstants).FALSE" format="(com.ifx.davex.ui.controls.util.AppUiConstants).DEC" manifestObj="true" widgetName="ginteger_OS_STACK_SIZE" value="256" description="Defines stack size for threads with zero stack size specified." toolTipText="Defines stack size for threads with zero stack size specified">
+						<p1:GInteger.layoutData>
+							<GridData widthHint="66"/>
+						</p1:GInteger.layoutData>
+					</p1:GInteger>
+					<p1:GLabel text="Idle Thread Stack size [bytes]:" visible="true" widgetName="glabel_128" description="" toolTipText=""/>
+					<p1:GInteger x:Style="NONE" minValue="72" maxValue="1073741824" mandatory="(com.ifx.davex.ui.controls.util.AppUiConstants).FALSE" format="(com.ifx.davex.ui.controls.util.AppUiConstants).DEC" manifestObj="true" widgetName="ginteger_OS_IDLE_THREAD_STACK_SIZE" value="256" description="Defines stack size for Idle thread." toolTipText="Defines stack size for Idle thread">
+						<p1:GInteger.layoutData>
+							<GridData widthHint="66"/>
+						</p1:GInteger.layoutData>
+					</p1:GInteger>
+					<p1:GCheck text="Stack overrun checking" manifestObj="true" widgetName="gcheck_OS_STACK_CHECK" description="Enables stack overrun check at thread switch.&#13;&#10;Enabling this option increases slightly the execution time of a thread switch." toolTipText="Enables stack overrun check at thread switch" value="true"/>
+					<Label/>
+					<p1:GCheck text="Stack usage watermark" manifestObj="true" widgetName="gcheck_OS_STACK_WATERMARK" description="Initializes thread stack with watermark pattern for analyzing stack usage.&#13;&#10;Enabling this option increases significantly the execution time of thread creation." toolTipText="Initializes thread stack with watermark pattern for analyzing stack usage"/>
+					<Label/>
+					<p1:GLabel text="Processor mode for Thread execution:" visible="true" widgetName="glabel_130"/>
+					<p1:GCombo mandatory="(com.ifx.davex.ui.controls.util.AppUiConstants).FALSE" manifestObj="true" widgetName="gcombo_OS_PRIVILEGE_MODE" options="Unprivileged mode&#13;&#10;Privileged mode" value="Privileged mode">
+						<p1:GCombo.layoutData>
+							<GridData grabExcessHorizontalSpace="true" horizontalAlignment="FILL"/>
+						</p1:GCombo.layoutData>
+					</p1:GCombo>
+					<p1:GMessage isError="false" manifestObj="true" text="Stack size value need to be a multiple of 8" widgetName="gmessage_thread_stack_size">
+						<p1:GMessage.layoutData>
+							<GridData grabExcessHorizontalSpace="true" horizontalAlignment="FILL" horizontalSpan="2"/>
+						</p1:GMessage.layoutData>
+					</p1:GMessage>
+					<Label/>
+				</p1:Tab>
+			</p1:GTab.control>
+		</p1:GTab>
+		<p1:GTab text="Timer Settings" visible="true" enabled="true" widgetName="gtab_42">
+			<p1:GTab.control>
+				<p1:Tab widgetName="composite_55">
+					<p1:Tab.layout>
+						<GridLayout numColumns="2"/>
+					</p1:Tab.layout>
+					<p1:GCheck text="Object specific Memory allocation" manifestObj="true" widgetName="gcheck_OS_TIMER_OBJ_MEM" description="Enables object specific memory allocation." toolTipText="Enables object specific memory allocation"/>
+					<Label/>
+					<p1:GLabel text="Number of Timer objects" visible="true" manifestObj="true" widgetName="glabel_152" description="" toolTipText=""/>
+					<p1:GInteger x:Style="NONE" minValue="1" maxValue="1000" mandatory="(com.ifx.davex.ui.controls.util.AppUiConstants).FALSE" format="(com.ifx.davex.ui.controls.util.AppUiConstants).DEC" manifestObj="true" widgetName="ginteger_OS_TIMER_NUM" value="1" description="Defines maximum number of objects that can be active at the same time.&#13;&#10;Applies to objects with system provided memory for control blocks." toolTipText="Defines maximum number of objects that can be active at the same time">
+						<p1:GInteger.layoutData>
+							<GridData widthHint="61"/>
+						</p1:GInteger.layoutData>
+					</p1:GInteger>
+					<p1:GLabel text="Timer Thread Priority" visible="true" widgetName="glabel_175" description="" toolTipText=""/>
+					<p1:GCombo mandatory="(com.ifx.davex.ui.controls.util.AppUiConstants).FALSE" manifestObj="true" widgetName="gcombo_OS_TIMER_THREAD_PRIO" options="Low&#13;&#10;Below Normal&#13;&#10;Normal&#13;&#10;Above Normal&#13;&#10;High&#13;&#10;Realtime&#13;&#10;" value="High" description="Defines priority for timer thread" toolTipText="Defines priority for timer thread">
+						<p1:GCombo.layoutData>
+							<GridData grabExcessHorizontalSpace="true" horizontalAlignment="FILL"/>
+						</p1:GCombo.layoutData>
+					</p1:GCombo>
+					<p1:GLabel text="Timer Thread Stack size [bytes]" visible="true" manifestObj="true" widgetName="glabel_176" description="" toolTipText=""/>
+					<p1:GInteger x:Style="NONE" minValue="0" maxValue="1073741824" mandatory="(com.ifx.davex.ui.controls.util.AppUiConstants).FALSE" format="(com.ifx.davex.ui.controls.util.AppUiConstants).DEC" manifestObj="true" widgetName="ginteger_OS_TIMER_THREAD_STACK_SIZE" value="256" description="Defines stack size for Timer thread.&#13;&#10;May be set to 0 when timers are not used." toolTipText="Defines stack size for Timer thread">
+						<p1:GInteger.layoutData>
+							<GridData widthHint="61"/>
+						</p1:GInteger.layoutData>
+					</p1:GInteger>
+					<p1:GLabel text="Timer Callback Queue entries" visible="true" manifestObj="true" widgetName="glabel_177" description="" toolTipText=""/>
+					<p1:GInteger x:Style="NONE" minValue="0" maxValue="256" mandatory="(com.ifx.davex.ui.controls.util.AppUiConstants).FALSE" format="(com.ifx.davex.ui.controls.util.AppUiConstants).DEC" manifestObj="true" widgetName="ginteger_OS_TIMER_CB_QUEUE" value="4" description="Number of concurrent active timer callback functions.&#13;&#10;May be set to 0 when timers are not used." toolTipText="Number of concurrent active timer callback functions">
+						<p1:GInteger.layoutData>
+							<GridData widthHint="60"/>
+						</p1:GInteger.layoutData>
+					</p1:GInteger>
+					<p1:GMessage isError="false" manifestObj="true" text="Stack size value need to be a multiple of 8" widgetName="gmessage_timer_thread_stack_size">
+						<p1:GMessage.layoutData>
+							<GridData grabExcessHorizontalSpace="true" horizontalAlignment="FILL" horizontalSpan="2"/>
+						</p1:GMessage.layoutData>
+					</p1:GMessage>
+					<Label/>
+				</p1:Tab>
+			</p1:GTab.control>
+		</p1:GTab>
+		<p1:GTab text="Miscellaneous Settings" visible="true" enabled="true" widgetName="gtab_55">
+			<p1:GTab.control>
+				<p1:Tab widgetName="composite_70">
+					<p1:Tab.layout>
+						<GridLayout/>
+					</p1:Tab.layout>
+					<p1:GGroup text="Event Flags Settings" widgetName="ggroup_28">
+						<p1:GGroup.layout>
+							<GridLayout numColumns="2"/>
+						</p1:GGroup.layout>
+						<p1:GCheck text="Object specific Memory allocation" manifestObj="true" widgetName="gcheck_OS_EVFLAGS_OBJ_MEM" description="Enables object specific memory allocation." toolTipText="Enables object specific memory allocation"/>
+						<Label/>
+						<p1:GLabel text="Number of Event Flags objects" visible="true" manifestObj="true" widgetName="glabel_203" description="" toolTipText=""/>
+						<p1:GInteger x:Style="NONE" minValue="1" maxValue="1000" mandatory="(com.ifx.davex.ui.controls.util.AppUiConstants).FALSE" format="(com.ifx.davex.ui.controls.util.AppUiConstants).DEC" manifestObj="true" widgetName="ginteger_OS_EVFLAGS_NUM" value="1" description="Defines maximum number of objects that can be active at the same time.&#13;&#10;Applies to objects with system provided memory for control blocks." toolTipText="Defines maximum number of objects that can be active at the same time">
+							<p1:GInteger.layoutData>
+								<GridData widthHint="62"/>
+							</p1:GInteger.layoutData>
+						</p1:GInteger>
+					</p1:GGroup>
+					<p1:GGroup text="Mutex Settings" widgetName="ggroup_281">
+						<p1:GGroup.layoutData>
+							<GridData widthHint="283"/>
+						</p1:GGroup.layoutData>
+						<p1:GGroup.layout>
+							<GridLayout numColumns="2"/>
+						</p1:GGroup.layout>
+						<p1:GCheck description="Enables object specific memory allocation." manifestObj="true" text="Object specific Memory allocation" toolTipText="Enables object specific memory allocation" widgetName="gcheck_OS_MUTEX_OBJ_MEM"/>
+						<Label/>
+						<p1:GLabel description="" manifestObj="true" text="Number of Mutex objects" toolTipText="" widgetName="glabel_2031"/>
+						<p1:GInteger format="(com.ifx.davex.ui.controls.util.AppUiConstants).DEC" mandatory="(com.ifx.davex.ui.controls.util.AppUiConstants).FALSE" manifestObj="true" maxValue="1000" minValue="1" value="1" widgetName="ginteger_OS_MUTEX_NUM" toolTipText="Defines maximum number of objects that can be active at the same time" description="Defines maximum number of objects that can be active at the same time.&#13;&#10;Applies to objects with system provided memory for control blocks.">
+							<p1:GInteger.layoutData>
+								<GridData horizontalAlignment="FILL" widthHint="59"/>
+							</p1:GInteger.layoutData>
+						</p1:GInteger>
+					</p1:GGroup>
+					<p1:GGroup text="Semaphore Settings" widgetName="ggroup_282">
+						<p1:GGroup.layoutData>
+							<GridData widthHint="278"/>
+						</p1:GGroup.layoutData>
+						<p1:GGroup.layout>
+							<GridLayout numColumns="2"/>
+						</p1:GGroup.layout>
+						<p1:GCheck description="Enables object specific memory allocation." manifestObj="true" text="Object specific Memory allocation" toolTipText="Enables object specific memory allocation" widgetName="gcheck_OS_SEMAPHORE_OBJ_MEM"/>
+						<Label/>
+						<p1:GLabel description="" manifestObj="true" text="Number of Semaphore objects" toolTipText="" widgetName="glabel_202"/>
+						<p1:GInteger format="(com.ifx.davex.ui.controls.util.AppUiConstants).DEC" mandatory="(com.ifx.davex.ui.controls.util.AppUiConstants).FALSE" manifestObj="true" maxValue="1000" minValue="1" value="1" widgetName="ginteger_OS_SEMAPHORE_NUM" description="Defines maximum number of objects that can be active at the same time.&#13;&#10;Applies to objects with system provided memory for control blocks." toolTipText="Defines maximum number of objects that can be active at the same time">
+							<p1:GInteger.layoutData>
+								<GridData horizontalAlignment="FILL" widthHint="60"/>
+							</p1:GInteger.layoutData>
+						</p1:GInteger>
+					</p1:GGroup>
+					<p1:GGroup text="Memory Pool Settings" widgetName="ggroup_283">
+						<p1:GGroup.layout>
+							<GridLayout numColumns="2"/>
+						</p1:GGroup.layout>
+						<p1:GCheck description="Enables object specific memory allocation." manifestObj="true" text="Object specific Memory allocation" toolTipText="Enables object specific memory allocation" widgetName="gcheck_OS_MEMPOOL_OBJ_MEM"/>
+						<Label/>
+						<p1:GLabel description="" manifestObj="true" text="Number of Memory Pool objects" toolTipText="" widgetName="glabel_2021"/>
+						<p1:GInteger format="(com.ifx.davex.ui.controls.util.AppUiConstants).DEC" mandatory="(com.ifx.davex.ui.controls.util.AppUiConstants).FALSE" manifestObj="true" maxValue="1000" minValue="1" value="1" widgetName="ginteger_OS_MEMPOOL_NUM" toolTipText="Defines maximum number of objects that can be active at the same time" description="Defines maximum number of objects that can be active at the same time.&#13;&#10;Applies to objects with system provided memory for control blocks.">
+							<p1:GInteger.layoutData>
+								<GridData horizontalAlignment="FILL"/>
+							</p1:GInteger.layoutData>
+						</p1:GInteger>
+						<p1:GLabel text="Data Storage Memory size [bytes]" visible="true" manifestObj="true" widgetName="glabel_207" description="" toolTipText=""/>
+						<p1:GInteger x:Style="NONE" minValue="0" maxValue="MAX_VALUE" mandatory="(com.ifx.davex.ui.controls.util.AppUiConstants).FALSE" format="(com.ifx.davex.ui.controls.util.AppUiConstants).DEC" manifestObj="true" widgetName="ginteger_OS_MEMPOOL_DATA_SIZE" value="0" description="Defines the combined data storage memory size.&#13;&#10;Applies to objects with system provided memory for data storage." toolTipText="Defines the combined data storage memory size">
+							<p1:GInteger.layoutData>
+								<GridData widthHint="60" horizontalAlignment="FILL"/>
+							</p1:GInteger.layoutData>
+						</p1:GInteger>
+					</p1:GGroup>
+					<p1:GGroup text="Message Queue Settings" widgetName="ggroup_2831">
+						<p1:GGroup.layout>
+							<GridLayout numColumns="2"/>
+						</p1:GGroup.layout>
+						<p1:GCheck description="Enables object specific memory allocation." manifestObj="true" text="Object specific Memory allocation" toolTipText="Enables object specific memory allocation" widgetName="gcheck_OS_MSGQUEUE_OBJ_MEM"/>
+						<Label/>
+						<p1:GLabel description="" manifestObj="true" text="Number of Message Queue objects" toolTipText="" widgetName="glabel_20211"/>
+						<p1:GInteger format="(com.ifx.davex.ui.controls.util.AppUiConstants).DEC" mandatory="(com.ifx.davex.ui.controls.util.AppUiConstants).FALSE" manifestObj="true" maxValue="1000" minValue="1" value="1" widgetName="ginteger_OS_MSGQUEUE_NUM" toolTipText="Defines maximum number of objects that can be active at the same time" description="Defines maximum number of objects that can be active at the same time.&#13;&#10;Applies to objects with system provided memory for control blocks.">
+							<p1:GInteger.layoutData>
+								<GridData horizontalAlignment="FILL"/>
+							</p1:GInteger.layoutData>
+						</p1:GInteger>
+						<p1:GLabel description="" manifestObj="true" text="Data Storage Memory size [bytes]" toolTipText="" widgetName="glabel_2071"/>
+						<p1:GInteger format="(com.ifx.davex.ui.controls.util.AppUiConstants).DEC" mandatory="(com.ifx.davex.ui.controls.util.AppUiConstants).FALSE" manifestObj="true" maxValue="MAX_VALUE" minValue="0" value="0" widgetName="ginteger_OS_MSGQUEUE_DATA_SIZE" description="Defines the combined data storage memory size.&#13;&#10;Applies to objects with system provided memory for data storage." toolTipText="Defines the combined data storage memory size">
+							<p1:GInteger.layoutData>
+								<GridData widthHint="56" horizontalAlignment="FILL"/>
+							</p1:GInteger.layoutData>
+						</p1:GInteger>
+					</p1:GGroup>
+				</p1:Tab>
+			</p1:GTab.control>
+		</p1:GTab>
+		<p1:GTab text="Event Recorder Settings" visible="true" enabled="true" widgetName="gtab_63">
+			<p1:GTab.control>
+				<p1:Tab widgetName="composite_83">
+					<p1:Tab.layout>
+						<GridLayout/>
+					</p1:Tab.layout>
+					<p1:GCheck text="Global Initialization" manifestObj="true" widgetName="gcheck_OS_EVR_INIT" description="Initialize Event Recorder during &apos;osKernelInitialize&apos;." toolTipText="Initialize Event Recorder during &apos;osKernelInitialize&apos;."/>
+					<p1:GCheck text="Start recording" manifestObj="true" widgetName="gcheck_OS_EVR_START" toolTipText="Start event recording after initialization." description="Start event recording after initialization." value="true"/>
+					<p1:GIndexGroup text="Event Filter Setup" widgetName="gindexgroup_event_filter" manifestObj="true">
+						<p1:GIndexGroup.layout>
+							<GridLayout numColumns="2"/>
+						</p1:GIndexGroup.layout>
+						<p1:GLabel text="Event Type:" visible="true" widgetName="glabel_115"/>
+						<p1:GIndexCombo maxChoices="12" widgetName="gindexcombo_event_type" options="Global&#13;&#10;Memory Management&#13;&#10;Kernel&#13;&#10;Thread&#13;&#10;Generic Wait&#13;&#10;Thread Flags&#13;&#10;Event Flags&#13;&#10;Timer&#13;&#10;Mutex&#13;&#10;Semaphore&#13;&#10;Memory Pool&#13;&#10;Message Queue&#13;&#10;" value="Global">
+							<p1:GIndexCombo.layoutData>
+								<GridData grabExcessHorizontalSpace="true" horizontalAlignment="FILL"/>
+							</p1:GIndexCombo.layoutData>
+						</p1:GIndexCombo>
+						<p1:GCheck text="Enables event generation" manifestObj="true" widgetName="gcheck_event_filter_enable"/>
+						<Label/>
+						<p1:GCheck text="Error events" manifestObj="true" widgetName="gcheck_event_filter_error"/>
+						<Label/>
+						<p1:GCheck text="API function call events" manifestObj="true" widgetName="gcheck_event_filter_api"/>
+						<Label/>
+						<p1:GCheck text="Operation events" manifestObj="true" widgetName="gcheck_event_filter_oper"/>
+						<Label/>
+						<p1:GCheck text="Detailed operation events" manifestObj="true" widgetName="gcheck_event_filter_detail"/>
+						<Label/>
+					</p1:GIndexGroup>
+				</p1:Tab>
+			</p1:GTab.control>
+		</p1:GTab>
+	</p1:TabFolder>
+</p1:Tab>

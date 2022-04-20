@@ -1,0 +1,19 @@
+package Model.APPS.CMSIS_RTOS_RTX5.v4_0_4;
+
+import ifx.davex.app.manifest.*;
+
+class Gindexgroup_event_filter{
+	 public GCheck gcheck_event_filter_enable;
+	 public GCheck gcheck_event_filter_error;
+	 public GCheck gcheck_event_filter_api;
+	 public GCheck gcheck_event_filter_oper;
+	 public GCheck gcheck_event_filter_detail;
+
+	public Gindexgroup_event_filter (DaveEnv daveEnv, String widgetName,int index){
+	 gcheck_event_filter_enable = new GCheck(widgetName:"gcheck_event_filter_enable", value:false, enabled:true, visible:true, parentWidgetName:widgetName)
+	 gcheck_event_filter_error = new GCheck(widgetName:"gcheck_event_filter_error", value:false, enabled:true, visible:true, parentWidgetName:widgetName)
+	 gcheck_event_filter_api = new GCheck(widgetName:"gcheck_event_filter_api", value:false, enabled:true, visible:true, parentWidgetName:widgetName)
+	 gcheck_event_filter_oper = new GCheck(widgetName:"gcheck_event_filter_oper", value:false, enabled:true, visible:true, parentWidgetName:widgetName)
+	 gcheck_event_filter_detail = new GCheck(widgetName:"gcheck_event_filter_detail", value:false, enabled:true, visible:true, parentWidgetName:widgetName)
+	}
+}

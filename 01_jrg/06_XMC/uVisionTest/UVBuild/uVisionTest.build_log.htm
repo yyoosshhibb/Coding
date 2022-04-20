@@ -1,0 +1,309 @@
+<html>
+<body>
+<pre>
+<h1>µVision Build Log</h1>
+<h2>Tool Versions:</h2>
+IDE-Version: µVision V5.29.0.0
+Copyright (C) 2019 ARM Ltd and ARM Germany GmbH. All rights reserved.
+License Information: Johannes Yoshi, -, LIC=----
+ 
+Tool Versions:
+Toolchain:       MDK-Lite  Version: 5.29.0.0
+Toolchain Path:  C:\Keil_v5\ARM\ARMCC\Bin
+C Compiler:      Armcc.exe V5.06 update 6 (build 750)
+Assembler:       Armasm.exe V5.06 update 6 (build 750)
+Linker/Locator:  ArmLink.exe V5.06 update 6 (build 750)
+Library Manager: ArmAr.exe V5.06 update 6 (build 750)
+Hex Converter:   FromElf.exe V5.06 update 6 (build 750)
+CPU DLL:         SARMCM3.DLL V5.29.0.0
+Dialog DLL:      DCM.DLL V1.17.3.0
+Target DLL:      UL2CM3.DLL V1.163.0.0
+Dialog DLL:      TCM.DLL V1.36.5.0
+ 
+<h2>Project:</h2>
+C:\Users\Yoshi\Documents\GitHub\Software\01_jrg\06_XMC\uVisionTest\uVisionTest.uvprojx
+Project File Date:  04/17/2022
+
+<h2>Output:</h2>
+*** Using Compiler 'V5.06 update 6 (build 750)', folder: 'C:\Keil_v5\ARM\ARMCC\Bin'
+Build target 'XMC4500-F100x1024'
+compiling clock_xmc4.c...
+compiling adc_measurement.c...
+compiling adc_measurement_conf.c...
+compiling can_node_conf.c...
+compiling clock_xmc4_conf.c...
+compiling main.c...
+compiling can_node.c...
+compiling cpu_ctrl_xmc4.c...
+compiling cpu_ctrl_xmc4_conf.c...
+compiling global_can_conf.c...
+compiling global_can.c...
+compiling global_adc_conf.c...
+compiling global_adc.c...
+compiling DAVE.c...
+compiling xmc4_eru.c...
+compiling xmc4_flash.c...
+compiling xmc4_gpio.c...
+compiling xmc_can.c...
+compiling xmc4_rtc.c...
+compiling xmc4_scu.c...
+compiling xmc_ccu4.c...
+compiling xmc_common.c...
+compiling xmc_ccu8.c...
+compiling xmc_dac.c...
+compiling xmc_dsd.c...
+compiling xmc_dma.c...
+compiling xmc_eru.c...
+compiling xmc_ebu.c...
+compiling xmc_eth_mac.c...
+compiling xmc_fce.c...
+compiling xmc_gpio.c...
+compiling xmc_hrpwm.c...
+compiling xmc_ledts.c...
+compiling xmc_i2c.c...
+compiling xmc_i2s.c...
+compiling xmc_rtc.c...
+compiling xmc_posif.c...
+compiling xmc_sdmmc.c...
+assembling startup_XMC4500.s...
+compiling xmc_spi.c...
+compiling xmc_uart.c...
+compiling xmc_wdt.c...
+compiling system_XMC4500.c...
+compiling xmc_usbd.c...
+compiling xmc_usic.c...
+compiling xmc_vadc.c...
+linking...
+Program Size: Code=5400 RO-data=936 RW-data=188 ZI-data=2680  
+".\UVBuild\uVisionTest.axf" - 0 Error(s), 0 Warning(s).
+
+<h2>Software Packages used:</h2>
+
+Package Vendor: ARM
+                http://www.keil.com/pack/ARM.CMSIS.5.8.0.pack
+                ARM.CMSIS.5.8.0
+                CMSIS (Common Microcontroller Software Interface Standard)
+   * Component: CORE Version: 5.5.0
+
+Package Vendor: Infineon
+                https://www.infineon.com/cmsis_packs/XMC4000/Infineon.XMC4000_DFP.2.13.0.pack
+                Infineon.XMC4000_DFP.2.13.0
+                Infineon XMC4000 Series Device Support, Drivers and Examples
+   * Component: Startup Version: 2.2.4
+   * Component: CAN Version: 2.1.24
+   * Component: CCU4 Version: 2.1.24
+   * Component: CCU8 Version: 2.1.24
+   * Component: DAC Version: 2.1.24
+   * Component: DMA Version: 2.1.24
+   * Component: DSD Version: 2.1.24
+   * Component: EBU Version: 2.1.24
+   * Component: ERU Version: 2.1.24
+   * Component: ETH_MAC Version: 2.1.24
+   * Component: FCE Version: 2.1.24
+   * Component: FLASH Version: 2.1.24
+   * Component: GPIO Version: 2.1.24
+   * Component: HRPWM Version: 2.1.24
+   * Component: I2C Version: 2.1.24
+   * Component: I2S Version: 2.1.24
+   * Component: LEDTS Version: 2.1.24
+   * Component: POSIF Version: 2.1.24
+   * Component: RTC Version: 2.1.24
+   * Component: SCU Version: 2.1.24
+   * Component: SDMMC Version: 2.1.24
+   * Component: SPI Version: 2.1.24
+   * Component: UART Version: 2.1.24
+   * Component: USB Version: 2.1.24
+   * Component: VADC Version: 2.1.24
+   * Component: WDT Version: 2.1.24
+
+Package Vendor: Infineon
+                C:\Users\Yoshi\Documents\GitHub\Software\01_jrg\06_XMC\uVisionTest/Infineon.uVisionTest.1.0.0.pack
+                Infineon.uVisionTest.1.0.0
+                Generated Configuration Files for CE Project uVisionTest
+   * Component: ADC_MEASUREMENT Version: 4.1.24
+   * Component: CAN_NODE Version: 4.1.24
+   * Component: CLOCK_XMC4 Version: 4.0.24
+   * Component: CPU_CTRL_XMC4 Version: 4.0.18
+   * Component: Framework Version: 1.0.0
+   * Component: GLOBAL_ADC Version: 4.0.22
+   * Component: GLOBAL_CAN Version: 4.0.20
+
+<h2>Collection of Component include folders:</h2>
+  .\Dave\Generated
+  .\Dave\Generated\ADC_MEASUREMENT
+  .\Dave\Generated\CAN_NODE
+  .\Dave\Generated\CLOCK_XMC4
+  .\Dave\Generated\CPU_CTRL_XMC4
+  .\Dave\Generated\GLOBAL_ADC
+  .\Dave\Generated\GLOBAL_CAN
+  .\RTE\_XMC4500-F100x1024
+  C:\Users\Yoshi\AppData\Local\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include
+  C:\Users\Yoshi\AppData\Local\Arm\Packs\Infineon\XMC4000_DFP\2.13.0\Device\XMC4500_series\Include
+  C:\Users\Yoshi\AppData\Local\Arm\Packs\Infineon\XMC4000_DFP\2.13.0\Device\XMClib\inc
+
+<h2>Collection of Component Files used:</h2>
+
+   * Component: ARM::CMSIS:CORE:5.5.0
+
+   * Component: Infineon::DAVE:ADC_MEASUREMENT:4.1.24
+      Include file:  Dave\Generated\ADC_MEASUREMENT\adc_measurement.h
+      Source file:   Dave\Generated\ADC_MEASUREMENT\adc_measurement_conf.c
+      Include file:  Dave\Generated\ADC_MEASUREMENT\adc_measurement_extern.h
+      Include file:  Dave\Generated\ADC_MEASUREMENT\adc_measurement_conf.h
+      Source file:   Dave\Generated\ADC_MEASUREMENT\adc_measurement.c
+
+   * Component: Infineon::DAVE:CAN_NODE:4.1.24
+      Include file:  Dave\Generated\CAN_NODE\can_node.h
+      Include file:  Dave\Generated\CAN_NODE\can_node_conf.h
+      Include file:  Dave\Generated\CAN_NODE\can_node_extern.h
+      Source file:   Dave\Generated\CAN_NODE\can_node_conf.c
+      Source file:   Dave\Generated\CAN_NODE\can_node.c
+
+   * Component: Infineon::DAVE:CLOCK_XMC4:4.0.24
+      Include file:  Dave\Generated\CLOCK_XMC4\clock_xmc4.h
+      Include file:  Dave\Generated\CLOCK_XMC4\clock_xmc4_conf.h
+      Source file:   Dave\Generated\CLOCK_XMC4\clock_xmc4_conf.c
+      Source file:   Dave\Generated\CLOCK_XMC4\clock_xmc4.c
+      Include file:  Dave\Generated\CLOCK_XMC4\clock_xmc4_extern.h
+
+   * Component: Infineon::DAVE:CPU_CTRL_XMC4:4.0.18
+      Include file:  Dave\Generated\CPU_CTRL_XMC4\cpu_ctrl_xmc4.h
+      Include file:  Dave\Generated\CPU_CTRL_XMC4\cpu_ctrl_xmc4_conf.h
+      Source file:   Dave\Generated\CPU_CTRL_XMC4\cpu_ctrl_xmc4.c
+      Source file:   Dave\Generated\CPU_CTRL_XMC4\cpu_ctrl_xmc4_conf.c
+      Include file:  Dave\Generated\CPU_CTRL_XMC4\cpu_ctrl_xmc4_extern.h
+
+   * Component: Infineon::DAVE:Framework:1.0.0
+      Source file:   Dave\Generated\DAVE.c
+      Include file:  Dave\Generated\DAVE_Common.h
+      Include file:  Dave\Generated\DAVE.h
+
+   * Component: Infineon::DAVE:GLOBAL_ADC:4.0.22
+      Include file:  Dave\Generated\GLOBAL_ADC\global_adc_extern.h
+      Source file:   Dave\Generated\GLOBAL_ADC\global_adc.c
+      Source file:   Dave\Generated\GLOBAL_ADC\global_adc_conf.c
+      Include file:  Dave\Generated\GLOBAL_ADC\global_adc.h
+      Include file:  Dave\Generated\GLOBAL_ADC\global_adc_conf.h
+
+   * Component: Infineon::DAVE:GLOBAL_CAN:4.0.20
+      Include file:  Dave\Generated\GLOBAL_CAN\global_can_conf.h
+      Include file:  Dave\Generated\GLOBAL_CAN\global_can.h
+      Include file:  Dave\Generated\GLOBAL_CAN\global_can_extern.h
+      Source file:   Dave\Generated\GLOBAL_CAN\global_can_conf.c
+      Source file:   Dave\Generated\GLOBAL_CAN\global_can.c
+
+   * Component: Infineon::Device:Startup:2.2.4
+      Include file:  Device\XMC4500_series\Include\XMC4500.h
+      Source file:   Device\XMC4500_series\Source\system_XMC4500.c
+      Source file:   Device\XMC4500_series\Source\ARM\startup_XMC4500.s
+
+   * Component: Infineon::Device:XMClib:CAN:2.1.24
+      Source file:   Device\XMClib\src\xmc_common.c
+      Source file:   Device\XMClib\src\xmc_can.c
+
+   * Component: Infineon::Device:XMClib:CCU4:2.1.24
+      Source file:   Device\XMClib\src\xmc_common.c
+      Source file:   Device\XMClib\src\xmc_ccu4.c
+
+   * Component: Infineon::Device:XMClib:CCU8:2.1.24
+      Source file:   Device\XMClib\src\xmc_common.c
+      Source file:   Device\XMClib\src\xmc_ccu8.c
+
+   * Component: Infineon::Device:XMClib:DAC:2.1.24
+      Source file:   Device\XMClib\src\xmc_common.c
+      Source file:   Device\XMClib\src\xmc_dac.c
+
+   * Component: Infineon::Device:XMClib:DMA:2.1.24
+      Source file:   Device\XMClib\src\xmc_common.c
+      Source file:   Device\XMClib\src\xmc_dma.c
+
+   * Component: Infineon::Device:XMClib:DSD:2.1.24
+      Source file:   Device\XMClib\src\xmc_common.c
+      Source file:   Device\XMClib\src\xmc_dsd.c
+
+   * Component: Infineon::Device:XMClib:EBU:2.1.24
+      Source file:   Device\XMClib\src\xmc_ebu.c
+      Source file:   Device\XMClib\src\xmc_common.c
+
+   * Component: Infineon::Device:XMClib:ERU:2.1.24
+      Source file:   Device\XMClib\src\xmc_eru.c
+      Source file:   Device\XMClib\src\xmc4_eru.c
+      Source file:   Device\XMClib\src\xmc_common.c
+
+   * Component: Infineon::Device:XMClib:ETH_MAC:2.1.24
+      Source file:   Device\XMClib\src\xmc_eth_mac.c
+      Source file:   Device\XMClib\src\xmc_common.c
+
+   * Component: Infineon::Device:XMClib:FCE:2.1.24
+      Source file:   Device\XMClib\src\xmc_fce.c
+      Source file:   Device\XMClib\src\xmc_common.c
+
+   * Component: Infineon::Device:XMClib:FLASH:2.1.24
+      Source file:   Device\XMClib\src\xmc_common.c
+      Source file:   Device\XMClib\src\xmc4_flash.c
+
+   * Component: Infineon::Device:XMClib:GPIO:2.1.24
+      Source file:   Device\XMClib\src\xmc_gpio.c
+      Source file:   Device\XMClib\src\xmc4_gpio.c
+      Source file:   Device\XMClib\src\xmc_common.c
+
+   * Component: Infineon::Device:XMClib:HRPWM:2.1.24
+      Source file:   Device\XMClib\src\xmc_common.c
+      Source file:   Device\XMClib\src\xmc_hrpwm.c
+
+   * Component: Infineon::Device:XMClib:I2C:2.1.24
+      Source file:   Device\XMClib\src\xmc_common.c
+      Source file:   Device\XMClib\src\xmc_usic.c
+      Source file:   Device\XMClib\src\xmc_i2c.c
+
+   * Component: Infineon::Device:XMClib:I2S:2.1.24
+      Source file:   Device\XMClib\src\xmc_common.c
+      Source file:   Device\XMClib\src\xmc_usic.c
+      Source file:   Device\XMClib\src\xmc_i2s.c
+
+   * Component: Infineon::Device:XMClib:LEDTS:2.1.24
+      Source file:   Device\XMClib\src\xmc_common.c
+      Source file:   Device\XMClib\src\xmc_ledts.c
+
+   * Component: Infineon::Device:XMClib:POSIF:2.1.24
+      Source file:   Device\XMClib\src\xmc_posif.c
+      Source file:   Device\XMClib\src\xmc_common.c
+
+   * Component: Infineon::Device:XMClib:RTC:2.1.24
+      Source file:   Device\XMClib\src\xmc_rtc.c
+      Source file:   Device\XMClib\src\xmc4_rtc.c
+      Source file:   Device\XMClib\src\xmc_common.c
+
+   * Component: Infineon::Device:XMClib:SCU:2.1.24
+      Source file:   Device\XMClib\src\xmc4_scu.c
+      Source file:   Device\XMClib\src\xmc_common.c
+
+   * Component: Infineon::Device:XMClib:SDMMC:2.1.24
+      Source file:   Device\XMClib\src\xmc_sdmmc.c
+      Source file:   Device\XMClib\src\xmc_common.c
+
+   * Component: Infineon::Device:XMClib:SPI:2.1.24
+      Source file:   Device\XMClib\src\xmc_common.c
+      Source file:   Device\XMClib\src\xmc_spi.c
+      Source file:   Device\XMClib\src\xmc_usic.c
+
+   * Component: Infineon::Device:XMClib:UART:2.1.24
+      Source file:   Device\XMClib\src\xmc_uart.c
+      Source file:   Device\XMClib\src\xmc_common.c
+      Source file:   Device\XMClib\src\xmc_usic.c
+
+   * Component: Infineon::Device:XMClib:USB:2.1.24
+      Source file:   Device\XMClib\src\xmc_common.c
+      Source file:   Device\XMClib\src\xmc_usbd.c
+
+   * Component: Infineon::Device:XMClib:VADC:2.1.24
+      Source file:   Device\XMClib\src\xmc_vadc.c
+      Source file:   Device\XMClib\src\xmc_common.c
+
+   * Component: Infineon::Device:XMClib:WDT:2.1.24
+      Source file:   Device\XMClib\src\xmc_common.c
+      Source file:   Device\XMClib\src\xmc_wdt.c
+Build Time Elapsed:  00:00:30
+</pre>
+</body>
+</html>

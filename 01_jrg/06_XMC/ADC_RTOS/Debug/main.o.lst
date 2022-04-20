@@ -1,0 +1,344 @@
+   1              	 .syntax unified
+   2              	 .cpu cortex-m4
+   3              	 .eabi_attribute 27,3
+   4              	 .fpu fpv4-sp-d16
+   5              	 .eabi_attribute 20,1
+   6              	 .eabi_attribute 21,1
+   7              	 .eabi_attribute 23,3
+   8              	 .eabi_attribute 24,1
+   9              	 .eabi_attribute 25,1
+  10              	 .eabi_attribute 26,1
+  11              	 .eabi_attribute 30,6
+  12              	 .eabi_attribute 34,1
+  13              	 .eabi_attribute 18,4
+  14              	 .thumb
+  15              	 .file "main.c"
+  16              	 .text
+  17              	.Ltext0:
+  18              	 .cfi_sections .debug_frame
+  19              	 .comm ADC_Value,2,2
+  20              	 .global delay_for_CAN_Transmit
+  21              	 .section .data.delay_for_CAN_Transmit,"aw",%progbits
+  24              	delay_for_CAN_Transmit:
+  25 0000 05       	 .byte 5
+  26              	 .global CAN0_data_TX_LM01
+  27              	 .section .bss.CAN0_data_TX_LM01,"aw",%nobits
+  28              	 .align 2
+  31              	CAN0_data_TX_LM01:
+  32 0000 00000000 	 .space 8
+  32      00000000 
+  33              	 .section .rodata
+  34              	 .align 2
+  35              	.LC0:
+  36 0000 43414E5F 	 .ascii "CAN_Transmit\000"
+  36      5472616E 
+  36      736D6974 
+  36      00
+  37 000d 000000   	 .align 2
+  38              	.LC1:
+  39 0010 414E415F 	 .ascii "ANA_Read\000"
+  39      52656164 
+  39      00
+  40 0019 000000   	 .section .text.main,"ax",%progbits
+  41              	 .align 2
+  42              	 .global main
+  43              	 .thumb
+  44              	 .thumb_func
+  46              	main:
+  47              	.LFB334:
+  48              	 .file 1 "../main.c"
+   1:../main.c     **** /*
+   2:../main.c     ****  * main.c
+   3:../main.c     ****  *
+   4:../main.c     ****  *  Created on: 2022 Apr 12 10:45:49
+   5:../main.c     ****  *  Author: Yoshi
+   6:../main.c     ****  */
+   7:../main.c     **** 
+   8:../main.c     **** 
+   9:../main.c     **** 
+  10:../main.c     **** 
+  11:../main.c     **** #include "DAVE.h"                 //Declarations from DAVE Code Generation (includes SFR declaratio
+  12:../main.c     **** 
+  13:../main.c     **** 
+  14:../main.c     **** 
+  15:../main.c     **** /**
+  16:../main.c     **** 
+  17:../main.c     ****  * @brief main() - Application entry point
+  18:../main.c     ****  *
+  19:../main.c     ****  * <b>Details of function</b><br>
+  20:../main.c     ****  * This routine is the application entry point. It is invoked by the device startup code. It is res
+  21:../main.c     ****  * invoking the APP initialization dispatcher routine - DAVE_Init() and hosting the place-holder fo
+  22:../main.c     ****  * code.
+  23:../main.c     ****  */
+  24:../main.c     **** 
+  25:../main.c     **** uint16_t ADC_Value;
+  26:../main.c     **** uint8_t delay_for_CAN_Transmit = 5;
+  27:../main.c     **** 
+  28:../main.c     **** uint8_t CAN0_data_TX_LM01[8] = {0};
+  29:../main.c     **** void Task_CAN_Transmit();
+  30:../main.c     **** void Task_ANA_Read();
+  31:../main.c     **** 
+  32:../main.c     **** int main(void)
+  33:../main.c     **** {
+  49              	 .loc 1 33 0
+  50              	 .cfi_startproc
+  51              	 
+  52              	 
+  53 0000 80B5     	 push {r7,lr}
+  54              	.LCFI0:
+  55              	 .cfi_def_cfa_offset 8
+  56              	 .cfi_offset 7,-8
+  57              	 .cfi_offset 14,-4
+  58 0002 84B0     	 sub sp,sp,#16
+  59              	.LCFI1:
+  60              	 .cfi_def_cfa_offset 24
+  61 0004 02AF     	 add r7,sp,#8
+  62              	.LCFI2:
+  63              	 .cfi_def_cfa 7,16
+  34:../main.c     ****   DAVE_STATUS_t status;
+  35:../main.c     **** 
+  36:../main.c     ****   status = DAVE_Init();           /* Initialization of DAVE APPs  */
+  64              	 .loc 1 36 0
+  65 0006 FFF7FEFF 	 bl DAVE_Init
+  66 000a 0346     	 mov r3,r0
+  67 000c FB71     	 strb r3,[r7,#7]
+  37:../main.c     **** 
+  38:../main.c     ****   xTaskCreate(Task_CAN_Transmit,"CAN_Transmit",1000, NULL, 0, NULL);
+  68              	 .loc 1 38 0
+  69 000e 0023     	 movs r3,#0
+  70 0010 0093     	 str r3,[sp]
+  71 0012 0023     	 movs r3,#0
+  72 0014 0193     	 str r3,[sp,#4]
+  73 0016 0C48     	 ldr r0,.L4
+  74 0018 0C49     	 ldr r1,.L4+4
+  75 001a 4FF47A72 	 mov r2,#1000
+  76 001e 0023     	 movs r3,#0
+  77 0020 FFF7FEFF 	 bl xTaskCreate
+  39:../main.c     ****   xTaskCreate(Task_ANA_Read,"ANA_Read",1000, NULL, 0, NULL);
+  78              	 .loc 1 39 0
+  79 0024 0023     	 movs r3,#0
+  80 0026 0093     	 str r3,[sp]
+  81 0028 0023     	 movs r3,#0
+  82 002a 0193     	 str r3,[sp,#4]
+  83 002c 0848     	 ldr r0,.L4+8
+  84 002e 0949     	 ldr r1,.L4+12
+  85 0030 4FF47A72 	 mov r2,#1000
+  86 0034 0023     	 movs r3,#0
+  87 0036 FFF7FEFF 	 bl xTaskCreate
+  40:../main.c     **** 
+  41:../main.c     ****   vTaskStartScheduler();
+  88              	 .loc 1 41 0
+  89 003a FFF7FEFF 	 bl vTaskStartScheduler
+  42:../main.c     **** 
+  43:../main.c     ****   if (status != DAVE_STATUS_SUCCESS)
+  90              	 .loc 1 43 0
+  91 003e FB79     	 ldrb r3,[r7,#7]
+  92 0040 002B     	 cmp r3,#0
+  93 0042 00D0     	 beq .L2
+  94              	.L3:
+  44:../main.c     ****   {
+  45:../main.c     ****     /* Placeholder for error handler code. The while loop below can be replaced with an user error 
+  46:../main.c     ****     XMC_DEBUG("DAVE APPs initialization failed\n");
+  47:../main.c     **** 
+  48:../main.c     ****     while(1U)
+  49:../main.c     ****     {
+  50:../main.c     **** 
+  51:../main.c     ****     }
+  95              	 .loc 1 51 0 discriminator 1
+  96 0044 FEE7     	 b .L3
+  97              	.L2:
+  52:../main.c     ****   }
+  53:../main.c     **** 
+  54:../main.c     ****   /* Placeholder for user application code. The while loop below can be replaced with user applicat
+  55:../main.c     ****   while(1U)
+  56:../main.c     ****   {
+  57:../main.c     **** 
+  58:../main.c     ****   }
+  98              	 .loc 1 58 0 discriminator 2
+  99 0046 FEE7     	 b .L2
+ 100              	.L5:
+ 101              	 .align 2
+ 102              	.L4:
+ 103 0048 00000000 	 .word Task_CAN_Transmit
+ 104 004c 00000000 	 .word .LC0
+ 105 0050 00000000 	 .word Task_ANA_Read
+ 106 0054 10000000 	 .word .LC1
+ 107              	 .cfi_endproc
+ 108              	.LFE334:
+ 110              	 .section .text.Task_CAN_Transmit,"ax",%progbits
+ 111              	 .align 2
+ 112              	 .global Task_CAN_Transmit
+ 113              	 .thumb
+ 114              	 .thumb_func
+ 116              	Task_CAN_Transmit:
+ 117              	.LFB335:
+  59:../main.c     **** }
+  60:../main.c     **** 
+  61:../main.c     **** void Task_CAN_Transmit()
+  62:../main.c     **** {
+ 118              	 .loc 1 62 0
+ 119              	 .cfi_startproc
+ 120              	 
+ 121              	 
+ 122 0000 80B5     	 push {r7,lr}
+ 123              	.LCFI3:
+ 124              	 .cfi_def_cfa_offset 8
+ 125              	 .cfi_offset 7,-8
+ 126              	 .cfi_offset 14,-4
+ 127 0002 00AF     	 add r7,sp,#0
+ 128              	.LCFI4:
+ 129              	 .cfi_def_cfa_register 7
+ 130              	.L7:
+ 131              	.LBB2:
+  63:../main.c     **** 	while(1)
+  64:../main.c     **** 	{
+  65:../main.c     **** 		CAN0_data_TX_LM01[0]=(uint8_t)(ADC_Value>>8);
+ 132              	 .loc 1 65 0 discriminator 1
+ 133 0004 104B     	 ldr r3,.L8
+ 134 0006 1B88     	 ldrh r3,[r3]
+ 135 0008 1B0A     	 lsrs r3,r3,#8
+ 136 000a 9BB2     	 uxth r3,r3
+ 137 000c DAB2     	 uxtb r2,r3
+ 138 000e 0F4B     	 ldr r3,.L8+4
+ 139 0010 1A70     	 strb r2,[r3]
+  66:../main.c     **** 		CAN0_data_TX_LM01[1]=(uint8_t)(ADC_Value&0x00FF);
+ 140              	 .loc 1 66 0 discriminator 1
+ 141 0012 0D4B     	 ldr r3,.L8
+ 142 0014 1B88     	 ldrh r3,[r3]
+ 143 0016 DAB2     	 uxtb r2,r3
+ 144 0018 0C4B     	 ldr r3,.L8+4
+ 145 001a 5A70     	 strb r2,[r3,#1]
+  67:../main.c     **** 
+  68:../main.c     **** 		CAN_NODE_MO_UpdateData(&CAN_NODE_0_LMO_01_Config, CAN0_data_TX_LM01);
+ 146              	 .loc 1 68 0 discriminator 1
+ 147 001c 0C48     	 ldr r0,.L8+8
+ 148 001e 0B49     	 ldr r1,.L8+4
+ 149 0020 FFF7FEFF 	 bl CAN_NODE_MO_UpdateData
+  69:../main.c     **** 		CAN_NODE_MO_Transmit(&CAN_NODE_0_LMO_01_Config);
+ 150              	 .loc 1 69 0 discriminator 1
+ 151 0024 0A48     	 ldr r0,.L8+8
+ 152 0026 FFF7FEFF 	 bl CAN_NODE_MO_Transmit
+  70:../main.c     **** 
+  71:../main.c     **** 		vTaskDelay(pdMS_TO_TICKS(delay_for_CAN_Transmit));
+ 153              	 .loc 1 71 0 discriminator 1
+ 154 002a 0A4B     	 ldr r3,.L8+12
+ 155 002c 1B78     	 ldrb r3,[r3]
+ 156 002e 1A46     	 mov r2,r3
+ 157 0030 4FF47A73 	 mov r3,#1000
+ 158 0034 03FB02F3 	 mul r3,r3,r2
+ 159 0038 074A     	 ldr r2,.L8+16
+ 160 003a A2FB0323 	 umull r2,r3,r2,r3
+ 161 003e 9B09     	 lsrs r3,r3,#6
+ 162 0040 1846     	 mov r0,r3
+ 163 0042 FFF7FEFF 	 bl vTaskDelay
+ 164              	.LBE2:
+  72:../main.c     **** 
+  73:../main.c     **** 	}
+ 165              	 .loc 1 73 0 discriminator 1
+ 166 0046 DDE7     	 b .L7
+ 167              	.L9:
+ 168              	 .align 2
+ 169              	.L8:
+ 170 0048 00000000 	 .word ADC_Value
+ 171 004c 00000000 	 .word CAN0_data_TX_LM01
+ 172 0050 00000000 	 .word CAN_NODE_0_LMO_01_Config
+ 173 0054 00000000 	 .word delay_for_CAN_Transmit
+ 174 0058 D34D6210 	 .word 274877907
+ 175              	 .cfi_endproc
+ 176              	.LFE335:
+ 178              	 .section .text.Task_ANA_Read,"ax",%progbits
+ 179              	 .align 2
+ 180              	 .global Task_ANA_Read
+ 181              	 .thumb
+ 182              	 .thumb_func
+ 184              	Task_ANA_Read:
+ 185              	.LFB336:
+  74:../main.c     **** }
+  75:../main.c     **** 
+  76:../main.c     **** void Task_ANA_Read()
+  77:../main.c     **** {
+ 186              	 .loc 1 77 0
+ 187              	 .cfi_startproc
+ 188              	 
+ 189              	 
+ 190 0000 80B5     	 push {r7,lr}
+ 191              	.LCFI5:
+ 192              	 .cfi_def_cfa_offset 8
+ 193              	 .cfi_offset 7,-8
+ 194              	 .cfi_offset 14,-4
+ 195 0002 00AF     	 add r7,sp,#0
+ 196              	.LCFI6:
+ 197              	 .cfi_def_cfa_register 7
+ 198              	.L11:
+ 199              	.LBB3:
+  78:../main.c     **** 	while(1)
+  79:../main.c     **** 	{
+  80:../main.c     **** 		ADC_Value = ADC_MEASUREMENT_GetResult(&ADC_MEASUREMENT_Channel_A);
+ 200              	 .loc 1 80 0 discriminator 1
+ 201 0004 0548     	 ldr r0,.L12
+ 202 0006 FFF7FEFF 	 bl ADC_MEASUREMENT_GetResult
+ 203 000a 0346     	 mov r3,r0
+ 204 000c 1A46     	 mov r2,r3
+ 205 000e 044B     	 ldr r3,.L12+4
+ 206 0010 1A80     	 strh r2,[r3]
+  81:../main.c     **** 		vTaskDelay(pdMS_TO_TICKS(1));
+ 207              	 .loc 1 81 0 discriminator 1
+ 208 0012 0120     	 movs r0,#1
+ 209 0014 FFF7FEFF 	 bl vTaskDelay
+ 210              	.LBE3:
+  82:../main.c     **** 	}
+ 211              	 .loc 1 82 0 discriminator 1
+ 212 0018 F4E7     	 b .L11
+ 213              	.L13:
+ 214 001a 00BF     	 .align 2
+ 215              	.L12:
+ 216 001c 00000000 	 .word ADC_MEASUREMENT_Channel_A_handle
+ 217 0020 00000000 	 .word ADC_Value
+ 218              	 .cfi_endproc
+ 219              	.LFE336:
+ 221              	 .text
+ 222              	.Letext0:
+ 223              	 .file 2 "c:\\infineon\\tools\\dave ide\\4.5.0.202105191637\\eclipse\\arm-gcc-49\\arm-none-eabi\\include\\machine\\_default_types.h"
+ 224              	 .file 3 "c:\\infineon\\tools\\dave ide\\4.5.0.202105191637\\eclipse\\arm-gcc-49\\arm-none-eabi\\include\\stdint.h"
+ 225              	 .file 4 "C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/06_XMC/ADC_RTOS/Libraries/CMSIS/Infineon/XMC4500_series/Include/XMC4500.h"
+ 226              	 .file 5 "C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/06_XMC/ADC_RTOS/Libraries/XMCLib/inc/xmc4_gpio.h"
+ 227              	 .file 6 "C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/06_XMC/ADC_RTOS/Dave/Generated/FREERTOS/portable/GCC/portmacro.h"
+ 228              	 .file 7 "C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/06_XMC/ADC_RTOS/Libraries/XMCLib/inc/xmc_vadc.h"
+ 229              	 .file 8 "C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/06_XMC/ADC_RTOS/Dave/Generated/ANALOG_IO/analog_io.h"
+ 230              	 .file 9 "C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/06_XMC/ADC_RTOS/Dave/Generated/ADC_MEASUREMENT/adc_measurement.h"
+ 231              	 .file 10 "C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/06_XMC/ADC_RTOS/Libraries/XMCLib/inc/xmc_can.h"
+ 232              	 .file 11 "C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/06_XMC/ADC_RTOS/Dave/Generated/CAN_NODE/can_node.h"
+ 233              	 .file 12 "C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/06_XMC/ADC_RTOS/Dave/Generated/DAVE.h"
+ 234              	 .file 13 "C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/06_XMC/ADC_RTOS/Libraries/CMSIS/Include/cmsis_gcc.h"
+ 235              	 .file 14 "C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/06_XMC/ADC_RTOS/Libraries/CMSIS/Include/core_cm4.h"
+ 236              	 .file 15 "C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/06_XMC/ADC_RTOS/Libraries/CMSIS/Infineon/XMC4500_series/Include/system_XMC4500.h"
+ 237              	 .file 16 "C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/06_XMC/ADC_RTOS/Dave/Generated/ADC_MEASUREMENT/adc_measurement_extern.h"
+ 238              	 .file 17 "C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/06_XMC/ADC_RTOS/Dave/Generated/CAN_NODE/can_node_extern.h"
+DEFINED SYMBOLS
+                            *ABS*:00000000 main.c
+                            *COM*:00000002 ADC_Value
+    {standard input}:24     .data.delay_for_CAN_Transmit:00000000 delay_for_CAN_Transmit
+    {standard input}:31     .bss.CAN0_data_TX_LM01:00000000 CAN0_data_TX_LM01
+    {standard input}:28     .bss.CAN0_data_TX_LM01:00000000 $d
+    {standard input}:34     .rodata:00000000 $d
+    {standard input}:41     .text.main:00000000 $t
+    {standard input}:46     .text.main:00000000 main
+    {standard input}:103    .text.main:00000048 $d
+    {standard input}:116    .text.Task_CAN_Transmit:00000000 Task_CAN_Transmit
+    {standard input}:184    .text.Task_ANA_Read:00000000 Task_ANA_Read
+    {standard input}:111    .text.Task_CAN_Transmit:00000000 $t
+    {standard input}:170    .text.Task_CAN_Transmit:00000048 $d
+    {standard input}:179    .text.Task_ANA_Read:00000000 $t
+    {standard input}:216    .text.Task_ANA_Read:0000001c $d
+                     .debug_frame:00000010 $d
+
+UNDEFINED SYMBOLS
+DAVE_Init
+xTaskCreate
+vTaskStartScheduler
+CAN_NODE_MO_UpdateData
+CAN_NODE_MO_Transmit
+vTaskDelay
+CAN_NODE_0_LMO_01_Config
+ADC_MEASUREMENT_GetResult
+ADC_MEASUREMENT_Channel_A_handle
