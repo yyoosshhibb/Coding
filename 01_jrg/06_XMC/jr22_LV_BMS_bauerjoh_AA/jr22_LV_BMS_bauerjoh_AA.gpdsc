@@ -553,6 +553,17 @@
                 <file category="source" name="Dave\Generated\CMSIS_DSP\Source\TransformFunctions\arm_bitreversal2.S"/>
             </files>
         </component>
+        <component Cclass="DAVE" Cgroup="GLOBAL_CCU4" Cversion="4.1.14" condition="CMSIS Device Startup">
+            <description>Initializes CCU4 Global Register Set.</description>
+            <files>
+                <file category="doc" name="http://dave.infineon.com/Libraries/DAVEApps/DAVEAppsDocuArchive/resources/4.1.14/app/GLOBAL_CCU4/0/doc/index.chm"/>
+                <file category="header" name="Dave\Generated\GLOBAL_CCU4\global_ccu4.h"/>
+                <file category="header" name="Dave\Generated\GLOBAL_CCU4\global_ccu4_conf.h"/>
+                <file category="header" name="Dave\Generated\GLOBAL_CCU4\global_ccu4_extern.h"/>
+                <file category="source" name="Dave\Generated\GLOBAL_CCU4\global_ccu4.c"/>
+                <file category="source" name="Dave\Generated\GLOBAL_CCU4\global_ccu4_conf.c"/>
+            </files>
+        </component>
         <component Cclass="DAVE" Cgroup="CPU_CTRL_XMC4" Cversion="4.0.18" condition="CMSIS Device Startup">
             <description>Defines the number of bits for priority grouping. Handles NMI, memmanage, usage, bus &amp; hard fault exceptions and MPU settings.</description>
             <files>

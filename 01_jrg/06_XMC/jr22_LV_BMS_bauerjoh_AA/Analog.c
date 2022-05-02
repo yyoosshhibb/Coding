@@ -8,8 +8,11 @@
 #include "Analog.h"
 #include "Header.h"
 
+EventGroupHandle_t EventGroupAnaRead;
+
 void ANA_Init()
 {
+	EventGroupAnaRead = xEventGroupCreate();
 	temp_sensor_1.Channel = &ADC_MEASUREMENT_Channel_A;
 	temp_sensor_1.index = 0;
 	temp_sensor_1.buffer = 0;
@@ -20,7 +23,7 @@ void ANA_Init()
 void ANA_Read(analog_sensor_t *const Sensor)
 {
 	Sensor->value = ADC_MEASUREMENT_GetResult(Sensor->Channel);
-	Sensor->buffer[index] = Sensor->value;
+	Sensor->buffer[index] = ADC_MEASUREMENT_GetResult(Sensor->Channel);
 
 	circindex(Sensor->index, 1, 5);
 }
@@ -29,12 +32,15 @@ void Task_ANA_Read()
 {
 	while(1)
 	{
-		ADC_MEASUREMENT_StartConversion(&ADC_MEASUREMENT_0);
+		xEventGroupWaitBits(EventGroupAnaRead, 0x01);		//Wait for the flag to have timing
+		xEventGroupSetBits(EventGroupAnaRead, 0x00);		//Clear the flag to not be permanently in loop
+
 		ANA_Read(&temp_sensor_1);
 
 		ANA_Read(&voltage_cell_1);
 
-		vTaskDelay(pdMS_TO_TICKS(0.1));
+
+
 	}
 }
 
@@ -68,6 +74,11 @@ void circindex(uint16_t index, uint16_t step, uint16_t length)
 	{
 		index = test + length;
 	}
+}
+
+void Adc_Measurement_Handler()
+{
+	xEventGroupSetBits(EventGroupAnaRead, 0x01);
 }
 
 

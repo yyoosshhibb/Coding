@@ -86,6 +86,11 @@ __WEAK DAVE_STATUS_t DAVE_Init(void)
   {
 	 /**  Initialization of ADC_MEASUREMENT APP instance ADC_MEASUREMENT_0 */
 	 init_status = (DAVE_STATUS_t)ADC_MEASUREMENT_Init(&ADC_MEASUREMENT_0); 
+   } 
+  if (init_status == DAVE_STATUS_SUCCESS)
+  {
+	 /**  Initialization of GLOBAL_CCU4 APP instance GLOBAL_CCU4_0 */
+	 init_status = (DAVE_STATUS_t)GLOBAL_CCU4_Init(&GLOBAL_CCU4_0); 
    }  
   return init_status;
 } /**  End of function DAVE_Init */

@@ -18068,3 +18068,2341 @@ Command-line arguments:  -os win32 -ws win32 -arch x86_64 -application com.ifx.d
 
 !ENTRY SOLVER 1 0 2022-04-18 13:44:16.741
 !MESSAGE USER_ACTION : Solver Status: DISCONNECTED
+!SESSION 2022-04-30 14:18:54.886 -----------------------------------------------
+eclipse.buildId=unknown
+java.version=1.8.0_222
+java.vendor=Amazon.com Inc.
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_AT
+Framework arguments:  -application com.ifx.davex.product.daveApplication -showlocation -application com.ifx.davex.product.daveApplication -showlocation
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 -application com.ifx.davex.product.daveApplication -showlocation -data C:\Users\Yoshi\Documents\GitHub\Software\01_jrg\06_XMC -application com.ifx.davex.product.daveApplication -showlocation
+
+!ENTRY SOLVER 1 0 2022-04-30 14:19:05.824
+!MESSAGE USER_ACTION : Default solver exe path is: C:\Infineon\Tools\DAVE IDE\4.5.0.202105191637\eclipse\Solver\lib\i386_nt\eclipse.exe
+
+!ENTRY SOLVER 1 0 2022-04-30 14:19:05.918
+!MESSAGE USER_ACTION : GlobalSize= 750MB; LocalSize: 128MB
+
+!ENTRY SOLVER 1 0 2022-04-30 14:19:05.921
+!MESSAGE USER_ACTION : Creating OutOfProcessEclipse instance...
+
+!ENTRY SOLVER 1 0 2022-04-30 14:19:06.127
+!MESSAGE USER_ACTION : Solver Status: CONNECTED
+
+!ENTRY APPSTORE 1 0 2022-04-30 14:19:06.505
+!MESSAGE USER_ACTION : Time taken for loading LibraryStore data for SoftwareId [XMC4.5.00.F100.ALL] is: 373 msec 
+
+!ENTRY APPLICATION_MODEL 1 0 2022-04-30 14:19:06.571
+!MESSAGE USER_ACTION : Time taken for disposing objects for memory cleanup: 5 msec 
+
+!ENTRY APPLICATION_MODEL 1 0 2022-04-30 14:19:07.014
+!MESSAGE USER_ACTION : Active project:jr22_LV_BMS_bauerjoh_AA[ Software ID:XMC4.5.00.F100.ALL]
+
+!ENTRY COMMON 1 0 2022-04-30 14:19:09.076
+!MESSAGE Time Taken By De-Serialization  : 1461 ms :: C:\Users\Yoshi\Documents\GitHub\Software\01_jrg\06_XMC\jr22_LV_BMS_bauerjoh_AA\Dave\Model\projectData.bin
+
+!ENTRY com.dave.mbs.common 1 0 2022-04-30 14:19:09.093
+!MESSAGE *************Serializing EMF and Groovy data to RAM*******************
+
+!ENTRY APPLICATION_MODEL 1 0 2022-04-30 14:19:09.340
+!MESSAGE USER_ACTION : Time taken for initializing Application Model is: 2326 msec 
+
+!ENTRY APPLICATION_MODEL 1 0 2022-04-30 14:19:09.365
+!MESSAGE USER_ACTION : Time taken for reloadLastSolverResult(updateQuery): 20 msec 
+
+!ENTRY APPLICATION_MODEL 1 0 2022-04-30 14:19:09.395
+!MESSAGE USER_ACTION : Time taken for reloadLastSolverResult(getSolutionQuery): 28 msec 
+
+!ENTRY APPLICATION_MODEL 1 0 2022-04-30 14:19:09.400
+!MESSAGE USER_ACTION : Time taken for updating views is: 1 msec 
+
+!ENTRY APPLICATION_MODEL 1 0 2022-04-30 14:19:11.162
+!MESSAGE USER_ACTION : Time taken for rendering views is: 1760 msec 
+
+!ENTRY APPLICATION_MODEL 1 0 2022-04-30 14:19:11.774
+!MESSAGE USER_ACTION : Total time taken for setting project as active is: 5208 msec 
+
+!ENTRY APPLICATION_MODEL 1 0 2022-04-30 14:19:12.551
+!MESSAGE Only One DAVE Application is running 
+
+!ENTRY com.ifx.dave.LibraryManager 4 0 2022-04-30 14:19:12.679
+!MESSAGE Reading file: https://www.infineon.com/dave/Libraries/Examples/XMC_IFX/latest//daveSite.xml
+
+!ENTRY com.ifx.dave.LibraryManager 4 0 2022-04-30 14:19:14.013
+!MESSAGE Reading file: https://www.infineon.com/dave/Libraries/DAVE_Libs/XMC_IFX/latest//daveSite.xml
+
+!ENTRY com.ifx.dave.LibraryManager 4 0 2022-04-30 14:19:14.972
+!MESSAGE Reading file: https://www.infineon.com/dave/Libraries/DAVE_Libs/Contributed/latest//daveSite.xml
+
+!ENTRY APPSTORE 1 0 2022-04-30 14:19:20.281
+!MESSAGE USER_ACTION : Loaded DD: C:\Infineon\Tools\DAVE IDE\4.5.0.202105191637\D_LibraryStore_4.4\resources\XMC4.5.00.F100.ALL\device\xmc4500\0\MANIFEST\xmc4500.dd
+
+!ENTRY APPLICATION_MODEL 1 0 2022-04-30 14:19:29.045
+!MESSAGE USER_ACTION : App Getting Added: TIMER [4.1.12]
+
+!ENTRY SOLVER 1 0 2022-04-30 14:19:29.076
+!MESSAGE USER_ACTION : Creating an APP: TIMER [4.1.12]
+
+!ENTRY APPLICATION_MODEL 1 0 2022-04-30 14:19:29.312
+!MESSAGE USER_ACTION : CASE-1 PR->PR
+ GLOBAL_CCU4 [4.0.2] lStoreAppVersion: 4.1.14:l
+
+!ENTRY SOLVER 1 0 2022-04-30 14:19:29.338
+!MESSAGE USER_ACTION : Creating an APP: GLOBAL_CCU4 [4.1.14]
+
+!ENTRY APPLICATION_MODEL 1 0 2022-04-30 14:19:29.400
+!MESSAGE USER_ACTION : CASE-1 PR->PR
+ CLOCK_XMC4 [4.0.18] lStoreAppVersion: 4.0.24:p
+
+!ENTRY APPLICATION_MODEL 1 0 2022-04-30 14:19:29.545
+!MESSAGE USER_ACTION : Created APP: GLOBAL_CCU4 [4.1.14]-->http://resources/4.1.14/app/GLOBAL_CCU4/0
+
+!ENTRY APPLICATION_MODEL 1 0 2022-04-30 14:19:29.643
+!MESSAGE USER_ACTION : Created APP: TIMER [4.1.12]-->http://resources/4.1.12/app/TIMER/0
+
+!ENTRY SOLVER 1 0 2022-04-30 14:19:29.688
+!MESSAGE USER_ACTION : Library store ECO file :C:\Infineon\Tools\DAVE IDE\4.5.0.202105191637\D_LibraryStore_4.4\resources\XMC4.5.00.F100.ALL\device\xmc4500\0\MANIFEST\solver_data\xmc4500_solver.eco
+
+!ENTRY SOLVER 1 0 2022-04-30 14:19:29.737
+!MESSAGE USER_ACTION : Copied ECO file to temp location :C:\Users\Yoshi\Documents\GitHub\Software\01_jrg\06_XMC\.metadata\.plugins\solver_data\XMC4.5.00.F100.ALL\xmc4500_solver.eco
+
+!ENTRY SOLVER 1 0 2022-04-30 14:19:32.366
+!MESSAGE USER_ACTION : Loaded ECO file :C:\Users\Yoshi\Documents\GitHub\Software\01_jrg\06_XMC\.metadata\.plugins\solver_data\XMC4.5.00.F100.ALL\xmc4500_solver.eco
+
+!ENTRY APPSTORE 1 0 2022-04-30 14:19:33.420
+!MESSAGE USER_ACTION : Loaded DD: C:\Infineon\Tools\DAVE IDE\4.5.0.202105191637\D_LibraryStore_4.4\resources\0.100.3\peripheral\vadc\0\MANIFEST\vadc.dd
+
+!ENTRY APPSTORE 1 0 2022-04-30 14:19:33.453
+!MESSAGE USER_ACTION : Loaded DD: C:\Infineon\Tools\DAVE IDE\4.5.0.202105191637\D_LibraryStore_4.4\resources\0.1.29\peripheral\ccu4\3\MANIFEST\ccu4.dd
+
+!ENTRY APPSTORE 1 0 2022-04-30 14:19:33.482
+!MESSAGE USER_ACTION : Loaded DD: C:\Infineon\Tools\DAVE IDE\4.5.0.202105191637\D_LibraryStore_4.4\resources\0.1.40\port\p\1\MANIFEST\p.dd
+
+!ENTRY APPSTORE 1 0 2022-04-30 14:19:33.506
+!MESSAGE USER_ACTION : Loaded DD: C:\Infineon\Tools\DAVE IDE\4.5.0.202105191637\D_LibraryStore_4.4\resources\0.1.34\peripheral\scu\0\MANIFEST\scu.dd
+
+!ENTRY APPSTORE 1 0 2022-04-30 14:19:33.510
+!MESSAGE USER_ACTION : Loaded DD: C:\Infineon\Tools\DAVE IDE\4.5.0.202105191637\D_LibraryStore_4.4\resources\0.0.0\port\debug_port\0\MANIFEST\debug_port.dd
+
+!ENTRY APPSTORE 1 0 2022-04-30 14:19:33.663
+!MESSAGE USER_ACTION : Loaded DD: C:\Infineon\Tools\DAVE IDE\4.5.0.202105191637\D_LibraryStore_4.4\resources\0.1.28\peripheral\can\0\MANIFEST\can.dd
+
+!ENTRY APPSTORE 1 0 2022-04-30 14:19:33.680
+!MESSAGE USER_ACTION : Loaded DD: C:\Infineon\Tools\DAVE IDE\4.5.0.202105191637\D_LibraryStore_4.4\resources\0.1.31\peripheral\cpu\0\MANIFEST\cpu.dd
+
+!ENTRY APPSTORE 1 0 2022-04-30 14:19:33.685
+!MESSAGE USER_ACTION : Loaded DD: C:\Infineon\Tools\DAVE IDE\4.5.0.202105191637\D_LibraryStore_4.4\resources\LQFP100.0.0\devicepackage\0\MANIFEST\devicepackage.dd
+
+!ENTRY APPSTORE 1 0 2022-04-30 14:19:33.748
+!MESSAGE USER_ACTION : Loaded DD: C:\Infineon\Tools\DAVE IDE\4.5.0.202105191637\D_LibraryStore_4.4\resources\0.1.40\port\p\14\MANIFEST\p.dd
+
+!ENTRY com.dave.mbs.common 1 0 2022-04-30 14:19:33.775
+!MESSAGE Time taken for processing complete solver result is: 420 msec 
+
+!ENTRY com.dave.mbs.common 1 0 2022-04-30 14:19:33.777
+!MESSAGE *****Serialization is called after successful solver action*****
+
+!ENTRY com.dave.mbs.common 1 0 2022-04-30 14:19:33.778
+!MESSAGE *************Saving EMF data into file system*******************
+
+!ENTRY com.dave.mbs.common 1 0 2022-04-30 14:19:33.877
+!MESSAGE *************Saving Groovy data into file system*******************
+
+!ENTRY COMMON 1 0 2022-04-30 14:19:34.168
+!MESSAGE Time Taken By Serialization  : 290 ms :: C:\Users\Yoshi\Documents\GitHub\Software\01_jrg\06_XMC\jr22_LV_BMS_bauerjoh_AA\Dave\Model\projectData.bin
+
+!ENTRY com.dave.mbs.common 1 0 2022-04-30 14:19:34.340
+!MESSAGE *************Serializing EMF and Groovy data to RAM*******************
+
+!ENTRY com.dave.mbs.common 1 0 2022-04-30 14:19:34.482
+!MESSAGE Time taken for serialization in msec: 706
+
+!ENTRY APP_CONFIGURATOR 1 0 2022-04-30 14:19:41.491
+!MESSAGE USER_ACTION : Time taken for opening editor is: 261 msec 
+
+!ENTRY UI_EDITOR 1 0 2022-04-30 14:19:44.387
+!MESSAGE USER_ACTION : Setting value = "true" of "gcheck_period_match_interrupt" in APP: TIMER/4.1.12/0
+
+!ENTRY SOLVER 1 0 2022-04-30 14:19:44.433
+!MESSAGE USER_ACTION : Removed Query statement: signal('timer$844337652$0',pmus_omds,'timer$844337652$0$pmus_omds'),
+
+!ENTRY com.dave.mbs.common 1 0 2022-04-30 14:19:45.517
+!MESSAGE Time taken for processing complete solver result is: 35 msec 
+
+!ENTRY com.dave.mbs.common 1 0 2022-04-30 14:19:45.517
+!MESSAGE *****Serialization is called after successful solver action*****
+
+!ENTRY com.dave.mbs.common 1 0 2022-04-30 14:19:45.518
+!MESSAGE *************Saving EMF data into file system*******************
+
+!ENTRY com.dave.mbs.common 1 0 2022-04-30 14:19:45.597
+!MESSAGE *************Saving Groovy data into file system*******************
+
+!ENTRY COMMON 1 0 2022-04-30 14:19:45.821
+!MESSAGE Time Taken By Serialization  : 222 ms :: C:\Users\Yoshi\Documents\GitHub\Software\01_jrg\06_XMC\jr22_LV_BMS_bauerjoh_AA\Dave\Model\projectData.bin
+
+!ENTRY com.dave.mbs.common 1 0 2022-04-30 14:19:45.962
+!MESSAGE *************Serializing EMF and Groovy data to RAM*******************
+
+!ENTRY com.dave.mbs.common 1 0 2022-04-30 14:19:46.048
+!MESSAGE Time taken for serialization in msec: 531
+
+!ENTRY UI_EDITOR 1 0 2022-04-30 14:19:46.097
+!MESSAGE USER_ACTION : Time taken for refreshing TIMER/4.1.12/0 editor is : 1
+
+!ENTRY SOLVER 1 0 2022-04-30 14:19:46.098
+!MESSAGE Time Taken By Solver for UI Action: 1671 ms
+
+!ENTRY APP_CONFIGURATOR 1 0 2022-04-30 14:20:01.660
+!MESSAGE USER_ACTION : Time taken for opening editor is: 121 msec 
+
+!ENTRY APP_CONFIGURATOR 1 0 2022-04-30 14:20:15.326
+!MESSAGE USER_ACTION : Time taken for opening editor is: 1022 msec 
+
+!ENTRY SIGNAL_CONFIG 1 0 2022-04-30 14:20:24.290
+!MESSAGE USER_ACTION : Opening HW Signal Connection Dialog.!
+
+!ENTRY SIGNAL_CONFIG 1 0 2022-04-30 14:20:30.667
+!MESSAGE USER_ACTION : Signal Load : 19
+
+!ENTRY SIGNAL_CONFIG 1 0 2022-04-30 14:20:32.083
+!MESSAGE USER_ACTION : User selection (Signal Config) Source Virtual Signal : TIMER_0 --> event_time_interval
+
+!ENTRY SIGNAL_CONFIG 1 0 2022-04-30 14:20:32.089
+!MESSAGE USER_ACTION : Signal Selection : 7
+
+!ENTRY SIGNAL_CONFIG 1 0 2022-04-30 14:20:33.456
+!MESSAGE USER_ACTION : Signal Load : 333
+
+!ENTRY SIGNAL_CONFIG 1 0 2022-04-30 14:20:34.587
+!MESSAGE USER_ACTION : User selection (Signal Config) Target APP : TIMER_0 --> ADC_MEASUREMENT_0
+
+!ENTRY SIGNAL_CONFIG 1 0 2022-04-30 14:20:34.592
+!MESSAGE USER_ACTION : Signal Selection : 5
+
+!ENTRY SIGNAL_CONFIG 1 0 2022-04-30 14:20:35.266
+!MESSAGE USER_ACTION : Signal Load : 11
+
+!ENTRY SIGNAL_CONFIG 1 0 2022-04-30 14:20:37.971
+!MESSAGE USER_ACTION : User selection (Signal Config) Target Virtual Signal : TIMER_0 --> trigger_input
+
+!ENTRY SIGNAL_CONFIG 1 0 2022-04-30 14:20:39.511
+!MESSAGE USER_ACTION : Signal Selection : 1541
+
+!ENTRY com.dave.mbs.common 1 0 2022-04-30 14:20:41.905
+!MESSAGE Time taken for processing complete solver result is: 28 msec 
+
+!ENTRY com.dave.mbs.common 1 0 2022-04-30 14:20:41.908
+!MESSAGE *****Serialization is called after successful solver action*****
+
+!ENTRY com.dave.mbs.common 1 0 2022-04-30 14:20:41.912
+!MESSAGE *************Saving EMF data into file system*******************
+
+!ENTRY com.dave.mbs.common 1 0 2022-04-30 14:20:42.017
+!MESSAGE *************Saving Groovy data into file system*******************
+
+!ENTRY COMMON 1 0 2022-04-30 14:20:42.221
+!MESSAGE Time Taken By Serialization  : 201 ms :: C:\Users\Yoshi\Documents\GitHub\Software\01_jrg\06_XMC\jr22_LV_BMS_bauerjoh_AA\Dave\Model\projectData.bin
+
+!ENTRY com.dave.mbs.common 1 0 2022-04-30 14:20:42.371
+!MESSAGE *************Serializing EMF and Groovy data to RAM*******************
+
+!ENTRY com.dave.mbs.common 1 0 2022-04-30 14:20:42.427
+!MESSAGE Time taken for serialization in msec: 519
+
+!ENTRY UI_EDITOR 1 0 2022-04-30 14:20:42.480
+!MESSAGE USER_ACTION : Time taken for refreshing GLOBAL_CCU4/4.1.14/0 editor is : 5
+
+!ENTRY SIGNAL_CONFIG 1 0 2022-04-30 14:20:42.483
+!MESSAGE USER_ACTION : Saved User configured HW Signal Connection..!
+
+!ENTRY SOLVER 1 0 2022-04-30 14:20:42.486
+!MESSAGE Time Taken By Solve and Save Signal Configuration  : 626 ms
+
+!ENTRY SIGNAL_CONFIG 1 0 2022-04-30 14:20:45.760
+!MESSAGE USER_ACTION : HW Signal Connection Dialog is closed..!
+
+!ENTRY APPLICATION_MODEL 1 0 2022-04-30 14:21:01.680
+!MESSAGE USER_ACTION : App Getting Added: TIMER [4.1.12]
+
+!ENTRY SOLVER 1 0 2022-04-30 14:21:01.726
+!MESSAGE USER_ACTION : Creating an APP: TIMER [4.1.12]
+
+!ENTRY APPLICATION_MODEL 1 0 2022-04-30 14:21:01.846
+!MESSAGE USER_ACTION : CASE-1 PR->PR
+ GLOBAL_CCU4 [4.0.2] lStoreAppVersion: 4.1.14:p
+
+!ENTRY APPLICATION_MODEL 1 0 2022-04-30 14:21:06.059
+!MESSAGE USER_ACTION : Created APP: TIMER [4.1.12]-->http://resources/4.1.12/app/TIMER/1
+
+!ENTRY com.dave.mbs.common 1 0 2022-04-30 14:21:07.160
+!MESSAGE Time taken for processing complete solver result is: 70 msec 
+
+!ENTRY com.dave.mbs.common 1 0 2022-04-30 14:21:07.165
+!MESSAGE *****Serialization is called after successful solver action*****
+
+!ENTRY com.dave.mbs.common 1 0 2022-04-30 14:21:07.169
+!MESSAGE *************Saving EMF data into file system*******************
+
+!ENTRY com.dave.mbs.common 1 0 2022-04-30 14:21:07.273
+!MESSAGE *************Saving Groovy data into file system*******************
+
+!ENTRY COMMON 1 0 2022-04-30 14:21:07.478
+!MESSAGE Time Taken By Serialization  : 202 ms :: C:\Users\Yoshi\Documents\GitHub\Software\01_jrg\06_XMC\jr22_LV_BMS_bauerjoh_AA\Dave\Model\projectData.bin
+
+!ENTRY com.dave.mbs.common 1 0 2022-04-30 14:21:07.643
+!MESSAGE *************Serializing EMF and Groovy data to RAM*******************
+
+!ENTRY com.dave.mbs.common 1 0 2022-04-30 14:21:07.694
+!MESSAGE Time taken for serialization in msec: 530
+
+!ENTRY UI_EDITOR 1 0 2022-04-30 14:21:07.745
+!MESSAGE USER_ACTION : Time taken for refreshing GLOBAL_CCU4/4.1.14/0 editor is : 6
+
+!ENTRY APP_CONFIGURATOR 1 0 2022-04-30 14:21:10.896
+!MESSAGE USER_ACTION : Time taken for opening editor is: 115 msec 
+
+!ENTRY UI_EDITOR 1 0 2022-04-30 14:21:18.213
+!MESSAGE USER_ACTION : Setting value = "1000.0" of "gfloat_time_interval" in APP: TIMER/4.1.12/1
+
+!ENTRY com.dave.mbs.common 1 0 2022-04-30 14:21:18.221
+!MESSAGE **************Serialization is called for successful UI action without Solver*********
+
+!ENTRY com.dave.mbs.common 1 0 2022-04-30 14:21:18.224
+!MESSAGE *************Serializing EMF and Groovy data to RAM*******************
+
+!ENTRY com.dave.mbs.common 1 0 2022-04-30 14:21:18.264
+!MESSAGE Time taken for serialization in msec: 39
+
+!ENTRY com.dave.mbs.common 1 0 2022-04-30 14:21:18.268
+!MESSAGE *****************************
+
+!ENTRY SIGNAL_CONFIG 1 0 2022-04-30 14:21:24.593
+!MESSAGE USER_ACTION : Opening HW Signal Connection Dialog.!
+
+!ENTRY SIGNAL_CONFIG 1 0 2022-04-30 14:21:27.927
+!MESSAGE USER_ACTION : Signal Load : 2
+
+!ENTRY SIGNAL_CONFIG 1 0 2022-04-30 14:21:30.654
+!MESSAGE USER_ACTION : HW Signal Connection Dialog is closed..!
+
+!ENTRY UI_EDITOR 1 0 2022-04-30 14:21:32.706
+!MESSAGE USER_ACTION : Setting value = "true" of "gcheck_period_match_interrupt" in APP: TIMER/4.1.12/1
+
+!ENTRY SOLVER 1 0 2022-04-30 14:21:32.741
+!MESSAGE USER_ACTION : Removed Query statement: signal('timer$333803475$1',pmus_omds,'timer$333803475$1$pmus_omds'),
+
+!ENTRY com.dave.mbs.common 1 0 2022-04-30 14:21:33.754
+!MESSAGE Time taken for processing complete solver result is: 25 msec 
+
+!ENTRY com.dave.mbs.common 1 0 2022-04-30 14:21:33.757
+!MESSAGE *****Serialization is called after successful solver action*****
+
+!ENTRY com.dave.mbs.common 1 0 2022-04-30 14:21:33.759
+!MESSAGE *************Saving EMF data into file system*******************
+
+!ENTRY com.dave.mbs.common 1 0 2022-04-30 14:21:33.852
+!MESSAGE *************Saving Groovy data into file system*******************
+
+!ENTRY COMMON 1 0 2022-04-30 14:21:34.051
+!MESSAGE Time Taken By Serialization  : 197 ms :: C:\Users\Yoshi\Documents\GitHub\Software\01_jrg\06_XMC\jr22_LV_BMS_bauerjoh_AA\Dave\Model\projectData.bin
+
+!ENTRY com.dave.mbs.common 1 0 2022-04-30 14:21:34.211
+!MESSAGE *************Serializing EMF and Groovy data to RAM*******************
+
+!ENTRY com.dave.mbs.common 1 0 2022-04-30 14:21:34.258
+!MESSAGE Time taken for serialization in msec: 501
+
+!ENTRY UI_EDITOR 1 0 2022-04-30 14:21:34.314
+!MESSAGE USER_ACTION : Time taken for refreshing TIMER/4.1.12/1 editor is : 1
+
+!ENTRY SOLVER 1 0 2022-04-30 14:21:34.318
+!MESSAGE Time Taken By Solver for UI Action: 1580 ms
+
+!ENTRY SIGNAL_CONFIG 1 0 2022-04-30 14:21:38.271
+!MESSAGE USER_ACTION : Opening HW Signal Connection Dialog.!
+
+!ENTRY SIGNAL_CONFIG 1 0 2022-04-30 14:21:40.243
+!MESSAGE USER_ACTION : Signal Load : 2
+
+!ENTRY SIGNAL_CONFIG 1 0 2022-04-30 14:21:41.000
+!MESSAGE USER_ACTION : User selection (Signal Config) Source Virtual Signal : TIMER_1 --> event_time_interval
+
+!ENTRY SIGNAL_CONFIG 1 0 2022-04-30 14:21:41.006
+!MESSAGE USER_ACTION : Signal Selection : 6
+
+!ENTRY SIGNAL_CONFIG 1 0 2022-04-30 14:21:42.806
+!MESSAGE USER_ACTION : Signal Load : 315
+
+!ENTRY SIGNAL_CONFIG 1 0 2022-04-30 14:21:54.527
+!MESSAGE USER_ACTION : HW Signal Connection Dialog is closed..!
+
+!ENTRY APP_CONFIGURATOR 1 0 2022-04-30 14:21:56.821
+!MESSAGE USER_ACTION : Time taken for opening editor is: 370 msec 
+
+!ENTRY APP_CONFIGURATOR 1 0 2022-04-30 14:22:26.279
+!MESSAGE USER_ACTION : Time taken for opening editor is: 503 msec 
+
+!ENTRY UI_EDITOR 1 0 2022-04-30 14:22:36.541
+!MESSAGE USER_ACTION : Setting value = "true" of "gcheck_enable_source_interrupt" in APP: ADC_MEASUREMENT/4.1.24/0
+
+!ENTRY APPLICATION_MODEL 1 0 2022-04-30 14:22:36.549
+!MESSAGE USER_ACTION : CASE-1 PR->PR
+ CPU_CTRL_XMC4 [4.0.2] lStoreAppVersion: 4.0.18:p
+
+!ENTRY SOLVER 1 0 2022-04-30 14:22:36.937
+!MESSAGE USER_ACTION : Removed Query statement: signal('timer$333803475$1',pmus_omds,'timer$333803475$1$pmus_omds'),
+
+!ENTRY com.dave.mbs.common 1 0 2022-04-30 14:22:37.934
+!MESSAGE Time taken for processing complete solver result is: 27 msec 
+
+!ENTRY com.dave.mbs.common 1 0 2022-04-30 14:22:37.937
+!MESSAGE *****Serialization is called after successful solver action*****
+
+!ENTRY com.dave.mbs.common 1 0 2022-04-30 14:22:37.940
+!MESSAGE *************Saving EMF data into file system*******************
+
+!ENTRY com.dave.mbs.common 1 0 2022-04-30 14:22:38.040
+!MESSAGE *************Saving Groovy data into file system*******************
+
+!ENTRY COMMON 1 0 2022-04-30 14:22:38.247
+!MESSAGE Time Taken By Serialization  : 203 ms :: C:\Users\Yoshi\Documents\GitHub\Software\01_jrg\06_XMC\jr22_LV_BMS_bauerjoh_AA\Dave\Model\projectData.bin
+
+!ENTRY com.dave.mbs.common 1 0 2022-04-30 14:22:38.390
+!MESSAGE *************Serializing EMF and Groovy data to RAM*******************
+
+!ENTRY com.dave.mbs.common 1 0 2022-04-30 14:22:38.434
+!MESSAGE Time taken for serialization in msec: 496
+
+!ENTRY UI_EDITOR 1 0 2022-04-30 14:22:38.494
+!MESSAGE USER_ACTION : Time taken for refreshing ADC_MEASUREMENT/4.1.24/0 editor is : 11
+
+!ENTRY SOLVER 1 0 2022-04-30 14:22:38.498
+!MESSAGE Time Taken By Solver for UI Action: 1563 ms
+
+!ENTRY UI_EDITOR 1 0 2022-04-30 14:23:14.334
+!MESSAGE USER_ACTION : Setting value = "false" of "gcheck_period_match_interrupt" in APP: TIMER/4.1.12/1
+
+!ENTRY com.dave.mbs.common 1 0 2022-04-30 14:23:15.440
+!MESSAGE Time taken for processing complete solver result is: 41 msec 
+
+!ENTRY com.dave.mbs.common 1 0 2022-04-30 14:23:15.443
+!MESSAGE *****Serialization is called after successful solver action*****
+
+!ENTRY com.dave.mbs.common 1 0 2022-04-30 14:23:15.446
+!MESSAGE *************Saving EMF data into file system*******************
+
+!ENTRY com.dave.mbs.common 1 0 2022-04-30 14:23:15.546
+!MESSAGE *************Saving Groovy data into file system*******************
+
+!ENTRY COMMON 1 0 2022-04-30 14:23:15.756
+!MESSAGE Time Taken By Serialization  : 206 ms :: C:\Users\Yoshi\Documents\GitHub\Software\01_jrg\06_XMC\jr22_LV_BMS_bauerjoh_AA\Dave\Model\projectData.bin
+
+!ENTRY com.dave.mbs.common 1 0 2022-04-30 14:23:15.899
+!MESSAGE *************Serializing EMF and Groovy data to RAM*******************
+
+!ENTRY com.dave.mbs.common 1 0 2022-04-30 14:23:15.957
+!MESSAGE Time taken for serialization in msec: 513
+
+!ENTRY UI_EDITOR 1 0 2022-04-30 14:23:16.002
+!MESSAGE USER_ACTION : Time taken for refreshing TIMER/4.1.12/1 editor is : 1
+
+!ENTRY SOLVER 1 0 2022-04-30 14:23:16.005
+!MESSAGE Time Taken By Solver for UI Action: 1639 ms
+
+!ENTRY CODEGEN 1 0 2022-04-30 14:23:21.558
+!MESSAGE Code generation started...
+
+!ENTRY CODEGEN 1 0 2022-04-30 14:23:27.855
+!MESSAGE Code generation completed...
+
+!ENTRY CODEGEN 1 0 2022-04-30 14:24:55.273
+!MESSAGE Code generation started...
+
+!ENTRY CODEGEN 1 0 2022-04-30 14:24:59.680
+!MESSAGE Code generation completed...
+
+!ENTRY APP_CONFIGURATOR 1 0 2022-04-30 14:25:30.617
+!MESSAGE USER_ACTION : Time taken for opening editor is: 123 msec 
+
+!ENTRY SIGNAL_CONFIG 1 0 2022-04-30 14:25:32.900
+!MESSAGE USER_ACTION : Opening HW Signal Connection Dialog.!
+
+!ENTRY SIGNAL_CONFIG 1 0 2022-04-30 14:25:36.482
+!MESSAGE USER_ACTION : Signal Load : 2
+
+!ENTRY SIGNAL_CONFIG 1 0 2022-04-30 14:25:40.772
+!MESSAGE USER_ACTION : User selection (Signal Config) Source Virtual Signal : TIMER_0 --> event_time_interval
+
+!ENTRY SIGNAL_CONFIG 1 0 2022-04-30 14:25:40.778
+!MESSAGE USER_ACTION : Signal Selection : 5
+
+!ENTRY SIGNAL_CONFIG 1 0 2022-04-30 14:25:42.326
+!MESSAGE USER_ACTION : Signal Load : 293
+
+!ENTRY SIGNAL_CONFIG 1 0 2022-04-30 14:25:44.480
+!MESSAGE USER_ACTION : Signal Load : 2
+
+!ENTRY SIGNAL_CONFIG 1 0 2022-04-30 14:25:44.493
+!MESSAGE USER_ACTION : Signal Load : 3
+
+!ENTRY SIGNAL_CONFIG 1 0 2022-04-30 14:25:45.910
+!MESSAGE USER_ACTION : User selection (Signal Config) Source Virtual Signal : TIMER_0 --> event_time_interval
+
+!ENTRY SIGNAL_CONFIG 1 0 2022-04-30 14:25:45.914
+!MESSAGE USER_ACTION : Signal Selection : 4
+
+!ENTRY SIGNAL_CONFIG 1 0 2022-04-30 14:25:46.504
+!MESSAGE USER_ACTION : Signal Load : 1
+
+!ENTRY SIGNAL_CONFIG 1 0 2022-04-30 14:25:47.351
+!MESSAGE USER_ACTION : User selection (Signal Config) Source Virtual Signal : TIMER_0 --> Not Selected
+
+!ENTRY SIGNAL_CONFIG 1 0 2022-04-30 14:25:48.894
+!MESSAGE USER_ACTION : Signal Selection : 1543
+
+!ENTRY SIGNAL_CONFIG 1 0 2022-04-30 14:25:54.550
+!MESSAGE USER_ACTION : Signal Load : 2
+
+!ENTRY SIGNAL_CONFIG 1 0 2022-04-30 14:25:59.976
+!MESSAGE USER_ACTION : Signal Load : 20
+
+!ENTRY SIGNAL_CONFIG 1 0 2022-04-30 14:26:11.836
+!MESSAGE USER_ACTION : HW Signal Connection Dialog is closed without saving user configured data..!
+
+!ENTRY APPSTORE 1 0 2022-04-30 14:27:58.070
+!MESSAGE USER_ACTION : Loaded DD: C:\Infineon\Tools\DAVE IDE\4.5.0.202105191637\D_LibraryStore_4.4\resources\0.1.41\port\p\0\MANIFEST\p.dd
+
+!ENTRY APPSTORE 1 0 2022-04-30 14:27:58.081
+!MESSAGE USER_ACTION : Loaded DD: C:\Infineon\Tools\DAVE IDE\4.5.0.202105191637\D_LibraryStore_4.4\resources\0.1.40\port\p\2\MANIFEST\p.dd
+
+!ENTRY APPSTORE 1 0 2022-04-30 14:27:58.087
+!MESSAGE USER_ACTION : Loaded DD: C:\Infineon\Tools\DAVE IDE\4.5.0.202105191637\D_LibraryStore_4.4\resources\0.1.40\port\p\3\MANIFEST\p.dd
+
+!ENTRY APPSTORE 1 0 2022-04-30 14:27:58.093
+!MESSAGE USER_ACTION : Loaded DD: C:\Infineon\Tools\DAVE IDE\4.5.0.202105191637\D_LibraryStore_4.4\resources\0.1.40\port\p\4\MANIFEST\p.dd
+
+!ENTRY APPSTORE 1 0 2022-04-30 14:27:58.099
+!MESSAGE USER_ACTION : Loaded DD: C:\Infineon\Tools\DAVE IDE\4.5.0.202105191637\D_LibraryStore_4.4\resources\0.1.40\port\p\5\MANIFEST\p.dd
+
+!ENTRY APPSTORE 1 0 2022-04-30 14:27:58.106
+!MESSAGE USER_ACTION : Loaded DD: C:\Infineon\Tools\DAVE IDE\4.5.0.202105191637\D_LibraryStore_4.4\resources\0.1.40\port\p\15\MANIFEST\p.dd
+
+!ENTRY APPSTORE 1 0 2022-04-30 14:27:58.111
+!MESSAGE USER_ACTION : Loaded DD: C:\Infineon\Tools\DAVE IDE\4.5.0.202105191637\D_LibraryStore_4.4\resources\0.0.0\port\usb_port\0\MANIFEST\usb_port.dd
+
+!ENTRY APPSTORE 1 0 2022-04-30 14:27:58.116
+!MESSAGE USER_ACTION : Loaded DD: C:\Infineon\Tools\DAVE IDE\4.5.0.202105191637\D_LibraryStore_4.4\resources\0.1.40\port\hcu_port\0\MANIFEST\hcu_port.dd
+
+!ENTRY APPSTORE 1 0 2022-04-30 14:27:58.120
+!MESSAGE USER_ACTION : Loaded DD: C:\Infineon\Tools\DAVE IDE\4.5.0.202105191637\D_LibraryStore_4.4\resources\0.0.0\port\reset_port\0\MANIFEST\reset_port.dd
+
+!ENTRY APPSTORE 1 0 2022-04-30 14:27:58.125
+!MESSAGE USER_ACTION : Loaded DD: C:\Infineon\Tools\DAVE IDE\4.5.0.202105191637\D_LibraryStore_4.4\resources\0.0.0\port\crystal_port\0\MANIFEST\crystal_port.dd
+
+!ENTRY APPSTORE 1 0 2022-04-30 14:27:58.129
+!MESSAGE USER_ACTION : Loaded DD: C:\Infineon\Tools\DAVE IDE\4.5.0.202105191637\D_LibraryStore_4.4\resources\0.1.39\port\rtc_port\0\MANIFEST\rtc_port.dd
+
+!ENTRY APPSTORE 1 0 2022-04-30 14:27:58.133
+!MESSAGE USER_ACTION : Loaded DD: C:\Infineon\Tools\DAVE IDE\4.5.0.202105191637\D_LibraryStore_4.4\resources\0.0.0\port\power_port\0\MANIFEST\power_port.dd
+
+!ENTRY APPSTORE 1 0 2022-04-30 14:27:58.138
+!MESSAGE USER_ACTION : Loaded DD: C:\Infineon\Tools\DAVE IDE\4.5.0.202105191637\D_LibraryStore_4.4\resources\0.0.0\port\analogpower_port\0\MANIFEST\analogpower_port.dd
+
+!ENTRY PIN_CONFIG 1 0 2022-04-30 14:27:58.147
+!MESSAGE Board Pin Name: Invalid data : (// Board pin label) in line number 1
+
+!ENTRY PIN_CONFIG 1 0 2022-04-30 14:27:58.150
+!MESSAGE Board Pin Name: Invalid data : (// XMC4500 Relax Kit (XMC4500_F100x1024)) in line number 2
+
+!ENTRY PIN_CONFIG 1 0 2022-04-30 14:27:58.153
+!MESSAGE Board Pin Name: Invalid data : (// v1.0 2017-11-30) in line number 3
+
+!ENTRY PIN_CONFIG 1 0 2022-04-30 14:27:58.156
+!MESSAGE Board Pin Name: Empty line found in line number 4
+
+!ENTRY PIN_CONFIG 1 0 2022-04-30 14:27:58.158
+!MESSAGE Board Pin Name: Invalid data : (//) in line number 5
+
+!ENTRY PIN_CONFIG 1 0 2022-04-30 14:27:58.161
+!MESSAGE Board Pin Name: Invalid data : (// BUTTONS) in line number 6
+
+!ENTRY PIN_CONFIG 1 0 2022-04-30 14:27:58.163
+!MESSAGE Board Pin Name: Invalid data : (// ) in line number 7
+
+!ENTRY PIN_CONFIG 1 0 2022-04-30 14:27:58.166
+!MESSAGE Board Pin Name: Empty line found in line number 8
+
+!ENTRY PIN_CONFIG 1 0 2022-04-30 14:27:58.168
+!MESSAGE Board Pin Name: Invalid data : (// P1_14) in line number 9
+
+!ENTRY PIN_CONFIG 1 0 2022-04-30 14:27:58.170
+!MESSAGE Board Pin Name: Invalid data : (// P1_15) in line number 11
+
+!ENTRY PIN_CONFIG 1 0 2022-04-30 14:27:58.173
+!MESSAGE Board Pin Name: Empty line found in line number 13
+
+!ENTRY PIN_CONFIG 1 0 2022-04-30 14:27:58.175
+!MESSAGE Board Pin Name: Invalid data : (//) in line number 14
+
+!ENTRY PIN_CONFIG 1 0 2022-04-30 14:27:58.178
+!MESSAGE Board Pin Name: Invalid data : (// LEDs) in line number 15
+
+!ENTRY PIN_CONFIG 1 0 2022-04-30 14:27:58.180
+!MESSAGE Board Pin Name: Invalid data : (// ) in line number 16
+
+!ENTRY PIN_CONFIG 1 0 2022-04-30 14:27:58.183
+!MESSAGE Board Pin Name: Empty line found in line number 17
+
+!ENTRY PIN_CONFIG 1 0 2022-04-30 14:27:58.185
+!MESSAGE Board Pin Name: Invalid data : (// P1_1) in line number 18
+
+!ENTRY PIN_CONFIG 1 0 2022-04-30 14:27:58.188
+!MESSAGE Board Pin Name: Invalid data : (// P1_0) in line number 20
+
+!ENTRY PIN_CONFIG 1 0 2022-04-30 14:27:58.191
+!MESSAGE Board Pin Name: Empty line found in line number 22
+
+!ENTRY PIN_CONFIG 1 0 2022-04-30 14:27:58.193
+!MESSAGE Board Pin Name: Invalid data : (//) in line number 23
+
+!ENTRY PIN_CONFIG 1 0 2022-04-30 14:27:58.196
+!MESSAGE Board Pin Name: Invalid data : (// Serial Flash Memory (S25FL032P0)) in line number 24
+
+!ENTRY PIN_CONFIG 1 0 2022-04-30 14:27:58.198
+!MESSAGE Board Pin Name: Invalid data : (// ) in line number 25
+
+!ENTRY PIN_CONFIG 1 0 2022-04-30 14:27:58.201
+!MESSAGE Board Pin Name: Empty line found in line number 26
+
+!ENTRY PIN_CONFIG 1 0 2022-04-30 14:27:58.204
+!MESSAGE Board Pin Name: Invalid data : (// P1_10) in line number 27
+
+!ENTRY PIN_CONFIG 1 0 2022-04-30 14:27:58.207
+!MESSAGE Board Pin Name: Invalid data : (// P1_8) in line number 29
+
+!ENTRY PIN_CONFIG 1 0 2022-04-30 14:27:58.209
+!MESSAGE Board Pin Name: Invalid data : (// P1_5) in line number 31
+
+!ENTRY PIN_CONFIG 1 0 2022-04-30 14:27:58.212
+!MESSAGE Board Pin Name: Invalid data : (// P1_4) in line number 33
+
+!ENTRY PIN_CONFIG 1 0 2022-04-30 14:27:58.214
+!MESSAGE Board Pin Name: Invalid data : (// P1_3) in line number 35
+
+!ENTRY PIN_CONFIG 1 0 2022-04-30 14:27:58.217
+!MESSAGE Board Pin Name: Invalid data : (// P1_2) in line number 37
+
+!ENTRY PIN_CONFIG 1 0 2022-04-30 14:27:58.220
+!MESSAGE Board Pin Name: Empty line found in line number 39
+
+!ENTRY PIN_CONFIG 1 0 2022-04-30 14:27:58.222
+!MESSAGE Board Pin Name: Invalid data : (//) in line number 40
+
+!ENTRY PIN_CONFIG 1 0 2022-04-30 14:27:58.225
+!MESSAGE Board Pin Name: Invalid data : (// microSD Card) in line number 41
+
+!ENTRY PIN_CONFIG 1 0 2022-04-30 14:27:58.227
+!MESSAGE Board Pin Name: Invalid data : (// ) in line number 42
+
+!ENTRY PIN_CONFIG 1 0 2022-04-30 14:27:58.230
+!MESSAGE Board Pin Name: Empty line found in line number 43
+
+!ENTRY PIN_CONFIG 1 0 2022-04-30 14:27:58.232
+!MESSAGE Board Pin Name: Invalid data : (// P3_6) in line number 44
+
+!ENTRY PIN_CONFIG 1 0 2022-04-30 14:27:58.234
+!MESSAGE Board Pin Name: Invalid data : (// P3_5) in line number 46
+
+!ENTRY PIN_CONFIG 1 0 2022-04-30 14:27:58.237
+!MESSAGE Board Pin Name: Invalid data : (// P4_0) in line number 48
+
+!ENTRY PIN_CONFIG 1 0 2022-04-30 14:27:58.240
+!MESSAGE Board Pin Name: Invalid data : (// P1_6) in line number 50
+
+!ENTRY PIN_CONFIG 1 0 2022-04-30 14:27:58.242
+!MESSAGE Board Pin Name: Invalid data : (// P1_7) in line number 52
+
+!ENTRY PIN_CONFIG 1 0 2022-04-30 14:27:58.246
+!MESSAGE Board Pin Name: Invalid data : (// P4_1) in line number 54
+
+!ENTRY PIN_CONFIG 1 0 2022-04-30 14:27:58.247
+!MESSAGE Board Pin Name: Empty line found in line number 56
+
+!ENTRY PIN_CONFIG 1 0 2022-04-30 14:27:58.250
+!MESSAGE Board Pin Name: Invalid data : (// ) in line number 57
+
+!ENTRY PIN_CONFIG 1 0 2022-04-30 14:27:58.253
+!MESSAGE Board Pin Name: Invalid data : (// Ethernet (KSZ8031RNL/KSZ8081RNA)) in line number 58
+
+!ENTRY PIN_CONFIG 1 0 2022-04-30 14:27:58.255
+!MESSAGE Board Pin Name: Invalid data : (// ) in line number 59
+
+!ENTRY PIN_CONFIG 1 0 2022-04-30 14:27:58.257
+!MESSAGE Board Pin Name: Empty line found in line number 60
+
+!ENTRY PIN_CONFIG 1 0 2022-04-30 14:27:58.260
+!MESSAGE Board Pin Name: Invalid data : (// P15_9) in line number 61
+
+!ENTRY PIN_CONFIG 1 0 2022-04-30 14:27:58.262
+!MESSAGE Board Pin Name: Invalid data : (// P15_8) in line number 63
+
+!ENTRY PIN_CONFIG 1 0 2022-04-30 14:27:58.265
+!MESSAGE Board Pin Name: Invalid data : (// P2_10) in line number 65
+
+!ENTRY PIN_CONFIG 1 0 2022-04-30 14:27:58.267
+!MESSAGE Board Pin Name: Invalid data : (// P2_9) in line number 67
+
+!ENTRY PIN_CONFIG 1 0 2022-04-30 14:27:58.270
+!MESSAGE Board Pin Name: Invalid data : (// P2_8) in line number 69
+
+!ENTRY PIN_CONFIG 1 0 2022-04-30 14:27:58.272
+!MESSAGE Board Pin Name: Invalid data : (// P2_5) in line number 71
+
+!ENTRY PIN_CONFIG 1 0 2022-04-30 14:27:58.275
+!MESSAGE Board Pin Name: Invalid data : (// P2_4) in line number 73
+
+!ENTRY PIN_CONFIG 1 0 2022-04-30 14:27:58.278
+!MESSAGE Board Pin Name: Invalid data : (// P2_3) in line number 75
+
+!ENTRY PIN_CONFIG 1 0 2022-04-30 14:27:58.280
+!MESSAGE Board Pin Name: Invalid data : (// P2_2) in line number 77
+
+!ENTRY PIN_CONFIG 1 0 2022-04-30 14:27:58.283
+!MESSAGE Board Pin Name: Invalid data : (// P2_0) in line number 79
+
+!ENTRY PIN_CONFIG 1 0 2022-04-30 14:27:58.285
+!MESSAGE Board Pin Name: Invalid data : (// P2_7) in line number 81
+
+!ENTRY PIN_CONFIG 1 0 2022-04-30 14:27:58.287
+!MESSAGE Board Pin Name: Invalid data : (// P3_1) in line number 83
+
+!ENTRY PIN_CONFIG 1 0 2022-04-30 14:27:58.290
+!MESSAGE Board Pin Name: Empty line found in line number 85
+
+!ENTRY PIN_CONFIG 1 0 2022-04-30 14:27:58.811
+!MESSAGE Board Pin Name: Invalid data : (// Board pin label) in line number 1
+
+!ENTRY PIN_CONFIG 1 0 2022-04-30 14:27:58.815
+!MESSAGE Board Pin Name: Invalid data : (// XMC4500 Relax Kit (XMC4500_F100x1024)) in line number 2
+
+!ENTRY PIN_CONFIG 1 0 2022-04-30 14:27:58.818
+!MESSAGE Board Pin Name: Invalid data : (// v1.0 2017-11-30) in line number 3
+
+!ENTRY PIN_CONFIG 1 0 2022-04-30 14:27:58.822
+!MESSAGE Board Pin Name: Empty line found in line number 4
+
+!ENTRY PIN_CONFIG 1 0 2022-04-30 14:27:58.825
+!MESSAGE Board Pin Name: Invalid data : (//) in line number 5
+
+!ENTRY PIN_CONFIG 1 0 2022-04-30 14:27:58.828
+!MESSAGE Board Pin Name: Invalid data : (// BUTTONS) in line number 6
+
+!ENTRY PIN_CONFIG 1 0 2022-04-30 14:27:58.830
+!MESSAGE Board Pin Name: Invalid data : (// ) in line number 7
+
+!ENTRY PIN_CONFIG 1 0 2022-04-30 14:27:58.833
+!MESSAGE Board Pin Name: Empty line found in line number 8
+
+!ENTRY PIN_CONFIG 1 0 2022-04-30 14:27:58.836
+!MESSAGE Board Pin Name: Invalid data : (// P1_14) in line number 9
+
+!ENTRY PIN_CONFIG 1 0 2022-04-30 14:27:58.839
+!MESSAGE Board Pin Name: Invalid data : (// P1_15) in line number 11
+
+!ENTRY PIN_CONFIG 1 0 2022-04-30 14:27:58.842
+!MESSAGE Board Pin Name: Empty line found in line number 13
+
+!ENTRY PIN_CONFIG 1 0 2022-04-30 14:27:58.844
+!MESSAGE Board Pin Name: Invalid data : (//) in line number 14
+
+!ENTRY PIN_CONFIG 1 0 2022-04-30 14:27:58.848
+!MESSAGE Board Pin Name: Invalid data : (// LEDs) in line number 15
+
+!ENTRY PIN_CONFIG 1 0 2022-04-30 14:27:58.850
+!MESSAGE Board Pin Name: Invalid data : (// ) in line number 16
+
+!ENTRY PIN_CONFIG 1 0 2022-04-30 14:27:58.853
+!MESSAGE Board Pin Name: Empty line found in line number 17
+
+!ENTRY PIN_CONFIG 1 0 2022-04-30 14:27:58.856
+!MESSAGE Board Pin Name: Invalid data : (// P1_1) in line number 18
+
+!ENTRY PIN_CONFIG 1 0 2022-04-30 14:27:58.858
+!MESSAGE Board Pin Name: Invalid data : (// P1_0) in line number 20
+
+!ENTRY PIN_CONFIG 1 0 2022-04-30 14:27:58.861
+!MESSAGE Board Pin Name: Empty line found in line number 22
+
+!ENTRY PIN_CONFIG 1 0 2022-04-30 14:27:58.864
+!MESSAGE Board Pin Name: Invalid data : (//) in line number 23
+
+!ENTRY PIN_CONFIG 1 0 2022-04-30 14:27:58.867
+!MESSAGE Board Pin Name: Invalid data : (// Serial Flash Memory (S25FL032P0)) in line number 24
+
+!ENTRY PIN_CONFIG 1 0 2022-04-30 14:27:58.870
+!MESSAGE Board Pin Name: Invalid data : (// ) in line number 25
+
+!ENTRY PIN_CONFIG 1 0 2022-04-30 14:27:58.873
+!MESSAGE Board Pin Name: Empty line found in line number 26
+
+!ENTRY PIN_CONFIG 1 0 2022-04-30 14:27:58.876
+!MESSAGE Board Pin Name: Invalid data : (// P1_10) in line number 27
+
+!ENTRY PIN_CONFIG 1 0 2022-04-30 14:27:58.880
+!MESSAGE Board Pin Name: Invalid data : (// P1_8) in line number 29
+
+!ENTRY PIN_CONFIG 1 0 2022-04-30 14:27:58.883
+!MESSAGE Board Pin Name: Invalid data : (// P1_5) in line number 31
+
+!ENTRY PIN_CONFIG 1 0 2022-04-30 14:27:58.885
+!MESSAGE Board Pin Name: Invalid data : (// P1_4) in line number 33
+
+!ENTRY PIN_CONFIG 1 0 2022-04-30 14:27:58.888
+!MESSAGE Board Pin Name: Invalid data : (// P1_3) in line number 35
+
+!ENTRY PIN_CONFIG 1 0 2022-04-30 14:27:58.891
+!MESSAGE Board Pin Name: Invalid data : (// P1_2) in line number 37
+
+!ENTRY PIN_CONFIG 1 0 2022-04-30 14:27:58.893
+!MESSAGE Board Pin Name: Empty line found in line number 39
+
+!ENTRY PIN_CONFIG 1 0 2022-04-30 14:27:58.896
+!MESSAGE Board Pin Name: Invalid data : (//) in line number 40
+
+!ENTRY PIN_CONFIG 1 0 2022-04-30 14:27:58.899
+!MESSAGE Board Pin Name: Invalid data : (// microSD Card) in line number 41
+
+!ENTRY PIN_CONFIG 1 0 2022-04-30 14:27:58.902
+!MESSAGE Board Pin Name: Invalid data : (// ) in line number 42
+
+!ENTRY PIN_CONFIG 1 0 2022-04-30 14:27:58.904
+!MESSAGE Board Pin Name: Empty line found in line number 43
+
+!ENTRY PIN_CONFIG 1 0 2022-04-30 14:27:58.907
+!MESSAGE Board Pin Name: Invalid data : (// P3_6) in line number 44
+
+!ENTRY PIN_CONFIG 1 0 2022-04-30 14:27:58.910
+!MESSAGE Board Pin Name: Invalid data : (// P3_5) in line number 46
+
+!ENTRY PIN_CONFIG 1 0 2022-04-30 14:27:58.913
+!MESSAGE Board Pin Name: Invalid data : (// P4_0) in line number 48
+
+!ENTRY PIN_CONFIG 1 0 2022-04-30 14:27:58.915
+!MESSAGE Board Pin Name: Invalid data : (// P1_6) in line number 50
+
+!ENTRY PIN_CONFIG 1 0 2022-04-30 14:27:58.919
+!MESSAGE Board Pin Name: Invalid data : (// P1_7) in line number 52
+
+!ENTRY PIN_CONFIG 1 0 2022-04-30 14:27:58.922
+!MESSAGE Board Pin Name: Invalid data : (// P4_1) in line number 54
+
+!ENTRY PIN_CONFIG 1 0 2022-04-30 14:27:58.924
+!MESSAGE Board Pin Name: Empty line found in line number 56
+
+!ENTRY PIN_CONFIG 1 0 2022-04-30 14:27:58.927
+!MESSAGE Board Pin Name: Invalid data : (// ) in line number 57
+
+!ENTRY PIN_CONFIG 1 0 2022-04-30 14:27:58.930
+!MESSAGE Board Pin Name: Invalid data : (// Ethernet (KSZ8031RNL/KSZ8081RNA)) in line number 58
+
+!ENTRY PIN_CONFIG 1 0 2022-04-30 14:27:58.933
+!MESSAGE Board Pin Name: Invalid data : (// ) in line number 59
+
+!ENTRY PIN_CONFIG 1 0 2022-04-30 14:27:58.936
+!MESSAGE Board Pin Name: Empty line found in line number 60
+
+!ENTRY PIN_CONFIG 1 0 2022-04-30 14:27:58.939
+!MESSAGE Board Pin Name: Invalid data : (// P15_9) in line number 61
+
+!ENTRY PIN_CONFIG 1 0 2022-04-30 14:27:58.942
+!MESSAGE Board Pin Name: Invalid data : (// P15_8) in line number 63
+
+!ENTRY PIN_CONFIG 1 0 2022-04-30 14:27:58.945
+!MESSAGE Board Pin Name: Invalid data : (// P2_10) in line number 65
+
+!ENTRY PIN_CONFIG 1 0 2022-04-30 14:27:58.948
+!MESSAGE Board Pin Name: Invalid data : (// P2_9) in line number 67
+
+!ENTRY PIN_CONFIG 1 0 2022-04-30 14:27:58.951
+!MESSAGE Board Pin Name: Invalid data : (// P2_8) in line number 69
+
+!ENTRY PIN_CONFIG 1 0 2022-04-30 14:27:58.953
+!MESSAGE Board Pin Name: Invalid data : (// P2_5) in line number 71
+
+!ENTRY PIN_CONFIG 1 0 2022-04-30 14:27:58.956
+!MESSAGE Board Pin Name: Invalid data : (// P2_4) in line number 73
+
+!ENTRY PIN_CONFIG 1 0 2022-04-30 14:27:58.959
+!MESSAGE Board Pin Name: Invalid data : (// P2_3) in line number 75
+
+!ENTRY PIN_CONFIG 1 0 2022-04-30 14:27:58.962
+!MESSAGE Board Pin Name: Invalid data : (// P2_2) in line number 77
+
+!ENTRY PIN_CONFIG 1 0 2022-04-30 14:27:58.964
+!MESSAGE Board Pin Name: Invalid data : (// P2_0) in line number 79
+
+!ENTRY PIN_CONFIG 1 0 2022-04-30 14:27:58.967
+!MESSAGE Board Pin Name: Invalid data : (// P2_7) in line number 81
+
+!ENTRY PIN_CONFIG 1 0 2022-04-30 14:27:58.970
+!MESSAGE Board Pin Name: Invalid data : (// P3_1) in line number 83
+
+!ENTRY PIN_CONFIG 1 0 2022-04-30 14:27:58.973
+!MESSAGE Board Pin Name: Empty line found in line number 85
+
+!ENTRY APP_CONFIGURATOR 1 0 2022-04-30 14:28:49.097
+!MESSAGE USER_ACTION : Time taken for opening editor is: 815 msec 
+
+!ENTRY APP_CONFIGURATOR 1 0 2022-04-30 14:32:08.039
+!MESSAGE USER_ACTION : Time taken for opening editor is: 503 msec 
+
+!ENTRY UI_EDITOR 1 0 2022-04-30 14:32:09.914
+!MESSAGE USER_ACTION : Setting value = "true" of "gcheck_enable_res_evt_chA" in APP: ADC_MEASUREMENT/4.1.24/0
+
+!ENTRY com.dave.mbs.common 1 0 2022-04-30 14:32:10.975
+!MESSAGE Time taken for processing complete solver result is: 17 msec 
+
+!ENTRY com.dave.mbs.common 1 0 2022-04-30 14:32:10.978
+!MESSAGE *****Serialization is called after successful solver action*****
+
+!ENTRY com.dave.mbs.common 1 0 2022-04-30 14:32:10.980
+!MESSAGE *************Saving EMF data into file system*******************
+
+!ENTRY com.dave.mbs.common 1 0 2022-04-30 14:32:11.090
+!MESSAGE *************Saving Groovy data into file system*******************
+
+!ENTRY COMMON 1 0 2022-04-30 14:32:11.275
+!MESSAGE Time Taken By Serialization  : 182 ms :: C:\Users\Yoshi\Documents\GitHub\Software\01_jrg\06_XMC\jr22_LV_BMS_bauerjoh_AA\Dave\Model\projectData.bin
+
+!ENTRY com.dave.mbs.common 1 0 2022-04-30 14:32:11.404
+!MESSAGE *************Serializing EMF and Groovy data to RAM*******************
+
+!ENTRY com.dave.mbs.common 1 0 2022-04-30 14:32:11.448
+!MESSAGE Time taken for serialization in msec: 471
+
+!ENTRY UI_EDITOR 1 0 2022-04-30 14:32:11.510
+!MESSAGE USER_ACTION : Time taken for refreshing ADC_MEASUREMENT/4.1.24/0 editor is : 6
+
+!ENTRY SOLVER 1 0 2022-04-30 14:32:11.513
+!MESSAGE Time Taken By Solver for UI Action: 1554 ms
+
+!ENTRY SIGNAL_CONFIG 1 0 2022-04-30 14:32:19.391
+!MESSAGE USER_ACTION : Opening HW Signal Connection Dialog.!
+
+!ENTRY SIGNAL_CONFIG 1 0 2022-04-30 14:32:21.759
+!MESSAGE USER_ACTION : Signal Load : 10
+
+!ENTRY SIGNAL_CONFIG 1 0 2022-04-30 14:32:23.685
+!MESSAGE USER_ACTION : User selection (Signal Config) Source Virtual Signal : ADC_MEASUREMENT_0 --> event_result_Channel_A
+
+!ENTRY SIGNAL_CONFIG 1 0 2022-04-30 14:32:23.690
+!MESSAGE USER_ACTION : Signal Selection : 4
+
+!ENTRY SIGNAL_CONFIG 1 0 2022-04-30 14:32:24.621
+!MESSAGE USER_ACTION : Signal Load : 324
+
+!ENTRY SIGNAL_CONFIG 1 0 2022-04-30 14:32:27.118
+!MESSAGE USER_ACTION : HW Signal Connection Dialog is closed..!
+
+!ENTRY CODEGEN 1 0 2022-04-30 14:32:32.310
+!MESSAGE Code generation started...
+
+!ENTRY CODEGEN 1 0 2022-04-30 14:32:36.912
+!MESSAGE Code generation completed...
+
+!ENTRY SIGNAL_CONFIG 1 0 2022-04-30 14:32:43.218
+!MESSAGE USER_ACTION : Opening HW Signal Connection Dialog.!
+
+!ENTRY SIGNAL_CONFIG 1 0 2022-04-30 14:32:44.833
+!MESSAGE USER_ACTION : Signal Load : 13
+
+!ENTRY SIGNAL_CONFIG 1 0 2022-04-30 14:32:47.123
+!MESSAGE USER_ACTION : User selection (Signal Config) Source Virtual Signal : ADC_MEASUREMENT_0 --> event_result_Channel_A
+
+!ENTRY SIGNAL_CONFIG 1 0 2022-04-30 14:32:47.127
+!MESSAGE USER_ACTION : Signal Selection : 5
+
+!ENTRY SIGNAL_CONFIG 1 0 2022-04-30 14:32:51.359
+!MESSAGE USER_ACTION : HW Signal Connection Dialog is closed..!
+
+!ENTRY SIGNAL_CONFIG 1 0 2022-04-30 14:36:34.606
+!MESSAGE USER_ACTION : Opening HW Signal Connection Dialog.!
+
+!ENTRY SIGNAL_CONFIG 1 0 2022-04-30 14:36:36.625
+!MESSAGE USER_ACTION : Signal Load : 16
+
+!ENTRY SIGNAL_CONFIG 1 0 2022-04-30 14:36:37.727
+!MESSAGE USER_ACTION : User selection (Signal Config) Source Virtual Signal : ADC_MEASUREMENT_0 --> event_result_Channel_A
+
+!ENTRY SIGNAL_CONFIG 1 0 2022-04-30 14:36:37.732
+!MESSAGE USER_ACTION : Signal Selection : 5
+
+!ENTRY SIGNAL_CONFIG 1 0 2022-04-30 14:36:38.646
+!MESSAGE USER_ACTION : Signal Load : 6
+
+!ENTRY SIGNAL_CONFIG 1 0 2022-04-30 14:36:42.928
+!MESSAGE USER_ACTION : HW Signal Connection Dialog is closed..!
+
+!ENTRY APP_CONFIGURATOR 1 0 2022-04-30 14:37:22.229
+!MESSAGE USER_ACTION : Time taken for opening editor is: 135 msec 
+
+!ENTRY CODEGEN 1 0 2022-04-30 14:38:36.664
+!MESSAGE Code generation started...
+
+!ENTRY CODEGEN 1 0 2022-04-30 14:38:41.358
+!MESSAGE Code generation completed...
+
+!ENTRY APPLICATION_MODEL 1 0 2022-04-30 14:44:13.862
+!MESSAGE USER_ACTION : App Getting Added: INTERRUPT [4.0.10]
+
+!ENTRY SOLVER 1 0 2022-04-30 14:44:13.888
+!MESSAGE USER_ACTION : Creating an APP: INTERRUPT [4.0.10]
+
+!ENTRY APPLICATION_MODEL 1 0 2022-04-30 14:44:13.978
+!MESSAGE USER_ACTION : CASE-1 PR->PR
+ CPU_CTRL_XMC4 [4.0.2] lStoreAppVersion: 4.0.18:p
+
+!ENTRY APPLICATION_MODEL 1 0 2022-04-30 14:44:14.136
+!MESSAGE USER_ACTION : Created APP: INTERRUPT [4.0.10]-->http://resources/4.0.10/app/INTERRUPT/0
+
+!ENTRY com.dave.mbs.common 1 0 2022-04-30 14:44:15.280
+!MESSAGE Time taken for processing complete solver result is: 34 msec 
+
+!ENTRY com.dave.mbs.common 1 0 2022-04-30 14:44:15.282
+!MESSAGE *****Serialization is called after successful solver action*****
+
+!ENTRY com.dave.mbs.common 1 0 2022-04-30 14:44:15.285
+!MESSAGE *************Saving EMF data into file system*******************
+
+!ENTRY com.dave.mbs.common 1 0 2022-04-30 14:44:15.387
+!MESSAGE *************Saving Groovy data into file system*******************
+
+!ENTRY COMMON 1 0 2022-04-30 14:44:15.567
+!MESSAGE Time Taken By Serialization  : 177 ms :: C:\Users\Yoshi\Documents\GitHub\Software\01_jrg\06_XMC\jr22_LV_BMS_bauerjoh_AA\Dave\Model\projectData.bin
+
+!ENTRY com.dave.mbs.common 1 0 2022-04-30 14:44:15.697
+!MESSAGE *************Serializing EMF and Groovy data to RAM*******************
+
+!ENTRY com.dave.mbs.common 1 0 2022-04-30 14:44:15.786
+!MESSAGE Time taken for serialization in msec: 503
+
+!ENTRY APP_CONFIGURATOR 1 0 2022-04-30 14:44:21.724
+!MESSAGE USER_ACTION : Time taken for opening editor is: 106 msec 
+
+!ENTRY SIGNAL_CONFIG 1 0 2022-04-30 14:44:32.303
+!MESSAGE USER_ACTION : Opening HW Signal Connection Dialog.!
+
+!ENTRY SIGNAL_CONFIG 1 0 2022-04-30 14:44:39.412
+!MESSAGE USER_ACTION : Signal Load : 3
+
+!ENTRY SIGNAL_CONFIG 1 0 2022-04-30 14:44:42.110
+!MESSAGE USER_ACTION : User selection (Signal Config) Source Virtual Signal : ADC_MEASUREMENT_0 --> event_result_Channel_A
+
+!ENTRY SIGNAL_CONFIG 1 0 2022-04-30 14:44:42.114
+!MESSAGE USER_ACTION : Signal Selection : 4
+
+!ENTRY SIGNAL_CONFIG 1 0 2022-04-30 14:44:43.858
+!MESSAGE USER_ACTION : Signal Load : 316
+
+!ENTRY SIGNAL_CONFIG 1 0 2022-04-30 14:44:44.780
+!MESSAGE USER_ACTION : User selection (Signal Config) Target APP : ADC_MEASUREMENT_0 --> INTERRUPT_0
+
+!ENTRY SIGNAL_CONFIG 1 0 2022-04-30 14:44:44.784
+!MESSAGE USER_ACTION : Signal Selection : 4
+
+!ENTRY SIGNAL_CONFIG 1 0 2022-04-30 14:44:45.719
+!MESSAGE USER_ACTION : Signal Load : 2
+
+!ENTRY SIGNAL_CONFIG 1 0 2022-04-30 14:44:46.925
+!MESSAGE USER_ACTION : User selection (Signal Config) Target Virtual Signal : ADC_MEASUREMENT_0 --> sr_irq
+
+!ENTRY SIGNAL_CONFIG 1 0 2022-04-30 14:44:48.527
+!MESSAGE USER_ACTION : Signal Selection : 1601
+
+!ENTRY com.dave.mbs.common 1 0 2022-04-30 14:44:50.110
+!MESSAGE Time taken for processing complete solver result is: 23 msec 
+
+!ENTRY com.dave.mbs.common 1 0 2022-04-30 14:44:50.112
+!MESSAGE *****Serialization is called after successful solver action*****
+
+!ENTRY com.dave.mbs.common 1 0 2022-04-30 14:44:50.114
+!MESSAGE *************Saving EMF data into file system*******************
+
+!ENTRY com.dave.mbs.common 1 0 2022-04-30 14:44:50.205
+!MESSAGE *************Saving Groovy data into file system*******************
+
+!ENTRY COMMON 1 0 2022-04-30 14:44:50.382
+!MESSAGE Time Taken By Serialization  : 175 ms :: C:\Users\Yoshi\Documents\GitHub\Software\01_jrg\06_XMC\jr22_LV_BMS_bauerjoh_AA\Dave\Model\projectData.bin
+
+!ENTRY com.dave.mbs.common 1 0 2022-04-30 14:44:50.526
+!MESSAGE *************Serializing EMF and Groovy data to RAM*******************
+
+!ENTRY com.dave.mbs.common 1 0 2022-04-30 14:44:50.611
+!MESSAGE Time taken for serialization in msec: 499
+
+!ENTRY UI_EDITOR 1 0 2022-04-30 14:44:50.697
+!MESSAGE USER_ACTION : Time taken for refreshing INTERRUPT/4.0.10/0 editor is : 19
+
+!ENTRY SIGNAL_CONFIG 1 0 2022-04-30 14:44:50.700
+!MESSAGE USER_ACTION : Saved User configured HW Signal Connection..!
+
+!ENTRY SOLVER 1 0 2022-04-30 14:44:50.703
+!MESSAGE Time Taken By Solve and Save Signal Configuration  : 634 ms
+
+!ENTRY SIGNAL_CONFIG 1 0 2022-04-30 14:44:53.140
+!MESSAGE USER_ACTION : HW Signal Connection Dialog is closed..!
+
+!ENTRY CODEGEN 1 0 2022-04-30 14:45:03.650
+!MESSAGE Code generation started...
+
+!ENTRY CODEGEN 1 0 2022-04-30 14:45:08.083
+!MESSAGE Code generation completed...
+
+!ENTRY APPLICATION_MODEL 1 0 2022-04-30 14:47:16.766
+!MESSAGE USER_ACTION : Remove Option: Remove this APP and all APPs that are requiring it (Recursively up the tree)
+
+!ENTRY APPLICATION_MODEL 1 0 2022-04-30 14:47:16.825
+!MESSAGE USER_ACTION : Deleting resource : http://resources/4.1.12/app/TIMER/0
+
+!ENTRY com.dave.mbs.common 1 0 2022-04-30 14:47:17.869
+!MESSAGE Time taken for processing complete solver result is: 31 msec 
+
+!ENTRY com.dave.mbs.common 1 0 2022-04-30 14:47:17.871
+!MESSAGE *****Serialization is called after successful solver action*****
+
+!ENTRY com.dave.mbs.common 1 0 2022-04-30 14:47:17.874
+!MESSAGE *************Saving EMF data into file system*******************
+
+!ENTRY com.dave.mbs.common 1 0 2022-04-30 14:47:17.966
+!MESSAGE *************Saving Groovy data into file system*******************
+
+!ENTRY COMMON 1 0 2022-04-30 14:47:18.136
+!MESSAGE Time Taken By Serialization  : 167 ms :: C:\Users\Yoshi\Documents\GitHub\Software\01_jrg\06_XMC\jr22_LV_BMS_bauerjoh_AA\Dave\Model\projectData.bin
+
+!ENTRY com.dave.mbs.common 1 0 2022-04-30 14:47:18.264
+!MESSAGE *************Serializing EMF and Groovy data to RAM*******************
+
+!ENTRY com.dave.mbs.common 1 0 2022-04-30 14:47:18.343
+!MESSAGE Time taken for serialization in msec: 471
+
+!ENTRY UI_EDITOR 1 0 2022-04-30 14:47:18.408
+!MESSAGE USER_ACTION : Time taken for refreshing INTERRUPT/4.0.10/0 editor is : 13
+
+!ENTRY SOLVER 1 0 2022-04-30 14:47:18.410
+!MESSAGE Time Taken By Solver for UI Action: 1579 ms
+
+!ENTRY APPLICATION_MODEL 1 0 2022-04-30 14:47:23.724
+!MESSAGE USER_ACTION : Remove Option: Remove this APP and all APPs that are requiring it (Recursively up the tree)
+
+!ENTRY APPLICATION_MODEL 1 0 2022-04-30 14:47:23.814
+!MESSAGE USER_ACTION : Deleting resource : http://resources/4.0.10/app/INTERRUPT/0
+
+!ENTRY com.dave.mbs.common 1 0 2022-04-30 14:47:24.810
+!MESSAGE Time taken for processing complete solver result is: 25 msec 
+
+!ENTRY com.dave.mbs.common 1 0 2022-04-30 14:47:24.812
+!MESSAGE *****Serialization is called after successful solver action*****
+
+!ENTRY com.dave.mbs.common 1 0 2022-04-30 14:47:24.815
+!MESSAGE *************Saving EMF data into file system*******************
+
+!ENTRY com.dave.mbs.common 1 0 2022-04-30 14:47:24.907
+!MESSAGE *************Saving Groovy data into file system*******************
+
+!ENTRY COMMON 1 0 2022-04-30 14:47:25.111
+!MESSAGE Time Taken By Serialization  : 201 ms :: C:\Users\Yoshi\Documents\GitHub\Software\01_jrg\06_XMC\jr22_LV_BMS_bauerjoh_AA\Dave\Model\projectData.bin
+
+!ENTRY com.dave.mbs.common 1 0 2022-04-30 14:47:25.235
+!MESSAGE *************Serializing EMF and Groovy data to RAM*******************
+
+!ENTRY com.dave.mbs.common 1 0 2022-04-30 14:47:25.298
+!MESSAGE Time taken for serialization in msec: 485
+
+!ENTRY SOLVER 1 0 2022-04-30 14:47:25.342
+!MESSAGE Time Taken By Solver for UI Action: 1510 ms
+
+!ENTRY APPLICATION_MODEL 1 0 2022-04-30 14:47:42.317
+!MESSAGE USER_ACTION : Remove Option: Remove this APP and all APPs that are requiring it (Recursively up the tree)
+
+!ENTRY APPLICATION_MODEL 1 0 2022-04-30 14:47:42.375
+!MESSAGE USER_ACTION : Deleting resource : http://resources/4.1.12/app/TIMER/1
+
+!ENTRY com.dave.mbs.common 1 0 2022-04-30 14:47:43.433
+!MESSAGE Time taken for processing complete solver result is: 16 msec 
+
+!ENTRY com.dave.mbs.common 1 0 2022-04-30 14:47:43.436
+!MESSAGE *****Serialization is called after successful solver action*****
+
+!ENTRY com.dave.mbs.common 1 0 2022-04-30 14:47:43.438
+!MESSAGE *************Saving EMF data into file system*******************
+
+!ENTRY com.dave.mbs.common 1 0 2022-04-30 14:47:43.516
+!MESSAGE *************Saving Groovy data into file system*******************
+
+!ENTRY COMMON 1 0 2022-04-30 14:47:43.763
+!MESSAGE Time Taken By Serialization  : 245 ms :: C:\Users\Yoshi\Documents\GitHub\Software\01_jrg\06_XMC\jr22_LV_BMS_bauerjoh_AA\Dave\Model\projectData.bin
+
+!ENTRY com.dave.mbs.common 1 0 2022-04-30 14:47:43.907
+!MESSAGE *************Serializing EMF and Groovy data to RAM*******************
+
+!ENTRY com.dave.mbs.common 1 0 2022-04-30 14:47:43.995
+!MESSAGE Time taken for serialization in msec: 559
+
+!ENTRY SOLVER 1 0 2022-04-30 14:47:44.046
+!MESSAGE Time Taken By Solver for UI Action: 1654 ms
+
+!ENTRY CODEGEN 1 0 2022-04-30 14:48:04.536
+!MESSAGE Code generation started...
+
+!ENTRY CODEGEN 1 0 2022-04-30 14:48:08.678
+!MESSAGE Code generation completed...
+
+!ENTRY APPLICATION_MODEL 1 0 2022-04-30 14:48:24.721
+!MESSAGE USER_ACTION : App Getting Added: SYSTIMER [4.1.18]
+
+!ENTRY SOLVER 1 0 2022-04-30 14:48:24.746
+!MESSAGE USER_ACTION : Creating an APP: SYSTIMER [4.1.18]
+
+!ENTRY APPLICATION_MODEL 1 0 2022-04-30 14:48:24.797
+!MESSAGE USER_ACTION : CASE-1 PR->PR
+ CPU_CTRL_XMC4 [4.0.2] lStoreAppVersion: 4.0.18:p
+
+!ENTRY APPLICATION_MODEL 1 0 2022-04-30 14:48:24.813
+!MESSAGE USER_ACTION : CASE-1 PR->PR
+ CLOCK_XMC4 [4.0.2] lStoreAppVersion: 4.0.24:p
+
+!ENTRY APPLICATION_MODEL 1 0 2022-04-30 14:48:24.938
+!MESSAGE USER_ACTION : Created APP: SYSTIMER [4.1.18]-->http://resources/4.1.18/app/SYSTIMER/0
+
+!ENTRY DAVE CE 4 0 2022-04-30 14:48:25.273
+!MESSAGE 
+
+***START of Exception Info***
+Execution of solver query timed out
+com.ifx.davex.ce.core.solver.ProxySolver.handleTimeout(ProxySolver.java:486)
+com.ifx.davex.ce.core.solver.ProxySolver.processCmpdTermResult(ProxySolver.java:460)
+com.ifx.davex.ce.core.solver.ProxySolver.executeQuery(ProxySolver.java:425)
+com.ifx.davex.ce.core.solver.ProxySolver.sendQuery(ProxySolver.java:260)
+com.ifx.davex.ce.core.solver.SolverManager.getSolution(SolverManager.java:155)
+com.ifx.davex.ce.core.resource.mngts.ResourceManager.getSolution(ResourceManager.java:923)
+com.ifx.davex.ce.core.resource.mngts.ResourceManager.getSolverInfoAndProcess(ResourceManager.java:996)
+com.ifx.davex.ce.core.resource.mngts.ResourceManager.getSolutionFromSolver(ResourceManager.java:1175)
+com.ifx.davex.ce.core.resource.mngts.ResourceManager.possibleCheck(ResourceManager.java:352)
+com.ifx.davex.ce.core.resource.mngts.ResourceManager.callSolver(ResourceManager.java:879)
+com.ifx.davex.ce.core.resource.mngts.ResourceManager.createApp(ResourceManager.java:720)
+com.ifx.davex.ce.core.resource.mngts.ResourceManager.access$2(ResourceManager.java:651)
+com.ifx.davex.ce.core.resource.mngts.ResourceManager$2$1.run(ResourceManager.java:612)
+org.eclipse.jface.operation.ModalContext$ModalContextThread.run(ModalContext.java:119)
+***END of Exception Info***
+
+
+
+!ENTRY SOLVER 1 0 2022-04-30 14:48:25.276
+!MESSAGE 
+====================================== SOLVER ENVIRONMENT ========================================
+Solver Exe Path: null
+Solver Status: CONNECTED
+Solver Eclipse Instance: com.parctechnologies.eclipse.OutOfProcessEclipse@45bf3ca3
+DD Temp Dir: C:\Users\Yoshi\Documents\GitHub\Software\01_jrg\06_XMC\.metadata\.plugins\solver_data\XMC4.5.00.F100.ALL
+ECO file location: C:\Users\Yoshi\Documents\GitHub\Software\01_jrg\06_XMC\.metadata\.plugins\solver_data\XMC4.5.00.F100.ALL\xmc4500_solver.eco
+Temp DD File Exists: true
+Query Sent to Solver: true
+Query: timeout(solve_mapping_problem([ 
+reserved([vadc,_,global_limits],'global_adc$01890798523$0'),
+reserved([vadc,_,global],'global_adc$1790945385$0'),
+reserved([vadc,_,group,0,config],'global_adc$1796505175$0'),
+reserved([vadc,_,group,1,config],'global_adc$1796505176$0'),
+reserved([vadc,_,group,2,config],'global_adc$1796505177$0'),
+reserved([vadc,_,group,3,config],'global_adc$1796505178$0'),
+reserved([scu,0,clkctrl,0,pll],'clock_xmc4$01551378862$0'),
+reserved([scu,0,clkctrl,0,sys],'clock_xmc4$01551375569$0'),
+reserved([scu,0,clkctrl,0,cpu],'clock_xmc4$01551391222$0'),
+reserved([scu,0,clkctrl,0,perbridge],'clock_xmc4$494804424$0'),
+reserved([scu,0,clkctrl,0,ebu],'clock_xmc4$01551389734$0'),
+reserved([scu,0,clkctrl,0,ccu],'clock_xmc4$01551391625$0'),
+reserved([scu,0,clkctrl,0,wdt],'clock_xmc4$01551372375$0'),
+reserved([scu,0,clkctrl,0,usb],'clock_xmc4$01551373850$0'),
+reserved([scu,0,clkctrl,0,sdmmc],'clock_xmc4$01551381723$0'),
+reserved([scu,0,pwrctrl,0,hibernate],'clock_xmc4$0778278092$0'),
+reserved([scu,0,rtcclksel],'clock_xmc4$1142722683$0'),
+reserved([scu,0,trap,0,sysoscwd],'clock_xmc4$1091210735$0'),
+reserved([scu,0,trap,0,sysvcolock],'clock_xmc4$1586947406$0'),
+reserved([scu,0,trap,0,usbvcolock],'clock_xmc4$0261647995$0'),
+reserved([scu,0,trap,0,ulpwdg],'clock_xmc4$01047137491$0'),
+reserved([can,_,global],'global_can$0435288881$0'),
+reserved([p,_,pad,_],'can_node$0829860$0'),
+reserved([p,_,pad,_],'can_node$0829798$0'),
+reserved([can,_,node,_],'can_node$1758010900$0'),
+reserved([can,_,mo,_],'can_node$01337162187$0'),
+reserved([devicepackage,0,_],'can_node$788881170$0'),
+uri([devicepackage,0,70],'can_node$788881170$0'),
+reserved([devicepackage,0,_],'can_node$788881232$0'),
+uri([devicepackage,0,71],'can_node$788881232$0'),
+reserved([cpu,0,exception,nmi],'cpu_ctrl_xmc4$01637679009$0'),
+reserved([cpu,0,exception,hardfault],'cpu_ctrl_xmc4$0571328980$0'),
+reserved([cpu,0,exception,memmanage],'cpu_ctrl_xmc4$1768468879$0'),
+reserved([cpu,0,exception,busfault],'cpu_ctrl_xmc4$1763234541$0'),
+reserved([cpu,0,exception,usagefault],'cpu_ctrl_xmc4$1814460844$0'),
+reserved([cpu,0,debug],'cpu_ctrl_xmc4$1964564605$0'),
+reserved([debug_port,_,pad,_],'cpu_ctrl_xmc4$01540614004$0'),
+reserved([debug_port,_,pad,_],'cpu_ctrl_xmc4$01540614322$0'),
+reserved([cpu,0,systick],'freertos$01866974743$0'),
+reserved([cpu,0,exception,systick],'freertos$084721863$0'),
+reserved([cpu,0,exception,pendsv],'freertos$724029151$0'),
+reserved([cpu,0,exception,svcall],'freertos$825285650$0'),
+reserved([p,DIGITAL_IO0sv0,pad,_],'digital_io$01383135420$0'),
+reserved([devicepackage,0,_],'digital_io$36800462$0'),
+uri([devicepackage,0,78],'digital_io$36800462$0'),
+reserved([vadc,_,backgnd],'adc_measurement$0919802633$0'),
+reserved([vadc,_,class,_],'adc_measurement$403379810$0'),
+reserved([vadc,0,group,_,ch,_],'adc_measurement$0733134899$0'),
+reserved([vadc,0,group,_,ch,_],'adc_measurement$0733134898$0'),
+reserved([vadc,0,group,_,ch,_],'adc_measurement$0733134897$0'),
+reserved([vadc,0,group,_,ch,_],'adc_measurement$0733134896$0'),
+reserved([vadc,0,group,_,ch,_],'adc_measurement$0733134895$0'),
+reserved([vadc,0,group,_,ch,_],'adc_measurement$0733134894$0'),
+reserved([vadc,0,group,_,ch,_],'adc_measurement$0733134893$0'),
+reserved([vadc,0,group,_,ch,_],'adc_measurement$0733134892$0'),
+reserved([vadc,0,group,_,ch,_],'adc_measurement$0733134891$0'),
+reserved([vadc,0,group,_,ch,_],'adc_measurement$01252345341$0'),
+reserved([vadc,0,group,_,ch,_],'adc_measurement$01252345340$0'),
+reserved([vadc,0,group,_,_,_],'adc_measurement$425520431$0'),
+reserved([vadc,0,group,_,_,_],'adc_measurement$425520432$0'),
+reserved([vadc,0,group,_,_,_],'adc_measurement$425520433$0'),
+reserved([vadc,0,group,_,_,_],'adc_measurement$425520434$0'),
+reserved([vadc,0,group,_,_,_],'adc_measurement$425520435$0'),
+reserved([vadc,0,group,_,_,_],'adc_measurement$425520436$0'),
+reserved([vadc,0,group,_,_,_],'adc_measurement$425520437$0'),
+reserved([vadc,0,group,_,_,_],'adc_measurement$425520438$0'),
+reserved([vadc,0,group,_,_,_],'adc_measurement$425520439$0'),
+reserved([vadc,0,group,_,_,_],'adc_measurement$306231521$0'),
+reserved([vadc,0,group,_,_,_],'adc_measurement$306231522$0'),
+reserved([cpu,0,nvic,interrupt,_],'adc_measurement$0445362671$0'),
+reserved([p,ANALOG_IO0sv0,pad,_],'analog_io$0459569530$0'),
+reserved([devicepackage,0,_],'analog_io$01694626416$0'),
+uri([devicepackage,0,31],'analog_io$01694626416$0'),
+reserved([p,ANALOG_IO1sv0,pad,_],'analog_io$0970103707$1'),
+reserved([devicepackage,0,_],'analog_io$562284591$1'),
+uri([devicepackage,0,30],'analog_io$562284591$1'),
+reserved([p,ANALOG_IO2sv0,pad,_],'analog_io$01480637884$2'),
+reserved([devicepackage,0,_],'analog_io$01475771698$2'),
+uri([devicepackage,0,29],'analog_io$01475771698$2'),
+reserved([p,ANALOG_IO3sv0,pad,_],'analog_io$01991172061$3'),
+reserved([devicepackage,0,_],'analog_io$781139309$3'),
+uri([devicepackage,0,28],'analog_io$781139309$3'),
+reserved([p,ANALOG_IO4sv0,pad,_],'analog_io$1793261058$4'),
+reserved([devicepackage,0,_],'analog_io$01256916980$4'),
+uri([devicepackage,0,26],'analog_io$01256916980$4'),
+reserved([p,ANALOG_IO5sv0,pad,_],'analog_io$1282726881$5'),
+reserved([devicepackage,0,_],'analog_io$999994027$5'),
+uri([devicepackage,0,25],'analog_io$999994027$5'),
+reserved([p,ANALOG_IO6sv0,pad,_],'analog_io$772192704$6'),
+reserved([devicepackage,0,_],'analog_io$01038062262$6'),
+uri([devicepackage,0,24],'analog_io$01038062262$6'),
+reserved([p,ANALOG_IO7sv0,pad,_],'analog_io$261658527$7'),
+reserved([devicepackage,0,_],'analog_io$1218848745$7'),
+uri([devicepackage,0,37],'analog_io$1218848745$7'),
+reserved([p,ANALOG_IO8sv0,pad,_],'analog_io$0248875650$8'),
+reserved([devicepackage,0,_],'analog_io$0819207544$8'),
+uri([devicepackage,0,36],'analog_io$0819207544$8'),
+reserved([p,ANALOG_IO9sv0,pad,_],'analog_io$0759409827$9'),
+reserved([devicepackage,0,_],'analog_io$1437703463$9'),
+uri([devicepackage,0,23],'analog_io$1437703463$9'),
+reserved([p,ANALOG_IO10sv0,pad,_],'analog_io$01889477709$10'),
+reserved([devicepackage,0,_],'analog_io$472386813$10'),
+uri([devicepackage,0,22],'analog_io$472386813$10'),
+reserved([ccu4,GLOBAL_CCU40sv0,global],'global_ccu4$01760137752$0'),
+reserved([scu,_,gcu,ccu4_global_enable,GLOBAL_CCU40sv0],'global_ccu4$89752826$0'),
+reserved([cpu,0,systick],'systimer$0137142936$0'),
+signal('global_adc$1790945385$0',global_signal,'global_adc$1790945385$0$global_signal'),
+signal('global_adc$1796505175$0',garbcnt,'global_adc$1796505175$0$garbcnt'),
+signal('global_adc$1796505175$0',gsample,'global_adc$1796505175$0$gsample'),
+signal('global_adc$1796505175$0',gqueuereq,'global_adc$1796505175$0$gqueuereq'),
+signal('global_adc$1796505175$0',gscanreq,'global_adc$1796505175$0$gscanreq'),
+signal('global_adc$1796505175$0',gsyncreq,'global_adc$1796505175$0$gsyncreq'),
+signal('global_adc$1796505176$0',garbcnt,'global_adc$1796505176$0$garbcnt'),
+signal('global_adc$1796505176$0',gsample,'global_adc$1796505176$0$gsample'),
+signal('global_adc$1796505176$0',gqueuereq,'global_adc$1796505176$0$gqueuereq'),
+signal('global_adc$1796505176$0',gscanreq,'global_adc$1796505176$0$gscanreq'),
+signal('global_adc$1796505176$0',gsyncreq,'global_adc$1796505176$0$gsyncreq'),
+signal('global_adc$1796505177$0',garbcnt,'global_adc$1796505177$0$garbcnt'),
+signal('global_adc$1796505177$0',gsample,'global_adc$1796505177$0$gsample'),
+signal('global_adc$1796505177$0',gqueuereq,'global_adc$1796505177$0$gqueuereq'),
+signal('global_adc$1796505177$0',gscanreq,'global_adc$1796505177$0$gscanreq'),
+signal('global_adc$1796505177$0',gsyncreq,'global_adc$1796505177$0$gsyncreq'),
+signal('global_adc$1796505178$0',garbcnt,'global_adc$1796505178$0$garbcnt'),
+signal('global_adc$1796505178$0',gsample,'global_adc$1796505178$0$gsample'),
+signal('global_adc$1796505178$0',gqueuereq,'global_adc$1796505178$0$gqueuereq'),
+signal('global_adc$1796505178$0',gscanreq,'global_adc$1796505178$0$gscanreq'),
+signal('global_adc$1796505178$0',gsyncreq,'global_adc$1796505178$0$gsyncreq'),
+signal('clock_xmc4$494804424$0',fpb,'clock_xmc4$494804424$0$fpb'),
+signal('clock_xmc4$01551391625$0',fccu,'clock_xmc4$01551391625$0$fccu'),
+signal('can_node$1758010900$0',rxd,'can_node$1758010900$0$rxd'),
+signal('can_node$1758010900$0',txd,'can_node$1758010900$0$txd'),
+signal('can_node$0829860$0',pad,'can_node$0829860$0$pad'),
+signal('can_node$0829798$0',pad,'can_node$0829798$0$pad'),
+signal('can_node$01337162187$0',txinp,'can_node$01337162187$0$txinp'),
+signal('can_node$788881170$0',pin,'can_node$788881170$0$pin'),
+signal('can_node$788881232$0',pin,'can_node$788881232$0$pin'),
+signal('cpu_ctrl_xmc4$01637679009$0',nmi_in,'cpu_ctrl_xmc4$01637679009$0$nmi_in'),
+signal('cpu_ctrl_xmc4$1964564605$0',db_tck,'cpu_ctrl_xmc4$1964564605$0$db_tck'),
+signal('cpu_ctrl_xmc4$1964564605$0',db_tms,'cpu_ctrl_xmc4$1964564605$0$db_tms'),
+signal('digital_io$01383135420$0',pad,'digital_io$01383135420$0$pad'),
+signal('digital_io$36800462$0',pin,'digital_io$36800462$0$pin'),
+signal('adc_measurement$0733134899$0',gch,'adc_measurement$0733134899$0$gch'),
+signal('adc_measurement$0733134898$0',gch,'adc_measurement$0733134898$0$gch'),
+signal('adc_measurement$0733134897$0',gch,'adc_measurement$0733134897$0$gch'),
+signal('adc_measurement$0733134896$0',gch,'adc_measurement$0733134896$0$gch'),
+signal('adc_measurement$0733134895$0',gch,'adc_measurement$0733134895$0$gch'),
+signal('adc_measurement$0733134894$0',gch,'adc_measurement$0733134894$0$gch'),
+signal('adc_measurement$0733134893$0',gch,'adc_measurement$0733134893$0$gch'),
+signal('adc_measurement$0733134892$0',gch,'adc_measurement$0733134892$0$gch'),
+signal('adc_measurement$0733134891$0',gch,'adc_measurement$0733134891$0$gch'),
+signal('adc_measurement$01252345341$0',gch,'adc_measurement$01252345341$0$gch'),
+signal('adc_measurement$01252345340$0',gch,'adc_measurement$01252345340$0$gch'),
+signal('adc_measurement$425520431$0',res_sel,'adc_measurement$425520431$0$res_sel'),
+signal('adc_measurement$425520432$0',res_sel,'adc_measurement$425520432$0$res_sel'),
+signal('adc_measurement$425520433$0',res_sel,'adc_measurement$425520433$0$res_sel'),
+signal('adc_measurement$425520434$0',res_sel,'adc_measurement$425520434$0$res_sel'),
+signal('adc_measurement$425520435$0',res_sel,'adc_measurement$425520435$0$res_sel'),
+signal('adc_measurement$425520436$0',res_sel,'adc_measurement$425520436$0$res_sel'),
+signal('adc_measurement$425520437$0',res_sel,'adc_measurement$425520437$0$res_sel'),
+signal('adc_measurement$425520438$0',res_sel,'adc_measurement$425520438$0$res_sel'),
+signal('adc_measurement$425520439$0',res_sel,'adc_measurement$425520439$0$res_sel'),
+signal('adc_measurement$306231521$0',res_sel,'adc_measurement$306231521$0$res_sel'),
+signal('adc_measurement$306231522$0',res_sel,'adc_measurement$306231522$0$res_sel'),
+signal('adc_measurement$0733134899$0',select,'adc_measurement$0733134899$0$select'),
+signal('adc_measurement$0733134898$0',select,'adc_measurement$0733134898$0$select'),
+signal('adc_measurement$0733134897$0',select,'adc_measurement$0733134897$0$select'),
+signal('adc_measurement$0733134896$0',select,'adc_measurement$0733134896$0$select'),
+signal('adc_measurement$0733134895$0',select,'adc_measurement$0733134895$0$select'),
+signal('adc_measurement$0733134894$0',select,'adc_measurement$0733134894$0$select'),
+signal('adc_measurement$0733134893$0',select,'adc_measurement$0733134893$0$select'),
+signal('adc_measurement$0733134892$0',select,'adc_measurement$0733134892$0$select'),
+signal('adc_measurement$0733134891$0',select,'adc_measurement$0733134891$0$select'),
+signal('adc_measurement$01252345341$0',select,'adc_measurement$01252345341$0$select'),
+signal('adc_measurement$01252345340$0',select,'adc_measurement$01252345340$0$select'),
+signal('adc_measurement$0733134899$0',res_sel,'adc_measurement$0733134899$0$res_sel'),
+signal('adc_measurement$0733134898$0',res_sel,'adc_measurement$0733134898$0$res_sel'),
+signal('adc_measurement$0733134897$0',res_sel,'adc_measurement$0733134897$0$res_sel'),
+signal('adc_measurement$0733134896$0',res_sel,'adc_measurement$0733134896$0$res_sel'),
+signal('adc_measurement$0733134895$0',res_sel,'adc_measurement$0733134895$0$res_sel'),
+signal('adc_measurement$0733134894$0',res_sel,'adc_measurement$0733134894$0$res_sel'),
+signal('adc_measurement$0733134893$0',res_sel,'adc_measurement$0733134893$0$res_sel'),
+signal('adc_measurement$0733134892$0',res_sel,'adc_measurement$0733134892$0$res_sel'),
+signal('adc_measurement$0733134891$0',res_sel,'adc_measurement$0733134891$0$res_sel'),
+signal('adc_measurement$01252345341$0',res_sel,'adc_measurement$01252345341$0$res_sel'),
+signal('adc_measurement$01252345340$0',res_sel,'adc_measurement$01252345340$0$res_sel'),
+signal('adc_measurement$425520431$0',rev,'adc_measurement$425520431$0$rev'),
+signal('adc_measurement$0919802633$0',sev0,'adc_measurement$0919802633$0$sev0'),
+signal('adc_measurement$0919802633$0',bgreqtrsel,'adc_measurement$0919802633$0$bgreqtrsel'),
+signal('adc_measurement$0919802633$0',bgreqgtsel,'adc_measurement$0919802633$0$bgreqgtsel'),
+signal('adc_measurement$0919802633$0',global_signal,'adc_measurement$0919802633$0$global_signal'),
+signal('adc_measurement$0445362671$0',signal_in,'adc_measurement$0445362671$0$signal_in'),
+signal('analog_io$0459569530$0',pad,'analog_io$0459569530$0$pad'),
+signal('analog_io$01694626416$0',pin,'analog_io$01694626416$0$pin'),
+signal('analog_io$0970103707$1',pad,'analog_io$0970103707$1$pad'),
+signal('analog_io$562284591$1',pin,'analog_io$562284591$1$pin'),
+signal('analog_io$01480637884$2',pad,'analog_io$01480637884$2$pad'),
+signal('analog_io$01475771698$2',pin,'analog_io$01475771698$2$pin'),
+signal('analog_io$01991172061$3',pad,'analog_io$01991172061$3$pad'),
+signal('analog_io$781139309$3',pin,'analog_io$781139309$3$pin'),
+signal('analog_io$1793261058$4',pad,'analog_io$1793261058$4$pad'),
+signal('analog_io$01256916980$4',pin,'analog_io$01256916980$4$pin'),
+signal('analog_io$1282726881$5',pad,'analog_io$1282726881$5$pad'),
+signal('analog_io$999994027$5',pin,'analog_io$999994027$5$pin'),
+signal('analog_io$772192704$6',pad,'analog_io$772192704$6$pad'),
+signal('analog_io$01038062262$6',pin,'analog_io$01038062262$6$pin'),
+signal('analog_io$261658527$7',pad,'analog_io$261658527$7$pad'),
+signal('analog_io$1218848745$7',pin,'analog_io$1218848745$7$pin'),
+signal('analog_io$0248875650$8',pad,'analog_io$0248875650$8$pad'),
+signal('analog_io$0819207544$8',pin,'analog_io$0819207544$8$pin'),
+signal('analog_io$0759409827$9',pad,'analog_io$0759409827$9$pad'),
+signal('analog_io$1437703463$9',pin,'analog_io$1437703463$9$pin'),
+signal('analog_io$01889477709$10',pad,'analog_io$01889477709$10$pad'),
+signal('analog_io$472386813$10',pin,'analog_io$472386813$10$pin'),
+signal('global_ccu4$01760137752$0',global_signal,'global_ccu4$01760137752$0$global_signal'),
+signal('global_ccu4$01760137752$0',clk,'global_ccu4$01760137752$0$clk'),
+signal('global_ccu4$89752826$0',gsc_enable,'global_ccu4$89752826$0$gsc_enable'),
+connected('can_node$788881170$0$pin','can_node$0829860$0$pad',1),
+connected('can_node$788881232$0$pin','can_node$0829798$0$pad',1),
+connected('can_node$0829860$0$pad','can_node$788881170$0$pin',1),
+connected('can_node$0829860$0$pad','can_node$1758010900$0$rxd',1),
+connected('can_node$1758010900$0$txd','can_node$0829798$0$pad',1),
+connected('can_node$0829798$0$pad','can_node$788881232$0$pin',1),
+connected('digital_io$36800462$0$pin','digital_io$01383135420$0$pad',1),
+connected('digital_io$01383135420$0$pad','digital_io$36800462$0$pin',1),
+connected('analog_io$0459569530$0$pad','adc_measurement$0733134899$0$gch',1),
+connected('analog_io$0970103707$1$pad','adc_measurement$0733134898$0$gch',1),
+connected('analog_io$01889477709$10$pad','adc_measurement$01252345340$0$gch',1),
+connected('analog_io$01480637884$2$pad','adc_measurement$0733134897$0$gch',1),
+connected('analog_io$01991172061$3$pad','adc_measurement$0733134896$0$gch',1),
+connected('analog_io$1793261058$4$pad','adc_measurement$0733134895$0$gch',1),
+connected('analog_io$1282726881$5$pad','adc_measurement$0733134894$0$gch',1),
+connected('analog_io$772192704$6$pad','adc_measurement$0733134893$0$gch',1),
+connected('analog_io$261658527$7$pad','adc_measurement$0733134892$0$gch',1),
+connected('analog_io$0248875650$8$pad','adc_measurement$0733134891$0$gch',1),
+connected('analog_io$0759409827$9$pad','adc_measurement$01252345341$0$gch',1),
+connected('global_adc$1790945385$0$global_signal','adc_measurement$0919802633$0$global_signal',1),
+connected('adc_measurement$0733134899$0$res_sel','adc_measurement$425520431$0$res_sel',1),
+connected('adc_measurement$0733134898$0$res_sel','adc_measurement$425520432$0$res_sel',1),
+connected('adc_measurement$0733134897$0$res_sel','adc_measurement$425520433$0$res_sel',1),
+connected('adc_measurement$0733134896$0$res_sel','adc_measurement$425520434$0$res_sel',1),
+connected('adc_measurement$0733134895$0$res_sel','adc_measurement$425520435$0$res_sel',1),
+connected('adc_measurement$0733134894$0$res_sel','adc_measurement$425520436$0$res_sel',1),
+connected('adc_measurement$0733134893$0$res_sel','adc_measurement$425520437$0$res_sel',1),
+connected('adc_measurement$0733134892$0$res_sel','adc_measurement$425520438$0$res_sel',1),
+connected('adc_measurement$0733134891$0$res_sel','adc_measurement$425520439$0$res_sel',1),
+connected('adc_measurement$01252345341$0$res_sel','adc_measurement$306231521$0$res_sel',1),
+connected('adc_measurement$01252345340$0$res_sel','adc_measurement$306231522$0$res_sel',1),
+connected('adc_measurement$0919802633$0$sev0','adc_measurement$0445362671$0$signal_in',1),
+connected('analog_io$01694626416$0$pin','analog_io$0459569530$0$pad',1),
+connected('analog_io$0459569530$0$pad','analog_io$01694626416$0$pin',1),
+connected('analog_io$562284591$1$pin','analog_io$0970103707$1$pad',1),
+connected('analog_io$0970103707$1$pad','analog_io$562284591$1$pin',1),
+connected('analog_io$01475771698$2$pin','analog_io$01480637884$2$pad',1),
+connected('analog_io$01480637884$2$pad','analog_io$01475771698$2$pin',1),
+connected('analog_io$781139309$3$pin','analog_io$01991172061$3$pad',1),
+connected('analog_io$01991172061$3$pad','analog_io$781139309$3$pin',1),
+connected('analog_io$01256916980$4$pin','analog_io$1793261058$4$pad',1),
+connected('analog_io$1793261058$4$pad','analog_io$01256916980$4$pin',1),
+connected('analog_io$999994027$5$pin','analog_io$1282726881$5$pad',1),
+connected('analog_io$1282726881$5$pad','analog_io$999994027$5$pin',1),
+connected('analog_io$01038062262$6$pin','analog_io$772192704$6$pad',1),
+connected('analog_io$772192704$6$pad','analog_io$01038062262$6$pin',1),
+connected('analog_io$1218848745$7$pin','analog_io$261658527$7$pad',1),
+connected('analog_io$261658527$7$pad','analog_io$1218848745$7$pin',1),
+connected('analog_io$0819207544$8$pin','analog_io$0248875650$8$pad',1),
+connected('analog_io$0248875650$8$pad','analog_io$0819207544$8$pin',1),
+connected('analog_io$1437703463$9$pin','analog_io$0759409827$9$pad',1),
+connected('analog_io$0759409827$9$pad','analog_io$1437703463$9$pin',1),
+connected('analog_io$472386813$10$pin','analog_io$01889477709$10$pad',1),
+connected('analog_io$01889477709$10$pad','analog_io$472386813$10$pin',1),
+connected('clock_xmc4$01551391625$0$fccu','global_ccu4$01760137752$0$clk',1),
+uri_element_range(ANALOG_IO1sv0,[14, 15]),
+uri_element_range(ANALOG_IO5sv0,[14, 15]),
+uri_element_range(ANALOG_IO6sv0,[14, 15]),
+uri_element_range(ANALOG_IO8sv0,[14, 15]),
+uri_element_range(ANALOG_IO10sv0,[14, 15]),
+uri_element_range(ANALOG_IO2sv0,[14, 15]),
+uri_element_range(ANALOG_IO4sv0,[14, 15]),
+uri_element_range(ANALOG_IO9sv0,[14, 15]),
+uri_element_range(DIGITAL_IO0sv0,[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 14, 15]),
+uri_element_range(ANALOG_IO0sv0,[14, 15]),
+uri_element_range(ANALOG_IO3sv0,[14, 15]),
+uri_element_range(ANALOG_IO7sv0,[14, 15])
+ ],Vars,Regs,Appslocalvars),15,writeln(timeout),all_solution, Timer, Due, Remainder).
+
+====================================== SOLVER ENVIRONMENT ========================================
+
+
+
+!ENTRY APPLICATION_MODEL 1 0 2022-04-30 14:48:27.700
+!MESSAGE USER_ACTION : Deleting resource : http://resources/4.1.18/app/SYSTIMER/0
+
+!ENTRY com.dave.mbs.common 1 0 2022-04-30 14:48:27.895
+!MESSAGE **************De-serialization is called for failure solver action*************************
+
+!ENTRY com.dave.mbs.common 1 0 2022-04-30 14:48:29.064
+!MESSAGE Time taken for de-serialization in msec: 1166
+
+!ENTRY com.dave.mbs.common 1 0 2022-04-30 14:48:29.067
+!MESSAGE *****************************
+
+!ENTRY APPLICATION_MODEL 1 0 2022-04-30 14:49:20.440
+!MESSAGE USER_ACTION : App Getting Added: COUNTER [4.1.12]
+
+!ENTRY SOLVER 1 0 2022-04-30 14:49:20.463
+!MESSAGE USER_ACTION : Creating an APP: COUNTER [4.1.12]
+
+!ENTRY APPLICATION_MODEL 1 0 2022-04-30 14:49:20.677
+!MESSAGE USER_ACTION : CASE-1 PR->PR
+ GLOBAL_CCU4 [4.0.2] lStoreAppVersion: 4.1.14:p
+
+!ENTRY SOLVER 1 0 2022-04-30 14:49:24.997
+!MESSAGE USER_ACTION : Creating an APP: GLOBAL_CCU4 [4.1.14]
+
+!ENTRY APPLICATION_MODEL 1 0 2022-04-30 14:49:25.012
+!MESSAGE USER_ACTION : CASE-1 PR->PR
+ CLOCK_XMC4 [4.0.18] lStoreAppVersion: 4.0.24:p
+
+!ENTRY APPLICATION_MODEL 1 0 2022-04-30 14:49:25.053
+!MESSAGE USER_ACTION : Created APP: GLOBAL_CCU4 [4.1.14]-->http://resources/4.1.14/app/GLOBAL_CCU4/1
+
+!ENTRY APPLICATION_MODEL 1 0 2022-04-30 14:49:25.171
+!MESSAGE USER_ACTION : Created APP: COUNTER [4.1.12]-->http://resources/4.1.12/app/COUNTER/0
+
+!ENTRY APPSTORE 1 0 2022-04-30 14:49:26.168
+!MESSAGE USER_ACTION : Loaded DD: C:\Infineon\Tools\DAVE IDE\4.5.0.202105191637\D_LibraryStore_4.4\resources\0.1.29\peripheral\ccu4\1\MANIFEST\ccu4.dd
+
+!ENTRY com.dave.mbs.common 1 0 2022-04-30 14:49:26.223
+!MESSAGE Time taken for processing complete solver result is: 86 msec 
+
+!ENTRY com.dave.mbs.common 1 0 2022-04-30 14:49:26.226
+!MESSAGE *****Serialization is called after successful solver action*****
+
+!ENTRY com.dave.mbs.common 1 0 2022-04-30 14:49:26.229
+!MESSAGE *************Saving EMF data into file system*******************
+
+!ENTRY com.dave.mbs.common 1 0 2022-04-30 14:49:26.325
+!MESSAGE *************Saving Groovy data into file system*******************
+
+!ENTRY COMMON 1 0 2022-04-30 14:49:26.511
+!MESSAGE Time Taken By Serialization  : 183 ms :: C:\Users\Yoshi\Documents\GitHub\Software\01_jrg\06_XMC\jr22_LV_BMS_bauerjoh_AA\Dave\Model\projectData.bin
+
+!ENTRY com.dave.mbs.common 1 0 2022-04-30 14:49:26.634
+!MESSAGE *************Serializing EMF and Groovy data to RAM*******************
+
+!ENTRY com.dave.mbs.common 1 0 2022-04-30 14:49:26.681
+!MESSAGE Time taken for serialization in msec: 454
+
+!ENTRY APP_CONFIGURATOR 1 0 2022-04-30 14:49:30.816
+!MESSAGE USER_ACTION : Time taken for opening editor is: 201 msec 
+
+!ENTRY UI_EDITOR 1 0 2022-04-30 14:49:38.138
+!MESSAGE USER_ACTION : Setting value = "true" of "gcheck_init_start" in APP: COUNTER/4.1.12/0
+
+!ENTRY com.dave.mbs.common 1 0 2022-04-30 14:49:38.143
+!MESSAGE **************Serialization is called for successful UI action without Solver*********
+
+!ENTRY com.dave.mbs.common 1 0 2022-04-30 14:49:38.146
+!MESSAGE *************Serializing EMF and Groovy data to RAM*******************
+
+!ENTRY com.dave.mbs.common 1 0 2022-04-30 14:49:38.209
+!MESSAGE Time taken for serialization in msec: 63
+
+!ENTRY com.dave.mbs.common 1 0 2022-04-30 14:49:38.212
+!MESSAGE *****************************
+
+!ENTRY UI_EDITOR 1 0 2022-04-30 14:49:43.961
+!MESSAGE USER_ACTION : Setting value = "1000.0" of "gfloat_count_match_val" in APP: COUNTER/4.1.12/0
+
+!ENTRY com.dave.mbs.common 1 0 2022-04-30 14:49:43.977
+!MESSAGE **************Serialization is called for successful UI action without Solver*********
+
+!ENTRY com.dave.mbs.common 1 0 2022-04-30 14:49:43.985
+!MESSAGE *************Serializing EMF and Groovy data to RAM*******************
+
+!ENTRY com.dave.mbs.common 1 0 2022-04-30 14:49:44.048
+!MESSAGE Time taken for serialization in msec: 64
+
+!ENTRY com.dave.mbs.common 1 0 2022-04-30 14:49:44.051
+!MESSAGE *****************************
+
+!ENTRY SIGNAL_CONFIG 1 0 2022-04-30 14:50:01.777
+!MESSAGE USER_ACTION : Opening HW Signal Connection Dialog.!
+
+!ENTRY SIGNAL_CONFIG 1 0 2022-04-30 14:50:14.796
+!MESSAGE USER_ACTION : Signal Load : 3
+
+!ENTRY SIGNAL_CONFIG 1 0 2022-04-30 14:50:23.665
+!MESSAGE USER_ACTION : Signal Load : 15
+
+!ENTRY SIGNAL_CONFIG 1 0 2022-04-30 14:50:26.025
+!MESSAGE USER_ACTION : HW Signal Connection Dialog is closed..!
+
+!ENTRY APPLICATION_MODEL 1 0 2022-04-30 14:50:31.562
+!MESSAGE USER_ACTION : Remove Option: Remove this APP and all APPs that are requiring it (Recursively up the tree)
+
+!ENTRY APPLICATION_MODEL 1 0 2022-04-30 14:50:31.638
+!MESSAGE USER_ACTION : Deleting resource : http://resources/4.1.12/app/COUNTER/0
+
+!ENTRY com.dave.mbs.common 1 0 2022-04-30 14:50:32.644
+!MESSAGE Time taken for processing complete solver result is: 18 msec 
+
+!ENTRY com.dave.mbs.common 1 0 2022-04-30 14:50:32.646
+!MESSAGE *****Serialization is called after successful solver action*****
+
+!ENTRY com.dave.mbs.common 1 0 2022-04-30 14:50:32.649
+!MESSAGE *************Saving EMF data into file system*******************
+
+!ENTRY com.dave.mbs.common 1 0 2022-04-30 14:50:32.727
+!MESSAGE *************Saving Groovy data into file system*******************
+
+!ENTRY COMMON 1 0 2022-04-30 14:50:32.980
+!MESSAGE Time Taken By Serialization  : 250 ms :: C:\Users\Yoshi\Documents\GitHub\Software\01_jrg\06_XMC\jr22_LV_BMS_bauerjoh_AA\Dave\Model\projectData.bin
+
+!ENTRY com.dave.mbs.common 1 0 2022-04-30 14:50:33.106
+!MESSAGE *************Serializing EMF and Groovy data to RAM*******************
+
+!ENTRY com.dave.mbs.common 1 0 2022-04-30 14:50:33.168
+!MESSAGE Time taken for serialization in msec: 522
+
+!ENTRY SOLVER 1 0 2022-04-30 14:50:33.214
+!MESSAGE Time Taken By Solver for UI Action: 1557 ms
+
+!ENTRY APP_CONFIGURATOR 1 0 2022-04-30 14:50:47.124
+!MESSAGE USER_ACTION : Time taken for opening editor is: 97 msec 
+
+!ENTRY APPLICATION_MODEL 1 0 2022-04-30 14:50:53.776
+!MESSAGE USER_ACTION : Remove Option: Remove this APP and all APPs that are requiring it (Recursively up the tree)
+
+!ENTRY APPLICATION_MODEL 1 0 2022-04-30 14:50:53.845
+!MESSAGE USER_ACTION : Deleting resource : http://resources/4.1.14/app/GLOBAL_CCU4/1
+
+!ENTRY com.dave.mbs.common 1 0 2022-04-30 14:50:54.865
+!MESSAGE Time taken for processing complete solver result is: 17 msec 
+
+!ENTRY com.dave.mbs.common 1 0 2022-04-30 14:50:54.868
+!MESSAGE *****Serialization is called after successful solver action*****
+
+!ENTRY com.dave.mbs.common 1 0 2022-04-30 14:50:54.871
+!MESSAGE *************Saving EMF data into file system*******************
+
+!ENTRY com.dave.mbs.common 1 0 2022-04-30 14:50:54.948
+!MESSAGE *************Saving Groovy data into file system*******************
+
+!ENTRY COMMON 1 0 2022-04-30 14:50:55.151
+!MESSAGE Time Taken By Serialization  : 201 ms :: C:\Users\Yoshi\Documents\GitHub\Software\01_jrg\06_XMC\jr22_LV_BMS_bauerjoh_AA\Dave\Model\projectData.bin
+
+!ENTRY com.dave.mbs.common 1 0 2022-04-30 14:50:55.278
+!MESSAGE *************Serializing EMF and Groovy data to RAM*******************
+
+!ENTRY com.dave.mbs.common 1 0 2022-04-30 14:50:55.338
+!MESSAGE Time taken for serialization in msec: 470
+
+!ENTRY SOLVER 1 0 2022-04-30 14:50:55.381
+!MESSAGE Time Taken By Solver for UI Action: 1530 ms
+
+!ENTRY APPLICATION_MODEL 1 0 2022-04-30 14:51:09.556
+!MESSAGE USER_ACTION : Remove Option: Remove this APP and all APPs that are requiring it (Recursively up the tree)
+
+!ENTRY APPLICATION_MODEL 1 0 2022-04-30 14:51:09.610
+!MESSAGE USER_ACTION : Deleting resource : http://resources/4.1.14/app/GLOBAL_CCU4/0
+
+!ENTRY com.dave.mbs.common 1 0 2022-04-30 14:51:10.617
+!MESSAGE Time taken for processing complete solver result is: 32 msec 
+
+!ENTRY com.dave.mbs.common 1 0 2022-04-30 14:51:10.621
+!MESSAGE *****Serialization is called after successful solver action*****
+
+!ENTRY com.dave.mbs.common 1 0 2022-04-30 14:51:10.624
+!MESSAGE *************Saving EMF data into file system*******************
+
+!ENTRY com.dave.mbs.common 1 0 2022-04-30 14:51:10.705
+!MESSAGE *************Saving Groovy data into file system*******************
+
+!ENTRY COMMON 1 0 2022-04-30 14:51:10.891
+!MESSAGE Time Taken By Serialization  : 183 ms :: C:\Users\Yoshi\Documents\GitHub\Software\01_jrg\06_XMC\jr22_LV_BMS_bauerjoh_AA\Dave\Model\projectData.bin
+
+!ENTRY com.dave.mbs.common 1 0 2022-04-30 14:51:11.013
+!MESSAGE *************Serializing EMF and Groovy data to RAM*******************
+
+!ENTRY com.dave.mbs.common 1 0 2022-04-30 14:51:11.067
+!MESSAGE Time taken for serialization in msec: 446
+
+!ENTRY SOLVER 1 0 2022-04-30 14:51:11.105
+!MESSAGE Time Taken By Solver for UI Action: 1478 ms
+
+!ENTRY APPLICATION_MODEL 1 0 2022-04-30 14:51:37.329
+!MESSAGE USER_ACTION : App Getting Added: SYSTIMER [4.1.18]
+
+!ENTRY SOLVER 1 0 2022-04-30 14:51:37.355
+!MESSAGE USER_ACTION : Creating an APP: SYSTIMER [4.1.18]
+
+!ENTRY APPLICATION_MODEL 1 0 2022-04-30 14:51:37.382
+!MESSAGE USER_ACTION : CASE-1 PR->PR
+ CPU_CTRL_XMC4 [4.0.2] lStoreAppVersion: 4.0.18:p
+
+!ENTRY APPLICATION_MODEL 1 0 2022-04-30 14:51:37.396
+!MESSAGE USER_ACTION : CASE-1 PR->PR
+ CLOCK_XMC4 [4.0.2] lStoreAppVersion: 4.0.24:p
+
+!ENTRY APPLICATION_MODEL 1 0 2022-04-30 14:51:37.483
+!MESSAGE USER_ACTION : Created APP: SYSTIMER [4.1.18]-->http://resources/4.1.18/app/SYSTIMER/0
+
+!ENTRY DAVE CE 4 0 2022-04-30 14:51:37.784
+!MESSAGE 
+
+***START of Exception Info***
+Execution of solver query timed out
+com.ifx.davex.ce.core.solver.ProxySolver.handleTimeout(ProxySolver.java:486)
+com.ifx.davex.ce.core.solver.ProxySolver.processCmpdTermResult(ProxySolver.java:460)
+com.ifx.davex.ce.core.solver.ProxySolver.executeQuery(ProxySolver.java:425)
+com.ifx.davex.ce.core.solver.ProxySolver.sendQuery(ProxySolver.java:260)
+com.ifx.davex.ce.core.solver.SolverManager.getSolution(SolverManager.java:155)
+com.ifx.davex.ce.core.resource.mngts.ResourceManager.getSolution(ResourceManager.java:923)
+com.ifx.davex.ce.core.resource.mngts.ResourceManager.getSolverInfoAndProcess(ResourceManager.java:996)
+com.ifx.davex.ce.core.resource.mngts.ResourceManager.getSolutionFromSolver(ResourceManager.java:1175)
+com.ifx.davex.ce.core.resource.mngts.ResourceManager.possibleCheck(ResourceManager.java:352)
+com.ifx.davex.ce.core.resource.mngts.ResourceManager.callSolver(ResourceManager.java:879)
+com.ifx.davex.ce.core.resource.mngts.ResourceManager.createApp(ResourceManager.java:720)
+com.ifx.davex.ce.core.resource.mngts.ResourceManager.access$2(ResourceManager.java:651)
+com.ifx.davex.ce.core.resource.mngts.ResourceManager$2$1.run(ResourceManager.java:612)
+org.eclipse.jface.operation.ModalContext$ModalContextThread.run(ModalContext.java:119)
+***END of Exception Info***
+
+
+
+!ENTRY SOLVER 1 0 2022-04-30 14:51:37.787
+!MESSAGE 
+====================================== SOLVER ENVIRONMENT ========================================
+Solver Exe Path: null
+Solver Status: CONNECTED
+Solver Eclipse Instance: com.parctechnologies.eclipse.OutOfProcessEclipse@45bf3ca3
+DD Temp Dir: C:\Users\Yoshi\Documents\GitHub\Software\01_jrg\06_XMC\.metadata\.plugins\solver_data\XMC4.5.00.F100.ALL
+ECO file location: C:\Users\Yoshi\Documents\GitHub\Software\01_jrg\06_XMC\.metadata\.plugins\solver_data\XMC4.5.00.F100.ALL\xmc4500_solver.eco
+Temp DD File Exists: true
+Query Sent to Solver: true
+Query: timeout(solve_mapping_problem([ 
+reserved([vadc,_,global_limits],'global_adc$01890798523$0'),
+reserved([vadc,_,global],'global_adc$1790945385$0'),
+reserved([vadc,_,group,0,config],'global_adc$1796505175$0'),
+reserved([vadc,_,group,1,config],'global_adc$1796505176$0'),
+reserved([vadc,_,group,2,config],'global_adc$1796505177$0'),
+reserved([vadc,_,group,3,config],'global_adc$1796505178$0'),
+reserved([scu,0,clkctrl,0,pll],'clock_xmc4$01551378862$0'),
+reserved([scu,0,clkctrl,0,sys],'clock_xmc4$01551375569$0'),
+reserved([scu,0,clkctrl,0,cpu],'clock_xmc4$01551391222$0'),
+reserved([scu,0,clkctrl,0,perbridge],'clock_xmc4$494804424$0'),
+reserved([scu,0,clkctrl,0,ebu],'clock_xmc4$01551389734$0'),
+reserved([scu,0,clkctrl,0,ccu],'clock_xmc4$01551391625$0'),
+reserved([scu,0,clkctrl,0,wdt],'clock_xmc4$01551372375$0'),
+reserved([scu,0,clkctrl,0,usb],'clock_xmc4$01551373850$0'),
+reserved([scu,0,clkctrl,0,sdmmc],'clock_xmc4$01551381723$0'),
+reserved([scu,0,pwrctrl,0,hibernate],'clock_xmc4$0778278092$0'),
+reserved([scu,0,rtcclksel],'clock_xmc4$1142722683$0'),
+reserved([scu,0,trap,0,sysoscwd],'clock_xmc4$1091210735$0'),
+reserved([scu,0,trap,0,sysvcolock],'clock_xmc4$1586947406$0'),
+reserved([scu,0,trap,0,usbvcolock],'clock_xmc4$0261647995$0'),
+reserved([scu,0,trap,0,ulpwdg],'clock_xmc4$01047137491$0'),
+reserved([can,_,global],'global_can$0435288881$0'),
+reserved([p,_,pad,_],'can_node$0829860$0'),
+reserved([p,_,pad,_],'can_node$0829798$0'),
+reserved([can,_,node,_],'can_node$1758010900$0'),
+reserved([can,_,mo,_],'can_node$01337162187$0'),
+reserved([devicepackage,0,_],'can_node$788881170$0'),
+uri([devicepackage,0,70],'can_node$788881170$0'),
+reserved([devicepackage,0,_],'can_node$788881232$0'),
+uri([devicepackage,0,71],'can_node$788881232$0'),
+reserved([cpu,0,exception,nmi],'cpu_ctrl_xmc4$01637679009$0'),
+reserved([cpu,0,exception,hardfault],'cpu_ctrl_xmc4$0571328980$0'),
+reserved([cpu,0,exception,memmanage],'cpu_ctrl_xmc4$1768468879$0'),
+reserved([cpu,0,exception,busfault],'cpu_ctrl_xmc4$1763234541$0'),
+reserved([cpu,0,exception,usagefault],'cpu_ctrl_xmc4$1814460844$0'),
+reserved([cpu,0,debug],'cpu_ctrl_xmc4$1964564605$0'),
+reserved([debug_port,_,pad,_],'cpu_ctrl_xmc4$01540614004$0'),
+reserved([debug_port,_,pad,_],'cpu_ctrl_xmc4$01540614322$0'),
+reserved([cpu,0,systick],'freertos$01866974743$0'),
+reserved([cpu,0,exception,systick],'freertos$084721863$0'),
+reserved([cpu,0,exception,pendsv],'freertos$724029151$0'),
+reserved([cpu,0,exception,svcall],'freertos$825285650$0'),
+reserved([p,DIGITAL_IO0sv0,pad,_],'digital_io$01383135420$0'),
+reserved([devicepackage,0,_],'digital_io$36800462$0'),
+uri([devicepackage,0,78],'digital_io$36800462$0'),
+reserved([vadc,_,backgnd],'adc_measurement$0919802633$0'),
+reserved([vadc,_,class,_],'adc_measurement$403379810$0'),
+reserved([vadc,0,group,_,ch,_],'adc_measurement$0733134899$0'),
+reserved([vadc,0,group,_,ch,_],'adc_measurement$0733134898$0'),
+reserved([vadc,0,group,_,ch,_],'adc_measurement$0733134897$0'),
+reserved([vadc,0,group,_,ch,_],'adc_measurement$0733134896$0'),
+reserved([vadc,0,group,_,ch,_],'adc_measurement$0733134895$0'),
+reserved([vadc,0,group,_,ch,_],'adc_measurement$0733134894$0'),
+reserved([vadc,0,group,_,ch,_],'adc_measurement$0733134893$0'),
+reserved([vadc,0,group,_,ch,_],'adc_measurement$0733134892$0'),
+reserved([vadc,0,group,_,ch,_],'adc_measurement$0733134891$0'),
+reserved([vadc,0,group,_,ch,_],'adc_measurement$01252345341$0'),
+reserved([vadc,0,group,_,ch,_],'adc_measurement$01252345340$0'),
+reserved([vadc,0,group,_,_,_],'adc_measurement$425520431$0'),
+reserved([vadc,0,group,_,_,_],'adc_measurement$425520432$0'),
+reserved([vadc,0,group,_,_,_],'adc_measurement$425520433$0'),
+reserved([vadc,0,group,_,_,_],'adc_measurement$425520434$0'),
+reserved([vadc,0,group,_,_,_],'adc_measurement$425520435$0'),
+reserved([vadc,0,group,_,_,_],'adc_measurement$425520436$0'),
+reserved([vadc,0,group,_,_,_],'adc_measurement$425520437$0'),
+reserved([vadc,0,group,_,_,_],'adc_measurement$425520438$0'),
+reserved([vadc,0,group,_,_,_],'adc_measurement$425520439$0'),
+reserved([vadc,0,group,_,_,_],'adc_measurement$306231521$0'),
+reserved([vadc,0,group,_,_,_],'adc_measurement$306231522$0'),
+reserved([cpu,0,nvic,interrupt,_],'adc_measurement$0445362671$0'),
+reserved([p,ANALOG_IO0sv0,pad,_],'analog_io$0459569530$0'),
+reserved([devicepackage,0,_],'analog_io$01694626416$0'),
+uri([devicepackage,0,31],'analog_io$01694626416$0'),
+reserved([p,ANALOG_IO1sv0,pad,_],'analog_io$0970103707$1'),
+reserved([devicepackage,0,_],'analog_io$562284591$1'),
+uri([devicepackage,0,30],'analog_io$562284591$1'),
+reserved([p,ANALOG_IO2sv0,pad,_],'analog_io$01480637884$2'),
+reserved([devicepackage,0,_],'analog_io$01475771698$2'),
+uri([devicepackage,0,29],'analog_io$01475771698$2'),
+reserved([p,ANALOG_IO3sv0,pad,_],'analog_io$01991172061$3'),
+reserved([devicepackage,0,_],'analog_io$781139309$3'),
+uri([devicepackage,0,28],'analog_io$781139309$3'),
+reserved([p,ANALOG_IO4sv0,pad,_],'analog_io$1793261058$4'),
+reserved([devicepackage,0,_],'analog_io$01256916980$4'),
+uri([devicepackage,0,26],'analog_io$01256916980$4'),
+reserved([p,ANALOG_IO5sv0,pad,_],'analog_io$1282726881$5'),
+reserved([devicepackage,0,_],'analog_io$999994027$5'),
+uri([devicepackage,0,25],'analog_io$999994027$5'),
+reserved([p,ANALOG_IO6sv0,pad,_],'analog_io$772192704$6'),
+reserved([devicepackage,0,_],'analog_io$01038062262$6'),
+uri([devicepackage,0,24],'analog_io$01038062262$6'),
+reserved([p,ANALOG_IO7sv0,pad,_],'analog_io$261658527$7'),
+reserved([devicepackage,0,_],'analog_io$1218848745$7'),
+uri([devicepackage,0,37],'analog_io$1218848745$7'),
+reserved([p,ANALOG_IO8sv0,pad,_],'analog_io$0248875650$8'),
+reserved([devicepackage,0,_],'analog_io$0819207544$8'),
+uri([devicepackage,0,36],'analog_io$0819207544$8'),
+reserved([p,ANALOG_IO9sv0,pad,_],'analog_io$0759409827$9'),
+reserved([devicepackage,0,_],'analog_io$1437703463$9'),
+uri([devicepackage,0,23],'analog_io$1437703463$9'),
+reserved([p,ANALOG_IO10sv0,pad,_],'analog_io$01889477709$10'),
+reserved([devicepackage,0,_],'analog_io$472386813$10'),
+uri([devicepackage,0,22],'analog_io$472386813$10'),
+reserved([cpu,0,systick],'systimer$0137142936$0'),
+signal('global_adc$1790945385$0',global_signal,'global_adc$1790945385$0$global_signal'),
+signal('global_adc$1796505175$0',garbcnt,'global_adc$1796505175$0$garbcnt'),
+signal('global_adc$1796505175$0',gsample,'global_adc$1796505175$0$gsample'),
+signal('global_adc$1796505175$0',gqueuereq,'global_adc$1796505175$0$gqueuereq'),
+signal('global_adc$1796505175$0',gscanreq,'global_adc$1796505175$0$gscanreq'),
+signal('global_adc$1796505175$0',gsyncreq,'global_adc$1796505175$0$gsyncreq'),
+signal('global_adc$1796505176$0',garbcnt,'global_adc$1796505176$0$garbcnt'),
+signal('global_adc$1796505176$0',gsample,'global_adc$1796505176$0$gsample'),
+signal('global_adc$1796505176$0',gqueuereq,'global_adc$1796505176$0$gqueuereq'),
+signal('global_adc$1796505176$0',gscanreq,'global_adc$1796505176$0$gscanreq'),
+signal('global_adc$1796505176$0',gsyncreq,'global_adc$1796505176$0$gsyncreq'),
+signal('global_adc$1796505177$0',garbcnt,'global_adc$1796505177$0$garbcnt'),
+signal('global_adc$1796505177$0',gsample,'global_adc$1796505177$0$gsample'),
+signal('global_adc$1796505177$0',gqueuereq,'global_adc$1796505177$0$gqueuereq'),
+signal('global_adc$1796505177$0',gscanreq,'global_adc$1796505177$0$gscanreq'),
+signal('global_adc$1796505177$0',gsyncreq,'global_adc$1796505177$0$gsyncreq'),
+signal('global_adc$1796505178$0',garbcnt,'global_adc$1796505178$0$garbcnt'),
+signal('global_adc$1796505178$0',gsample,'global_adc$1796505178$0$gsample'),
+signal('global_adc$1796505178$0',gqueuereq,'global_adc$1796505178$0$gqueuereq'),
+signal('global_adc$1796505178$0',gscanreq,'global_adc$1796505178$0$gscanreq'),
+signal('global_adc$1796505178$0',gsyncreq,'global_adc$1796505178$0$gsyncreq'),
+signal('clock_xmc4$494804424$0',fpb,'clock_xmc4$494804424$0$fpb'),
+signal('clock_xmc4$01551391625$0',fccu,'clock_xmc4$01551391625$0$fccu'),
+signal('can_node$1758010900$0',rxd,'can_node$1758010900$0$rxd'),
+signal('can_node$1758010900$0',txd,'can_node$1758010900$0$txd'),
+signal('can_node$0829860$0',pad,'can_node$0829860$0$pad'),
+signal('can_node$0829798$0',pad,'can_node$0829798$0$pad'),
+signal('can_node$01337162187$0',txinp,'can_node$01337162187$0$txinp'),
+signal('can_node$788881170$0',pin,'can_node$788881170$0$pin'),
+signal('can_node$788881232$0',pin,'can_node$788881232$0$pin'),
+signal('cpu_ctrl_xmc4$01637679009$0',nmi_in,'cpu_ctrl_xmc4$01637679009$0$nmi_in'),
+signal('cpu_ctrl_xmc4$1964564605$0',db_tck,'cpu_ctrl_xmc4$1964564605$0$db_tck'),
+signal('cpu_ctrl_xmc4$1964564605$0',db_tms,'cpu_ctrl_xmc4$1964564605$0$db_tms'),
+signal('digital_io$01383135420$0',pad,'digital_io$01383135420$0$pad'),
+signal('digital_io$36800462$0',pin,'digital_io$36800462$0$pin'),
+signal('adc_measurement$0733134899$0',gch,'adc_measurement$0733134899$0$gch'),
+signal('adc_measurement$0733134898$0',gch,'adc_measurement$0733134898$0$gch'),
+signal('adc_measurement$0733134897$0',gch,'adc_measurement$0733134897$0$gch'),
+signal('adc_measurement$0733134896$0',gch,'adc_measurement$0733134896$0$gch'),
+signal('adc_measurement$0733134895$0',gch,'adc_measurement$0733134895$0$gch'),
+signal('adc_measurement$0733134894$0',gch,'adc_measurement$0733134894$0$gch'),
+signal('adc_measurement$0733134893$0',gch,'adc_measurement$0733134893$0$gch'),
+signal('adc_measurement$0733134892$0',gch,'adc_measurement$0733134892$0$gch'),
+signal('adc_measurement$0733134891$0',gch,'adc_measurement$0733134891$0$gch'),
+signal('adc_measurement$01252345341$0',gch,'adc_measurement$01252345341$0$gch'),
+signal('adc_measurement$01252345340$0',gch,'adc_measurement$01252345340$0$gch'),
+signal('adc_measurement$425520431$0',res_sel,'adc_measurement$425520431$0$res_sel'),
+signal('adc_measurement$425520432$0',res_sel,'adc_measurement$425520432$0$res_sel'),
+signal('adc_measurement$425520433$0',res_sel,'adc_measurement$425520433$0$res_sel'),
+signal('adc_measurement$425520434$0',res_sel,'adc_measurement$425520434$0$res_sel'),
+signal('adc_measurement$425520435$0',res_sel,'adc_measurement$425520435$0$res_sel'),
+signal('adc_measurement$425520436$0',res_sel,'adc_measurement$425520436$0$res_sel'),
+signal('adc_measurement$425520437$0',res_sel,'adc_measurement$425520437$0$res_sel'),
+signal('adc_measurement$425520438$0',res_sel,'adc_measurement$425520438$0$res_sel'),
+signal('adc_measurement$425520439$0',res_sel,'adc_measurement$425520439$0$res_sel'),
+signal('adc_measurement$306231521$0',res_sel,'adc_measurement$306231521$0$res_sel'),
+signal('adc_measurement$306231522$0',res_sel,'adc_measurement$306231522$0$res_sel'),
+signal('adc_measurement$0733134899$0',select,'adc_measurement$0733134899$0$select'),
+signal('adc_measurement$0733134898$0',select,'adc_measurement$0733134898$0$select'),
+signal('adc_measurement$0733134897$0',select,'adc_measurement$0733134897$0$select'),
+signal('adc_measurement$0733134896$0',select,'adc_measurement$0733134896$0$select'),
+signal('adc_measurement$0733134895$0',select,'adc_measurement$0733134895$0$select'),
+signal('adc_measurement$0733134894$0',select,'adc_measurement$0733134894$0$select'),
+signal('adc_measurement$0733134893$0',select,'adc_measurement$0733134893$0$select'),
+signal('adc_measurement$0733134892$0',select,'adc_measurement$0733134892$0$select'),
+signal('adc_measurement$0733134891$0',select,'adc_measurement$0733134891$0$select'),
+signal('adc_measurement$01252345341$0',select,'adc_measurement$01252345341$0$select'),
+signal('adc_measurement$01252345340$0',select,'adc_measurement$01252345340$0$select'),
+signal('adc_measurement$0733134899$0',res_sel,'adc_measurement$0733134899$0$res_sel'),
+signal('adc_measurement$0733134898$0',res_sel,'adc_measurement$0733134898$0$res_sel'),
+signal('adc_measurement$0733134897$0',res_sel,'adc_measurement$0733134897$0$res_sel'),
+signal('adc_measurement$0733134896$0',res_sel,'adc_measurement$0733134896$0$res_sel'),
+signal('adc_measurement$0733134895$0',res_sel,'adc_measurement$0733134895$0$res_sel'),
+signal('adc_measurement$0733134894$0',res_sel,'adc_measurement$0733134894$0$res_sel'),
+signal('adc_measurement$0733134893$0',res_sel,'adc_measurement$0733134893$0$res_sel'),
+signal('adc_measurement$0733134892$0',res_sel,'adc_measurement$0733134892$0$res_sel'),
+signal('adc_measurement$0733134891$0',res_sel,'adc_measurement$0733134891$0$res_sel'),
+signal('adc_measurement$01252345341$0',res_sel,'adc_measurement$01252345341$0$res_sel'),
+signal('adc_measurement$01252345340$0',res_sel,'adc_measurement$01252345340$0$res_sel'),
+signal('adc_measurement$425520431$0',rev,'adc_measurement$425520431$0$rev'),
+signal('adc_measurement$0919802633$0',sev0,'adc_measurement$0919802633$0$sev0'),
+signal('adc_measurement$0919802633$0',bgreqtrsel,'adc_measurement$0919802633$0$bgreqtrsel'),
+signal('adc_measurement$0919802633$0',bgreqgtsel,'adc_measurement$0919802633$0$bgreqgtsel'),
+signal('adc_measurement$0919802633$0',global_signal,'adc_measurement$0919802633$0$global_signal'),
+signal('adc_measurement$0445362671$0',signal_in,'adc_measurement$0445362671$0$signal_in'),
+signal('analog_io$0459569530$0',pad,'analog_io$0459569530$0$pad'),
+signal('analog_io$01694626416$0',pin,'analog_io$01694626416$0$pin'),
+signal('analog_io$0970103707$1',pad,'analog_io$0970103707$1$pad'),
+signal('analog_io$562284591$1',pin,'analog_io$562284591$1$pin'),
+signal('analog_io$01480637884$2',pad,'analog_io$01480637884$2$pad'),
+signal('analog_io$01475771698$2',pin,'analog_io$01475771698$2$pin'),
+signal('analog_io$01991172061$3',pad,'analog_io$01991172061$3$pad'),
+signal('analog_io$781139309$3',pin,'analog_io$781139309$3$pin'),
+signal('analog_io$1793261058$4',pad,'analog_io$1793261058$4$pad'),
+signal('analog_io$01256916980$4',pin,'analog_io$01256916980$4$pin'),
+signal('analog_io$1282726881$5',pad,'analog_io$1282726881$5$pad'),
+signal('analog_io$999994027$5',pin,'analog_io$999994027$5$pin'),
+signal('analog_io$772192704$6',pad,'analog_io$772192704$6$pad'),
+signal('analog_io$01038062262$6',pin,'analog_io$01038062262$6$pin'),
+signal('analog_io$261658527$7',pad,'analog_io$261658527$7$pad'),
+signal('analog_io$1218848745$7',pin,'analog_io$1218848745$7$pin'),
+signal('analog_io$0248875650$8',pad,'analog_io$0248875650$8$pad'),
+signal('analog_io$0819207544$8',pin,'analog_io$0819207544$8$pin'),
+signal('analog_io$0759409827$9',pad,'analog_io$0759409827$9$pad'),
+signal('analog_io$1437703463$9',pin,'analog_io$1437703463$9$pin'),
+signal('analog_io$01889477709$10',pad,'analog_io$01889477709$10$pad'),
+signal('analog_io$472386813$10',pin,'analog_io$472386813$10$pin'),
+connected('can_node$788881170$0$pin','can_node$0829860$0$pad',1),
+connected('can_node$788881232$0$pin','can_node$0829798$0$pad',1),
+connected('can_node$0829860$0$pad','can_node$788881170$0$pin',1),
+connected('can_node$0829860$0$pad','can_node$1758010900$0$rxd',1),
+connected('can_node$1758010900$0$txd','can_node$0829798$0$pad',1),
+connected('can_node$0829798$0$pad','can_node$788881232$0$pin',1),
+connected('digital_io$36800462$0$pin','digital_io$01383135420$0$pad',1),
+connected('digital_io$01383135420$0$pad','digital_io$36800462$0$pin',1),
+connected('analog_io$0459569530$0$pad','adc_measurement$0733134899$0$gch',1),
+connected('analog_io$0970103707$1$pad','adc_measurement$0733134898$0$gch',1),
+connected('analog_io$01889477709$10$pad','adc_measurement$01252345340$0$gch',1),
+connected('analog_io$01480637884$2$pad','adc_measurement$0733134897$0$gch',1),
+connected('analog_io$01991172061$3$pad','adc_measurement$0733134896$0$gch',1),
+connected('analog_io$1793261058$4$pad','adc_measurement$0733134895$0$gch',1),
+connected('analog_io$1282726881$5$pad','adc_measurement$0733134894$0$gch',1),
+connected('analog_io$772192704$6$pad','adc_measurement$0733134893$0$gch',1),
+connected('analog_io$261658527$7$pad','adc_measurement$0733134892$0$gch',1),
+connected('analog_io$0248875650$8$pad','adc_measurement$0733134891$0$gch',1),
+connected('analog_io$0759409827$9$pad','adc_measurement$01252345341$0$gch',1),
+connected('global_adc$1790945385$0$global_signal','adc_measurement$0919802633$0$global_signal',1),
+connected('adc_measurement$0733134899$0$res_sel','adc_measurement$425520431$0$res_sel',1),
+connected('adc_measurement$0733134898$0$res_sel','adc_measurement$425520432$0$res_sel',1),
+connected('adc_measurement$0733134897$0$res_sel','adc_measurement$425520433$0$res_sel',1),
+connected('adc_measurement$0733134896$0$res_sel','adc_measurement$425520434$0$res_sel',1),
+connected('adc_measurement$0733134895$0$res_sel','adc_measurement$425520435$0$res_sel',1),
+connected('adc_measurement$0733134894$0$res_sel','adc_measurement$425520436$0$res_sel',1),
+connected('adc_measurement$0733134893$0$res_sel','adc_measurement$425520437$0$res_sel',1),
+connected('adc_measurement$0733134892$0$res_sel','adc_measurement$425520438$0$res_sel',1),
+connected('adc_measurement$0733134891$0$res_sel','adc_measurement$425520439$0$res_sel',1),
+connected('adc_measurement$01252345341$0$res_sel','adc_measurement$306231521$0$res_sel',1),
+connected('adc_measurement$01252345340$0$res_sel','adc_measurement$306231522$0$res_sel',1),
+connected('adc_measurement$0919802633$0$sev0','adc_measurement$0445362671$0$signal_in',1),
+connected('analog_io$01694626416$0$pin','analog_io$0459569530$0$pad',1),
+connected('analog_io$0459569530$0$pad','analog_io$01694626416$0$pin',1),
+connected('analog_io$562284591$1$pin','analog_io$0970103707$1$pad',1),
+connected('analog_io$0970103707$1$pad','analog_io$562284591$1$pin',1),
+connected('analog_io$01475771698$2$pin','analog_io$01480637884$2$pad',1),
+connected('analog_io$01480637884$2$pad','analog_io$01475771698$2$pin',1),
+connected('analog_io$781139309$3$pin','analog_io$01991172061$3$pad',1),
+connected('analog_io$01991172061$3$pad','analog_io$781139309$3$pin',1),
+connected('analog_io$01256916980$4$pin','analog_io$1793261058$4$pad',1),
+connected('analog_io$1793261058$4$pad','analog_io$01256916980$4$pin',1),
+connected('analog_io$999994027$5$pin','analog_io$1282726881$5$pad',1),
+connected('analog_io$1282726881$5$pad','analog_io$999994027$5$pin',1),
+connected('analog_io$01038062262$6$pin','analog_io$772192704$6$pad',1),
+connected('analog_io$772192704$6$pad','analog_io$01038062262$6$pin',1),
+connected('analog_io$1218848745$7$pin','analog_io$261658527$7$pad',1),
+connected('analog_io$261658527$7$pad','analog_io$1218848745$7$pin',1),
+connected('analog_io$0819207544$8$pin','analog_io$0248875650$8$pad',1),
+connected('analog_io$0248875650$8$pad','analog_io$0819207544$8$pin',1),
+connected('analog_io$1437703463$9$pin','analog_io$0759409827$9$pad',1),
+connected('analog_io$0759409827$9$pad','analog_io$1437703463$9$pin',1),
+connected('analog_io$472386813$10$pin','analog_io$01889477709$10$pad',1),
+connected('analog_io$01889477709$10$pad','analog_io$472386813$10$pin',1),
+uri_element_range(ANALOG_IO1sv0,[14, 15]),
+uri_element_range(ANALOG_IO5sv0,[14, 15]),
+uri_element_range(ANALOG_IO6sv0,[14, 15]),
+uri_element_range(ANALOG_IO8sv0,[14, 15]),
+uri_element_range(ANALOG_IO10sv0,[14, 15]),
+uri_element_range(ANALOG_IO2sv0,[14, 15]),
+uri_element_range(ANALOG_IO4sv0,[14, 15]),
+uri_element_range(ANALOG_IO9sv0,[14, 15]),
+uri_element_range(DIGITAL_IO0sv0,[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 14, 15]),
+uri_element_range(ANALOG_IO0sv0,[14, 15]),
+uri_element_range(ANALOG_IO3sv0,[14, 15]),
+uri_element_range(ANALOG_IO7sv0,[14, 15])
+ ],Vars,Regs,Appslocalvars),15,writeln(timeout),all_solution, Timer, Due, Remainder).
+
+====================================== SOLVER ENVIRONMENT ========================================
+
+
+
+!ENTRY APPLICATION_MODEL 1 0 2022-04-30 14:51:39.540
+!MESSAGE USER_ACTION : Deleting resource : http://resources/4.1.18/app/SYSTIMER/0
+
+!ENTRY com.dave.mbs.common 1 0 2022-04-30 14:51:39.736
+!MESSAGE **************De-serialization is called for failure solver action*************************
+
+!ENTRY com.dave.mbs.common 1 0 2022-04-30 14:51:40.882
+!MESSAGE Time taken for de-serialization in msec: 1144
+
+!ENTRY com.dave.mbs.common 1 0 2022-04-30 14:51:40.885
+!MESSAGE *****************************
+
+!ENTRY APPLICATION_MODEL 1 0 2022-04-30 14:52:25.816
+!MESSAGE USER_ACTION : App Getting Added: PWM [4.1.12]
+
+!ENTRY SOLVER 1 0 2022-04-30 14:52:25.840
+!MESSAGE USER_ACTION : Creating an APP: PWM [4.1.12]
+
+!ENTRY APPLICATION_MODEL 1 0 2022-04-30 14:52:25.931
+!MESSAGE USER_ACTION : CASE-1 PR->PR
+ GLOBAL_CCU4 [4.0.2] lStoreAppVersion: 4.1.14:l
+
+!ENTRY SOLVER 1 0 2022-04-30 14:52:25.946
+!MESSAGE USER_ACTION : Creating an APP: GLOBAL_CCU4 [4.1.14]
+
+!ENTRY APPLICATION_MODEL 1 0 2022-04-30 14:52:25.962
+!MESSAGE USER_ACTION : CASE-1 PR->PR
+ CLOCK_XMC4 [4.0.18] lStoreAppVersion: 4.0.24:p
+
+!ENTRY APPLICATION_MODEL 1 0 2022-04-30 14:52:26.054
+!MESSAGE USER_ACTION : Created APP: GLOBAL_CCU4 [4.1.14]-->http://resources/4.1.14/app/GLOBAL_CCU4/0
+
+!ENTRY APPLICATION_MODEL 1 0 2022-04-30 14:52:26.175
+!MESSAGE USER_ACTION : Created APP: PWM [4.1.12]-->http://resources/4.1.12/app/PWM/0
+
+!ENTRY com.dave.mbs.common 1 0 2022-04-30 14:52:27.239
+!MESSAGE Time taken for processing complete solver result is: 38 msec 
+
+!ENTRY com.dave.mbs.common 1 0 2022-04-30 14:52:27.242
+!MESSAGE *****Serialization is called after successful solver action*****
+
+!ENTRY com.dave.mbs.common 1 0 2022-04-30 14:52:27.244
+!MESSAGE *************Saving EMF data into file system*******************
+
+!ENTRY com.dave.mbs.common 1 0 2022-04-30 14:52:27.335
+!MESSAGE *************Saving Groovy data into file system*******************
+
+!ENTRY COMMON 1 0 2022-04-30 14:52:27.551
+!MESSAGE Time Taken By Serialization  : 213 ms :: C:\Users\Yoshi\Documents\GitHub\Software\01_jrg\06_XMC\jr22_LV_BMS_bauerjoh_AA\Dave\Model\projectData.bin
+
+!ENTRY com.dave.mbs.common 1 0 2022-04-30 14:52:27.676
+!MESSAGE *************Serializing EMF and Groovy data to RAM*******************
+
+!ENTRY com.dave.mbs.common 1 0 2022-04-30 14:52:27.741
+!MESSAGE Time taken for serialization in msec: 500
+
+!ENTRY APP_CONFIGURATOR 1 0 2022-04-30 14:52:31.019
+!MESSAGE USER_ACTION : Time taken for opening editor is: 162 msec 
+
+!ENTRY UI_EDITOR 1 0 2022-04-30 14:52:41.264
+!MESSAGE USER_ACTION : Setting value = "10000" of "gint_PWM_Frequency" in APP: PWM/4.1.12/0
+
+!ENTRY com.dave.mbs.common 1 0 2022-04-30 14:52:41.279
+!MESSAGE **************Serialization is called for successful UI action without Solver*********
+
+!ENTRY com.dave.mbs.common 1 0 2022-04-30 14:52:41.287
+!MESSAGE *************Serializing EMF and Groovy data to RAM*******************
+
+!ENTRY com.dave.mbs.common 1 0 2022-04-30 14:52:41.343
+!MESSAGE Time taken for serialization in msec: 57
+
+!ENTRY com.dave.mbs.common 1 0 2022-04-30 14:52:41.346
+!MESSAGE *****************************
+
+!ENTRY APPLICATION_MODEL 1 0 2022-04-30 14:53:01.350
+!MESSAGE USER_ACTION : Remove Option: Remove this APP and all APPs that are requiring it (Recursively up the tree)
+
+!ENTRY APPLICATION_MODEL 1 0 2022-04-30 14:53:01.449
+!MESSAGE USER_ACTION : Deleting resource : http://resources/4.1.12/app/PWM/0
+
+!ENTRY com.dave.mbs.common 1 0 2022-04-30 14:53:02.448
+!MESSAGE Time taken for processing complete solver result is: 25 msec 
+
+!ENTRY com.dave.mbs.common 1 0 2022-04-30 14:53:02.451
+!MESSAGE *****Serialization is called after successful solver action*****
+
+!ENTRY com.dave.mbs.common 1 0 2022-04-30 14:53:02.453
+!MESSAGE *************Saving EMF data into file system*******************
+
+!ENTRY com.dave.mbs.common 1 0 2022-04-30 14:53:02.535
+!MESSAGE *************Saving Groovy data into file system*******************
+
+!ENTRY COMMON 1 0 2022-04-30 14:53:02.723
+!MESSAGE Time Taken By Serialization  : 186 ms :: C:\Users\Yoshi\Documents\GitHub\Software\01_jrg\06_XMC\jr22_LV_BMS_bauerjoh_AA\Dave\Model\projectData.bin
+
+!ENTRY com.dave.mbs.common 1 0 2022-04-30 14:53:02.856
+!MESSAGE *************Serializing EMF and Groovy data to RAM*******************
+
+!ENTRY com.dave.mbs.common 1 0 2022-04-30 14:53:02.925
+!MESSAGE Time taken for serialization in msec: 475
+
+!ENTRY SOLVER 1 0 2022-04-30 14:53:02.962
+!MESSAGE Time Taken By Solver for UI Action: 1497 ms
+
+!ENTRY APPLICATION_MODEL 1 0 2022-04-30 14:53:11.265
+!MESSAGE USER_ACTION : App Getting Added: TIMER [4.1.12]
+
+!ENTRY SOLVER 1 0 2022-04-30 14:53:11.319
+!MESSAGE USER_ACTION : Creating an APP: TIMER [4.1.12]
+
+!ENTRY APPLICATION_MODEL 1 0 2022-04-30 14:53:11.351
+!MESSAGE USER_ACTION : CASE-1 PR->PR
+ GLOBAL_CCU4 [4.0.2] lStoreAppVersion: 4.1.14:p
+
+!ENTRY APPLICATION_MODEL 1 0 2022-04-30 14:53:15.228
+!MESSAGE USER_ACTION : Created APP: TIMER [4.1.12]-->http://resources/4.1.12/app/TIMER/0
+
+!ENTRY com.dave.mbs.common 1 0 2022-04-30 14:53:16.283
+!MESSAGE Time taken for processing complete solver result is: 24 msec 
+
+!ENTRY com.dave.mbs.common 1 0 2022-04-30 14:53:16.286
+!MESSAGE *****Serialization is called after successful solver action*****
+
+!ENTRY com.dave.mbs.common 1 0 2022-04-30 14:53:16.289
+!MESSAGE *************Saving EMF data into file system*******************
+
+!ENTRY com.dave.mbs.common 1 0 2022-04-30 14:53:16.380
+!MESSAGE *************Saving Groovy data into file system*******************
+
+!ENTRY COMMON 1 0 2022-04-30 14:53:16.583
+!MESSAGE Time Taken By Serialization  : 200 ms :: C:\Users\Yoshi\Documents\GitHub\Software\01_jrg\06_XMC\jr22_LV_BMS_bauerjoh_AA\Dave\Model\projectData.bin
+
+!ENTRY com.dave.mbs.common 1 0 2022-04-30 14:53:16.722
+!MESSAGE *************Serializing EMF and Groovy data to RAM*******************
+
+!ENTRY com.dave.mbs.common 1 0 2022-04-30 14:53:16.801
+!MESSAGE Time taken for serialization in msec: 516
+
+!ENTRY APP_CONFIGURATOR 1 0 2022-04-30 14:53:20.019
+!MESSAGE USER_ACTION : Time taken for opening editor is: 101 msec 
+
+!ENTRY UI_EDITOR 1 0 2022-04-30 14:53:22.451
+!MESSAGE USER_ACTION : Setting value = "true" of "gcheck_period_match_interrupt" in APP: TIMER/4.1.12/0
+
+!ENTRY SOLVER 1 0 2022-04-30 14:53:22.486
+!MESSAGE USER_ACTION : Removed Query statement: signal('timer$844337652$0',pmus_omds,'timer$844337652$0$pmus_omds'),
+
+!ENTRY com.dave.mbs.common 1 0 2022-04-30 14:53:23.508
+!MESSAGE Time taken for processing complete solver result is: 18 msec 
+
+!ENTRY com.dave.mbs.common 1 0 2022-04-30 14:53:23.511
+!MESSAGE *****Serialization is called after successful solver action*****
+
+!ENTRY com.dave.mbs.common 1 0 2022-04-30 14:53:23.513
+!MESSAGE *************Saving EMF data into file system*******************
+
+!ENTRY com.dave.mbs.common 1 0 2022-04-30 14:53:23.602
+!MESSAGE *************Saving Groovy data into file system*******************
+
+!ENTRY COMMON 1 0 2022-04-30 14:53:23.789
+!MESSAGE Time Taken By Serialization  : 183 ms :: C:\Users\Yoshi\Documents\GitHub\Software\01_jrg\06_XMC\jr22_LV_BMS_bauerjoh_AA\Dave\Model\projectData.bin
+
+!ENTRY com.dave.mbs.common 1 0 2022-04-30 14:53:23.920
+!MESSAGE *************Serializing EMF and Groovy data to RAM*******************
+
+!ENTRY com.dave.mbs.common 1 0 2022-04-30 14:53:24.001
+!MESSAGE Time taken for serialization in msec: 490
+
+!ENTRY UI_EDITOR 1 0 2022-04-30 14:53:24.036
+!MESSAGE USER_ACTION : Time taken for refreshing TIMER/4.1.12/0 editor is : 1
+
+!ENTRY SOLVER 1 0 2022-04-30 14:53:24.039
+!MESSAGE Time Taken By Solver for UI Action: 1555 ms
+
+!ENTRY SIGNAL_CONFIG 1 0 2022-04-30 14:54:05.998
+!MESSAGE USER_ACTION : Opening HW Signal Connection Dialog.!
+
+!ENTRY SIGNAL_CONFIG 1 0 2022-04-30 14:54:08.711
+!MESSAGE USER_ACTION : Signal Load : 3
+
+!ENTRY SIGNAL_CONFIG 1 0 2022-04-30 14:54:09.271
+!MESSAGE USER_ACTION : User selection (Signal Config) Source Virtual Signal : TIMER_0 --> event_time_interval
+
+!ENTRY SIGNAL_CONFIG 1 0 2022-04-30 14:54:09.276
+!MESSAGE USER_ACTION : Signal Selection : 4
+
+!ENTRY SIGNAL_CONFIG 1 0 2022-04-30 14:54:10.279
+!MESSAGE USER_ACTION : Signal Load : 363
+
+!ENTRY SIGNAL_CONFIG 1 0 2022-04-30 14:54:10.968
+!MESSAGE USER_ACTION : User selection (Signal Config) Target APP : TIMER_0 --> ADC_MEASUREMENT_0
+
+!ENTRY SIGNAL_CONFIG 1 0 2022-04-30 14:54:10.972
+!MESSAGE USER_ACTION : Signal Selection : 4
+
+!ENTRY SIGNAL_CONFIG 1 0 2022-04-30 14:54:11.703
+!MESSAGE USER_ACTION : Signal Load : 14
+
+!ENTRY SIGNAL_CONFIG 1 0 2022-04-30 14:54:12.836
+!MESSAGE USER_ACTION : User selection (Signal Config) Target Virtual Signal : TIMER_0 --> trigger_input
+
+!ENTRY SIGNAL_CONFIG 1 0 2022-04-30 14:54:14.493
+!MESSAGE USER_ACTION : Signal Selection : 1656
+
+!ENTRY SIGNAL_CONFIG 1 0 2022-04-30 14:54:19.455
+!MESSAGE USER_ACTION : HW Signal Connection Dialog is not closed without saving user configured data..!
+
+!ENTRY com.dave.mbs.common 1 0 2022-04-30 14:54:20.320
+!MESSAGE Time taken for processing complete solver result is: 26 msec 
+
+!ENTRY com.dave.mbs.common 1 0 2022-04-30 14:54:20.324
+!MESSAGE *****Serialization is called after successful solver action*****
+
+!ENTRY com.dave.mbs.common 1 0 2022-04-30 14:54:20.326
+!MESSAGE *************Saving EMF data into file system*******************
+
+!ENTRY com.dave.mbs.common 1 0 2022-04-30 14:54:20.412
+!MESSAGE *************Saving Groovy data into file system*******************
+
+!ENTRY COMMON 1 0 2022-04-30 14:54:20.600
+!MESSAGE Time Taken By Serialization  : 186 ms :: C:\Users\Yoshi\Documents\GitHub\Software\01_jrg\06_XMC\jr22_LV_BMS_bauerjoh_AA\Dave\Model\projectData.bin
+
+!ENTRY com.dave.mbs.common 1 0 2022-04-30 14:54:20.729
+!MESSAGE *************Serializing EMF and Groovy data to RAM*******************
+
+!ENTRY com.dave.mbs.common 1 0 2022-04-30 14:54:20.788
+!MESSAGE Time taken for serialization in msec: 464
+
+!ENTRY UI_EDITOR 1 0 2022-04-30 14:54:20.829
+!MESSAGE USER_ACTION : Time taken for refreshing TIMER/4.1.12/0 editor is : 1
+
+!ENTRY SIGNAL_CONFIG 1 0 2022-04-30 14:54:20.831
+!MESSAGE USER_ACTION : Saved User configured HW Signal Connection..!
+
+!ENTRY SOLVER 1 0 2022-04-30 14:54:20.834
+!MESSAGE Time Taken By Solve and Save Signal Configuration  : 556 ms
+
+!ENTRY SIGNAL_CONFIG 1 0 2022-04-30 14:54:22.275
+!MESSAGE USER_ACTION : HW Signal Connection Dialog is closed..!
+
+!ENTRY APP_CONFIGURATOR 1 0 2022-04-30 14:58:21.945
+!MESSAGE USER_ACTION : Time taken for opening editor is: 430 msec 
+
+!ENTRY UI_EDITOR 1 0 2022-04-30 14:58:34.452
+!MESSAGE USER_ACTION : Setting value = "External Trigger Upon Rising Edge" of "gcombo_trigger_mode" in APP: ADC_MEASUREMENT/4.1.24/0
+
+!ENTRY com.dave.mbs.common 1 0 2022-04-30 14:58:34.457
+!MESSAGE **************Serialization is called for successful UI action without Solver*********
+
+!ENTRY com.dave.mbs.common 1 0 2022-04-30 14:58:34.460
+!MESSAGE *************Serializing EMF and Groovy data to RAM*******************
+
+!ENTRY com.dave.mbs.common 1 0 2022-04-30 14:58:34.496
+!MESSAGE Time taken for serialization in msec: 36
+
+!ENTRY com.dave.mbs.common 1 0 2022-04-30 14:58:34.498
+!MESSAGE *****************************
+
+!ENTRY com.dave.mbs.common 1 0 2022-04-30 15:34:40.113
+!MESSAGE *************Saving EMF data into file system*******************
+
+!ENTRY com.dave.mbs.common 1 0 2022-04-30 15:34:40.206
+!MESSAGE *************Saving Groovy data into file system*******************
+
+!ENTRY COMMON 1 0 2022-04-30 15:34:40.374
+!MESSAGE Time Taken By Serialization  : 165 ms :: C:\Users\Yoshi\Documents\GitHub\Software\01_jrg\06_XMC\jr22_LV_BMS_bauerjoh_AA\Dave\Model\projectData.bin
+
+!ENTRY com.dave.mbs.common 1 0 2022-04-30 15:34:40.589
+!MESSAGE ****************Cleaning project data:jr22_LV_BMS_bauerjoh_AA*******************
+
+!ENTRY APPLICATION_MODEL 1 0 2022-04-30 15:34:40.597
+!MESSAGE USER_ACTION : Time taken for disposing objects for memory cleanup: 70 msec 
+
+!ENTRY SOLVER 1 0 2022-04-30 15:34:40.600
+!MESSAGE Solver exited (0)
+
+!ENTRY SOLVER 1 0 2022-04-30 15:34:40.867
+!MESSAGE USER_ACTION : Solver Status: DISCONNECTED

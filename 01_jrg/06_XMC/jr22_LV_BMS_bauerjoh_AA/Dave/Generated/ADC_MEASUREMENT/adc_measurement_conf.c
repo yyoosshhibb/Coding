@@ -98,6 +98,17 @@
 * DATA STRUCTURES
 **********************************************************************************************************************/
 
+/**
+ * The Result Event Node configurations are done by this API and is invoked from ADC_MEASUREMENT_Init().
+ */
+  void ADC_MEASUREMENT_0_mux_config(void)
+  {
+
+    /* Result Event Node Mux Configuration for Channel_A (Group-0 channel-0 Result_Register-8)*/
+    XMC_VADC_GROUP_SetResultInterruptNode(VADC_G0,8,XMC_VADC_SR_GROUP_SR0);
+
+  }
+   
 /* Global iclass0 configuration*/
 const  XMC_VADC_GLOBAL_CLASS_t global_iclass_config =
 {
@@ -136,7 +147,7 @@ XMC_VADC_RESULT_CONFIG_t Channel_A_res_config =
   .post_processing_mode    = (uint32_t) XMC_VADC_DMM_REDUCTION_MODE,
   .wait_for_read_mode  	   = (uint32_t) 0,  /* Disabled */
   .part_of_fifo       	   = (uint32_t) 0 , /* No FIFO */
-  .event_gen_enable   	   = (uint32_t) 0   /* Disable Result event */
+  .event_gen_enable   	   = (uint32_t) 1   /* Result event Enabled*/
 };
 
 /* Channel_A ADC channel Handle */
@@ -610,6 +621,13 @@ ADC_MEASUREMENT_CHANNEL_ARRAY_t ADC_MEASUREMENT_channel_array=
     }
 };
 
+/* Background request source interrupt handler : End of Measurement Interrupt configuration structure*/
+const ADC_MEASUREMENT_ISR_t backgnd_rs_intr_handle=
+{
+  .node_id      = 16U,
+  .priority    	= 63U,
+  .sub_priority = 0U, 
+};
 
 /* LLD Background Scan Init Structure */
 const XMC_VADC_BACKGROUND_CONFIG_t backgnd_config =
@@ -621,7 +639,7 @@ const XMC_VADC_BACKGROUND_CONFIG_t backgnd_config =
   .gate_signal    	 = (uint32_t) XMC_VADC_REQ_GT_A,			 /*If Gating needed then this denotes the Gating signal*/
   .timer_mode        = (uint32_t) 0,							 /*Timer Mode Disabled */
   .external_trigger  = (uint32_t) 0,                               /*Trigger is Disabled*/
-  .req_src_interrupt = (uint32_t) 0,                              /*Background Request source interrupt Disabled*/
+  .req_src_interrupt = (uint32_t) 1,                              /*Background Request source interrupt Enabled*/
   .enable_auto_scan  = (uint32_t) 0,
   .load_mode         = (uint32_t) XMC_VADC_SCAN_LOAD_OVERWRITE
 };
@@ -630,12 +648,12 @@ ADC_MEASUREMENT_t ADC_MEASUREMENT_0=
 {
   .array		 	     = (ADC_MEASUREMENT_CHANNEL_ARRAY_t*) &ADC_MEASUREMENT_channel_array,
   .backgnd_config_handle = (XMC_VADC_BACKGROUND_CONFIG_t*) &backgnd_config,
-  .req_src_intr_handle	 = (ADC_MEASUREMENT_ISR_t *) NULL,
+  .req_src_intr_handle	 = (ADC_MEASUREMENT_ISR_t *) &backgnd_rs_intr_handle,
   .iclass_config_handle  = ( XMC_VADC_GLOBAL_CLASS_t *) &global_iclass_config,
-  .srv_req_node          = XMC_VADC_SR_SHARED_SR0,
+  .srv_req_node          = XMC_VADC_SR_SHARED_SR2,
   .global_handle    	 = (GLOBAL_ADC_t *) &GLOBAL_ADC_0,
   .start_conversion		 = (bool) true,
-  .mux_config			 = NULL,
+  .mux_config			 = (ADC_MEASUREMENT_MUX_CONFIG_t) (ADC_MEASUREMENT_0_mux_config),
   .init_state 			 = ADC_MEASUREMENT_STATUS_UNINITIALIZED
 };
 

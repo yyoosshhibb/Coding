@@ -104,6 +104,8 @@
 #define ADC_MEASUREMENT_ANALOG_IO_USED
 
 #define ADC_MEASUREMENT_MAXCHANNELS (11U)
+
+#define Adc_Measurement_Handler IRQ_Hdlr_16
 #define ADC_MEASUREMENT_Channel_A (ADC_MEASUREMENT_Channel_A_handle)
 #define ADC_MEASUREMENT_Channel_A_RES (VADC_G0->RES[8])
 
@@ -137,6 +139,8 @@
 #define ADC_MEASUREMENT_Channel_K (ADC_MEASUREMENT_Channel_K_handle)
 #define ADC_MEASUREMENT_Channel_K_RES (VADC_G1->RES[3])
 
+
+#define ADC_MEASUREMENT_CPU_4X
 #define ADC_MEASUREMENT_ICLASS_NUM (0U)
 #define ADC_MEASUREMENT_MAJOR_VERSION (4U) /**< Major version number of ADC_MEASUREMENT APP*/
 #define ADC_MEASUREMENT_MINOR_VERSION (1U) /**< Minor version number of ADC_MEASUREMENT APP*/

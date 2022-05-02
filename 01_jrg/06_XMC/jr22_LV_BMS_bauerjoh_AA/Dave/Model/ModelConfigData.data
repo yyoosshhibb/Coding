@@ -90,6 +90,21 @@
   <nodes xsi:type="ApplicationModel:AppNode">
     <resource xsi:type="ResourceModel:App" href="APPS/CMSIS_DSP/v4_0_20/CMSIS_DSP_0.app#/"/>
   </nodes>
+  <nodes xsi:type="ApplicationModel:PeripheralNode">
+    <resource xsi:type="ResourceModel:Peripheral" href="HW_RESOURCES/CCU43/CCU43_3.dd#/"/>
+  </nodes>
+  <nodes xsi:type="ApplicationModel:PeripheralNode">
+    <resource xsi:type="ResourceModel:Peripheral" href="HW_RESOURCES/CCU41/CCU41_1.dd#/"/>
+  </nodes>
+  <nodes xsi:type="ApplicationModel:AppNode">
+    <resource xsi:type="ResourceModel:App" href="APPS/GLOBAL_CCU4/v4_1_14/GLOBAL_CCU4_0.app#/"/>
+  </nodes>
+  <nodes xsi:type="ApplicationModel:PortNode">
+    <resource xsi:type="ResourceModel:Port" href="HW_RESOURCES/Port2/Port2_2.dd#/"/>
+  </nodes>
+  <nodes xsi:type="ApplicationModel:AppNode">
+    <resource xsi:type="ResourceModel:App" href="APPS/TIMER/v4_1_12/TIMER_0.app#/"/>
+  </nodes>
   <connections xsi:type="ApplicationModel:NodeConnection" source="//@nodes.0" target="//@nodes.1"/>
   <connections xsi:type="ApplicationModel:NodeConnection" source="//@nodes.6" target="//@nodes.1"/>
   <connections xsi:type="ApplicationModel:NodeConnection" source="//@nodes.7" target="//@nodes.6"/>
@@ -107,6 +122,9 @@
   <connections xsi:type="ApplicationModel:NodeConnection" source="//@nodes.17" target="//@nodes.26"/>
   <connections xsi:type="ApplicationModel:NodeConnection" source="//@nodes.17" target="//@nodes.27"/>
   <connections xsi:type="ApplicationModel:NodeConnection" source="//@nodes.17" target="//@nodes.28"/>
+  <connections xsi:type="ApplicationModel:NodeConnection" source="//@nodes.17" target="//@nodes.10"/>
+  <connections xsi:type="ApplicationModel:NodeConnection" source="//@nodes.32" target="//@nodes.1"/>
+  <connections xsi:type="ApplicationModel:NodeConnection" source="//@nodes.34" target="//@nodes.32"/>
   <hwConnections href="APPS/CLOCK_XMC4/v4_0_24/CLOCK_XMC4_0.app#//@connections.0"/>
   <hwConnections href="APPS/CLOCK_XMC4/v4_0_24/CLOCK_XMC4_0.app#//@connections.5"/>
   <hwConnections href="APPS/CLOCK_XMC4/v4_0_24/CLOCK_XMC4_0.app#//@connections.6"/>
@@ -229,4 +247,8 @@
   <hwConnections href="APPS/ANALOG_IO/v4_0_12/ANALOG_IO_10.app#//@connections.0"/>
   <hwConnections href="APPS/ANALOG_IO/v4_0_12/ANALOG_IO_10.app#//@connections.1"/>
   <hwConnections href="APPS/ADC_MEASUREMENT/v4_1_24/ADC_MEASUREMENT_0.app#//@connections.90"/>
+  <hwConnections href="APPS/ADC_MEASUREMENT/v4_1_24/ADC_MEASUREMENT_0.app#//@connections.52"/>
+  <hwConnections href="APPS/GLOBAL_CCU4/v4_1_14/GLOBAL_CCU4_0.app#//@connections.0"/>
+  <hwConnections href="APPS/TIMER/v4_1_12/TIMER_0.app#//@connections.0"/>
+  <hwConnections href="APPS/TIMER/v4_1_12/TIMER_0.app#//@connections.2"/>
 </ApplicationModel:ApplicationData>
