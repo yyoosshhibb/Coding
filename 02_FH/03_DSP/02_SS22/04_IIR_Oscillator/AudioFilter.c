@@ -19,6 +19,14 @@ to the terms of the associated Analog Devices License Agreement.
 #define SAMPLES_PER_CHAN   NUM_AUDIO_SAMPLES/2
 
 
+fract16 coeff_OSC[2]={-16384, 30888};			//-1, 2cos(a)
+fract16 delay[2]={-10310, -5469};				//yn-2, yn-1
+fract16 delayB[2]={10186, 12355};				//yn-2, yn-1
+fract32 outBuf;
+int i;
+int buffer_index = 0;
+acc40 sum, sumB;
+
 /* Compute filter response  */
 void AudioFilter( fract32 dataIn[], fract32 dataOut[])
 {
@@ -32,10 +40,40 @@ void AudioFilter( fract32 dataIn[], fract32 dataOut[])
 	buffer_index = circindex(buffer_index,1,NO_SAMPLES);	//ensures that buffer_index is always between border
 
 */
+	outBuf = 0;
+//slow loop
+	/*
+	for(i=0; i<2; i++)
+	{
+		outBuf += (fract32)delay[buffer_index]*coeff_OSC[i]<<1;
+		buffer_index = circindex(buffer_index, 1, 2);
+	}
 
-	dataOut[0] = dataIn[0];		//using RED connector
-	dataOut[1] = dataIn[1];		//using BLACK connector
+	delay[buffer_index]=outBuf>>15;
+	dataOut[0] = outBuf >> 7;
 
+	buffer_index = circindex(buffer_index, 1, 2);
+
+	//dataOut[1] = dataIn[1];		//using BLACK connector
+*/
+//builtins
+	sum = 0;
+	sumB = 0;
+	for(i=0; i<2; i++)
+	{
+		sum = A_mac(sum, delay[buffer_index], coeff_OSC[i]);
+		sumB = A_mac(sumB, delayB[buffer_index], coeff_OSC[i]);
+		buffer_index = circindex(buffer_index, 1, 2);
+	}
+
+	sum = A_ashift(sum, 1);
+	sumB = A_ashift(sumB, 1);
+	delay[buffer_index]=(fract16)(A_mad(sum) >> 16);
+	delayB[buffer_index]=(fract16)(A_mad(sumB) >> 16);
+	dataOut[0] = (A_mad(sum)) >> 8;
+	dataOut[1] = (A_mad(sumB)) >> 8;
+
+	buffer_index = circindex(buffer_index, 1, 2);
 
 /*	Store back to output buffer
 	calculated result has datatype: 	fract32 out2=0;

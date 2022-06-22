@@ -20500,3 +20500,331 @@ Command-line arguments:  -os win32 -ws win32 -arch x86_64 -application com.ifx.d
 
 !ENTRY SOLVER 1 0 2022-05-06 12:27:26.039
 !MESSAGE USER_ACTION : Solver Status: DISCONNECTED
+!SESSION 2022-06-07 20:06:47.299 -----------------------------------------------
+eclipse.buildId=unknown
+java.version=1.8.0_222
+java.vendor=Amazon.com Inc.
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_AT
+Framework arguments:  -application com.ifx.davex.product.daveApplication -showlocation
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 -application com.ifx.davex.product.daveApplication -showlocation
+
+!ENTRY SOLVER 1 0 2022-06-07 20:07:11.219
+!MESSAGE USER_ACTION : Default solver exe path is: C:\Infineon\Tools\DAVE IDE\4.5.0.202105191637\eclipse\Solver\lib\i386_nt\eclipse.exe
+
+!ENTRY SOLVER 1 0 2022-06-07 20:07:11.427
+!MESSAGE USER_ACTION : GlobalSize= 750MB; LocalSize: 128MB
+
+!ENTRY SOLVER 1 0 2022-06-07 20:07:11.430
+!MESSAGE USER_ACTION : Creating OutOfProcessEclipse instance...
+
+!ENTRY SOLVER 1 0 2022-06-07 20:07:12.194
+!MESSAGE USER_ACTION : Solver Status: CONNECTED
+
+!ENTRY APPSTORE 1 0 2022-06-07 20:07:13.395
+!MESSAGE USER_ACTION : Time taken for loading LibraryStore data for SoftwareId [XMC4.5.00.F100.ALL] is: 492 msec 
+
+!ENTRY APPLICATION_MODEL 1 0 2022-06-07 20:07:13.465
+!MESSAGE USER_ACTION : Time taken for disposing objects for memory cleanup: 5 msec 
+
+!ENTRY APPLICATION_MODEL 1 0 2022-06-07 20:07:15.098
+!MESSAGE USER_ACTION : Active project:jr22_LV_BMS_bauerjoh_AA[ Software ID:XMC4.5.00.F100.ALL]
+
+!ENTRY COMMON 1 0 2022-06-07 20:07:17.290
+!MESSAGE Time Taken By De-Serialization  : 1356 ms :: C:\Users\Yoshi\Documents\GitHub\Software\01_jrg\06_XMC\jr22_LV_BMS_bauerjoh_AA\Dave\Model\projectData.bin
+
+!ENTRY com.dave.mbs.common 1 0 2022-06-07 20:07:17.309
+!MESSAGE *************Serializing EMF and Groovy data to RAM*******************
+
+!ENTRY APPLICATION_MODEL 1 0 2022-06-07 20:07:17.585
+!MESSAGE USER_ACTION : Time taken for initializing Application Model is: 2487 msec 
+
+!ENTRY APPLICATION_MODEL 1 0 2022-06-07 20:07:17.625
+!MESSAGE USER_ACTION : Time taken for reloadLastSolverResult(updateQuery): 30 msec 
+
+!ENTRY APPLICATION_MODEL 1 0 2022-06-07 20:07:17.657
+!MESSAGE USER_ACTION : Time taken for reloadLastSolverResult(getSolutionQuery): 28 msec 
+
+!ENTRY APPLICATION_MODEL 1 0 2022-06-07 20:07:17.661
+!MESSAGE USER_ACTION : Time taken for updating views is: 2 msec 
+
+!ENTRY APPLICATION_MODEL 1 0 2022-06-07 20:07:20.467
+!MESSAGE USER_ACTION : Time taken for rendering views is: 2803 msec 
+
+!ENTRY org.eclipse.wst.common.project.facet.core 4 0 2022-06-07 20:07:20.528
+!MESSAGE Project facet jst.ejb has not been defined. It is used in plugin org.eclipse.jst.j2ee.
+
+!ENTRY APPLICATION_MODEL 1 0 2022-06-07 20:07:21.457
+!MESSAGE USER_ACTION : Total time taken for setting project as active is: 7998 msec 
+
+!ENTRY APPLICATION_MODEL 1 0 2022-06-07 20:07:22.353
+!MESSAGE Only One DAVE Application is running 
+
+!ENTRY com.ifx.dave.LibraryManager 4 0 2022-06-07 20:07:22.422
+!MESSAGE Reading file: https://www.infineon.com/dave/Libraries/Examples/XMC_IFX/latest//daveSite.xml
+
+!ENTRY com.ifx.dave.LibraryManager 4 0 2022-06-07 20:07:24.150
+!MESSAGE Reading file: https://www.infineon.com/dave/Libraries/DAVE_Libs/XMC_IFX/latest//daveSite.xml
+
+!ENTRY com.ifx.dave.LibraryManager 4 0 2022-06-07 20:07:24.946
+!MESSAGE Reading file: https://www.infineon.com/dave/Libraries/DAVE_Libs/Contributed/latest//daveSite.xml
+
+!ENTRY APP_CONFIGURATOR 1 0 2022-06-07 20:11:35.038
+!MESSAGE USER_ACTION : Time taken for opening editor is: 1087 msec 
+
+!ENTRY APP_CONFIGURATOR 1 0 2022-06-07 20:11:39.190
+!MESSAGE USER_ACTION : Time taken for opening editor is: 738 msec 
+
+!ENTRY APPSTORE 1 0 2022-06-07 20:11:52.681
+!MESSAGE USER_ACTION : Loaded DD: C:\Infineon\Tools\DAVE IDE\4.5.0.202105191637\D_LibraryStore_4.4\resources\XMC4.5.00.F100.ALL\device\xmc4500\0\MANIFEST\xmc4500.dd
+
+!ENTRY APPSTORE 1 0 2022-06-07 20:11:52.705
+!MESSAGE USER_ACTION : Loaded DD: C:\Infineon\Tools\DAVE IDE\4.5.0.202105191637\D_LibraryStore_4.4\resources\LQFP100.0.0\devicepackage\0\MANIFEST\devicepackage.dd
+
+!ENTRY APPSTORE 1 0 2022-06-07 20:11:52.723
+!MESSAGE USER_ACTION : Loaded DD: C:\Infineon\Tools\DAVE IDE\4.5.0.202105191637\D_LibraryStore_4.4\resources\0.1.41\port\p\0\MANIFEST\p.dd
+
+!ENTRY APPSTORE 1 0 2022-06-07 20:11:52.746
+!MESSAGE USER_ACTION : Loaded DD: C:\Infineon\Tools\DAVE IDE\4.5.0.202105191637\D_LibraryStore_4.4\resources\0.1.40\port\p\1\MANIFEST\p.dd
+
+!ENTRY APPSTORE 1 0 2022-06-07 20:11:52.763
+!MESSAGE USER_ACTION : Loaded DD: C:\Infineon\Tools\DAVE IDE\4.5.0.202105191637\D_LibraryStore_4.4\resources\0.1.40\port\p\2\MANIFEST\p.dd
+
+!ENTRY APPSTORE 1 0 2022-06-07 20:11:52.774
+!MESSAGE USER_ACTION : Loaded DD: C:\Infineon\Tools\DAVE IDE\4.5.0.202105191637\D_LibraryStore_4.4\resources\0.1.40\port\p\3\MANIFEST\p.dd
+
+!ENTRY APPSTORE 1 0 2022-06-07 20:11:52.783
+!MESSAGE USER_ACTION : Loaded DD: C:\Infineon\Tools\DAVE IDE\4.5.0.202105191637\D_LibraryStore_4.4\resources\0.1.40\port\p\4\MANIFEST\p.dd
+
+!ENTRY APPSTORE 1 0 2022-06-07 20:11:52.792
+!MESSAGE USER_ACTION : Loaded DD: C:\Infineon\Tools\DAVE IDE\4.5.0.202105191637\D_LibraryStore_4.4\resources\0.1.40\port\p\5\MANIFEST\p.dd
+
+!ENTRY APPSTORE 1 0 2022-06-07 20:11:52.802
+!MESSAGE USER_ACTION : Loaded DD: C:\Infineon\Tools\DAVE IDE\4.5.0.202105191637\D_LibraryStore_4.4\resources\0.1.40\port\p\14\MANIFEST\p.dd
+
+!ENTRY APPSTORE 1 0 2022-06-07 20:11:52.811
+!MESSAGE USER_ACTION : Loaded DD: C:\Infineon\Tools\DAVE IDE\4.5.0.202105191637\D_LibraryStore_4.4\resources\0.1.40\port\p\15\MANIFEST\p.dd
+
+!ENTRY APPSTORE 1 0 2022-06-07 20:11:52.816
+!MESSAGE USER_ACTION : Loaded DD: C:\Infineon\Tools\DAVE IDE\4.5.0.202105191637\D_LibraryStore_4.4\resources\0.0.0\port\usb_port\0\MANIFEST\usb_port.dd
+
+!ENTRY APPSTORE 1 0 2022-06-07 20:11:52.822
+!MESSAGE USER_ACTION : Loaded DD: C:\Infineon\Tools\DAVE IDE\4.5.0.202105191637\D_LibraryStore_4.4\resources\0.1.40\port\hcu_port\0\MANIFEST\hcu_port.dd
+
+!ENTRY APPSTORE 1 0 2022-06-07 20:11:52.828
+!MESSAGE USER_ACTION : Loaded DD: C:\Infineon\Tools\DAVE IDE\4.5.0.202105191637\D_LibraryStore_4.4\resources\0.0.0\port\debug_port\0\MANIFEST\debug_port.dd
+
+!ENTRY APPSTORE 1 0 2022-06-07 20:11:52.833
+!MESSAGE USER_ACTION : Loaded DD: C:\Infineon\Tools\DAVE IDE\4.5.0.202105191637\D_LibraryStore_4.4\resources\0.0.0\port\reset_port\0\MANIFEST\reset_port.dd
+
+!ENTRY APPSTORE 1 0 2022-06-07 20:11:52.838
+!MESSAGE USER_ACTION : Loaded DD: C:\Infineon\Tools\DAVE IDE\4.5.0.202105191637\D_LibraryStore_4.4\resources\0.0.0\port\crystal_port\0\MANIFEST\crystal_port.dd
+
+!ENTRY APPSTORE 1 0 2022-06-07 20:11:52.844
+!MESSAGE USER_ACTION : Loaded DD: C:\Infineon\Tools\DAVE IDE\4.5.0.202105191637\D_LibraryStore_4.4\resources\0.1.39\port\rtc_port\0\MANIFEST\rtc_port.dd
+
+!ENTRY APPSTORE 1 0 2022-06-07 20:11:52.849
+!MESSAGE USER_ACTION : Loaded DD: C:\Infineon\Tools\DAVE IDE\4.5.0.202105191637\D_LibraryStore_4.4\resources\0.0.0\port\power_port\0\MANIFEST\power_port.dd
+
+!ENTRY APPSTORE 1 0 2022-06-07 20:11:52.854
+!MESSAGE USER_ACTION : Loaded DD: C:\Infineon\Tools\DAVE IDE\4.5.0.202105191637\D_LibraryStore_4.4\resources\0.0.0\port\analogpower_port\0\MANIFEST\analogpower_port.dd
+
+!ENTRY PIN_CONFIG 1 0 2022-06-07 20:11:52.860
+!MESSAGE Board Pin Name: Invalid data : (// Board pin label) in line number 1
+
+!ENTRY PIN_CONFIG 1 0 2022-06-07 20:11:52.862
+!MESSAGE Board Pin Name: Invalid data : (// XMC4500 Relax Kit (XMC4500_F100x1024)) in line number 2
+
+!ENTRY PIN_CONFIG 1 0 2022-06-07 20:11:52.864
+!MESSAGE Board Pin Name: Invalid data : (// v1.0 2017-11-30) in line number 3
+
+!ENTRY PIN_CONFIG 1 0 2022-06-07 20:11:52.866
+!MESSAGE Board Pin Name: Empty line found in line number 4
+
+!ENTRY PIN_CONFIG 1 0 2022-06-07 20:11:52.868
+!MESSAGE Board Pin Name: Invalid data : (//) in line number 5
+
+!ENTRY PIN_CONFIG 1 0 2022-06-07 20:11:52.871
+!MESSAGE Board Pin Name: Invalid data : (// BUTTONS) in line number 6
+
+!ENTRY PIN_CONFIG 1 0 2022-06-07 20:11:52.873
+!MESSAGE Board Pin Name: Invalid data : (// ) in line number 7
+
+!ENTRY PIN_CONFIG 1 0 2022-06-07 20:11:52.876
+!MESSAGE Board Pin Name: Empty line found in line number 8
+
+!ENTRY PIN_CONFIG 1 0 2022-06-07 20:11:52.878
+!MESSAGE Board Pin Name: Invalid data : (// P1_14) in line number 9
+
+!ENTRY PIN_CONFIG 1 0 2022-06-07 20:11:52.880
+!MESSAGE Board Pin Name: Invalid data : (// P1_15) in line number 11
+
+!ENTRY PIN_CONFIG 1 0 2022-06-07 20:11:52.882
+!MESSAGE Board Pin Name: Empty line found in line number 13
+
+!ENTRY PIN_CONFIG 1 0 2022-06-07 20:11:52.885
+!MESSAGE Board Pin Name: Invalid data : (//) in line number 14
+
+!ENTRY PIN_CONFIG 1 0 2022-06-07 20:11:52.887
+!MESSAGE Board Pin Name: Invalid data : (// LEDs) in line number 15
+
+!ENTRY PIN_CONFIG 1 0 2022-06-07 20:11:52.890
+!MESSAGE Board Pin Name: Invalid data : (// ) in line number 16
+
+!ENTRY PIN_CONFIG 1 0 2022-06-07 20:11:52.892
+!MESSAGE Board Pin Name: Empty line found in line number 17
+
+!ENTRY PIN_CONFIG 1 0 2022-06-07 20:11:52.894
+!MESSAGE Board Pin Name: Invalid data : (// P1_1) in line number 18
+
+!ENTRY PIN_CONFIG 1 0 2022-06-07 20:11:52.897
+!MESSAGE Board Pin Name: Invalid data : (// P1_0) in line number 20
+
+!ENTRY PIN_CONFIG 1 0 2022-06-07 20:11:52.899
+!MESSAGE Board Pin Name: Empty line found in line number 22
+
+!ENTRY PIN_CONFIG 1 0 2022-06-07 20:11:52.901
+!MESSAGE Board Pin Name: Invalid data : (//) in line number 23
+
+!ENTRY PIN_CONFIG 1 0 2022-06-07 20:11:52.903
+!MESSAGE Board Pin Name: Invalid data : (// Serial Flash Memory (S25FL032P0)) in line number 24
+
+!ENTRY PIN_CONFIG 1 0 2022-06-07 20:11:52.906
+!MESSAGE Board Pin Name: Invalid data : (// ) in line number 25
+
+!ENTRY PIN_CONFIG 1 0 2022-06-07 20:11:52.908
+!MESSAGE Board Pin Name: Empty line found in line number 26
+
+!ENTRY PIN_CONFIG 1 0 2022-06-07 20:11:52.910
+!MESSAGE Board Pin Name: Invalid data : (// P1_10) in line number 27
+
+!ENTRY PIN_CONFIG 1 0 2022-06-07 20:11:52.913
+!MESSAGE Board Pin Name: Invalid data : (// P1_8) in line number 29
+
+!ENTRY PIN_CONFIG 1 0 2022-06-07 20:11:52.916
+!MESSAGE Board Pin Name: Invalid data : (// P1_5) in line number 31
+
+!ENTRY PIN_CONFIG 1 0 2022-06-07 20:11:52.918
+!MESSAGE Board Pin Name: Invalid data : (// P1_4) in line number 33
+
+!ENTRY PIN_CONFIG 1 0 2022-06-07 20:11:52.921
+!MESSAGE Board Pin Name: Invalid data : (// P1_3) in line number 35
+
+!ENTRY PIN_CONFIG 1 0 2022-06-07 20:11:52.923
+!MESSAGE Board Pin Name: Invalid data : (// P1_2) in line number 37
+
+!ENTRY PIN_CONFIG 1 0 2022-06-07 20:11:52.926
+!MESSAGE Board Pin Name: Empty line found in line number 39
+
+!ENTRY PIN_CONFIG 1 0 2022-06-07 20:11:52.928
+!MESSAGE Board Pin Name: Invalid data : (//) in line number 40
+
+!ENTRY PIN_CONFIG 1 0 2022-06-07 20:11:52.930
+!MESSAGE Board Pin Name: Invalid data : (// microSD Card) in line number 41
+
+!ENTRY PIN_CONFIG 1 0 2022-06-07 20:11:52.933
+!MESSAGE Board Pin Name: Invalid data : (// ) in line number 42
+
+!ENTRY PIN_CONFIG 1 0 2022-06-07 20:11:52.936
+!MESSAGE Board Pin Name: Empty line found in line number 43
+
+!ENTRY PIN_CONFIG 1 0 2022-06-07 20:11:52.938
+!MESSAGE Board Pin Name: Invalid data : (// P3_6) in line number 44
+
+!ENTRY PIN_CONFIG 1 0 2022-06-07 20:11:52.941
+!MESSAGE Board Pin Name: Invalid data : (// P3_5) in line number 46
+
+!ENTRY PIN_CONFIG 1 0 2022-06-07 20:11:52.943
+!MESSAGE Board Pin Name: Invalid data : (// P4_0) in line number 48
+
+!ENTRY PIN_CONFIG 1 0 2022-06-07 20:11:52.945
+!MESSAGE Board Pin Name: Invalid data : (// P1_6) in line number 50
+
+!ENTRY PIN_CONFIG 1 0 2022-06-07 20:11:52.948
+!MESSAGE Board Pin Name: Invalid data : (// P1_7) in line number 52
+
+!ENTRY PIN_CONFIG 1 0 2022-06-07 20:11:52.950
+!MESSAGE Board Pin Name: Invalid data : (// P4_1) in line number 54
+
+!ENTRY PIN_CONFIG 1 0 2022-06-07 20:11:52.953
+!MESSAGE Board Pin Name: Empty line found in line number 56
+
+!ENTRY PIN_CONFIG 1 0 2022-06-07 20:11:52.955
+!MESSAGE Board Pin Name: Invalid data : (// ) in line number 57
+
+!ENTRY PIN_CONFIG 1 0 2022-06-07 20:11:52.958
+!MESSAGE Board Pin Name: Invalid data : (// Ethernet (KSZ8031RNL/KSZ8081RNA)) in line number 58
+
+!ENTRY PIN_CONFIG 1 0 2022-06-07 20:11:52.960
+!MESSAGE Board Pin Name: Invalid data : (// ) in line number 59
+
+!ENTRY PIN_CONFIG 1 0 2022-06-07 20:11:52.963
+!MESSAGE Board Pin Name: Empty line found in line number 60
+
+!ENTRY PIN_CONFIG 1 0 2022-06-07 20:11:52.966
+!MESSAGE Board Pin Name: Invalid data : (// P15_9) in line number 61
+
+!ENTRY PIN_CONFIG 1 0 2022-06-07 20:11:52.968
+!MESSAGE Board Pin Name: Invalid data : (// P15_8) in line number 63
+
+!ENTRY PIN_CONFIG 1 0 2022-06-07 20:11:52.971
+!MESSAGE Board Pin Name: Invalid data : (// P2_10) in line number 65
+
+!ENTRY PIN_CONFIG 1 0 2022-06-07 20:11:52.974
+!MESSAGE Board Pin Name: Invalid data : (// P2_9) in line number 67
+
+!ENTRY PIN_CONFIG 1 0 2022-06-07 20:11:52.976
+!MESSAGE Board Pin Name: Invalid data : (// P2_8) in line number 69
+
+!ENTRY PIN_CONFIG 1 0 2022-06-07 20:11:52.978
+!MESSAGE Board Pin Name: Invalid data : (// P2_5) in line number 71
+
+!ENTRY PIN_CONFIG 1 0 2022-06-07 20:11:52.981
+!MESSAGE Board Pin Name: Invalid data : (// P2_4) in line number 73
+
+!ENTRY PIN_CONFIG 1 0 2022-06-07 20:11:52.983
+!MESSAGE Board Pin Name: Invalid data : (// P2_3) in line number 75
+
+!ENTRY PIN_CONFIG 1 0 2022-06-07 20:11:52.986
+!MESSAGE Board Pin Name: Invalid data : (// P2_2) in line number 77
+
+!ENTRY PIN_CONFIG 1 0 2022-06-07 20:11:52.988
+!MESSAGE Board Pin Name: Invalid data : (// P2_0) in line number 79
+
+!ENTRY PIN_CONFIG 1 0 2022-06-07 20:11:52.991
+!MESSAGE Board Pin Name: Invalid data : (// P2_7) in line number 81
+
+!ENTRY PIN_CONFIG 1 0 2022-06-07 20:11:52.993
+!MESSAGE Board Pin Name: Invalid data : (// P3_1) in line number 83
+
+!ENTRY PIN_CONFIG 1 0 2022-06-07 20:11:52.996
+!MESSAGE Board Pin Name: Empty line found in line number 85
+
+!ENTRY SOLVER 1 0 2022-06-07 20:11:56.077
+!MESSAGE USER_ACTION : Library store ECO file :C:\Infineon\Tools\DAVE IDE\4.5.0.202105191637\D_LibraryStore_4.4\resources\XMC4.5.00.F100.ALL\device\xmc4500\0\MANIFEST\solver_data\xmc4500_solver.eco
+
+!ENTRY SOLVER 1 0 2022-06-07 20:11:56.169
+!MESSAGE USER_ACTION : Copied ECO file to temp location :C:\Users\Yoshi\Documents\GitHub\Software\01_jrg\06_XMC\.metadata\.plugins\solver_data\XMC4.5.00.F100.ALL\xmc4500_solver.eco
+
+!ENTRY SOLVER 1 0 2022-06-07 20:11:59.164
+!MESSAGE USER_ACTION : Loaded ECO file :C:\Users\Yoshi\Documents\GitHub\Software\01_jrg\06_XMC\.metadata\.plugins\solver_data\XMC4.5.00.F100.ALL\xmc4500_solver.eco
+
+!ENTRY com.dave.mbs.common 1 0 2022-06-07 20:13:07.233
+!MESSAGE *************Saving EMF data into file system*******************
+
+!ENTRY com.dave.mbs.common 1 0 2022-06-07 20:13:07.386
+!MESSAGE *************Saving Groovy data into file system*******************
+
+!ENTRY COMMON 1 0 2022-06-07 20:13:07.706
+!MESSAGE Time Taken By Serialization  : 317 ms :: C:\Users\Yoshi\Documents\GitHub\Software\01_jrg\06_XMC\jr22_LV_BMS_bauerjoh_AA\Dave\Model\projectData.bin
+
+!ENTRY com.dave.mbs.common 1 0 2022-06-07 20:13:08.154
+!MESSAGE ****************Cleaning project data:jr22_LV_BMS_bauerjoh_AA*******************
+
+!ENTRY APPLICATION_MODEL 1 0 2022-06-07 20:13:08.167
+!MESSAGE USER_ACTION : Time taken for disposing objects for memory cleanup: 258 msec 
+
+!ENTRY SOLVER 1 0 2022-06-07 20:13:08.169
+!MESSAGE Solver exited (0)
+
+!ENTRY SOLVER 1 0 2022-06-07 20:13:08.439
+!MESSAGE USER_ACTION : Solver Status: DISCONNECTED

@@ -88,6 +88,11 @@ typedef enum
 #define LED_STATE_SET	1
 #define LED_STATE_TGL	2
 
+#define FFT_LEN		1024
+#define F_SAMPLE	48000
+#define PI			3.1415
+#define FFT_SIM 	1
+
 /* function prototypes */
 void Init_LEDs(void);
 void ClearSet_LED(const int led, const int bState);
@@ -102,6 +107,9 @@ void CheckResult(ADI_ADAU1761_RESULT);
 void MixerEnable(bool bEnable);
 void ADAU1761Callback(void *, uint32_t , void *);
 void gpioCallback(ADI_GPIO_PIN_INTERRUPT , uint32_t , void *);
+void Scramble_data(complex_fract16* data, short len);
+void FFT(complex_fract16* input_buffer, int fft_len);
+void Get_Power_Spec(complex_fract16* input_buffer,complex_fract16* power_spec,int fft_len);
 
 //----------------GLOBAL VARIABLES--------------------------------
 extern  uint8_t sportRxMem[];

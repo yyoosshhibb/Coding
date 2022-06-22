@@ -1,0 +1,555 @@
+# //  ModelSim SE-64 10.2c Jul 19 2013 
+# //
+# //  Copyright 1991-2013 Mentor Graphics Corporation
+# //  All Rights Reserved.
+# //
+# //  THIS WORK CONTAINS TRADE SECRET AND PROPRIETARY INFORMATION
+# //  WHICH IS THE PROPERTY OF MENTOR GRAPHICS CORPORATION OR ITS
+# //  LICENSORS AND IS SUBJECT TO LICENSE TERMS.
+# //
+# vsim -L sbus_awfg_lib -L work -l transcript.txt -i -multisource_delay latest -t ns +typdelays -foreign {hdsInit C:/MentorGraphics/HDS_2017.1a/resources/downstream/modelsim/ModelSim_64Bit.dll} -pli {"C:/MentorGraphics/HDS_2017.1a/resources/downstream/modelsim/ModelSim_64Bit.dll"} sbus_awfg_lib.tb_top_awfg_app(struct) 
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# 
+# ** Note: (vsim-3865) Due to PLI being present, full design access is being specified.
+# 
+# ** Note: (vopt-143) Recognized 1 FSM in architecture body "buscmd_b16_filesel(fsm)".
+# 
+# ** Error: D:/HDL/ip_repo/sbus_awfg_lib/hdl/uart_bridge_32_struct.vhd(211): (vopt-1272) Length of formal "bus_dout" is 16; length of actual is 32.
+# 
+# ** Error: D:/HDL/ip_repo/sbus_awfg_lib/hdl/uart_bridge_32_struct.vhd(213): (vopt-1272) Length of formal "bus_din" is 16; length of actual is 32.
+# 
+# ** Error: D:/HDL/ip_repo/sbus_awfg_lib/hdl/uart_bridge_32_struct.vhd(223): Vopt Compiler exiting
+# ** Error: (vopt-2064) Compiler back-end code generation process terminated with code 2.
+# 
+# Error loading design
+# hds_restart 
+vsim -L sbus_awfg_lib -L work -l transcript.txt -i -t ns -multisource_delay latest +typdelays sbus_awfg_lib.tb_top_awfg_app(struct)
+# vsim -L sbus_awfg_lib -L work -l transcript.txt -i -multisource_delay latest -t ns +typdelays -foreign {hdsInit C:/MentorGraphics/HDS_2017.1a/resources/downstream/modelsim/ModelSim_64Bit.dll} -pli {"C:/MentorGraphics/HDS_2017.1a/resources/downstream/modelsim/ModelSim_64Bit.dll"} sbus_awfg_lib.tb_top_awfg_app(struct) 
+# ** Note: (vsim-3812) Design is being optimized...
+# 
+# ** Note: (vsim-3865) Due to PLI being present, full design access is being specified.
+# 
+# ** Note: (vopt-143) Recognized 1 FSM in architecture body "buscmd_b16_filesel(fsm)".
+# 
+# ** Note: (vopt-143) Recognized 1 FSM in architecture body "bhv_sbus_bfm(fsm)".
+# 
+# ** Note: (vopt-143) Recognized 1 FSM in architecture body "dac_ctrl(fsm)".
+# 
+# Loading C:/MentorGraphics/HDS_2017.1a/resources/downstream/modelsim/ModelSim_64Bit.dll
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.std_logic_arith(body)
+# Loading ieee.std_logic_unsigned(body)
+# Loading work.utilities(body)
+# Loading work.tb_top_awfg_app(struct)#1
+# Loading work.adc_model(rtl)#1
+# Loading work.bhv_sbus_bfm(fsm)#1
+# Loading work.bhv_zybo_tester2(bhv)#1
+# Loading work.dac_model(rtl)#1
+# Loading ieee.numeric_std(body)
+# Loading work.fpga_pkg
+# Loading work.top_awfg(struct)#1
+# Loading work.fpga(rtl)#1
+# Loading work.coeff_memory(rtl)#1
+# Loading work.singleportram_generic(rtl)#1
+# Loading work.cnt_modulus(rtl)#1
+# Loading work.comp_signal_synchr(rtl)#1
+# Loading work.comp_timer(rtl)#1
+# Loading work.dac_ctrl(fsm)#1
+# Loading work.registers(rtl)#1
+# Loading work.uart_bridge_32(struct)#1
+# Loading work.buscmd_b16_filesel(fsm)#1
+# ** Error: (vsim-7) Failed to open VHDL file "tb_fileselect.txt" in rb mode.
+# 
+# No such file or directory. (errno = ENOENT)
+#    Time: 0 ns  Iteration: 0  Instance: /tb_top_awfg_app/U_0/U_5/g1/I0
+# Loading work.uart_regs(rtl)#1
+# ** Warning: (vsim-8683) Uninitialized out port /tb_top_awfg_app/U_10/next_sample has no driver.
+# 
+# This port will contribute value (U) to the signal network.
+# 
+# ** Warning: (vsim-8683) Uninitialized out port /tb_top_awfg_app/U_0/U_5/txd has no driver.
+# 
+# This port will contribute value (U) to the signal network.
+# 
+log -r *
+run 1 ms
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 0  Instance: /tb_top_awfg_app/U_0/U_6
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 0  Instance: /tb_top_awfg_app/U_0/U_6
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 0  Instance: /tb_top_awfg_app/U_0/U_6
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 0  Instance: /tb_top_awfg_app/U_0/U_6
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 0  Instance: /tb_top_awfg_app/U_0/U_6
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 0  Instance: /tb_top_awfg_app/U_0/U_6
+# ** Fatal: (vsim-7) Failed to open VHDL file "tb_fileselect.txt" in rb mode.
+# 
+# No such file or directory. (errno = ENOENT)
+#    Time: 0 ns  Iteration: 0  Process: /tb_top_awfg_app/U_0/U_5/g1/I0/read_fname File: D:/HDL/ip_repo/sbus_awfg_lib/hdl/buscmd_b16_filesel_fsm.vhd
+# 0
+# Fatal error in Process read_fname at D:/HDL/ip_repo/sbus_awfg_lib/hdl/buscmd_b16_filesel_fsm.vhd line 273
+# 
+# HDL call sequence:
+# Stopped at D:/HDL/ip_repo/sbus_awfg_lib/hdl/buscmd_b16_filesel_fsm.vhd 273 Process read_fname
+# 
+restart -f
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# 
+# ** Note: (vsim-3865) Due to PLI being present, full design access is being specified.
+# 
+# ** Note: (vopt-143) Recognized 1 FSM in architecture body "buscmd_b16_filesel(fsm)".
+# 
+# Loading C:/MentorGraphics/HDS_2017.1a/resources/downstream/modelsim/ModelSim_64Bit.dll
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.std_logic_arith(body)
+# Loading ieee.std_logic_unsigned(body)
+# Loading work.utilities(body)
+# Loading work.tb_top_awfg_app(struct)#1
+# Loading work.adc_model(rtl)#1
+# Loading work.bhv_sbus_bfm(fsm)#1
+# Loading work.bhv_zybo_tester2(bhv)#1
+# Loading work.dac_model(rtl)#1
+# Loading ieee.numeric_std(body)
+# Loading work.fpga_pkg
+# Loading work.top_awfg(struct)#1
+# Loading work.fpga(rtl)#1
+# Loading work.coeff_memory(rtl)#1
+# Loading work.singleportram_generic(rtl)#1
+# Loading work.cnt_modulus(rtl)#1
+# Loading work.comp_signal_synchr(rtl)#1
+# Loading work.comp_timer(rtl)#1
+# Loading work.dac_ctrl(fsm)#1
+# Loading work.registers(rtl)#1
+# Loading work.uart_bridge_32(struct)#1
+# Loading work.buscmd_b16_filesel(fsm)#1
+# Loading work.uart_regs(rtl)#1
+# ** Warning: (vsim-8683) Uninitialized out port /tb_top_awfg_app/U_10/next_sample has no driver.
+# 
+# This port will contribute value (U) to the signal network.
+# 
+# ** Warning: (vsim-8683) Uninitialized out port /tb_top_awfg_app/U_0/U_5/txd has no driver.
+# 
+# This port will contribute value (U) to the signal network.
+# 
+run 1 ms
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 0  Instance: /tb_top_awfg_app/U_0/U_6
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 0  Instance: /tb_top_awfg_app/U_0/U_6
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 0  Instance: /tb_top_awfg_app/U_0/U_6
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 0  Instance: /tb_top_awfg_app/U_0/U_6
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 0  Instance: /tb_top_awfg_app/U_0/U_6
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 0  Instance: /tb_top_awfg_app/U_0/U_6
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 0  Instance: /tb_top_awfg_app/U_0/U_1
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 0  Instance: /tb_top_awfg_app/U_0/U_1
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 0  Instance: /tb_top_awfg_app/U_0/U_1
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 0  Instance: /tb_top_awfg_app/U_0/U_1
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 0  Instance: /tb_top_awfg_app/U_0/U_1
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 0  Instance: /tb_top_awfg_app/U_0/U_1
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 0  Instance: /tb_top_awfg_app/U_0/U_1
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 0  Instance: /tb_top_awfg_app/U_0/U_1
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 0  Instance: /tb_top_awfg_app/U_0/U_1
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 0  Instance: /tb_top_awfg_app/U_0/U_1
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 0  Instance: /tb_top_awfg_app/U_0/U_1
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 0  Instance: /tb_top_awfg_app/U_0/U_1
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 0  Instance: /tb_top_awfg_app/U_0/U_1
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 0  Instance: /tb_top_awfg_app/U_0/U_1
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 0  Instance: /tb_top_awfg_app/U_0/U_1
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 0  Instance: /tb_top_awfg_app/U_0/U_1
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 0  Instance: /tb_top_awfg_app/U_0/U_1
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 0  Instance: /tb_top_awfg_app/U_0/U_2
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 0  Instance: /tb_top_awfg_app/U_0/U_4
+# ** Warning: NUMERIC_STD."/=": metavalue detected, returning TRUE
+#    Time: 0 ns  Iteration: 0  Instance: /tb_top_awfg_app/U_0/U_0
+# ** Note: Simulation complete
+#    Time: 0 ns  Iteration: 0  Instance: /tb_top_awfg_app/U_3
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 1  Instance: /tb_top_awfg_app/U_0/U_6
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 1  Instance: /tb_top_awfg_app/U_0/U_6
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 1  Instance: /tb_top_awfg_app/U_0/U_6
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 1  Instance: /tb_top_awfg_app/U_0/U_6
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 1  Instance: /tb_top_awfg_app/U_0/U_1
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 1  Instance: /tb_top_awfg_app/U_0/U_1
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 1  Instance: /tb_top_awfg_app/U_0/U_1
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 1  Instance: /tb_top_awfg_app/U_0/U_1
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 1  Instance: /tb_top_awfg_app/U_0/U_1
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 1  Instance: /tb_top_awfg_app/U_0/U_1
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 1  Instance: /tb_top_awfg_app/U_0/U_1
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 1  Instance: /tb_top_awfg_app/U_0/U_1
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 1  Instance: /tb_top_awfg_app/U_0/U_1
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 1  Instance: /tb_top_awfg_app/U_0/U_1
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 1  Instance: /tb_top_awfg_app/U_0/U_1
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 1  Instance: /tb_top_awfg_app/U_0/U_1
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 1  Instance: /tb_top_awfg_app/U_0/U_1
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 1  Instance: /tb_top_awfg_app/U_0/U_1
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 1  Instance: /tb_top_awfg_app/U_0/U_1
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 1  Instance: /tb_top_awfg_app/U_0/U_1
+# ** Warning: NUMERIC_STD."/=": metavalue detected, returning TRUE
+#    Time: 0 ns  Iteration: 2  Instance: /tb_top_awfg_app/U_0/U_0
+# ** Warning: (vsim-3554) String "1.0us" has no whitespace between abstract literal and unit name.
+#    Time: 115 ns  Iteration: 2  Instance: /tb_top_awfg_app/U_9
+# ** Failure: Unrecognised Instruction
+#    Time: 115 ns  Iteration: 2  Process: /tb_top_awfg_app/U_0/U_5/g1/I0/readcmd File: D:/HDL/ip_repo/sbus_awfg_lib/hdl/buscmd_b16_filesel_fsm.vhd
+# Break in Process readcmd at D:/HDL/ip_repo/sbus_awfg_lib/hdl/buscmd_b16_filesel_fsm.vhd line 318
+restart -f
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# 
+# ** Note: (vsim-3865) Due to PLI being present, full design access is being specified.
+# 
+# ** Note: (vopt-143) Recognized 1 FSM in architecture body "buscmd_b16_filesel(fsm)".
+# 
+# Loading C:/MentorGraphics/HDS_2017.1a/resources/downstream/modelsim/ModelSim_64Bit.dll
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.std_logic_arith(body)
+# Loading ieee.std_logic_unsigned(body)
+# Loading work.utilities(body)
+# Loading work.tb_top_awfg_app(struct)#1
+# Loading work.adc_model(rtl)#1
+# Loading work.bhv_sbus_bfm(fsm)#1
+# Loading work.bhv_zybo_tester2(bhv)#1
+# Loading work.dac_model(rtl)#1
+# Loading ieee.numeric_std(body)
+# Loading work.fpga_pkg
+# Loading work.top_awfg(struct)#1
+# Loading work.fpga(rtl)#1
+# Loading work.coeff_memory(rtl)#1
+# Loading work.singleportram_generic(rtl)#1
+# Loading work.cnt_modulus(rtl)#1
+# Loading work.comp_signal_synchr(rtl)#1
+# Loading work.comp_timer(rtl)#1
+# Loading work.dac_ctrl(fsm)#1
+# Loading work.registers(rtl)#1
+# Loading work.uart_bridge_32(struct)#1
+# Loading work.buscmd_b16_filesel(fsm)#1
+# Loading work.uart_regs(rtl)#1
+# ** Warning: (vsim-8683) Uninitialized out port /tb_top_awfg_app/U_10/next_sample has no driver.
+# 
+# This port will contribute value (U) to the signal network.
+# 
+# ** Warning: (vsim-8683) Uninitialized out port /tb_top_awfg_app/U_0/U_5/txd has no driver.
+# 
+# This port will contribute value (U) to the signal network.
+# 
+run 1 ms
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 0  Instance: /tb_top_awfg_app/U_0/U_6
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 0  Instance: /tb_top_awfg_app/U_0/U_6
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 0  Instance: /tb_top_awfg_app/U_0/U_6
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 0  Instance: /tb_top_awfg_app/U_0/U_6
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 0  Instance: /tb_top_awfg_app/U_0/U_6
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 0  Instance: /tb_top_awfg_app/U_0/U_6
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 0  Instance: /tb_top_awfg_app/U_0/U_1
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 0  Instance: /tb_top_awfg_app/U_0/U_1
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 0  Instance: /tb_top_awfg_app/U_0/U_1
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 0  Instance: /tb_top_awfg_app/U_0/U_1
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 0  Instance: /tb_top_awfg_app/U_0/U_1
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 0  Instance: /tb_top_awfg_app/U_0/U_1
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 0  Instance: /tb_top_awfg_app/U_0/U_1
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 0  Instance: /tb_top_awfg_app/U_0/U_1
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 0  Instance: /tb_top_awfg_app/U_0/U_1
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 0  Instance: /tb_top_awfg_app/U_0/U_1
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 0  Instance: /tb_top_awfg_app/U_0/U_1
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 0  Instance: /tb_top_awfg_app/U_0/U_1
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 0  Instance: /tb_top_awfg_app/U_0/U_1
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 0  Instance: /tb_top_awfg_app/U_0/U_1
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 0  Instance: /tb_top_awfg_app/U_0/U_1
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 0  Instance: /tb_top_awfg_app/U_0/U_1
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 0  Instance: /tb_top_awfg_app/U_0/U_1
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 0  Instance: /tb_top_awfg_app/U_0/U_2
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 0  Instance: /tb_top_awfg_app/U_0/U_4
+# ** Warning: NUMERIC_STD."/=": metavalue detected, returning TRUE
+#    Time: 0 ns  Iteration: 0  Instance: /tb_top_awfg_app/U_0/U_0
+# ** Note: Simulation complete
+#    Time: 0 ns  Iteration: 0  Instance: /tb_top_awfg_app/U_3
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 1  Instance: /tb_top_awfg_app/U_0/U_6
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 1  Instance: /tb_top_awfg_app/U_0/U_6
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 1  Instance: /tb_top_awfg_app/U_0/U_6
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 1  Instance: /tb_top_awfg_app/U_0/U_6
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 1  Instance: /tb_top_awfg_app/U_0/U_1
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 1  Instance: /tb_top_awfg_app/U_0/U_1
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 1  Instance: /tb_top_awfg_app/U_0/U_1
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 1  Instance: /tb_top_awfg_app/U_0/U_1
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 1  Instance: /tb_top_awfg_app/U_0/U_1
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 1  Instance: /tb_top_awfg_app/U_0/U_1
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 1  Instance: /tb_top_awfg_app/U_0/U_1
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 1  Instance: /tb_top_awfg_app/U_0/U_1
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 1  Instance: /tb_top_awfg_app/U_0/U_1
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 1  Instance: /tb_top_awfg_app/U_0/U_1
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 1  Instance: /tb_top_awfg_app/U_0/U_1
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 1  Instance: /tb_top_awfg_app/U_0/U_1
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 1  Instance: /tb_top_awfg_app/U_0/U_1
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 1  Instance: /tb_top_awfg_app/U_0/U_1
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 1  Instance: /tb_top_awfg_app/U_0/U_1
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 1  Instance: /tb_top_awfg_app/U_0/U_1
+# ** Warning: NUMERIC_STD."/=": metavalue detected, returning TRUE
+#    Time: 0 ns  Iteration: 2  Instance: /tb_top_awfg_app/U_0/U_0
+# ** Warning: (vsim-3554) String "1.0us" has no whitespace between abstract literal and unit name.
+#    Time: 115 ns  Iteration: 2  Instance: /tb_top_awfg_app/U_9
+# ** Fatal: (vsim-3476) Formal "str" with array index bounds (8 downto 1) is length 8; actual is length 4.
+#    Time: 115 ns  Iteration: 2  Process: /tb_top_awfg_app/U_0/U_5/g1/I0/readcmd File: D:/HDL/ip_repo/sbus_awfg_lib/hdl/buscmd_b16_filesel_fsm.vhd
+# Fatal error in Process readcmd at D:/HDL/ip_repo/sbus_awfg_lib/hdl/buscmd_b16_filesel_fsm.vhd line 304
+# 
+# HDL call sequence:
+# Stopped at D:/HDL/ip_repo/sbus_awfg_lib/hdl/buscmd_b16_filesel_fsm.vhd 304 Process readcmd
+# 
+restart -f
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# 
+# ** Note: (vsim-3865) Due to PLI being present, full design access is being specified.
+# 
+# ** Note: (vopt-143) Recognized 1 FSM in architecture body "buscmd_b16_filesel(fsm)".
+# 
+# Loading C:/MentorGraphics/HDS_2017.1a/resources/downstream/modelsim/ModelSim_64Bit.dll
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.std_logic_arith(body)
+# Loading ieee.std_logic_unsigned(body)
+# Loading work.utilities(body)
+# Loading work.tb_top_awfg_app(struct)#1
+# Loading work.adc_model(rtl)#1
+# Loading work.bhv_sbus_bfm(fsm)#1
+# Loading work.bhv_zybo_tester2(bhv)#1
+# Loading work.dac_model(rtl)#1
+# Loading ieee.numeric_std(body)
+# Loading work.fpga_pkg
+# Loading work.top_awfg(struct)#1
+# Loading work.fpga(rtl)#1
+# Loading work.coeff_memory(rtl)#1
+# Loading work.singleportram_generic(rtl)#1
+# Loading work.cnt_modulus(rtl)#1
+# Loading work.comp_signal_synchr(rtl)#1
+# Loading work.comp_timer(rtl)#1
+# Loading work.dac_ctrl(fsm)#1
+# Loading work.registers(rtl)#1
+# Loading work.uart_bridge_32(struct)#1
+# Loading work.buscmd_b16_filesel(fsm)#1
+# Loading work.uart_regs(rtl)#1
+# ** Warning: (vsim-8683) Uninitialized out port /tb_top_awfg_app/U_10/next_sample has no driver.
+# 
+# This port will contribute value (U) to the signal network.
+# 
+# ** Warning: (vsim-8683) Uninitialized out port /tb_top_awfg_app/U_0/U_5/txd has no driver.
+# 
+# This port will contribute value (U) to the signal network.
+# 
+run 1 ms
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 0  Instance: /tb_top_awfg_app/U_0/U_6
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 0  Instance: /tb_top_awfg_app/U_0/U_6
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 0  Instance: /tb_top_awfg_app/U_0/U_6
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 0  Instance: /tb_top_awfg_app/U_0/U_6
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 0  Instance: /tb_top_awfg_app/U_0/U_6
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 0  Instance: /tb_top_awfg_app/U_0/U_6
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 0  Instance: /tb_top_awfg_app/U_0/U_1
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 0  Instance: /tb_top_awfg_app/U_0/U_1
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 0  Instance: /tb_top_awfg_app/U_0/U_1
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 0  Instance: /tb_top_awfg_app/U_0/U_1
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 0  Instance: /tb_top_awfg_app/U_0/U_1
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 0  Instance: /tb_top_awfg_app/U_0/U_1
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 0  Instance: /tb_top_awfg_app/U_0/U_1
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 0  Instance: /tb_top_awfg_app/U_0/U_1
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 0  Instance: /tb_top_awfg_app/U_0/U_1
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 0  Instance: /tb_top_awfg_app/U_0/U_1
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 0  Instance: /tb_top_awfg_app/U_0/U_1
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 0  Instance: /tb_top_awfg_app/U_0/U_1
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 0  Instance: /tb_top_awfg_app/U_0/U_1
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 0  Instance: /tb_top_awfg_app/U_0/U_1
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 0  Instance: /tb_top_awfg_app/U_0/U_1
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 0  Instance: /tb_top_awfg_app/U_0/U_1
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 0  Instance: /tb_top_awfg_app/U_0/U_1
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 0  Instance: /tb_top_awfg_app/U_0/U_2
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 0  Instance: /tb_top_awfg_app/U_0/U_4
+# ** Warning: NUMERIC_STD."/=": metavalue detected, returning TRUE
+#    Time: 0 ns  Iteration: 0  Instance: /tb_top_awfg_app/U_0/U_0
+# ** Note: Simulation complete
+#    Time: 0 ns  Iteration: 0  Instance: /tb_top_awfg_app/U_3
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 1  Instance: /tb_top_awfg_app/U_0/U_6
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 1  Instance: /tb_top_awfg_app/U_0/U_6
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 1  Instance: /tb_top_awfg_app/U_0/U_6
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 1  Instance: /tb_top_awfg_app/U_0/U_6
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 1  Instance: /tb_top_awfg_app/U_0/U_1
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 1  Instance: /tb_top_awfg_app/U_0/U_1
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 1  Instance: /tb_top_awfg_app/U_0/U_1
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 1  Instance: /tb_top_awfg_app/U_0/U_1
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 1  Instance: /tb_top_awfg_app/U_0/U_1
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 1  Instance: /tb_top_awfg_app/U_0/U_1
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 1  Instance: /tb_top_awfg_app/U_0/U_1
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 1  Instance: /tb_top_awfg_app/U_0/U_1
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 1  Instance: /tb_top_awfg_app/U_0/U_1
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 1  Instance: /tb_top_awfg_app/U_0/U_1
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 1  Instance: /tb_top_awfg_app/U_0/U_1
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 1  Instance: /tb_top_awfg_app/U_0/U_1
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 1  Instance: /tb_top_awfg_app/U_0/U_1
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 1  Instance: /tb_top_awfg_app/U_0/U_1
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 1  Instance: /tb_top_awfg_app/U_0/U_1
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 1  Instance: /tb_top_awfg_app/U_0/U_1
+# ** Warning: NUMERIC_STD."/=": metavalue detected, returning TRUE
+#    Time: 0 ns  Iteration: 2  Instance: /tb_top_awfg_app/U_0/U_0
+# ** Warning: (vsim-3554) String "1.0us" has no whitespace between abstract literal and unit name.
+#    Time: 115 ns  Iteration: 2  Instance: /tb_top_awfg_app/U_9
+# ** Error: (vsim-3549) TEXTIO procedure READ(STRING) : Wrong STRING length. Expected 4, found 0.
+#    Time: 215 ns  Iteration: 2  Instance: /tb_top_awfg_app/U_0/U_5/g1/I0
+# ** Error: (vsim-3543) TEXTIO procedure READ(CHARACTER) : Parameter L designates an empty string.
+#    Time: 215 ns  Iteration: 2  Instance: /tb_top_awfg_app/U_0/U_5/g1/I0
+# ** Error: (vsim-3549) TEXTIO procedure READ(STRING) : Wrong STRING length. Expected 4, found 0.
+#    Time: 215 ns  Iteration: 2  Instance: /tb_top_awfg_app/U_0/U_5/g1/I0
+# ** Error: (vsim-3543) TEXTIO procedure READ(CHARACTER) : Parameter L designates an empty string.
+#    Time: 215 ns  Iteration: 2  Instance: /tb_top_awfg_app/U_0/U_5/g1/I0
+# ** Error: (vsim-3549) TEXTIO procedure READ(STRING) : Wrong STRING length. Expected 8, found 0.
+#    Time: 215 ns  Iteration: 2  Instance: /tb_top_awfg_app/U_0/U_5/g1/I0
+# ** Note: Simulation complete
+#    Time: 215 ns  Iteration: 2  Instance: /tb_top_awfg_app/U_0/U_5/g1/I0
+# ** Warning: (vsim-3554) String "2.0us" has no whitespace between abstract literal and unit name.
+#    Time: 1285 ns  Iteration: 2  Instance: /tb_top_awfg_app/U_9
+# ** Warning: (vsim-3554) String "3.0us" has no whitespace between abstract literal and unit name.
+#    Time: 2205 ns  Iteration: 2  Instance: /tb_top_awfg_app/U_9
+# ** Warning: (vsim-3554) String "4.0us" has no whitespace between abstract literal and unit name.
+#    Time: 3205 ns  Iteration: 2  Instance: /tb_top_awfg_app/U_9
+# ** Warning: (vsim-3554) String "5.0us" has no whitespace between abstract literal and unit name.
+#    Time: 4205 ns  Iteration: 2  Instance: /tb_top_awfg_app/U_9
+# ** Warning: (vsim-3554) String "6.0us" has no whitespace between abstract literal and unit name.
+#    Time: 5205 ns  Iteration: 2  Instance: /tb_top_awfg_app/U_9
+# ** Warning: (vsim-3554) String "7.0us" has no whitespace between abstract literal and unit name.
+#    Time: 6205 ns  Iteration: 2  Instance: /tb_top_awfg_app/U_9
+# ** Warning: (vsim-3554) String "8.0us" has no whitespace between abstract literal and unit name.
+#    Time: 7045 ns  Iteration: 2  Instance: /tb_top_awfg_app/U_9

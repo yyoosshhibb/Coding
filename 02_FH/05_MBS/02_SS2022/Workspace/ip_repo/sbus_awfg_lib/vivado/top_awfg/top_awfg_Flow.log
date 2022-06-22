@@ -1,0 +1,409 @@
+#-----------------------------------------------------------
+# Vivado v2021.2 (64-bit)
+# SW Build 3367213 on Tue Oct 19 02:48:09 MDT 2021
+# IP Build 3369179 on Thu Oct 21 08:25:16 MDT 2021
+# Start of session at: Wed Jun 15 13:57:19 2022
+# Process ID: 34892
+# Current directory: D:/HDL/ip_repo/sbus_awfg_lib/vivado/top_awfg
+# Command line: vivado.exe -mode gui -journal ./top_awfg_Flow.jou -log ./top_awfg_Flow.log -source ./HDS_Scripts/top_awfg_Flow.tcl
+# Log file: D:/HDL/ip_repo/sbus_awfg_lib/vivado/top_awfg/./top_awfg_Flow.log
+# Journal file: D:/HDL/ip_repo/sbus_awfg_lib/vivado/top_awfg\./top_awfg_Flow.jou
+# Running On: M00443, OS: Windows, CPU Frequency: 2592 MHz, CPU Physical cores: 6, Host memory: 34046 MB
+#-----------------------------------------------------------
+start_gui
+source ./HDS_Scripts/top_awfg_Flow.tcl
+# lappend ::auto_path "$::env(HDS_HOME)/resources/tcl/tcllib1.4"
+# set ::hdsDebug 0
+# proc ::hdsDebugPuts {msg} {
+#    if {$::hdsDebug} {
+#       puts $msg
+#    }
+# }
+# set normVars {HDS_PROJECT_DIR HDS_TEAM_HOME HDS_HOME XILINX_VIVADO}
+# foreach varName $normVars {
+#    if {[info exists ::env($varName)]} {
+#       set ::env($varName) [file normalize [subst -nobackslash {$::env($varName)}]]
+#    }
+# }
+# puts "## HDS #Running Vivado Project Creation/Update#"
+## HDS #Running Vivado Project Creation/Update#
+# set ::errorCount 0
+# if {[catch {source ./HDS_Scripts/top_awfg_Create.tcl} errMsg]} {
+#    if {[regexp "(?q)$errMsg" $errorInfo]} {
+#       puts "Error: $errorInfo"
+#    } else {
+#       puts "Error: $errMsg"
+#    }
+#    return
+# }
+Opening project ./top_awfg.xpr
+WARNING: [Board 49-91] Board repository path 'C:/Users/net/AppData/Roaming/Xilinx/Vivado/2019.1/xhub/board_store' does not exist, it will not be used to search board files.
+WARNING: [Board 49-91] Board repository path 'C:/Users/net/AppData/Roaming/Xilinx/Vivado/2019.1/xhub/board_store' does not exist, it will not be used to search board files.
+WARNING: [Board 49-26] cannot add Board Part alpha-data.com:adm-pcie-7v3:part0:1.1 available at C:/Xilinx/Vivado/2021.2/data/boards/board_files/adm-pcie-7v3/1.1/board.xml as part xc7vx690tffg1157-2 specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part alpha-data.com:adm-pcie3-ku3:part0:1.0 available at C:/Xilinx/Vivado/2021.2/data/boards/board_files/adm-pcie3-ku3/1.0/board.xml as part xcku060-ffva1156-2-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part trenz.biz:te0808_2es2:part0:1.0 available at C:/Xilinx/Vivado/2021.2/data/boards/board_files/TE0808_2ES2/1.0/board.xml as part xczu9eg-ffvc900-2-i-es2 specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part trenz.biz:te0808_2es2_tebf0808:part0:2.0 available at C:/Xilinx/Vivado/2021.2/data/boards/board_files/TE0808_2ES2/2.0/board.xml as part xczu9eg-ffvc900-2-i-es2 specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part trenz.biz:te0808_es1:part0:1.0 available at C:/Xilinx/Vivado/2021.2/data/boards/board_files/TE0808_ES1/1.0/board.xml as part xczu9eg-ffvc900-1-i-es1 specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part trenz.biz:te0808_es1_tebf0808:part0:2.0 available at C:/Xilinx/Vivado/2021.2/data/boards/board_files/TE0808_ES1/2.0/board.xml as part xczu9eg-ffvc900-1-i-es1 specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part trenz.biz:te0808_es2:part0:1.0 available at C:/Xilinx/Vivado/2021.2/data/boards/board_files/TE0808_ES2/1.0/board.xml as part xczu9eg-ffvc900-1-i-es2 specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part trenz.biz:te0808_es2_tebf0808:part0:2.0 available at C:/Xilinx/Vivado/2021.2/data/boards/board_files/TE0808_ES2/2.0/board.xml as part xczu9eg-ffvc900-1-i-es2 specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:ac701:part0:1.2 available at C:/Xilinx/Vivado/2021.2/data/boards/board_files/ac701/1.2/board.xml as part xc7a200tfbg676-2 specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:ac701:part0:1.3 available at C:/Xilinx/Vivado/2021.2/data/boards/board_files/ac701/1.3/board.xml as part xc7a200tfbg676-2 specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:ac701:part0:1.4 available at C:/Xilinx/Vivado/2021.2/data/boards/board_files/ac701/1.4/board.xml as part xc7a200tfbg676-2 specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:au200:part0:1.0 available at C:/Xilinx/Vivado/2021.2/data/boards/board_files/au200/1.0/board.xml as part xcu200-fsgd2104-2-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:au200:part0:1.1 available at C:/Xilinx/Vivado/2021.2/data/boards/board_files/au200/1.1/board.xml as part xcu200-fsgd2104-2-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:au200:part0:1.2 available at C:/Xilinx/Vivado/2021.2/data/boards/board_files/au200/1.2/board.xml as part xcu200-fsgd2104-2-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:au250:part0:1.0 available at C:/Xilinx/Vivado/2021.2/data/boards/board_files/au250/1.0/board.xml as part xcu250-figd2104-2l-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:au250:part0:1.1 available at C:/Xilinx/Vivado/2021.2/data/boards/board_files/au250/1.1/board.xml as part xcu250-figd2104-2l-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:au250:part0:1.2 available at C:/Xilinx/Vivado/2021.2/data/boards/board_files/au250/1.2/board.xml as part xcu250-figd2104-2l-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:kc705:part0:1.2 available at C:/Xilinx/Vivado/2021.2/data/boards/board_files/kc705/1.2/board.xml as part xc7k325tffg900-2 specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:kc705:part0:1.3 available at C:/Xilinx/Vivado/2021.2/data/boards/board_files/kc705/1.3/board.xml as part xc7k325tffg900-2 specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:kc705:part0:1.4 available at C:/Xilinx/Vivado/2021.2/data/boards/board_files/kc705/1.4/board.xml as part xc7k325tffg900-2 specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:kc705:part0:1.5 available at C:/Xilinx/Vivado/2021.2/data/boards/board_files/kc705/1.5/board.xml as part xc7k325tffg900-2 specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:kc705:part0:1.6 available at C:/Xilinx/Vivado/2021.2/data/boards/board_files/kc705/1.6/board.xml as part xc7k325tffg900-2 specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:kcu105:part0:1.0 available at C:/Xilinx/Vivado/2021.2/data/boards/board_files/kcu105/1.0/board.xml as part xcku040-ffva1156-2-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:kcu105:part0:1.1 available at C:/Xilinx/Vivado/2021.2/data/boards/board_files/kcu105/1.1/board.xml as part xcku040-ffva1156-2-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:kcu105:part0:1.2 available at C:/Xilinx/Vivado/2021.2/data/boards/board_files/kcu105/1.2/board.xml as part xcku040-ffva1156-2-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:kcu105:part0:1.3 available at C:/Xilinx/Vivado/2021.2/data/boards/board_files/kcu105/1.3/board.xml as part xcku040-ffva1156-2-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:kcu105:part0:1.4 available at C:/Xilinx/Vivado/2021.2/data/boards/board_files/kcu105/1.4/board.xml as part xcku040-ffva1156-2-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:kcu105:part0:1.5 available at C:/Xilinx/Vivado/2021.2/data/boards/board_files/kcu105/1.5/board.xml as part xcku040-ffva1156-2-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:kcu105:part0:1.6 available at C:/Xilinx/Vivado/2021.2/data/boards/board_files/kcu105/1.6/board.xml as part xcku040-ffva1156-2-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:kcu105:part0:1.7 available at C:/Xilinx/Vivado/2021.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/kcu105/1.7/board.xml as part xcku040-ffva1156-2-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:kcu116:part0:1.0 available at C:/Xilinx/Vivado/2021.2/data/boards/board_files/kcu116/1.0/board.xml as part xcku5p-ffvb676-2-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:kcu116:part0:1.1 available at C:/Xilinx/Vivado/2021.2/data/boards/board_files/kcu116/1.1/board.xml as part xcku5p-ffvb676-2-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:kcu116:part0:1.2 available at C:/Xilinx/Vivado/2021.2/data/boards/board_files/kcu116/1.2/board.xml as part xcku5p-ffvb676-2-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:kcu116:part0:1.3 available at C:/Xilinx/Vivado/2021.2/data/boards/board_files/kcu116/1.3/board.xml as part xcku5p-ffvb676-2-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:kcu116:part0:1.4 available at C:/Xilinx/Vivado/2021.2/data/boards/board_files/kcu116/1.4/board.xml as part xcku5p-ffvb676-2-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:kcu116:part0:1.5 available at C:/Xilinx/Vivado/2021.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/kcu116/1.5/board.xml as part xcku5p-ffvb676-2-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:kcu1500:part0:1.0 available at C:/Xilinx/Vivado/2021.2/data/boards/board_files/kcu1500/1.0/board.xml as part xcku115-flvb2104-2-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:kcu1500:part0:1.1 available at C:/Xilinx/Vivado/2021.2/data/boards/board_files/kcu1500/1.1/board.xml as part xcku115-flvb2104-2-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:kcu1500:part0:1.2 available at C:/Xilinx/Vivado/2021.2/data/boards/board_files/kcu1500/1.2/board.xml as part xcku115-flvb2104-2-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:pico_m505:part0:1.0 available at C:/Xilinx/Vivado/2021.2/data/boards/board_files/pico_m505/1.0/board.xml as part xc7k325tffg900-2 specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:sp701:part0:1.0 available at C:/Xilinx/Vivado/2021.2/data/boards/board_files/sp701/1.0/board.xml as part xc7s100fgga676-2 specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:sp701:part0:1.1 available at C:/Xilinx/Vivado/2021.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/sp701/1.1/board.xml as part xc7s100fgga676-2 specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vc707:part0:1.2 available at C:/Xilinx/Vivado/2021.2/data/boards/board_files/vc707/1.2/board.xml as part xc7vx485tffg1761-2 specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vc707:part0:1.3 available at C:/Xilinx/Vivado/2021.2/data/boards/board_files/vc707/1.3/board.xml as part xc7vx485tffg1761-2 specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vc707:part0:1.4 available at C:/Xilinx/Vivado/2021.2/data/boards/board_files/vc707/1.4/board.xml as part xc7vx485tffg1761-2 specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vc709:part0:1.6 available at C:/Xilinx/Vivado/2021.2/data/boards/board_files/vc709/1.6/board.xml as part xc7vx690tffg1761-2 specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vc709:part0:1.7 available at C:/Xilinx/Vivado/2021.2/data/boards/board_files/vc709/1.7/board.xml as part xc7vx690tffg1761-2 specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vc709:part0:1.8 available at C:/Xilinx/Vivado/2021.2/data/boards/board_files/vc709/1.8/board.xml as part xc7vx690tffg1761-2 specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vck190_es:part0:1.3 available at C:/Xilinx/Vivado/2021.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vck190/es/1.3/board.xml as part xcvc1902-vsva2197-2mp-e-s-es1 specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vcu108:part0:1.1 available at C:/Xilinx/Vivado/2021.2/data/boards/board_files/vcu108/1.1/board.xml as part xcvu095-ffva2104-2-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vcu108:part0:1.2 available at C:/Xilinx/Vivado/2021.2/data/boards/board_files/vcu108/1.2/board.xml as part xcvu095-ffva2104-2-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vcu108:part0:1.3 available at C:/Xilinx/Vivado/2021.2/data/boards/board_files/vcu108/1.3/board.xml as part xcvu095-ffva2104-2-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vcu108:part0:1.4 available at C:/Xilinx/Vivado/2021.2/data/boards/board_files/vcu108/1.4/board.xml as part xcvu095-ffva2104-2-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vcu108:part0:1.5 available at C:/Xilinx/Vivado/2021.2/data/boards/board_files/vcu108/1.5/board.xml as part xcvu095-ffva2104-2-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vcu108:part0:1.6 available at C:/Xilinx/Vivado/2021.2/data/boards/board_files/vcu108/1.6/board.xml as part xcvu095-ffva2104-2-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vcu108:part0:1.7 available at C:/Xilinx/Vivado/2021.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vcu108/1.7/board.xml as part xcvu095-ffva2104-2-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vcu110:part0:1.1 available at C:/Xilinx/Vivado/2021.2/data/boards/board_files/vcu110/1.1/board.xml as part xcvu190-flgc2104-2-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vcu110:part0:1.2 available at C:/Xilinx/Vivado/2021.2/data/boards/board_files/vcu110/1.2/board.xml as part xcvu190-flgc2104-2-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vcu110:part0:1.3 available at C:/Xilinx/Vivado/2021.2/data/boards/board_files/vcu110/1.3/board.xml as part xcvu190-flgc2104-2-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vcu110:part0:1.4 available at C:/Xilinx/Vivado/2021.2/data/boards/board_files/vcu110/1.4/board.xml as part xcvu190-flgc2104-2-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vcu118:part0:2.0 available at C:/Xilinx/Vivado/2021.2/data/boards/board_files/vcu118/2.0/board.xml as part xcvu9p-flga2104-2l-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vcu118:part0:2.1 available at C:/Xilinx/Vivado/2021.2/data/boards/board_files/vcu118/production/2.1/board.xml as part xcvu9p-flga2104-2l-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vcu118:part0:2.2 available at C:/Xilinx/Vivado/2021.2/data/boards/board_files/vcu118/production/2.2/board.xml as part xcvu9p-flga2104-2l-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vcu118:part0:2.3 available at C:/Xilinx/Vivado/2021.2/data/boards/board_files/vcu118/production/2.3/board.xml as part xcvu9p-flga2104-2l-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vcu118:part0:2.4 available at C:/Xilinx/Vivado/2021.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vcu118/2.4/board.xml as part xcvu9p-flga2104-2l-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vcu128:part0:1.0 available at C:/Xilinx/Vivado/2021.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vcu128/production/1.0/board.xml as part xcvu37p-fsvh2892-2l-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vcu129:part0:1.0 available at C:/Xilinx/Vivado/2021.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vcu129/production/1.0/board.xml as part xcvu29p-fsga2577-2l-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vcu1525:part0:1.0 available at C:/Xilinx/Vivado/2021.2/data/boards/board_files/vcu1525/1.0/board.xml as part xcvu9p-fsgd2104-2-i specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vcu1525:part0:1.1 available at C:/Xilinx/Vivado/2021.2/data/boards/board_files/vcu1525/1.1/board.xml as part xcvu9p-fsgd2104-2l-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vcu1525:part0:1.2 available at C:/Xilinx/Vivado/2021.2/data/boards/board_files/vcu1525/1.2/board.xml as part xcvu9p-fsgd2104-2l-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vcu1525:part0:1.3 available at C:/Xilinx/Vivado/2021.2/data/boards/board_files/vcu1525/1.3/board.xml as part xcvu9p-fsgd2104-2l-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vmk180_es:part0:1.3 available at C:/Xilinx/Vivado/2021.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vmk180/es/1.3/board.xml as part xcvm1802-vsva2197-2mp-e-s-es1 specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vpk120_es:part0:1.2 available at C:/Xilinx/Vivado/2021.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vpk120/es/1.2/board.xml as part xcvp1202-vsva2785-2mp-e-s-es1 specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu208_es:part0:1.0 available at C:/Xilinx/Vivado/2021.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/zcu208/es/1.0/board.xml as part xczu48dr-fsvg1517-2-e-es1 specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu208_es:part0:1.1 available at C:/Xilinx/Vivado/2021.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/zcu208/es/1.1/board.xml as part xczu48dr-fsvg1517-2-e-es1 specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu208_es:part0:1.2 available at C:/Xilinx/Vivado/2021.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/zcu208/es/1.2/board.xml as part xczu48dr-fsvg1517-2-e-es1 specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu208ld:part0:2.0 available at C:/Xilinx/Vivado/2021.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/zcu208ld/production/2.0/board.xml as part xczu58dr-fsvg1517-2-i specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu208ld_es:part0:1.0 available at C:/Xilinx/Vivado/2021.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/zcu208ld/es/1.0/board.xml as part xczu58dr-fsvg1517-2-i-es1 specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu216_es:part0:1.0 available at C:/Xilinx/Vivado/2021.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/zcu216/es/1.0/board.xml as part xczu49dr-ffvf1760-2-e-es1 specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu216_es:part0:1.1 available at C:/Xilinx/Vivado/2021.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/zcu216/es/1.1/board.xml as part xczu49dr-ffvf1760-2-e-es1 specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu216_es:part0:1.2 available at C:/Xilinx/Vivado/2021.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/zcu216/es/1.2/board.xml as part xczu49dr-ffvf1760-2-e-es1 specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu216ld:part0:2.0 available at C:/Xilinx/Vivado/2021.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/zcu216ld/production/2.0/board.xml as part xczu59dr-ffvf1760-2-i specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu216ld_es:part0:1.0 available at C:/Xilinx/Vivado/2021.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/zcu216ld/es/1.0/board.xml as part xczu59dr-ffvf1760-2-i-es1 specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu670:part0:1.0 available at C:/Xilinx/Vivado/2021.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/zcu670/1.0/board.xml as part xczu67dr-fsve1156-2-i specified in board_part file is either invalid or not available
+INFO: [filemgmt 56-3] Default IP Output Path : Could not find the directory 'D:/HDL/ip_repo/sbus_awfg_lib/vivado/top_awfg/top_awfg.gen/sources_1'.
+Scanning sources...
+Finished scanning sources
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+WARNING: [IP_Flow 19-1694] Ignoring duplicate Bus Definition IP file 'fh-joanneum.local:user:adc_dual:1.0' found within IP repository 'd:/HDL/ip_repo'.
+File in use: d:/HDL/ip_repo/Interfaces/adc_dual.xml
+File ignored: d:/HDL/ip_repo/Interfaces_dcd/adc_dual.xml
+WARNING: [IP_Flow 19-1694] Ignoring duplicate Bus Abstraction IP file 'fh-joanneum.local:user:adc_dual_rtl:1.0' found within IP repository 'd:/HDL/ip_repo'.
+File in use: d:/HDL/ip_repo/Interfaces/adc_dual_rtl.xml
+File ignored: d:/HDL/ip_repo/Interfaces_dcd/adc_dual_rtl.xml
+WARNING: [IP_Flow 19-1694] Ignoring duplicate Bus Definition IP file 'fh-joanneum.local:user:dac_dual:1.0' found within IP repository 'd:/HDL/ip_repo'.
+File in use: d:/HDL/ip_repo/Interfaces/dac_dual.xml
+File ignored: d:/HDL/ip_repo/Interfaces_dcd/dac_dual.xml
+WARNING: [IP_Flow 19-1694] Ignoring duplicate Bus Abstraction IP file 'fh-joanneum.local:user:dac_dual_rtl:1.0' found within IP repository 'd:/HDL/ip_repo'.
+File in use: d:/HDL/ip_repo/Interfaces/dac_dual_rtl.xml
+File ignored: d:/HDL/ip_repo/Interfaces_dcd/dac_dual_rtl.xml
+WARNING: [IP_Flow 19-1694] Ignoring duplicate Bus Definition IP file 'fh-joanneum.local:user:dma_rd_channel:1.0' found within IP repository 'd:/HDL/ip_repo'.
+File in use: d:/HDL/ip_repo/Interfaces/dma_rd_channel.xml
+File ignored: d:/HDL/ip_repo/Interfaces_dcd/dma_rd_channel.xml
+WARNING: [IP_Flow 19-1694] Ignoring duplicate Bus Abstraction IP file 'fh-joanneum.local:user:dma_rd_channel_rtl:1.0' found within IP repository 'd:/HDL/ip_repo'.
+File in use: d:/HDL/ip_repo/Interfaces/dma_rd_channel_rtl.xml
+File ignored: d:/HDL/ip_repo/Interfaces_dcd/dma_rd_channel_rtl.xml
+WARNING: [IP_Flow 19-1694] Ignoring duplicate Bus Definition IP file 'fh-joanneum.local:user:dma_wr_channel:1.0' found within IP repository 'd:/HDL/ip_repo'.
+File in use: d:/HDL/ip_repo/Interfaces/dma_wr_channel.xml
+File ignored: d:/HDL/ip_repo/Interfaces_dcd/dma_wr_channel.xml
+WARNING: [IP_Flow 19-1694] Ignoring duplicate Bus Abstraction IP file 'fh-joanneum.local:user:dma_wr_channel_rtl:1.0' found within IP repository 'd:/HDL/ip_repo'.
+File in use: d:/HDL/ip_repo/Interfaces/dma_wr_channel_rtl.xml
+File ignored: d:/HDL/ip_repo/Interfaces_dcd/dma_wr_channel_rtl.xml
+WARNING: [IP_Flow 19-1694] Ignoring duplicate Bus Definition IP file 'fh-joanneum.local:user:i2c:1.0' found within IP repository 'd:/HDL/ip_repo'.
+File in use: d:/HDL/ip_repo/Interfaces/i2c.xml
+File ignored: d:/HDL/ip_repo/Interfaces_dcd/i2c.xml
+WARNING: [IP_Flow 19-1694] Ignoring duplicate Bus Abstraction IP file 'fh-joanneum.local:user:i2c_rtl:1.0' found within IP repository 'd:/HDL/ip_repo'.
+File in use: d:/HDL/ip_repo/Interfaces/i2c_rtl.xml
+File ignored: d:/HDL/ip_repo/Interfaces_dcd/i2c_rtl.xml
+WARNING: [IP_Flow 19-1694] Ignoring duplicate Bus Definition IP file 'fh-joanneum.local:user:i2s:1.0' found within IP repository 'd:/HDL/ip_repo'.
+File in use: d:/HDL/ip_repo/Interfaces/i2s.xml
+File ignored: d:/HDL/ip_repo/Interfaces_dcd/i2s.xml
+WARNING: [IP_Flow 19-1694] Ignoring duplicate Bus Abstraction IP file 'fh-joanneum.local:user:i2s_rtl:1.0' found within IP repository 'd:/HDL/ip_repo'.
+File in use: d:/HDL/ip_repo/Interfaces/i2s_rtl.xml
+File ignored: d:/HDL/ip_repo/Interfaces_dcd/i2s_rtl.xml
+WARNING: [IP_Flow 19-1694] Ignoring duplicate Bus Definition IP file 'fh-joanneum.local:user:RGB:1.0' found within IP repository 'd:/HDL/ip_repo'.
+File in use: d:/HDL/ip_repo/Interfaces/RGB.xml
+File ignored: d:/HDL/ip_repo/Interfaces_dcd/RGB.xml
+WARNING: [IP_Flow 19-1694] Ignoring duplicate Bus Abstraction IP file 'fh-joanneum.local:user:RGB_rtl:1.0' found within IP repository 'd:/HDL/ip_repo'.
+File in use: d:/HDL/ip_repo/Interfaces/RGB_rtl.xml
+File ignored: d:/HDL/ip_repo/Interfaces_dcd/RGB_rtl.xml
+WARNING: [IP_Flow 19-1694] Ignoring duplicate Bus Definition IP file 'fh-joanneum.local:user:sbus:1.0' found within IP repository 'd:/HDL/ip_repo'.
+File in use: d:/HDL/ip_repo/Interfaces/sbus.xml
+File ignored: d:/HDL/ip_repo/Interfaces_dcd/sbus.xml
+WARNING: [IP_Flow 19-1694] Ignoring duplicate Bus Abstraction IP file 'fh-joanneum.local:user:sbus_rtl:1.0' found within IP repository 'd:/HDL/ip_repo'.
+File in use: d:/HDL/ip_repo/Interfaces/sbus_rtl.xml
+File ignored: d:/HDL/ip_repo/Interfaces_dcd/sbus_rtl.xml
+WARNING: [IP_Flow 19-1694] Ignoring duplicate Bus Definition IP file 'fh-joanneum.local:user:seg7:1.0' found within IP repository 'd:/HDL/ip_repo'.
+File in use: d:/HDL/ip_repo/Interfaces/seg7.xml
+File ignored: d:/HDL/ip_repo/Interfaces_dcd/seg7.xml
+WARNING: [IP_Flow 19-1694] Ignoring duplicate Bus Abstraction IP file 'fh-joanneum.local:user:seg7_rtl:1.0' found within IP repository 'd:/HDL/ip_repo'.
+File in use: d:/HDL/ip_repo/Interfaces/seg7_rtl.xml
+File ignored: d:/HDL/ip_repo/Interfaces_dcd/seg7_rtl.xml
+WARNING: [IP_Flow 19-1694] Ignoring duplicate Bus Definition IP file 'fh-joanneum.local:user:sig:1.0' found within IP repository 'd:/HDL/ip_repo'.
+File in use: d:/HDL/ip_repo/Interfaces/sig.xml
+File ignored: d:/HDL/ip_repo/Interfaces_dcd/sig.xml
+WARNING: [IP_Flow 19-1694] Ignoring duplicate Bus Definition IP file 'fh-joanneum.local:user:vga:1.0' found within IP repository 'd:/HDL/ip_repo'.
+File in use: d:/HDL/ip_repo/Interfaces/vga.xml
+File ignored: d:/HDL/ip_repo/Interfaces_dcd/vga.xml
+WARNING: [IP_Flow 19-1694] Ignoring duplicate Bus Abstraction IP file 'fh-joanneum.local:user:vga_rtl:1.0' found within IP repository 'd:/HDL/ip_repo'.
+File in use: d:/HDL/ip_repo/Interfaces/vga_rtl.xml
+File ignored: d:/HDL/ip_repo/Interfaces_dcd/vga_rtl.xml
+INFO: [IP_Flow 19-1700] Loaded user IP repository 'd:/HDL/ip_repo'.
+WARNING: [IP_Flow 19-3656] If you move the project, the path for repository 'd:/HDL/ip_repo' may become invalid. A better location for the repository would be in a path adjacent to the project. (Current project location is 'd:/HDL/ip_repo/sbus_awfg_lib/vivado/top_awfg'.)
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/Xilinx/Vivado/2021.2/data/ip'.
+WARNING: [IP_Flow 19-1663] Duplicate IP found for 'fh-joanneum.local:user:sbus_gpio:1.0'. The one found in IP location 'd:/HDL/ip_repo/sbus_gpio_lib' will take precedence over the same IP in location d:/HDL/ip_repo/sbus_gpio_lib - Kopie
+open_project: Time (s): cpu = 00:00:46 ; elapsed = 00:00:29 . Memory (MB): peak = 1497.820 ; gain = 136.312
+## get_filesets
+## get_property DEFAULT_LIB [current_project]
+## current_project
+## current_project
+## current_project
+## current_project
+Project HDL files to add stored in:
+   ./HDS_Scripts/top_awfg_fileList.tcl
+## list
+## list
+## list
+## join $vivadoCoresExtList "|"
+## get_files -all -quiet
+## join $nonIpFiles \n
+## join $ipFiles \n
+## join $coreIpFiles \n
+### list
+### list
+### list
+### list
+# if {$::errorCount == 0} {
+#    puts "Note: \"source ./HDS_Scripts/top_awfg_Create.tcl\" completed successfully\n"
+# } else {
+#    puts "Error: \"source ./HDS_Scripts/top_awfg_Create.tcl\" completed with errors\n"
+# }
+Note: "source ./HDS_Scripts/top_awfg_Create.tcl" completed successfully
+
+update_compile_order -fileset sources_1
+ipx::package_project -root_dir d:/hdl/ip_repo/sbus_awfg_lib -vendor fh-joanneum.local -library user -taxonomy /UserIP -force
+INFO: [IP_Flow 19-5654] Module 'top_awfg' uses VHDL-2008 sources with a VHDL top file. These VHDL-2008 files will not be analysed by the packager.
+INFO: [IP_Flow 19-5107] Inferred bus interface 'user_dac_dual' of definition 'fh-joanneum.local:user:dac_dual:1.0' (from User Repositories).
+INFO: [IP_Flow 19-5107] Inferred bus interface 'user_sbus' of definition 'fh-joanneum.local:user:sbus:1.0' (from User Repositories).
+WARNING: [IP_Flow 19-5463] No port map found for required logical port le on bus interface abstraction seg7_rtl for interface type master.
+WARNING: [IP_Flow 19-5463] No port map found for required logical port oe on bus interface abstraction seg7_rtl for interface type master.
+WARNING: [IP_Flow 19-5463] No port map found for required logical port sdi on bus interface abstraction seg7_rtl for interface type master.
+WARNING: [IP_Flow 19-5462] Defaulting to slave bus interface due to conflicts in bus interface inference.
+INFO: [IP_Flow 19-5107] Inferred bus interface 'dac' of definition 'fh-joanneum.local:user:seg7:1.0' (from User Repositories).
+INFO: [IP_Flow 19-5107] Inferred bus interface 'reset' of definition 'xilinx.com:signal:reset:1.0' (from Xilinx Repository).
+INFO: [IP_Flow 19-5107] Inferred bus interface 'clk' of definition 'xilinx.com:signal:clock:1.0' (from Xilinx Repository).
+INFO: [IP_Flow 19-4728] Bus Interface 'clk': Added interface parameter 'ASSOCIATED_RESET' with value 'reset'.
+WARNING: [IP_Flow 19-3480] slave: Portmap direction mismatched between component port 'dac_sclk' and definition port 'sclk'.
+WARNING: [IP_Flow 19-1965] Bus Interface 'dac': A port map to the required logical port "le" of the bus abstraction "fh-joanneum.local:user:seg7_rtl:1.0" is missing.
+WARNING: [IP_Flow 19-1965] Bus Interface 'dac': A port map to the required logical port "oe" of the bus abstraction "fh-joanneum.local:user:seg7_rtl:1.0" is missing.
+WARNING: [IP_Flow 19-1965] Bus Interface 'dac': A port map to the required logical port "sdi" of the bus abstraction "fh-joanneum.local:user:seg7_rtl:1.0" is missing.
+WARNING: [IP_Flow 19-5661] Bus Interface 'clk' does not have any bus interfaces associated with it.
+INFO: [IP_Flow 19-2181] Payment Required is not set for this core.
+INFO: [IP_Flow 19-2187] The Product Guide file is missing.
+set_property name sbus_awfg [ipx::current_core]
+set_property display_name sbus_awfg [ipx::current_core]
+set_property description sbus_awfg [ipx::current_core]
+set_property name dac_dual [ipx::get_bus_interfaces user_dac_dual -of_objects [ipx::current_core]]
+set_property name sbus_slv [ipx::get_bus_interfaces user_sbus -of_objects [ipx::current_core]]
+set_property core_revision 2 [ipx::current_core]
+ipx::create_xgui_files [ipx::current_core]
+ipx::update_checksums [ipx::current_core]
+ipx::check_integrity [ipx::current_core]
+WARNING: [IP_Flow 19-3480] slave: Portmap direction mismatched between component port 'dac_sclk' and definition port 'sclk'.
+WARNING: [IP_Flow 19-1965] Bus Interface 'dac': A port map to the required logical port "le" of the bus abstraction "fh-joanneum.local:user:seg7_rtl:1.0" is missing.
+WARNING: [IP_Flow 19-1965] Bus Interface 'dac': A port map to the required logical port "oe" of the bus abstraction "fh-joanneum.local:user:seg7_rtl:1.0" is missing.
+WARNING: [IP_Flow 19-1965] Bus Interface 'dac': A port map to the required logical port "sdi" of the bus abstraction "fh-joanneum.local:user:seg7_rtl:1.0" is missing.
+WARNING: [IP_Flow 19-5661] Bus Interface 'clk' does not have any bus interfaces associated with it.
+INFO: [IP_Flow 19-2181] Payment Required is not set for this core.
+INFO: [IP_Flow 19-2187] The Product Guide file is missing.
+INFO: [Ipptcl 7-1486] check_integrity: Integrity check passed.
+ipx::save_core [ipx::current_core]
+update_ip_catalog -rebuild -repo_path d:/HDL/ip_repo
+WARNING: [IP_Flow 19-1694] Ignoring duplicate Bus Definition IP file 'fh-joanneum.local:user:adc_dual:1.0' found within IP repository 'd:/HDL/ip_repo'.
+File in use: d:/HDL/ip_repo/Interfaces/adc_dual.xml
+File ignored: d:/HDL/ip_repo/Interfaces_dcd/adc_dual.xml
+WARNING: [IP_Flow 19-1694] Ignoring duplicate Bus Abstraction IP file 'fh-joanneum.local:user:adc_dual_rtl:1.0' found within IP repository 'd:/HDL/ip_repo'.
+File in use: d:/HDL/ip_repo/Interfaces/adc_dual_rtl.xml
+File ignored: d:/HDL/ip_repo/Interfaces_dcd/adc_dual_rtl.xml
+WARNING: [IP_Flow 19-1694] Ignoring duplicate Bus Definition IP file 'fh-joanneum.local:user:dac_dual:1.0' found within IP repository 'd:/HDL/ip_repo'.
+File in use: d:/HDL/ip_repo/Interfaces/dac_dual.xml
+File ignored: d:/HDL/ip_repo/Interfaces_dcd/dac_dual.xml
+WARNING: [IP_Flow 19-1694] Ignoring duplicate Bus Abstraction IP file 'fh-joanneum.local:user:dac_dual_rtl:1.0' found within IP repository 'd:/HDL/ip_repo'.
+File in use: d:/HDL/ip_repo/Interfaces/dac_dual_rtl.xml
+File ignored: d:/HDL/ip_repo/Interfaces_dcd/dac_dual_rtl.xml
+WARNING: [IP_Flow 19-1694] Ignoring duplicate Bus Definition IP file 'fh-joanneum.local:user:dma_rd_channel:1.0' found within IP repository 'd:/HDL/ip_repo'.
+File in use: d:/HDL/ip_repo/Interfaces/dma_rd_channel.xml
+File ignored: d:/HDL/ip_repo/Interfaces_dcd/dma_rd_channel.xml
+WARNING: [IP_Flow 19-1694] Ignoring duplicate Bus Abstraction IP file 'fh-joanneum.local:user:dma_rd_channel_rtl:1.0' found within IP repository 'd:/HDL/ip_repo'.
+File in use: d:/HDL/ip_repo/Interfaces/dma_rd_channel_rtl.xml
+File ignored: d:/HDL/ip_repo/Interfaces_dcd/dma_rd_channel_rtl.xml
+WARNING: [IP_Flow 19-1694] Ignoring duplicate Bus Definition IP file 'fh-joanneum.local:user:dma_wr_channel:1.0' found within IP repository 'd:/HDL/ip_repo'.
+File in use: d:/HDL/ip_repo/Interfaces/dma_wr_channel.xml
+File ignored: d:/HDL/ip_repo/Interfaces_dcd/dma_wr_channel.xml
+WARNING: [IP_Flow 19-1694] Ignoring duplicate Bus Abstraction IP file 'fh-joanneum.local:user:dma_wr_channel_rtl:1.0' found within IP repository 'd:/HDL/ip_repo'.
+File in use: d:/HDL/ip_repo/Interfaces/dma_wr_channel_rtl.xml
+File ignored: d:/HDL/ip_repo/Interfaces_dcd/dma_wr_channel_rtl.xml
+WARNING: [IP_Flow 19-1694] Ignoring duplicate Bus Definition IP file 'fh-joanneum.local:user:i2c:1.0' found within IP repository 'd:/HDL/ip_repo'.
+File in use: d:/HDL/ip_repo/Interfaces/i2c.xml
+File ignored: d:/HDL/ip_repo/Interfaces_dcd/i2c.xml
+WARNING: [IP_Flow 19-1694] Ignoring duplicate Bus Abstraction IP file 'fh-joanneum.local:user:i2c_rtl:1.0' found within IP repository 'd:/HDL/ip_repo'.
+File in use: d:/HDL/ip_repo/Interfaces/i2c_rtl.xml
+File ignored: d:/HDL/ip_repo/Interfaces_dcd/i2c_rtl.xml
+WARNING: [IP_Flow 19-1694] Ignoring duplicate Bus Definition IP file 'fh-joanneum.local:user:i2s:1.0' found within IP repository 'd:/HDL/ip_repo'.
+File in use: d:/HDL/ip_repo/Interfaces/i2s.xml
+File ignored: d:/HDL/ip_repo/Interfaces_dcd/i2s.xml
+WARNING: [IP_Flow 19-1694] Ignoring duplicate Bus Abstraction IP file 'fh-joanneum.local:user:i2s_rtl:1.0' found within IP repository 'd:/HDL/ip_repo'.
+File in use: d:/HDL/ip_repo/Interfaces/i2s_rtl.xml
+File ignored: d:/HDL/ip_repo/Interfaces_dcd/i2s_rtl.xml
+WARNING: [IP_Flow 19-1694] Ignoring duplicate Bus Definition IP file 'fh-joanneum.local:user:RGB:1.0' found within IP repository 'd:/HDL/ip_repo'.
+File in use: d:/HDL/ip_repo/Interfaces/RGB.xml
+File ignored: d:/HDL/ip_repo/Interfaces_dcd/RGB.xml
+WARNING: [IP_Flow 19-1694] Ignoring duplicate Bus Abstraction IP file 'fh-joanneum.local:user:RGB_rtl:1.0' found within IP repository 'd:/HDL/ip_repo'.
+File in use: d:/HDL/ip_repo/Interfaces/RGB_rtl.xml
+File ignored: d:/HDL/ip_repo/Interfaces_dcd/RGB_rtl.xml
+WARNING: [IP_Flow 19-1694] Ignoring duplicate Bus Definition IP file 'fh-joanneum.local:user:sbus:1.0' found within IP repository 'd:/HDL/ip_repo'.
+File in use: d:/HDL/ip_repo/Interfaces/sbus.xml
+File ignored: d:/HDL/ip_repo/Interfaces_dcd/sbus.xml
+WARNING: [IP_Flow 19-1694] Ignoring duplicate Bus Abstraction IP file 'fh-joanneum.local:user:sbus_rtl:1.0' found within IP repository 'd:/HDL/ip_repo'.
+File in use: d:/HDL/ip_repo/Interfaces/sbus_rtl.xml
+File ignored: d:/HDL/ip_repo/Interfaces_dcd/sbus_rtl.xml
+WARNING: [IP_Flow 19-1694] Ignoring duplicate Bus Definition IP file 'fh-joanneum.local:user:seg7:1.0' found within IP repository 'd:/HDL/ip_repo'.
+File in use: d:/HDL/ip_repo/Interfaces/seg7.xml
+File ignored: d:/HDL/ip_repo/Interfaces_dcd/seg7.xml
+WARNING: [IP_Flow 19-1694] Ignoring duplicate Bus Abstraction IP file 'fh-joanneum.local:user:seg7_rtl:1.0' found within IP repository 'd:/HDL/ip_repo'.
+File in use: d:/HDL/ip_repo/Interfaces/seg7_rtl.xml
+File ignored: d:/HDL/ip_repo/Interfaces_dcd/seg7_rtl.xml
+WARNING: [IP_Flow 19-1694] Ignoring duplicate Bus Definition IP file 'fh-joanneum.local:user:sig:1.0' found within IP repository 'd:/HDL/ip_repo'.
+File in use: d:/HDL/ip_repo/Interfaces/sig.xml
+File ignored: d:/HDL/ip_repo/Interfaces_dcd/sig.xml
+WARNING: [IP_Flow 19-1694] Ignoring duplicate Bus Definition IP file 'fh-joanneum.local:user:vga:1.0' found within IP repository 'd:/HDL/ip_repo'.
+File in use: d:/HDL/ip_repo/Interfaces/vga.xml
+File ignored: d:/HDL/ip_repo/Interfaces_dcd/vga.xml
+WARNING: [IP_Flow 19-1694] Ignoring duplicate Bus Abstraction IP file 'fh-joanneum.local:user:vga_rtl:1.0' found within IP repository 'd:/HDL/ip_repo'.
+File in use: d:/HDL/ip_repo/Interfaces/vga_rtl.xml
+File ignored: d:/HDL/ip_repo/Interfaces_dcd/vga_rtl.xml
+INFO: [IP_Flow 19-725] Reloaded user IP repository 'd:/HDL/ip_repo'
+WARNING: [IP_Flow 19-1663] Duplicate IP found for 'fh-joanneum.local:user:sbus_gpio:1.0'. The one found in IP location 'd:/HDL/ip_repo/sbus_gpio_lib' will take precedence over the same IP in location d:/HDL/ip_repo/sbus_gpio_lib - Kopie
+set_property core_revision 3 [ipx::current_core]
+ipx::create_xgui_files [ipx::current_core]
+ipx::update_checksums [ipx::current_core]
+ipx::check_integrity [ipx::current_core]
+WARNING: [IP_Flow 19-3480] slave: Portmap direction mismatched between component port 'dac_sclk' and definition port 'sclk'.
+WARNING: [IP_Flow 19-1965] Bus Interface 'dac': A port map to the required logical port "le" of the bus abstraction "fh-joanneum.local:user:seg7_rtl:1.0" is missing.
+WARNING: [IP_Flow 19-1965] Bus Interface 'dac': A port map to the required logical port "oe" of the bus abstraction "fh-joanneum.local:user:seg7_rtl:1.0" is missing.
+WARNING: [IP_Flow 19-1965] Bus Interface 'dac': A port map to the required logical port "sdi" of the bus abstraction "fh-joanneum.local:user:seg7_rtl:1.0" is missing.
+WARNING: [IP_Flow 19-5661] Bus Interface 'clk' does not have any bus interfaces associated with it.
+INFO: [IP_Flow 19-2181] Payment Required is not set for this core.
+INFO: [IP_Flow 19-2187] The Product Guide file is missing.
+INFO: [Ipptcl 7-1486] check_integrity: Integrity check passed.
+ipx::save_core [ipx::current_core]
+update_ip_catalog -rebuild -repo_path d:/HDL/ip_repo
+WARNING: [IP_Flow 19-1694] Ignoring duplicate Bus Definition IP file 'fh-joanneum.local:user:adc_dual:1.0' found within IP repository 'd:/HDL/ip_repo'.
+File in use: d:/HDL/ip_repo/Interfaces/adc_dual.xml
+File ignored: d:/HDL/ip_repo/Interfaces_dcd/adc_dual.xml
+WARNING: [IP_Flow 19-1694] Ignoring duplicate Bus Abstraction IP file 'fh-joanneum.local:user:adc_dual_rtl:1.0' found within IP repository 'd:/HDL/ip_repo'.
+File in use: d:/HDL/ip_repo/Interfaces/adc_dual_rtl.xml
+File ignored: d:/HDL/ip_repo/Interfaces_dcd/adc_dual_rtl.xml
+WARNING: [IP_Flow 19-1694] Ignoring duplicate Bus Definition IP file 'fh-joanneum.local:user:dac_dual:1.0' found within IP repository 'd:/HDL/ip_repo'.
+File in use: d:/HDL/ip_repo/Interfaces/dac_dual.xml
+File ignored: d:/HDL/ip_repo/Interfaces_dcd/dac_dual.xml
+WARNING: [IP_Flow 19-1694] Ignoring duplicate Bus Abstraction IP file 'fh-joanneum.local:user:dac_dual_rtl:1.0' found within IP repository 'd:/HDL/ip_repo'.
+File in use: d:/HDL/ip_repo/Interfaces/dac_dual_rtl.xml
+File ignored: d:/HDL/ip_repo/Interfaces_dcd/dac_dual_rtl.xml
+WARNING: [IP_Flow 19-1694] Ignoring duplicate Bus Definition IP file 'fh-joanneum.local:user:dma_rd_channel:1.0' found within IP repository 'd:/HDL/ip_repo'.
+File in use: d:/HDL/ip_repo/Interfaces/dma_rd_channel.xml
+File ignored: d:/HDL/ip_repo/Interfaces_dcd/dma_rd_channel.xml
+WARNING: [IP_Flow 19-1694] Ignoring duplicate Bus Abstraction IP file 'fh-joanneum.local:user:dma_rd_channel_rtl:1.0' found within IP repository 'd:/HDL/ip_repo'.
+File in use: d:/HDL/ip_repo/Interfaces/dma_rd_channel_rtl.xml
+File ignored: d:/HDL/ip_repo/Interfaces_dcd/dma_rd_channel_rtl.xml
+WARNING: [IP_Flow 19-1694] Ignoring duplicate Bus Definition IP file 'fh-joanneum.local:user:dma_wr_channel:1.0' found within IP repository 'd:/HDL/ip_repo'.
+File in use: d:/HDL/ip_repo/Interfaces/dma_wr_channel.xml
+File ignored: d:/HDL/ip_repo/Interfaces_dcd/dma_wr_channel.xml
+WARNING: [IP_Flow 19-1694] Ignoring duplicate Bus Abstraction IP file 'fh-joanneum.local:user:dma_wr_channel_rtl:1.0' found within IP repository 'd:/HDL/ip_repo'.
+File in use: d:/HDL/ip_repo/Interfaces/dma_wr_channel_rtl.xml
+File ignored: d:/HDL/ip_repo/Interfaces_dcd/dma_wr_channel_rtl.xml
+WARNING: [IP_Flow 19-1694] Ignoring duplicate Bus Definition IP file 'fh-joanneum.local:user:i2c:1.0' found within IP repository 'd:/HDL/ip_repo'.
+File in use: d:/HDL/ip_repo/Interfaces/i2c.xml
+File ignored: d:/HDL/ip_repo/Interfaces_dcd/i2c.xml
+WARNING: [IP_Flow 19-1694] Ignoring duplicate Bus Abstraction IP file 'fh-joanneum.local:user:i2c_rtl:1.0' found within IP repository 'd:/HDL/ip_repo'.
+File in use: d:/HDL/ip_repo/Interfaces/i2c_rtl.xml
+File ignored: d:/HDL/ip_repo/Interfaces_dcd/i2c_rtl.xml
+WARNING: [IP_Flow 19-1694] Ignoring duplicate Bus Definition IP file 'fh-joanneum.local:user:i2s:1.0' found within IP repository 'd:/HDL/ip_repo'.
+File in use: d:/HDL/ip_repo/Interfaces/i2s.xml
+File ignored: d:/HDL/ip_repo/Interfaces_dcd/i2s.xml
+WARNING: [IP_Flow 19-1694] Ignoring duplicate Bus Abstraction IP file 'fh-joanneum.local:user:i2s_rtl:1.0' found within IP repository 'd:/HDL/ip_repo'.
+File in use: d:/HDL/ip_repo/Interfaces/i2s_rtl.xml
+File ignored: d:/HDL/ip_repo/Interfaces_dcd/i2s_rtl.xml
+WARNING: [IP_Flow 19-1694] Ignoring duplicate Bus Definition IP file 'fh-joanneum.local:user:RGB:1.0' found within IP repository 'd:/HDL/ip_repo'.
+File in use: d:/HDL/ip_repo/Interfaces/RGB.xml
+File ignored: d:/HDL/ip_repo/Interfaces_dcd/RGB.xml
+WARNING: [IP_Flow 19-1694] Ignoring duplicate Bus Abstraction IP file 'fh-joanneum.local:user:RGB_rtl:1.0' found within IP repository 'd:/HDL/ip_repo'.
+File in use: d:/HDL/ip_repo/Interfaces/RGB_rtl.xml
+File ignored: d:/HDL/ip_repo/Interfaces_dcd/RGB_rtl.xml
+WARNING: [IP_Flow 19-1694] Ignoring duplicate Bus Definition IP file 'fh-joanneum.local:user:sbus:1.0' found within IP repository 'd:/HDL/ip_repo'.
+File in use: d:/HDL/ip_repo/Interfaces/sbus.xml
+File ignored: d:/HDL/ip_repo/Interfaces_dcd/sbus.xml
+WARNING: [IP_Flow 19-1694] Ignoring duplicate Bus Abstraction IP file 'fh-joanneum.local:user:sbus_rtl:1.0' found within IP repository 'd:/HDL/ip_repo'.
+File in use: d:/HDL/ip_repo/Interfaces/sbus_rtl.xml
+File ignored: d:/HDL/ip_repo/Interfaces_dcd/sbus_rtl.xml
+WARNING: [IP_Flow 19-1694] Ignoring duplicate Bus Definition IP file 'fh-joanneum.local:user:seg7:1.0' found within IP repository 'd:/HDL/ip_repo'.
+File in use: d:/HDL/ip_repo/Interfaces/seg7.xml
+File ignored: d:/HDL/ip_repo/Interfaces_dcd/seg7.xml
+WARNING: [IP_Flow 19-1694] Ignoring duplicate Bus Abstraction IP file 'fh-joanneum.local:user:seg7_rtl:1.0' found within IP repository 'd:/HDL/ip_repo'.
+File in use: d:/HDL/ip_repo/Interfaces/seg7_rtl.xml
+File ignored: d:/HDL/ip_repo/Interfaces_dcd/seg7_rtl.xml
+WARNING: [IP_Flow 19-1694] Ignoring duplicate Bus Definition IP file 'fh-joanneum.local:user:sig:1.0' found within IP repository 'd:/HDL/ip_repo'.
+File in use: d:/HDL/ip_repo/Interfaces/sig.xml
+File ignored: d:/HDL/ip_repo/Interfaces_dcd/sig.xml
+WARNING: [IP_Flow 19-1694] Ignoring duplicate Bus Definition IP file 'fh-joanneum.local:user:vga:1.0' found within IP repository 'd:/HDL/ip_repo'.
+File in use: d:/HDL/ip_repo/Interfaces/vga.xml
+File ignored: d:/HDL/ip_repo/Interfaces_dcd/vga.xml
+WARNING: [IP_Flow 19-1694] Ignoring duplicate Bus Abstraction IP file 'fh-joanneum.local:user:vga_rtl:1.0' found within IP repository 'd:/HDL/ip_repo'.
+File in use: d:/HDL/ip_repo/Interfaces/vga_rtl.xml
+File ignored: d:/HDL/ip_repo/Interfaces_dcd/vga_rtl.xml
+INFO: [IP_Flow 19-725] Reloaded user IP repository 'd:/HDL/ip_repo'
+WARNING: [IP_Flow 19-1663] Duplicate IP found for 'fh-joanneum.local:user:sbus_gpio:1.0'. The one found in IP location 'd:/HDL/ip_repo/sbus_gpio_lib' will take precedence over the same IP in location d:/HDL/ip_repo/sbus_gpio_lib - Kopie
+exit
+INFO: [Common 17-206] Exiting Vivado at Wed Jun 15 14:03:50 2022...

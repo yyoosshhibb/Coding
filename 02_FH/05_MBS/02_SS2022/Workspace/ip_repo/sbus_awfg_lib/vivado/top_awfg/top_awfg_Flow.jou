@@ -1,0 +1,33 @@
+#-----------------------------------------------------------
+# Vivado v2021.2 (64-bit)
+# SW Build 3367213 on Tue Oct 19 02:48:09 MDT 2021
+# IP Build 3369179 on Thu Oct 21 08:25:16 MDT 2021
+# Start of session at: Wed Jun 15 13:57:19 2022
+# Process ID: 34892
+# Current directory: D:/HDL/ip_repo/sbus_awfg_lib/vivado/top_awfg
+# Command line: vivado.exe -mode gui -journal ./top_awfg_Flow.jou -log ./top_awfg_Flow.log -source ./HDS_Scripts/top_awfg_Flow.tcl
+# Log file: D:/HDL/ip_repo/sbus_awfg_lib/vivado/top_awfg/./top_awfg_Flow.log
+# Journal file: D:/HDL/ip_repo/sbus_awfg_lib/vivado/top_awfg\./top_awfg_Flow.jou
+# Running On: M00443, OS: Windows, CPU Frequency: 2592 MHz, CPU Physical cores: 6, Host memory: 34046 MB
+#-----------------------------------------------------------
+start_gui
+source ./HDS_Scripts/top_awfg_Flow.tcl
+update_compile_order -fileset sources_1
+ipx::package_project -root_dir d:/hdl/ip_repo/sbus_awfg_lib -vendor fh-joanneum.local -library user -taxonomy /UserIP -force
+set_property name sbus_awfg [ipx::current_core]
+set_property display_name sbus_awfg [ipx::current_core]
+set_property description sbus_awfg [ipx::current_core]
+set_property name dac_dual [ipx::get_bus_interfaces user_dac_dual -of_objects [ipx::current_core]]
+set_property name sbus_slv [ipx::get_bus_interfaces user_sbus -of_objects [ipx::current_core]]
+set_property core_revision 2 [ipx::current_core]
+ipx::create_xgui_files [ipx::current_core]
+ipx::update_checksums [ipx::current_core]
+ipx::check_integrity [ipx::current_core]
+ipx::save_core [ipx::current_core]
+update_ip_catalog -rebuild -repo_path d:/HDL/ip_repo
+set_property core_revision 3 [ipx::current_core]
+ipx::create_xgui_files [ipx::current_core]
+ipx::update_checksums [ipx::current_core]
+ipx::check_integrity [ipx::current_core]
+ipx::save_core [ipx::current_core]
+update_ip_catalog -rebuild -repo_path d:/HDL/ip_repo

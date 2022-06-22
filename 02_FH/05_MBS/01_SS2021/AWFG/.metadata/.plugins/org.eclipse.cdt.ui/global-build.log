@@ -1,0 +1,368 @@
+13:32:21 **** Build of project AWFG_bsp ****
+make -k all 
+"Running Make include in ps7_cortexa9_0/libsrc/axidma_v9_7/src"
+make -C ps7_cortexa9_0/libsrc/axidma_v9_7/src -s include  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Running Make include in ps7_cortexa9_0/libsrc/coresightps_dcc_v1_4/src"
+make -C ps7_cortexa9_0/libsrc/coresightps_dcc_v1_4/src -s include  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Running Make include in ps7_cortexa9_0/libsrc/cpu_cortexa9_v2_6/src"
+make -C ps7_cortexa9_0/libsrc/cpu_cortexa9_v2_6/src -s include  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Running Make include in ps7_cortexa9_0/libsrc/ddrps_v1_0/src"
+make -C ps7_cortexa9_0/libsrc/ddrps_v1_0/src -s include  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Running Make include in ps7_cortexa9_0/libsrc/devcfg_v3_5/src"
+make -C ps7_cortexa9_0/libsrc/devcfg_v3_5/src -s include  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Running Make include in ps7_cortexa9_0/libsrc/dmaps_v2_3/src"
+make -C ps7_cortexa9_0/libsrc/dmaps_v2_3/src -s include  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Running Make include in ps7_cortexa9_0/libsrc/emacps_v3_7/src"
+make -C ps7_cortexa9_0/libsrc/emacps_v3_7/src -s include  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Running Make include in ps7_cortexa9_0/libsrc/gpio_v4_3/src"
+make -C ps7_cortexa9_0/libsrc/gpio_v4_3/src -s include  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Running Make include in ps7_cortexa9_0/libsrc/gpiops_v3_3/src"
+make -C ps7_cortexa9_0/libsrc/gpiops_v3_3/src -s include  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Running Make include in ps7_cortexa9_0/libsrc/qspips_v3_4/src"
+make -C ps7_cortexa9_0/libsrc/qspips_v3_4/src -s include  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Running Make include in ps7_cortexa9_0/libsrc/scugic_v3_9/src"
+make -C ps7_cortexa9_0/libsrc/scugic_v3_9/src -s include  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Running Make include in ps7_cortexa9_0/libsrc/scutimer_v2_1/src"
+make -C ps7_cortexa9_0/libsrc/scutimer_v2_1/src -s include  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Running Make include in ps7_cortexa9_0/libsrc/scuwdt_v2_1/src"
+make -C ps7_cortexa9_0/libsrc/scuwdt_v2_1/src -s include  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Running Make include in ps7_cortexa9_0/libsrc/sdps_v3_5/src"
+make -C ps7_cortexa9_0/libsrc/sdps_v3_5/src -s include  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Running Make include in ps7_cortexa9_0/libsrc/standalone_v6_7/src"
+make -C ps7_cortexa9_0/libsrc/standalone_v6_7/src -s include  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Running Make include in ps7_cortexa9_0/libsrc/ttcps_v3_6/src"
+make -C ps7_cortexa9_0/libsrc/ttcps_v3_6/src -s include  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Running Make include in ps7_cortexa9_0/libsrc/uartlite_v3_2/src"
+make -C ps7_cortexa9_0/libsrc/uartlite_v3_2/src -s include  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Running Make include in ps7_cortexa9_0/libsrc/uartps_v3_6/src"
+make -C ps7_cortexa9_0/libsrc/uartps_v3_6/src -s include  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Running Make include in ps7_cortexa9_0/libsrc/usbps_v2_4/src"
+make -C ps7_cortexa9_0/libsrc/usbps_v2_4/src -s include  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Running Make include in ps7_cortexa9_0/libsrc/xadcps_v2_2/src"
+make -C ps7_cortexa9_0/libsrc/xadcps_v2_2/src -s include  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Running Make libs in ps7_cortexa9_0/libsrc/axidma_v9_7/src"
+make -C ps7_cortexa9_0/libsrc/axidma_v9_7/src -s libs  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Compiling axidma"
+arm-none-eabi-ar: creating ../../../lib/libxil.a
+"Running Make libs in ps7_cortexa9_0/libsrc/coresightps_dcc_v1_4/src"
+make -C ps7_cortexa9_0/libsrc/coresightps_dcc_v1_4/src -s libs  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Compiling coresightps_dcc"
+"Running Make libs in ps7_cortexa9_0/libsrc/cpu_cortexa9_v2_6/src"
+make -C ps7_cortexa9_0/libsrc/cpu_cortexa9_v2_6/src -s libs  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Compiling cpu_cortexa9"
+"Running Make libs in ps7_cortexa9_0/libsrc/ddrps_v1_0/src"
+make -C ps7_cortexa9_0/libsrc/ddrps_v1_0/src -s libs  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Compiling ddrps"
+"Running Make libs in ps7_cortexa9_0/libsrc/devcfg_v3_5/src"
+make -C ps7_cortexa9_0/libsrc/devcfg_v3_5/src -s libs  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Compiling devcfg"
+"Running Make libs in ps7_cortexa9_0/libsrc/dmaps_v2_3/src"
+make -C ps7_cortexa9_0/libsrc/dmaps_v2_3/src -s libs  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Compiling dmaps"
+"Running Make libs in ps7_cortexa9_0/libsrc/emacps_v3_7/src"
+make -C ps7_cortexa9_0/libsrc/emacps_v3_7/src -s libs  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Compiling emacps"
+"Running Make libs in ps7_cortexa9_0/libsrc/gpio_v4_3/src"
+make -C ps7_cortexa9_0/libsrc/gpio_v4_3/src -s libs  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Compiling gpio"
+"Running Make libs in ps7_cortexa9_0/libsrc/gpiops_v3_3/src"
+make -C ps7_cortexa9_0/libsrc/gpiops_v3_3/src -s libs  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Compiling gpiops"
+"Running Make libs in ps7_cortexa9_0/libsrc/qspips_v3_4/src"
+make -C ps7_cortexa9_0/libsrc/qspips_v3_4/src -s libs  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Compiling qspips"
+"Running Make libs in ps7_cortexa9_0/libsrc/scugic_v3_9/src"
+make -C ps7_cortexa9_0/libsrc/scugic_v3_9/src -s libs  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Compiling scugic"
+"Running Make libs in ps7_cortexa9_0/libsrc/scutimer_v2_1/src"
+make -C ps7_cortexa9_0/libsrc/scutimer_v2_1/src -s libs  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Compiling scutimer"
+"Running Make libs in ps7_cortexa9_0/libsrc/scuwdt_v2_1/src"
+make -C ps7_cortexa9_0/libsrc/scuwdt_v2_1/src -s libs  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Compiling scuwdt"
+"Running Make libs in ps7_cortexa9_0/libsrc/sdps_v3_5/src"
+make -C ps7_cortexa9_0/libsrc/sdps_v3_5/src -s libs  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Compiling sdps"
+"Running Make libs in ps7_cortexa9_0/libsrc/standalone_v6_7/src"
+make -C ps7_cortexa9_0/libsrc/standalone_v6_7/src -s libs  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Compiling standalone"
+In file included from sleep.c:57:0:
+xtime_l.h:89:9: note: #pragma message: For the sleep routines, Global timer is being used
+ #pragma message ("For the sleep routines, Global timer is being used")
+         ^~~~~~~
+In file included from usleep.c:60:0:
+xtime_l.h:89:9: note: #pragma message: For the sleep routines, Global timer is being used
+ #pragma message ("For the sleep routines, Global timer is being used")
+         ^~~~~~~
+In file included from xil_sleeptimer.c:55:0:
+xtime_l.h:89:9: note: #pragma message: For the sleep routines, Global timer is being used
+ #pragma message ("For the sleep routines, Global timer is being used")
+         ^~~~~~~
+In file included from xtime_l.c:53:0:
+xtime_l.h:89:9: note: #pragma message: For the sleep routines, Global timer is being used
+ #pragma message ("For the sleep routines, Global timer is being used")
+         ^~~~~~~
+"Running Make libs in ps7_cortexa9_0/libsrc/ttcps_v3_6/src"
+make -C ps7_cortexa9_0/libsrc/ttcps_v3_6/src -s libs  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Compiling ttcps"
+"Running Make libs in ps7_cortexa9_0/libsrc/uartlite_v3_2/src"
+make -C ps7_cortexa9_0/libsrc/uartlite_v3_2/src -s libs  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Compiling uartlite"
+"Running Make libs in ps7_cortexa9_0/libsrc/uartps_v3_6/src"
+make -C ps7_cortexa9_0/libsrc/uartps_v3_6/src -s libs  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Compiling uartps"
+"Running Make libs in ps7_cortexa9_0/libsrc/usbps_v2_4/src"
+make -C ps7_cortexa9_0/libsrc/usbps_v2_4/src -s libs  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Compiling usbps"
+"Running Make libs in ps7_cortexa9_0/libsrc/xadcps_v2_2/src"
+make -C ps7_cortexa9_0/libsrc/xadcps_v2_2/src -s libs  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Compiling xadcps"
+'Finished building libraries'
+
+**** Build of configuration Debug for project AWFG ****
+
+Nothing to build for project AWFG
+13:36:50 **** Auto Build of configuration Debug for project AWFG ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/StaticModel_cg.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/StaticModel_cg.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../AWFG_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/StaticModel_cg.d" -MT"src/StaticModel_cg.o" -o "src/StaticModel_cg.o" "../src/StaticModel_cg.c"
+../src/StaticModel_cg.c:25:17: warning: initialization makes pointer from integer without a cast [-Wint-conversion]
+ int32_T *bp_i = 0x00002000;
+                 ^~~~~~~~~~
+../src/StaticModel_cg.c:26:15: warning: initialization makes pointer from integer without a cast [-Wint-conversion]
+ int32_T *c0 = 0x00002004;
+               ^~~~~~~~~~
+../src/StaticModel_cg.c:27:15: warning: initialization makes pointer from integer without a cast [-Wint-conversion]
+ int32_T *c1 = 0x00002008;
+               ^~~~~~~~~~
+../src/StaticModel_cg.c:28:15: warning: initialization makes pointer from integer without a cast [-Wint-conversion]
+ int32_T *c2 = 0x0000200C;
+               ^~~~~~~~~~
+../src/StaticModel_cg.c:29:15: warning: initialization makes pointer from integer without a cast [-Wint-conversion]
+ int32_T *c3 = 0x00002010;
+               ^~~~~~~~~~
+../src/StaticModel_cg.c:30:21: warning: initialization makes pointer from integer without a cast [-Wint-conversion]
+ int32_T *m_points = 0x00002014;
+                     ^~~~~~~~~~
+../src/StaticModel_cg.c:31:20: warning: initialization makes pointer from integer without a cast [-Wint-conversion]
+ int32_T *n_order = 0x00002018;
+                    ^~~~~~~~~~
+'Finished building: ../src/StaticModel_cg.c'
+' '
+'Building file: ../src/StaticModel_cg_data.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/StaticModel_cg_data.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../AWFG_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/StaticModel_cg_data.d" -MT"src/StaticModel_cg_data.o" -o "src/StaticModel_cg_data.o" "../src/StaticModel_cg_data.c"
+'Finished building: ../src/StaticModel_cg_data.c'
+' '
+'Building file: ../src/ert_main.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/ert_main.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../AWFG_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/ert_main.d" -MT"src/ert_main.o" -o "src/ert_main.o" "../src/ert_main.c"
+'Finished building: ../src/ert_main.c'
+' '
+'Building file: ../src/rtGetInf.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/rtGetInf.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../AWFG_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/rtGetInf.d" -MT"src/rtGetInf.o" -o "src/rtGetInf.o" "../src/rtGetInf.c"
+'Finished building: ../src/rtGetInf.c'
+' '
+'Building file: ../src/rtGetNaN.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/rtGetNaN.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../AWFG_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/rtGetNaN.d" -MT"src/rtGetNaN.o" -o "src/rtGetNaN.o" "../src/rtGetNaN.c"
+'Finished building: ../src/rtGetNaN.c'
+' '
+'Building file: ../src/rt_nonfinite.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/rt_nonfinite.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../AWFG_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/rt_nonfinite.d" -MT"src/rt_nonfinite.o" -o "src/rt_nonfinite.o" "../src/rt_nonfinite.c"
+'Finished building: ../src/rt_nonfinite.c'
+' '
+'Building target: AWFG.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../AWFG_bsp/ps7_cortexa9_0/lib -o "AWFG.elf"  ./src/StaticModel_cg.o ./src/StaticModel_cg_data.o ./src/ert_main.o ./src/rtGetInf.o ./src/rtGetNaN.o ./src/rt_nonfinite.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+./src/StaticModel_cg.o: In function `StaticModel_cg_step':
+C:\Users\Yoshi\Documents\GitHub\Software\02_FH\05_MBS\AWFG\AWFG\Debug/../src/StaticModel_cg.c:181: undefined reference to `floor'
+C:\Users\Yoshi\Documents\GitHub\Software\02_FH\05_MBS\AWFG\AWFG\Debug/../src/StaticModel_cg.c:185: undefined reference to `fmod'
+C:\Users\Yoshi\Documents\GitHub\Software\02_FH\05_MBS\AWFG\AWFG\Debug/../src/StaticModel_cg.c:197: undefined reference to `floor'
+C:\Users\Yoshi\Documents\GitHub\Software\02_FH\05_MBS\AWFG\AWFG\Debug/../src/StaticModel_cg.c:201: undefined reference to `fmod'
+C:\Users\Yoshi\Documents\GitHub\Software\02_FH\05_MBS\AWFG\AWFG\Debug/../src/StaticModel_cg.c:213: undefined reference to `floor'
+C:\Users\Yoshi\Documents\GitHub\Software\02_FH\05_MBS\AWFG\AWFG\Debug/../src/StaticModel_cg.c:217: undefined reference to `fmod'
+C:\Users\Yoshi\Documents\GitHub\Software\02_FH\05_MBS\AWFG\AWFG\Debug/../src/StaticModel_cg.c:229: undefined reference to `floor'
+C:\Users\Yoshi\Documents\GitHub\Software\02_FH\05_MBS\AWFG\AWFG\Debug/../src/StaticModel_cg.c:233: undefined reference to `fmod'
+collect2.exe: error: ld returned 1 exit status
+make: *** [AWFG.elf] Fehler 1
+13:36:55 **** Auto Build of configuration Debug for project AWFG ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building target: AWFG.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../AWFG_bsp/ps7_cortexa9_0/lib -o "AWFG.elf"  ./src/StaticModel_cg.o ./src/StaticModel_cg_data.o ./src/ert_main.o ./src/rtGetInf.o ./src/rtGetNaN.o ./src/rt_nonfinite.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+./src/StaticModel_cg.o: In function `StaticModel_cg_step':
+C:\Users\Yoshi\Documents\GitHub\Software\02_FH\05_MBS\AWFG\AWFG\Debug/../src/StaticModel_cg.c:181: undefined reference to `floor'
+C:\Users\Yoshi\Documents\GitHub\Software\02_FH\05_MBS\AWFG\AWFG\Debug/../src/StaticModel_cg.c:185: undefined reference to `fmod'
+C:\Users\Yoshi\Documents\GitHub\Software\02_FH\05_MBS\AWFG\AWFG\Debug/../src/StaticModel_cg.c:197: undefined reference to `floor'
+C:\Users\Yoshi\Documents\GitHub\Software\02_FH\05_MBS\AWFG\AWFG\Debug/../src/StaticModel_cg.c:201: undefined reference to `fmod'
+C:\Users\Yoshi\Documents\GitHub\Software\02_FH\05_MBS\AWFG\AWFG\Debug/../src/StaticModel_cg.c:213: undefined reference to `floor'
+C:\Users\Yoshi\Documents\GitHub\Software\02_FH\05_MBS\AWFG\AWFG\Debug/../src/StaticModel_cg.c:217: undefined reference to `fmod'
+C:\Users\Yoshi\Documents\GitHub\Software\02_FH\05_MBS\AWFG\AWFG\Debug/../src/StaticModel_cg.c:229: undefined reference to `floor'
+C:\Users\Yoshi\Documents\GitHub\Software\02_FH\05_MBS\AWFG\AWFG\Debug/../src/StaticModel_cg.c:233: undefined reference to `fmod'
+collect2.exe: error: ld returned 1 exit status
+make: *** [AWFG.elf] Fehler 1
+13:38:08 **** Auto Build of configuration Debug for project AWFG ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/ert_main.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/ert_main.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../AWFG_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/ert_main.d" -MT"src/ert_main.o" -o "src/ert_main.o" "../src/ert_main.c"
+'Finished building: ../src/ert_main.c'
+' '
+'Building target: AWFG.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../AWFG_bsp/ps7_cortexa9_0/lib -o "AWFG.elf"  ./src/StaticModel_cg.o ./src/StaticModel_cg_data.o ./src/ert_main.o ./src/rtGetInf.o ./src/rtGetNaN.o ./src/rt_nonfinite.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+./src/StaticModel_cg.o: In function `StaticModel_cg_step':
+C:\Users\Yoshi\Documents\GitHub\Software\02_FH\05_MBS\AWFG\AWFG\Debug/../src/StaticModel_cg.c:181: undefined reference to `floor'
+C:\Users\Yoshi\Documents\GitHub\Software\02_FH\05_MBS\AWFG\AWFG\Debug/../src/StaticModel_cg.c:185: undefined reference to `fmod'
+C:\Users\Yoshi\Documents\GitHub\Software\02_FH\05_MBS\AWFG\AWFG\Debug/../src/StaticModel_cg.c:197: undefined reference to `floor'
+C:\Users\Yoshi\Documents\GitHub\Software\02_FH\05_MBS\AWFG\AWFG\Debug/../src/StaticModel_cg.c:201: undefined reference to `fmod'
+C:\Users\Yoshi\Documents\GitHub\Software\02_FH\05_MBS\AWFG\AWFG\Debug/../src/StaticModel_cg.c:213: undefined reference to `floor'
+C:\Users\Yoshi\Documents\GitHub\Software\02_FH\05_MBS\AWFG\AWFG\Debug/../src/StaticModel_cg.c:217: undefined reference to `fmod'
+C:\Users\Yoshi\Documents\GitHub\Software\02_FH\05_MBS\AWFG\AWFG\Debug/../src/StaticModel_cg.c:229: undefined reference to `floor'
+C:\Users\Yoshi\Documents\GitHub\Software\02_FH\05_MBS\AWFG\AWFG\Debug/../src/StaticModel_cg.c:233: undefined reference to `fmod'
+collect2.exe: error: ld returned 1 exit status
+make: *** [AWFG.elf] Fehler 1
+13:38:54 **** Auto Build of configuration Debug for project AWFG ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/ert_main.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/ert_main.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../AWFG_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/ert_main.d" -MT"src/ert_main.o" -o "src/ert_main.o" "../src/ert_main.c"
+../src/ert_main.c: In function 'main':
+../src/ert_main.c:98:5: warning: "/*" within comment [-Wcomment]
+     /*  Perform application tasks here */
+      
+../src/ert_main.c: At top level:
+../src/ert_main.c:102:3: warning: "/*" within comment [-Wcomment]
+   /* Disable rt_OneStep here */
+    
+../src/ert_main.c:104:3: warning: data definition has no type or storage class
+   StaticModel_cg_terminate();
+   ^~~~~~~~~~~~~~~~~~~~~~~~
+../src/ert_main.c:104:3: warning: type defaults to 'int' in declaration of 'StaticModel_cg_terminate' [-Wimplicit-int]
+../src/ert_main.c:104:3: error: conflicting types for 'StaticModel_cg_terminate'
+In file included from ../src/ert_main.c:22:0:
+../src/StaticModel_cg.h:76:13: note: previous declaration of 'StaticModel_cg_terminate' was here
+ extern void StaticModel_cg_terminate(void);
+             ^~~~~~~~~~~~~~~~~~~~~~~~
+../src/ert_main.c:105:3: error: expected identifier or '(' before 'return'
+   return 0;
+   ^~~~~~
+../src/ert_main.c:106:1: error: expected identifier or '(' before '}' token
+ }
+ ^
+make: *** [src/ert_main.o] Fehler 1
+13:41:19 **** Incremental Build of configuration Debug for project AWFG ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/ert_main.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/ert_main.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../AWFG_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/ert_main.d" -MT"src/ert_main.o" -o "src/ert_main.o" "../src/ert_main.c"
+'Finished building: ../src/ert_main.c'
+' '
+'Building target: AWFG.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../AWFG_bsp/ps7_cortexa9_0/lib -o "AWFG.elf"  ./src/StaticModel_cg.o ./src/StaticModel_cg_data.o ./src/ert_main.o ./src/rtGetInf.o ./src/rtGetNaN.o ./src/rt_nonfinite.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+./src/StaticModel_cg.o: In function `StaticModel_cg_step':
+C:\Users\Yoshi\Documents\GitHub\Software\02_FH\05_MBS\AWFG\AWFG\Debug/../src/StaticModel_cg.c:181: undefined reference to `floor'
+C:\Users\Yoshi\Documents\GitHub\Software\02_FH\05_MBS\AWFG\AWFG\Debug/../src/StaticModel_cg.c:185: undefined reference to `fmod'
+C:\Users\Yoshi\Documents\GitHub\Software\02_FH\05_MBS\AWFG\AWFG\Debug/../src/StaticModel_cg.c:197: undefined reference to `floor'
+C:\Users\Yoshi\Documents\GitHub\Software\02_FH\05_MBS\AWFG\AWFG\Debug/../src/StaticModel_cg.c:201: undefined reference to `fmod'
+C:\Users\Yoshi\Documents\GitHub\Software\02_FH\05_MBS\AWFG\AWFG\Debug/../src/StaticModel_cg.c:213: undefined reference to `floor'
+C:\Users\Yoshi\Documents\GitHub\Software\02_FH\05_MBS\AWFG\AWFG\Debug/../src/StaticModel_cg.c:217: undefined reference to `fmod'
+C:\Users\Yoshi\Documents\GitHub\Software\02_FH\05_MBS\AWFG\AWFG\Debug/../src/StaticModel_cg.c:229: undefined reference to `floor'
+C:\Users\Yoshi\Documents\GitHub\Software\02_FH\05_MBS\AWFG\AWFG\Debug/../src/StaticModel_cg.c:233: undefined reference to `fmod'
+collect2.exe: error: ld returned 1 exit status
+make: *** [AWFG.elf] Fehler 1
+13:45:46 **** Clean-only build of configuration Debug for project AWFG ****
+make clean 
+rm -rf  ./src/StaticModel_cg.o ./src/StaticModel_cg_data.o ./src/ert_main.o ./src/rtGetInf.o ./src/rtGetNaN.o ./src/rt_nonfinite.o  ./src/StaticModel_cg.d ./src/StaticModel_cg_data.d ./src/ert_main.d ./src/rtGetInf.d ./src/rtGetNaN.d ./src/rt_nonfinite.d  AWFG.elf.size  AWFG.elf
+' '
+13:45:46 **** Auto Build of configuration Debug for project AWFG ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/StaticModel_cg.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/StaticModel_cg.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../AWFG_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/StaticModel_cg.d" -MT"src/StaticModel_cg.o" -o "src/StaticModel_cg.o" "../src/StaticModel_cg.c"
+../src/StaticModel_cg.c:25:17: warning: initialization makes pointer from integer without a cast [-Wint-conversion]
+ int32_T *bp_i = 0x00002000;
+                 ^~~~~~~~~~
+../src/StaticModel_cg.c:26:15: warning: initialization makes pointer from integer without a cast [-Wint-conversion]
+ int32_T *c0 = 0x00002004;
+               ^~~~~~~~~~
+../src/StaticModel_cg.c:27:15: warning: initialization makes pointer from integer without a cast [-Wint-conversion]
+ int32_T *c1 = 0x00002008;
+               ^~~~~~~~~~
+../src/StaticModel_cg.c:28:15: warning: initialization makes pointer from integer without a cast [-Wint-conversion]
+ int32_T *c2 = 0x0000200C;
+               ^~~~~~~~~~
+../src/StaticModel_cg.c:29:15: warning: initialization makes pointer from integer without a cast [-Wint-conversion]
+ int32_T *c3 = 0x00002010;
+               ^~~~~~~~~~
+../src/StaticModel_cg.c:30:21: warning: initialization makes pointer from integer without a cast [-Wint-conversion]
+ int32_T *m_points = 0x00002014;
+                     ^~~~~~~~~~
+../src/StaticModel_cg.c:31:20: warning: initialization makes pointer from integer without a cast [-Wint-conversion]
+ int32_T *n_order = 0x00002018;
+                    ^~~~~~~~~~
+'Finished building: ../src/StaticModel_cg.c'
+' '
+'Building file: ../src/StaticModel_cg_data.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/StaticModel_cg_data.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../AWFG_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/StaticModel_cg_data.d" -MT"src/StaticModel_cg_data.o" -o "src/StaticModel_cg_data.o" "../src/StaticModel_cg_data.c"
+'Finished building: ../src/StaticModel_cg_data.c'
+' '
+'Building file: ../src/ert_main.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/ert_main.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../AWFG_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/ert_main.d" -MT"src/ert_main.o" -o "src/ert_main.o" "../src/ert_main.c"
+'Finished building: ../src/ert_main.c'
+' '
+'Building file: ../src/rtGetInf.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/rtGetInf.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../AWFG_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/rtGetInf.d" -MT"src/rtGetInf.o" -o "src/rtGetInf.o" "../src/rtGetInf.c"
+'Finished building: ../src/rtGetInf.c'
+' '
+'Building file: ../src/rtGetNaN.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/rtGetNaN.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../AWFG_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/rtGetNaN.d" -MT"src/rtGetNaN.o" -o "src/rtGetNaN.o" "../src/rtGetNaN.c"
+'Finished building: ../src/rtGetNaN.c'
+' '
+'Building file: ../src/rt_nonfinite.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/rt_nonfinite.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../AWFG_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/rt_nonfinite.d" -MT"src/rt_nonfinite.o" -o "src/rt_nonfinite.o" "../src/rt_nonfinite.c"
+'Finished building: ../src/rt_nonfinite.c'
+' '
+'Building target: AWFG.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../AWFG_bsp/ps7_cortexa9_0/lib -o "AWFG.elf"  ./src/StaticModel_cg.o ./src/StaticModel_cg_data.o ./src/ert_main.o ./src/rtGetInf.o ./src/rtGetNaN.o ./src/rt_nonfinite.o   -lm -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: AWFG.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size AWFG.elf  |tee "AWFG.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  25308	   1176	  22776	  49260	   c06c	AWFG.elf
+'Finished building: AWFG.elf.size'
+' '
+13:47:12 **** Incremental Build of configuration Debug for project AWFG ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+make: Für das Ziel »main-build« ist nichts zu tun.
+13:51:31 **** Incremental Build of configuration Debug for project AWFG ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+make: Für das Ziel »main-build« ist nichts zu tun.

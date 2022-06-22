@@ -1,8 +1,8 @@
 /*
  **
- ** pinmux_config.c source file generated on January 16, 2015 at 11:37:14.	
+ ** Source file generated on Juni 2, 2022 at 08:49:43.	
  **
- ** Copyright (C) 2000-2015 Analog Devices Inc., All Rights Reserved.
+ ** Copyright (C) 2011-2022 Analog Devices Inc., All Rights Reserved.
  **
  ** This file is generated automatically based upon the options selected in 
  ** the Pin Multiplexing configuration editor. Changes to the Pin Multiplexing

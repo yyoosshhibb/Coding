@@ -19,6 +19,8 @@ to the terms of the associated Analog Devices License Agreement.
 
 
 #include "AudioCallback.h"
+#include "math.h"
+#include "complex.h"
 
 /* ADI initialization header */
 #include "system/adi_initialize.h"
@@ -122,6 +124,11 @@ void gpioCallback(ADI_GPIO_PIN_INTERRUPT ePinInt, uint32_t Data, void *pCBParam)
 }
 
 
+complex_fract16 input_buffer[FFT_LEN*2];		//2 times of FFT_LEN; 1 buffer for calculation, 1 buffer for sampling
+complex_fract16 input_buffer_save[FFT_LEN*2];
+complex_fract16 spectral_power[FFT_LEN/2];
+
+
 int main(void)
 {
 	ADI_ADAU1761_RESULT result;
@@ -136,11 +143,50 @@ int main(void)
 
     adi_initComponents(); /* auto-generated code */
 
-    printf("\n\nPress push button 1 (PB1) on the ADSP-BF706 EZ-Kit Mini to start sampling\n");
+    //printf("\n\nPress push button 1 (PB1) on the ADSP-BF706 EZ-Kit Mini to start sampling\n");
 
     /* push button setup */
     GpioSetup();
     Init_LEDs();
+
+#if FFT_SIM
+    int i, j;
+
+	for(j=500;j<12000;j+=500){		//Stimulate input_buffer with different sine waves
+		for(i=0;i<FFT_LEN;i++){
+			//input_buffer[i].re=i;	//to test the scrambling
+			input_buffer[i].re=32767*sinf(2*PI*j*i/F_SAMPLE);	//stimulate input with sinus
+			input_buffer[i].im=0;
+			//input_buffer_save[i].re = input_buffer[i].re;
+			//input_buffer_save[i].im = input_buffer[i].im;
+
+		}
+
+
+		//zero padded input data
+	    /*
+		for(j=500;j<12000;j+=500){		//Stimulate input_buffer with different sine waves
+			for(i=0;i<FFT_LEN;i++){
+				if(i<FFT_LEN/4)
+				{
+					input_buffer[i].re=32767*sinf(2*PI*j*i/F_SAMPLE);	//stimulate input with sinus
+					input_buffer[i].im=0;
+				}
+				else
+				{
+					input_buffer[i].re=0;	//stimulate input with sinus
+					input_buffer[i].im=0;
+				}
+			}
+			*/
+
+
+		Scramble_data(input_buffer,FFT_LEN);
+		FFT(input_buffer,FFT_LEN);
+		Get_Power_Spec(input_buffer, spectral_power, FFT_LEN);
+		//max_power = Get_Max(power_spec, &frequ_pos, FFT_LEN);		//show Veff
+	}
+#endif
 
     /* configure the codec driver */
     CodecSetup();

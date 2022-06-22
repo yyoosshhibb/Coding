@@ -1,0 +1,50 @@
+vhdl axi_sbus_bridge  \
+"../../../bd/system/ipshared/e78a/hdl/S00_AXI.vhd" \
+"../../../bd/system/ipshared/e78a/hdl/busdef_pkg.vhd" \
+"../../../bd/system/ipshared/e78a/hdl/busdef_pkg_body.vhd" \
+"../../../bd/system/ipshared/e78a/hdl/cnt_modulus_c_rtl.vhd" \
+"../../../bd/system/ipshared/e78a/hdl/cnt_modulus_rtl.vhd" \
+"../../../bd/system/ipshared/e78a/hdl/register_array_rtl.vhd" \
+"../../../bd/system/ipshared/e78a/hdl/sbus_mux5_rtl.vhd" \
+"../../../bd/system/ipshared/e78a/hdl/top_axi_sbus_bridge_struct.vhd" \
+
+vhdl xil_defaultlib  \
+"../../../bd/system/ip/system_axi_sbus_bridge_0_0/sim/system_axi_sbus_bridge_0_0.vhd" \
+"../../../bd/system/ip/system_axi_smc_0/bd_0/ip/ip_1/sim/bd_44e3_psr_aclk_0.vhd" \
+"../../../bd/system/ip/system_rst_ps7_0_100M_0/sim/system_rst_ps7_0_100M_0.vhd" \
+
+vhdl sbus_awfg_lib  \
+"../../../bd/system/ipshared/b92f/hdl/FPGA_pkg.vhd" \
+"../../../bd/system/ipshared/b92f/hdl/FPGA.vhd" \
+"../../../bd/system/ipshared/b92f/hdl/bus_bridge_16_fsm.vhd" \
+"../../../bd/system/ipshared/b92f/hdl/buscmd_b16_filesel_fsm.vhd" \
+"../../../bd/system/ipshared/b92f/hdl/cnt_modulus_rtl.vhd" \
+"../../../bd/system/ipshared/b92f/hdl/comp_timer_rtl.vhd" \
+"../../../bd/system/ipshared/b92f/hdl/dac_ctrl_fsm.vhd" \
+
+vhdl2008 sbus_awfg_lib  \
+"../../../bd/system/ipshared/b92f/hdl/busdef_pkg.vhd" \
+
+vhdl sbus_awfg_lib  \
+"../../../bd/system/ipshared/b92f/hdl/registers_rtl.vhd" \
+
+vhdl2008 sbus_awfg_lib  \
+"../../../bd/system/ipshared/b92f/hdl/comp_signal_debounce_rtl.vhd" \
+
+vhdl sbus_awfg_lib  \
+"../../../bd/system/ipshared/b92f/hdl/uart_rx_fsm.vhd" \
+"../../../bd/system/ipshared/b92f/hdl/uart_tx_fsm.vhd" \
+"../../../bd/system/ipshared/b92f/hdl/uart_top_struct.vhd" \
+"../../../bd/system/ipshared/b92f/hdl/uart_bridge_32_struct.vhd" \
+"../../../bd/system/ipshared/b92f/hdl/uart_regs_rtl.vhd" \
+
+vhdl2008 sbus_awfg_lib  \
+"../../../bd/system/ipshared/b92f/hdl/busdef_pkg_body.vhd" \
+
+vhdl sbus_awfg_lib  \
+"../../../bd/system/ipshared/b92f/hdl/top_awfg_struct.vhd" \
+
+vhdl xil_defaultlib  \
+"../../../bd/system/ip/system_sbus_awfg_0_0/sim/system_sbus_awfg_0_0.vhd" \
+
+nosort

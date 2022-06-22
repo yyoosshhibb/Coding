@@ -1,0 +1,1 @@
+ -L sbus_awfg_lib -L work -l transcript.txt -i -t ns -multisource_delay latest +typdelays sbus_awfg_lib.tb_top_awfg_app(struct)
