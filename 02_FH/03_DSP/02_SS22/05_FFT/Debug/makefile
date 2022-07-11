@@ -88,21 +88,21 @@ CPP_DEPS := $(subst \ ,@, $(CPP_DEPS))
 CPP_DEPS := $(foreach var, $(CPP_DEPS), "$(subst @, ,$(var))")
 
 # All Target
-all: FFT.dxe
+all: 05_FFT.dxe
 
 # Tool invocations
-FFT.dxe: $(LDF_SRCS) $(SRC_OBJS)
+05_FFT.dxe: $(LDF_SRCS) $(SRC_OBJS)
 	@echo 'Building target: $@'
 	@echo 'Invoking: CrossCore Blackfin Linker'
-	ccblkfn -proc ADSP-BF706 -si-revision any -TC:/Users/Yoshi/Documents/GitHub/Software/02_FH/03_DSP/02_SS22/05_FFT/system/startup_ldf/app.ldf -no-mem -LC:/Users/Yoshi/Documents/GitHub/Software/02_FH/03_DSP/02_SS22/05_FFT/Debug/system/startup_ldf -flags-link -MDDEBUG,-MDNO_UTILITY_ROM,-MDCORE0 -flags-link -e -add-debug-libpaths -no-utility-rom -o FFT.dxe @input-file.txt  -flags-link -od,.\.
+	ccblkfn -proc ADSP-BF706 -si-revision any -TC:/Users/Yoshi/Documents/GitHub/Software/02_FH/03_DSP/02_SS22/05_FFT/system/startup_ldf/app.ldf -no-mem -LC:/Users/Yoshi/Documents/GitHub/Software/02_FH/03_DSP/02_SS22/05_FFT/Debug/system/startup_ldf -flags-link -MDDEBUG,-MDNO_UTILITY_ROM,-MDCORE0 -flags-link -e -add-debug-libpaths -no-utility-rom -o 05_FFT.dxe @input-file.txt  -flags-link -od,.\.
 	@echo 'Finished building target: $@'
 	@echo ' '
 
-linker_log.xml: FFT.dxe $(LDF_SRCS) $(SRC_OBJS)
+linker_log.xml: 05_FFT.dxe $(LDF_SRCS) $(SRC_OBJS)
 
 # Other Targets
 clean:
-	-$(RM) $(DXE)$(DSP_DEPS)$(CC_DEPS)$(LINKER_LOG_OUTPUTS)$(C++_DEPS)$(OBJS)$(C_UPPER_DEPS)$(CXX_DEPS)$(ASM_DEPS)$(S_DEPS)$(C_DEPS)$(CPP_DEPS) FFT.dxe
+	-$(RM) $(DXE)$(DSP_DEPS)$(CC_DEPS)$(LINKER_LOG_OUTPUTS)$(C++_DEPS)$(OBJS)$(C_UPPER_DEPS)$(CXX_DEPS)$(ASM_DEPS)$(S_DEPS)$(C_DEPS)$(CPP_DEPS) 05_FFT.dxe
 	-@echo ' '
 
 .PHONY: all clean dependents

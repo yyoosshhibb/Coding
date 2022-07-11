@@ -49,12 +49,13 @@ void FFT(complex_fract16* vector, int N)
 
 }
 
-void Get_Power_Spec(complex_fract16* input_buffer,complex_fract16* power_spec,int fft_len)
+void Get_Power_Spec(complex_fract16* input_buffer,fract16* power_spec,int fft_len)
 {
 	for(int i=0; i<fft_len/2; i++)
 	{
-		power_spec[i].re = input_buffer[i].re * input_buffer[i].re >> 15;
-		power_spec[i].im = input_buffer[i].im * input_buffer[i].im >> 15;
+		power_spec[i] = (input_buffer[i].re * input_buffer[i].re + input_buffer[i].im * input_buffer[i].im) >> 15;
+		//power_spec[i].re = input_buffer[i].re * input_buffer[i].re >> 15;
+		//power_spec[i].im = input_buffer[i].im * input_buffer[i].im >> 15;
 	}
 }
 /*

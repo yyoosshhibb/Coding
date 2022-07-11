@@ -1,6 +1,6 @@
 
 /*
-** app_handler_table.c generated on März 8, 2022 at 10:13:43.
+** app_handler_table.c generated on Juni 23, 2022 at 08:58:20.
 **
 ** Copyright (C) 2000-2022 Analog Devices Inc., All Rights Reserved.
 **

@@ -126,8 +126,11 @@ void gpioCallback(ADI_GPIO_PIN_INTERRUPT ePinInt, uint32_t Data, void *pCBParam)
 
 complex_fract16 input_buffer[FFT_LEN*2];		//2 times of FFT_LEN; 1 buffer for calculation, 1 buffer for sampling
 complex_fract16 input_buffer_save[FFT_LEN*2];
-complex_fract16 spectral_power[FFT_LEN/2];
+fract16 spectral_power[FFT_LEN/2];
 
+fract16 h_han[FFT_LEN]={
+#include "hann.txt"
+};
 
 int main(void)
 {
@@ -152,7 +155,9 @@ int main(void)
 #if FFT_SIM
     int i, j;
 
+/*
 	for(j=500;j<12000;j+=500){		//Stimulate input_buffer with different sine waves
+
 		for(i=0;i<FFT_LEN;i++){
 			//input_buffer[i].re=i;	//to test the scrambling
 			input_buffer[i].re=32767*sinf(2*PI*j*i/F_SAMPLE);	//stimulate input with sinus
@@ -164,7 +169,8 @@ int main(void)
 
 
 		//zero padded input data
-	    /*
+
+*/
 		for(j=500;j<12000;j+=500){		//Stimulate input_buffer with different sine waves
 			for(i=0;i<FFT_LEN;i++){
 				if(i<FFT_LEN/4)
@@ -178,8 +184,14 @@ int main(void)
 					input_buffer[i].im=0;
 				}
 			}
-			*/
 
+
+		//apply hanning window
+
+		for(i=0; i<FFT_LEN; i++)
+		{
+			input_buffer[i].re = (fract16)(input_buffer[i].re * h_han[i] >> 15);
+		}
 
 		Scramble_data(input_buffer,FFT_LEN);
 		FFT(input_buffer,FFT_LEN);

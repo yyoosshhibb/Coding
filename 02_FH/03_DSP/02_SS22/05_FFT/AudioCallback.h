@@ -109,7 +109,7 @@ void ADAU1761Callback(void *, uint32_t , void *);
 void gpioCallback(ADI_GPIO_PIN_INTERRUPT , uint32_t , void *);
 void Scramble_data(complex_fract16* data, short len);
 void FFT(complex_fract16* input_buffer, int fft_len);
-void Get_Power_Spec(complex_fract16* input_buffer,complex_fract16* power_spec,int fft_len);
+void Get_Power_Spec(complex_fract16* input_buffer,fract16* power_spec,int fft_len);
 
 //----------------GLOBAL VARIABLES--------------------------------
 extern  uint8_t sportRxMem[];
