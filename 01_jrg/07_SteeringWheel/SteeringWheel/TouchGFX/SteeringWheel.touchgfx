@@ -1,0 +1,420 @@
+{
+  "Application": {
+    "Screens": [
+      {
+        "Name": "Boot",
+        "Components": [
+          {
+            "Type": "Box",
+            "Name": "box1",
+            "Width": 272,
+            "Height": 480,
+            "LockPosition": true,
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            }
+          },
+          {
+            "Type": "ScalableImage",
+            "Name": "scalableImage1",
+            "X": 26,
+            "Y": 392,
+            "Width": 220,
+            "Height": 74,
+            "Filename": "new_logos_JR22.png",
+            "ScalingAlgorithm": "Nearest-neighbor"
+          },
+          {
+            "Type": "ScalableImage",
+            "Name": "scalableImage2",
+            "X": 11,
+            "Y": 121,
+            "Width": 250,
+            "Height": 119,
+            "Filename": "path3439-5-9-0-8-3-3-3-3-34-2-5.png",
+            "ScalingAlgorithm": "Nearest-neighbor"
+          }
+        ],
+        "Interactions": [],
+        "CustomActions": [
+          {
+            "Name": "action1"
+          }
+        ]
+      },
+      {
+        "Name": "Home",
+        "Components": [
+          {
+            "Type": "Box",
+            "Name": "box1",
+            "Width": 295,
+            "Height": 492
+          },
+          {
+            "Type": "TextProgress",
+            "Name": "textTwater",
+            "Y": 243,
+            "Width": 136,
+            "Height": 50,
+            "TextId": "__SingleUse_X0P8",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "IndicatorPositionWidth": 136,
+            "IndicatorPositionHeight": 50,
+            "ProgressRangeMax": 100,
+            "ProgressInitialValue": 100
+          },
+          {
+            "Type": "TextProgress",
+            "Name": "textSoCLV",
+            "X": 136,
+            "Y": 163,
+            "Width": 136,
+            "Height": 50,
+            "TextId": "__SingleUse_NZ7R",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "IndicatorPositionWidth": 136,
+            "IndicatorPositionHeight": 50,
+            "ProgressRangeMax": 100,
+            "ProgressInitialValue": 100
+          },
+          {
+            "Type": "TextProgress",
+            "Name": "textSoCHV",
+            "Y": 163,
+            "Width": 136,
+            "Height": 50,
+            "TextId": "__SingleUse_8GYJ",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "IndicatorPositionWidth": 136,
+            "IndicatorPositionHeight": 50,
+            "ProgressRangeMax": 99,
+            "ProgressInitialValue": 50
+          },
+          {
+            "Type": "TextProgress",
+            "Name": "textTcellLV",
+            "X": 136,
+            "Y": 83,
+            "Width": 136,
+            "Height": 50,
+            "TextId": "__SingleUse_IZGV",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "IndicatorPositionWidth": 136,
+            "IndicatorPositionHeight": 50,
+            "ProgressRangeMax": 100,
+            "ProgressInitialValue": 100
+          },
+          {
+            "Type": "TextArea",
+            "Name": "textArea1_1_1",
+            "Y": 133,
+            "Width": 136,
+            "Height": 25,
+            "TextId": "__SingleUse_TI4J",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            }
+          },
+          {
+            "Type": "TextProgress",
+            "Name": "textTcellHV",
+            "Y": 83,
+            "Width": 136,
+            "Height": 50,
+            "TextId": "__SingleUse_UBQO",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "IndicatorPositionWidth": 136,
+            "IndicatorPositionHeight": 50,
+            "ProgressRangeMax": 100,
+            "ProgressInitialValue": 100
+          },
+          {
+            "Type": "TextProgress",
+            "Name": "textTmotor",
+            "X": 136,
+            "Y": 243,
+            "Width": 136,
+            "Height": 50,
+            "TextId": "__SingleUse_8XAI",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "IndicatorPositionWidth": 136,
+            "IndicatorPositionHeight": 50,
+            "ProgressRangeMax": 100,
+            "ProgressInitialValue": 100
+          },
+          {
+            "Type": "TextProgress",
+            "Name": "textTInverter",
+            "Y": 323,
+            "Width": 136,
+            "Height": 50,
+            "TextId": "__SingleUse_M913",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "IndicatorPositionWidth": 136,
+            "IndicatorPositionHeight": 50,
+            "ProgressRangeMax": 100,
+            "ProgressInitialValue": 100
+          },
+          {
+            "Type": "TextArea",
+            "Name": "textArea1_1_1_1",
+            "X": 136,
+            "Y": 133,
+            "Width": 136,
+            "Height": 25,
+            "TextId": "__SingleUse_LNSM",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            }
+          },
+          {
+            "Type": "TextArea",
+            "Name": "textArea1_1_1_2",
+            "Y": 213,
+            "Width": 136,
+            "Height": 25,
+            "TextId": "__SingleUse_ZBJ0",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            }
+          },
+          {
+            "Type": "TextArea",
+            "Name": "textArea1_1_1_1_1",
+            "X": 136,
+            "Y": 213,
+            "Width": 136,
+            "Height": 25,
+            "TextId": "__SingleUse_6UGP",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            }
+          },
+          {
+            "Type": "TextArea",
+            "Name": "textArea1_1_1_3",
+            "Y": 293,
+            "Width": 136,
+            "Height": 25,
+            "TextId": "__SingleUse_M2E4",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            }
+          },
+          {
+            "Type": "TextArea",
+            "Name": "textArea1_1_1_1_2",
+            "X": 136,
+            "Y": 293,
+            "Width": 136,
+            "Height": 25,
+            "TextId": "__SingleUse_84XB",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            }
+          },
+          {
+            "Type": "TextArea",
+            "Name": "textArea1_1_1_4",
+            "Y": 373,
+            "Width": 136,
+            "Height": 25,
+            "TextId": "__SingleUse_BPVK",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            }
+          },
+          {
+            "Type": "TextArea",
+            "Name": "textArea1_1_1_1_3",
+            "X": 136,
+            "Y": 373,
+            "Width": 136,
+            "Height": 25,
+            "TextId": "__SingleUse_ZA6A",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            }
+          },
+          {
+            "Type": "TextArea",
+            "Name": "textTSState",
+            "X": 136,
+            "Y": 323,
+            "Width": 136,
+            "Height": 50,
+            "TextId": "__SingleUse_M6QN",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            }
+          },
+          {
+            "Type": "TextArea",
+            "Name": "textAreaErrorTS",
+            "Width": 272,
+            "Height": 70,
+            "TextId": "__SingleUse_OI2J",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            }
+          },
+          {
+            "Type": "TextArea",
+            "Name": "textAreaErrorElse",
+            "Y": 410,
+            "Width": 272,
+            "Height": 70,
+            "TextId": "__SingleUse_BRE5",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            }
+          }
+        ],
+        "Interactions": []
+      },
+      {
+        "Name": "Suspension",
+        "Components": [],
+        "Interactions": []
+      },
+      {
+        "Name": "Electrics",
+        "Components": [],
+        "Interactions": []
+      },
+      {
+        "Name": "Battery",
+        "Components": [],
+        "Interactions": []
+      },
+      {
+        "Name": "Inverter",
+        "Components": [],
+        "Interactions": []
+      },
+      {
+        "Name": "EPowertrain",
+        "Components": [],
+        "Interactions": []
+      }
+    ],
+    "CustomContainerDefinitions": [],
+    "Name": "SteeringWheel",
+    "Resolution": {
+      "Width": 480,
+      "Height": 272
+    },
+    "SelectedColorDepth": 24,
+    "StartupScreenName": "Boot",
+    "SelectedStartupLanguage": "GB",
+    "Skin": "Dark",
+    "TouchGfxPath": "../Middlewares/ST/touchgfx",
+    "UIPath": ".",
+    "AvailableColorDepths": [
+      24
+    ],
+    "AvailableLCDs": {
+      "24": "LCD24bpp"
+    },
+    "AvailableSections": [
+      "ExtFlashSection",
+      "IntFlashSection"
+    ],
+    "AvailableResolutions": [
+      {
+        "Width": 480,
+        "Height": 272
+      }
+    ],
+    "PhysicalButtons": [],
+    "FrameworkFeatures": {
+      "LCD24bpp": {
+        "Id": "LCD24bpp",
+        "IsEnabled": true
+      }
+    },
+    "GenerateAssetsCommand": "make -f simulator/gcc/Makefile assets -j8",
+    "PostGenerateCommand": "touchgfx update_project --project-file=simulator/msvs/Application.vcxproj",
+    "PostGenerateTargetCommand": "touchgfx update_project",
+    "CompileSimulatorCommand": "make -f simulator/gcc/Makefile -j8",
+    "RunSimulatorCommand": "build\\bin\\simulator.exe",
+    "CompileTargetCommandOverride": "make -f ../gcc/Makefile -j8",
+    "FlashTargetCommandOverride": "make -f ../gcc/Makefile flash",
+    "LandscapeSkinX": 0,
+    "LandscapeSkinY": 0,
+    "PortraitSkinX": 0,
+    "PortraitSkinY": 0,
+    "DisplayOrientation": "Portrait",
+    "Family": "STM32H7",
+    "Platform": "m7",
+    "ProjectFile": "../STM32H735G-DK.ioc",
+    "OptionalComponentsRoot": "../Middlewares/ST/touchgfx_components",
+    "OptionalComponents": []
+  },
+  "Version": "4.20.0",
+  "CreatedBy": "4.20.0"
+}
