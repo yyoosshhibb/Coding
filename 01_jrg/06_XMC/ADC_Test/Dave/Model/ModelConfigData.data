@@ -27,13 +27,9 @@
   <nodes xsi:type="ApplicationModel:PortNode">
     <resource xsi:type="ResourceModel:Port" href="HW_RESOURCES/Port14/Port14_14.dd#/"/>
   </nodes>
-  <nodes xsi:type="ApplicationModel:AppNode">
-    <resource xsi:type="ResourceModel:App" href="APPS/ANALOG_IO/v4_0_12/ANALOG_IO_1.app#/"/>
-  </nodes>
   <connections xsi:type="ApplicationModel:NodeConnection" source="//@nodes.0" target="//@nodes.1"/>
   <connections xsi:type="ApplicationModel:NodeConnection" source="//@nodes.2" target="//@nodes.0"/>
   <connections xsi:type="ApplicationModel:NodeConnection" source="//@nodes.2" target="//@nodes.7"/>
-  <connections xsi:type="ApplicationModel:NodeConnection" source="//@nodes.2" target="//@nodes.9"/>
   <hwConnections href="APPS/CLOCK_XMC4/v4_0_24/CLOCK_XMC4_0.app#//@connections.0"/>
   <hwConnections href="APPS/CLOCK_XMC4/v4_0_24/CLOCK_XMC4_0.app#//@connections.5"/>
   <hwConnections href="APPS/CLOCK_XMC4/v4_0_24/CLOCK_XMC4_0.app#//@connections.6"/>
@@ -94,8 +90,4 @@
   <hwConnections href="APPS/ANALOG_IO/v4_0_12/ANALOG_IO_0.app#//@connections.0"/>
   <hwConnections href="APPS/ANALOG_IO/v4_0_12/ANALOG_IO_0.app#//@connections.1"/>
   <hwConnections href="APPS/ADC_MEASUREMENT/v4_1_24/ADC_MEASUREMENT_0.app#//@connections.80"/>
-  <hwConnections href="APPS/ADC_MEASUREMENT/v4_1_24/ADC_MEASUREMENT_0.app#//@connections.107"/>
-  <hwConnections href="APPS/ANALOG_IO/v4_0_12/ANALOG_IO_1.app#//@connections.0"/>
-  <hwConnections href="APPS/ANALOG_IO/v4_0_12/ANALOG_IO_1.app#//@connections.1"/>
-  <hwConnections href="APPS/ADC_MEASUREMENT/v4_1_24/ADC_MEASUREMENT_0.app#//@connections.81"/>
 </ApplicationModel:ApplicationData>
