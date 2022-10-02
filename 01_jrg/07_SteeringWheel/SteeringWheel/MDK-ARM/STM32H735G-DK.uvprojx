@@ -1,10 +1,7 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <Project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="project_projx.xsd">
-
   <SchemaVersion>2.1</SchemaVersion>
-
   <Header>### uVision Project, (C) Keil Software</Header>
-
   <Targets>
     <Target>
       <TargetName>STM32H735G-DK</TargetName>
@@ -339,7 +336,7 @@
               <MiscControls></MiscControls>
               <Define>USE_HAL_DRIVER,STM32H735xx</Define>
               <Undefine></Undefine>
-              <IncludePath>../Core/Inc;../TouchGFX/App;../TouchGFX/target/generated;../TouchGFX/target;../Drivers/STM32H7xx_HAL_Driver/Inc;../Drivers/STM32H7xx_HAL_Driver/Inc/Legacy;../Middlewares/Third_Party/FreeRTOS/Source/include;../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2;../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F;../Drivers/CMSIS/Device/ST/STM32H7xx/Include;../Drivers/CMSIS/Include;../Drivers/BSP/Components/Common;../Drivers/BSP/STM32H735G-DK</IncludePath>
+              <IncludePath>../Core/Inc;../TouchGFX/App;../TouchGFX/target/generated;../TouchGFX/target;../Drivers/STM32H7xx_HAL_Driver/Inc;../Drivers/STM32H7xx_HAL_Driver/Inc/Legacy;../Middlewares/Third_Party/FreeRTOS/Source/include;../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2;../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F;../Drivers/CMSIS/Device/ST/STM32H7xx/Include;../Drivers/CMSIS/Include;../Drivers/BSP/Components/Common;../Drivers/BSP/STM32H735G-DK;../middlewares/st/touchgfx/framework/include;../touchgfx/generated/fonts/include;../touchgfx/generated/gui_generated/include;../touchgfx/generated/images/include;../touchgfx/generated/texts/include;../touchgfx/generated/videos/include;../touchgfx/gui/include</IncludePath>
             </VariousControls>
           </Cads>
           <Aads>
@@ -2062,21 +2059,309 @@
         <Group>
           <GroupName>::CMSIS</GroupName>
         </Group>
+        <Group>
+          <GroupName>gui</GroupName>
+          <Files>
+            <File>
+              <FileName>BatteryPresenter.cpp</FileName>
+              <FileType>8</FileType>
+              <FilePath>../touchgfx/gui/src/battery_screen/batterypresenter.cpp</FilePath>
+            </File>
+            <File>
+              <FileName>BatteryView.cpp</FileName>
+              <FileType>8</FileType>
+              <FilePath>../touchgfx/gui/src/battery_screen/batteryview.cpp</FilePath>
+            </File>
+            <File>
+              <FileName>BootPresenter.cpp</FileName>
+              <FileType>8</FileType>
+              <FilePath>../touchgfx/gui/src/boot_screen/bootpresenter.cpp</FilePath>
+            </File>
+            <File>
+              <FileName>BootView.cpp</FileName>
+              <FileType>8</FileType>
+              <FilePath>../touchgfx/gui/src/boot_screen/bootview.cpp</FilePath>
+            </File>
+            <File>
+              <FileName>DriverPresenter.cpp</FileName>
+              <FileType>8</FileType>
+              <FilePath>../touchgfx/gui/src/driver_screen/driverpresenter.cpp</FilePath>
+            </File>
+            <File>
+              <FileName>DriverView.cpp</FileName>
+              <FileType>8</FileType>
+              <FilePath>../touchgfx/gui/src/driver_screen/driverview.cpp</FilePath>
+            </File>
+            <File>
+              <FileName>ElectricsPresenter.cpp</FileName>
+              <FileType>8</FileType>
+              <FilePath>../touchgfx/gui/src/electrics_screen/electricspresenter.cpp</FilePath>
+            </File>
+            <File>
+              <FileName>ElectricsView.cpp</FileName>
+              <FileType>8</FileType>
+              <FilePath>../touchgfx/gui/src/electrics_screen/electricsview.cpp</FilePath>
+            </File>
+            <File>
+              <FileName>EPowertrainPresenter.cpp</FileName>
+              <FileType>8</FileType>
+              <FilePath>../touchgfx/gui/src/epowertrain_screen/epowertrainpresenter.cpp</FilePath>
+            </File>
+            <File>
+              <FileName>EPowertrainView.cpp</FileName>
+              <FileType>8</FileType>
+              <FilePath>../touchgfx/gui/src/epowertrain_screen/epowertrainview.cpp</FilePath>
+            </File>
+            <File>
+              <FileName>FrontendApplication.cpp</FileName>
+              <FileType>8</FileType>
+              <FilePath>../touchgfx/gui/src/common/frontendapplication.cpp</FilePath>
+            </File>
+            <File>
+              <FileName>HomePresenter.cpp</FileName>
+              <FileType>8</FileType>
+              <FilePath>../touchgfx/gui/src/home_screen/homepresenter.cpp</FilePath>
+            </File>
+            <File>
+              <FileName>HomeView.cpp</FileName>
+              <FileType>8</FileType>
+              <FilePath>../touchgfx/gui/src/home_screen/homeview.cpp</FilePath>
+            </File>
+            <File>
+              <FileName>InverterPresenter.cpp</FileName>
+              <FileType>8</FileType>
+              <FilePath>../touchgfx/gui/src/inverter_screen/inverterpresenter.cpp</FilePath>
+            </File>
+            <File>
+              <FileName>InverterView.cpp</FileName>
+              <FileType>8</FileType>
+              <FilePath>../touchgfx/gui/src/inverter_screen/inverterview.cpp</FilePath>
+            </File>
+            <File>
+              <FileName>Model.cpp</FileName>
+              <FileType>8</FileType>
+              <FilePath>../touchgfx/gui/src/model/model.cpp</FilePath>
+            </File>
+            <File>
+              <FileName>SuspensionPresenter.cpp</FileName>
+              <FileType>8</FileType>
+              <FilePath>../touchgfx/gui/src/suspension_screen/suspensionpresenter.cpp</FilePath>
+            </File>
+            <File>
+              <FileName>SuspensionView.cpp</FileName>
+              <FileType>8</FileType>
+              <FilePath>../touchgfx/gui/src/suspension_screen/suspensionview.cpp</FilePath>
+            </File>
+          </Files>
+        </Group>
+        <Group>
+          <GroupName>generated</GroupName>
+          <Files>
+            <File>
+              <FileName>ApplicationFontProvider.cpp</FileName>
+              <FileType>8</FileType>
+              <FilePath>../touchgfx/generated/fonts/src/applicationfontprovider.cpp</FilePath>
+            </File>
+            <File>
+              <FileName>BatteryViewBase.cpp</FileName>
+              <FileType>8</FileType>
+              <FilePath>../touchgfx/generated/gui_generated/src/battery_screen/batteryviewbase.cpp</FilePath>
+            </File>
+            <File>
+              <FileName>BitmapDatabase.cpp</FileName>
+              <FileType>8</FileType>
+              <FilePath>../touchgfx/generated/images/src/bitmapdatabase.cpp</FilePath>
+            </File>
+            <File>
+              <FileName>BootViewBase.cpp</FileName>
+              <FileType>8</FileType>
+              <FilePath>../touchgfx/generated/gui_generated/src/boot_screen/bootviewbase.cpp</FilePath>
+            </File>
+            <File>
+              <FileName>CachedFont.cpp</FileName>
+              <FileType>8</FileType>
+              <FilePath>../touchgfx/generated/fonts/src/cachedfont.cpp</FilePath>
+            </File>
+            <File>
+              <FileName>DriverViewBase.cpp</FileName>
+              <FileType>8</FileType>
+              <FilePath>../touchgfx/generated/gui_generated/src/driver_screen/driverviewbase.cpp</FilePath>
+            </File>
+            <File>
+              <FileName>ElectricsViewBase.cpp</FileName>
+              <FileType>8</FileType>
+              <FilePath>../touchgfx/generated/gui_generated/src/electrics_screen/electricsviewbase.cpp</FilePath>
+            </File>
+            <File>
+              <FileName>EPowertrainViewBase.cpp</FileName>
+              <FileType>8</FileType>
+              <FilePath>../touchgfx/generated/gui_generated/src/epowertrain_screen/epowertrainviewbase.cpp</FilePath>
+            </File>
+            <File>
+              <FileName>Font_GILI_____TTF_20_4bpp_0.cpp</FileName>
+              <FileType>8</FileType>
+              <FilePath>../touchgfx/generated/fonts/src/font_gili_____ttf_20_4bpp_0.cpp</FilePath>
+            </File>
+            <File>
+              <FileName>Font_GILI_____TTF_50_4bpp_0.cpp</FileName>
+              <FileType>8</FileType>
+              <FilePath>../touchgfx/generated/fonts/src/font_gili_____ttf_50_4bpp_0.cpp</FilePath>
+            </File>
+            <File>
+              <FileName>Font_GILI_____TTF_60_4bpp_0.cpp</FileName>
+              <FileType>8</FileType>
+              <FilePath>../touchgfx/generated/fonts/src/font_gili_____ttf_60_4bpp_0.cpp</FilePath>
+            </File>
+            <File>
+              <FileName>Font_verdana_10_4bpp_0.cpp</FileName>
+              <FileType>8</FileType>
+              <FilePath>../touchgfx/generated/fonts/src/font_verdana_10_4bpp_0.cpp</FilePath>
+            </File>
+            <File>
+              <FileName>Font_verdana_20_4bpp_0.cpp</FileName>
+              <FileType>8</FileType>
+              <FilePath>../touchgfx/generated/fonts/src/font_verdana_20_4bpp_0.cpp</FilePath>
+            </File>
+            <File>
+              <FileName>FontCache.cpp</FileName>
+              <FileType>8</FileType>
+              <FilePath>../touchgfx/generated/fonts/src/fontcache.cpp</FilePath>
+            </File>
+            <File>
+              <FileName>FrontendApplicationBase.cpp</FileName>
+              <FileType>8</FileType>
+              <FilePath>../touchgfx/generated/gui_generated/src/common/frontendapplicationbase.cpp</FilePath>
+            </File>
+            <File>
+              <FileName>GeneratedFont.cpp</FileName>
+              <FileType>8</FileType>
+              <FilePath>../touchgfx/generated/fonts/src/generatedfont.cpp</FilePath>
+            </File>
+            <File>
+              <FileName>HomeViewBase.cpp</FileName>
+              <FileType>8</FileType>
+              <FilePath>../touchgfx/generated/gui_generated/src/home_screen/homeviewbase.cpp</FilePath>
+            </File>
+            <File>
+              <FileName>image_Dark_ProgressIndicators_bg_medium_progress_indicator_bg_square_0_degrees.cpp</FileName>
+              <FileType>8</FileType>
+              <FilePath>../touchgfx/generated/images/src/__designer/image_dark_progressindicators_bg_medium_progress_indicator_bg_square_0_degrees.cpp</FilePath>
+            </File>
+            <File>
+              <FileName>image_new_logos_JR22.cpp</FileName>
+              <FileType>8</FileType>
+              <FilePath>../touchgfx/generated/images/src/image_new_logos_jr22.cpp</FilePath>
+            </File>
+            <File>
+              <FileName>image_path3439-5-9-0-8-3-3-3-3-34-2-5.cpp</FileName>
+              <FileType>8</FileType>
+              <FilePath>../touchgfx/generated/images/src/image_path3439-5-9-0-8-3-3-3-3-34-2-5.cpp</FilePath>
+            </File>
+            <File>
+              <FileName>InverterViewBase.cpp</FileName>
+              <FileType>8</FileType>
+              <FilePath>../touchgfx/generated/gui_generated/src/inverter_screen/inverterviewbase.cpp</FilePath>
+            </File>
+            <File>
+              <FileName>Kerning_GILI_____TTF_20_4bpp.cpp</FileName>
+              <FileType>8</FileType>
+              <FilePath>../touchgfx/generated/fonts/src/kerning_gili_____ttf_20_4bpp.cpp</FilePath>
+            </File>
+            <File>
+              <FileName>Kerning_GILI_____TTF_50_4bpp.cpp</FileName>
+              <FileType>8</FileType>
+              <FilePath>../touchgfx/generated/fonts/src/kerning_gili_____ttf_50_4bpp.cpp</FilePath>
+            </File>
+            <File>
+              <FileName>Kerning_GILI_____TTF_60_4bpp.cpp</FileName>
+              <FileType>8</FileType>
+              <FilePath>../touchgfx/generated/fonts/src/kerning_gili_____ttf_60_4bpp.cpp</FilePath>
+            </File>
+            <File>
+              <FileName>Kerning_verdana_10_4bpp.cpp</FileName>
+              <FileType>8</FileType>
+              <FilePath>../touchgfx/generated/fonts/src/kerning_verdana_10_4bpp.cpp</FilePath>
+            </File>
+            <File>
+              <FileName>Kerning_verdana_20_4bpp.cpp</FileName>
+              <FileType>8</FileType>
+              <FilePath>../touchgfx/generated/fonts/src/kerning_verdana_20_4bpp.cpp</FilePath>
+            </File>
+            <File>
+              <FileName>LanguageGb.cpp</FileName>
+              <FileType>8</FileType>
+              <FilePath>../touchgfx/generated/texts/src/languagegb.cpp</FilePath>
+            </File>
+            <File>
+              <FileName>SuspensionViewBase.cpp</FileName>
+              <FileType>8</FileType>
+              <FilePath>../touchgfx/generated/gui_generated/src/suspension_screen/suspensionviewbase.cpp</FilePath>
+            </File>
+            <File>
+              <FileName>Table_GILI_____TTF_20_4bpp.cpp</FileName>
+              <FileType>8</FileType>
+              <FilePath>../touchgfx/generated/fonts/src/table_gili_____ttf_20_4bpp.cpp</FilePath>
+            </File>
+            <File>
+              <FileName>Table_GILI_____TTF_50_4bpp.cpp</FileName>
+              <FileType>8</FileType>
+              <FilePath>../touchgfx/generated/fonts/src/table_gili_____ttf_50_4bpp.cpp</FilePath>
+            </File>
+            <File>
+              <FileName>Table_GILI_____TTF_60_4bpp.cpp</FileName>
+              <FileType>8</FileType>
+              <FilePath>../touchgfx/generated/fonts/src/table_gili_____ttf_60_4bpp.cpp</FilePath>
+            </File>
+            <File>
+              <FileName>Table_verdana_10_4bpp.cpp</FileName>
+              <FileType>8</FileType>
+              <FilePath>../touchgfx/generated/fonts/src/table_verdana_10_4bpp.cpp</FilePath>
+            </File>
+            <File>
+              <FileName>Table_verdana_20_4bpp.cpp</FileName>
+              <FileType>8</FileType>
+              <FilePath>../touchgfx/generated/fonts/src/table_verdana_20_4bpp.cpp</FilePath>
+            </File>
+            <File>
+              <FileName>Texts.cpp</FileName>
+              <FileType>8</FileType>
+              <FilePath>../touchgfx/generated/texts/src/texts.cpp</FilePath>
+            </File>
+            <File>
+              <FileName>TypedTextDatabase.cpp</FileName>
+              <FileType>8</FileType>
+              <FilePath>../touchgfx/generated/texts/src/typedtextdatabase.cpp</FilePath>
+            </File>
+            <File>
+              <FileName>UnmappedDataFont.cpp</FileName>
+              <FileType>8</FileType>
+              <FilePath>../touchgfx/generated/fonts/src/unmappeddatafont.cpp</FilePath>
+            </File>
+          </Files>
+        </Group>
+        <Group>
+          <GroupName>Lib</GroupName>
+          <Files>
+            <File>
+              <FileName>touchgfx_core.lib</FileName>
+              <FileType>4</FileType>
+              <FilePath>../middlewares/st/touchgfx/lib/core/cortex_m7/Keil/touchgfx_core.lib</FilePath>
+            </File>
+          </Files>
+        </Group>
       </Groups>
     </Target>
   </Targets>
-
   <RTE>
-    <apis/>
+    <apis></apis>
     <components>
       <component Cclass="CMSIS" Cgroup="CORE" Cvendor="ARM" Cversion="4.3.0" condition="CMSIS Core">
-        <package name="CMSIS" schemaVersion="1.3" url="http://www.keil.com/pack/" vendor="ARM" version="4.5.0"/>
+        <package name="CMSIS" schemaVersion="1.3" url="http://www.keil.com/pack/" vendor="ARM" version="4.5.0"></package>
         <targetInfos>
-          <targetInfo name="STM32H735G-DK"/>
+          <targetInfo name="STM32H735G-DK"></targetInfo>
         </targetInfos>
       </component>
     </components>
-    <files/>
+    <files></files>
   </RTE>
-
 </Project>

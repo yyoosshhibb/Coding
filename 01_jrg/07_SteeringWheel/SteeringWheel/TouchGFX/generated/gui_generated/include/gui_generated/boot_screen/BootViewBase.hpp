@@ -8,6 +8,7 @@
 #include <mvp/View.hpp>
 #include <gui/boot_screen/BootPresenter.hpp>
 #include <touchgfx/widgets/Box.hpp>
+#include <touchgfx/widgets/ScalableImage.hpp>
 
 class BootViewBase : public touchgfx::View<BootPresenter>
 {
@@ -25,7 +26,14 @@ protected:
     FrontendApplication& application() {
         return *static_cast<FrontendApplication*>(touchgfx::Application::getInstance());
     }
+
+    /*
+     * Member Declarations
+     */
     touchgfx::Box __background;
+    touchgfx::Box box1;
+    touchgfx::ScalableImage scalableImage1;
+    touchgfx::ScalableImage scalableImage2;
 
 private:
 

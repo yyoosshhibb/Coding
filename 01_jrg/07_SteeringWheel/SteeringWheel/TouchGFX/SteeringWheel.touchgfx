@@ -50,78 +50,8 @@
           {
             "Type": "Box",
             "Name": "box1",
-            "Width": 295,
-            "Height": 492
-          },
-          {
-            "Type": "TextProgress",
-            "Name": "textTwater",
-            "Y": 243,
-            "Width": 136,
-            "Height": 50,
-            "TextId": "__SingleUse_X0P8",
-            "Color": {
-              "Red": 255,
-              "Green": 255,
-              "Blue": 255
-            },
-            "IndicatorPositionWidth": 136,
-            "IndicatorPositionHeight": 50,
-            "ProgressRangeMax": 100,
-            "ProgressInitialValue": 100
-          },
-          {
-            "Type": "TextProgress",
-            "Name": "textSoCLV",
-            "X": 136,
-            "Y": 163,
-            "Width": 136,
-            "Height": 50,
-            "TextId": "__SingleUse_NZ7R",
-            "Color": {
-              "Red": 255,
-              "Green": 255,
-              "Blue": 255
-            },
-            "IndicatorPositionWidth": 136,
-            "IndicatorPositionHeight": 50,
-            "ProgressRangeMax": 100,
-            "ProgressInitialValue": 100
-          },
-          {
-            "Type": "TextProgress",
-            "Name": "textSoCHV",
-            "Y": 163,
-            "Width": 136,
-            "Height": 50,
-            "TextId": "__SingleUse_8GYJ",
-            "Color": {
-              "Red": 255,
-              "Green": 255,
-              "Blue": 255
-            },
-            "IndicatorPositionWidth": 136,
-            "IndicatorPositionHeight": 50,
-            "ProgressRangeMax": 99,
-            "ProgressInitialValue": 50
-          },
-          {
-            "Type": "TextProgress",
-            "Name": "textTcellLV",
-            "X": 136,
-            "Y": 83,
-            "Width": 136,
-            "Height": 50,
-            "TextId": "__SingleUse_IZGV",
-            "Color": {
-              "Red": 255,
-              "Green": 255,
-              "Blue": 255
-            },
-            "IndicatorPositionWidth": 136,
-            "IndicatorPositionHeight": 50,
-            "ProgressRangeMax": 100,
-            "ProgressInitialValue": 100
+            "Width": 272,
+            "Height": 480
           },
           {
             "Type": "TextArea",
@@ -136,58 +66,6 @@
               "Green": 255,
               "Blue": 255
             }
-          },
-          {
-            "Type": "TextProgress",
-            "Name": "textTcellHV",
-            "Y": 83,
-            "Width": 136,
-            "Height": 50,
-            "TextId": "__SingleUse_UBQO",
-            "Color": {
-              "Red": 255,
-              "Green": 255,
-              "Blue": 255
-            },
-            "IndicatorPositionWidth": 136,
-            "IndicatorPositionHeight": 50,
-            "ProgressRangeMax": 100,
-            "ProgressInitialValue": 100
-          },
-          {
-            "Type": "TextProgress",
-            "Name": "textTmotor",
-            "X": 136,
-            "Y": 243,
-            "Width": 136,
-            "Height": 50,
-            "TextId": "__SingleUse_8XAI",
-            "Color": {
-              "Red": 255,
-              "Green": 255,
-              "Blue": 255
-            },
-            "IndicatorPositionWidth": 136,
-            "IndicatorPositionHeight": 50,
-            "ProgressRangeMax": 100,
-            "ProgressInitialValue": 100
-          },
-          {
-            "Type": "TextProgress",
-            "Name": "textTInverter",
-            "Y": 323,
-            "Width": 136,
-            "Height": 50,
-            "TextId": "__SingleUse_M913",
-            "Color": {
-              "Red": 255,
-              "Green": 255,
-              "Blue": 255
-            },
-            "IndicatorPositionWidth": 136,
-            "IndicatorPositionHeight": 50,
-            "ProgressRangeMax": 100,
-            "ProgressInitialValue": 100
           },
           {
             "Type": "TextArea",
@@ -293,21 +171,6 @@
           },
           {
             "Type": "TextArea",
-            "Name": "textTSState",
-            "X": 136,
-            "Y": 323,
-            "Width": 136,
-            "Height": 50,
-            "TextId": "__SingleUse_M6QN",
-            "TextRotation": "0",
-            "Color": {
-              "Red": 255,
-              "Green": 255,
-              "Blue": 255
-            }
-          },
-          {
-            "Type": "TextArea",
             "Name": "textAreaErrorTS",
             "Width": 272,
             "Height": 70,
@@ -332,33 +195,879 @@
               "Green": 255,
               "Blue": 255
             }
+          },
+          {
+            "Type": "TextArea",
+            "Name": "textAreaTempHV",
+            "Y": 83,
+            "Width": 136,
+            "Height": 50,
+            "TextId": "__SingleUse_USFX",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            }
+          },
+          {
+            "Type": "TextArea",
+            "Name": "textAreaTempLV",
+            "X": 136,
+            "Y": 83,
+            "Width": 136,
+            "Height": 50,
+            "TextId": "__SingleUse_XPPA",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            }
+          },
+          {
+            "Type": "TextArea",
+            "Name": "textAreaSoCHV",
+            "Y": 163,
+            "Width": 136,
+            "Height": 50,
+            "TextId": "__SingleUse_89KB",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            }
+          },
+          {
+            "Type": "TextArea",
+            "Name": "textAreaSoCLV",
+            "X": 136,
+            "Y": 163,
+            "Width": 136,
+            "Height": 50,
+            "TextId": "__SingleUse_VBKV",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            }
+          },
+          {
+            "Type": "TextArea",
+            "Name": "textAreaTWater",
+            "Y": 243,
+            "Width": 136,
+            "Height": 50,
+            "TextId": "__SingleUse_7EW6",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            }
+          },
+          {
+            "Type": "TextArea",
+            "Name": "textAreaTMotor",
+            "X": 136,
+            "Y": 243,
+            "Width": 136,
+            "Height": 50,
+            "TextId": "__SingleUse_16RZ",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            }
+          },
+          {
+            "Type": "TextArea",
+            "Name": "textAreaTInverter",
+            "Y": 323,
+            "Width": 136,
+            "Height": 50,
+            "TextId": "__SingleUse_PLED",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            }
+          },
+          {
+            "Type": "TextArea",
+            "Name": "textAreaTSState",
+            "X": 136,
+            "Y": 323,
+            "Width": 136,
+            "Height": 50,
+            "TextId": "__SingleUse_45B0",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            }
           }
         ],
         "Interactions": []
       },
       {
         "Name": "Suspension",
-        "Components": [],
+        "Components": [
+          {
+            "Type": "Box",
+            "Name": "box1",
+            "Width": 272,
+            "Height": 480,
+            "LockPosition": true
+          },
+          {
+            "Type": "TextArea",
+            "Name": "textArea1",
+            "Width": 136,
+            "Height": 30,
+            "TextId": "__SingleUse_RPI0",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            }
+          },
+          {
+            "Type": "TextArea",
+            "Name": "textArea3",
+            "Y": 60,
+            "Width": 136,
+            "Height": 30,
+            "TextId": "__SingleUse_AV6M",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            }
+          },
+          {
+            "Type": "TextArea",
+            "Name": "textArea2",
+            "X": 136,
+            "Width": 136,
+            "Height": 30,
+            "TextId": "__SingleUse_XK17",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            }
+          },
+          {
+            "Type": "TextArea",
+            "Name": "textArea4",
+            "X": 136,
+            "Y": 60,
+            "Width": 136,
+            "Height": 30,
+            "TextId": "__SingleUse_8IUQ",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            }
+          },
+          {
+            "Type": "TextArea",
+            "Name": "textArea5",
+            "Y": 120,
+            "Width": 130,
+            "Height": 30,
+            "TextId": "__SingleUse_BT7G",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            }
+          },
+          {
+            "Type": "TextArea",
+            "Name": "textArea6",
+            "Y": 150,
+            "Width": 130,
+            "Height": 30,
+            "TextId": "__SingleUse_0Q59",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            }
+          },
+          {
+            "Type": "TextArea",
+            "Name": "textArea7",
+            "Y": 180,
+            "Width": 130,
+            "Height": 90,
+            "TextId": "__SingleUse_E307",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            }
+          },
+          {
+            "Type": "TextArea",
+            "Name": "textAreaDamperFL",
+            "Y": 30,
+            "Width": 136,
+            "Height": 30,
+            "TextId": "__SingleUse_L4HW",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            }
+          },
+          {
+            "Type": "TextArea",
+            "Name": "textAreaDamperFR",
+            "X": 136,
+            "Y": 30,
+            "Width": 136,
+            "Height": 30,
+            "TextId": "__SingleUse_GBZ6",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            }
+          },
+          {
+            "Type": "TextArea",
+            "Name": "textAreaLoadcellFL",
+            "Y": 90,
+            "Width": 136,
+            "Height": 30,
+            "TextId": "__SingleUse_LQTS",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            }
+          },
+          {
+            "Type": "TextArea",
+            "Name": "textAreaLoadcellFR",
+            "X": 136,
+            "Y": 90,
+            "Width": 136,
+            "Height": 30,
+            "TextId": "__SingleUse_LIFL",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            }
+          },
+          {
+            "Type": "TextArea",
+            "Name": "textAreaRidehightF",
+            "X": 140,
+            "Y": 120,
+            "Width": 132,
+            "Height": 30,
+            "TextId": "__SingleUse_TQJL",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            }
+          },
+          {
+            "Type": "TextArea",
+            "Name": "textAreaStAngle",
+            "X": 140,
+            "Y": 150,
+            "Width": 132,
+            "Height": 30,
+            "TextId": "__SingleUse_6VR4",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            }
+          },
+          {
+            "Type": "TextArea",
+            "Name": "textAreapBrakeF",
+            "X": 140,
+            "Y": 180,
+            "Width": 132,
+            "Height": 30,
+            "TextId": "__SingleUse_6IA0",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            }
+          },
+          {
+            "Type": "TextArea",
+            "Name": "textAreapBrakeR",
+            "X": 140,
+            "Y": 210,
+            "Width": 132,
+            "Height": 30,
+            "TextId": "__SingleUse_1NS3",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            }
+          },
+          {
+            "Type": "TextArea",
+            "Name": "textAreapBalance",
+            "X": 140,
+            "Y": 240,
+            "Width": 132,
+            "Height": 30,
+            "TextId": "__SingleUse_NEF2",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            }
+          },
+          {
+            "Type": "TextArea",
+            "Name": "textArea12",
+            "Y": 450,
+            "Width": 136,
+            "Height": 30,
+            "TextId": "__SingleUse_NY8L",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            }
+          },
+          {
+            "Type": "TextArea",
+            "Name": "textArea13",
+            "X": 136,
+            "Y": 450,
+            "Width": 136,
+            "Height": 30,
+            "TextId": "__SingleUse_A0AI",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            }
+          },
+          {
+            "Type": "TextArea",
+            "Name": "textAreaDamperRL",
+            "Y": 420,
+            "Width": 136,
+            "Height": 30,
+            "TextId": "__SingleUse_MCLZ",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            }
+          },
+          {
+            "Type": "TextArea",
+            "Name": "textAreaDamperRR",
+            "X": 136,
+            "Y": 420,
+            "Width": 136,
+            "Height": 30,
+            "TextId": "__SingleUse_JZ29",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            }
+          },
+          {
+            "Type": "TextArea",
+            "Name": "textArea10",
+            "Y": 390,
+            "Width": 136,
+            "Height": 30,
+            "TextId": "__SingleUse_X0R0",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            }
+          },
+          {
+            "Type": "TextArea",
+            "Name": "textArea11",
+            "X": 136,
+            "Y": 390,
+            "Width": 136,
+            "Height": 30,
+            "TextId": "__SingleUse_MM08",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            }
+          },
+          {
+            "Type": "TextArea",
+            "Name": "textAreaLoadcellRL",
+            "Y": 360,
+            "Width": 136,
+            "Height": 30,
+            "TextId": "__SingleUse_B9E8",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            }
+          },
+          {
+            "Type": "TextArea",
+            "Name": "textAreaLoadcellRR",
+            "X": 136,
+            "Y": 360,
+            "Width": 136,
+            "Height": 30,
+            "TextId": "__SingleUse_80EH",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            }
+          },
+          {
+            "Type": "TextArea",
+            "Name": "textArea8",
+            "Y": 330,
+            "Width": 136,
+            "Height": 30,
+            "TextId": "__SingleUse_DM85",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            }
+          },
+          {
+            "Type": "TextArea",
+            "Name": "textAreaRidehightRL",
+            "Y": 300,
+            "Width": 136,
+            "Height": 30,
+            "TextId": "__SingleUse_S8LF",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            }
+          },
+          {
+            "Type": "TextArea",
+            "Name": "textArea9",
+            "X": 136,
+            "Y": 330,
+            "Width": 136,
+            "Height": 30,
+            "TextId": "__SingleUse_VJS4",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            }
+          },
+          {
+            "Type": "TextArea",
+            "Name": "textAreaRidehightRR",
+            "X": 136,
+            "Y": 300,
+            "Width": 136,
+            "Height": 30,
+            "TextId": "__SingleUse_6KRB",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            }
+          }
+        ],
         "Interactions": []
       },
       {
         "Name": "Electrics",
-        "Components": [],
+        "Components": [
+          {
+            "Type": "Box",
+            "Name": "box1",
+            "Width": 272,
+            "Height": 480,
+            "LockPosition": true
+          }
+        ],
         "Interactions": []
       },
       {
         "Name": "Battery",
-        "Components": [],
+        "Components": [
+          {
+            "Type": "Box",
+            "Name": "box1",
+            "Width": 272,
+            "Height": 480,
+            "LockPosition": true
+          }
+        ],
         "Interactions": []
       },
       {
-        "Name": "Inverter",
-        "Components": [],
+        "Name": "Powertrain",
+        "Components": [
+          {
+            "Type": "Box",
+            "Name": "box1",
+            "Width": 272,
+            "Height": 480,
+            "LockPosition": true
+          }
+        ],
         "Interactions": []
       },
       {
-        "Name": "EPowertrain",
-        "Components": [],
+        "Name": "Driver",
+        "Components": [
+          {
+            "Type": "Box",
+            "Name": "box1",
+            "Width": 272,
+            "Height": 480,
+            "LockPosition": true
+          },
+          {
+            "Type": "Box",
+            "Name": "box2",
+            "X": 60,
+            "Y": 420,
+            "Width": 152,
+            "Height": 60,
+            "Color": {
+              "Red": 255
+            }
+          },
+          {
+            "Type": "TextArea",
+            "Name": "textAreaErrorElse",
+            "X": 66,
+            "Y": 415,
+            "Width": 140,
+            "Height": 70,
+            "TextId": "__SingleUse_3F2T",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            }
+          },
+          {
+            "Type": "Box",
+            "Name": "boxTempFLout",
+            "Y": 30,
+            "Width": 20,
+            "Height": 60,
+            "Color": {
+              "Red": 25,
+              "Green": 104,
+              "Blue": 194
+            }
+          },
+          {
+            "Type": "Box",
+            "Name": "boxTempFLmid",
+            "X": 20,
+            "Y": 30,
+            "Width": 20,
+            "Height": 60,
+            "Color": {
+              "Red": 25,
+              "Green": 104,
+              "Blue": 255
+            }
+          },
+          {
+            "Type": "Box",
+            "Name": "boxTempFLin",
+            "X": 40,
+            "Y": 30,
+            "Width": 20,
+            "Height": 60,
+            "Color": {
+              "Red": 25,
+              "Green": 104,
+              "Blue": 255
+            }
+          },
+          {
+            "Type": "BoxProgress",
+            "Name": "boxProgressSpeed",
+            "Width": 272,
+            "Height": 30,
+            "LockPosition": true,
+            "Color": {
+              "Red": 158,
+              "Green": 158,
+              "Blue": 158
+            },
+            "Direction": "Right",
+            "IndicatorPositionWidth": 272,
+            "IndicatorPositionHeight": 30,
+            "ProgressRangeMax": 100,
+            "ProgressInitialValue": 60
+          },
+          {
+            "Type": "Box",
+            "Name": "boxTempRLout",
+            "Y": 420,
+            "Width": 20,
+            "Height": 60,
+            "Color": {
+              "Red": 25,
+              "Green": 104,
+              "Blue": 194
+            }
+          },
+          {
+            "Type": "Box",
+            "Name": "boxTempRLmid",
+            "X": 20,
+            "Y": 420,
+            "Width": 20,
+            "Height": 60,
+            "Color": {
+              "Red": 25,
+              "Green": 104,
+              "Blue": 255
+            }
+          },
+          {
+            "Type": "Box",
+            "Name": "boxTempRLin",
+            "X": 40,
+            "Y": 420,
+            "Width": 20,
+            "Height": 60,
+            "Color": {
+              "Red": 25,
+              "Green": 104,
+              "Blue": 255
+            }
+          },
+          {
+            "Type": "Box",
+            "Name": "boxTempRRin",
+            "X": 212,
+            "Y": 420,
+            "Width": 20,
+            "Height": 60,
+            "Color": {
+              "Red": 25,
+              "Green": 104,
+              "Blue": 194
+            }
+          },
+          {
+            "Type": "Box",
+            "Name": "boxTempRRmid",
+            "X": 232,
+            "Y": 420,
+            "Width": 20,
+            "Height": 60,
+            "Color": {
+              "Red": 25,
+              "Green": 104,
+              "Blue": 255
+            }
+          },
+          {
+            "Type": "Box",
+            "Name": "boxTempRRout",
+            "X": 252,
+            "Y": 420,
+            "Width": 20,
+            "Height": 60,
+            "Color": {
+              "Red": 25,
+              "Green": 104,
+              "Blue": 255
+            }
+          },
+          {
+            "Type": "Box",
+            "Name": "boxTempFRin",
+            "X": 212,
+            "Y": 30,
+            "Width": 20,
+            "Height": 60,
+            "Color": {
+              "Red": 25,
+              "Green": 104,
+              "Blue": 194
+            }
+          },
+          {
+            "Type": "Box",
+            "Name": "boxTempFRmid",
+            "X": 232,
+            "Y": 30,
+            "Width": 20,
+            "Height": 60,
+            "Color": {
+              "Red": 25,
+              "Green": 104,
+              "Blue": 255
+            }
+          },
+          {
+            "Type": "Box",
+            "Name": "boxTempFRout",
+            "X": 252,
+            "Y": 30,
+            "Width": 20,
+            "Height": 60,
+            "Color": {
+              "Red": 25,
+              "Green": 104,
+              "Blue": 255
+            }
+          },
+          {
+            "Type": "BoxProgress",
+            "Name": "boxProgressSoC",
+            "X": 101,
+            "Y": 138,
+            "Width": 70,
+            "Height": 250,
+            "Color": {
+              "Red": 158,
+              "Green": 158,
+              "Blue": 158
+            },
+            "Direction": "Up",
+            "IndicatorPositionWidth": 70,
+            "IndicatorPositionHeight": 250,
+            "ProgressRangeMax": 100,
+            "ProgressInitialValue": 100
+          },
+          {
+            "Type": "ScalableImage",
+            "Name": "scalableImageMapping",
+            "X": 99,
+            "Y": 40,
+            "Width": 75,
+            "Height": 75,
+            "Filename": "Autocross.png",
+            "ScalingAlgorithm": "Nearest-neighbor"
+          },
+          {
+            "Type": "ScalableImage",
+            "Name": "TwaterCrit",
+            "X": 13,
+            "Y": 138,
+            "Width": 75,
+            "Height": 75,
+            "Filename": "WaterCrit.png",
+            "ScalingAlgorithm": "Nearest-neighbor"
+          },
+          {
+            "Type": "ScalableImage",
+            "Name": "HVBMSCrit",
+            "X": 13,
+            "Y": 218,
+            "Width": 75,
+            "Height": 75,
+            "Filename": "HV_Bat_Crit.png",
+            "ScalingAlgorithm": "Nearest-neighbor"
+          },
+          {
+            "Type": "ScalableImage",
+            "Name": "LVBMSCrit",
+            "X": 13,
+            "Y": 298,
+            "Width": 75,
+            "Height": 75,
+            "Filename": "LV_Bat_crit.png",
+            "ScalingAlgorithm": "Nearest-neighbor"
+          },
+          {
+            "Type": "ScalableImage",
+            "Name": "TwaterWarn",
+            "X": 185,
+            "Y": 138,
+            "Width": 75,
+            "Height": 75,
+            "Filename": "WaterWarn.png",
+            "ScalingAlgorithm": "Nearest-neighbor"
+          },
+          {
+            "Type": "ScalableImage",
+            "Name": "HVBMSWarn",
+            "X": 185,
+            "Y": 218,
+            "Width": 75,
+            "Height": 75,
+            "Filename": "HV_Bat_Warn.png",
+            "ScalingAlgorithm": "Nearest-neighbor"
+          },
+          {
+            "Type": "ScalableImage",
+            "Name": "LVBMSWarn",
+            "X": 185,
+            "Y": 298,
+            "Width": 75,
+            "Height": 75,
+            "Filename": "LV_Bat_warn.png",
+            "ScalingAlgorithm": "Nearest-neighbor"
+          }
+        ],
         "Interactions": []
       }
     ],

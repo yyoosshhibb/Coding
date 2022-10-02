@@ -42,6 +42,9 @@
     <ClCompile Include="..\..\gui\src\suspension_screen\SuspensionPresenter.cpp"/>
     <ClCompile Include="..\..\gui\src\suspension_screen\SuspensionView.cpp"/>
     <ClCompile Include="..\..\generated\gui_generated\src\suspension_screen\SuspensionViewBase.cpp"/>
+    <ClCompile Include="..\..\gui\src\driver_screen\DriverPresenter.cpp"/>
+    <ClCompile Include="..\..\gui\src\driver_screen\DriverView.cpp"/>
+    <ClCompile Include="..\..\generated\gui_generated\src\driver_screen\DriverViewBase.cpp"/>
   </ItemGroup>
   <ItemGroup>
     <None Include="$(ApplicationRoot)\assets\texts\texts.xml"/>
@@ -213,6 +216,9 @@
     <ClInclude Include="..\..\gui\include\gui\suspension_screen\SuspensionPresenter.hpp"/>
     <ClInclude Include="..\..\gui\include\gui\suspension_screen\SuspensionView.hpp"/>
     <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\suspension_screen\SuspensionViewBase.hpp"/>
+    <ClInclude Include="..\..\gui\include\gui\driver_screen\DriverPresenter.hpp"/>
+    <ClInclude Include="..\..\gui\include\gui\driver_screen\DriverView.hpp"/>
+    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\driver_screen\DriverViewBase.hpp"/>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="$(ApplicationRoot)\generated\simulator\touchgfx.rc"/>

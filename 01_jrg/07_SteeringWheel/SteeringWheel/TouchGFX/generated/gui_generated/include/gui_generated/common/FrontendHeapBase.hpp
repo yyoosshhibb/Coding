@@ -26,6 +26,8 @@
 #include <gui/inverter_screen/InverterPresenter.hpp>
 #include <gui/epowertrain_screen/EPowertrainView.hpp>
 #include <gui/epowertrain_screen/EPowertrainPresenter.hpp>
+#include <gui/driver_screen/DriverView.hpp>
+#include <gui/driver_screen/DriverPresenter.hpp>
 
 
 /**
@@ -55,7 +57,8 @@ public:
             touchgfx::meta::TypeList< BatteryView,
             touchgfx::meta::TypeList< InverterView,
             touchgfx::meta::TypeList< EPowertrainView,
-            touchgfx::meta::Nil > > > > > >
+            touchgfx::meta::TypeList< DriverView,
+            touchgfx::meta::Nil > > > > > > >
             > GeneratedViewTypes;
 
     /**
@@ -74,7 +77,8 @@ public:
             touchgfx::meta::TypeList< BatteryPresenter,
             touchgfx::meta::TypeList< InverterPresenter,
             touchgfx::meta::TypeList< EPowertrainPresenter,
-            touchgfx::meta::Nil > > > > > >
+            touchgfx::meta::TypeList< DriverPresenter,
+            touchgfx::meta::Nil > > > > > > >
             > GeneratedPresenterTypes;
 
     /**

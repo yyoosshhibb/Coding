@@ -12,6 +12,9 @@ HomeViewBase::HomeViewBase()
     __background.setPosition(0, 0, 272, 480);
     __background.setColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
 
+    box1.setPosition(0, 0, 295, 492);
+    box1.setColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
+
     textTwater.setXY(0, 243);
     textTwater.setProgressIndicatorPosition(0, 0, 136, 50);
     textTwater.setRange(0, 100);
@@ -124,6 +127,7 @@ HomeViewBase::HomeViewBase()
     textAreaErrorElse.setTypedText(touchgfx::TypedText(T___SINGLEUSE_BRE5));
 
     add(__background);
+    add(box1);
     add(textTwater);
     add(textSoCLV);
     add(textSoCHV);

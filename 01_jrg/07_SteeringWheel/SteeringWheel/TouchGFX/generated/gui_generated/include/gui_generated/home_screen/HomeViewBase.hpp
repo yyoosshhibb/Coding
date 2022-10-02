@@ -27,6 +27,7 @@ protected:
      * Member Declarations
      */
     touchgfx::Box __background;
+    touchgfx::Box box1;
     touchgfx::TextProgress textTwater;
     touchgfx::TextProgress textSoCLV;
     touchgfx::TextProgress textSoCHV;

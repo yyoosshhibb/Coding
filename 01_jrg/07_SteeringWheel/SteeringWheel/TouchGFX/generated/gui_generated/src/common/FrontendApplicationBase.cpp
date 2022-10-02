@@ -23,6 +23,8 @@
 #include <gui/inverter_screen/InverterPresenter.hpp>
 #include <gui/epowertrain_screen/EPowertrainView.hpp>
 #include <gui/epowertrain_screen/EPowertrainPresenter.hpp>
+#include <gui/driver_screen/DriverView.hpp>
+#include <gui/driver_screen/DriverPresenter.hpp>
 
 using namespace touchgfx;
 
