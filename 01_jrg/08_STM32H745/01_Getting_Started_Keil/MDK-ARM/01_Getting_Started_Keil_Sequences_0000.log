@@ -1,0 +1,73 @@
+/*
+ *  CMSIS Pack Debug Access Sequence Log
+ *  File        : C:\Users\Yoshi\Documents\GitHub\Software\01_jrg\08_STM32H745\01_Getting_Started_Keil\MDK-ARM\01_Getting_Started_Keil_Sequences_0000.log
+ *  Created     : 15:25:49 (08/10/2022)
+ *  Device      : STM32H745XIHx:CM7
+ *  PDSC File   : C:\Users\Yoshi\AppData\Local\Arm\Packs\Keil\STM32H7xx_DFP\3.0.0\Keil.STM32H7xx_DFP.pdsc
+ *  Config File : C:\Users\Yoshi\Documents\GitHub\Software\01_jrg\08_STM32H745\01_Getting_Started_Keil\MDK-ARM\DebugConfig\01_Getting_Started_Keil_CM7_STM32H745XIHx_CM7_1.1.0.dbgconf
+ *
+ */
+
+[15:25:49.486]  **********  Sequence "DebugDeviceUnlock"  (Context="Connect", Pname="CM7", info="")
+[15:25:49.486]  
+[15:25:49.486]  <debugvars>
+[15:25:49.486]    // Pre-defined
+[15:25:49.487]    __protocol=0x00010002      (Protocol="SWD", SWJ-DP="True")
+[15:25:49.487]    __connection=0x00010302    (Connection Type="Flash", Reset Type="Processor Reset", Connection Under HW Reset)
+[15:25:49.487]    __dp=0x00000000
+[15:25:49.487]    __ap=0x00000000
+[15:25:49.488]    __traceout=0x00000000      (Trace Disabled)
+[15:25:49.488]    __errorcontrol=0x00000000  (Skip Errors="False")
+[15:25:49.488]    __FlashAddr=0x00000000
+[15:25:49.488]    __FlashLen=0x00000000
+[15:25:49.488]    __FlashArg=0x00000000
+[15:25:49.488]    __FlashOp=0x00000000
+[15:25:49.489]    __Result=0x00000000
+[15:25:49.489]    
+[15:25:49.489]    // User-defined
+[15:25:49.489]    DbgMCU_CR=0x0000000F
+[15:25:49.489]    DbgMCU_APB3_Fz1=0x00000000
+[15:25:49.489]    DbgMCU_APB3_Fz2=0x00000000
+[15:25:49.490]    DbgMCU_APB1L_Fz1=0x00000000
+[15:25:49.490]    DbgMCU_APB1L_Fz2=0x00000000
+[15:25:49.490]    DbgMCU_APB2_Fz1=0x00000000
+[15:25:49.490]    DbgMCU_APB2_Fz2=0x00000000
+[15:25:49.490]    DbgMCU_APB4_Fz1=0x00000000
+[15:25:49.490]    DbgMCU_APB4_Fz2=0x00000000
+[15:25:49.491]    TraceClk_Pin=0x00040002
+[15:25:49.491]    TraceD0_Pin=0x00040003
+[15:25:49.491]    TraceD1_Pin=0x00040004
+[15:25:49.491]    TraceD2_Pin=0x00040005
+[15:25:49.491]    TraceD3_Pin=0x00040006
+[15:25:49.491]  </debugvars>
+[15:25:49.492]  
+[15:25:49.492]  <sequence name="DebugDeviceUnlock" Pname="CM7" disable="false" info="">
+[15:25:49.492]    <block atomic="false" info="">
+[15:25:49.492]      __var value = 0;
+[15:25:49.492]        // -> [value <= 0x00000000]
+[15:25:49.492]      Sequence("CheckID");
+[15:25:49.492]        <sequence name="CheckID" Pname="CM7" disable="false" info="">
+[15:25:49.493]          <block atomic="false" info="">
+[15:25:49.493]            __var pidr1 = 0;
+[15:25:49.493]              // -> [pidr1 <= 0x00000000]
+[15:25:49.493]            __var pidr2 = 0;
+[15:25:49.493]              // -> [pidr2 <= 0x00000000]
+[15:25:49.493]            __var jep106id = 0;
+[15:25:49.493]              // -> [jep106id <= 0x00000000]
+[15:25:49.493]            __var ROMTableBase = 0;
+[15:25:49.493]              // -> [ROMTableBase <= 0x00000000]
+[15:25:49.493]            __ap = 2;      // System debug access port (APB-AP)
+[15:25:49.494]              // -> [__ap <= 0x00000002]
+[15:25:49.494]            ROMTableBase = ReadAP(0xF8) & ~0x3;
+[15:25:49.494]              // -> [ReadAP(0x000000F8) => 0xE00E0003]   (__dp=0x00000000, __ap=0x00000002)
+[15:25:49.494]              // -> [ROMTableBase <= 0xE00E0000]
+[15:25:49.495]            pidr1 = Read32(ROMTableBase + 0x0FE4);
+[15:25:49.506]  
+[15:25:49.506]  !!! E310 : Debug access failed - cannot read address 0xE00E0FE4 (accsize '4', AP '0x00000002')
+[15:25:49.506]  
+[15:25:49.507]              // -> [Read32(0xE00E0FE4) => 0x00000080]   (__dp=0x00000000, __ap=0x00000002)
+[15:25:49.508]          </block>
+[15:25:49.508]        </sequence>
+[15:25:49.508]    </block>
+[15:25:49.508]  </sequence>
+[15:25:49.508]  
