@@ -1,0 +1,1 @@
+inverterconfigab\startup_stm32h735xx.o: startup_stm32h735xx.s

@@ -1578,3 +1578,94 @@ Command-line arguments:  -os win32 -ws win32 -arch x86_64 -application com.ifx.d
 
 !ENTRY SOLVER 1 0 2022-09-29 13:10:45.819
 !MESSAGE USER_ACTION : Solver Status: DISCONNECTED
+!SESSION 2022-11-15 16:01:26.431 -----------------------------------------------
+eclipse.buildId=unknown
+java.version=1.8.0_222
+java.vendor=Amazon.com Inc.
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_AT
+Framework arguments:  -application com.ifx.davex.product.daveApplication -showlocation
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 -application com.ifx.davex.product.daveApplication -showlocation
+
+!ENTRY SOLVER 1 0 2022-11-15 16:01:46.984
+!MESSAGE USER_ACTION : Default solver exe path is: C:\Infineon\Tools\DAVE IDE\4.5.0.202105191637\eclipse\Solver\lib\i386_nt\eclipse.exe
+
+!ENTRY SOLVER 1 0 2022-11-15 16:01:47.089
+!MESSAGE USER_ACTION : GlobalSize= 750MB; LocalSize: 128MB
+
+!ENTRY SOLVER 1 0 2022-11-15 16:01:47.093
+!MESSAGE USER_ACTION : Creating OutOfProcessEclipse instance...
+
+!ENTRY SOLVER 1 0 2022-11-15 16:01:47.665
+!MESSAGE USER_ACTION : Solver Status: CONNECTED
+
+!ENTRY APPSTORE 1 0 2022-11-15 16:01:48.140
+!MESSAGE USER_ACTION : Time taken for loading LibraryStore data for SoftwareId [XMC4.5.00.F100.ALL] is: 470 msec 
+
+!ENTRY APPLICATION_MODEL 1 0 2022-11-15 16:01:48.208
+!MESSAGE USER_ACTION : Time taken for disposing objects for memory cleanup: 4 msec 
+
+!ENTRY APPLICATION_MODEL 1 0 2022-11-15 16:01:49.140
+!MESSAGE USER_ACTION : Active project:ADC_Test[ Software ID:XMC4.5.00.F100.ALL]
+
+!ENTRY COMMON 1 0 2022-11-15 16:01:50.451
+!MESSAGE Time Taken By De-Serialization  : 753 ms :: C:\Users\Yoshi\Documents\GitHub\Software\01_jrg\06_XMC\ADC_Test\Dave\Model\projectData.bin
+
+!ENTRY com.dave.mbs.common 1 0 2022-11-15 16:01:50.470
+!MESSAGE *************Serializing EMF and Groovy data to RAM*******************
+
+!ENTRY APPLICATION_MODEL 1 0 2022-11-15 16:01:50.627
+!MESSAGE USER_ACTION : Time taken for initializing Application Model is: 1488 msec 
+
+!ENTRY APPLICATION_MODEL 1 0 2022-11-15 16:01:50.649
+!MESSAGE USER_ACTION : Time taken for reloadLastSolverResult(updateQuery): 15 msec 
+
+!ENTRY APPLICATION_MODEL 1 0 2022-11-15 16:01:50.666
+!MESSAGE USER_ACTION : Time taken for reloadLastSolverResult(getSolutionQuery): 13 msec 
+
+!ENTRY APPLICATION_MODEL 1 0 2022-11-15 16:01:50.671
+!MESSAGE USER_ACTION : Time taken for updating views is: 1 msec 
+
+!ENTRY APPLICATION_MODEL 1 0 2022-11-15 16:01:52.930
+!MESSAGE USER_ACTION : Time taken for rendering views is: 2254 msec 
+
+!ENTRY APPLICATION_MODEL 1 0 2022-11-15 16:01:53.455
+!MESSAGE USER_ACTION : Total time taken for setting project as active is: 5250 msec 
+
+!ENTRY APPLICATION_MODEL 1 0 2022-11-15 16:01:54.264
+!MESSAGE Only One DAVE Application is running 
+
+!ENTRY com.ifx.dave.LibraryManager 4 0 2022-11-15 16:01:54.337
+!MESSAGE Reading file: https://www.infineon.com/dave/Libraries/Examples/XMC_IFX/latest//daveSite.xml
+
+!ENTRY com.ifx.dave.LibraryManager 4 0 2022-11-15 16:01:55.853
+!MESSAGE Reading file: https://www.infineon.com/dave/Libraries/DAVE_Libs/XMC_IFX/latest//daveSite.xml
+
+!ENTRY com.ifx.dave.LibraryManager 4 0 2022-11-15 16:01:56.840
+!MESSAGE Reading file: https://www.infineon.com/dave/Libraries/DAVE_Libs/Contributed/latest//daveSite.xml
+
+!ENTRY com.dave.mbs.common 1 0 2022-11-15 16:04:48.394
+!MESSAGE Time taken for postProjectCreation: 1
+
+!ENTRY com.dave.mbs.common 1 0 2022-11-15 16:28:17.312
+!MESSAGE Time taken for postProjectCreation: 1
+
+!ENTRY com.dave.mbs.common 1 0 2022-11-15 16:28:19.155
+!MESSAGE *************Saving EMF data into file system*******************
+
+!ENTRY com.dave.mbs.common 1 0 2022-11-15 16:28:19.219
+!MESSAGE *************Saving Groovy data into file system*******************
+
+!ENTRY COMMON 1 0 2022-11-15 16:28:19.374
+!MESSAGE Time Taken By Serialization  : 147 ms :: C:\Users\Yoshi\Documents\GitHub\Software\01_jrg\06_XMC\ADC_Test\Dave\Model\projectData.bin
+
+!ENTRY com.dave.mbs.common 1 0 2022-11-15 16:28:19.684
+!MESSAGE ****************Cleaning project data:ADC_Test*******************
+
+!ENTRY APPLICATION_MODEL 1 0 2022-11-15 16:28:20.450
+!MESSAGE USER_ACTION : Time taken for disposing objects for memory cleanup: 1028 msec 
+
+!ENTRY SOLVER 1 0 2022-11-15 16:28:20.453
+!MESSAGE Solver exited (0)
+
+!ENTRY SOLVER 1 0 2022-11-15 16:28:20.719
+!MESSAGE USER_ACTION : Solver Status: DISCONNECTED
