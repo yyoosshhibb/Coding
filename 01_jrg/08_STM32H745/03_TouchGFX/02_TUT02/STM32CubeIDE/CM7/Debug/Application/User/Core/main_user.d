@@ -1,5 +1,5 @@
 Application/User/Core/main_user.o: \
- C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/08_STM32H745/03_TouchGFX/02_TUT02/CM7/Core/Src/main_user.c \
+ D:/Dokumente/GitHub/Software/01_jrg/08_STM32H745/03_TouchGFX/02_TUT02/CM7/Core/Src/main_user.c \
  ../../../CM7/Core/Inc/main_user.h \
  ../../../Drivers/BSP/STM32H745I-DISCO/stm32h745i_discovery_qspi.h \
  ../../../Drivers/BSP/STM32H745I-DISCO/stm32h745i_discovery_conf.h \

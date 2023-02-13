@@ -1,5 +1,5 @@
 Application/User/TouchGFX/target/TouchGFXGPIO.o: \
- C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/08_STM32H745/03_TouchGFX/02_TUT02/CM7/TouchGFX/target/TouchGFXGPIO.cpp \
+ D:/Dokumente/GitHub/Software/01_jrg/08_STM32H745/03_TouchGFX/02_TUT02/CM7/TouchGFX/target/TouchGFXGPIO.cpp \
  ../../CM7/../../CM7/Middlewares/ST/touchgfx/framework/include/touchgfx/hal/GPIO.hpp \
  ../../../Drivers/CMSIS/Device/ST/STM32H7xx/Include/stm32h7xx.h \
  ../../../Drivers/CMSIS/Device/ST/STM32H7xx/Include/stm32h745xx.h \
@@ -39,7 +39,7 @@ Application/User/TouchGFX/target/TouchGFXGPIO.o: \
  ../../../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_ll_fmc.h \
  ../../../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_tim.h \
  ../../../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_tim_ex.h \
- c:\users\yoshi\documents\github\software\01_jrg\08_stm32h745\03_touchgfx\02_tut02\cm7\core\inc\main.h
+ d:\dokumente\github\software\01_jrg\08_stm32h745\03_touchgfx\02_tut02\cm7\core\inc\main.h
 ../../CM7/../../CM7/Middlewares/ST/touchgfx/framework/include/touchgfx/hal/GPIO.hpp:
 ../../../Drivers/CMSIS/Device/ST/STM32H7xx/Include/stm32h7xx.h:
 ../../../Drivers/CMSIS/Device/ST/STM32H7xx/Include/stm32h745xx.h:
@@ -79,4 +79,4 @@ Application/User/TouchGFX/target/TouchGFXGPIO.o: \
 ../../../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_ll_fmc.h:
 ../../../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_tim.h:
 ../../../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_tim_ex.h:
-c:\users\yoshi\documents\github\software\01_jrg\08_stm32h745\03_touchgfx\02_tut02\cm7\core\inc\main.h:
+d:\dokumente\github\software\01_jrg\08_stm32h745\03_touchgfx\02_tut02\cm7\core\inc\main.h:

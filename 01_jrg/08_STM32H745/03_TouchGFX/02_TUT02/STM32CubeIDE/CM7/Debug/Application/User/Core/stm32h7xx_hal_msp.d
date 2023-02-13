@@ -1,5 +1,5 @@
 Application/User/Core/stm32h7xx_hal_msp.o: \
- C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/08_STM32H745/03_TouchGFX/02_TUT02/CM7/Core/Src/stm32h7xx_hal_msp.c \
+ D:/Dokumente/GitHub/Software/01_jrg/08_STM32H745/03_TouchGFX/02_TUT02/CM7/Core/Src/stm32h7xx_hal_msp.c \
  ../../../CM7/Core/Inc/main.h \
  ../../../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal.h \
  ../../../CM7/Core/Inc/stm32h7xx_hal_conf.h \

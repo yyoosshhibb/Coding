@@ -1,0 +1,70 @@
+/* USER CODE BEGIN Header */
+/**
+  ******************************************************************************
+  * @file    fdcan.h
+  * @brief   This file contains all the function prototypes for
+  *          the fdcan.c file
+  ******************************************************************************
+  * @attention
+  *
+  * Copyright (c) 2023 STMicroelectronics.
+  * All rights reserved.
+  *
+  * This software is licensed under terms that can be found in the LICENSE file
+  * in the root directory of this software component.
+  * If no LICENSE file comes with this software, it is provided AS-IS.
+  *
+  ******************************************************************************
+  */
+/* USER CODE END Header */
+/* Define to prevent recursive inclusion -------------------------------------*/
+#ifndef __FDCAN_H__
+#define __FDCAN_H__
+
+#ifdef __cplusplus
+extern "C" {
+#endif
+
+/* Includes ------------------------------------------------------------------*/
+#include "main.h"
+
+/* USER CODE BEGIN Includes */
+
+#include "can_conf.h"
+
+/* USER CODE END Includes */
+
+extern FDCAN_HandleTypeDef hfdcan1;
+
+/* USER CODE BEGIN Private defines */
+typedef struct{
+	uint8_t	Data[8];
+	FDCAN_TxHeaderTypeDef	*TxHeader;
+}FDCAN_Tx_Frame_t;
+
+typedef struct{
+	uint8_t	Data[8];
+	FDCAN_RxHeaderTypeDef	*RxHeader;
+}FDCAN_Rx_Frame_t;
+
+#define DATANb 1        //Number of sending messages
+
+#define RX1_DATA_NB 1   //Number of datas received by CAN1
+#define RX2_DATA_NB 0   //Number of datas received by CAN2
+
+#define RX1_FRAME_NB 2 //Number of receiving frame in the CAN1
+#define RX2_FRAME_NB 0 //Number of receiving frame in the CAN2
+/* USER CODE END Private defines */
+
+void MX_FDCAN1_Init(void);
+
+/* USER CODE BEGIN Prototypes */
+
+/* USER CODE END Prototypes */
+
+#ifdef __cplusplus
+}
+#endif
+
+#endif /* __FDCAN_H__ */
+

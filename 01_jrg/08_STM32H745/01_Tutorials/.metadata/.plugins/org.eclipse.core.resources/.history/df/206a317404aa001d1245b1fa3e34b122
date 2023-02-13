@@ -1,0 +1,34 @@
+/*
+ * CAN_TX.c
+ *
+ *  Created on: Feb 10, 2023
+ *      Author: Yoshi
+ */
+
+#include "can_conf.h"
+
+CAN_data_t	CANdata[DATANb];		//Struct for outgoing Can data
+
+CAN_data_t	Powerlimit;
+CAN_data_t	Drivemode;
+CAN_data_t	FanSpeed;
+CAN_data_t PumpSpeed;
+
+void FDCAN_TX_def()
+{
+	Powerlimit.CAN_length = 0x100;
+	Powerlimit.CAN_length = RX_LENGTH8;
+	Powerlimit.CAN_length_dec = 8;
+	Powerlimit.CAN_startbit = 0;
+	Powerlimit.Enidianness = Motorola;
+	Powerlimit.CAN_data = 80;
+
+	Drivemode.CAN_length = 0x100;
+	Drivemode.CAN_length = RX_LENGTH8;
+	Drivemode.CAN_length_dec = 8;
+	Drivemode.CAN_startbit = 8;
+	Drivemode.Enidianness = Motorola;
+	Drivemode.CAN_data = 3;
+
+}
+

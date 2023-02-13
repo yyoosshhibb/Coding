@@ -87,8 +87,8 @@ all: main-build
 main-build: stm32h745i_disco_CM7.elf secondary-outputs
 
 # Tool invocations
-stm32h745i_disco_CM7.elf stm32h745i_disco_CM7.map: $(OBJS) $(USER_OBJS) C:\Users\Yoshi\Documents\GitHub\Software\01_jrg\08_STM32H745\03_TouchGFX\02_TUT02\STM32CubeIDE\CM7\STM32H745XIHX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
-	arm-none-eabi-g++ -o "stm32h745i_disco_CM7.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m7 -T"C:\Users\Yoshi\Documents\GitHub\Software\01_jrg\08_STM32H745\03_TouchGFX\02_TUT02\STM32CubeIDE\CM7\STM32H745XIHX_FLASH.ld" --specs=nosys.specs -Wl,-Map="stm32h745i_disco_CM7.map" -Wl,--gc-sections -static -LC:/dev/at_dev/at/stm32h745i_disco/STM32H745I_DISCO/CM7/Middlewares/ST/touchgfx/lib/core/cortex_m7/gcc -LC:/git/stm32h745i_disco/STM32H745I_DISCO/CM7/Middlewares/ST/touchgfx/lib/core/cortex_m7/gcc -LC:/Users/Yoshi/Documents/GitHub/Software/01_jrg/08_STM32H745/03_TouchGFX/02_TUT02/CM7/Middlewares/ST/touchgfx/lib/core/cortex_m7/gcc --specs=nano.specs -mfpu=fpv5-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -lstdc++ -lsupc++ -Wl,--end-group
+stm32h745i_disco_CM7.elf stm32h745i_disco_CM7.map: $(OBJS) $(USER_OBJS) D:\Dokumente\GitHub\Software\01_jrg\08_STM32H745\03_TouchGFX\02_TUT02\STM32CubeIDE\CM7\STM32H745XIHX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
+	arm-none-eabi-g++ -o "stm32h745i_disco_CM7.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m7 -T"D:\Dokumente\GitHub\Software\01_jrg\08_STM32H745\03_TouchGFX\02_TUT02\STM32CubeIDE\CM7\STM32H745XIHX_FLASH.ld" --specs=nosys.specs -Wl,-Map="stm32h745i_disco_CM7.map" -Wl,--gc-sections -static -LC:/dev/at_dev/at/stm32h745i_disco/STM32H745I_DISCO/CM7/Middlewares/ST/touchgfx/lib/core/cortex_m7/gcc -LC:/git/stm32h745i_disco/STM32H745I_DISCO/CM7/Middlewares/ST/touchgfx/lib/core/cortex_m7/gcc -LC:/Users/Yoshi/Documents/GitHub/Software/01_jrg/08_STM32H745/03_TouchGFX/02_TUT02/CM7/Middlewares/ST/touchgfx/lib/core/cortex_m7/gcc --specs=nano.specs -mfpu=fpv5-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -lstdc++ -lsupc++ -Wl,--end-group
 	@echo 'Finished building target: $@'
 	@echo ' '
 

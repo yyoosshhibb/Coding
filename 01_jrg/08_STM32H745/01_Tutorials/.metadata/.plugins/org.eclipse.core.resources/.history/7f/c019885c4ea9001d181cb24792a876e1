@@ -1,0 +1,15 @@
+/*
+ * CAN_RX.c
+ *
+ *  Created on: Feb 10, 2023
+ *      Author: Yoshi
+ */
+
+#include "can_conf.h"
+
+FDCAN_Rx_Frame_t FDCAN1_RX_bank[FDCAN_RX_MSG];
+
+//Signals Received
+
+CAN_data_t SoC_HV;
+CAN_data_t SoC_LV;
