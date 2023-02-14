@@ -1,5 +1,5 @@
 Application/User/generated/Table_verdana_20_4bpp.o: \
- D:/Dokumente/GitHub/Software/01_jrg/08_STM32H745/03_TouchGFX/02_TUT02/CM7/TouchGFX/generated/fonts/src/Table_verdana_20_4bpp.cpp \
+ C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/08_STM32H745/03_TouchGFX/02_TUT02/CM7/TouchGFX/generated/fonts/src/Table_verdana_20_4bpp.cpp \
  ../../CM7/../../CM7/TouchGFX/generated/fonts/include/fonts/GeneratedFont.hpp \
  ../../CM7/../../CM7/Middlewares/ST/touchgfx/framework/include/touchgfx/ConstFont.hpp \
  ../../CM7/../../CM7/Middlewares/ST/touchgfx/framework/include/touchgfx/Font.hpp \

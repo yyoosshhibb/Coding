@@ -1,7 +1,7 @@
 Drivers/STM32H745I-DISCO/stm32h745i_discovery_bus.o: \
- D:/Dokumente/GitHub/Software/01_jrg/08_STM32H745/03_TouchGFX/02_TUT02/Drivers/BSP/STM32H745I-DISCO/stm32h745i_discovery_bus.c \
- D:/Dokumente/GitHub/Software/01_jrg/08_STM32H745/03_TouchGFX/02_TUT02/Drivers/BSP/STM32H745I-DISCO/stm32h745i_discovery_bus.h \
- D:/Dokumente/GitHub/Software/01_jrg/08_STM32H745/03_TouchGFX/02_TUT02/Drivers/BSP/STM32H745I-DISCO/stm32h745i_discovery_conf.h \
+ C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/08_STM32H745/03_TouchGFX/02_TUT02/Drivers/BSP/STM32H745I-DISCO/stm32h745i_discovery_bus.c \
+ C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/08_STM32H745/03_TouchGFX/02_TUT02/Drivers/BSP/STM32H745I-DISCO/stm32h745i_discovery_bus.h \
+ C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/08_STM32H745/03_TouchGFX/02_TUT02/Drivers/BSP/STM32H745I-DISCO/stm32h745i_discovery_conf.h \
  ../../../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal.h \
  ../../../CM7/Core/Inc/stm32h7xx_hal_conf.h \
  ../../../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_rcc.h \
@@ -40,9 +40,9 @@ Drivers/STM32H745I-DISCO/stm32h745i_discovery_bus.o: \
  ../../../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_ll_fmc.h \
  ../../../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_tim.h \
  ../../../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_tim_ex.h \
- D:/Dokumente/GitHub/Software/01_jrg/08_STM32H745/03_TouchGFX/02_TUT02/Drivers/BSP/STM32H745I-DISCO/stm32h745i_discovery_errno.h
-D:/Dokumente/GitHub/Software/01_jrg/08_STM32H745/03_TouchGFX/02_TUT02/Drivers/BSP/STM32H745I-DISCO/stm32h745i_discovery_bus.h:
-D:/Dokumente/GitHub/Software/01_jrg/08_STM32H745/03_TouchGFX/02_TUT02/Drivers/BSP/STM32H745I-DISCO/stm32h745i_discovery_conf.h:
+ C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/08_STM32H745/03_TouchGFX/02_TUT02/Drivers/BSP/STM32H745I-DISCO/stm32h745i_discovery_errno.h
+C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/08_STM32H745/03_TouchGFX/02_TUT02/Drivers/BSP/STM32H745I-DISCO/stm32h745i_discovery_bus.h:
+C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/08_STM32H745/03_TouchGFX/02_TUT02/Drivers/BSP/STM32H745I-DISCO/stm32h745i_discovery_conf.h:
 ../../../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal.h:
 ../../../CM7/Core/Inc/stm32h7xx_hal_conf.h:
 ../../../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_rcc.h:
@@ -81,4 +81,4 @@ D:/Dokumente/GitHub/Software/01_jrg/08_STM32H745/03_TouchGFX/02_TUT02/Drivers/BS
 ../../../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_ll_fmc.h:
 ../../../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_tim.h:
 ../../../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_tim_ex.h:
-D:/Dokumente/GitHub/Software/01_jrg/08_STM32H745/03_TouchGFX/02_TUT02/Drivers/BSP/STM32H745I-DISCO/stm32h745i_discovery_errno.h:
+C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/08_STM32H745/03_TouchGFX/02_TUT02/Drivers/BSP/STM32H745I-DISCO/stm32h745i_discovery_errno.h:

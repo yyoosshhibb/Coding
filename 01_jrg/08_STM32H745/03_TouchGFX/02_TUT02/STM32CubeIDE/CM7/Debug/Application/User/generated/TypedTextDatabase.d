@@ -1,5 +1,5 @@
 Application/User/generated/TypedTextDatabase.o: \
- D:/Dokumente/GitHub/Software/01_jrg/08_STM32H745/03_TouchGFX/02_TUT02/CM7/TouchGFX/generated/texts/src/TypedTextDatabase.cpp \
+ C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/08_STM32H745/03_TouchGFX/02_TUT02/CM7/TouchGFX/generated/texts/src/TypedTextDatabase.cpp \
  ../../CM7/../../CM7/Middlewares/ST/touchgfx/framework/include/touchgfx/TypedText.hpp \
  ../../CM7/../../CM7/Middlewares/ST/touchgfx/framework/include/touchgfx/Font.hpp \
  ../../CM7/../../CM7/Middlewares/ST/touchgfx/framework/include/touchgfx/Unicode.hpp \

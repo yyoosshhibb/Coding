@@ -283,3 +283,25 @@ org.eclipse.swt.SWTException: Graphic is disposed
 	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:659)
 	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:596)
 	at org.eclipse.equinox.launcher.Main.run(Main.java:1467)
+!SESSION 2023-02-13 15:33:48.816 -----------------------------------------------
+eclipse.buildId=Version 1.10.1
+java.version=11.0.14.1
+java.vendor=Eclipse Adoptium
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=de_AT
+Framework arguments:  C:\Users\Yoshi\Documents\GitHub\Software\01_jrg\08_STM32H745\03_TouchGFX\02_TUT02\STM32CubeIDE\CM7\.project
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 C:\Users\Yoshi\Documents\GitHub\Software\01_jrg\08_STM32H745\03_TouchGFX\02_TUT02\STM32CubeIDE\CM7\.project
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 4 4 2023-02-13 15:34:03.258
+!MESSAGE CubeMX plugin appears to be active, Log4j initialization might be too late.
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 1 1 2023-02-13 15:34:03.438
+!MESSAGE Log4j initialized with config file C:\Users\Yoshi\Documents\GitHub\Software\01_jrg\08_STM32H745\03_TouchGFX\03_TUT03\.metadata\.log4j.xml
+
+!ENTRY com.st.stm32cube.ide.mcu.ide 1 1 2023-02-13 15:34:08.686
+!MESSAGE Started RMI Server, listening on port 41337
+
+!ENTRY org.eclipse.cdt.core 1 0 2023-02-13 15:34:23.945
+!MESSAGE Indexed 'stm32h745i_disco_CM4' (11 sources, 84 headers) in 4,75 sec: 6 241 declarations; 16 254 references; 5 unresolved inclusions; 49 syntax errors; 2 107 unresolved names (8,6 %)
+
+!ENTRY org.eclipse.cdt.core 1 0 2023-02-13 15:34:37.183
+!MESSAGE Indexed 'stm32h745i_disco_CM7' (90 sources, 351 headers) in 12,4 sec: 31 555 declarations; 132 122 references; 7 unresolved inclusions; 148 syntax errors; 2 955 unresolved names (1,8 %)

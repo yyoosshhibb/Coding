@@ -1,5 +1,5 @@
 Application/User/generated/Screen1ViewBase.o: \
- D:/Dokumente/GitHub/Software/01_jrg/08_STM32H745/03_TouchGFX/02_TUT02/CM7/TouchGFX/generated/gui_generated/src/screen1_screen/Screen1ViewBase.cpp \
+ C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/08_STM32H745/03_TouchGFX/02_TUT02/CM7/TouchGFX/generated/gui_generated/src/screen1_screen/Screen1ViewBase.cpp \
  ../../CM7/../../CM7/TouchGFX/generated/gui_generated/include/gui_generated/screen1_screen/Screen1ViewBase.hpp \
  ../../CM7/../../CM7/TouchGFX/gui/include/gui/common/FrontendApplication.hpp \
  ../../CM7/../../CM7/TouchGFX/generated/gui_generated/include/gui_generated/common/FrontendApplicationBase.hpp \

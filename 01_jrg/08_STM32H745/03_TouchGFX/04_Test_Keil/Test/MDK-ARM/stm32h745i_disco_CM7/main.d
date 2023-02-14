@@ -48,3 +48,10 @@ stm32h745i_disco_cm7\main.o: ../CM7/Core/Inc/FreeRTOSConfig.h
 stm32h745i_disco_cm7\main.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/projdefs.h
 stm32h745i_disco_cm7\main.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/portable.h
 stm32h745i_disco_cm7\main.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/deprecated_definitions.h
+stm32h745i_disco_cm7\main.o: ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F/portmacro.h
+stm32h745i_disco_cm7\main.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/mpu_wrappers.h
+stm32h745i_disco_cm7\main.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/task.h
+stm32h745i_disco_cm7\main.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/list.h
+stm32h745i_disco_cm7\main.o: ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2/cmsis_os2.h
+stm32h745i_disco_cm7\main.o: ../CM7/TouchGFX/App/app_touchgfx.h
+stm32h745i_disco_cm7\main.o: ../CM7/Core/Inc/main_user.h

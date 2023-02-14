@@ -1,7 +1,7 @@
 Drivers/Components/mt25tl01g.o: \
- D:/Dokumente/GitHub/Software/01_jrg/08_STM32H745/03_TouchGFX/02_TUT02/Drivers/BSP/Components/mt25tl01g/mt25tl01g.c \
- D:/Dokumente/GitHub/Software/01_jrg/08_STM32H745/03_TouchGFX/02_TUT02/Drivers/BSP/Components/mt25tl01g/mt25tl01g.h \
- D:/Dokumente/GitHub/Software/01_jrg/08_STM32H745/03_TouchGFX/02_TUT02/Drivers/BSP/Components/mt25tl01g/mt25tl01g_conf.h \
+ C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/08_STM32H745/03_TouchGFX/02_TUT02/Drivers/BSP/Components/mt25tl01g/mt25tl01g.c \
+ C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/08_STM32H745/03_TouchGFX/02_TUT02/Drivers/BSP/Components/mt25tl01g/mt25tl01g.h \
+ C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/08_STM32H745/03_TouchGFX/02_TUT02/Drivers/BSP/Components/mt25tl01g/mt25tl01g_conf.h \
  ../../../Drivers/CMSIS/Device/ST/STM32H7xx/Include/stm32h7xx.h \
  ../../../Drivers/CMSIS/Device/ST/STM32H7xx/Include/stm32h745xx.h \
  ../../../Drivers/CMSIS/Include/core_cm7.h \
@@ -40,8 +40,8 @@ Drivers/Components/mt25tl01g.o: \
  ../../../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_ll_fmc.h \
  ../../../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_tim.h \
  ../../../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_tim_ex.h
-D:/Dokumente/GitHub/Software/01_jrg/08_STM32H745/03_TouchGFX/02_TUT02/Drivers/BSP/Components/mt25tl01g/mt25tl01g.h:
-D:/Dokumente/GitHub/Software/01_jrg/08_STM32H745/03_TouchGFX/02_TUT02/Drivers/BSP/Components/mt25tl01g/mt25tl01g_conf.h:
+C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/08_STM32H745/03_TouchGFX/02_TUT02/Drivers/BSP/Components/mt25tl01g/mt25tl01g.h:
+C:/Users/Yoshi/Documents/GitHub/Software/01_jrg/08_STM32H745/03_TouchGFX/02_TUT02/Drivers/BSP/Components/mt25tl01g/mt25tl01g_conf.h:
 ../../../Drivers/CMSIS/Device/ST/STM32H7xx/Include/stm32h7xx.h:
 ../../../Drivers/CMSIS/Device/ST/STM32H7xx/Include/stm32h745xx.h:
 ../../../Drivers/CMSIS/Include/core_cm7.h:
