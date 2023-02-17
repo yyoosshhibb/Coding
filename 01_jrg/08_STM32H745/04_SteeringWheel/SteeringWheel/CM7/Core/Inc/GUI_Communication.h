@@ -13,6 +13,14 @@ extern osMessageQueueId_t Q_send_GUI;
 void SendToGUI();
 void msg_calc();
 
+typedef enum
+{
+	TSOff,
+	TSOn,
+	R2D,
+	SD,					//SD Circuit open
+}TSState_t;
+	
 typedef struct
 {
 	float			*TempHV;
@@ -23,6 +31,8 @@ typedef struct
 	float 		*TInvMax;
 	float 		*TWater;
 	uint8_t		*TSState;
+	uint8_t		*TS_Error;
+	uint8_t		*Error;
 }HomeData_t;
 
 typedef struct

@@ -9,6 +9,8 @@
 #include <gui/screen4_screen/Screen4Presenter.hpp>
 #include <touchgfx/widgets/Box.hpp>
 #include <touchgfx/widgets/Image.hpp>
+#include <touchgfx/widgets/TextArea.hpp>
+#include <touchgfx/widgets/TextAreaWithWildcard.hpp>
 
 class Screen4ViewBase : public touchgfx::View<Screen4Presenter>
 {
@@ -29,6 +31,26 @@ protected:
     touchgfx::Box __background;
     touchgfx::Box box1;
     touchgfx::Image image1;
+    touchgfx::TextArea textLabel1;
+    touchgfx::TextAreaWithOneWildcard textCellVoltage1;
+    touchgfx::TextAreaWithOneWildcard textCellVoltage2;
+    touchgfx::TextArea textLabel2;
+    touchgfx::TextArea textLabel4;
+    touchgfx::TextAreaWithOneWildcard textCellVoltage4;
+    touchgfx::TextAreaWithOneWildcard textCellVoltage3;
+    touchgfx::TextArea textLabel3;
+
+    /*
+     * Wildcard Buffers
+     */
+    static const uint16_t TEXTCELLVOLTAGE1_SIZE = 10;
+    touchgfx::Unicode::UnicodeChar textCellVoltage1Buffer[TEXTCELLVOLTAGE1_SIZE];
+    static const uint16_t TEXTCELLVOLTAGE2_SIZE = 10;
+    touchgfx::Unicode::UnicodeChar textCellVoltage2Buffer[TEXTCELLVOLTAGE2_SIZE];
+    static const uint16_t TEXTCELLVOLTAGE4_SIZE = 10;
+    touchgfx::Unicode::UnicodeChar textCellVoltage4Buffer[TEXTCELLVOLTAGE4_SIZE];
+    static const uint16_t TEXTCELLVOLTAGE3_SIZE = 10;
+    touchgfx::Unicode::UnicodeChar textCellVoltage3Buffer[TEXTCELLVOLTAGE3_SIZE];
 
 private:
 

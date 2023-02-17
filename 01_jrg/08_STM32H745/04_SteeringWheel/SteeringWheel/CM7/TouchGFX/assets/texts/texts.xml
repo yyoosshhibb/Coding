@@ -6,6 +6,51 @@
   <Texts>
     <TextGroup Id="Group1" />
     <TextGroup Id="Unsorted">
+      <Text Id="__SingleUse_FE1T" Alignment="Left" TypographyId="Numbers">
+        <Translation Language="GB">Error Else</Translation>
+      </Text>
+      <Text Id="__SingleUse_ZQPQ" Alignment="Center" TypographyId="Errors">
+        <Translation Language="GB">&lt;value&gt;</Translation>
+      </Text>
+      <Text Id="__SingleUse_HNTX" Alignment="Left" TypographyId="Numbers">
+        <Translation Language="GB">TS Error</Translation>
+      </Text>
+      <Text Id="__SingleUse_N7JH" Alignment="Center" TypographyId="Labels">
+        <Translation Language="GB">U Cell 2</Translation>
+      </Text>
+      <Text Id="__SingleUse_H3BZ" Alignment="Left" TypographyId="Numbers">
+        <Translation Language="GB">3.7</Translation>
+      </Text>
+      <Text Id="__SingleUse_XX66" Alignment="Center" TypographyId="Numbers">
+        <Translation Language="GB">&lt;value&gt; V</Translation>
+      </Text>
+      <Text Id="__SingleUse_ORQ1" Alignment="Left" TypographyId="Numbers">
+        <Translation Language="GB">12</Translation>
+      </Text>
+      <Text Id="__SingleUse_SJOP" Alignment="Center" TypographyId="Numbers">
+        <Translation Language="GB">&lt;value&gt; A</Translation>
+      </Text>
+      <Text Id="__SingleUse_ODDB" Alignment="Center" TypographyId="Labels">
+        <Translation Language="GB">I LV</Translation>
+      </Text>
+      <Text Id="__SingleUse_FUI1" Alignment="Left" TypographyId="Numbers">
+        <Translation Language="GB">34</Translation>
+      </Text>
+      <Text Id="__SingleUse_CUJ3" Alignment="Center" TypographyId="Numbers">
+        <Translation Language="GB">&lt;value&gt; °C</Translation>
+      </Text>
+      <Text Id="__SingleUse_WDG7" Alignment="Center" TypographyId="Labels">
+        <Translation Language="GB">T Cell avg</Translation>
+      </Text>
+      <Text Id="__SingleUse_YUTS" Alignment="Left" TypographyId="Numbers">
+        <Translation Language="GB">38</Translation>
+      </Text>
+      <Text Id="__SingleUse_XBOO" Alignment="Center" TypographyId="Numbers">
+        <Translation Language="GB">&lt;value&gt; °C</Translation>
+      </Text>
+      <Text Id="__SingleUse_BO6F" Alignment="Center" TypographyId="Labels">
+        <Translation Language="GB">T VCU</Translation>
+      </Text>
       <Text Id="RessourceErrorTS" Alignment="Center" TypographyId="Errors">
         <Translation Language="GB">Error TS</Translation>
       </Text>
@@ -91,7 +136,7 @@
         <Translation Language="GB">JR23</Translation>
       </Text>
       <Text Id="__SingleUse_EYEX" Alignment="Center" TypographyId="Errors">
-        <Translation Language="GB">Error Else</Translation>
+        <Translation Language="GB">&lt;value&gt;</Translation>
       </Text>
       <Text Id="__SingleUse_BH3A" Alignment="Center" TypographyId="Labels">
         <Translation Language="GB">TS State&#10;</Translation>
@@ -169,9 +214,9 @@
   </Texts>
   <Typographies>
     <Typography Id="Labels" Font="DMSans-Bold.ttf" Size="20" Bpp="4" Direction="LTR" FallbackCharacter="?" />
-    <Typography Id="Numbers" Font="DMSans-Regular.ttf" Size="40" Bpp="4" Direction="LTR" FallbackCharacter="?" WildcardCharacters=".%" WildcardCharacterRanges="0-9" />
+    <Typography Id="Numbers" Font="DMSans-Regular.ttf" Size="40" Bpp="4" Direction="LTR" FallbackCharacter="?" WildcardCharacterRanges="0x00-0xff" />
     <Typography Id="Small" Font="verdana.ttf" Size="10" Bpp="4" Direction="LTR" FallbackCharacter="?" />
-    <Typography Id="Errors" Font="DMSans-Bold.ttf" Size="60" Bpp="4" Direction="LTR" FallbackCharacter="?" />
-    <Typography Id="Autotype" Font="DMSans-Italic.ttf" Size="80" Bpp="4" Direction="LTR" FallbackCharacter="?" />
+    <Typography Id="Errors" Font="DMSans-Bold.ttf" Size="60" Bpp="4" Direction="LTR" FallbackCharacter="?" WildcardCharacterRanges="0x00-0xff" />
+    <Typography Id="Autotype" Font="DMSans-Italic.ttf" Size="80" Bpp="4" Direction="LTR" FallbackCharacter="?" WildcardCharacterRanges="0x00-0xff" />
   </Typographies>
 </TextDatabase>

@@ -3,7 +3,7 @@
  * Auto generated Run-Time-Environment Configuration File
  *      *** Do not modify ! ***
  *
- * Project: 'STM32H745I_DISCO' 
+ * Project: 'stm32h745i_disco' 
  * Target:  'STM32H745I_DISCO_CM7' 
  */
 

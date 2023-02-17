@@ -130,12 +130,16 @@ Screen2ViewBase::Screen2ViewBase()
     textErrorTS.setPosition(0, 0, 272, 92);
     textErrorTS.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
     textErrorTS.setLinespacing(0);
-    textErrorTS.setTypedText(touchgfx::TypedText(T_RESSOURCEERRORTS));
+    Unicode::snprintf(textErrorTSBuffer, TEXTERRORTS_SIZE, "%s", touchgfx::TypedText(T___SINGLEUSE_HNTX).getText());
+    textErrorTS.setWildcard(textErrorTSBuffer);
+    textErrorTS.setTypedText(touchgfx::TypedText(T___SINGLEUSE_ZQPQ));
     add(textErrorTS);
 
     textErrorElse.setPosition(0, 388, 272, 92);
     textErrorElse.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
     textErrorElse.setLinespacing(0);
+    Unicode::snprintf(textErrorElseBuffer, TEXTERRORELSE_SIZE, "%s", touchgfx::TypedText(T___SINGLEUSE_FE1T).getText());
+    textErrorElse.setWildcard(textErrorElseBuffer);
     textErrorElse.setTypedText(touchgfx::TypedText(T___SINGLEUSE_EYEX));
     add(textErrorElse);
 }

@@ -45,8 +45,8 @@ protected:
     touchgfx::TextAreaWithOneWildcard textTempWater;
     touchgfx::TextAreaWithOneWildcard textTSState;
     touchgfx::TextArea textLabel8;
-    touchgfx::TextArea textErrorTS;
-    touchgfx::TextArea textErrorElse;
+    touchgfx::TextAreaWithOneWildcard textErrorTS;
+    touchgfx::TextAreaWithOneWildcard textErrorElse;
 
     /*
      * Wildcard Buffers
@@ -67,6 +67,10 @@ protected:
     touchgfx::Unicode::UnicodeChar textTempWaterBuffer[TEXTTEMPWATER_SIZE];
     static const uint16_t TEXTTSSTATE_SIZE = 10;
     touchgfx::Unicode::UnicodeChar textTSStateBuffer[TEXTTSSTATE_SIZE];
+    static const uint16_t TEXTERRORTS_SIZE = 10;
+    touchgfx::Unicode::UnicodeChar textErrorTSBuffer[TEXTERRORTS_SIZE];
+    static const uint16_t TEXTERRORELSE_SIZE = 10;
+    touchgfx::Unicode::UnicodeChar textErrorElseBuffer[TEXTERRORELSE_SIZE];
 
 private:
 

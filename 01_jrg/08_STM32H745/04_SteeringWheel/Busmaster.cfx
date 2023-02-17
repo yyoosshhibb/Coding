@@ -31,7 +31,7 @@
     <J1939_Database_Files/>
     <CAN_DIL_Section>
       <DriverName>PEAK USB</DriverName>
-      <ControllerMode>Bus Off</ControllerMode>
+      <ControllerMode>Unknown</ControllerMode>
       <ControllerSettings>
         <Channel>
           <BaudRate>1000</BaudRate>
@@ -95,10 +95,10 @@
         <Bottom>300</Bottom>
       </Window_Position>
       <COLUMN_WIDTH>
-        <MESSAGE_COLUMN>87</MESSAGE_COLUMN>
-        <Raw_Val_Column>87</Raw_Val_Column>
-        <Physical_Val_Column>174</Physical_Val_Column>
-        <Signal_Column>87</Signal_Column>
+        <MESSAGE_COLUMN>94</MESSAGE_COLUMN>
+        <Raw_Val_Column>94</Raw_Val_Column>
+        <Physical_Val_Column>189</Physical_Val_Column>
+        <Signal_Column>94</Signal_Column>
       </COLUMN_WIDTH>
     </CAN_Signal_Watch>
     <J1939_Signal_Watch>
@@ -111,10 +111,10 @@
         <Bottom>300</Bottom>
       </Window_Position>
       <COLUMN_WIDTH>
-        <MESSAGE_COLUMN>87</MESSAGE_COLUMN>
-        <Raw_Val_Column>87</Raw_Val_Column>
-        <Physical_Val_Column>174</Physical_Val_Column>
-        <Signal_Column>87</Signal_Column>
+        <MESSAGE_COLUMN>94</MESSAGE_COLUMN>
+        <Raw_Val_Column>94</Raw_Val_Column>
+        <Physical_Val_Column>189</Physical_Val_Column>
+        <Signal_Column>94</Signal_Column>
       </COLUMN_WIDTH>
     </J1939_Signal_Watch>
     <LIN_Signal_Watch>
@@ -127,10 +127,10 @@
         <Bottom>300</Bottom>
       </Window_Position>
       <COLUMN_WIDTH>
-        <MESSAGE_COLUMN>87</MESSAGE_COLUMN>
-        <Raw_Val_Column>87</Raw_Val_Column>
-        <Physical_Val_Column>174</Physical_Val_Column>
-        <Signal_Column>87</Signal_Column>
+        <MESSAGE_COLUMN>94</MESSAGE_COLUMN>
+        <Raw_Val_Column>94</Raw_Val_Column>
+        <Physical_Val_Column>189</Physical_Val_Column>
+        <Signal_Column>94</Signal_Column>
       </COLUMN_WIDTH>
     </LIN_Signal_Watch>
     <CAN_Signal_Graph>
@@ -260,7 +260,7 @@
         <ID>Data Byte(s)</ID>
         <Order>9</Order>
         <IsVisible>1</IsVisible>
-        <Width>1023</Width>
+        <Width>990</Width>
       </COLUMN>
       <IsHex>1</IsHex>
       <IsAppend>0</IsAppend>
@@ -268,7 +268,7 @@
       <Time_Mode>SYSTEM</Time_Mode>
       <Window_Position>
         <Visibility>SHOWNORMAL</Visibility>
-        <WindowPlacement>RESTORETOMAXIMIZED</WindowPlacement>
+        <WindowPlacement>SETMINPOSITION</WindowPlacement>
         <Top>0</Top>
         <Left>0</Left>
         <Bottom>540</Bottom>
@@ -277,10 +277,10 @@
       <Interpretation_Window_Position>
         <Visibility>SHOWNORMAL</Visibility>
         <WindowPlacement>RESTORETOMAXIMIZED</WindowPlacement>
-        <Top>181</Top>
-        <Left>11</Left>
-        <Bottom>459</Bottom>
-        <Right>360</Right>
+        <Top>179</Top>
+        <Left>10</Left>
+        <Bottom>457</Bottom>
+        <Right>359</Right>
       </Interpretation_Window_Position>
     </CAN_Message_Window>
     <J1939_Message_Window>
@@ -368,7 +368,7 @@
       <Time_Mode>SYSTEM</Time_Mode>
       <Window_Position>
         <Visibility>SHOWNORMAL</Visibility>
-        <WindowPlacement>RESTORETOMAXIMIZED</WindowPlacement>
+        <WindowPlacement>SETMINPOSITION</WindowPlacement>
         <Top>0</Top>
         <Left>0</Left>
         <Bottom>540</Bottom>
@@ -377,10 +377,10 @@
       <Interpretation_Window_Position>
         <Visibility>SHOWNORMAL</Visibility>
         <WindowPlacement>RESTORETOMAXIMIZED</WindowPlacement>
-        <Top>181</Top>
-        <Left>11</Left>
-        <Bottom>459</Bottom>
-        <Right>360</Right>
+        <Top>179</Top>
+        <Left>10</Left>
+        <Bottom>457</Bottom>
+        <Right>359</Right>
       </Interpretation_Window_Position>
     </J1939_Message_Window>
     <LIN_Message_Window>
@@ -453,7 +453,7 @@
       <Time_Mode>SYSTEM</Time_Mode>
       <Window_Position>
         <Visibility>SHOWNORMAL</Visibility>
-        <WindowPlacement>RESTORETOMAXIMIZED</WindowPlacement>
+        <WindowPlacement>SETMINPOSITION</WindowPlacement>
         <Top>0</Top>
         <Left>0</Left>
         <Bottom>540</Bottom>
@@ -462,20 +462,20 @@
       <Interpretation_Window_Position>
         <Visibility>SHOWNORMAL</Visibility>
         <WindowPlacement>RESTORETOMAXIMIZED</WindowPlacement>
-        <Top>181</Top>
-        <Left>11</Left>
-        <Bottom>459</Bottom>
-        <Right>360</Right>
+        <Top>179</Top>
+        <Left>10</Left>
+        <Bottom>457</Bottom>
+        <Right>359</Right>
       </Interpretation_Window_Position>
     </LIN_Message_Window>
     <CAN_Tx_Window>
       <Window_Position>
         <Visibility>SHOWNORMAL</Visibility>
         <WindowPlacement>SETMINPOSITION</WindowPlacement>
-        <Top>1</Top>
-        <Left>4</Left>
-        <Bottom>656</Bottom>
-        <Right>864</Right>
+        <Top>138</Top>
+        <Left>573</Left>
+        <Bottom>793</Bottom>
+        <Right>1433</Right>
       </Window_Position>
       <Message_List>
         <Message>
@@ -580,7 +580,7 @@
           <IsExtended>FALSE</IsExtended>
           <IsRtr>FALSE</IsRtr>
           <DLC>8</DLC>
-          <DataBytes>0,0,0,0,0,147,0,0</DataBytes>
+          <DataBytes>0,0,0,0,0,123,0,0</DataBytes>
           <Repetion>10</Repetion>
           <Repetition_Enabled>TRUE</Repetition_Enabled>
           <Key_Value>a</Key_Value>
@@ -604,7 +604,7 @@
           <IsExtended>FALSE</IsExtended>
           <IsRtr>FALSE</IsRtr>
           <DLC>8</DLC>
-          <DataBytes>0,0,0,0,106,101,0,0</DataBytes>
+          <DataBytes>0,0,0,0,116,101,0,0</DataBytes>
           <Repetion>10</Repetion>
           <Repetition_Enabled>TRUE</Repetition_Enabled>
           <Key_Value>a</Key_Value>

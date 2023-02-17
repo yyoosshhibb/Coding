@@ -347,12 +347,17 @@
             "Name": "textErrorTS",
             "Width": 272,
             "Height": 92,
-            "TextId": "RessourceErrorTS",
+            "TextId": "__SingleUse_ZQPQ",
             "TextRotation": "0",
             "Color": {
               "Red": 255,
               "Green": 255,
               "Blue": 255
+            },
+            "Wildcard1": {
+              "TextId": "__SingleUse_HNTX",
+              "UseBuffer": true,
+              "BufferSize": 10
             }
           },
           {
@@ -367,6 +372,11 @@
               "Red": 255,
               "Green": 255,
               "Blue": 255
+            },
+            "Wildcard1": {
+              "TextId": "__SingleUse_FE1T",
+              "UseBuffer": true,
+              "BufferSize": 10
             }
           }
         ],
@@ -645,6 +655,102 @@
             "Width": 241,
             "Height": 60,
             "RelativeFilename": "Joanneum_Racing_Electrics.png"
+          },
+          {
+            "Type": "TextArea",
+            "Name": "textLabel1",
+            "Y": 140,
+            "Width": 136,
+            "Height": 25,
+            "TextId": "__SingleUse_BO6F",
+            "TextRotation": "0"
+          },
+          {
+            "Type": "TextArea",
+            "Name": "textCellVoltage1",
+            "Y": 90,
+            "Width": 136,
+            "Height": 50,
+            "TextId": "__SingleUse_XBOO",
+            "TextRotation": "0",
+            "Wildcard1": {
+              "TextId": "__SingleUse_YUTS",
+              "UseBuffer": true,
+              "BufferSize": 10
+            }
+          },
+          {
+            "Type": "TextArea",
+            "Name": "textCellVoltage2",
+            "X": 136,
+            "Y": 90,
+            "Width": 136,
+            "Height": 50,
+            "TextId": "__SingleUse_CUJ3",
+            "TextRotation": "0",
+            "Wildcard1": {
+              "TextId": "__SingleUse_FUI1",
+              "UseBuffer": true,
+              "BufferSize": 10
+            }
+          },
+          {
+            "Type": "TextArea",
+            "Name": "textLabel2",
+            "X": 136,
+            "Y": 140,
+            "Width": 136,
+            "Height": 25,
+            "TextId": "__SingleUse_WDG7",
+            "TextRotation": "0"
+          },
+          {
+            "Type": "TextArea",
+            "Name": "textLabel4",
+            "X": 136,
+            "Y": 215,
+            "Width": 136,
+            "Height": 25,
+            "TextId": "__SingleUse_N7JH",
+            "TextRotation": "0"
+          },
+          {
+            "Type": "TextArea",
+            "Name": "textCellVoltage4",
+            "X": 136,
+            "Y": 165,
+            "Width": 136,
+            "Height": 50,
+            "TextId": "__SingleUse_XX66",
+            "TextRotation": "0",
+            "Wildcard1": {
+              "TextId": "__SingleUse_H3BZ",
+              "UseBuffer": true,
+              "BufferSize": 10
+            }
+          },
+          {
+            "Type": "TextArea",
+            "Name": "textCellVoltage3",
+            "Y": 165,
+            "Width": 136,
+            "Height": 50,
+            "TextId": "__SingleUse_SJOP",
+            "TextRotation": "0",
+            "Wildcard1": {
+              "TextId": "__SingleUse_ORQ1",
+              "UseBuffer": true,
+              "BufferSize": 10
+            }
+          },
+          {
+            "Type": "TextArea",
+            "Name": "textLabel3",
+            "Y": 215,
+            "Width": 136,
+            "Height": 25,
+            "TextId": "__SingleUse_ODDB",
+            "TextRotation": "0"
           }
         ],
         "Interactions": [

@@ -4,6 +4,7 @@
 #include <gui_generated/screen4_screen/Screen4ViewBase.hpp>
 #include <touchgfx/Color.hpp>
 #include <images/BitmapDatabase.hpp>
+#include <texts/TextKeysAndLanguages.hpp>
 
 Screen4ViewBase::Screen4ViewBase()
 {
@@ -18,6 +19,62 @@ Screen4ViewBase::Screen4ViewBase()
     image1.setXY(16, 5);
     image1.setBitmap(touchgfx::Bitmap(BITMAP_JOANNEUM_RACING_ELECTRICS_ID));
     add(image1);
+
+    textLabel1.setPosition(0, 140, 136, 25);
+    textLabel1.setColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
+    textLabel1.setLinespacing(0);
+    textLabel1.setTypedText(touchgfx::TypedText(T___SINGLEUSE_BO6F));
+    add(textLabel1);
+
+    textCellVoltage1.setPosition(0, 90, 136, 50);
+    textCellVoltage1.setColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
+    textCellVoltage1.setLinespacing(0);
+    Unicode::snprintf(textCellVoltage1Buffer, TEXTCELLVOLTAGE1_SIZE, "%s", touchgfx::TypedText(T___SINGLEUSE_YUTS).getText());
+    textCellVoltage1.setWildcard(textCellVoltage1Buffer);
+    textCellVoltage1.setTypedText(touchgfx::TypedText(T___SINGLEUSE_XBOO));
+    add(textCellVoltage1);
+
+    textCellVoltage2.setPosition(136, 90, 136, 50);
+    textCellVoltage2.setColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
+    textCellVoltage2.setLinespacing(0);
+    Unicode::snprintf(textCellVoltage2Buffer, TEXTCELLVOLTAGE2_SIZE, "%s", touchgfx::TypedText(T___SINGLEUSE_FUI1).getText());
+    textCellVoltage2.setWildcard(textCellVoltage2Buffer);
+    textCellVoltage2.setTypedText(touchgfx::TypedText(T___SINGLEUSE_CUJ3));
+    add(textCellVoltage2);
+
+    textLabel2.setPosition(136, 140, 136, 25);
+    textLabel2.setColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
+    textLabel2.setLinespacing(0);
+    textLabel2.setTypedText(touchgfx::TypedText(T___SINGLEUSE_WDG7));
+    add(textLabel2);
+
+    textLabel4.setPosition(136, 215, 136, 25);
+    textLabel4.setColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
+    textLabel4.setLinespacing(0);
+    textLabel4.setTypedText(touchgfx::TypedText(T___SINGLEUSE_N7JH));
+    add(textLabel4);
+
+    textCellVoltage4.setPosition(136, 165, 136, 50);
+    textCellVoltage4.setColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
+    textCellVoltage4.setLinespacing(0);
+    Unicode::snprintf(textCellVoltage4Buffer, TEXTCELLVOLTAGE4_SIZE, "%s", touchgfx::TypedText(T___SINGLEUSE_H3BZ).getText());
+    textCellVoltage4.setWildcard(textCellVoltage4Buffer);
+    textCellVoltage4.setTypedText(touchgfx::TypedText(T___SINGLEUSE_XX66));
+    add(textCellVoltage4);
+
+    textCellVoltage3.setPosition(0, 165, 136, 50);
+    textCellVoltage3.setColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
+    textCellVoltage3.setLinespacing(0);
+    Unicode::snprintf(textCellVoltage3Buffer, TEXTCELLVOLTAGE3_SIZE, "%s", touchgfx::TypedText(T___SINGLEUSE_ORQ1).getText());
+    textCellVoltage3.setWildcard(textCellVoltage3Buffer);
+    textCellVoltage3.setTypedText(touchgfx::TypedText(T___SINGLEUSE_SJOP));
+    add(textCellVoltage3);
+
+    textLabel3.setPosition(0, 215, 136, 25);
+    textLabel3.setColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
+    textLabel3.setLinespacing(0);
+    textLabel3.setTypedText(touchgfx::TypedText(T___SINGLEUSE_ODDB));
+    add(textLabel3);
 }
 
 Screen4ViewBase::~Screen4ViewBase()

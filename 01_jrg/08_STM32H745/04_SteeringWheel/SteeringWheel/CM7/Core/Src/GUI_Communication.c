@@ -6,6 +6,9 @@ GUIMessage_t				msg_send_gui;
 
 void SendToGUI()
 {
+	
+	
+	
 	Q_send_GUI = osMessageQueueNew(10,sizeof(GUIMessage_t),NULL);
 
 	
@@ -13,7 +16,7 @@ void SendToGUI()
 	msg_send_gui.Homedata.TempHV = &T_HV_Cell[1].Value;
 	msg_send_gui.Homedata.TempLV = &T_LV_Bat.Value;
 
-	//msg_send_gui.Testdata.TSState = &TS_State.Value;
+	msg_send_gui.Homedata.TSState = &TS_State.CAN_data;
 	msg_send_gui.Homedata.TWater = &T_Water.Value;
 	msg_send_gui.Homedata.VoltageLV = &U_LV_Bat.Value;
 	
