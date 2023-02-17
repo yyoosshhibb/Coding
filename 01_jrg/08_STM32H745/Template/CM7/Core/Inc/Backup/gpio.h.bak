@@ -29,6 +29,7 @@ extern "C" {
 #include "main.h"
 
 /* USER CODE BEGIN Includes */
+#define FLAG_GPIO_CONFIG_READY 0x02
 
 /* USER CODE END Includes */
 
@@ -39,6 +40,8 @@ extern "C" {
 void MX_GPIO_Init(void);
 
 /* USER CODE BEGIN Prototypes */
+void toggle_LED1(void);
+void toggle_LED2(void);
 
 /* USER CODE END Prototypes */
 

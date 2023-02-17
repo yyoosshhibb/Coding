@@ -1,0 +1,665 @@
+<html>
+<body>
+<pre>
+<h1>µVision Build Log</h1>
+<h2>Tool Versions:</h2>
+IDE-Version: µVision V5.29.0.0
+Copyright (C) 2019 ARM Ltd and ARM Germany GmbH. All rights reserved.
+License Information: Jo Bau, -, LIC=21ERA-1V8JA-PZRWB-2BQYN-RK7DR-LKBXM
+ 
+Tool Versions:
+Toolchain:       MDK-ARM Plus  Version: 5.29.0.0
+Toolchain Path:  C:\Keil_v5\ARM\ARMCC\Bin
+C Compiler:      Armcc.exe V5.06 update 6 (build 750)
+Assembler:       Armasm.exe V5.06 update 6 (build 750)
+Linker/Locator:  ArmLink.exe V5.06 update 6 (build 750)
+Library Manager: ArmAr.exe V5.06 update 6 (build 750)
+Hex Converter:   FromElf.exe V5.06 update 6 (build 750)
+CPU DLL:         SARMCM3.DLL V5.29.0.0
+Dialog DLL:      DCM.DLL V1.17.3.0
+Target DLL:      STLink\ST-LINKIII-KEIL_SWO.dll V3.0.7.0
+Dialog DLL:      TCM.DLL V1.36.5.0
+ 
+<h2>Project:</h2>
+D:\Dokumente\GitHub\Software\01_jrg\08_STM32H745\Template\MDK-ARM\Template.uvprojx
+Project File Date:  02/13/2023
+
+<h2>Output:</h2>
+*** Using Compiler 'V5.06 update 6 (build 750)', folder: 'C:\Keil_v5\ARM\ARMCC\Bin'
+Build target 'Template_CM7'
+compiling freertos.c...
+compiling FDCAN_TX.c...
+FDCAN_TX.c(24): warning:  #177-D: variable "j"  was declared but never referenced
+  	int i, j;
+FDCAN_TX.c: 1 warning, 0 errors
+compiling FDCAN_LL_Management.c...
+FDCAN_LL_Management.c(242): warning:  #167-D: argument of type "uint8_t (*)[8]" is incompatible with parameter of type "uint8_t *"
+  	HAL_FDCAN_AddMessageToTxFifoQ(&hfdcan1, &HeaderTX, &Data);
+FDCAN_LL_Management.c(276): warning:  #177-D: variable "j"  was declared but never referenced
+  	int i, j, k;
+FDCAN_LL_Management.c: 2 warnings, 0 errors
+compiling main.c...
+../CM7/Core/Src/main.c(69): warning:  #167-D: argument of type "void (*)(void)" is incompatible with parameter of type "osThreadFunc_t"
+  	id_task_CAN_RX = osThreadNew(TASK_FDCAN_RX, NULL, NULL);
+../CM7/Core/Src/main.c(72): warning:  #167-D: argument of type "void (*)(void)" is incompatible with parameter of type "osThreadFunc_t"
+  	id_task_CAN_TX = osThreadNew(TASK_FDCAN_TX, NULL, NULL);
+../CM7/Core/Src/main.c(75): warning:  #167-D: argument of type "void (*)(void)" is incompatible with parameter of type "osThreadFunc_t"
+  	id_task_timer = osThreadNew(Task_Timer, NULL, NULL);
+../CM7/Core/Src/main.c(78): warning:  #167-D: argument of type "void (*)(void)" is incompatible with parameter of type "osThreadFunc_t"
+  	id_task_LED1 = osThreadNew(toggle_LED1, NULL, NULL);
+../CM7/Core/Src/main.c(84): warning:  #223-D: function "MX_TIM15_Init" declared implicitly
+  	MX_TIM15_Init();
+../CM7/Core/Src/main.c: 5 warnings, 0 errors
+compiling gpio.c...
+../CM7/Core/Src/gpio.c(78): warning:  #177-D: variable "i"  was declared but never referenced
+  	int i = 0;
+../CM7/Core/Src/gpio.c: 1 warning, 0 errors
+compiling stm32h7xx_it.c...
+compiling FDCAN_RX.c...
+compiling stm32h7xx_hal_timebase_tim.c...
+compiling stm32h7xx_hal_msp.c...
+compiling stm32h7xx_hal_cortex.c...
+compiling fdcan.c...
+compiling Timer.c...
+compiling stm32h7xx_hal_pwr.c...
+compiling stm32h7xx_hal_rcc.c...
+compiling stm32h7xx_hal_fdcan.c...
+compiling stm32h7xx_hal_flash_ex.c...
+compiling stm32h7xx_hal_flash.c...
+compiling stm32h7xx_hal_rcc_ex.c...
+compiling stm32h7xx_hal_gpio.c...
+compiling stm32h7xx_hal_mdma.c...
+compiling stm32h7xx_hal_hsem.c...
+compiling croutine.c...
+compiling event_groups.c...
+compiling list.c...
+compiling stm32h7xx_hal_i2c_ex.c...
+compiling stm32h7xx_hal_dma_ex.c...
+compiling queue.c...
+compiling stream_buffer.c...
+compiling timers.c...
+compiling tasks.c...
+compiling heap_4.c...
+compiling port.c...
+compiling stm32h7xx_hal_tim_ex.c...
+compiling stm32h7xx_hal_i2c.c...
+compiling stm32h7xx_hal_pwr_ex.c...
+compiling stm32h7xx_hal_dma.c...
+compiling stm32h7xx_hal.c...
+compiling stm32h7xx_hal_exti.c...
+compiling stm32h7xx_hal.c...
+compiling stm32h7xx_hal_pwr.c...
+compiling stm32h7xx_hal_cortex.c...
+compiling system_stm32h7xx_dualcore_boot_cm4_cm7.c...
+compiling stm32h7xx_hal_tim.c...
+compiling cmsis_os2.c...
+compiling stm32h7xx_hal_rcc.c...
+compiling stm32h7xx_hal_pwr_ex.c...
+compiling stm32h7xx_hal_gpio.c...
+C:\Users\Yoshi\AppData\Local\Arm\Packs\Keil\STM32H7xx_DFP\3.0.0\Drivers\STM32H7xx_HAL_Driver\Src\stm32h7xx_hal_gpio.c(125): warning:  #47-D: incompatible redefinition of macro "GPIO_MODE"  (declared at line 286 of "../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_gpio.h")
+  #define GPIO_MODE             (0x00000003U)
+C:\Users\Yoshi\AppData\Local\Arm\Packs\Keil\STM32H7xx_DFP\3.0.0\Drivers\STM32H7xx_HAL_Driver\Src\stm32h7xx_hal_gpio.c(127): warning:  #47-D: incompatible redefinition of macro "EXTI_MODE"  (declared at line 296 of "../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_gpio.h")
+  #define EXTI_MODE             (0x10000000U)
+C:\Users\Yoshi\AppData\Local\Arm\Packs\Keil\STM32H7xx_DFP\3.0.0\Drivers\STM32H7xx_HAL_Driver\Src\stm32h7xx_hal_gpio.c: 2 warnings, 0 errors
+compiling stm32h7xx_hal_fdcan.c...
+compiling stm32h7xx_hal_rcc_ex.c...
+compiling stm32h7xx_hal_dma_ex.c...
+compiling stm32h7xx_hal_dma.c...
+compiling stm32h7xx_hal_tim_ex.c...
+compiling stm32h7xx_hal_tim.c...
+linking...
+Template_CM7\Template_CM7.axf: Error: L6200E: Symbol hfdcan1 multiply defined (by fdcan.o and fdcan_ll_management.o).
+Template_CM7\Template_CM7.axf: Error: L6200E: Symbol MX_FDCAN1_Init multiply defined (by fdcan.o and fdcan_ll_management.o).
+Template_CM7\Template_CM7.axf: Error: L6200E: Symbol HAL_FDCAN_ActivateNotification multiply defined (by stm32h7xx_hal_fdcan_1.o and stm32h7xx_hal_fdcan.o).
+Template_CM7\Template_CM7.axf: Error: L6200E: Symbol HAL_FDCAN_AddMessageToTxFifoQ multiply defined (by stm32h7xx_hal_fdcan_1.o and stm32h7xx_hal_fdcan.o).
+Template_CM7\Template_CM7.axf: Error: L6200E: Symbol HAL_FDCAN_ConfigFilter multiply defined (by stm32h7xx_hal_fdcan_1.o and stm32h7xx_hal_fdcan.o).
+Template_CM7\Template_CM7.axf: Error: L6200E: Symbol HAL_FDCAN_ConfigGlobalFilter multiply defined (by stm32h7xx_hal_fdcan_1.o and stm32h7xx_hal_fdcan.o).
+Template_CM7\Template_CM7.axf: Error: L6200E: Symbol HAL_FDCAN_DeactivateNotification multiply defined (by stm32h7xx_hal_fdcan_1.o and stm32h7xx_hal_fdcan.o).
+Template_CM7\Template_CM7.axf: Error: L6200E: Symbol HAL_FDCAN_GetRxMessage multiply defined (by stm32h7xx_hal_fdcan_1.o and stm32h7xx_hal_fdcan.o).
+Template_CM7\Template_CM7.axf: Error: L6200E: Symbol HAL_FDCAN_Init multiply defined (by stm32h7xx_hal_fdcan_1.o and stm32h7xx_hal_fdcan.o).
+Template_CM7\Template_CM7.axf: Error: L6200E: Symbol HAL_FDCAN_Start multiply defined (by stm32h7xx_hal_fdcan_1.o and stm32h7xx_hal_fdcan.o).
+Template_CM7\Template_CM7.axf: Error: L6200E: Symbol HAL_GPIO_Init multiply defined (by stm32h7xx_hal_gpio_1.o and stm32h7xx_hal_gpio.o).
+Template_CM7\Template_CM7.axf: Error: L6200E: Symbol HAL_GPIO_WritePin multiply defined (by stm32h7xx_hal_gpio_1.o and stm32h7xx_hal_gpio.o).
+Template_CM7\Template_CM7.axf: Error: L6200E: Symbol HAL_NVIC_EnableIRQ multiply defined (by stm32h7xx_hal_cortex_1.o and stm32h7xx_hal_cortex.o).
+Template_CM7\Template_CM7.axf: Error: L6200E: Symbol HAL_NVIC_SetPriority multiply defined (by stm32h7xx_hal_cortex_1.o and stm32h7xx_hal_cortex.o).
+Template_CM7\Template_CM7.axf: Error: L6200E: Symbol HAL_RCCEx_PeriphCLKConfig multiply defined (by stm32h7xx_hal_rcc_ex_1.o and stm32h7xx_hal_rcc_ex.o).
+Template_CM7\Template_CM7.axf: Error: L6200E: Symbol HAL_NVIC_DisableIRQ multiply defined (by stm32h7xx_hal_cortex_1.o and stm32h7xx_hal_cortex.o).
+Template_CM7\Template_CM7.axf: Error: L6200E: Symbol HAL_RCC_GetPCLK2Freq multiply defined (by stm32h7xx_hal_rcc_1.o and stm32h7xx_hal_rcc.o).
+Template_CM7\Template_CM7.axf: Error: L6200E: Symbol HAL_TIMEx_MasterConfigSynchronization multiply defined (by stm32h7xx_hal_tim_ex_1.o and stm32h7xx_hal_tim_ex.o).
+Template_CM7\Template_CM7.axf: Error: L6200E: Symbol HAL_TIM_Base_Init multiply defined (by stm32h7xx_hal_tim_1.o and stm32h7xx_hal_tim.o).
+Template_CM7\Template_CM7.axf: Error: L6200E: Symbol HAL_TIM_Base_Start_IT multiply defined (by stm32h7xx_hal_tim_1.o and stm32h7xx_hal_tim.o).
+Template_CM7\Template_CM7.axf: Error: L6200E: Symbol HAL_TIM_ConfigClockSource multiply defined (by stm32h7xx_hal_tim_1.o and stm32h7xx_hal_tim.o).
+Template_CM7\Template_CM7.axf: Error: L6200E: Symbol HAL_TIM_IRQHandler multiply defined (by stm32h7xx_hal_tim_1.o and stm32h7xx_hal_tim.o).
+Template_CM7\Template_CM7.axf: Error: L6200E: Symbol HAL_IncTick multiply defined (by stm32h7xx_hal_1.o and stm32h7xx_hal.o).
+Template_CM7\Template_CM7.axf: Error: L6200E: Symbol HAL_Init multiply defined (by stm32h7xx_hal_1.o and stm32h7xx_hal.o).
+Template_CM7\Template_CM7.axf: Error: L6200E: Symbol HAL_NVIC_SetPriorityGrouping multiply defined (by stm32h7xx_hal_cortex_1.o and stm32h7xx_hal_cortex.o).
+Template_CM7\Template_CM7.axf: Error: L6200E: Symbol HAL_PWREx_ConfigSupply multiply defined (by stm32h7xx_hal_pwr_ex_1.o and stm32h7xx_hal_pwr_ex.o).
+Template_CM7\Template_CM7.axf: Error: L6200E: Symbol HAL_RCC_ClockConfig multiply defined (by stm32h7xx_hal_rcc_1.o and stm32h7xx_hal_rcc.o).
+Template_CM7\Template_CM7.axf: Error: L6200E: Symbol HAL_RCC_OscConfig multiply defined (by stm32h7xx_hal_rcc_1.o and stm32h7xx_hal_rcc.o).
+Template_CM7\Template_CM7.axf: Error: L6200E: Symbol HAL_GPIO_TogglePin multiply defined (by stm32h7xx_hal_gpio_1.o and stm32h7xx_hal_gpio.o).
+Template_CM7\Template_CM7.axf: Error: L6200E: Symbol HAL_GPIO_DeInit multiply defined (by stm32h7xx_hal_gpio_1.o and stm32h7xx_hal_gpio.o).
+Template_CM7\Template_CM7.axf: Error: L6200E: Symbol HAL_RCC_GetClockConfig multiply defined (by stm32h7xx_hal_rcc_1.o and stm32h7xx_hal_rcc.o).
+Template_CM7\Template_CM7.axf: Error: L6200E: Symbol uwTickPrio multiply defined (by stm32h7xx_hal_1.o and stm32h7xx_hal.o).
+Template_CM7\Template_CM7.axf: Error: L6200E: Symbol __asm___22_stm32h7xx_hal_cortex_c_2992dbc0____REV16 multiply defined (by stm32h7xx_hal_cortex_1.o and stm32h7xx_hal_cortex.o).
+Template_CM7\Template_CM7.axf: Error: L6200E: Symbol __asm___22_stm32h7xx_hal_cortex_c_2992dbc0____REVSH multiply defined (by stm32h7xx_hal_cortex_1.o and stm32h7xx_hal_cortex.o).
+Template_CM7\Template_CM7.axf: Error: L6200E: Symbol __asm___22_stm32h7xx_hal_cortex_c_2992dbc0____RRX multiply defined (by stm32h7xx_hal_cortex_1.o and stm32h7xx_hal_cortex.o).
+Template_CM7\Template_CM7.axf: Error: L6200E: Symbol HAL_GetCurrentCPUID multiply defined (by stm32h7xx_hal_cortex_1.o and stm32h7xx_hal_cortex.o).
+Template_CM7\Template_CM7.axf: Error: L6200E: Symbol HAL_MPU_ConfigRegion multiply defined (by stm32h7xx_hal_cortex_1.o and stm32h7xx_hal_cortex.o).
+Template_CM7\Template_CM7.axf: Error: L6200E: Symbol HAL_MPU_Disable multiply defined (by stm32h7xx_hal_cortex_1.o and stm32h7xx_hal_cortex.o).
+Template_CM7\Template_CM7.axf: Error: L6200E: Symbol HAL_MPU_Enable multiply defined (by stm32h7xx_hal_cortex_1.o and stm32h7xx_hal_cortex.o).
+Template_CM7\Template_CM7.axf: Error: L6200E: Symbol HAL_NVIC_ClearPendingIRQ multiply defined (by stm32h7xx_hal_cortex_1.o and stm32h7xx_hal_cortex.o).
+Template_CM7\Template_CM7.axf: Error: L6200E: Symbol HAL_NVIC_GetActive multiply defined (by stm32h7xx_hal_cortex_1.o and stm32h7xx_hal_cortex.o).
+Template_CM7\Template_CM7.axf: Error: L6200E: Symbol HAL_NVIC_GetPendingIRQ multiply defined (by stm32h7xx_hal_cortex_1.o and stm32h7xx_hal_cortex.o).
+Template_CM7\Template_CM7.axf: Error: L6200E: Symbol HAL_NVIC_GetPriority multiply defined (by stm32h7xx_hal_cortex_1.o and stm32h7xx_hal_cortex.o).
+Template_CM7\Template_CM7.axf: Error: L6200E: Symbol HAL_NVIC_GetPriorityGrouping multiply defined (by stm32h7xx_hal_cortex_1.o and stm32h7xx_hal_cortex.o).
+Template_CM7\Template_CM7.axf: Error: L6200E: Symbol HAL_NVIC_SetPendingIRQ multiply defined (by stm32h7xx_hal_cortex_1.o and stm32h7xx_hal_cortex.o).
+Template_CM7\Template_CM7.axf: Error: L6200E: Symbol HAL_NVIC_SystemReset multiply defined (by stm32h7xx_hal_cortex_1.o and stm32h7xx_hal_cortex.o).
+Template_CM7\Template_CM7.axf: Error: L6200E: Symbol HAL_SYSTICK_CLKSourceConfig multiply defined (by stm32h7xx_hal_cortex_1.o and stm32h7xx_hal_cortex.o).
+Template_CM7\Template_CM7.axf: Error: L6200E: Symbol HAL_SYSTICK_Config multiply defined (by stm32h7xx_hal_cortex_1.o and stm32h7xx_hal_cortex.o).
+Template_CM7\Template_CM7.axf: Error: L6200E: Symbol HAL_SYSTICK_IRQHandler multiply defined (by stm32h7xx_hal_cortex_1.o and stm32h7xx_hal_cortex.o).
+Template_CM7\Template_CM7.axf: Error: L6200E: Symbol HAL_SYSTICK_Callback multiply defined (by stm32h7xx_hal_cortex_1.o and stm32h7xx_hal_cortex.o).
+Template_CM7\Template_CM7.axf: Error: L6200E: Symbol __asm___21_stm32h7xx_hal_fdcan_c_80c832c2____REV16 multiply defined (by stm32h7xx_hal_fdcan_1.o and stm32h7xx_hal_fdcan.o).
+Template_CM7\Template_CM7.axf: Error: L6200E: Symbol __asm___21_stm32h7xx_hal_fdcan_c_80c832c2____REVSH multiply defined (by stm32h7xx_hal_fdcan_1.o and stm32h7xx_hal_fdcan.o).
+Template_CM7\Template_CM7.axf: Error: L6200E: Symbol __asm___21_stm32h7xx_hal_fdcan_c_80c832c2____RRX multiply defined (by stm32h7xx_hal_fdcan_1.o and stm32h7xx_hal_fdcan.o).
+Template_CM7\Template_CM7.axf: Error: L6200E: Symbol HAL_FDCAN_AbortTxRequest multiply defined (by stm32h7xx_hal_fdcan_1.o and stm32h7xx_hal_fdcan.o).
+Template_CM7\Template_CM7.axf: Error: L6200E: Symbol HAL_FDCAN_AddMessageToTxBuffer multiply defined (by stm32h7xx_hal_fdcan_1.o and stm32h7xx_hal_fdcan.o).
+Template_CM7\Template_CM7.axf: Error: L6200E: Symbol HAL_FDCAN_ConfigClockCalibration multiply defined (by stm32h7xx_hal_fdcan_1.o and stm32h7xx_hal_fdcan.o).
+Template_CM7\Template_CM7.axf: Error: L6200E: Symbol HAL_FDCAN_ConfigExtendedIdMask multiply defined (by stm32h7xx_hal_fdcan_1.o and stm32h7xx_hal_fdcan.o).
+Template_CM7\Template_CM7.axf: Error: L6200E: Symbol HAL_FDCAN_ConfigFifoWatermark multiply defined (by stm32h7xx_hal_fdcan_1.o and stm32h7xx_hal_fdcan.o).
+Template_CM7\Template_CM7.axf: Error: L6200E: Symbol HAL_FDCAN_ConfigInterruptLines multiply defined (by stm32h7xx_hal_fdcan_1.o and stm32h7xx_hal_fdcan.o).
+Template_CM7\Template_CM7.axf: Error: L6200E: Symbol HAL_FDCAN_ConfigRamWatchdog multiply defined (by stm32h7xx_hal_fdcan_1.o and stm32h7xx_hal_fdcan.o).
+Template_CM7\Template_CM7.axf: Error: L6200E: Symbol HAL_FDCAN_ConfigRxFifoOverwrite multiply defined (by stm32h7xx_hal_fdcan_1.o and stm32h7xx_hal_fdcan.o).
+Template_CM7\Template_CM7.axf: Error: L6200E: Symbol HAL_FDCAN_ConfigTimeoutCounter multiply defined (by stm32h7xx_hal_fdcan_1.o and stm32h7xx_hal_fdcan.o).
+Template_CM7\Template_CM7.axf: Error: L6200E: Symbol HAL_FDCAN_ConfigTimestampCounter multiply defined (by stm32h7xx_hal_fdcan_1.o and stm32h7xx_hal_fdcan.o).
+Template_CM7\Template_CM7.axf: Error: L6200E: Symbol HAL_FDCAN_ConfigTxDelayCompensation multiply defined (by stm32h7xx_hal_fdcan_1.o and stm32h7xx_hal_fdcan.o).
+Template_CM7\Template_CM7.axf: Error: L6200E: Symbol HAL_FDCAN_DeInit multiply defined (by stm32h7xx_hal_fdcan_1.o and stm32h7xx_hal_fdcan.o).
+Template_CM7\Template_CM7.axf: Error: L6200E: Symbol HAL_FDCAN_DisableEdgeFiltering multiply defined (by stm32h7xx_hal_fdcan_1.o and stm32h7xx_hal_fdcan.o).
+Template_CM7\Template_CM7.axf: Error: L6200E: Symbol HAL_FDCAN_DisableISOMode multiply defined (by stm32h7xx_hal_fdcan_1.o and stm32h7xx_hal_fdcan.o).
+Template_CM7\Template_CM7.axf: Error: L6200E: Symbol HAL_FDCAN_DisableTimeoutCounter multiply defined (by stm32h7xx_hal_fdcan_1.o and stm32h7xx_hal_fdcan.o).
+Template_CM7\Template_CM7.axf: Error: L6200E: Symbol HAL_FDCAN_DisableTimestampCounter multiply defined (by stm32h7xx_hal_fdcan_1.o and stm32h7xx_hal_fdcan.o).
+Template_CM7\Template_CM7.axf: Error: L6200E: Symbol HAL_FDCAN_DisableTxDelayCompensation multiply defined (by stm32h7xx_hal_fdcan_1.o and stm32h7xx_hal_fdcan.o).
+Template_CM7\Template_CM7.axf: Error: L6200E: Symbol HAL_FDCAN_EnableEdgeFiltering multiply defined (by stm32h7xx_hal_fdcan_1.o and stm32h7xx_hal_fdcan.o).
+Template_CM7\Template_CM7.axf: Error: L6200E: Symbol HAL_FDCAN_EnableISOMode multiply defined (by stm32h7xx_hal_fdcan_1.o and stm32h7xx_hal_fdcan.o).
+Template_CM7\Template_CM7.axf: Error: L6200E: Symbol HAL_FDCAN_EnableTimeoutCounter multiply defined (by stm32h7xx_hal_fdcan_1.o and stm32h7xx_hal_fdcan.o).
+Template_CM7\Template_CM7.axf: Error: L6200E: Symbol HAL_FDCAN_EnableTimestampCounter multiply defined (by stm32h7xx_hal_fdcan_1.o and stm32h7xx_hal_fdcan.o).
+Template_CM7\Template_CM7.axf: Error: L6200E: Symbol HAL_FDCAN_EnableTxBufferRequest multiply defined (by stm32h7xx_hal_fdcan_1.o and stm32h7xx_hal_fdcan.o).
+Template_CM7\Template_CM7.axf: Error: L6200E: Symbol HAL_FDCAN_EnableTxDelayCompensation multiply defined (by stm32h7xx_hal_fdcan_1.o and stm32h7xx_hal_fdcan.o).
+Template_CM7\Template_CM7.axf: Error: L6200E: Symbol HAL_FDCAN_EnterPowerDownMode multiply defined (by stm32h7xx_hal_fdcan_1.o and stm32h7xx_hal_fdcan.o).
+Template_CM7\Template_CM7.axf: Error: L6200E: Symbol HAL_FDCAN_ExitPowerDownMode multiply defined (by stm32h7xx_hal_fdcan_1.o and stm32h7xx_hal_fdcan.o).
+Template_CM7\Template_CM7.axf: Error: L6200E: Symbol HAL_FDCAN_ExitRestrictedOperationMode multiply defined (by stm32h7xx_hal_fdcan_1.o and stm32h7xx_hal_fdcan.o).
+Template_CM7\Template_CM7.axf: Error: L6200E: Symbol HAL_FDCAN_GetClockCalibrationCounter multiply defined (by stm32h7xx_hal_fdcan_1.o and stm32h7xx_hal_fdcan.o).
+Template_CM7\Template_CM7.axf: Error: L6200E: Symbol HAL_FDCAN_GetClockCalibrationState multiply defined (by stm32h7xx_hal_fdcan_1.o and stm32h7xx_hal_fdcan.o).
+Template_CM7\Template_CM7.axf: Error: L6200E: Symbol HAL_FDCAN_GetError multiply defined (by stm32h7xx_hal_fdcan_1.o and stm32h7xx_hal_fdcan.o).
+Template_CM7\Template_CM7.axf: Error: L6200E: Symbol HAL_FDCAN_GetErrorCounters multiply defined (by stm32h7xx_hal_fdcan_1.o and stm32h7xx_hal_fdcan.o).
+Template_CM7\Template_CM7.axf: Error: L6200E: Symbol HAL_FDCAN_GetHighPriorityMessageStatus multiply defined (by stm32h7xx_hal_fdcan_1.o and stm32h7xx_hal_fdcan.o).
+Template_CM7\Template_CM7.axf: Error: L6200E: Symbol HAL_FDCAN_GetLatestTxFifoQRequestBuffer multiply defined (by stm32h7xx_hal_fdcan_1.o and stm32h7xx_hal_fdcan.o).
+Template_CM7\Template_CM7.axf: Error: L6200E: Symbol HAL_FDCAN_GetProtocolStatus multiply defined (by stm32h7xx_hal_fdcan_1.o and stm32h7xx_hal_fdcan.o).
+Template_CM7\Template_CM7.axf: Error: L6200E: Symbol HAL_FDCAN_GetRxFifoFillLevel multiply defined (by stm32h7xx_hal_fdcan_1.o and stm32h7xx_hal_fdcan.o).
+Template_CM7\Template_CM7.axf: Error: L6200E: Symbol HAL_FDCAN_GetState multiply defined (by stm32h7xx_hal_fdcan_1.o and stm32h7xx_hal_fdcan.o).
+Template_CM7\Template_CM7.axf: Error: L6200E: Symbol HAL_FDCAN_GetTimeoutCounter multiply defined (by stm32h7xx_hal_fdcan_1.o and stm32h7xx_hal_fdcan.o).
+Template_CM7\Template_CM7.axf: Error: L6200E: Symbol HAL_FDCAN_GetTimestampCounter multiply defined (by stm32h7xx_hal_fdcan_1.o and stm32h7xx_hal_fdcan.o).
+Template_CM7\Template_CM7.axf: Error: L6200E: Symbol HAL_FDCAN_GetTxEvent multiply defined (by stm32h7xx_hal_fdcan_1.o and stm32h7xx_hal_fdcan.o).
+Template_CM7\Template_CM7.axf: Error: L6200E: Symbol HAL_FDCAN_GetTxFifoFreeLevel multiply defined (by stm32h7xx_hal_fdcan_1.o and stm32h7xx_hal_fdcan.o).
+Template_CM7\Template_CM7.axf: Error: L6200E: Symbol HAL_FDCAN_IRQHandler multiply defined (by stm32h7xx_hal_fdcan_1.o and stm32h7xx_hal_fdcan.o).
+Template_CM7\Template_CM7.axf: Error: L6200E: Symbol HAL_FDCAN_IsRestrictedOperationMode multiply defined (by stm32h7xx_hal_fdcan_1.o and stm32h7xx_hal_fdcan.o).
+Template_CM7\Template_CM7.axf: Error: L6200E: Symbol HAL_FDCAN_IsRxBufferMessageAvailable multiply defined (by stm32h7xx_hal_fdcan_1.o and stm32h7xx_hal_fdcan.o).
+Template_CM7\Template_CM7.axf: Error: L6200E: Symbol HAL_FDCAN_IsTxBufferMessagePending multiply defined (by stm32h7xx_hal_fdcan_1.o and stm32h7xx_hal_fdcan.o).
+Template_CM7\Template_CM7.axf: Error: L6200E: Symbol HAL_FDCAN_ResetClockCalibrationState multiply defined (by stm32h7xx_hal_fdcan_1.o and stm32h7xx_hal_fdcan.o).
+Template_CM7\Template_CM7.axf: Error: L6200E: Symbol HAL_FDCAN_ResetTimeoutCounter multiply defined (by stm32h7xx_hal_fdcan_1.o and stm32h7xx_hal_fdcan.o).
+Template_CM7\Template_CM7.axf: Error: L6200E: Symbol HAL_FDCAN_ResetTimestampCounter multiply defined (by stm32h7xx_hal_fdcan_1.o and stm32h7xx_hal_fdcan.o).
+Template_CM7\Template_CM7.axf: Error: L6200E: Symbol HAL_FDCAN_Stop multiply defined (by stm32h7xx_hal_fdcan_1.o and stm32h7xx_hal_fdcan.o).
+Template_CM7\Template_CM7.axf: Error: L6200E: Symbol HAL_FDCAN_TT_ActivateNotification multiply defined (by stm32h7xx_hal_fdcan_1.o and stm32h7xx_hal_fdcan.o).
+Template_CM7\Template_CM7.axf: Error: L6200E: Symbol HAL_FDCAN_TT_ConfigExternalSyncPhase multiply defined (by stm32h7xx_hal_fdcan_1.o and stm32h7xx_hal_fdcan.o).
+Template_CM7\Template_CM7.axf: Error: L6200E: Symbol HAL_FDCAN_TT_ConfigInterruptLines multiply defined (by stm32h7xx_hal_fdcan_1.o and stm32h7xx_hal_fdcan.o).
+Template_CM7\Template_CM7.axf: Error: L6200E: Symbol HAL_FDCAN_TT_ConfigOperation multiply defined (by stm32h7xx_hal_fdcan_1.o and stm32h7xx_hal_fdcan.o).
+Template_CM7\Template_CM7.axf: Error: L6200E: Symbol HAL_FDCAN_TT_ConfigReferenceMessage multiply defined (by stm32h7xx_hal_fdcan_1.o and stm32h7xx_hal_fdcan.o).
+Template_CM7\Template_CM7.axf: Error: L6200E: Symbol HAL_FDCAN_TT_ConfigRegisterTimeMark multiply defined (by stm32h7xx_hal_fdcan_1.o and stm32h7xx_hal_fdcan.o).
+Template_CM7\Template_CM7.axf: Error: L6200E: Symbol HAL_FDCAN_TT_ConfigStopWatch multiply defined (by stm32h7xx_hal_fdcan_1.o and stm32h7xx_hal_fdcan.o).
+Template_CM7\Template_CM7.axf: Error: L6200E: Symbol HAL_FDCAN_TT_ConfigTrigger multiply defined (by stm32h7xx_hal_fdcan_1.o and stm32h7xx_hal_fdcan.o).
+Template_CM7\Template_CM7.axf: Error: L6200E: Symbol HAL_FDCAN_TT_DeactivateNotification multiply defined (by stm32h7xx_hal_fdcan_1.o and stm32h7xx_hal_fdcan.o).
+Template_CM7\Template_CM7.axf: Error: L6200E: Symbol HAL_FDCAN_TT_DisableExternalSynchronization multiply defined (by stm32h7xx_hal_fdcan_1.o and stm32h7xx_hal_fdcan.o).
+Template_CM7\Template_CM7.axf: Error: L6200E: Symbol HAL_FDCAN_TT_DisableHardwareGapControl multiply defined (by stm32h7xx_hal_fdcan_1.o and stm32h7xx_hal_fdcan.o).
+Template_CM7\Template_CM7.axf: Error: L6200E: Symbol HAL_FDCAN_TT_DisableRegisterTimeMarkPulse multiply defined (by stm32h7xx_hal_fdcan_1.o and stm32h7xx_hal_fdcan.o).
+Template_CM7\Template_CM7.axf: Error: L6200E: Symbol HAL_FDCAN_TT_DisableTimeMarkGapControl multiply defined (by stm32h7xx_hal_fdcan_1.o and stm32h7xx_hal_fdcan.o).
+Template_CM7\Template_CM7.axf: Error: L6200E: Symbol HAL_FDCAN_TT_DisableTriggerTimeMarkPulse multiply defined (by stm32h7xx_hal_fdcan_1.o and stm32h7xx_hal_fdcan.o).
+Template_CM7\Template_CM7.axf: Error: L6200E: Symbol HAL_FDCAN_TT_EnableExternalSynchronization multiply defined (by stm32h7xx_hal_fdcan_1.o and stm32h7xx_hal_fdcan.o).
+Template_CM7\Template_CM7.axf: Error: L6200E: Symbol HAL_FDCAN_TT_EnableHardwareGapControl multiply defined (by stm32h7xx_hal_fdcan_1.o and stm32h7xx_hal_fdcan.o).
+Template_CM7\Template_CM7.axf: Error: L6200E: Symbol HAL_FDCAN_TT_EnableRegisterTimeMarkPulse multiply defined (by stm32h7xx_hal_fdcan_1.o and stm32h7xx_hal_fdcan.o).
+Template_CM7\Template_CM7.axf: Error: L6200E: Symbol HAL_FDCAN_TT_EnableTimeMarkGapControl multiply defined (by stm32h7xx_hal_fdcan_1.o and stm32h7xx_hal_fdcan.o).
+Template_CM7\Template_CM7.axf: Error: L6200E: Symbol HAL_FDCAN_TT_EnableTriggerTimeMarkPulse multiply defined (by stm32h7xx_hal_fdcan_1.o and stm32h7xx_hal_fdcan.o).
+Template_CM7\Template_CM7.axf: Error: L6200E: Symbol HAL_FDCAN_TT_GetOperationStatus multiply defined (by stm32h7xx_hal_fdcan_1.o and stm32h7xx_hal_fdcan.o).
+Template_CM7\Template_CM7.axf: Error: L6200E: Symbol HAL_FDCAN_TT_SetClockSynchronization multiply defined (by stm32h7xx_hal_fdcan_1.o and stm32h7xx_hal_fdcan.o).
+Template_CM7\Template_CM7.axf: Error: L6200E: Symbol HAL_FDCAN_TT_SetEndOfGap multiply defined (by stm32h7xx_hal_fdcan_1.o and stm32h7xx_hal_fdcan.o).
+Template_CM7\Template_CM7.axf: Error: L6200E: Symbol HAL_FDCAN_TT_SetGlobalTime multiply defined (by stm32h7xx_hal_fdcan_1.o and stm32h7xx_hal_fdcan.o).
+Template_CM7\Template_CM7.axf: Error: L6200E: Symbol HAL_FDCAN_TT_SetNextIsGap multiply defined (by stm32h7xx_hal_fdcan_1.o and stm32h7xx_hal_fdcan.o).
+Template_CM7\Template_CM7.axf: Error: L6200E: Symbol HAL_GetTick multiply defined (by stm32h7xx_hal_1.o and stm32h7xx_hal.o).
+Template_CM7\Template_CM7.axf: Error: L6200E: Symbol HAL_FDCAN_ClockCalibrationCallback multiply defined (by stm32h7xx_hal_fdcan_1.o and stm32h7xx_hal_fdcan.o).
+Template_CM7\Template_CM7.axf: Error: L6200E: Symbol HAL_FDCAN_ErrorCallback multiply defined (by stm32h7xx_hal_fdcan_1.o and stm32h7xx_hal_fdcan.o).
+Template_CM7\Template_CM7.axf: Error: L6200E: Symbol HAL_FDCAN_ErrorStatusCallback multiply defined (by stm32h7xx_hal_fdcan_1.o and stm32h7xx_hal_fdcan.o).
+Template_CM7\Template_CM7.axf: Error: L6200E: Symbol HAL_FDCAN_HighPriorityMessageCallback multiply defined (by stm32h7xx_hal_fdcan_1.o and stm32h7xx_hal_fdcan.o).
+Template_CM7\Template_CM7.axf: Error: L6200E: Symbol HAL_FDCAN_RxBufferNewMessageCallback multiply defined (by stm32h7xx_hal_fdcan_1.o and stm32h7xx_hal_fdcan.o).
+Template_CM7\Template_CM7.axf: Error: L6200E: Symbol HAL_FDCAN_RxFifo1Callback multiply defined (by stm32h7xx_hal_fdcan_1.o and stm32h7xx_hal_fdcan.o).
+Template_CM7\Template_CM7.axf: Error: L6200E: Symbol HAL_FDCAN_TT_GlobalTimeCallback multiply defined (by stm32h7xx_hal_fdcan_1.o and stm32h7xx_hal_fdcan.o).
+Template_CM7\Template_CM7.axf: Error: L6200E: Symbol HAL_FDCAN_TT_ScheduleSyncCallback multiply defined (by stm32h7xx_hal_fdcan_1.o and stm32h7xx_hal_fdcan.o).
+Template_CM7\Template_CM7.axf: Error: L6200E: Symbol HAL_FDCAN_TT_StopWatchCallback multiply defined (by stm32h7xx_hal_fdcan_1.o and stm32h7xx_hal_fdcan.o).
+Template_CM7\Template_CM7.axf: Error: L6200E: Symbol HAL_FDCAN_TT_TimeMarkCallback multiply defined (by stm32h7xx_hal_fdcan_1.o and stm32h7xx_hal_fdcan.o).
+Template_CM7\Template_CM7.axf: Error: L6200E: Symbol HAL_FDCAN_TimeoutOccurredCallback multiply defined (by stm32h7xx_hal_fdcan_1.o and stm32h7xx_hal_fdcan.o).
+Template_CM7\Template_CM7.axf: Error: L6200E: Symbol HAL_FDCAN_TimestampWraparoundCallback multiply defined (by stm32h7xx_hal_fdcan_1.o and stm32h7xx_hal_fdcan.o).
+Template_CM7\Template_CM7.axf: Error: L6200E: Symbol HAL_FDCAN_TxBufferAbortCallback multiply defined (by stm32h7xx_hal_fdcan_1.o and stm32h7xx_hal_fdcan.o).
+Template_CM7\Template_CM7.axf: Error: L6200E: Symbol HAL_FDCAN_TxBufferCompleteCallback multiply defined (by stm32h7xx_hal_fdcan_1.o and stm32h7xx_hal_fdcan.o).
+Template_CM7\Template_CM7.axf: Error: L6200E: Symbol HAL_FDCAN_TxEventFifoCallback multiply defined (by stm32h7xx_hal_fdcan_1.o and stm32h7xx_hal_fdcan.o).
+Template_CM7\Template_CM7.axf: Error: L6200E: Symbol HAL_FDCAN_TxFifoEmptyCallback multiply defined (by stm32h7xx_hal_fdcan_1.o and stm32h7xx_hal_fdcan.o).
+Template_CM7\Template_CM7.axf: Error: L6200E: Symbol __asm___19_stm32h7xx_hal_rcc_c_b7071a4b____REV16 multiply defined (by stm32h7xx_hal_rcc_1.o and stm32h7xx_hal_rcc.o).
+Template_CM7\Template_CM7.axf: Error: L6200E: Symbol __asm___19_stm32h7xx_hal_rcc_c_b7071a4b____REVSH multiply defined (by stm32h7xx_hal_rcc_1.o and stm32h7xx_hal_rcc.o).
+Template_CM7\Template_CM7.axf: Error: L6200E: Symbol __asm___19_stm32h7xx_hal_rcc_c_b7071a4b____RRX multiply defined (by stm32h7xx_hal_rcc_1.o and stm32h7xx_hal_rcc.o).
+Template_CM7\Template_CM7.axf: Error: L6200E: Symbol HAL_RCC_DeInit multiply defined (by stm32h7xx_hal_rcc_1.o and stm32h7xx_hal_rcc.o).
+Template_CM7\Template_CM7.axf: Error: L6200E: Symbol HAL_RCC_DisableCSS multiply defined (by stm32h7xx_hal_rcc_1.o and stm32h7xx_hal_rcc.o).
+Template_CM7\Template_CM7.axf: Error: L6200E: Symbol HAL_RCC_EnableCSS multiply defined (by stm32h7xx_hal_rcc_1.o and stm32h7xx_hal_rcc.o).
+Template_CM7\Template_CM7.axf: Error: L6200E: Symbol HAL_RCC_GetHCLKFreq multiply defined (by stm32h7xx_hal_rcc_1.o and stm32h7xx_hal_rcc.o).
+Template_CM7\Template_CM7.axf: Error: L6200E: Symbol HAL_RCC_GetOscConfig multiply defined (by stm32h7xx_hal_rcc_1.o and stm32h7xx_hal_rcc.o).
+Template_CM7\Template_CM7.axf: Error: L6200E: Symbol HAL_RCC_GetPCLK1Freq multiply defined (by stm32h7xx_hal_rcc_1.o and stm32h7xx_hal_rcc.o).
+Template_CM7\Template_CM7.axf: Error: L6200E: Symbol HAL_RCC_GetSysClockFreq multiply defined (by stm32h7xx_hal_rcc_1.o and stm32h7xx_hal_rcc.o).
+Template_CM7\Template_CM7.axf: Error: L6200E: Symbol HAL_RCC_MCOConfig multiply defined (by stm32h7xx_hal_rcc_1.o and stm32h7xx_hal_rcc.o).
+Template_CM7\Template_CM7.axf: Error: L6200E: Symbol HAL_RCC_NMI_IRQHandler multiply defined (by stm32h7xx_hal_rcc_1.o and stm32h7xx_hal_rcc.o).
+Template_CM7\Template_CM7.axf: Error: L6200E: Symbol HAL_GetREVID multiply defined (by stm32h7xx_hal_1.o and stm32h7xx_hal.o).
+Template_CM7\Template_CM7.axf: Error: L6200E: Symbol HAL_RCC_CSSCallback multiply defined (by stm32h7xx_hal_rcc_1.o and stm32h7xx_hal_rcc.o).
+Template_CM7\Template_CM7.axf: Error: L6200E: Symbol __asm___22_stm32h7xx_hal_rcc_ex_c_bed13b44____REV16 multiply defined (by stm32h7xx_hal_rcc_ex_1.o and stm32h7xx_hal_rcc_ex.o).
+Template_CM7\Template_CM7.axf: Error: L6200E: Symbol __asm___22_stm32h7xx_hal_rcc_ex_c_bed13b44____REVSH multiply defined (by stm32h7xx_hal_rcc_ex_1.o and stm32h7xx_hal_rcc_ex.o).
+Template_CM7\Template_CM7.axf: Error: L6200E: Symbol __asm___22_stm32h7xx_hal_rcc_ex_c_bed13b44____RRX multiply defined (by stm32h7xx_hal_rcc_ex_1.o and stm32h7xx_hal_rcc_ex.o).
+Template_CM7\Template_CM7.axf: Error: L6200E: Symbol HAL_RCCEx_CRSConfig multiply defined (by stm32h7xx_hal_rcc_ex_1.o and stm32h7xx_hal_rcc_ex.o).
+Template_CM7\Template_CM7.axf: Error: L6200E: Symbol HAL_RCCEx_CRSGetSynchronizationInfo multiply defined (by stm32h7xx_hal_rcc_ex_1.o and stm32h7xx_hal_rcc_ex.o).
+Template_CM7\Template_CM7.axf: Error: L6200E: Symbol HAL_RCCEx_CRSSoftwareSynchronizationGenerate multiply defined (by stm32h7xx_hal_rcc_ex_1.o and stm32h7xx_hal_rcc_ex.o).
+Template_CM7\Template_CM7.axf: Error: L6200E: Symbol HAL_RCCEx_CRSWaitSynchronization multiply defined (by stm32h7xx_hal_rcc_ex_1.o and stm32h7xx_hal_rcc_ex.o).
+Template_CM7\Template_CM7.axf: Error: L6200E: Symbol HAL_RCCEx_CRS_IRQHandler multiply defined (by stm32h7xx_hal_rcc_ex_1.o and stm32h7xx_hal_rcc_ex.o).
+Template_CM7\Template_CM7.axf: Error: L6200E: Symbol HAL_RCCEx_DisableLSECSS multiply defined (by stm32h7xx_hal_rcc_ex_1.o and stm32h7xx_hal_rcc_ex.o).
+Template_CM7\Template_CM7.axf: Error: L6200E: Symbol HAL_RCCEx_EnableBootCore multiply defined (by stm32h7xx_hal_rcc_ex_1.o and stm32h7xx_hal_rcc_ex.o).
+Template_CM7\Template_CM7.axf: Error: L6200E: Symbol HAL_RCCEx_EnableLSECSS multiply defined (by stm32h7xx_hal_rcc_ex_1.o and stm32h7xx_hal_rcc_ex.o).
+Template_CM7\Template_CM7.axf: Error: L6200E: Symbol HAL_RCCEx_EnableLSECSS_IT multiply defined (by stm32h7xx_hal_rcc_ex_1.o and stm32h7xx_hal_rcc_ex.o).
+Template_CM7\Template_CM7.axf: Error: L6200E: Symbol HAL_RCCEx_GetD1PCLK1Freq multiply defined (by stm32h7xx_hal_rcc_ex_1.o and stm32h7xx_hal_rcc_ex.o).
+Template_CM7\Template_CM7.axf: Error: L6200E: Symbol HAL_RCCEx_GetD1SysClockFreq multiply defined (by stm32h7xx_hal_rcc_ex_1.o and stm32h7xx_hal_rcc_ex.o).
+Template_CM7\Template_CM7.axf: Error: L6200E: Symbol HAL_RCCEx_GetD3PCLK1Freq multiply defined (by stm32h7xx_hal_rcc_ex_1.o and stm32h7xx_hal_rcc_ex.o).
+Template_CM7\Template_CM7.axf: Error: L6200E: Symbol HAL_RCCEx_GetPLL1ClockFreq multiply defined (by stm32h7xx_hal_rcc_ex_1.o and stm32h7xx_hal_rcc_ex.o).
+Template_CM7\Template_CM7.axf: Error: L6200E: Symbol HAL_RCCEx_GetPLL2ClockFreq multiply defined (by stm32h7xx_hal_rcc_ex_1.o and stm32h7xx_hal_rcc_ex.o).
+Template_CM7\Template_CM7.axf: Error: L6200E: Symbol HAL_RCCEx_GetPLL3ClockFreq multiply defined (by stm32h7xx_hal_rcc_ex_1.o and stm32h7xx_hal_rcc_ex.o).
+Template_CM7\Template_CM7.axf: Error: L6200E: Symbol HAL_RCCEx_GetPeriphCLKConfig multiply defined (by stm32h7xx_hal_rcc_ex_1.o and stm32h7xx_hal_rcc_ex.o).
+Template_CM7\Template_CM7.axf: Error: L6200E: Symbol HAL_RCCEx_GetPeriphCLKFreq multiply defined (by stm32h7xx_hal_rcc_ex_1.o and stm32h7xx_hal_rcc_ex.o).
+Template_CM7\Template_CM7.axf: Error: L6200E: Symbol HAL_RCCEx_KerWakeUpStopCLKConfig multiply defined (by stm32h7xx_hal_rcc_ex_1.o and stm32h7xx_hal_rcc_ex.o).
+Template_CM7\Template_CM7.axf: Error: L6200E: Symbol HAL_RCCEx_LSECSS_IRQHandler multiply defined (by stm32h7xx_hal_rcc_ex_1.o and stm32h7xx_hal_rcc_ex.o).
+Template_CM7\Template_CM7.axf: Error: L6200E: Symbol HAL_RCCEx_WWDGxSysResetConfig multiply defined (by stm32h7xx_hal_rcc_ex_1.o and stm32h7xx_hal_rcc_ex.o).
+Template_CM7\Template_CM7.axf: Error: L6200E: Symbol HAL_RCCEx_WakeUpStopCLKConfig multiply defined (by stm32h7xx_hal_rcc_ex_1.o and stm32h7xx_hal_rcc_ex.o).
+Template_CM7\Template_CM7.axf: Error: L6200E: Symbol HAL_RCCEx_CRS_ErrorCallback multiply defined (by stm32h7xx_hal_rcc_ex_1.o and stm32h7xx_hal_rcc_ex.o).
+Template_CM7\Template_CM7.axf: Error: L6200E: Symbol HAL_RCCEx_CRS_ExpectedSyncCallback multiply defined (by stm32h7xx_hal_rcc_ex_1.o and stm32h7xx_hal_rcc_ex.o).
+Template_CM7\Template_CM7.axf: Error: L6200E: Symbol HAL_RCCEx_CRS_SyncOkCallback multiply defined (by stm32h7xx_hal_rcc_ex_1.o and stm32h7xx_hal_rcc_ex.o).
+Template_CM7\Template_CM7.axf: Error: L6200E: Symbol HAL_RCCEx_CRS_SyncWarnCallback multiply defined (by stm32h7xx_hal_rcc_ex_1.o and stm32h7xx_hal_rcc_ex.o).
+Template_CM7\Template_CM7.axf: Error: L6200E: Symbol HAL_RCCEx_LSECSS_Callback multiply defined (by stm32h7xx_hal_rcc_ex_1.o and stm32h7xx_hal_rcc_ex.o).
+Template_CM7\Template_CM7.axf: Error: L6200E: Symbol __asm___20_stm32h7xx_hal_gpio_c_ea787061____REV16 multiply defined (by stm32h7xx_hal_gpio_1.o and stm32h7xx_hal_gpio.o).
+Template_CM7\Template_CM7.axf: Error: L6200E: Symbol __asm___20_stm32h7xx_hal_gpio_c_ea787061____REVSH multiply defined (by stm32h7xx_hal_gpio_1.o and stm32h7xx_hal_gpio.o).
+Template_CM7\Template_CM7.axf: Error: L6200E: Symbol __asm___20_stm32h7xx_hal_gpio_c_ea787061____RRX multiply defined (by stm32h7xx_hal_gpio_1.o and stm32h7xx_hal_gpio.o).
+Template_CM7\Template_CM7.axf: Error: L6200E: Symbol HAL_GPIO_EXTI_IRQHandler multiply defined (by stm32h7xx_hal_gpio_1.o and stm32h7xx_hal_gpio.o).
+Template_CM7\Template_CM7.axf: Error: L6200E: Symbol HAL_GPIO_LockPin multiply defined (by stm32h7xx_hal_gpio_1.o and stm32h7xx_hal_gpio.o).
+Template_CM7\Template_CM7.axf: Error: L6200E: Symbol HAL_GPIO_ReadPin multiply defined (by stm32h7xx_hal_gpio_1.o and stm32h7xx_hal_gpio.o).
+Template_CM7\Template_CM7.axf: Error: L6200E: Symbol HAL_GPIO_EXTI_Callback multiply defined (by stm32h7xx_hal_gpio_1.o and stm32h7xx_hal_gpio.o).
+Template_CM7\Template_CM7.axf: Error: L6200E: Symbol __asm___19_stm32h7xx_hal_dma_c_c25f65ec____REV16 multiply defined (by stm32h7xx_hal_dma_1.o and stm32h7xx_hal_dma.o).
+Template_CM7\Template_CM7.axf: Error: L6200E: Symbol __asm___19_stm32h7xx_hal_dma_c_c25f65ec____REVSH multiply defined (by stm32h7xx_hal_dma_1.o and stm32h7xx_hal_dma.o).
+Template_CM7\Template_CM7.axf: Error: L6200E: Symbol __asm___19_stm32h7xx_hal_dma_c_c25f65ec____RRX multiply defined (by stm32h7xx_hal_dma_1.o and stm32h7xx_hal_dma.o).
+Template_CM7\Template_CM7.axf: Error: L6200E: Symbol HAL_DMA_Abort multiply defined (by stm32h7xx_hal_dma_1.o and stm32h7xx_hal_dma.o).
+Template_CM7\Template_CM7.axf: Error: L6200E: Symbol HAL_DMA_Abort_IT multiply defined (by stm32h7xx_hal_dma_1.o and stm32h7xx_hal_dma.o).
+Template_CM7\Template_CM7.axf: Error: L6200E: Symbol HAL_DMA_DeInit multiply defined (by stm32h7xx_hal_dma_1.o and stm32h7xx_hal_dma.o).
+Template_CM7\Template_CM7.axf: Error: L6200E: Symbol HAL_DMA_GetError multiply defined (by stm32h7xx_hal_dma_1.o and stm32h7xx_hal_dma.o).
+Template_CM7\Template_CM7.axf: Error: L6200E: Symbol HAL_DMA_GetState multiply defined (by stm32h7xx_hal_dma_1.o and stm32h7xx_hal_dma.o).
+Template_CM7\Template_CM7.axf: Error: L6200E: Symbol HAL_DMA_IRQHandler multiply defined (by stm32h7xx_hal_dma_1.o and stm32h7xx_hal_dma.o).
+Template_CM7\Template_CM7.axf: Error: L6200E: Symbol HAL_DMA_Init multiply defined (by stm32h7xx_hal_dma_1.o and stm32h7xx_hal_dma.o).
+Template_CM7\Template_CM7.axf: Error: L6200E: Symbol HAL_DMA_PollForTransfer multiply defined (by stm32h7xx_hal_dma_1.o and stm32h7xx_hal_dma.o).
+Template_CM7\Template_CM7.axf: Error: L6200E: Symbol HAL_DMA_RegisterCallback multiply defined (by stm32h7xx_hal_dma_1.o and stm32h7xx_hal_dma.o).
+Template_CM7\Template_CM7.axf: Error: L6200E: Symbol HAL_DMA_Start multiply defined (by stm32h7xx_hal_dma_1.o and stm32h7xx_hal_dma.o).
+Template_CM7\Template_CM7.axf: Error: L6200E: Symbol HAL_DMA_Start_IT multiply defined (by stm32h7xx_hal_dma_1.o and stm32h7xx_hal_dma.o).
+Template_CM7\Template_CM7.axf: Error: L6200E: Symbol HAL_DMA_UnRegisterCallback multiply defined (by stm32h7xx_hal_dma_1.o and stm32h7xx_hal_dma.o).
+Template_CM7\Template_CM7.axf: Error: L6200E: Symbol __asm___22_stm32h7xx_hal_dma_ex_c_af8eecb0____REV16 multiply defined (by stm32h7xx_hal_dma_ex_1.o and stm32h7xx_hal_dma_ex.o).
+Template_CM7\Template_CM7.axf: Error: L6200E: Symbol __asm___22_stm32h7xx_hal_dma_ex_c_af8eecb0____REVSH multiply defined (by stm32h7xx_hal_dma_ex_1.o and stm32h7xx_hal_dma_ex.o).
+Template_CM7\Template_CM7.axf: Error: L6200E: Symbol __asm___22_stm32h7xx_hal_dma_ex_c_af8eecb0____RRX multiply defined (by stm32h7xx_hal_dma_ex_1.o and stm32h7xx_hal_dma_ex.o).
+Template_CM7\Template_CM7.axf: Error: L6200E: Symbol HAL_DMAEx_ChangeMemory multiply defined (by stm32h7xx_hal_dma_ex_1.o and stm32h7xx_hal_dma_ex.o).
+Template_CM7\Template_CM7.axf: Error: L6200E: Symbol HAL_DMAEx_ConfigMuxRequestGenerator multiply defined (by stm32h7xx_hal_dma_ex_1.o and stm32h7xx_hal_dma_ex.o).
+Template_CM7\Template_CM7.axf: Error: L6200E: Symbol HAL_DMAEx_ConfigMuxSync multiply defined (by stm32h7xx_hal_dma_ex_1.o and stm32h7xx_hal_dma_ex.o).
+Template_CM7\Template_CM7.axf: Error: L6200E: Symbol HAL_DMAEx_DisableMuxRequestGenerator multiply defined (by stm32h7xx_hal_dma_ex_1.o and stm32h7xx_hal_dma_ex.o).
+Template_CM7\Template_CM7.axf: Error: L6200E: Symbol HAL_DMAEx_EnableMuxRequestGenerator multiply defined (by stm32h7xx_hal_dma_ex_1.o and stm32h7xx_hal_dma_ex.o).
+Template_CM7\Template_CM7.axf: Error: L6200E: Symbol HAL_DMAEx_MUX_IRQHandler multiply defined (by stm32h7xx_hal_dma_ex_1.o and stm32h7xx_hal_dma_ex.o).
+Template_CM7\Template_CM7.axf: Error: L6200E: Symbol HAL_DMAEx_MultiBufferStart multiply defined (by stm32h7xx_hal_dma_ex_1.o and stm32h7xx_hal_dma_ex.o).
+Template_CM7\Template_CM7.axf: Error: L6200E: Symbol HAL_DMAEx_MultiBufferStart_IT multiply defined (by stm32h7xx_hal_dma_ex_1.o and stm32h7xx_hal_dma_ex.o).
+Template_CM7\Template_CM7.axf: Error: L6200E: Symbol __asm___19_stm32h7xx_hal_pwr_c_f2cfe8be____REV16 multiply defined (by stm32h7xx_hal_pwr_1.o and stm32h7xx_hal_pwr.o).
+Template_CM7\Template_CM7.axf: Error: L6200E: Symbol __asm___19_stm32h7xx_hal_pwr_c_f2cfe8be____REVSH multiply defined (by stm32h7xx_hal_pwr_1.o and stm32h7xx_hal_pwr.o).
+Template_CM7\Template_CM7.axf: Error: L6200E: Symbol __asm___19_stm32h7xx_hal_pwr_c_f2cfe8be____RRX multiply defined (by stm32h7xx_hal_pwr_1.o and stm32h7xx_hal_pwr.o).
+Template_CM7\Template_CM7.axf: Error: L6200E: Symbol HAL_PWR_ConfigPVD multiply defined (by stm32h7xx_hal_pwr_1.o and stm32h7xx_hal_pwr.o).
+Template_CM7\Template_CM7.axf: Error: L6200E: Symbol HAL_PWR_DeInit multiply defined (by stm32h7xx_hal_pwr_1.o and stm32h7xx_hal_pwr.o).
+Template_CM7\Template_CM7.axf: Error: L6200E: Symbol HAL_PWR_DisableBkUpAccess multiply defined (by stm32h7xx_hal_pwr_1.o and stm32h7xx_hal_pwr.o).
+Template_CM7\Template_CM7.axf: Error: L6200E: Symbol HAL_PWR_DisablePVD multiply defined (by stm32h7xx_hal_pwr_1.o and stm32h7xx_hal_pwr.o).
+Template_CM7\Template_CM7.axf: Error: L6200E: Symbol HAL_PWR_DisableSEVOnPend multiply defined (by stm32h7xx_hal_pwr_1.o and stm32h7xx_hal_pwr.o).
+Template_CM7\Template_CM7.axf: Error: L6200E: Symbol HAL_PWR_DisableSleepOnExit multiply defined (by stm32h7xx_hal_pwr_1.o and stm32h7xx_hal_pwr.o).
+Template_CM7\Template_CM7.axf: Error: L6200E: Symbol HAL_PWR_DisableWakeUpPin multiply defined (by stm32h7xx_hal_pwr_1.o and stm32h7xx_hal_pwr.o).
+Template_CM7\Template_CM7.axf: Error: L6200E: Symbol HAL_PWR_EnableBkUpAccess multiply defined (by stm32h7xx_hal_pwr_1.o and stm32h7xx_hal_pwr.o).
+Template_CM7\Template_CM7.axf: Error: L6200E: Symbol HAL_PWR_EnablePVD multiply defined (by stm32h7xx_hal_pwr_1.o and stm32h7xx_hal_pwr.o).
+Template_CM7\Template_CM7.axf: Error: L6200E: Symbol HAL_PWR_EnableSEVOnPend multiply defined (by stm32h7xx_hal_pwr_1.o and stm32h7xx_hal_pwr.o).
+Template_CM7\Template_CM7.axf: Error: L6200E: Symbol HAL_PWR_EnableSleepOnExit multiply defined (by stm32h7xx_hal_pwr_1.o and stm32h7xx_hal_pwr.o).
+Template_CM7\Template_CM7.axf: Error: L6200E: Symbol HAL_PWR_EnableWakeUpPin multiply defined (by stm32h7xx_hal_pwr_1.o and stm32h7xx_hal_pwr.o).
+Template_CM7\Template_CM7.axf: Error: L6200E: Symbol HAL_PWR_EnterSLEEPMode multiply defined (by stm32h7xx_hal_pwr_1.o and stm32h7xx_hal_pwr.o).
+Template_CM7\Template_CM7.axf: Error: L6200E: Symbol HAL_PWR_EnterSTANDBYMode multiply defined (by stm32h7xx_hal_pwr_1.o and stm32h7xx_hal_pwr.o).
+Template_CM7\Template_CM7.axf: Error: L6200E: Symbol HAL_PWR_EnterSTOPMode multiply defined (by stm32h7xx_hal_pwr_1.o and stm32h7xx_hal_pwr.o).
+Template_CM7\Template_CM7.axf: Error: L6200E: Symbol HAL_PWR_PVD_IRQHandler multiply defined (by stm32h7xx_hal_pwr_1.o and stm32h7xx_hal_pwr.o).
+Template_CM7\Template_CM7.axf: Error: L6200E: Symbol HAL_PWR_PVDCallback multiply defined (by stm32h7xx_hal_pwr_1.o and stm32h7xx_hal_pwr.o).
+Template_CM7\Template_CM7.axf: Error: L6200E: Symbol __asm___22_stm32h7xx_hal_pwr_ex_c_75a25fd4____REV16 multiply defined (by stm32h7xx_hal_pwr_ex_1.o and stm32h7xx_hal_pwr_ex.o).
+Template_CM7\Template_CM7.axf: Error: L6200E: Symbol __asm___22_stm32h7xx_hal_pwr_ex_c_75a25fd4____REVSH multiply defined (by stm32h7xx_hal_pwr_ex_1.o and stm32h7xx_hal_pwr_ex.o).
+Template_CM7\Template_CM7.axf: Error: L6200E: Symbol __asm___22_stm32h7xx_hal_pwr_ex_c_75a25fd4____RRX multiply defined (by stm32h7xx_hal_pwr_ex_1.o and stm32h7xx_hal_pwr_ex.o).
+Template_CM7\Template_CM7.axf: Error: L6200E: Symbol HAL_PWREx_ClearDomainFlags multiply defined (by stm32h7xx_hal_pwr_ex_1.o and stm32h7xx_hal_pwr_ex.o).
+Template_CM7\Template_CM7.axf: Error: L6200E: Symbol HAL_PWREx_ClearPendingEvent multiply defined (by stm32h7xx_hal_pwr_ex_1.o and stm32h7xx_hal_pwr_ex.o).
+Template_CM7\Template_CM7.axf: Error: L6200E: Symbol HAL_PWREx_ClearWakeupFlag multiply defined (by stm32h7xx_hal_pwr_ex_1.o and stm32h7xx_hal_pwr_ex.o).
+Template_CM7\Template_CM7.axf: Error: L6200E: Symbol HAL_PWREx_ConfigAVD multiply defined (by stm32h7xx_hal_pwr_ex_1.o and stm32h7xx_hal_pwr_ex.o).
+Template_CM7\Template_CM7.axf: Error: L6200E: Symbol HAL_PWREx_ConfigD3Domain multiply defined (by stm32h7xx_hal_pwr_ex_1.o and stm32h7xx_hal_pwr_ex.o).
+Template_CM7\Template_CM7.axf: Error: L6200E: Symbol HAL_PWREx_ControlStopModeVoltageScaling multiply defined (by stm32h7xx_hal_pwr_ex_1.o and stm32h7xx_hal_pwr_ex.o).
+Template_CM7\Template_CM7.axf: Error: L6200E: Symbol HAL_PWREx_ControlVoltageScaling multiply defined (by stm32h7xx_hal_pwr_ex_1.o and stm32h7xx_hal_pwr_ex.o).
+Template_CM7\Template_CM7.axf: Error: L6200E: Symbol HAL_PWREx_DisableAVD multiply defined (by stm32h7xx_hal_pwr_ex_1.o and stm32h7xx_hal_pwr_ex.o).
+Template_CM7\Template_CM7.axf: Error: L6200E: Symbol HAL_PWREx_DisableBatteryCharging multiply defined (by stm32h7xx_hal_pwr_ex_1.o and stm32h7xx_hal_pwr_ex.o).
+Template_CM7\Template_CM7.axf: Error: L6200E: Symbol HAL_PWREx_DisableBkUpReg multiply defined (by stm32h7xx_hal_pwr_ex_1.o and stm32h7xx_hal_pwr_ex.o).
+Template_CM7\Template_CM7.axf: Error: L6200E: Symbol HAL_PWREx_DisableFlashPowerDown multiply defined (by stm32h7xx_hal_pwr_ex_1.o and stm32h7xx_hal_pwr_ex.o).
+Template_CM7\Template_CM7.axf: Error: L6200E: Symbol HAL_PWREx_DisableMonitoring multiply defined (by stm32h7xx_hal_pwr_ex_1.o and stm32h7xx_hal_pwr_ex.o).
+Template_CM7\Template_CM7.axf: Error: L6200E: Symbol HAL_PWREx_DisableUSBReg multiply defined (by stm32h7xx_hal_pwr_ex_1.o and stm32h7xx_hal_pwr_ex.o).
+Template_CM7\Template_CM7.axf: Error: L6200E: Symbol HAL_PWREx_DisableUSBVoltageDetector multiply defined (by stm32h7xx_hal_pwr_ex_1.o and stm32h7xx_hal_pwr_ex.o).
+Template_CM7\Template_CM7.axf: Error: L6200E: Symbol HAL_PWREx_DisableWakeUpPin multiply defined (by stm32h7xx_hal_pwr_ex_1.o and stm32h7xx_hal_pwr_ex.o).
+Template_CM7\Template_CM7.axf: Error: L6200E: Symbol HAL_PWREx_EnableAVD multiply defined (by stm32h7xx_hal_pwr_ex_1.o and stm32h7xx_hal_pwr_ex.o).
+Template_CM7\Template_CM7.axf: Error: L6200E: Symbol HAL_PWREx_EnableBatteryCharging multiply defined (by stm32h7xx_hal_pwr_ex_1.o and stm32h7xx_hal_pwr_ex.o).
+Template_CM7\Template_CM7.axf: Error: L6200E: Symbol HAL_PWREx_EnableBkUpReg multiply defined (by stm32h7xx_hal_pwr_ex_1.o and stm32h7xx_hal_pwr_ex.o).
+Template_CM7\Template_CM7.axf: Error: L6200E: Symbol HAL_PWREx_EnableFlashPowerDown multiply defined (by stm32h7xx_hal_pwr_ex_1.o and stm32h7xx_hal_pwr_ex.o).
+Template_CM7\Template_CM7.axf: Error: L6200E: Symbol HAL_PWREx_EnableMonitoring multiply defined (by stm32h7xx_hal_pwr_ex_1.o and stm32h7xx_hal_pwr_ex.o).
+Template_CM7\Template_CM7.axf: Error: L6200E: Symbol HAL_PWREx_EnableUSBReg multiply defined (by stm32h7xx_hal_pwr_ex_1.o and stm32h7xx_hal_pwr_ex.o).
+Template_CM7\Template_CM7.axf: Error: L6200E: Symbol HAL_PWREx_EnableUSBVoltageDetector multiply defined (by stm32h7xx_hal_pwr_ex_1.o and stm32h7xx_hal_pwr_ex.o).
+Template_CM7\Template_CM7.axf: Error: L6200E: Symbol HAL_PWREx_EnableWakeUpPin multiply defined (by stm32h7xx_hal_pwr_ex_1.o and stm32h7xx_hal_pwr_ex.o).
+Template_CM7\Template_CM7.axf: Error: L6200E: Symbol HAL_PWREx_EnterSTANDBYMode multiply defined (by stm32h7xx_hal_pwr_ex_1.o and stm32h7xx_hal_pwr_ex.o).
+Template_CM7\Template_CM7.axf: Error: L6200E: Symbol HAL_PWREx_EnterSTOPMode multiply defined (by stm32h7xx_hal_pwr_ex_1.o and stm32h7xx_hal_pwr_ex.o).
+Template_CM7\Template_CM7.axf: Error: L6200E: Symbol HAL_PWREx_GetStopModeVoltageRange multiply defined (by stm32h7xx_hal_pwr_ex_1.o and stm32h7xx_hal_pwr_ex.o).
+Template_CM7\Template_CM7.axf: Error: L6200E: Symbol HAL_PWREx_GetSupplyConfig multiply defined (by stm32h7xx_hal_pwr_ex_1.o and stm32h7xx_hal_pwr_ex.o).
+Template_CM7\Template_CM7.axf: Error: L6200E: Symbol HAL_PWREx_GetTemperatureLevel multiply defined (by stm32h7xx_hal_pwr_ex_1.o and stm32h7xx_hal_pwr_ex.o).
+Template_CM7\Template_CM7.axf: Error: L6200E: Symbol HAL_PWREx_GetVBATLevel multiply defined (by stm32h7xx_hal_pwr_ex_1.o and stm32h7xx_hal_pwr_ex.o).
+Template_CM7\Template_CM7.axf: Error: L6200E: Symbol HAL_PWREx_GetVoltageRange multiply defined (by stm32h7xx_hal_pwr_ex_1.o and stm32h7xx_hal_pwr_ex.o).
+Template_CM7\Template_CM7.axf: Error: L6200E: Symbol HAL_PWREx_GetWakeupFlag multiply defined (by stm32h7xx_hal_pwr_ex_1.o and stm32h7xx_hal_pwr_ex.o).
+Template_CM7\Template_CM7.axf: Error: L6200E: Symbol HAL_PWREx_HoldCore multiply defined (by stm32h7xx_hal_pwr_ex_1.o and stm32h7xx_hal_pwr_ex.o).
+Template_CM7\Template_CM7.axf: Error: L6200E: Symbol HAL_PWREx_PVD_AVD_IRQHandler multiply defined (by stm32h7xx_hal_pwr_ex_1.o and stm32h7xx_hal_pwr_ex.o).
+Template_CM7\Template_CM7.axf: Error: L6200E: Symbol HAL_PWREx_ReleaseCore multiply defined (by stm32h7xx_hal_pwr_ex_1.o and stm32h7xx_hal_pwr_ex.o).
+Template_CM7\Template_CM7.axf: Error: L6200E: Symbol HAL_PWREx_WAKEUP_PIN_IRQHandler multiply defined (by stm32h7xx_hal_pwr_ex_1.o and stm32h7xx_hal_pwr_ex.o).
+Template_CM7\Template_CM7.axf: Error: L6200E: Symbol HAL_PWREx_AVDCallback multiply defined (by stm32h7xx_hal_pwr_ex_1.o and stm32h7xx_hal_pwr_ex.o).
+Template_CM7\Template_CM7.axf: Error: L6200E: Symbol HAL_PWREx_WKUP1_Callback multiply defined (by stm32h7xx_hal_pwr_ex_1.o and stm32h7xx_hal_pwr_ex.o).
+Template_CM7\Template_CM7.axf: Error: L6200E: Symbol HAL_PWREx_WKUP2_Callback multiply defined (by stm32h7xx_hal_pwr_ex_1.o and stm32h7xx_hal_pwr_ex.o).
+Template_CM7\Template_CM7.axf: Error: L6200E: Symbol HAL_PWREx_WKUP3_Callback multiply defined (by stm32h7xx_hal_pwr_ex_1.o and stm32h7xx_hal_pwr_ex.o).
+Template_CM7\Template_CM7.axf: Error: L6200E: Symbol HAL_PWREx_WKUP4_Callback multiply defined (by stm32h7xx_hal_pwr_ex_1.o and stm32h7xx_hal_pwr_ex.o).
+Template_CM7\Template_CM7.axf: Error: L6200E: Symbol HAL_PWREx_WKUP5_Callback multiply defined (by stm32h7xx_hal_pwr_ex_1.o and stm32h7xx_hal_pwr_ex.o).
+Template_CM7\Template_CM7.axf: Error: L6200E: Symbol HAL_PWREx_WKUP6_Callback multiply defined (by stm32h7xx_hal_pwr_ex_1.o and stm32h7xx_hal_pwr_ex.o).
+Template_CM7\Template_CM7.axf: Error: L6200E: Symbol __asm___15_stm32h7xx_hal_c_3da258af____REV16 multiply defined (by stm32h7xx_hal_1.o and stm32h7xx_hal.o).
+Template_CM7\Template_CM7.axf: Error: L6200E: Symbol __asm___15_stm32h7xx_hal_c_3da258af____REVSH multiply defined (by stm32h7xx_hal_1.o and stm32h7xx_hal.o).
+Template_CM7\Template_CM7.axf: Error: L6200E: Symbol __asm___15_stm32h7xx_hal_c_3da258af____RRX multiply defined (by stm32h7xx_hal_1.o and stm32h7xx_hal.o).
+Template_CM7\Template_CM7.axf: Error: L6200E: Symbol uwTickFreq multiply defined (by stm32h7xx_hal_1.o and stm32h7xx_hal.o).
+Template_CM7\Template_CM7.axf: Error: L6200E: Symbol uwTick multiply defined (by stm32h7xx_hal_1.o and stm32h7xx_hal.o).
+Template_CM7\Template_CM7.axf: Error: L6200E: Symbol HAL_DBGMCU_DisableDBGSleepMode multiply defined (by stm32h7xx_hal_1.o and stm32h7xx_hal.o).
+Template_CM7\Template_CM7.axf: Error: L6200E: Symbol HAL_DBGMCU_DisableDBGStandbyMode multiply defined (by stm32h7xx_hal_1.o and stm32h7xx_hal.o).
+Template_CM7\Template_CM7.axf: Error: L6200E: Symbol HAL_DBGMCU_DisableDBGStopMode multiply defined (by stm32h7xx_hal_1.o and stm32h7xx_hal.o).
+Template_CM7\Template_CM7.axf: Error: L6200E: Symbol HAL_DBGMCU_EnableDBGSleepMode multiply defined (by stm32h7xx_hal_1.o and stm32h7xx_hal.o).
+Template_CM7\Template_CM7.axf: Error: L6200E: Symbol HAL_DBGMCU_EnableDBGStandbyMode multiply defined (by stm32h7xx_hal_1.o and stm32h7xx_hal.o).
+Template_CM7\Template_CM7.axf: Error: L6200E: Symbol HAL_DBGMCU_EnableDBGStopMode multiply defined (by stm32h7xx_hal_1.o and stm32h7xx_hal.o).
+Template_CM7\Template_CM7.axf: Error: L6200E: Symbol HAL_DeInit multiply defined (by stm32h7xx_hal_1.o and stm32h7xx_hal.o).
+Template_CM7\Template_CM7.axf: Error: L6200E: Symbol HAL_DisableCompensationCell multiply defined (by stm32h7xx_hal_1.o and stm32h7xx_hal.o).
+Template_CM7\Template_CM7.axf: Error: L6200E: Symbol HAL_DisableDomain2DBGSleepMode multiply defined (by stm32h7xx_hal_1.o and stm32h7xx_hal.o).
+Template_CM7\Template_CM7.axf: Error: L6200E: Symbol HAL_DisableDomain2DBGStandbyMode multiply defined (by stm32h7xx_hal_1.o and stm32h7xx_hal.o).
+Template_CM7\Template_CM7.axf: Error: L6200E: Symbol HAL_DisableDomain2DBGStopMode multiply defined (by stm32h7xx_hal_1.o and stm32h7xx_hal.o).
+Template_CM7\Template_CM7.axf: Error: L6200E: Symbol HAL_EXTI_D1_ClearFlag multiply defined (by stm32h7xx_hal_1.o and stm32h7xx_hal.o).
+Template_CM7\Template_CM7.axf: Error: L6200E: Symbol HAL_EXTI_D1_EventInputConfig multiply defined (by stm32h7xx_hal_1.o and stm32h7xx_hal.o).
+Template_CM7\Template_CM7.axf: Error: L6200E: Symbol HAL_EXTI_D2_ClearFlag multiply defined (by stm32h7xx_hal_1.o and stm32h7xx_hal.o).
+Template_CM7\Template_CM7.axf: Error: L6200E: Symbol HAL_EXTI_D2_EventInputConfig multiply defined (by stm32h7xx_hal_1.o and stm32h7xx_hal.o).
+Template_CM7\Template_CM7.axf: Error: L6200E: Symbol HAL_EXTI_D3_EventInputConfig multiply defined (by stm32h7xx_hal_1.o and stm32h7xx_hal.o).
+Template_CM7\Template_CM7.axf: Error: L6200E: Symbol HAL_EXTI_EdgeConfig multiply defined (by stm32h7xx_hal_1.o and stm32h7xx_hal.o).
+Template_CM7\Template_CM7.axf: Error: L6200E: Symbol HAL_EXTI_GenerateSWInterrupt multiply defined (by stm32h7xx_hal_1.o and stm32h7xx_hal.o).
+Template_CM7\Template_CM7.axf: Error: L6200E: Symbol HAL_EnableCompensationCell multiply defined (by stm32h7xx_hal_1.o and stm32h7xx_hal.o).
+Template_CM7\Template_CM7.axf: Error: L6200E: Symbol HAL_EnableDomain2DBGSleepMode multiply defined (by stm32h7xx_hal_1.o and stm32h7xx_hal.o).
+Template_CM7\Template_CM7.axf: Error: L6200E: Symbol HAL_EnableDomain2DBGStandbyMode multiply defined (by stm32h7xx_hal_1.o and stm32h7xx_hal.o).
+Template_CM7\Template_CM7.axf: Error: L6200E: Symbol HAL_EnableDomain2DBGStopMode multiply defined (by stm32h7xx_hal_1.o and stm32h7xx_hal.o).
+Template_CM7\Template_CM7.axf: Error: L6200E: Symbol HAL_GetDEVID multiply defined (by stm32h7xx_hal_1.o and stm32h7xx_hal.o).
+Template_CM7\Template_CM7.axf: Error: L6200E: Symbol HAL_GetFMCMemorySwappingConfig multiply defined (by stm32h7xx_hal_1.o and stm32h7xx_hal.o).
+Template_CM7\Template_CM7.axf: Error: L6200E: Symbol HAL_GetHalVersion multiply defined (by stm32h7xx_hal_1.o and stm32h7xx_hal.o).
+Template_CM7\Template_CM7.axf: Error: L6200E: Symbol HAL_GetTickFreq multiply defined (by stm32h7xx_hal_1.o and stm32h7xx_hal.o).
+Template_CM7\Template_CM7.axf: Error: L6200E: Symbol HAL_GetTickPrio multiply defined (by stm32h7xx_hal_1.o and stm32h7xx_hal.o).
+Template_CM7\Template_CM7.axf: Error: L6200E: Symbol HAL_GetUIDw0 multiply defined (by stm32h7xx_hal_1.o and stm32h7xx_hal.o).
+Template_CM7\Template_CM7.axf: Error: L6200E: Symbol HAL_GetUIDw1 multiply defined (by stm32h7xx_hal_1.o and stm32h7xx_hal.o).
+Template_CM7\Template_CM7.axf: Error: L6200E: Symbol HAL_GetUIDw2 multiply defined (by stm32h7xx_hal_1.o and stm32h7xx_hal.o).
+Template_CM7\Template_CM7.axf: Error: L6200E: Symbol HAL_SYSCFG_AnalogSwitchConfig multiply defined (by stm32h7xx_hal_1.o and stm32h7xx_hal.o).
+Template_CM7\Template_CM7.axf: Error: L6200E: Symbol HAL_SYSCFG_CM4BootAddConfig multiply defined (by stm32h7xx_hal_1.o and stm32h7xx_hal.o).
+Template_CM7\Template_CM7.axf: Error: L6200E: Symbol HAL_SYSCFG_CM7BootAddConfig multiply defined (by stm32h7xx_hal_1.o and stm32h7xx_hal.o).
+Template_CM7\Template_CM7.axf: Error: L6200E: Symbol HAL_SYSCFG_CompensationCodeConfig multiply defined (by stm32h7xx_hal_1.o and stm32h7xx_hal.o).
+Template_CM7\Template_CM7.axf: Error: L6200E: Symbol HAL_SYSCFG_CompensationCodeSelect multiply defined (by stm32h7xx_hal_1.o and stm32h7xx_hal.o).
+Template_CM7\Template_CM7.axf: Error: L6200E: Symbol HAL_SYSCFG_DisableBOOST multiply defined (by stm32h7xx_hal_1.o and stm32h7xx_hal.o).
+Template_CM7\Template_CM7.axf: Error: L6200E: Symbol HAL_SYSCFG_DisableCM4BOOT multiply defined (by stm32h7xx_hal_1.o and stm32h7xx_hal.o).
+Template_CM7\Template_CM7.axf: Error: L6200E: Symbol HAL_SYSCFG_DisableCM7BOOT multiply defined (by stm32h7xx_hal_1.o and stm32h7xx_hal.o).
+Template_CM7\Template_CM7.axf: Error: L6200E: Symbol HAL_SYSCFG_DisableIOSpeedOptimize multiply defined (by stm32h7xx_hal_1.o and stm32h7xx_hal.o).
+Template_CM7\Template_CM7.axf: Error: L6200E: Symbol HAL_SYSCFG_DisableVREFBUF multiply defined (by stm32h7xx_hal_1.o and stm32h7xx_hal.o).
+Template_CM7\Template_CM7.axf: Error: L6200E: Symbol HAL_SYSCFG_ETHInterfaceSelect multiply defined (by stm32h7xx_hal_1.o and stm32h7xx_hal.o).
+Template_CM7\Template_CM7.axf: Error: L6200E: Symbol HAL_SYSCFG_EnableBOOST multiply defined (by stm32h7xx_hal_1.o and stm32h7xx_hal.o).
+Template_CM7\Template_CM7.axf: Error: L6200E: Symbol HAL_SYSCFG_EnableCM4BOOT multiply defined (by stm32h7xx_hal_1.o and stm32h7xx_hal.o).
+Template_CM7\Template_CM7.axf: Error: L6200E: Symbol HAL_SYSCFG_EnableCM7BOOT multiply defined (by stm32h7xx_hal_1.o and stm32h7xx_hal.o).
+Template_CM7\Template_CM7.axf: Error: L6200E: Symbol HAL_SYSCFG_EnableIOSpeedOptimize multiply defined (by stm32h7xx_hal_1.o and stm32h7xx_hal.o).
+Template_CM7\Template_CM7.axf: Error: L6200E: Symbol HAL_SYSCFG_EnableVREFBUF multiply defined (by stm32h7xx_hal_1.o and stm32h7xx_hal.o).
+Template_CM7\Template_CM7.axf: Error: L6200E: Symbol HAL_SYSCFG_VREFBUF_HighImpedanceConfig multiply defined (by stm32h7xx_hal_1.o and stm32h7xx_hal.o).
+Template_CM7\Template_CM7.axf: Error: L6200E: Symbol HAL_SYSCFG_VREFBUF_TrimmingConfig multiply defined (by stm32h7xx_hal_1.o and stm32h7xx_hal.o).
+Template_CM7\Template_CM7.axf: Error: L6200E: Symbol HAL_SYSCFG_VREFBUF_VoltageScalingConfig multiply defined (by stm32h7xx_hal_1.o and stm32h7xx_hal.o).
+Template_CM7\Template_CM7.axf: Error: L6200E: Symbol HAL_SetFMCMemorySwappingConfig multiply defined (by stm32h7xx_hal_1.o and stm32h7xx_hal.o).
+Template_CM7\Template_CM7.axf: Error: L6200E: Symbol HAL_SetTickFreq multiply defined (by stm32h7xx_hal_1.o and stm32h7xx_hal.o).
+Template_CM7\Template_CM7.axf: Error: L6200E: Symbol HAL_Delay multiply defined (by stm32h7xx_hal_1.o and stm32h7xx_hal.o).
+Template_CM7\Template_CM7.axf: Error: L6200E: Symbol HAL_MspDeInit multiply defined (by stm32h7xx_hal_1.o and stm32h7xx_hal.o).
+Template_CM7\Template_CM7.axf: Error: L6200E: Symbol __asm___19_stm32h7xx_hal_tim_c_a9d95b52____REV16 multiply defined (by stm32h7xx_hal_tim_1.o and stm32h7xx_hal_tim.o).
+Template_CM7\Template_CM7.axf: Error: L6200E: Symbol __asm___19_stm32h7xx_hal_tim_c_a9d95b52____REVSH multiply defined (by stm32h7xx_hal_tim_1.o and stm32h7xx_hal_tim.o).
+Template_CM7\Template_CM7.axf: Error: L6200E: Symbol __asm___19_stm32h7xx_hal_tim_c_a9d95b52____RRX multiply defined (by stm32h7xx_hal_tim_1.o and stm32h7xx_hal_tim.o).
+Template_CM7\Template_CM7.axf: Error: L6200E: Symbol HAL_TIM_Base_DeInit multiply defined (by stm32h7xx_hal_tim_1.o and stm32h7xx_hal_tim.o).
+Template_CM7\Template_CM7.axf: Error: L6200E: Symbol HAL_TIM_Base_GetState multiply defined (by stm32h7xx_hal_tim_1.o and stm32h7xx_hal_tim.o).
+Template_CM7\Template_CM7.axf: Error: L6200E: Symbol HAL_TIM_Base_Start multiply defined (by stm32h7xx_hal_tim_1.o and stm32h7xx_hal_tim.o).
+Template_CM7\Template_CM7.axf: Error: L6200E: Symbol HAL_TIM_Base_Start_DMA multiply defined (by stm32h7xx_hal_tim_1.o and stm32h7xx_hal_tim.o).
+Template_CM7\Template_CM7.axf: Error: L6200E: Symbol HAL_TIM_Base_Stop multiply defined (by stm32h7xx_hal_tim_1.o and stm32h7xx_hal_tim.o).
+Template_CM7\Template_CM7.axf: Error: L6200E: Symbol HAL_TIM_Base_Stop_DMA multiply defined (by stm32h7xx_hal_tim_1.o and stm32h7xx_hal_tim.o).
+Template_CM7\Template_CM7.axf: Error: L6200E: Symbol HAL_TIM_Base_Stop_IT multiply defined (by stm32h7xx_hal_tim_1.o and stm32h7xx_hal_tim.o).
+Template_CM7\Template_CM7.axf: Error: L6200E: Symbol HAL_TIM_ConfigOCrefClear multiply defined (by stm32h7xx_hal_tim_1.o and stm32h7xx_hal_tim.o).
+Template_CM7\Template_CM7.axf: Error: L6200E: Symbol HAL_TIM_ConfigTI1Input multiply defined (by stm32h7xx_hal_tim_1.o and stm32h7xx_hal_tim.o).
+Template_CM7\Template_CM7.axf: Error: L6200E: Symbol HAL_TIM_DMABurstState multiply defined (by stm32h7xx_hal_tim_1.o and stm32h7xx_hal_tim.o).
+Template_CM7\Template_CM7.axf: Error: L6200E: Symbol HAL_TIM_DMABurst_MultiReadStart multiply defined (by stm32h7xx_hal_tim_1.o and stm32h7xx_hal_tim.o).
+Template_CM7\Template_CM7.axf: Error: L6200E: Symbol HAL_TIM_DMABurst_MultiWriteStart multiply defined (by stm32h7xx_hal_tim_1.o and stm32h7xx_hal_tim.o).
+Template_CM7\Template_CM7.axf: Error: L6200E: Symbol HAL_TIM_DMABurst_ReadStart multiply defined (by stm32h7xx_hal_tim_1.o and stm32h7xx_hal_tim.o).
+Template_CM7\Template_CM7.axf: Error: L6200E: Symbol HAL_TIM_DMABurst_ReadStop multiply defined (by stm32h7xx_hal_tim_1.o and stm32h7xx_hal_tim.o).
+Template_CM7\Template_CM7.axf: Error: L6200E: Symbol HAL_TIM_DMABurst_WriteStart multiply defined (by stm32h7xx_hal_tim_1.o and stm32h7xx_hal_tim.o).
+Template_CM7\Template_CM7.axf: Error: L6200E: Symbol HAL_TIM_DMABurst_WriteStop multiply defined (by stm32h7xx_hal_tim_1.o and stm32h7xx_hal_tim.o).
+Template_CM7\Template_CM7.axf: Error: L6200E: Symbol HAL_TIM_Encoder_DeInit multiply defined (by stm32h7xx_hal_tim_1.o and stm32h7xx_hal_tim.o).
+Template_CM7\Template_CM7.axf: Error: L6200E: Symbol HAL_TIM_Encoder_GetState multiply defined (by stm32h7xx_hal_tim_1.o and stm32h7xx_hal_tim.o).
+Template_CM7\Template_CM7.axf: Error: L6200E: Symbol HAL_TIM_Encoder_Init multiply defined (by stm32h7xx_hal_tim_1.o and stm32h7xx_hal_tim.o).
+Template_CM7\Template_CM7.axf: Error: L6200E: Symbol HAL_TIM_Encoder_Start multiply defined (by stm32h7xx_hal_tim_1.o and stm32h7xx_hal_tim.o).
+Template_CM7\Template_CM7.axf: Error: L6200E: Symbol HAL_TIM_Encoder_Start_DMA multiply defined (by stm32h7xx_hal_tim_1.o and stm32h7xx_hal_tim.o).
+Template_CM7\Template_CM7.axf: Error: L6200E: Symbol HAL_TIM_Encoder_Start_IT multiply defined (by stm32h7xx_hal_tim_1.o and stm32h7xx_hal_tim.o).
+Template_CM7\Template_CM7.axf: Error: L6200E: Symbol HAL_TIM_Encoder_Stop multiply defined (by stm32h7xx_hal_tim_1.o and stm32h7xx_hal_tim.o).
+Template_CM7\Template_CM7.axf: Error: L6200E: Symbol HAL_TIM_Encoder_Stop_DMA multiply defined (by stm32h7xx_hal_tim_1.o and stm32h7xx_hal_tim.o).
+Template_CM7\Template_CM7.axf: Error: L6200E: Symbol HAL_TIM_Encoder_Stop_IT multiply defined (by stm32h7xx_hal_tim_1.o and stm32h7xx_hal_tim.o).
+Template_CM7\Template_CM7.axf: Error: L6200E: Symbol HAL_TIM_GenerateEvent multiply defined (by stm32h7xx_hal_tim_1.o and stm32h7xx_hal_tim.o).
+Template_CM7\Template_CM7.axf: Error: L6200E: Symbol HAL_TIM_GetActiveChannel multiply defined (by stm32h7xx_hal_tim_1.o and stm32h7xx_hal_tim.o).
+Template_CM7\Template_CM7.axf: Error: L6200E: Symbol HAL_TIM_GetChannelState multiply defined (by stm32h7xx_hal_tim_1.o and stm32h7xx_hal_tim.o).
+Template_CM7\Template_CM7.axf: Error: L6200E: Symbol HAL_TIM_IC_ConfigChannel multiply defined (by stm32h7xx_hal_tim_1.o and stm32h7xx_hal_tim.o).
+Template_CM7\Template_CM7.axf: Error: L6200E: Symbol HAL_TIM_IC_DeInit multiply defined (by stm32h7xx_hal_tim_1.o and stm32h7xx_hal_tim.o).
+Template_CM7\Template_CM7.axf: Error: L6200E: Symbol HAL_TIM_IC_GetState multiply defined (by stm32h7xx_hal_tim_1.o and stm32h7xx_hal_tim.o).
+Template_CM7\Template_CM7.axf: Error: L6200E: Symbol HAL_TIM_IC_Init multiply defined (by stm32h7xx_hal_tim_1.o and stm32h7xx_hal_tim.o).
+Template_CM7\Template_CM7.axf: Error: L6200E: Symbol HAL_TIM_IC_Start multiply defined (by stm32h7xx_hal_tim_1.o and stm32h7xx_hal_tim.o).
+Template_CM7\Template_CM7.axf: Error: L6200E: Symbol HAL_TIM_IC_Start_DMA multiply defined (by stm32h7xx_hal_tim_1.o and stm32h7xx_hal_tim.o).
+Template_CM7\Template_CM7.axf: Error: L6200E: Symbol HAL_TIM_IC_Start_IT multiply defined (by stm32h7xx_hal_tim_1.o and stm32h7xx_hal_tim.o).
+Template_CM7\Template_CM7.axf: Error: L6200E: Symbol HAL_TIM_IC_Stop multiply defined (by stm32h7xx_hal_tim_1.o and stm32h7xx_hal_tim.o).
+Template_CM7\Template_CM7.axf: Error: L6200E: Symbol HAL_TIM_IC_Stop_DMA multiply defined (by stm32h7xx_hal_tim_1.o and stm32h7xx_hal_tim.o).
+Template_CM7\Template_CM7.axf: Error: L6200E: Symbol HAL_TIM_IC_Stop_IT multiply defined (by stm32h7xx_hal_tim_1.o and stm32h7xx_hal_tim.o).
+Template_CM7\Template_CM7.axf: Error: L6200E: Symbol HAL_TIM_OC_ConfigChannel multiply defined (by stm32h7xx_hal_tim_1.o and stm32h7xx_hal_tim.o).
+Template_CM7\Template_CM7.axf: Error: L6200E: Symbol HAL_TIM_OC_DeInit multiply defined (by stm32h7xx_hal_tim_1.o and stm32h7xx_hal_tim.o).
+Template_CM7\Template_CM7.axf: Error: L6200E: Symbol HAL_TIM_OC_GetState multiply defined (by stm32h7xx_hal_tim_1.o and stm32h7xx_hal_tim.o).
+Template_CM7\Template_CM7.axf: Error: L6200E: Symbol HAL_TIM_OC_Init multiply defined (by stm32h7xx_hal_tim_1.o and stm32h7xx_hal_tim.o).
+Template_CM7\Template_CM7.axf: Error: L6200E: Symbol HAL_TIM_OC_Start multiply defined (by stm32h7xx_hal_tim_1.o and stm32h7xx_hal_tim.o).
+Template_CM7\Template_CM7.axf: Error: L6200E: Symbol HAL_TIM_OC_Start_DMA multiply defined (by stm32h7xx_hal_tim_1.o and stm32h7xx_hal_tim.o).
+Template_CM7\Template_CM7.axf: Error: L6200E: Symbol HAL_TIM_OC_Start_IT multiply defined (by stm32h7xx_hal_tim_1.o and stm32h7xx_hal_tim.o).
+Template_CM7\Template_CM7.axf: Error: L6200E: Symbol HAL_TIM_OC_Stop multiply defined (by stm32h7xx_hal_tim_1.o and stm32h7xx_hal_tim.o).
+Template_CM7\Template_CM7.axf: Error: L6200E: Symbol HAL_TIM_OC_Stop_DMA multiply defined (by stm32h7xx_hal_tim_1.o and stm32h7xx_hal_tim.o).
+Template_CM7\Template_CM7.axf: Error: L6200E: Symbol HAL_TIM_OC_Stop_IT multiply defined (by stm32h7xx_hal_tim_1.o and stm32h7xx_hal_tim.o).
+Template_CM7\Template_CM7.axf: Error: L6200E: Symbol HAL_TIM_OnePulse_ConfigChannel multiply defined (by stm32h7xx_hal_tim_1.o and stm32h7xx_hal_tim.o).
+Template_CM7\Template_CM7.axf: Error: L6200E: Symbol HAL_TIM_OnePulse_DeInit multiply defined (by stm32h7xx_hal_tim_1.o and stm32h7xx_hal_tim.o).
+Template_CM7\Template_CM7.axf: Error: L6200E: Symbol HAL_TIM_OnePulse_GetState multiply defined (by stm32h7xx_hal_tim_1.o and stm32h7xx_hal_tim.o).
+Template_CM7\Template_CM7.axf: Error: L6200E: Symbol HAL_TIM_OnePulse_Init multiply defined (by stm32h7xx_hal_tim_1.o and stm32h7xx_hal_tim.o).
+Template_CM7\Template_CM7.axf: Error: L6200E: Symbol HAL_TIM_OnePulse_Start multiply defined (by stm32h7xx_hal_tim_1.o and stm32h7xx_hal_tim.o).
+Template_CM7\Template_CM7.axf: Error: L6200E: Symbol HAL_TIM_OnePulse_Start_IT multiply defined (by stm32h7xx_hal_tim_1.o and stm32h7xx_hal_tim.o).
+Template_CM7\Template_CM7.axf: Error: L6200E: Symbol HAL_TIM_OnePulse_Stop multiply defined (by stm32h7xx_hal_tim_1.o and stm32h7xx_hal_tim.o).
+Template_CM7\Template_CM7.axf: Error: L6200E: Symbol HAL_TIM_OnePulse_Stop_IT multiply defined (by stm32h7xx_hal_tim_1.o and stm32h7xx_hal_tim.o).
+Template_CM7\Template_CM7.axf: Error: L6200E: Symbol HAL_TIM_PWM_ConfigChannel multiply defined (by stm32h7xx_hal_tim_1.o and stm32h7xx_hal_tim.o).
+Template_CM7\Template_CM7.axf: Error: L6200E: Symbol HAL_TIM_PWM_DeInit multiply defined (by stm32h7xx_hal_tim_1.o and stm32h7xx_hal_tim.o).
+Template_CM7\Template_CM7.axf: Error: L6200E: Symbol HAL_TIM_PWM_GetState multiply defined (by stm32h7xx_hal_tim_1.o and stm32h7xx_hal_tim.o).
+Template_CM7\Template_CM7.axf: Error: L6200E: Symbol HAL_TIM_PWM_Init multiply defined (by stm32h7xx_hal_tim_1.o and stm32h7xx_hal_tim.o).
+Template_CM7\Template_CM7.axf: Error: L6200E: Symbol HAL_TIM_PWM_Start multiply defined (by stm32h7xx_hal_tim_1.o and stm32h7xx_hal_tim.o).
+Template_CM7\Template_CM7.axf: Error: L6200E: Symbol HAL_TIM_PWM_Start_DMA multiply defined (by stm32h7xx_hal_tim_1.o and stm32h7xx_hal_tim.o).
+Template_CM7\Template_CM7.axf: Error: L6200E: Symbol HAL_TIM_PWM_Start_IT multiply defined (by stm32h7xx_hal_tim_1.o and stm32h7xx_hal_tim.o).
+Template_CM7\Template_CM7.axf: Error: L6200E: Symbol HAL_TIM_PWM_Stop multiply defined (by stm32h7xx_hal_tim_1.o and stm32h7xx_hal_tim.o).
+Template_CM7\Template_CM7.axf: Error: L6200E: Symbol HAL_TIM_PWM_Stop_DMA multiply defined (by stm32h7xx_hal_tim_1.o and stm32h7xx_hal_tim.o).
+Template_CM7\Template_CM7.axf: Error: L6200E: Symbol HAL_TIM_PWM_Stop_IT multiply defined (by stm32h7xx_hal_tim_1.o and stm32h7xx_hal_tim.o).
+Template_CM7\Template_CM7.axf: Error: L6200E: Symbol HAL_TIM_ReadCapturedValue multiply defined (by stm32h7xx_hal_tim_1.o and stm32h7xx_hal_tim.o).
+Template_CM7\Template_CM7.axf: Error: L6200E: Symbol HAL_TIM_SlaveConfigSynchro multiply defined (by stm32h7xx_hal_tim_1.o and stm32h7xx_hal_tim.o).
+Template_CM7\Template_CM7.axf: Error: L6200E: Symbol HAL_TIM_SlaveConfigSynchro_IT multiply defined (by stm32h7xx_hal_tim_1.o and stm32h7xx_hal_tim.o).
+Template_CM7\Template_CM7.axf: Error: L6200E: Symbol TIM_Base_SetConfig multiply defined (by stm32h7xx_hal_tim_1.o and stm32h7xx_hal_tim.o).
+Template_CM7\Template_CM7.axf: Error: L6200E: Symbol TIM_CCxChannelCmd multiply defined (by stm32h7xx_hal_tim_1.o and stm32h7xx_hal_tim.o).
+Template_CM7\Template_CM7.axf: Error: L6200E: Symbol TIM_DMACaptureCplt multiply defined (by stm32h7xx_hal_tim_1.o and stm32h7xx_hal_tim.o).
+Template_CM7\Template_CM7.axf: Error: L6200E: Symbol TIM_DMACaptureHalfCplt multiply defined (by stm32h7xx_hal_tim_1.o and stm32h7xx_hal_tim.o).
+Template_CM7\Template_CM7.axf: Error: L6200E: Symbol TIM_DMADelayPulseHalfCplt multiply defined (by stm32h7xx_hal_tim_1.o and stm32h7xx_hal_tim.o).
+Template_CM7\Template_CM7.axf: Error: L6200E: Symbol TIM_DMAError multiply defined (by stm32h7xx_hal_tim_1.o and stm32h7xx_hal_tim.o).
+Template_CM7\Template_CM7.axf: Error: L6200E: Symbol TIM_ETR_SetConfig multiply defined (by stm32h7xx_hal_tim_1.o and stm32h7xx_hal_tim.o).
+Template_CM7\Template_CM7.axf: Error: L6200E: Symbol TIM_OC2_SetConfig multiply defined (by stm32h7xx_hal_tim_1.o and stm32h7xx_hal_tim.o).
+Template_CM7\Template_CM7.axf: Error: L6200E: Symbol TIM_TI1_SetConfig multiply defined (by stm32h7xx_hal_tim_1.o and stm32h7xx_hal_tim.o).
+Template_CM7\Template_CM7.axf: Error: L6200E: Symbol HAL_TIMEx_Break2Callback multiply defined (by stm32h7xx_hal_tim_ex_1.o and stm32h7xx_hal_tim_ex.o).
+Template_CM7\Template_CM7.axf: Error: L6200E: Symbol HAL_TIMEx_BreakCallback multiply defined (by stm32h7xx_hal_tim_ex_1.o and stm32h7xx_hal_tim_ex.o).
+Template_CM7\Template_CM7.axf: Error: L6200E: Symbol HAL_TIMEx_CommutCallback multiply defined (by stm32h7xx_hal_tim_ex_1.o and stm32h7xx_hal_tim_ex.o).
+Template_CM7\Template_CM7.axf: Error: L6200E: Symbol TIMEx_DMACommutationCplt multiply defined (by stm32h7xx_hal_tim_ex_1.o and stm32h7xx_hal_tim_ex.o).
+Template_CM7\Template_CM7.axf: Error: L6200E: Symbol TIMEx_DMACommutationHalfCplt multiply defined (by stm32h7xx_hal_tim_ex_1.o and stm32h7xx_hal_tim_ex.o).
+Template_CM7\Template_CM7.axf: Error: L6200E: Symbol HAL_TIM_Encoder_MspDeInit multiply defined (by stm32h7xx_hal_tim_1.o and stm32h7xx_hal_tim.o).
+Template_CM7\Template_CM7.axf: Error: L6200E: Symbol HAL_TIM_Encoder_MspInit multiply defined (by stm32h7xx_hal_tim_1.o and stm32h7xx_hal_tim.o).
+Template_CM7\Template_CM7.axf: Error: L6200E: Symbol HAL_TIM_ErrorCallback multiply defined (by stm32h7xx_hal_tim_1.o and stm32h7xx_hal_tim.o).
+Template_CM7\Template_CM7.axf: Error: L6200E: Symbol HAL_TIM_IC_CaptureCallback multiply defined (by stm32h7xx_hal_tim_1.o and stm32h7xx_hal_tim.o).
+Template_CM7\Template_CM7.axf: Error: L6200E: Symbol HAL_TIM_IC_CaptureHalfCpltCallback multiply defined (by stm32h7xx_hal_tim_1.o and stm32h7xx_hal_tim.o).
+Template_CM7\Template_CM7.axf: Error: L6200E: Symbol HAL_TIM_IC_MspDeInit multiply defined (by stm32h7xx_hal_tim_1.o and stm32h7xx_hal_tim.o).
+Template_CM7\Template_CM7.axf: Error: L6200E: Symbol HAL_TIM_IC_MspInit multiply defined (by stm32h7xx_hal_tim_1.o and stm32h7xx_hal_tim.o).
+Template_CM7\Template_CM7.axf: Error: L6200E: Symbol HAL_TIM_OC_DelayElapsedCallback multiply defined (by stm32h7xx_hal_tim_1.o and stm32h7xx_hal_tim.o).
+Template_CM7\Template_CM7.axf: Error: L6200E: Symbol HAL_TIM_OC_MspDeInit multiply defined (by stm32h7xx_hal_tim_1.o and stm32h7xx_hal_tim.o).
+Template_CM7\Template_CM7.axf: Error: L6200E: Symbol HAL_TIM_OC_MspInit multiply defined (by stm32h7xx_hal_tim_1.o and stm32h7xx_hal_tim.o).
+Template_CM7\Template_CM7.axf: Error: L6200E: Symbol HAL_TIM_OnePulse_MspDeInit multiply defined (by stm32h7xx_hal_tim_1.o and stm32h7xx_hal_tim.o).
+Template_CM7\Template_CM7.axf: Error: L6200E: Symbol HAL_TIM_OnePulse_MspInit multiply defined (by stm32h7xx_hal_tim_1.o and stm32h7xx_hal_tim.o).
+Template_CM7\Template_CM7.axf: Error: L6200E: Symbol HAL_TIM_PWM_MspDeInit multiply defined (by stm32h7xx_hal_tim_1.o and stm32h7xx_hal_tim.o).
+Template_CM7\Template_CM7.axf: Error: L6200E: Symbol HAL_TIM_PWM_MspInit multiply defined (by stm32h7xx_hal_tim_1.o and stm32h7xx_hal_tim.o).
+Template_CM7\Template_CM7.axf: Error: L6200E: Symbol HAL_TIM_PWM_PulseFinishedCallback multiply defined (by stm32h7xx_hal_tim_1.o and stm32h7xx_hal_tim.o).
+Template_CM7\Template_CM7.axf: Error: L6200E: Symbol HAL_TIM_PWM_PulseFinishedHalfCpltCallback multiply defined (by stm32h7xx_hal_tim_1.o and stm32h7xx_hal_tim.o).
+Template_CM7\Template_CM7.axf: Error: L6200E: Symbol HAL_TIM_PeriodElapsedHalfCpltCallback multiply defined (by stm32h7xx_hal_tim_1.o and stm32h7xx_hal_tim.o).
+Template_CM7\Template_CM7.axf: Error: L6200E: Symbol HAL_TIM_TriggerCallback multiply defined (by stm32h7xx_hal_tim_1.o and stm32h7xx_hal_tim.o).
+Template_CM7\Template_CM7.axf: Error: L6200E: Symbol HAL_TIM_TriggerHalfCpltCallback multiply defined (by stm32h7xx_hal_tim_1.o and stm32h7xx_hal_tim.o).
+Template_CM7\Template_CM7.axf: Error: L6200E: Symbol __asm___22_stm32h7xx_hal_tim_ex_c_e8ef3920____REV16 multiply defined (by stm32h7xx_hal_tim_ex_1.o and stm32h7xx_hal_tim_ex.o).
+Template_CM7\Template_CM7.axf: Error: L6200E: Symbol __asm___22_stm32h7xx_hal_tim_ex_c_e8ef3920____REVSH multiply defined (by stm32h7xx_hal_tim_ex_1.o and stm32h7xx_hal_tim_ex.o).
+Template_CM7\Template_CM7.axf: Error: L6200E: Symbol __asm___22_stm32h7xx_hal_tim_ex_c_e8ef3920____RRX multiply defined (by stm32h7xx_hal_tim_ex_1.o and stm32h7xx_hal_tim_ex.o).
+Template_CM7\Template_CM7.axf: Error: L6200E: Symbol HAL_TIMEx_ConfigBreakDeadTime multiply defined (by stm32h7xx_hal_tim_ex_1.o and stm32h7xx_hal_tim_ex.o).
+Template_CM7\Template_CM7.axf: Error: L6200E: Symbol HAL_TIMEx_ConfigBreakInput multiply defined (by stm32h7xx_hal_tim_ex_1.o and stm32h7xx_hal_tim_ex.o).
+Template_CM7\Template_CM7.axf: Error: L6200E: Symbol HAL_TIMEx_ConfigCommutEvent multiply defined (by stm32h7xx_hal_tim_ex_1.o and stm32h7xx_hal_tim_ex.o).
+Template_CM7\Template_CM7.axf: Error: L6200E: Symbol HAL_TIMEx_ConfigCommutEvent_DMA multiply defined (by stm32h7xx_hal_tim_ex_1.o and stm32h7xx_hal_tim_ex.o).
+Template_CM7\Template_CM7.axf: Error: L6200E: Symbol HAL_TIMEx_ConfigCommutEvent_IT multiply defined (by stm32h7xx_hal_tim_ex_1.o and stm32h7xx_hal_tim_ex.o).
+Template_CM7\Template_CM7.axf: Error: L6200E: Symbol HAL_TIMEx_GetChannelNState multiply defined (by stm32h7xx_hal_tim_ex_1.o and stm32h7xx_hal_tim_ex.o).
+Template_CM7\Template_CM7.axf: Error: L6200E: Symbol HAL_TIMEx_GroupChannel5 multiply defined (by stm32h7xx_hal_tim_ex_1.o and stm32h7xx_hal_tim_ex.o).
+Template_CM7\Template_CM7.axf: Error: L6200E: Symbol HAL_TIMEx_HallSensor_DeInit multiply defined (by stm32h7xx_hal_tim_ex_1.o and stm32h7xx_hal_tim_ex.o).
+Template_CM7\Template_CM7.axf: Error: L6200E: Symbol HAL_TIMEx_HallSensor_GetState multiply defined (by stm32h7xx_hal_tim_ex_1.o and stm32h7xx_hal_tim_ex.o).
+Template_CM7\Template_CM7.axf: Error: L6200E: Symbol HAL_TIMEx_HallSensor_Init multiply defined (by stm32h7xx_hal_tim_ex_1.o and stm32h7xx_hal_tim_ex.o).
+Template_CM7\Template_CM7.axf: Error: L6200E: Symbol HAL_TIMEx_HallSensor_Start multiply defined (by stm32h7xx_hal_tim_ex_1.o and stm32h7xx_hal_tim_ex.o).
+Template_CM7\Template_CM7.axf: Error: L6200E: Symbol HAL_TIMEx_HallSensor_Start_DMA multiply defined (by stm32h7xx_hal_tim_ex_1.o and stm32h7xx_hal_tim_ex.o).
+Template_CM7\Template_CM7.axf: Error: L6200E: Symbol HAL_TIMEx_HallSensor_Start_IT multiply defined (by stm32h7xx_hal_tim_ex_1.o and stm32h7xx_hal_tim_ex.o).
+Template_CM7\Template_CM7.axf: Error: L6200E: Symbol HAL_TIMEx_HallSensor_Stop multiply defined (by stm32h7xx_hal_tim_ex_1.o and stm32h7xx_hal_tim_ex.o).
+Template_CM7\Template_CM7.axf: Error: L6200E: Symbol HAL_TIMEx_HallSensor_Stop_DMA multiply defined (by stm32h7xx_hal_tim_ex_1.o and stm32h7xx_hal_tim_ex.o).
+Template_CM7\Template_CM7.axf: Error: L6200E: Symbol HAL_TIMEx_HallSensor_Stop_IT multiply defined (by stm32h7xx_hal_tim_ex_1.o and stm32h7xx_hal_tim_ex.o).
+Template_CM7\Template_CM7.axf: Error: L6200E: Symbol HAL_TIMEx_OCN_Start multiply defined (by stm32h7xx_hal_tim_ex_1.o and stm32h7xx_hal_tim_ex.o).
+Template_CM7\Template_CM7.axf: Error: L6200E: Symbol HAL_TIMEx_OCN_Start_DMA multiply defined (by stm32h7xx_hal_tim_ex_1.o and stm32h7xx_hal_tim_ex.o).
+Template_CM7\Template_CM7.axf: Error: L6200E: Symbol HAL_TIMEx_OCN_Start_IT multiply defined (by stm32h7xx_hal_tim_ex_1.o and stm32h7xx_hal_tim_ex.o).
+Template_CM7\Template_CM7.axf: Error: L6200E: Symbol HAL_TIMEx_OCN_Stop multiply defined (by stm32h7xx_hal_tim_ex_1.o and stm32h7xx_hal_tim_ex.o).
+Template_CM7\Template_CM7.axf: Error: L6200E: Symbol HAL_TIMEx_OCN_Stop_DMA multiply defined (by stm32h7xx_hal_tim_ex_1.o and stm32h7xx_hal_tim_ex.o).
+Template_CM7\Template_CM7.axf: Error: L6200E: Symbol HAL_TIMEx_OCN_Stop_IT multiply defined (by stm32h7xx_hal_tim_ex_1.o and stm32h7xx_hal_tim_ex.o).
+Template_CM7\Template_CM7.axf: Error: L6200E: Symbol HAL_TIMEx_OnePulseN_Start multiply defined (by stm32h7xx_hal_tim_ex_1.o and stm32h7xx_hal_tim_ex.o).
+Template_CM7\Template_CM7.axf: Error: L6200E: Symbol HAL_TIMEx_OnePulseN_Start_IT multiply defined (by stm32h7xx_hal_tim_ex_1.o and stm32h7xx_hal_tim_ex.o).
+Template_CM7\Template_CM7.axf: Error: L6200E: Symbol HAL_TIMEx_OnePulseN_Stop multiply defined (by stm32h7xx_hal_tim_ex_1.o and stm32h7xx_hal_tim_ex.o).
+Template_CM7\Template_CM7.axf: Error: L6200E: Symbol HAL_TIMEx_OnePulseN_Stop_IT multiply defined (by stm32h7xx_hal_tim_ex_1.o and stm32h7xx_hal_tim_ex.o).
+Template_CM7\Template_CM7.axf: Error: L6200E: Symbol HAL_TIMEx_PWMN_Start multiply defined (by stm32h7xx_hal_tim_ex_1.o and stm32h7xx_hal_tim_ex.o).
+Template_CM7\Template_CM7.axf: Error: L6200E: Symbol HAL_TIMEx_PWMN_Start_DMA multiply defined (by stm32h7xx_hal_tim_ex_1.o and stm32h7xx_hal_tim_ex.o).
+Template_CM7\Template_CM7.axf: Error: L6200E: Symbol HAL_TIMEx_PWMN_Start_IT multiply defined (by stm32h7xx_hal_tim_ex_1.o and stm32h7xx_hal_tim_ex.o).
+Template_CM7\Template_CM7.axf: Error: L6200E: Symbol HAL_TIMEx_PWMN_Stop multiply defined (by stm32h7xx_hal_tim_ex_1.o and stm32h7xx_hal_tim_ex.o).
+Template_CM7\Template_CM7.axf: Error: L6200E: Symbol HAL_TIMEx_PWMN_Stop_DMA multiply defined (by stm32h7xx_hal_tim_ex_1.o and stm32h7xx_hal_tim_ex.o).
+Template_CM7\Template_CM7.axf: Error: L6200E: Symbol HAL_TIMEx_PWMN_Stop_IT multiply defined (by stm32h7xx_hal_tim_ex_1.o and stm32h7xx_hal_tim_ex.o).
+Template_CM7\Template_CM7.axf: Error: L6200E: Symbol HAL_TIMEx_RemapConfig multiply defined (by stm32h7xx_hal_tim_ex_1.o and stm32h7xx_hal_tim_ex.o).
+Template_CM7\Template_CM7.axf: Error: L6200E: Symbol HAL_TIMEx_TISelection multiply defined (by stm32h7xx_hal_tim_ex_1.o and stm32h7xx_hal_tim_ex.o).
+Template_CM7\Template_CM7.axf: Error: L6200E: Symbol HAL_TIMEx_CommutHalfCpltCallback multiply defined (by stm32h7xx_hal_tim_ex_1.o and stm32h7xx_hal_tim_ex.o).
+Template_CM7\Template_CM7.axf: Error: L6200E: Symbol HAL_TIMEx_HallSensor_MspDeInit multiply defined (by stm32h7xx_hal_tim_ex_1.o and stm32h7xx_hal_tim_ex.o).
+Template_CM7\Template_CM7.axf: Error: L6200E: Symbol HAL_TIMEx_HallSensor_MspInit multiply defined (by stm32h7xx_hal_tim_ex_1.o and stm32h7xx_hal_tim_ex.o).
+Not enough information to list image symbols.
+Not enough information to list load addresses in the image map.
+Finished: 2 information, 0 warning and 485 error messages.
+"Template_CM7\Template_CM7.axf" - 485 Error(s), 11 Warning(s).
+
+<h2>Software Packages used:</h2>
+
+Package Vendor: ARM
+                http://www.keil.com/pack/ARM.CMSIS.5.8.0.pack
+                ARM.CMSIS.5.8.0
+                CMSIS (Common Microcontroller Software Interface Standard)
+   * Component: CORE Version: 5.5.0
+
+Package Vendor: Keil
+                http://www.keil.com/pack/Keil.STM32H7xx_DFP.3.0.0.pack
+                Keil.STM32H7xx_DFP.3.0.0
+                STMicroelectronics STM32H7 Series Device Support and Examples
+   * Component: Common Version: 1.9.0
+   * Component: Cortex Version: 1.9.0
+   * Component: DMA Version: 1.9.0
+   * Component: FDCAN Version: 1.9.0
+   * Component: GPIO Version: 1.9.0
+   * Component: PWR Version: 1.9.0
+   * Component: RCC Version: 1.9.0
+   * Component: TIM Version: 1.9.0
+
+<h2>Collection of Component include folders:</h2>
+  .\RTE\_Template_CM7
+  C:\Users\Yoshi\AppData\Local\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include
+  C:\Users\Yoshi\AppData\Local\Arm\Packs\Keil\STM32H7xx_DFP\3.0.0\Drivers\CMSIS\Device\ST\STM32H7xx\Include
+  C:\Users\Yoshi\AppData\Local\Arm\Packs\Keil\STM32H7xx_DFP\3.0.0\Drivers\STM32H7xx_HAL_Driver\Inc
+
+<h2>Collection of Component Files used:</h2>
+
+   * Component: ARM::CMSIS:CORE:5.5.0
+      Include file:  CMSIS\Core\Include\tz_context.h
+
+   * Component: Keil::Device:STM32Cube HAL:Common:1.9.0
+      Source file:   Drivers\STM32H7xx_HAL_Driver\Src\stm32h7xx_hal.c
+      Include file:  Drivers\STM32H7xx_HAL_Driver\Inc\stm32h7xx_hal.h
+
+   * Component: Keil::Device:STM32Cube HAL:Cortex:1.9.0
+      Source file:   Drivers\STM32H7xx_HAL_Driver\Src\stm32h7xx_hal_cortex.c
+
+   * Component: Keil::Device:STM32Cube HAL:DMA:1.9.0
+      Source file:   Drivers\STM32H7xx_HAL_Driver\Src\stm32h7xx_hal_dma.c
+      Source file:   Drivers\STM32H7xx_HAL_Driver\Src\stm32h7xx_hal_dma_ex.c
+
+   * Component: Keil::Device:STM32Cube HAL:FDCAN:1.9.0
+      Source file:   Drivers\STM32H7xx_HAL_Driver\Src\stm32h7xx_hal_fdcan.c
+
+   * Component: Keil::Device:STM32Cube HAL:GPIO:1.9.0
+      Source file:   Drivers\STM32H7xx_HAL_Driver\Src\stm32h7xx_hal_gpio.c
+
+   * Component: Keil::Device:STM32Cube HAL:PWR:1.9.0
+      Source file:   Drivers\STM32H7xx_HAL_Driver\Src\stm32h7xx_hal_pwr.c
+      Source file:   Drivers\STM32H7xx_HAL_Driver\Src\stm32h7xx_hal_pwr_ex.c
+
+   * Component: Keil::Device:STM32Cube HAL:RCC:1.9.0
+      Source file:   Drivers\STM32H7xx_HAL_Driver\Src\stm32h7xx_hal_rcc_ex.c
+      Source file:   Drivers\STM32H7xx_HAL_Driver\Src\stm32h7xx_hal_rcc.c
+
+   * Component: Keil::Device:STM32Cube HAL:TIM:1.9.0
+      Source file:   Drivers\STM32H7xx_HAL_Driver\Src\stm32h7xx_hal_tim.c
+      Source file:   Drivers\STM32H7xx_HAL_Driver\Src\stm32h7xx_hal_tim_ex.c
+Target not created.
+Build Time Elapsed:  00:01:41
+</pre>
+</body>
+</html>

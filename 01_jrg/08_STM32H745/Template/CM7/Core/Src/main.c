@@ -19,11 +19,12 @@
 /* Includes ------------------------------------------------------------------*/
 #include "main.h"
 #include "cmsis_os.h"
-#include "tim.h"
+#include "fdcan.h"
 #include "gpio.h"
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
+#include "Hardware_Def.h"
 
 /* USER CODE END Includes */
 
@@ -35,9 +36,6 @@
 /* Private define ------------------------------------------------------------*/
 /* USER CODE BEGIN PD */
 
-#ifndef HSEM_ID_0
-#define HSEM_ID_0 (0U) /* HW semaphore 0*/
-#endif
 /* USER CODE END PD */
 
 /* Private macro -------------------------------------------------------------*/
@@ -49,93 +47,69 @@
 
 /* USER CODE BEGIN PV */
 
+extern osThreadId_t id_task_LED1;
+extern osThreadId_t id_task_LED2;
+extern osThreadId_t id_task_CAN_TX;
+extern osThreadId_t id_task_CAN_RX;
+extern osThreadId_t id_task_timer;
+
+extern TIM_HandleTypeDef htim15;
+
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
 void SystemClock_Config(void);
 void MX_FREERTOS_Init(void);
-/* USER CODE BEGIN PFP */
 
-/* USER CODE END PFP */
+void app_main (void *argument)
+{
+	CAN_RX_Q = osMessageQueueNew(20,sizeof(FDCAN_RxQueue_Frame_t),NULL);
+	CAN_Q = osMessageQueueNew(20, 1, NULL);
 
-/* Private user code ---------------------------------------------------------*/
-/* USER CODE BEGIN 0 */
+	id_task_CAN_RX = osThreadNew(TASK_FDCAN_RX, NULL, NULL);
+	osThreadSetPriority(id_task_CAN_RX,osPriorityNormal);
 
-/* USER CODE END 0 */
+	id_task_CAN_TX = osThreadNew(TASK_FDCAN_TX, NULL, NULL);
+	osThreadSetPriority(id_task_CAN_TX,osPriorityNormal);
 
-/**
-  * @brief  The application entry point.
-  * @retval int
-  */
+	id_task_timer = osThreadNew(Task_Timer, NULL, NULL);
+	osThreadSetPriority(id_task_timer, osPriorityHigh);
+
+	id_task_LED1 = osThreadNew(toggle_LED1, NULL, NULL);
+	osThreadSetPriority(id_task_LED1,osPriorityNormal);
+
+	MX_GPIO_Init();
+	MX_FDCAN1_Init();
+	FDCAN_RX_Init();
+	MX_TIM15_Init();
+
+
+
+	while(1)
+	{
+
+	}
+
+}
+
 int main(void)
 {
-  /* USER CODE BEGIN 1 */
 
-  /* USER CODE END 1 */
-/* USER CODE BEGIN Boot_Mode_Sequence_0 */
-  int32_t timeout;
-/* USER CODE END Boot_Mode_Sequence_0 */
 
   /* Enable I-Cache---------------------------------------------------------*/
   SCB_EnableICache();
 
   /* Enable D-Cache---------------------------------------------------------*/
   SCB_EnableDCache();
-
-/* USER CODE BEGIN Boot_Mode_Sequence_1 */
-  /* Wait until CPU2 boots and enters in stop mode or timeout*/
-  timeout = 0xFFFF;
-  while((__HAL_RCC_GET_FLAG(RCC_FLAG_D2CKRDY) != RESET) && (timeout-- > 0));
-  if ( timeout < 0 )
-  {
-  Error_Handler();
-  }
-/* USER CODE END Boot_Mode_Sequence_1 */
-  /* MCU Configuration--------------------------------------------------------*/
-
-  /* Reset of all peripherals, Initializes the Flash interface and the Systick. */
   HAL_Init();
 
-  /* USER CODE BEGIN Init */
-
-  /* USER CODE END Init */
-
-  /* Configure the system clock */
   SystemClock_Config();
-/* USER CODE BEGIN Boot_Mode_Sequence_2 */
-/* When system initialization is finished, Cortex-M7 will release Cortex-M4 by means of
-HSEM notification */
-/*HW semaphore Clock enable*/
-__HAL_RCC_HSEM_CLK_ENABLE();
-/*Take HSEM */
-HAL_HSEM_FastTake(HSEM_ID_0);
-/*Release HSEM in order to notify the CPU2(CM4)*/
-HAL_HSEM_Release(HSEM_ID_0,0);
-/* wait until CPU2 wakes up from stop mode */
-timeout = 0xFFFF;
-while((__HAL_RCC_GET_FLAG(RCC_FLAG_D2CKRDY) == RESET) && (timeout-- > 0));
-if ( timeout < 0 )
-{
-Error_Handler();
-}
-/* USER CODE END Boot_Mode_Sequence_2 */
+  HAL_NVIC_SetPriorityGrouping(NVIC_PRIORITYGROUP_4);
 
-  /* USER CODE BEGIN SysInit */
-
-  /* USER CODE END SysInit */
-
-  /* Initialize all configured peripherals */
-  MX_GPIO_Init();
-  MX_TIM12_Init();
-  /* USER CODE BEGIN 2 */
-
-  /* USER CODE END 2 */
-
-  /* Init scheduler */
   osKernelInitialize();  /* Call init function for freertos objects (in freertos.c) */
-  MX_FREERTOS_Init();
+  osThreadNew(app_main, NULL, NULL);    // Create application main thread
+  osThreadSetPriority(app_main,osPriorityNormal);
 
-  /* Start scheduler */
   osKernelStart();
 
   /* We should never get here as control is now taken by the scheduler */
@@ -179,7 +153,7 @@ void SystemClock_Config(void)
   RCC_OscInitStruct.PLL.PLLM = 5;
   RCC_OscInitStruct.PLL.PLLN = 160;
   RCC_OscInitStruct.PLL.PLLP = 2;
-  RCC_OscInitStruct.PLL.PLLQ = 4;
+  RCC_OscInitStruct.PLL.PLLQ = 16;
   RCC_OscInitStruct.PLL.PLLR = 4;
   RCC_OscInitStruct.PLL.PLLRGE = RCC_PLL1VCIRANGE_2;
   RCC_OscInitStruct.PLL.PLLVCOSEL = RCC_PLL1VCOWIDE;
