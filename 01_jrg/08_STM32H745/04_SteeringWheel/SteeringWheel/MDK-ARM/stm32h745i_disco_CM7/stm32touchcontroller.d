@@ -1,0 +1,10 @@
+stm32h745i_disco_cm7\stm32touchcontroller.o: ../CM7/TouchGFX/target/STM32TouchController.cpp
+stm32h745i_disco_cm7\stm32touchcontroller.o: ../CM7/TouchGFX/target/STM32TouchController.hpp
+stm32h745i_disco_cm7\stm32touchcontroller.o: ../cm7/middlewares/st/touchgfx/framework/include/platform/driver/touch/TouchController.hpp
+stm32h745i_disco_cm7\stm32touchcontroller.o: ../cm7/middlewares/st/touchgfx/framework/include/touchgfx/hal/Types.hpp
+stm32h745i_disco_cm7\stm32touchcontroller.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\assert.h
+stm32h745i_disco_cm7\stm32touchcontroller.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
+stm32h745i_disco_cm7\stm32touchcontroller.o: ../cm7/middlewares/st/touchgfx/framework/include/touchgfx/hal/Config.hpp
+stm32h745i_disco_cm7\stm32touchcontroller.o: ../CM7/TouchGFX/target/stm32h745i_touchcontroller.hpp
+stm32h745i_disco_cm7\stm32touchcontroller.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\cstdint
+stm32h745i_disco_cm7\stm32touchcontroller.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h

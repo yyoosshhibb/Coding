@@ -1,0 +1,421 @@
+{
+  "Application": {
+    "Screens": [
+      {
+        "Name": "Screen1",
+        "Components": [
+          {
+            "Type": "Box",
+            "Name": "box1",
+            "Width": 272,
+            "Height": 480,
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            }
+          },
+          {
+            "Type": "ScalableImage",
+            "Name": "scalableImage1",
+            "X": 6,
+            "Y": 394,
+            "Width": 260,
+            "Height": 80,
+            "Filename": "Joanneum_Racing_Graz_small.png",
+            "ScalingAlgorithm": "Nearest-neighbor"
+          },
+          {
+            "Type": "TextArea",
+            "Name": "textArea1",
+            "X": 27,
+            "Y": 216,
+            "Width": 219,
+            "Height": 49,
+            "TextId": "__SingleUse_YMCV",
+            "TextRotation": "0",
+            "Wildcard1": {
+              "TextId": "__SingleUse_NMA6",
+              "UseBuffer": true,
+              "BufferSize": 10
+            }
+          }
+        ],
+        "Interactions": [
+          {
+            "InteractionName": "Interaction1",
+            "Trigger": {
+              "Type": "TriggerPhysicalButtonClicked"
+            },
+            "Action": {
+              "Type": "ActionGotoScreen",
+              "ScreenTransitionType": "ScreenTransitionNone",
+              "ActionComponent": "Screen2"
+            }
+          }
+        ]
+      },
+      {
+        "Name": "Screen2",
+        "Components": [
+          {
+            "Type": "Box",
+            "Name": "box1",
+            "Width": 272,
+            "Height": 480
+          },
+          {
+            "Type": "TextArea",
+            "Name": "textLabel1",
+            "Y": 142,
+            "Width": 136,
+            "Height": 24,
+            "TextId": "__SingleUse_BSBO",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            }
+          },
+          {
+            "Type": "TextArea",
+            "Name": "textTempHV",
+            "Y": 92,
+            "Width": 136,
+            "Height": 50,
+            "TextId": "__SingleUse_ZRS9",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "Wildcard1": {
+              "TextId": "__SingleUse_000G"
+            }
+          },
+          {
+            "Type": "TextArea",
+            "Name": "textLabel2",
+            "X": 136,
+            "Y": 142,
+            "Width": 136,
+            "Height": 24,
+            "TextId": "__SingleUse_7SYJ",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            }
+          },
+          {
+            "Type": "TextArea",
+            "Name": "textTempLV",
+            "X": 136,
+            "Y": 92,
+            "Width": 136,
+            "Height": 50,
+            "TextId": "__SingleUse_IDQ2",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "Wildcard1": {
+              "TextId": "__SingleUse_ZRB6"
+            }
+          },
+          {
+            "Type": "TextArea",
+            "Name": "textLabel3",
+            "Y": 216,
+            "Width": 136,
+            "Height": 24,
+            "TextId": "__SingleUse_LAN2",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            }
+          },
+          {
+            "Type": "TextArea",
+            "Name": "textVolHV",
+            "Y": 166,
+            "Width": 136,
+            "Height": 50,
+            "TextId": "__SingleUse_M2TO",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "Wildcard1": {
+              "TextId": "__SingleUse_MZIO"
+            }
+          },
+          {
+            "Type": "TextArea",
+            "Name": "textVolLV",
+            "X": 136,
+            "Y": 166,
+            "Width": 136,
+            "Height": 50,
+            "TextId": "__SingleUse_O6I9",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "Wildcard1": {
+              "TextId": "__SingleUse_3JLX"
+            }
+          },
+          {
+            "Type": "TextArea",
+            "Name": "textLabel4",
+            "X": 136,
+            "Y": 216,
+            "Width": 136,
+            "Height": 24,
+            "TextId": "__SingleUse_WYRG",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            }
+          },
+          {
+            "Type": "TextArea",
+            "Name": "textLabel5",
+            "Y": 290,
+            "Width": 136,
+            "Height": 24,
+            "TextId": "__SingleUse_TE83",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            }
+          },
+          {
+            "Type": "TextArea",
+            "Name": "textTempMotor",
+            "Y": 240,
+            "Width": 136,
+            "Height": 50,
+            "TextId": "__SingleUse_IWQY",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "Wildcard1": {
+              "TextId": "__SingleUse_CA5B"
+            }
+          },
+          {
+            "Type": "TextArea",
+            "Name": "textTempInverter",
+            "X": 136,
+            "Y": 240,
+            "Width": 136,
+            "Height": 50,
+            "TextId": "__SingleUse_G2W2",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "Wildcard1": {
+              "TextId": "__SingleUse_ZAT3"
+            }
+          },
+          {
+            "Type": "TextArea",
+            "Name": "textLabel6",
+            "X": 136,
+            "Y": 290,
+            "Width": 136,
+            "Height": 24,
+            "TextId": "__SingleUse_C524",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            }
+          },
+          {
+            "Type": "TextArea",
+            "Name": "textLabel7",
+            "Y": 364,
+            "Width": 136,
+            "Height": 24,
+            "TextId": "__SingleUse_QPI6",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            }
+          },
+          {
+            "Type": "TextArea",
+            "Name": "textTempWater",
+            "Y": 314,
+            "Width": 136,
+            "Height": 50,
+            "TextId": "__SingleUse_6MWX",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "Wildcard1": {
+              "TextId": "__SingleUse_THIH"
+            }
+          },
+          {
+            "Type": "TextArea",
+            "Name": "textTSState",
+            "X": 136,
+            "Y": 314,
+            "Width": 136,
+            "Height": 50,
+            "TextId": "__SingleUse_3ZFZ",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "Wildcard1": {
+              "TextId": "__SingleUse_IULO"
+            }
+          },
+          {
+            "Type": "TextArea",
+            "Name": "textLabel8",
+            "X": 136,
+            "Y": 364,
+            "Width": 136,
+            "Height": 24,
+            "TextId": "__SingleUse_BH3A",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            }
+          },
+          {
+            "Type": "TextArea",
+            "Name": "textErrorTS",
+            "Width": 272,
+            "Height": 92,
+            "TextId": "__SingleUse_WS7W",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            }
+          },
+          {
+            "Type": "TextArea",
+            "Name": "textErrorElse",
+            "Y": 388,
+            "Width": 272,
+            "Height": 92,
+            "TextId": "__SingleUse_EYEX",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            }
+          }
+        ],
+        "Interactions": [
+          {
+            "InteractionName": "Interaction1",
+            "Trigger": {
+              "Type": "TriggerPhysicalButtonClicked"
+            },
+            "Action": {
+              "Type": "ActionGotoScreen",
+              "ScreenTransitionType": "ScreenTransitionNone",
+              "ActionComponent": "Screen1"
+            }
+          }
+        ]
+      }
+    ],
+    "CustomContainerDefinitions": [],
+    "Name": "SteeringWheel",
+    "Resolution": {
+      "Width": 480,
+      "Height": 272
+    },
+    "SelectedColorDepth": 16,
+    "StartupScreenName": "Screen1",
+    "SelectedStartupLanguage": "GB",
+    "Skin": "Blue",
+    "TouchGfxPath": "../Middlewares/ST/touchgfx",
+    "UIPath": ".",
+    "AvailableColorDepths": [
+      16
+    ],
+    "AvailableLCDs": {
+      "16": "LCD16bpp"
+    },
+    "AvailableSections": [
+      "ExtFlashSection",
+      "IntFlashSection"
+    ],
+    "AvailableResolutions": [
+      {
+        "Width": 480,
+        "Height": 272
+      }
+    ],
+    "PhysicalButtons": [],
+    "FrameworkFeatures": {
+      "LCD16bpp": {
+        "Id": "LCD16bpp",
+        "IsEnabled": true
+      }
+    },
+    "GenerateAssetsCommand": "make -f simulator/gcc/Makefile assets -j8",
+    "PostGenerateCommand": "touchgfx update_project --project-file=simulator/msvs/Application.vcxproj",
+    "PostGenerateTargetCommand": "touchgfx update_project",
+    "CompileSimulatorCommand": "make -f simulator/gcc/Makefile -j8",
+    "RunSimulatorCommand": "build\\bin\\simulator.exe",
+    "CompileTargetCommandOverride": "make -f ../../gcc/Makefile clean && make -f ../../gcc/Makefile -j8",
+    "FlashTargetCommandOverride": "make -f ../../gcc/Makefile flash",
+    "LandscapeSkinX": 0,
+    "LandscapeSkinY": 0,
+    "PortraitSkinX": 0,
+    "PortraitSkinY": 0,
+    "DisplayOrientation": "Portrait",
+    "Family": "STM32H7",
+    "Platform": "m7",
+    "ProjectFile": "../../STM32H745I_DISCO.ioc",
+    "OptionalComponentsRoot": "../Middlewares/ST/touchgfx_components",
+    "OptionalComponents": []
+  },
+  "Version": "4.20.0",
+  "CreatedBy": "4.20.0"
+}

@@ -1,0 +1,200 @@
+VERSION ""
+
+
+NS_ : 
+	NS_DESC_
+	CM_
+	BA_DEF_
+	BA_
+	VAL_
+	CAT_DEF_
+	CAT_
+	FILTER
+	BA_DEF_DEF_
+	EV_DATA_
+	ENVVAR_DATA_
+	SGTYPE_
+	SGTYPE_VAL_
+	BA_DEF_SGTYPE_
+	BA_SGTYPE_
+	SIG_TYPE_REF_
+	VAL_TABLE_
+	SIG_GROUP_
+	SIG_VALTYPE_
+	SIGTYPE_VALTYPE_
+	BO_TX_BU_
+	BA_DEF_REL_
+	BA_REL_
+	BA_DEF_DEF_REL_
+	BU_SG_REL_
+	BU_EV_REL_
+	BU_BO_REL_
+	SG_MUL_VAL_
+
+BS_:
+
+BU_:
+VAL_TABLE_ TS_State 2 "R2D" 1 "TS_On" 0 "TS_Off" ;
+VAL_TABLE_ Error_Inverter 28 "Fault Gate 3" 27 "Fault Gate 2" 26 "Fault Gate 1" 25 "SD-Off" 24 "ABS Overvoltage" 23 "R2D Off" 22 "Resolver LOS" 21 "Resolver DOS" 20 "Resolver LOT" 19 "BRK" 18 "Unbalanced Currents" 17 "High Offset Current 3" 16 "High Offset Current 2" 15 "High Offset Current 1" 14 "Flash Corrupion" 13 "Encoder SinCos above max Amp" 12 "Encoder SinCos below min Amp" 11 "Encoder SPI" 10 "Booting from Watchdog reset" 9 "MCU Undervoltage" 8 "Driver Undervoltage" 7 "Driver Overvoltage" 6 "Overtemp Motor" 5 "Overtemp FET" 4 "ABS overcurrent" 3 "DRV" 2 "Undervoltage" 1 "Overvoltage" 0 "NONE" ;
+
+
+BO_ 3221225472 VECTOR__INDEPENDENT_SIG_MSG: 0 Vector__XXX
+ SG_ P_Limit : 0|8@0+ (200,30000) [30000|81000] "" Vector__XXX
+ SG_ Drivemode : 0|8@0+ (1,0) [0|255] "" Vector__XXX
+
+BO_ 1543 T_Tire_RR_2: 8 Vector__XXX
+ SG_ T_Tire_RR_8 : 55|16@0+ (0.1,-100) [-100|6453.5] "" Vector__XXX
+ SG_ T_Tire_RR_7 : 39|16@0+ (0.1,-100) [-100|6453.5] "" Vector__XXX
+ SG_ T_Tire_RR_6 : 23|16@0+ (0.1,-100) [-100|6453.5] "" Vector__XXX
+ SG_ T_Tire_RR_5 : 7|16@0+ (0.1,-100) [-100|6453.5] "" Vector__XXX
+
+BO_ 1542 T_Tire_RR_1: 8 Vector__XXX
+ SG_ T_Tire_RR_4 : 55|16@0+ (0.1,-100) [-100|6453.5] "" Vector__XXX
+ SG_ T_Tire_RR_3 : 39|16@0+ (0.1,-100) [-100|6453.5] "" Vector__XXX
+ SG_ T_Tire_RR_2 : 23|16@0+ (0.1,-100) [-100|6453.5] "" Vector__XXX
+ SG_ T_Tire_RR_1 : 7|16@0+ (0.1,-100) [-100|6453.5] "" Vector__XXX
+
+BO_ 1541 T_Tire_RL_2: 8 Vector__XXX
+ SG_ T_Tire_RL_8 : 55|16@0+ (0.1,-100) [-100|6453.5] "" Vector__XXX
+ SG_ T_Tire_RL_7 : 39|16@0+ (0.1,-100) [-100|6453.5] "" Vector__XXX
+ SG_ T_Tire_RL_6 : 23|16@0+ (0.1,-100) [-100|6453.5] "" Vector__XXX
+ SG_ T_Tire_RL_5 : 7|16@0+ (0.1,-100) [-100|6453.5] "" Vector__XXX
+
+BO_ 1540 T_Tire_RL_1: 8 Vector__XXX
+ SG_ T_Tire_RL_4 : 55|16@0+ (0.1,-100) [-100|6453.5] "" Vector__XXX
+ SG_ T_Tire_RL_3 : 39|16@0+ (0.1,-100) [-100|6453.5] "" Vector__XXX
+ SG_ T_Tire_RL_2 : 23|16@0+ (0.1,-100) [-100|6453.5] "" Vector__XXX
+ SG_ T_Tire_RL_1 : 7|16@0+ (0.1,-100) [-100|6453.5] "" Vector__XXX
+
+BO_ 1539 T_Tire_FR_2: 8 Vector__XXX
+ SG_ T_Tire_FR_8 : 55|16@0+ (0.1,-100) [-100|6453.5] "" Vector__XXX
+ SG_ T_Tire_FR_7 : 39|16@0+ (0.1,-100) [-100|6453.5] "" Vector__XXX
+ SG_ T_Tire_FR_6 : 23|16@0+ (0.1,-100) [-100|6453.5] "" Vector__XXX
+ SG_ T_Tire_FR_5 : 7|16@0+ (0.1,-100) [-100|6453.5] "" Vector__XXX
+
+BO_ 1538 T_Tire_FR_1: 8 Vector__XXX
+ SG_ T_Tire_FR_4 : 55|16@0+ (0.1,-100) [-100|6453.5] "" Vector__XXX
+ SG_ T_Tire_FR_3 : 39|16@0+ (0.1,-100) [-100|6453.5] "" Vector__XXX
+ SG_ T_Tire_FR_2 : 23|16@0+ (0.1,-100) [-100|6453.5] "" Vector__XXX
+ SG_ T_Tire_FR_1 : 7|16@0+ (0.1,-100) [-100|6453.5] "" Vector__XXX
+
+BO_ 1537 T_Tire_FL_2: 8 Vector__XXX
+ SG_ T_Tire_FL_8 : 55|16@0+ (0.1,-100) [-100|6453.5] "" Vector__XXX
+ SG_ T_Tire_FL_7 : 39|16@0+ (0.1,-100) [-100|6453.5] "" Vector__XXX
+ SG_ T_Tire_FL_6 : 23|16@0+ (0.1,-100) [-100|6453.5] "" Vector__XXX
+ SG_ T_Tire_FL_5 : 7|16@0+ (0.1,-100) [-100|6453.5] "" Vector__XXX
+
+BO_ 1536 T_Tire_FL_1: 8 Vector__XXX
+ SG_ T_Tire_FL_4 : 55|16@0+ (0.1,-100) [-100|6453.5] "" Vector__XXX
+ SG_ T_Tire_FL_3 : 39|16@0+ (0.1,-100) [-100|6453.5] "" Vector__XXX
+ SG_ T_Tire_FL_2 : 23|16@0+ (0.1,-100) [-100|6453.5] "" Vector__XXX
+ SG_ T_Tire_FL_1 : 7|16@0+ (0.1,-100) [-100|6453.5] "" Vector__XXX
+
+BO_ 1280 Random: 8 Vector__XXX
+ SG_ TS_State : 55|8@0+ (1,0) [0|255] "" Vector__XXX
+ SG_ T_LV_Cell_avg : 47|8@0+ (0.25,0) [0|63.75] "" Vector__XXX
+ SG_ T_Water : 39|8@0+ (0.5,0) [0|127.5] "" Vector__XXX
+ SG_ SoC_HV_Battery : 31|8@0+ (0.392156862745098,0) [0|100] "" Vector__XXX
+ SG_ Error_MV_Inverter_R : 23|8@0+ (1,0) [0|255] "" Vector__XXX
+ SG_ Error_MV_Inverter_L : 15|8@0+ (1,0) [0|255] "" Vector__XXX
+ SG_ d_FAN_HV_Bat : 7|8@0+ (0.392156862745098,0) [0|100] "" Vector__XXX
+
+BO_ 1024 AA_Bat: 8 Vector__XXX
+ SG_ U_MV_Cell_min : 63|8@0+ (0.02,0) [0|5.1] "" Vector__XXX
+ SG_ U_MV_Cell_max : 55|8@0+ (0.02,0) [0|5.1] "" Vector__XXX
+ SG_ U_MV_Bat : 47|8@0+ (0.02,0) [0|5.1] "" Vector__XXX
+ SG_ T_MV_Cell_min : 39|8@0+ (0.25,0) [0|63.75] "" Vector__XXX
+ SG_ T_MV_Cell_max : 31|8@0+ (0.25,0) [0|63.75] "" Vector__XXX
+ SG_ T_MV_Cell_avg : 23|8@0+ (0.25,0) [0|63.75] "" Vector__XXX
+ SG_ I_MV_Bat : 7|16@0+ (0.01,0) [0|655.35] "" Vector__XXX
+
+BO_ 768 EL_Signals: 8 Vector__XXX
+ SG_ Error_CAN : 63|8@0+ (1,0) [0|255] "" Vector__XXX
+ SG_ U_LV_Bat : 47|8@0+ (0.1,0) [0|25.5] "" Vector__XXX
+ SG_ T_VCU : 39|8@0+ (0.5,0) [0|127.5] "" Vector__XXX
+ SG_ LTE_State : 31|8@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ I_LV_Bat : 23|8@0+ (0.2,0) [0|51] "" Vector__XXX
+ SG_ Ethernet_State : 15|8@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ Error_LVS : 7|8@0+ (1,0) [0|255] "" Vector__XXX
+
+BO_ 560 BAT_T_U_Cells: 8 Vector__XXX
+ SG_ Error_Battery : 63|8@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ U_HV_Cell_min : 55|8@0+ (0.02,0) [0|5.1] "" Vector__XXX
+ SG_ U_HV_Cell_max : 31|8@0+ (0.02,0) [0|5.1] "" Vector__XXX
+ SG_ U_HV_Bat : 39|16@0+ (0.01,0) [0|655.35] "" Vector__XXX
+ SG_ T_HV_Cell_min : 23|8@0+ (0.25,0) [0|63.75] "" Vector__XXX
+ SG_ T_HV_Cell_max : 15|8@0+ (0.25,0) [0|63.75] "" Vector__XXX
+ SG_ T_HV_Cell_avg : 7|8@0+ (0.25,0) [0|63.75] "" Vector__XXX
+
+BO_ 544 PT_Inv_Errors: 8 Vector__XXX
+ SG_ Error_Inv_RR : 31|8@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ Error_Inv_RL : 23|8@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ Error_Inv_FR : 15|8@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ Error_Inv_FL : 7|8@0+ (1,0) [0|0] "" Vector__XXX
+
+BO_ 528 PT_n_Mot: 8 Vector__XXX
+ SG_ n_Motor_RR : 55|16@0+ (0.5,0) [0|32767.5] "" Vector__XXX
+ SG_ n_Motor_RL : 39|16@0+ (0.5,0) [0|32767.5] "" Vector__XXX
+ SG_ n_Motor_FR : 23|16@0+ (0.5,0) [0|32767.5] "" Vector__XXX
+ SG_ n_Motor_FL : 7|16@0+ (0.5,0) [0|32767.5] "" Vector__XXX
+
+BO_ 512 PT_T_Mot_Inv: 8 Vector__XXX
+ SG_ T_Inverter_RR : 63|8@0+ (0.5,0) [0|127.5] "" Vector__XXX
+ SG_ T_Inverter_RL : 55|8@0+ (0.5,0) [0|127.5] "" Vector__XXX
+ SG_ T_Inverter_FR : 47|8@0+ (0.5,0) [0|127.5] "" Vector__XXX
+ SG_ T_Inverter_FL : 39|8@0+ (0.5,0) [0|127.5] "" Vector__XXX
+ SG_ T_Motor_RR : 31|8@0+ (0.5,0) [0|127.5] "" Vector__XXX
+ SG_ T_Motor_RL : 23|8@0+ (0.5,0) [0|127.5] "" Vector__XXX
+ SG_ T_Motor_FR : 15|8@0+ (0.5,0) [0|127.5] "" Vector__XXX
+ SG_ T_Motor_FL : 7|8@0+ (0.5,0) [0|127.5] "" Vector__XXX
+
+BO_ 304 SU_BrP_APPS: 8 Vector__XXX
+ SG_ p_Brake_R : 31|8@0+ (1,0) [0|255] "" Vector__XXX
+ SG_ p_Brake_F : 23|8@0+ (1,0) [0|255] "" Vector__XXX
+ SG_ APPS2_Perc : 15|8@0+ (1,0) [0|255] "" Vector__XXX
+ SG_ APPS1_Perc : 7|8@0+ (1,0) [0|255] "" Vector__XXX
+
+BO_ 288 SU_RH_STA: 8 Vector__XXX
+ SG_ x_RH_RR : 55|16@0+ (0.01,0) [0|655.35] "" Vector__XXX
+ SG_ x_RH_RL : 39|16@0+ (0.01,0) [0|655.35] "" Vector__XXX
+ SG_ x_RH_Front : 23|16@0+ (0.01,0) [0|655.35] "" Vector__XXX
+ SG_ a_STWheel : 7|16@0+ (0.01,-327.68) [-327.68|327.67] "" Vector__XXX
+
+BO_ 272 SU_Loadcells: 8 Vector__XXX
+ SG_ F_LC_RR : 55|16@0+ (0.1,0) [0|6553.5] "" Vector__XXX
+ SG_ F_LC_RL : 39|16@0+ (0.1,0) [0|6553.5] "" Vector__XXX
+ SG_ F_LC_FR : 23|16@0+ (0.1,0) [0|6553.5] "" Vector__XXX
+ SG_ F_LC_FL : 7|16@0+ (0.1,0) [0|6553.5] "" Vector__XXX
+
+BO_ 256 SU_Damper_Potentiometers: 8 Vector__XXX
+ SG_ x_DP_RR : 55|16@0+ (0.01,0) [0|655.35] "" Vector__XXX
+ SG_ x_DP_RL : 39|16@0+ (0.01,0) [0|655.35] "" Vector__XXX
+ SG_ x_DP_FR : 23|16@0+ (0.01,0) [0|655.35] "" Vector__XXX
+ SG_ x_DP_FL : 7|16@0+ (0.01,0) [0|655.35] "" Vector__XXX
+
+
+
+CM_ BO_ 3221225472 "This is a message for not used signals, created by Vector CANdb++ DBC OLE DB Provider.";
+CM_ SG_ 1280 SoC_HV_Battery "0 is 0 %
+255 is 100 %";
+BA_DEF_ SG_  "GenSigSendType" ENUM  "Cyclic","OnWrite","OnWriteWithRepetition","OnChange","OnChangeWithRepetition","IfActive","IfActiveWithRepetition","NoSigSendType";
+BA_DEF_ SG_  "GenSigInactiveValue" INT 0 0;
+BA_DEF_ BO_  "GenMsgCycleTime" INT 0 0;
+BA_DEF_ BO_  "GenMsgSendType" ENUM  "Cyclic","not_used","not_used","not_used","not_used","Cyclic","not_used","IfActive","NoMsgSendType";
+BA_DEF_ BU_  "NmStationAddress" HEX 0 0;
+BA_DEF_  "DBName" STRING ;
+BA_DEF_  "BusType" STRING ;
+BA_DEF_DEF_  "GenSigSendType" "Cyclic";
+BA_DEF_DEF_  "GenSigInactiveValue" 0;
+BA_DEF_DEF_  "GenMsgCycleTime" 0;
+BA_DEF_DEF_  "GenMsgSendType" "NoMsgSendType";
+BA_DEF_DEF_  "NmStationAddress" 0;
+BA_DEF_DEF_  "DBName" "";
+BA_DEF_DEF_  "BusType" "CAN";
+BA_ "DBName" "CANdb";
+VAL_ 1280 TS_State 2 "R2D" 1 "TS_On" 0 "TS_Off" ;
+VAL_ 544 Error_Inv_RR 28 "Fault Gate 3" 27 "Fault Gate 2" 26 "Fault Gate 1" 25 "SD-Off" 24 "ABS Overvoltage" 23 "R2D Off" 22 "Resolver LOS" 21 "Resolver DOS" 20 "Resolver LOT" 19 "BRK" 18 "Unbalanced Currents" 17 "High Offset Current 3" 16 "High Offset Current 2" 15 "High Offset Current 1" 14 "Flash Corrupion" 13 "Encoder SinCos above max Amp" 12 "Encoder SinCos below min Amp" 11 "Encoder SPI" 10 "Booting from Watchdog reset" 9 "MCU Undervoltage" 8 "Driver Undervoltage" 7 "Driver Overvoltage" 6 "Overtemp Motor" 5 "Overtemp FET" 4 "ABS overcurrent" 3 "DRV" 2 "Undervoltage" 1 "Overvoltage" 0 "NONE" ;
+VAL_ 544 Error_Inv_RL 28 "Fault Gate 3" 27 "Fault Gate 2" 26 "Fault Gate 1" 25 "SD-Off" 24 "ABS Overvoltage" 23 "R2D Off" 22 "Resolver LOS" 21 "Resolver DOS" 20 "Resolver LOT" 19 "BRK" 18 "Unbalanced Currents" 17 "High Offset Current 3" 16 "High Offset Current 2" 15 "High Offset Current 1" 14 "Flash Corrupion" 13 "Encoder SinCos above max Amp" 12 "Encoder SinCos below min Amp" 11 "Encoder SPI" 10 "Booting from Watchdog reset" 9 "MCU Undervoltage" 8 "Driver Undervoltage" 7 "Driver Overvoltage" 6 "Overtemp Motor" 5 "Overtemp FET" 4 "ABS overcurrent" 3 "DRV" 2 "Undervoltage" 1 "Overvoltage" 0 "NONE" ;
+VAL_ 544 Error_Inv_FR 28 "Fault Gate 3" 27 "Fault Gate 2" 26 "Fault Gate 1" 25 "SD-Off" 24 "ABS Overvoltage" 23 "R2D Off" 22 "Resolver LOS" 21 "Resolver DOS" 20 "Resolver LOT" 19 "BRK" 18 "Unbalanced Currents" 17 "High Offset Current 3" 16 "High Offset Current 2" 15 "High Offset Current 1" 14 "Flash Corrupion" 13 "Encoder SinCos above max Amp" 12 "Encoder SinCos below min Amp" 11 "Encoder SPI" 10 "Booting from Watchdog reset" 9 "MCU Undervoltage" 8 "Driver Undervoltage" 7 "Driver Overvoltage" 6 "Overtemp Motor" 5 "Overtemp FET" 4 "ABS overcurrent" 3 "DRV" 2 "Undervoltage" 1 "Overvoltage" 0 "NONE" ;
+VAL_ 544 Error_Inv_FL 28 "Fault Gate 3" 27 "Fault Gate 2" 26 "Fault Gate 1" 25 "SD-Off" 24 "ABS Overvoltage" 23 "R2D Off" 22 "Resolver LOS" 21 "Resolver DOS" 20 "Resolver LOT" 19 "BRK" 18 "Unbalanced Currents" 17 "High Offset Current 3" 16 "High Offset Current 2" 15 "High Offset Current 1" 14 "Flash Corrupion" 13 "Encoder SinCos above max Amp" 12 "Encoder SinCos below min Amp" 11 "Encoder SPI" 10 "Booting from Watchdog reset" 9 "MCU Undervoltage" 8 "Driver Undervoltage" 7 "Driver Overvoltage" 6 "Overtemp Motor" 5 "Overtemp FET" 4 "ABS overcurrent" 3 "DRV" 2 "Undervoltage" 1 "Overvoltage" 0 "NONE" ;
+

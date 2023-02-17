@@ -1,0 +1,834 @@
+{
+  "Application": {
+    "Screens": [
+      {
+        "Name": "Home",
+        "Components": [
+          {
+            "Type": "Box",
+            "Name": "box1",
+            "Width": 272,
+            "Height": 480,
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            }
+          },
+          {
+            "Type": "TextArea",
+            "Name": "textArea1",
+            "X": 47,
+            "Y": 23,
+            "Width": 179,
+            "Height": 105,
+            "TextId": "__SingleUse_NCIY",
+            "TextRotation": "0",
+            "AutoSize": true
+          },
+          {
+            "Type": "TextArea",
+            "Name": "textArea1_1",
+            "X": 26,
+            "Y": 135,
+            "Width": 220,
+            "Height": 27,
+            "TextId": "__SingleUse_B56N",
+            "TextRotation": "0",
+            "AutoSize": true
+          },
+          {
+            "Type": "Image",
+            "Name": "image1",
+            "X": 4,
+            "Y": 385,
+            "Width": 264,
+            "Height": 82,
+            "RelativeFilename": "Joanneum_Racing_Graz.png"
+          }
+        ],
+        "Interactions": [
+          {
+            "InteractionName": "Interaction1",
+            "Trigger": {
+              "Type": "TriggerPhysicalButtonClicked"
+            },
+            "Action": {
+              "Type": "ActionGotoScreen",
+              "ScreenTransitionType": "ScreenTransitionNone",
+              "ActionComponent": "Screen2"
+            }
+          }
+        ]
+      },
+      {
+        "Name": "Screen2",
+        "Components": [
+          {
+            "Type": "Box",
+            "Name": "box1",
+            "Width": 272,
+            "Height": 480
+          },
+          {
+            "Type": "TextArea",
+            "Name": "textLabel1",
+            "Y": 142,
+            "Width": 136,
+            "Height": 24,
+            "TextId": "__SingleUse_BSBO",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            }
+          },
+          {
+            "Type": "TextArea",
+            "Name": "textTempHV",
+            "Y": 92,
+            "Width": 136,
+            "Height": 50,
+            "TextId": "__SingleUse_ZRS9",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "Wildcard1": {
+              "TextId": "__SingleUse_000G",
+              "UseBuffer": true,
+              "BufferSize": 10
+            }
+          },
+          {
+            "Type": "TextArea",
+            "Name": "textLabel2",
+            "X": 136,
+            "Y": 142,
+            "Width": 136,
+            "Height": 24,
+            "TextId": "__SingleUse_7SYJ",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            }
+          },
+          {
+            "Type": "TextArea",
+            "Name": "textTempLV",
+            "X": 136,
+            "Y": 92,
+            "Width": 136,
+            "Height": 50,
+            "TextId": "__SingleUse_IDQ2",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "Wildcard1": {
+              "TextId": "__SingleUse_ZRB6",
+              "UseBuffer": true,
+              "BufferSize": 10
+            }
+          },
+          {
+            "Type": "TextArea",
+            "Name": "textLabel3",
+            "Y": 216,
+            "Width": 136,
+            "Height": 24,
+            "TextId": "__SingleUse_LAN2",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            }
+          },
+          {
+            "Type": "TextArea",
+            "Name": "textVolHV",
+            "Y": 166,
+            "Width": 136,
+            "Height": 50,
+            "TextId": "__SingleUse_M2TO",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "Wildcard1": {
+              "TextId": "__SingleUse_MZIO",
+              "UseBuffer": true,
+              "BufferSize": 10
+            }
+          },
+          {
+            "Type": "TextArea",
+            "Name": "textVolLV",
+            "X": 136,
+            "Y": 166,
+            "Width": 136,
+            "Height": 50,
+            "TextId": "__SingleUse_O6I9",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "Wildcard1": {
+              "TextId": "__SingleUse_3JLX",
+              "UseBuffer": true,
+              "BufferSize": 10
+            }
+          },
+          {
+            "Type": "TextArea",
+            "Name": "textLabel4",
+            "X": 136,
+            "Y": 216,
+            "Width": 136,
+            "Height": 24,
+            "TextId": "__SingleUse_WYRG",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            }
+          },
+          {
+            "Type": "TextArea",
+            "Name": "textLabel5",
+            "Y": 290,
+            "Width": 136,
+            "Height": 24,
+            "TextId": "__SingleUse_TE83",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            }
+          },
+          {
+            "Type": "TextArea",
+            "Name": "textTempMotor",
+            "Y": 240,
+            "Width": 136,
+            "Height": 50,
+            "TextId": "__SingleUse_IWQY",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "Wildcard1": {
+              "TextId": "__SingleUse_CA5B",
+              "UseBuffer": true,
+              "BufferSize": 10
+            }
+          },
+          {
+            "Type": "TextArea",
+            "Name": "textTempInverter",
+            "X": 136,
+            "Y": 240,
+            "Width": 136,
+            "Height": 50,
+            "TextId": "__SingleUse_G2W2",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "Wildcard1": {
+              "TextId": "__SingleUse_ZAT3",
+              "UseBuffer": true,
+              "BufferSize": 10
+            }
+          },
+          {
+            "Type": "TextArea",
+            "Name": "textLabel6",
+            "X": 136,
+            "Y": 290,
+            "Width": 136,
+            "Height": 24,
+            "TextId": "__SingleUse_C524",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            }
+          },
+          {
+            "Type": "TextArea",
+            "Name": "textLabel7",
+            "Y": 364,
+            "Width": 136,
+            "Height": 24,
+            "TextId": "__SingleUse_QPI6",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            }
+          },
+          {
+            "Type": "TextArea",
+            "Name": "textTempWater",
+            "Y": 314,
+            "Width": 136,
+            "Height": 50,
+            "TextId": "__SingleUse_6MWX",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "Wildcard1": {
+              "TextId": "__SingleUse_THIH",
+              "UseBuffer": true,
+              "BufferSize": 10
+            }
+          },
+          {
+            "Type": "TextArea",
+            "Name": "textTSState",
+            "X": 136,
+            "Y": 314,
+            "Width": 136,
+            "Height": 50,
+            "TextId": "__SingleUse_3ZFZ",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "Wildcard1": {
+              "TextId": "__SingleUse_IULO",
+              "UseBuffer": true,
+              "BufferSize": 10
+            }
+          },
+          {
+            "Type": "TextArea",
+            "Name": "textLabel8",
+            "X": 136,
+            "Y": 364,
+            "Width": 136,
+            "Height": 24,
+            "TextId": "__SingleUse_BH3A",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            }
+          },
+          {
+            "Type": "TextArea",
+            "Name": "textErrorTS",
+            "Width": 272,
+            "Height": 92,
+            "TextId": "__SingleUse_WS7W",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            }
+          },
+          {
+            "Type": "TextArea",
+            "Name": "textErrorElse",
+            "Y": 388,
+            "Width": 272,
+            "Height": 92,
+            "TextId": "__SingleUse_EYEX",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            }
+          }
+        ],
+        "Interactions": [
+          {
+            "InteractionName": "Interaction1",
+            "Trigger": {
+              "Type": "TriggerPhysicalButtonClicked"
+            },
+            "Action": {
+              "Type": "ActionGotoScreen",
+              "ScreenTransitionType": "ScreenTransitionNone",
+              "ActionComponent": "Screen3"
+            }
+          }
+        ]
+      },
+      {
+        "Name": "Screen3",
+        "Components": [
+          {
+            "Type": "Box",
+            "Name": "box1",
+            "Width": 272,
+            "Height": 480,
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            }
+          },
+          {
+            "Type": "Image",
+            "Name": "image1",
+            "X": 16,
+            "Y": 5,
+            "Width": 241,
+            "Height": 60,
+            "RelativeFilename": "Joanneum_Racing_Battery.png"
+          },
+          {
+            "Type": "TextArea",
+            "Name": "textTCellmin",
+            "Y": 88,
+            "Width": 136,
+            "Height": 50,
+            "TextId": "__SingleUse_1WMJ",
+            "TextRotation": "0",
+            "Wildcard1": {
+              "TextId": "__SingleUse_QULH",
+              "UseBuffer": true,
+              "BufferSize": 10
+            }
+          },
+          {
+            "Type": "TextArea",
+            "Name": "textLabel1",
+            "Y": 138,
+            "Width": 136,
+            "Height": 25,
+            "TextId": "__SingleUse_QO9W",
+            "TextRotation": "0"
+          },
+          {
+            "Type": "TextArea",
+            "Name": "textLabel2",
+            "X": 136,
+            "Y": 138,
+            "Width": 136,
+            "Height": 25,
+            "TextId": "__SingleUse_PQXE",
+            "TextRotation": "0"
+          },
+          {
+            "Type": "TextArea",
+            "Name": "textTCellmax",
+            "X": 136,
+            "Y": 88,
+            "Width": 136,
+            "Height": 50,
+            "TextId": "__SingleUse_QOVY",
+            "TextRotation": "0",
+            "Wildcard1": {
+              "TextId": "__SingleUse_72EN",
+              "UseBuffer": true,
+              "BufferSize": 10
+            }
+          },
+          {
+            "Type": "TextArea",
+            "Name": "textDutyFan",
+            "X": 136,
+            "Y": 163,
+            "Width": 136,
+            "Height": 50,
+            "TextId": "__SingleUse_4GDM",
+            "TextRotation": "0",
+            "Wildcard1": {
+              "TextId": "__SingleUse_KJ7O",
+              "UseBuffer": true,
+              "BufferSize": 10
+            }
+          },
+          {
+            "Type": "TextArea",
+            "Name": "textLabel4",
+            "X": 136,
+            "Y": 213,
+            "Width": 136,
+            "Height": 25,
+            "TextId": "__SingleUse_1JY9",
+            "TextRotation": "0"
+          },
+          {
+            "Type": "TextArea",
+            "Name": "textLabel3",
+            "Y": 213,
+            "Width": 136,
+            "Height": 25,
+            "TextId": "__SingleUse_BHH7",
+            "TextRotation": "0"
+          },
+          {
+            "Type": "TextArea",
+            "Name": "textTCellavg",
+            "Y": 163,
+            "Width": 136,
+            "Height": 50,
+            "TextId": "__SingleUse_HEYX",
+            "TextRotation": "0",
+            "Wildcard1": {
+              "TextId": "__SingleUse_APP9",
+              "UseBuffer": true,
+              "BufferSize": 10
+            }
+          },
+          {
+            "Type": "TextArea",
+            "Name": "textUCellmin",
+            "Y": 238,
+            "Width": 136,
+            "Height": 50,
+            "TextId": "__SingleUse_K67S",
+            "TextRotation": "0",
+            "Wildcard1": {
+              "TextId": "__SingleUse_HNJT",
+              "UseBuffer": true,
+              "BufferSize": 10
+            }
+          },
+          {
+            "Type": "TextArea",
+            "Name": "textLabel5",
+            "Y": 288,
+            "Width": 136,
+            "Height": 25,
+            "TextId": "__SingleUse_8C55",
+            "TextRotation": "0"
+          },
+          {
+            "Type": "TextArea",
+            "Name": "textLabel6",
+            "X": 136,
+            "Y": 288,
+            "Width": 136,
+            "Height": 25,
+            "TextId": "__SingleUse_GKH1",
+            "TextRotation": "0"
+          },
+          {
+            "Type": "TextArea",
+            "Name": "textUCellmax",
+            "X": 136,
+            "Y": 238,
+            "Width": 136,
+            "Height": 50,
+            "TextId": "__SingleUse_DESJ",
+            "TextRotation": "0",
+            "Wildcard1": {
+              "TextId": "__SingleUse_MK38",
+              "UseBuffer": true,
+              "BufferSize": 10
+            }
+          },
+          {
+            "Type": "TextArea",
+            "Name": "textUCellmax_1",
+            "X": 136,
+            "Y": 313,
+            "Width": 136,
+            "Height": 50,
+            "TextId": "__SingleUse_MSDX",
+            "TextRotation": "0",
+            "Wildcard1": {
+              "TextId": "__SingleUse_8XUT",
+              "UseBuffer": true,
+              "BufferSize": 10
+            }
+          },
+          {
+            "Type": "TextArea",
+            "Name": "textLabel8",
+            "X": 136,
+            "Y": 363,
+            "Width": 136,
+            "Height": 25,
+            "TextId": "__SingleUse_Z7B7",
+            "TextRotation": "0"
+          },
+          {
+            "Type": "TextArea",
+            "Name": "textLabel7",
+            "Y": 363,
+            "Width": 136,
+            "Height": 25,
+            "TextId": "__SingleUse_BDT1",
+            "TextRotation": "0"
+          },
+          {
+            "Type": "TextArea",
+            "Name": "textUCellavg",
+            "Y": 313,
+            "Width": 136,
+            "Height": 50,
+            "TextId": "__SingleUse_9JED",
+            "TextRotation": "0",
+            "Wildcard1": {
+              "TextId": "__SingleUse_I4P0",
+              "UseBuffer": true,
+              "BufferSize": 10
+            }
+          },
+          {
+            "Type": "TextArea",
+            "Name": "textArea1",
+            "Y": 402,
+            "Width": 272,
+            "Height": 78,
+            "TextId": "__SingleUse_IWMY",
+            "TextRotation": "0"
+          }
+        ],
+        "Interactions": [
+          {
+            "InteractionName": "Interaction1",
+            "Trigger": {
+              "Type": "TriggerPhysicalButtonClicked"
+            },
+            "Action": {
+              "Type": "ActionGotoScreen",
+              "ScreenTransitionType": "ScreenTransitionNone",
+              "ActionComponent": "Screen4"
+            }
+          }
+        ]
+      },
+      {
+        "Name": "Screen4",
+        "Components": [
+          {
+            "Type": "Box",
+            "Name": "box1",
+            "Width": 272,
+            "Height": 480,
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            }
+          },
+          {
+            "Type": "Image",
+            "Name": "image1",
+            "X": 16,
+            "Y": 5,
+            "Width": 241,
+            "Height": 60,
+            "RelativeFilename": "Joanneum_Racing_Electrics.png"
+          }
+        ],
+        "Interactions": [
+          {
+            "InteractionName": "Interaction1",
+            "Trigger": {
+              "Type": "TriggerPhysicalButtonClicked"
+            },
+            "Action": {
+              "Type": "ActionGotoScreen",
+              "ScreenTransitionType": "ScreenTransitionNone",
+              "ActionComponent": "Screen5"
+            }
+          }
+        ]
+      },
+      {
+        "Name": "Screen5",
+        "Components": [
+          {
+            "Type": "Box",
+            "Name": "box1",
+            "Width": 272,
+            "Height": 480,
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            }
+          },
+          {
+            "Type": "Image",
+            "Name": "image1",
+            "X": 16,
+            "Y": 5,
+            "Width": 255,
+            "Height": 60,
+            "RelativeFilename": "Joanneum_Racing_Inverter.png"
+          }
+        ],
+        "Interactions": [
+          {
+            "InteractionName": "Interaction1",
+            "Trigger": {
+              "Type": "TriggerPhysicalButtonClicked"
+            },
+            "Action": {
+              "Type": "ActionGotoScreen",
+              "ScreenTransitionType": "ScreenTransitionNone",
+              "ActionComponent": "Screen6"
+            }
+          }
+        ]
+      },
+      {
+        "Name": "Screen6",
+        "Components": [
+          {
+            "Type": "Box",
+            "Name": "box1",
+            "Width": 272,
+            "Height": 480,
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            }
+          },
+          {
+            "Type": "Image",
+            "Name": "image1",
+            "X": 16,
+            "Y": 5,
+            "Width": 255,
+            "Height": 60,
+            "RelativeFilename": "Joanneum_Racing_Powertrain.png"
+          }
+        ],
+        "Interactions": [
+          {
+            "InteractionName": "Interaction1",
+            "Trigger": {
+              "Type": "TriggerPhysicalButtonClicked"
+            },
+            "Action": {
+              "Type": "ActionGotoScreen",
+              "ScreenTransitionType": "ScreenTransitionNone",
+              "ActionComponent": "Screen7"
+            }
+          }
+        ]
+      },
+      {
+        "Name": "Screen7",
+        "Components": [
+          {
+            "Type": "Box",
+            "Name": "box1",
+            "Width": 272,
+            "Height": 480,
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            }
+          },
+          {
+            "Type": "Image",
+            "Name": "image1",
+            "X": 16,
+            "Y": 5,
+            "Width": 255,
+            "Height": 60,
+            "RelativeFilename": "Joanneum_Racing_Suspension.png"
+          }
+        ],
+        "Interactions": [
+          {
+            "InteractionName": "Interaction1",
+            "Trigger": {
+              "Type": "TriggerPhysicalButtonClicked"
+            },
+            "Action": {
+              "Type": "ActionGotoScreen",
+              "ScreenTransitionType": "ScreenTransitionNone",
+              "ActionComponent": "Screen2"
+            }
+          }
+        ]
+      }
+    ],
+    "CustomContainerDefinitions": [],
+    "Name": "SteeringWheel",
+    "Resolution": {
+      "Width": 480,
+      "Height": 272
+    },
+    "SelectedColorDepth": 16,
+    "StartupScreenName": "Home",
+    "SelectedStartupLanguage": "GB",
+    "TouchGfxPath": "../Middlewares/ST/touchgfx",
+    "UIPath": ".",
+    "AvailableColorDepths": [
+      16
+    ],
+    "AvailableLCDs": {
+      "16": "LCD16bpp"
+    },
+    "AvailableSections": [
+      "ExtFlashSection",
+      "IntFlashSection"
+    ],
+    "AvailableResolutions": [
+      {
+        "Width": 480,
+        "Height": 272
+      }
+    ],
+    "PhysicalButtons": [],
+    "FrameworkFeatures": {
+      "LCD16bpp": {
+        "Id": "LCD16bpp",
+        "IsEnabled": true
+      }
+    },
+    "GenerateAssetsCommand": "make -f simulator/gcc/Makefile assets -j8",
+    "PostGenerateCommand": "touchgfx update_project --project-file=simulator/msvs/Application.vcxproj",
+    "PostGenerateTargetCommand": "touchgfx update_project",
+    "CompileSimulatorCommand": "make -f simulator/gcc/Makefile -j8",
+    "RunSimulatorCommand": "build\\bin\\simulator.exe",
+    "CompileTargetCommandOverride": "make -f ../../gcc/Makefile clean && make -f ../../gcc/Makefile -j8",
+    "FlashTargetCommandOverride": "make -f ../../gcc/Makefile flash",
+    "LandscapeSkinX": 0,
+    "LandscapeSkinY": 0,
+    "PortraitSkinX": 0,
+    "PortraitSkinY": 0,
+    "DisplayOrientation": "Portrait",
+    "Family": "STM32H7",
+    "SubFamily": "STM32H745/755",
+    "Platform": "m7",
+    "ProjectFile": "../../STM32H745I_DISCO.ioc",
+    "OptionalComponentsRoot": "../Middlewares/ST/touchgfx_components",
+    "OptionalComponents": []
+  },
+  "Version": "4.21.1",
+  "CreatedBy": "4.20.0"
+}
