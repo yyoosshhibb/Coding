@@ -32,6 +32,8 @@ void Screen2View::nextpage(uint8_t page)
 
 void Screen2View::updatevalues(HomeData_t *Data)
 {
+	TypedText text;
+	
 	Unicode::snprintfFloat(textTempHVBuffer, TEXTTEMPHV_SIZE, "%.1f", Data->TempHV[0]);
 	textTempHV.invalidate();
 	Unicode::snprintfFloat(textTempLVBuffer, TEXTTEMPLV_SIZE, "%.1f", Data->TempLV[0]);
@@ -46,4 +48,7 @@ void Screen2View::updatevalues(HomeData_t *Data)
 	textTempInverter.invalidate();
 	Unicode::snprintfFloat(textTempWaterBuffer, TEXTTEMPWATER_SIZE, "%.0f", Data->TWater[0]);
 	textTempWater.invalidate();
+	
+	text.operator="Text123"; 
+	textErrorTS.setTypedText("Text123");
 }

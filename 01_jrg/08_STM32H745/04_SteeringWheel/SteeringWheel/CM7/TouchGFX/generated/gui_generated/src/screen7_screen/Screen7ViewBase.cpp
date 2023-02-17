@@ -29,3 +29,15 @@ void Screen7ViewBase::setupScreen()
 {
 
 }
+
+void Screen7ViewBase::handleKeyEvent(uint8_t key)
+{
+    if(0 == key)
+    {
+        //Interaction1
+        //When hardware button 0 clicked change screen to Screen2
+        //Go to Screen2 with no screen transition
+        application().gotoScreen2ScreenNoTransition();
+    
+    }
+}

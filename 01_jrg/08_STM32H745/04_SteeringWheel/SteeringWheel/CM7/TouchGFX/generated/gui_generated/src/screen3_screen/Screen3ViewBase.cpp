@@ -148,3 +148,15 @@ void Screen3ViewBase::setupScreen()
 {
 
 }
+
+void Screen3ViewBase::handleKeyEvent(uint8_t key)
+{
+    if(0 == key)
+    {
+        //Interaction1
+        //When hardware button 0 clicked change screen to Screen4
+        //Go to Screen4 with no screen transition
+        application().gotoScreen4ScreenNoTransition();
+    
+    }
+}

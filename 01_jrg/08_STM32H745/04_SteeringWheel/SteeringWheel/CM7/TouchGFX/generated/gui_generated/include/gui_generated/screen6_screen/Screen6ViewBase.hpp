@@ -16,6 +16,7 @@ public:
     Screen6ViewBase();
     virtual ~Screen6ViewBase();
     virtual void setupScreen();
+    virtual void handleKeyEvent(uint8_t key);
 
 protected:
     FrontendApplication& application() {

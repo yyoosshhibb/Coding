@@ -130,7 +130,7 @@ Screen2ViewBase::Screen2ViewBase()
     textErrorTS.setPosition(0, 0, 272, 92);
     textErrorTS.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
     textErrorTS.setLinespacing(0);
-    textErrorTS.setTypedText(touchgfx::TypedText(T___SINGLEUSE_WS7W));
+    textErrorTS.setTypedText(touchgfx::TypedText(T_RESSOURCEERRORTS));
     add(textErrorTS);
 
     textErrorElse.setPosition(0, 388, 272, 92);

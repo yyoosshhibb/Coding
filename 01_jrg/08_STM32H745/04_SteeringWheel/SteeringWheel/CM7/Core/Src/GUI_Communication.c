@@ -57,5 +57,3 @@ void msg_calc()
 		}
 	}
 }
-
-
