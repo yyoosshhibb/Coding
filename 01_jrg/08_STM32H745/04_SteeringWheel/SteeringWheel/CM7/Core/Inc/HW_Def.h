@@ -11,6 +11,7 @@
 #include "main_user.h"
 #include "fdcan_conf.h"
 #include "GUI_Communication.h"
+#include "Timer_Management.h"
 
 
 #endif

@@ -113,6 +113,7 @@ stm32h745i_disco_cm7\touchgfxgeneratedhal.o: ../CM7/Core/Inc/main_user.h
 stm32h745i_disco_cm7\touchgfxgeneratedhal.o: ../CM7/Core/Inc/fdcan_conf.h
 stm32h745i_disco_cm7\touchgfxgeneratedhal.o: ../CM7/Core/Inc/HW_Def.h
 stm32h745i_disco_cm7\touchgfxgeneratedhal.o: ../CM7/Core/Inc/GUI_Communication.h
+stm32h745i_disco_cm7\touchgfxgeneratedhal.o: ../CM7/Core/Inc/Timer_Management.h
 stm32h745i_disco_cm7\touchgfxgeneratedhal.o: ../cm7/middlewares/st/touchgfx/framework/include/touchgfx/widgets/Box.hpp
 stm32h745i_disco_cm7\touchgfxgeneratedhal.o: ../cm7/middlewares/st/touchgfx/framework/include/touchgfx/widgets/TextArea.hpp
 stm32h745i_disco_cm7\touchgfxgeneratedhal.o: ../cm7/middlewares/st/touchgfx/framework/include/touchgfx/TypedText.hpp

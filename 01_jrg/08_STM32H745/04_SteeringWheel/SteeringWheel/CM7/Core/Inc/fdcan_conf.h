@@ -5,8 +5,8 @@
 #include "HW_Def.h"
 #include "main.h"
 
-#define FDCAN_TX_DATA	0			//Number of transmitted signals on CAN
-#define FDCAN_TX_MSG	0			//Number of transmitted messages on CAN
+#define FDCAN_TX_DATA	1			//Number of transmitted signals on CAN
+#define FDCAN_TX_MSG	4			//Number of transmitted messages on CAN
 
 #define FDCAN_RX_DATA	92		//Number of received signals on CAN
 #define FDCAN_RX_MSG	19		//Number of received messages on CAN
@@ -142,10 +142,12 @@ extern uint16_t						rx_id_list[];
 void FDCAN_TX_def(void);
 void FDCAN_RX_def(void);
 void TASK_FDCAN_RX();
+void TASK_FDCAN_TX();
 
 extern osThreadId_t id_Task_FDCAN_RX;
 extern osThreadId_t id_Task_FDCAN_TX;
 
+extern osMessageQueueId_t	FDCAN_ERROR_Q;
 extern osMessageQueueId_t FDCAN_TX_Q;
 extern osMessageQueueId_t FDCAN_RX_Q;
 

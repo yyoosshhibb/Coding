@@ -563,7 +563,7 @@
           },
           {
             "Type": "TextArea",
-            "Name": "textUCellmax_1",
+            "Name": "textSoC",
             "X": 136,
             "Y": 313,
             "Width": 136,
@@ -667,7 +667,7 @@
           },
           {
             "Type": "TextArea",
-            "Name": "textCellVoltage1",
+            "Name": "textTVCU",
             "Y": 90,
             "Width": 136,
             "Height": 50,
@@ -681,7 +681,7 @@
           },
           {
             "Type": "TextArea",
-            "Name": "textCellVoltage2",
+            "Name": "textTCellavg",
             "X": 136,
             "Y": 90,
             "Width": 136,
@@ -716,7 +716,7 @@
           },
           {
             "Type": "TextArea",
-            "Name": "textCellVoltage4",
+            "Name": "textUCellavg",
             "X": 136,
             "Y": 165,
             "Width": 136,
@@ -731,7 +731,7 @@
           },
           {
             "Type": "TextArea",
-            "Name": "textCellVoltage3",
+            "Name": "textILVS",
             "Y": 165,
             "Width": 136,
             "Height": 50,
@@ -751,6 +751,67 @@
             "Height": 25,
             "TextId": "__SingleUse_ODDB",
             "TextRotation": "0"
+          },
+          {
+            "Type": "TextArea",
+            "Name": "textLabel3_1",
+            "Y": 290,
+            "Width": 136,
+            "Height": 25,
+            "TextId": "__SingleUse_YRVQ",
+            "TextRotation": "0"
+          },
+          {
+            "Type": "TextArea",
+            "Name": "textILVS_1",
+            "Y": 240,
+            "Width": 136,
+            "Height": 50,
+            "TextId": "__SingleUse_GRF1",
+            "TextRotation": "0",
+            "Wildcard1": {
+              "TextId": "__SingleUse_KKLH",
+              "UseBuffer": true,
+              "BufferSize": 10
+            }
+          },
+          {
+            "Type": "TextArea",
+            "Name": "textCANState",
+            "X": 136,
+            "Y": 240,
+            "Width": 136,
+            "Height": 50,
+            "TextId": "__SingleUse_2JBY",
+            "TextRotation": "0",
+            "Wildcard1": {
+              "TextId": "__SingleUse_OIMJ",
+              "UseBuffer": true,
+              "BufferSize": 10
+            }
+          },
+          {
+            "Type": "TextArea",
+            "Name": "textLabel4_1",
+            "X": 136,
+            "Y": 290,
+            "Width": 136,
+            "Height": 25,
+            "TextId": "__SingleUse_WXTW",
+            "TextRotation": "0"
+          },
+          {
+            "Type": "TextArea",
+            "Name": "textErrors",
+            "Y": 315,
+            "Width": 272,
+            "Height": 165,
+            "TextId": "__SingleUse_W2LL",
+            "TextRotation": "0",
+            "Wildcard1": {
+              "UseBuffer": true,
+              "BufferSize": 200
+            }
           }
         ],
         "Interactions": [

@@ -216,7 +216,10 @@ void HAL_FDCAN_MspInit(FDCAN_HandleTypeDef* hfdcan)
     HAL_NVIC_SetPriority(FDCAN1_IT0_IRQn, 5, 0);
     HAL_NVIC_EnableIRQ(FDCAN1_IT0_IRQn);
   /* USER CODE BEGIN FDCAN1_MspInit 1 */
+	__HAL_FDCAN_ENABLE_IT(hfdcan,FDCAN_IE_TCE);
 
+	/* error interrupt */
+	__HAL_FDCAN_ENABLE_IT(hfdcan, FDCAN_IE_EPE);
   /* USER CODE END FDCAN1_MspInit 1 */
   }
 

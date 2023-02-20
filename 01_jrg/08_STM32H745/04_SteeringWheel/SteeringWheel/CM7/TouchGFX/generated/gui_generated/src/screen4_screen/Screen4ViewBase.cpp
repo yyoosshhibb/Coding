@@ -26,21 +26,21 @@ Screen4ViewBase::Screen4ViewBase()
     textLabel1.setTypedText(touchgfx::TypedText(T___SINGLEUSE_BO6F));
     add(textLabel1);
 
-    textCellVoltage1.setPosition(0, 90, 136, 50);
-    textCellVoltage1.setColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
-    textCellVoltage1.setLinespacing(0);
-    Unicode::snprintf(textCellVoltage1Buffer, TEXTCELLVOLTAGE1_SIZE, "%s", touchgfx::TypedText(T___SINGLEUSE_YUTS).getText());
-    textCellVoltage1.setWildcard(textCellVoltage1Buffer);
-    textCellVoltage1.setTypedText(touchgfx::TypedText(T___SINGLEUSE_XBOO));
-    add(textCellVoltage1);
+    textTVCU.setPosition(0, 90, 136, 50);
+    textTVCU.setColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
+    textTVCU.setLinespacing(0);
+    Unicode::snprintf(textTVCUBuffer, TEXTTVCU_SIZE, "%s", touchgfx::TypedText(T___SINGLEUSE_YUTS).getText());
+    textTVCU.setWildcard(textTVCUBuffer);
+    textTVCU.setTypedText(touchgfx::TypedText(T___SINGLEUSE_XBOO));
+    add(textTVCU);
 
-    textCellVoltage2.setPosition(136, 90, 136, 50);
-    textCellVoltage2.setColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
-    textCellVoltage2.setLinespacing(0);
-    Unicode::snprintf(textCellVoltage2Buffer, TEXTCELLVOLTAGE2_SIZE, "%s", touchgfx::TypedText(T___SINGLEUSE_FUI1).getText());
-    textCellVoltage2.setWildcard(textCellVoltage2Buffer);
-    textCellVoltage2.setTypedText(touchgfx::TypedText(T___SINGLEUSE_CUJ3));
-    add(textCellVoltage2);
+    textTCellavg.setPosition(136, 90, 136, 50);
+    textTCellavg.setColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
+    textTCellavg.setLinespacing(0);
+    Unicode::snprintf(textTCellavgBuffer, TEXTTCELLAVG_SIZE, "%s", touchgfx::TypedText(T___SINGLEUSE_FUI1).getText());
+    textTCellavg.setWildcard(textTCellavgBuffer);
+    textTCellavg.setTypedText(touchgfx::TypedText(T___SINGLEUSE_CUJ3));
+    add(textTCellavg);
 
     textLabel2.setPosition(136, 140, 136, 25);
     textLabel2.setColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
@@ -54,27 +54,63 @@ Screen4ViewBase::Screen4ViewBase()
     textLabel4.setTypedText(touchgfx::TypedText(T___SINGLEUSE_N7JH));
     add(textLabel4);
 
-    textCellVoltage4.setPosition(136, 165, 136, 50);
-    textCellVoltage4.setColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
-    textCellVoltage4.setLinespacing(0);
-    Unicode::snprintf(textCellVoltage4Buffer, TEXTCELLVOLTAGE4_SIZE, "%s", touchgfx::TypedText(T___SINGLEUSE_H3BZ).getText());
-    textCellVoltage4.setWildcard(textCellVoltage4Buffer);
-    textCellVoltage4.setTypedText(touchgfx::TypedText(T___SINGLEUSE_XX66));
-    add(textCellVoltage4);
+    textUCellavg.setPosition(136, 165, 136, 50);
+    textUCellavg.setColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
+    textUCellavg.setLinespacing(0);
+    Unicode::snprintf(textUCellavgBuffer, TEXTUCELLAVG_SIZE, "%s", touchgfx::TypedText(T___SINGLEUSE_H3BZ).getText());
+    textUCellavg.setWildcard(textUCellavgBuffer);
+    textUCellavg.setTypedText(touchgfx::TypedText(T___SINGLEUSE_XX66));
+    add(textUCellavg);
 
-    textCellVoltage3.setPosition(0, 165, 136, 50);
-    textCellVoltage3.setColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
-    textCellVoltage3.setLinespacing(0);
-    Unicode::snprintf(textCellVoltage3Buffer, TEXTCELLVOLTAGE3_SIZE, "%s", touchgfx::TypedText(T___SINGLEUSE_ORQ1).getText());
-    textCellVoltage3.setWildcard(textCellVoltage3Buffer);
-    textCellVoltage3.setTypedText(touchgfx::TypedText(T___SINGLEUSE_SJOP));
-    add(textCellVoltage3);
+    textILVS.setPosition(0, 165, 136, 50);
+    textILVS.setColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
+    textILVS.setLinespacing(0);
+    Unicode::snprintf(textILVSBuffer, TEXTILVS_SIZE, "%s", touchgfx::TypedText(T___SINGLEUSE_ORQ1).getText());
+    textILVS.setWildcard(textILVSBuffer);
+    textILVS.setTypedText(touchgfx::TypedText(T___SINGLEUSE_SJOP));
+    add(textILVS);
 
     textLabel3.setPosition(0, 215, 136, 25);
     textLabel3.setColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
     textLabel3.setLinespacing(0);
     textLabel3.setTypedText(touchgfx::TypedText(T___SINGLEUSE_ODDB));
     add(textLabel3);
+
+    textLabel3_1.setPosition(0, 290, 136, 25);
+    textLabel3_1.setColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
+    textLabel3_1.setLinespacing(0);
+    textLabel3_1.setTypedText(touchgfx::TypedText(T___SINGLEUSE_YRVQ));
+    add(textLabel3_1);
+
+    textILVS_1.setPosition(0, 240, 136, 50);
+    textILVS_1.setColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
+    textILVS_1.setLinespacing(0);
+    Unicode::snprintf(textILVS_1Buffer, TEXTILVS_1_SIZE, "%s", touchgfx::TypedText(T___SINGLEUSE_KKLH).getText());
+    textILVS_1.setWildcard(textILVS_1Buffer);
+    textILVS_1.setTypedText(touchgfx::TypedText(T___SINGLEUSE_GRF1));
+    add(textILVS_1);
+
+    textCANState.setPosition(136, 240, 136, 50);
+    textCANState.setColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
+    textCANState.setLinespacing(0);
+    Unicode::snprintf(textCANStateBuffer, TEXTCANSTATE_SIZE, "%s", touchgfx::TypedText(T___SINGLEUSE_OIMJ).getText());
+    textCANState.setWildcard(textCANStateBuffer);
+    textCANState.setTypedText(touchgfx::TypedText(T___SINGLEUSE_2JBY));
+    add(textCANState);
+
+    textLabel4_1.setPosition(136, 290, 136, 25);
+    textLabel4_1.setColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
+    textLabel4_1.setLinespacing(0);
+    textLabel4_1.setTypedText(touchgfx::TypedText(T___SINGLEUSE_WXTW));
+    add(textLabel4_1);
+
+    textErrors.setPosition(0, 315, 272, 165);
+    textErrors.setColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
+    textErrors.setLinespacing(0);
+    textErrorsBuffer[0] = 0;
+    textErrors.setWildcard(textErrorsBuffer);
+    textErrors.setTypedText(touchgfx::TypedText(T___SINGLEUSE_W2LL));
+    add(textErrors);
 }
 
 Screen4ViewBase::~Screen4ViewBase()

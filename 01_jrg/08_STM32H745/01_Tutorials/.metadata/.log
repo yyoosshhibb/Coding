@@ -1679,3 +1679,25 @@ java.lang.NullPointerException
 
 !ENTRY org.eclipse.core.resources 4 566 2023-02-13 18:04:34.630
 !MESSAGE Workspace was not properly initialized or has already shutdown.
+!SESSION 2023-02-19 11:53:23.090 -----------------------------------------------
+eclipse.buildId=Version 1.11.2
+java.version=11.0.16
+java.vendor=Eclipse Adoptium
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=de_DE
+Framework arguments:  D:\Dokumente\GitHub\Software\01_jrg\08_STM32H745\01_Tutorials\FreeRTOSTest\.project
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 D:\Dokumente\GitHub\Software\01_jrg\08_STM32H745\01_Tutorials\FreeRTOSTest\.project
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 4 4 2023-02-19 11:53:27.171
+!MESSAGE CubeMX plugin appears to be active, Log4j initialization might be too late.
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 1 1 2023-02-19 11:53:27.259
+!MESSAGE Log4j initialized with config file D:\Dokumente\GitHub\Software\01_jrg\08_STM32H745\01_Tutorials\.metadata\.log4j.xml
+
+!ENTRY com.st.stm32cube.ide.mcu.ide 1 1 2023-02-19 11:53:49.656
+!MESSAGE Started RMI Server, listening on port 41337
+
+!ENTRY org.eclipse.cdt.core 1 0 2023-02-19 11:53:53.542
+!MESSAGE Indexed 'FreeRTOSTest_CM4' (24 sources, 85 headers) in 3,46 sec: 7.693 declarations; 55.704 references; 0 unresolved inclusions; 1 syntax errors; 2 unresolved names (0,0032 %)
+
+!ENTRY org.eclipse.cdt.core 1 0 2023-02-19 11:53:56.684
+!MESSAGE Indexed 'FreeRTOSTest_CM7' (42 sources, 121 headers) in 3,12 sec: 13.371 declarations; 97.094 references; 0 unresolved inclusions; 1 syntax errors; 7 unresolved names (0,0063 %)

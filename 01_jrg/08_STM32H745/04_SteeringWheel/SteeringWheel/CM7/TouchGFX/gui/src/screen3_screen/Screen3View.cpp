@@ -30,7 +30,25 @@ void Screen3View::nextpage(uint8_t page)
 	}
 }
 
-void Screen3View::updatevalues(BatteryData_t *data)
+void Screen3View::updatevalues(BatteryData_t *Data)
 {
+	Unicode::snprintfFloat(textTCellminBuffer, TEXTTCELLMIN_SIZE, "%.1f", *Data->TCells[0]);
+	textTCellmin.invalidate();
+	Unicode::snprintfFloat(textTCellmaxBuffer, TEXTTCELLMAX_SIZE, "%.1f", *Data->TCells[1]);
+	textTCellmax.invalidate();
+	Unicode::snprintfFloat(textTCellavgBuffer, TEXTTCELLAVG_SIZE, "%.1f", *Data->TCells[2]);
+	textTCellavg.invalidate();
 	
+	Unicode::snprintfFloat(textUCellminBuffer, TEXTUCELLMIN_SIZE, "%.2f", *Data->UCells[0]);
+	textUCellmin.invalidate();
+	Unicode::snprintfFloat(textUCellmaxBuffer, TEXTUCELLMAX_SIZE, "%.2f", *Data->UCells[1]);
+	textUCellmax.invalidate();
+	Unicode::snprintfFloat(textUCellavgBuffer, TEXTUCELLAVG_SIZE, "%.2f", *Data->UCells[2]);
+	textUCellavg.invalidate();
+	
+	Unicode::snprintfFloat(textDutyFanBuffer, TEXTDUTYFAN_SIZE, "%.1f", *Data->dutyFAN);
+	textDutyFan.invalidate();
+	
+	Unicode::snprintfFloat(textSoCBuffer, TEXTSOC_SIZE, "%.1f", *Data->SoC);
+	textSoC.invalidate();
 }

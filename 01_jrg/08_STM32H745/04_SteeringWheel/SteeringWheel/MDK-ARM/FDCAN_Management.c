@@ -8,8 +8,11 @@ FDCAN_RxHeaderTypeDef RxHeader;
 osThreadId_t id_Task_FDCAN_RX;
 osThreadId_t id_Task_FDCAN_TX;
 
+osMessageQueueId_t	FDCAN_ERROR_Q;
 osMessageQueueId_t FDCAN_TX_Q;
 osMessageQueueId_t FDCAN_RX_Q;
+
+
 
 
 /* FDCAN1 init function */
@@ -165,7 +168,7 @@ void FDCAN_Disable_RX(void)
 	HAL_FDCAN_DeactivateNotification(&hfdcan1, FDCAN_IT_RX_FIFO1_NEW_MESSAGE);
 }
 
-void FDCAN_Transmit(FDCAN_HandleTypeDef* hdfcan, uint32_t CAN_ID)
+void FDCAN_Transmit(FDCAN_HandleTypeDef* hfdcan, uint32_t CAN_ID)
 {
 	FDCAN_TxHeaderTypeDef HeaderTX;
 
@@ -220,7 +223,7 @@ void FDCAN_Transmit(FDCAN_HandleTypeDef* hdfcan, uint32_t CAN_ID)
 	Data[1] = (uint8_t)(Temp_val>>48);
 	Data[0] = (uint8_t)(Temp_val>>56);
 
-	HAL_FDCAN_AddMessageToTxFifoQ(hdfcan, &HeaderTX, Data);
+	HAL_FDCAN_AddMessageToTxFifoQ(hfdcan, &HeaderTX, Data);
 	//HAL_FDCAN_EnableTxBufferRequest(&hfdcan1,TxBuff_Nb);
 
 }
@@ -290,6 +293,7 @@ void TASK_FDCAN_RX(void)
 
 	while(1)
 	{
+		
 		osMessageQueueGet(FDCAN_RX_Q, &RxBuff,&priority,osWaitForever);
 
 		for(i=0; i<FDCAN_RX_MSG; i++)
@@ -341,6 +345,7 @@ void TASK_FDCAN_TX(void)
 	osThreadFlagsWait(FLAG_CANTX_CONFIG_READY,osFlagsWaitAll,osWaitForever);
 	uint16_t frequency = 0;
 	uint8_t priority = 0;
+	uint32_t error;
 
 
 	 while(1){
@@ -348,14 +353,21 @@ void TASK_FDCAN_TX(void)
 		 osMessageQueueGet(FDCAN_TX_Q,&frequency,&priority,osWaitForever);
 
 		 switch(frequency){
+			 
+			 if (error == HAL_FDCAN_ERROR_FIFO_FULL)
+			 {
+				 HAL_FDCAN_TX
+			 }
 
 			 case 200:
-				 FDCAN_Transmit(&hfdcan1, 0x140);
+				 FDCAN_Transmit(&hfdcan1, 0x20);
 
 			 break;
 
 			 case 100:
-				 FDCAN_Transmit(&hfdcan1, 0x100);
+					FDCAN_Transmit(&hfdcan1, 0x10);
+					error = HAL_FDCAN_GetError(&hfdcan1);
+					osMessageQueuePut(FDCAN_ERROR_Q, &error, 1, 0);
 
 			 break;
 
@@ -364,7 +376,6 @@ void TASK_FDCAN_TX(void)
 			 break;
 
 			 case 20:
-				 FDCAN_Transmit(&hfdcan1, 0x120);
 
 			 break;
 
@@ -381,7 +392,7 @@ void TASK_FDCAN_TX(void)
 			 break;
 
 			 case 1:
-				 FDCAN_Transmit(&hfdcan1, 0x160);
+
 			 break;
 
 			 default:

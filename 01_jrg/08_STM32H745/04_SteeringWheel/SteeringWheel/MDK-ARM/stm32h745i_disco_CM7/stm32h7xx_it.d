@@ -61,3 +61,4 @@ stm32h745i_disco_cm7\stm32h7xx_it.o: ../CM7/Core/Inc/main_user.h
 stm32h745i_disco_cm7\stm32h7xx_it.o: ../CM7/Core/Inc/fdcan_conf.h
 stm32h745i_disco_cm7\stm32h7xx_it.o: ../CM7/Core/Inc/HW_Def.h
 stm32h745i_disco_cm7\stm32h7xx_it.o: ../CM7/Core/Inc/GUI_Communication.h
+stm32h745i_disco_cm7\stm32h7xx_it.o: ../CM7/Core/Inc/Timer_Management.h

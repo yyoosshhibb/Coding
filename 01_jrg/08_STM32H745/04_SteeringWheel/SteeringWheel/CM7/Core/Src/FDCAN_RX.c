@@ -23,7 +23,7 @@ FDCAN_RX_data_t LTE_State;
 FDCAN_RX_data_t n_Motors[4];
 FDCAN_RX_data_t p_Brake[2];				//0 is F, 1 is R
 FDCAN_RX_data_t SoC_HV_Bat;
-FDCAN_RX_data_t T_HV_Cell[3];			//min, max, avg
+FDCAN_RX_data_t T_HV_Cell[3];			//avg, max, min
 FDCAN_RX_data_t T_Inv[4];
 FDCAN_RX_data_t T_LV_Bat;
 FDCAN_RX_data_t T_Motors[4];
@@ -36,7 +36,7 @@ FDCAN_RX_data_t T_VCU;
 FDCAN_RX_data_t T_Water;
 FDCAN_RX_data_t TS_State;
 FDCAN_RX_data_t U_HV_Bat;
-FDCAN_RX_data_t U_HV_Cell[2];			//min, max
+FDCAN_RX_data_t U_HV_Cell[2];			//max, min
 FDCAN_RX_data_t U_LV_Bat;
 FDCAN_RX_data_t U_MV_Bat[3];			//Total, min, max
 FDCAN_RX_data_t x_DP[4];
@@ -354,7 +354,7 @@ void FDCAN_RX_def()
 	
 	d_FAN_HV_Bat.CAN_length = RX_LENGTH8;
 	d_FAN_HV_Bat.CAN_length_dec = 8;
-	d_FAN_HV_Bat.CAN_id = 0x400;
+	d_FAN_HV_Bat.CAN_id = 0x500;
 	d_FAN_HV_Bat.CAN_startbit = 0;
 	d_FAN_HV_Bat.Endianness = Motorola;
 	d_FAN_HV_Bat.Factor = 0.392156862745098;

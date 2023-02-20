@@ -104,13 +104,13 @@ Screen3ViewBase::Screen3ViewBase()
     textUCellmax.setTypedText(touchgfx::TypedText(T___SINGLEUSE_DESJ));
     add(textUCellmax);
 
-    textUCellmax_1.setPosition(136, 313, 136, 50);
-    textUCellmax_1.setColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
-    textUCellmax_1.setLinespacing(0);
-    Unicode::snprintf(textUCellmax_1Buffer, TEXTUCELLMAX_1_SIZE, "%s", touchgfx::TypedText(T___SINGLEUSE_8XUT).getText());
-    textUCellmax_1.setWildcard(textUCellmax_1Buffer);
-    textUCellmax_1.setTypedText(touchgfx::TypedText(T___SINGLEUSE_MSDX));
-    add(textUCellmax_1);
+    textSoC.setPosition(136, 313, 136, 50);
+    textSoC.setColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
+    textSoC.setLinespacing(0);
+    Unicode::snprintf(textSoCBuffer, TEXTSOC_SIZE, "%s", touchgfx::TypedText(T___SINGLEUSE_8XUT).getText());
+    textSoC.setWildcard(textSoCBuffer);
+    textSoC.setTypedText(touchgfx::TypedText(T___SINGLEUSE_MSDX));
+    add(textSoC);
 
     textLabel8.setPosition(136, 363, 136, 25);
     textLabel8.setColor(touchgfx::Color::getColorFromRGB(0, 0, 0));

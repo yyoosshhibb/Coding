@@ -43,7 +43,7 @@ protected:
     touchgfx::TextArea textLabel5;
     touchgfx::TextArea textLabel6;
     touchgfx::TextAreaWithOneWildcard textUCellmax;
-    touchgfx::TextAreaWithOneWildcard textUCellmax_1;
+    touchgfx::TextAreaWithOneWildcard textSoC;
     touchgfx::TextArea textLabel8;
     touchgfx::TextArea textLabel7;
     touchgfx::TextAreaWithOneWildcard textUCellavg;
@@ -64,8 +64,8 @@ protected:
     touchgfx::Unicode::UnicodeChar textUCellminBuffer[TEXTUCELLMIN_SIZE];
     static const uint16_t TEXTUCELLMAX_SIZE = 10;
     touchgfx::Unicode::UnicodeChar textUCellmaxBuffer[TEXTUCELLMAX_SIZE];
-    static const uint16_t TEXTUCELLMAX_1_SIZE = 10;
-    touchgfx::Unicode::UnicodeChar textUCellmax_1Buffer[TEXTUCELLMAX_1_SIZE];
+    static const uint16_t TEXTSOC_SIZE = 10;
+    touchgfx::Unicode::UnicodeChar textSoCBuffer[TEXTSOC_SIZE];
     static const uint16_t TEXTUCELLAVG_SIZE = 10;
     touchgfx::Unicode::UnicodeChar textUCellavgBuffer[TEXTUCELLAVG_SIZE];
 

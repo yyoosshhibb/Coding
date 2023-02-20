@@ -91,14 +91,6 @@ static void MX_FDCAN1_Init(void);
 void StartDefaultTask(void *argument);
 void TouchGFX_Task(void *argument);
 
-/* USER CODE BEGIN PFP */
-
-/* USER CODE END PFP */
-
-/* Private user code ---------------------------------------------------------*/
-/* USER CODE BEGIN 0 */
-
-/* USER CODE END 0 */
 
 /**
   * @brief  The application entry point.
@@ -106,65 +98,14 @@ void TouchGFX_Task(void *argument);
   */
 int main(void)
 {
-  /* USER CODE BEGIN 1 */
-
-  /* USER CODE END 1 */
-/* USER CODE BEGIN Boot_Mode_Sequence_0 */
   int32_t timeout;
-/* USER CODE END Boot_Mode_Sequence_0 */
-
-  /* MPU Configuration--------------------------------------------------------*/
   MPU_Config();
 
-  /* Enable I-Cache---------------------------------------------------------*/
   SCB_EnableICache();
-
-  /* Enable D-Cache---------------------------------------------------------*/
   SCB_EnableDCache();
 
-/* USER CODE BEGIN Boot_Mode_Sequence_1 */
-  /* Wait until CPU2 boots and enters in stop mode or timeout*/
-//  timeout = 0xFFFF;
-//  while((__HAL_RCC_GET_FLAG(RCC_FLAG_D2CKRDY) != RESET) && (timeout-- > 0));
-//  if ( timeout < 0 )
-//  {
-//  Error_Handler();
-//  }
-/* USER CODE END Boot_Mode_Sequence_1 */
-  /* MCU Configuration--------------------------------------------------------*/
-
-  /* Reset of all peripherals, Initializes the Flash interface and the Systick. */
   HAL_Init();
-
-  /* USER CODE BEGIN Init */
-
-  /* USER CODE END Init */
-
-  /* Configure the system clock */
   SystemClock_Config();
-/* USER CODE BEGIN Boot_Mode_Sequence_2 */
-/* When system initialization is finished, Cortex-M7 will release Cortex-M4 by means of
-HSEM notification */
-/*HW semaphore Clock enable*/
-__HAL_RCC_HSEM_CLK_ENABLE();
-/*Take HSEM */
-//HAL_HSEM_FastTake(HSEM_ID_0);
-///*Release HSEM in order to notify the CPU2(CM4)*/
-//HAL_HSEM_Release(HSEM_ID_0,0);
-///* wait until CPU2 wakes up from stop mode */
-//timeout = 0xFFFF;
-//while((__HAL_RCC_GET_FLAG(RCC_FLAG_D2CKRDY) == RESET) && (timeout-- > 0));
-//if ( timeout < 0 )
-//{
-//Error_Handler();
-//}
-/* USER CODE END Boot_Mode_Sequence_2 */
-
-  /* USER CODE BEGIN SysInit */
-
-  /* USER CODE END SysInit */
-
-  /* Initialize all configured peripherals */
   MX_GPIO_Init();
   MX_QUADSPI_Init();
   MX_FMC_Init();
@@ -173,63 +114,36 @@ __HAL_RCC_HSEM_CLK_ENABLE();
   MX_DMA2D_Init();
   MX_FDCAN1_Init();
   MX_TouchGFX_Init();
-  /* USER CODE BEGIN 2 */
+	MX_TIM15_Init();
 
-  /* USER CODE END 2 */
-
-  /* Init scheduler */
   osKernelInitialize();
+	
 
-  /* USER CODE BEGIN RTOS_MUTEX */
-  /* add mutexes, ... */
-  /* USER CODE END RTOS_MUTEX */
-
-  /* USER CODE BEGIN RTOS_SEMAPHORES */
-  /* add semaphores, ... */
-  /* USER CODE END RTOS_SEMAPHORES */
-
-  /* USER CODE BEGIN RTOS_TIMERS */
-  /* start timers, add new ones, ... */
-  /* USER CODE END RTOS_TIMERS */
-
-  /* USER CODE BEGIN RTOS_QUEUES */
-  /* add queues, ... */
-  /* USER CODE END RTOS_QUEUES */
-
-  /* Create the thread(s) */
-  /* creation of defaultTask */
-  defaultTaskHandle = osThreadNew(StartDefaultTask, NULL, &defaultTask_attributes);
-
-  /* creation of TouchGFXTask */
+  //defaultTaskHandle = osThreadNew(StartDefaultTask, NULL, &defaultTask_attributes);
   TouchGFXTaskHandle = osThreadNew(TouchGFX_Task, NULL, &TouchGFXTask_attributes);
 
-  /* USER CODE BEGIN RTOS_THREADS */
   idtaskfeedGUI = osThreadNew(SendToGUI, NULL, NULL);
 	osThreadSetPriority(idtaskfeedGUI,osPriorityNormal);
 	
-	FDCAN_RX_Q = osMessageQueueNew(20, sizeof(FDCAN_RxQueue_Frame_t), NULL);
 	
+	FDCAN_ERROR_Q = osMessageQueueNew(20, 4, NULL);
+	FDCAN_RX_Q = osMessageQueueNew(20, sizeof(FDCAN_RxQueue_Frame_t), NULL);
 	id_Task_FDCAN_RX = osThreadNew(TASK_FDCAN_RX, NULL, NULL);
 	osThreadSetPriority(id_Task_FDCAN_RX, osPriorityNormal);
-  /* USER CODE END RTOS_THREADS */
+	
+	FDCAN_TX_Q = osMessageQueueNew(20, 1, NULL);
+	id_Task_FDCAN_TX = osThreadNew(TASK_FDCAN_TX, NULL, NULL);
+	osThreadSetPriority(id_Task_FDCAN_TX, osPriorityNormal);
+	
+	id_task_timer = osThreadNew(Task_Timer, NULL, NULL);
+	osThreadSetPriority(id_task_timer, osPriorityAboveNormal);
 
-  /* USER CODE BEGIN RTOS_EVENTS */
-  /* add events, ... */
-  /* USER CODE END RTOS_EVENTS */
-
-  /* Start scheduler */
   osKernelStart();
 
-  /* We should never get here as control is now taken by the scheduler */
-  /* Infinite loop */
-  /* USER CODE BEGIN WHILE */
   while (1)
   {
-    /* USER CODE END WHILE */
 
-    /* USER CODE BEGIN 3 */
   }
-  /* USER CODE END 3 */
 }
 
 /**
@@ -373,9 +287,9 @@ static void MX_FDCAN1_Init(void)
 
   /* USER CODE END FDCAN1_Init 1 */
   hfdcan1.Instance = FDCAN1;
-  hfdcan1.Init.FrameFormat = FDCAN_FRAME_FD_NO_BRS;
+  hfdcan1.Init.FrameFormat = FDCAN_FRAME_CLASSIC;
   hfdcan1.Init.Mode = FDCAN_MODE_NORMAL;
-  hfdcan1.Init.AutoRetransmission = DISABLE;
+  hfdcan1.Init.AutoRetransmission = ENABLE;
   hfdcan1.Init.TransmitPause = DISABLE;
   hfdcan1.Init.ProtocolException = DISABLE;
   hfdcan1.Init.NominalPrescaler = 2;
@@ -405,7 +319,7 @@ static void MX_FDCAN1_Init(void)
     Error_Handler();
   }
   /* USER CODE BEGIN FDCAN1_Init 2 */
-	//FDCAN_TX_def();
+	FDCAN_TX_def();
   FDCAN_RX_def();
 
   /* USER CODE END FDCAN1_Init 2 */

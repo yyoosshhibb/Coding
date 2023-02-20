@@ -19,28 +19,16 @@ FDCAN_TX_data_t	PumpSpeed;
 
 void FDCAN_TX_def()
 {
-	/*
+	
 	int i, j;
-	Powerlimit.CAN_id = 0x100;
+	Powerlimit.CAN_id = 0x10;
 	Powerlimit.CAN_length = RX_LENGTH8;
 	Powerlimit.CAN_length_dec = 8;
 	Powerlimit.CAN_startbit = 0;
 	Powerlimit.Endianness = Motorola;
+	Powerlimit.CAN_data = 100;
 
-	for(i=0; i<FDCAN_TX_MSG; i++)
-	{
-		FDCAN_Tx_Bank[i].TxHeader->DataLength = FDCAN_DLC_BYTES_8;
-		FDCAN_Tx_Bank[i].TxHeader->TxFrameType = FDCAN_DATA_FRAME;
-		FDCAN_Tx_Bank[i].TxHeader->BitRateSwitch = FDCAN_BRS_OFF;
-		FDCAN_Tx_Bank[i].TxHeader->ErrorStateIndicator = FDCAN_ESI_ACTIVE;
-		FDCAN_Tx_Bank[i].TxHeader->FDFormat = FDCAN_FD_CAN;
-		FDCAN_Tx_Bank[i].TxHeader->TxEventFifoControl = FDCAN_NO_TX_EVENTS;
-		FDCAN_Tx_Bank[i].TxHeader->MessageMarker = 0;
-		FDCAN_Tx_Bank[i].TxHeader->IdType = FDCAN_STANDARD_ID;
-		FDCAN_Tx_Bank[i].TxHeader->Identifier = tx_id_list[i];
-	}
-
-	CANdata[0] = &Powerlimit;
-	*/
+	FDCAN_Data_Tx[0] = &Powerlimit;
+	
 }
 

@@ -30,7 +30,29 @@ void Screen4View::nextpage(uint8_t page)
 	}
 }
 
-void Screen4View::updatevalues(ElectricsData_t *data)
+void Screen4View::updatevalues(ElectricsData_t *Data)
 {
+	uint16_t wirelessstate;
 	
+	wirelessstate = *Data->Ethernet_State << 8 | *Data->LTE_State;
+	
+	
+	Unicode::snprintfFloat(textTVCUBuffer, TEXTTVCU_SIZE, "%.1f", *Data->TVCU);
+	textTVCU.invalidate();
+	
+	Unicode::snprintfFloat(textTCellavgBuffer, TEXTTCELLAVG_SIZE, "%.1f", *Data->T_Cell_avg);
+	textTCellavg.invalidate();
+	
+	Unicode::snprintfFloat(textILVSBuffer, TEXTILVS_SIZE, "%.1f", *Data->I_LVS);
+	textILVS.invalidate();
+	
+	Unicode::snprintfFloat(textUCellavgBuffer, TEXTUCELLAVG_SIZE, "%.1f", *Data->U_LVBat_avg);
+	textUCellavg.invalidate();
+
+		switch((*Data->CAN_State))
+		{
+			case 0:Unicode::snprintf(textCANStateBuffer, TEXTCANSTATE_SIZE, "OK");break;
+			default:Unicode::snprintf(textCANStateBuffer, TEXTCANSTATE_SIZE, "Error");break;
+		}
+		textCANState.invalidate();
 }

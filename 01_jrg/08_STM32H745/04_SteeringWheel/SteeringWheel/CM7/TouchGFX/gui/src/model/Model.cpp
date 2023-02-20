@@ -17,6 +17,6 @@ void Model::tick()
 	GUIMessage_t msg;
 	
 	osMessageQueueGet(Q_send_GUI, &msg, &priority, 10);
-	
 	modelListener->updateData(msg);
+	osThreadFlagsSet(idtaskfeedGUI, FLAG_UPDATE_MODEL);
 }

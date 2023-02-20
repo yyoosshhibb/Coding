@@ -32,25 +32,36 @@ protected:
     touchgfx::Box box1;
     touchgfx::Image image1;
     touchgfx::TextArea textLabel1;
-    touchgfx::TextAreaWithOneWildcard textCellVoltage1;
-    touchgfx::TextAreaWithOneWildcard textCellVoltage2;
+    touchgfx::TextAreaWithOneWildcard textTVCU;
+    touchgfx::TextAreaWithOneWildcard textTCellavg;
     touchgfx::TextArea textLabel2;
     touchgfx::TextArea textLabel4;
-    touchgfx::TextAreaWithOneWildcard textCellVoltage4;
-    touchgfx::TextAreaWithOneWildcard textCellVoltage3;
+    touchgfx::TextAreaWithOneWildcard textUCellavg;
+    touchgfx::TextAreaWithOneWildcard textILVS;
     touchgfx::TextArea textLabel3;
+    touchgfx::TextArea textLabel3_1;
+    touchgfx::TextAreaWithOneWildcard textILVS_1;
+    touchgfx::TextAreaWithOneWildcard textCANState;
+    touchgfx::TextArea textLabel4_1;
+    touchgfx::TextAreaWithOneWildcard textErrors;
 
     /*
      * Wildcard Buffers
      */
-    static const uint16_t TEXTCELLVOLTAGE1_SIZE = 10;
-    touchgfx::Unicode::UnicodeChar textCellVoltage1Buffer[TEXTCELLVOLTAGE1_SIZE];
-    static const uint16_t TEXTCELLVOLTAGE2_SIZE = 10;
-    touchgfx::Unicode::UnicodeChar textCellVoltage2Buffer[TEXTCELLVOLTAGE2_SIZE];
-    static const uint16_t TEXTCELLVOLTAGE4_SIZE = 10;
-    touchgfx::Unicode::UnicodeChar textCellVoltage4Buffer[TEXTCELLVOLTAGE4_SIZE];
-    static const uint16_t TEXTCELLVOLTAGE3_SIZE = 10;
-    touchgfx::Unicode::UnicodeChar textCellVoltage3Buffer[TEXTCELLVOLTAGE3_SIZE];
+    static const uint16_t TEXTTVCU_SIZE = 10;
+    touchgfx::Unicode::UnicodeChar textTVCUBuffer[TEXTTVCU_SIZE];
+    static const uint16_t TEXTTCELLAVG_SIZE = 10;
+    touchgfx::Unicode::UnicodeChar textTCellavgBuffer[TEXTTCELLAVG_SIZE];
+    static const uint16_t TEXTUCELLAVG_SIZE = 10;
+    touchgfx::Unicode::UnicodeChar textUCellavgBuffer[TEXTUCELLAVG_SIZE];
+    static const uint16_t TEXTILVS_SIZE = 10;
+    touchgfx::Unicode::UnicodeChar textILVSBuffer[TEXTILVS_SIZE];
+    static const uint16_t TEXTILVS_1_SIZE = 10;
+    touchgfx::Unicode::UnicodeChar textILVS_1Buffer[TEXTILVS_1_SIZE];
+    static const uint16_t TEXTCANSTATE_SIZE = 10;
+    touchgfx::Unicode::UnicodeChar textCANStateBuffer[TEXTCANSTATE_SIZE];
+    static const uint16_t TEXTERRORS_SIZE = 200;
+    touchgfx::Unicode::UnicodeChar textErrorsBuffer[TEXTERRORS_SIZE];
 
 private:
 
