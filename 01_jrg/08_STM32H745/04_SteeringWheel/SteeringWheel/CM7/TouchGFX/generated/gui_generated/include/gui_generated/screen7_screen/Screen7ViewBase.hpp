@@ -9,6 +9,8 @@
 #include <gui/screen7_screen/Screen7Presenter.hpp>
 #include <touchgfx/widgets/Box.hpp>
 #include <touchgfx/widgets/Image.hpp>
+#include <touchgfx/widgets/TextArea.hpp>
+#include <touchgfx/widgets/TextAreaWithWildcard.hpp>
 
 class Screen7ViewBase : public touchgfx::View<Screen7Presenter>
 {
@@ -29,6 +31,72 @@ protected:
     touchgfx::Box __background;
     touchgfx::Box box1;
     touchgfx::Image image1;
+    touchgfx::TextArea textArea1;
+    touchgfx::TextAreaWithOneWildcard textxDP1;
+    touchgfx::TextAreaWithOneWildcard textxDP2;
+    touchgfx::TextAreaWithOneWildcard textxDP4;
+    touchgfx::TextAreaWithOneWildcard textxDP3;
+    touchgfx::TextArea textArea1_2;
+    touchgfx::TextAreaWithOneWildcard textFz2;
+    touchgfx::TextAreaWithOneWildcard textxRHF;
+    touchgfx::TextAreaWithOneWildcard textFz1;
+    touchgfx::TextArea textArea1_1;
+    touchgfx::TextArea textArea1_1_2;
+    touchgfx::TextAreaWithOneWildcard textFz3;
+    touchgfx::TextAreaWithOneWildcard textFz4;
+    touchgfx::TextAreaWithOneWildcard textxRH3;
+    touchgfx::TextAreaWithOneWildcard textxRH2;
+    touchgfx::TextArea textArea1_1_2_1;
+    touchgfx::TextArea textArea1_1_1;
+    touchgfx::TextArea textArea1_1_1_1;
+    touchgfx::TextAreaWithOneWildcard textSTA;
+    touchgfx::TextArea textArea1_1_1_2;
+    touchgfx::TextAreaWithOneWildcard textpBF;
+    touchgfx::TextAreaWithOneWildcard textpBR;
+    touchgfx::TextArea textArea1_1_1_2_1;
+    touchgfx::TextAreaWithOneWildcard textBrakeBalance;
+    touchgfx::TextArea textArea1_1_1_2_2;
+    touchgfx::TextArea textArea1_1_1_2_2_1;
+    touchgfx::TextAreaWithOneWildcard textAPPS1;
+    touchgfx::TextAreaWithOneWildcard textAPPS2;
+
+    /*
+     * Wildcard Buffers
+     */
+    static const uint16_t TEXTXDP1_SIZE = 10;
+    touchgfx::Unicode::UnicodeChar textxDP1Buffer[TEXTXDP1_SIZE];
+    static const uint16_t TEXTXDP2_SIZE = 10;
+    touchgfx::Unicode::UnicodeChar textxDP2Buffer[TEXTXDP2_SIZE];
+    static const uint16_t TEXTXDP4_SIZE = 10;
+    touchgfx::Unicode::UnicodeChar textxDP4Buffer[TEXTXDP4_SIZE];
+    static const uint16_t TEXTXDP3_SIZE = 10;
+    touchgfx::Unicode::UnicodeChar textxDP3Buffer[TEXTXDP3_SIZE];
+    static const uint16_t TEXTFZ2_SIZE = 10;
+    touchgfx::Unicode::UnicodeChar textFz2Buffer[TEXTFZ2_SIZE];
+    static const uint16_t TEXTXRHF_SIZE = 10;
+    touchgfx::Unicode::UnicodeChar textxRHFBuffer[TEXTXRHF_SIZE];
+    static const uint16_t TEXTFZ1_SIZE = 10;
+    touchgfx::Unicode::UnicodeChar textFz1Buffer[TEXTFZ1_SIZE];
+    static const uint16_t TEXTFZ3_SIZE = 10;
+    touchgfx::Unicode::UnicodeChar textFz3Buffer[TEXTFZ3_SIZE];
+    static const uint16_t TEXTFZ4_SIZE = 10;
+    touchgfx::Unicode::UnicodeChar textFz4Buffer[TEXTFZ4_SIZE];
+    static const uint16_t TEXTXRH3_SIZE = 10;
+    touchgfx::Unicode::UnicodeChar textxRH3Buffer[TEXTXRH3_SIZE];
+    static const uint16_t TEXTXRH2_SIZE = 10;
+    touchgfx::Unicode::UnicodeChar textxRH2Buffer[TEXTXRH2_SIZE];
+    static const uint16_t TEXTSTA_SIZE = 10;
+    touchgfx::Unicode::UnicodeChar textSTABuffer[TEXTSTA_SIZE];
+    static const uint16_t TEXTPBF_SIZE = 10;
+    touchgfx::Unicode::UnicodeChar textpBFBuffer[TEXTPBF_SIZE];
+    static const uint16_t TEXTPBR_SIZE = 10;
+    touchgfx::Unicode::UnicodeChar textpBRBuffer[TEXTPBR_SIZE];
+    static const uint16_t TEXTBRAKEBALANCE_SIZE = 10;
+    touchgfx::Unicode::UnicodeChar textBrakeBalanceBuffer[TEXTBRAKEBALANCE_SIZE];
+    static const uint16_t TEXTAPPS1_SIZE = 10;
+    touchgfx::Unicode::UnicodeChar textAPPS1Buffer[TEXTAPPS1_SIZE];
+    static const uint16_t TEXTAPPS2_SIZE = 10;
+    touchgfx::Unicode::UnicodeChar textAPPS2Buffer[TEXTAPPS2_SIZE];
 
 private:
 

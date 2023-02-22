@@ -23,6 +23,6 @@ void Screen5Presenter::updateData(GUIMessage_t msg)
 	{
 		view.nextpage(msg.pageno);
 	}
-	view.updatevalues(&msg.Inverterdata);
+	view.updatevalues(&msg.Tiretemps);
 }
 

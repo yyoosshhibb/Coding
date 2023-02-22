@@ -20,7 +20,7 @@ Screen3ViewBase::Screen3ViewBase()
     image1.setBitmap(touchgfx::Bitmap(BITMAP_JOANNEUM_RACING_BATTERY_ID));
     add(image1);
 
-    textTCellmin.setPosition(0, 88, 136, 50);
+    textTCellmin.setPosition(80, 80, 64, 25);
     textTCellmin.setColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
     textTCellmin.setLinespacing(0);
     Unicode::snprintf(textTCellminBuffer, TEXTTCELLMIN_SIZE, "%s", touchgfx::TypedText(T___SINGLEUSE_QULH).getText());
@@ -28,19 +28,13 @@ Screen3ViewBase::Screen3ViewBase()
     textTCellmin.setTypedText(touchgfx::TypedText(T___SINGLEUSE_1WMJ));
     add(textTCellmin);
 
-    textLabel1.setPosition(0, 138, 136, 25);
+    textLabel1.setPosition(0, 80, 80, 25);
     textLabel1.setColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
     textLabel1.setLinespacing(0);
     textLabel1.setTypedText(touchgfx::TypedText(T___SINGLEUSE_QO9W));
     add(textLabel1);
 
-    textLabel2.setPosition(136, 138, 136, 25);
-    textLabel2.setColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
-    textLabel2.setLinespacing(0);
-    textLabel2.setTypedText(touchgfx::TypedText(T___SINGLEUSE_PQXE));
-    add(textLabel2);
-
-    textTCellmax.setPosition(136, 88, 136, 50);
+    textTCellmax.setPosition(144, 80, 64, 25);
     textTCellmax.setColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
     textTCellmax.setLinespacing(0);
     Unicode::snprintf(textTCellmaxBuffer, TEXTTCELLMAX_SIZE, "%s", touchgfx::TypedText(T___SINGLEUSE_72EN).getText());
@@ -48,7 +42,7 @@ Screen3ViewBase::Screen3ViewBase()
     textTCellmax.setTypedText(touchgfx::TypedText(T___SINGLEUSE_QOVY));
     add(textTCellmax);
 
-    textDutyFan.setPosition(136, 163, 136, 50);
+    textDutyFan.setPosition(144, 155, 64, 25);
     textDutyFan.setColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
     textDutyFan.setLinespacing(0);
     Unicode::snprintf(textDutyFanBuffer, TEXTDUTYFAN_SIZE, "%s", touchgfx::TypedText(T___SINGLEUSE_KJ7O).getText());
@@ -56,19 +50,13 @@ Screen3ViewBase::Screen3ViewBase()
     textDutyFan.setTypedText(touchgfx::TypedText(T___SINGLEUSE_4GDM));
     add(textDutyFan);
 
-    textLabel4.setPosition(136, 213, 136, 25);
+    textLabel4.setPosition(0, 155, 130, 25);
     textLabel4.setColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
     textLabel4.setLinespacing(0);
     textLabel4.setTypedText(touchgfx::TypedText(T___SINGLEUSE_1JY9));
     add(textLabel4);
 
-    textLabel3.setPosition(0, 213, 136, 25);
-    textLabel3.setColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
-    textLabel3.setLinespacing(0);
-    textLabel3.setTypedText(touchgfx::TypedText(T___SINGLEUSE_BHH7));
-    add(textLabel3);
-
-    textTCellavg.setPosition(0, 163, 136, 50);
+    textTCellavg.setPosition(208, 80, 64, 25);
     textTCellavg.setColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
     textTCellavg.setLinespacing(0);
     Unicode::snprintf(textTCellavgBuffer, TEXTTCELLAVG_SIZE, "%s", touchgfx::TypedText(T___SINGLEUSE_APP9).getText());
@@ -76,7 +64,7 @@ Screen3ViewBase::Screen3ViewBase()
     textTCellavg.setTypedText(touchgfx::TypedText(T___SINGLEUSE_HEYX));
     add(textTCellavg);
 
-    textUCellmin.setPosition(0, 238, 136, 50);
+    textUCellmin.setPosition(80, 105, 64, 25);
     textUCellmin.setColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
     textUCellmin.setLinespacing(0);
     Unicode::snprintf(textUCellminBuffer, TEXTUCELLMIN_SIZE, "%s", touchgfx::TypedText(T___SINGLEUSE_HNJT).getText());
@@ -84,19 +72,13 @@ Screen3ViewBase::Screen3ViewBase()
     textUCellmin.setTypedText(touchgfx::TypedText(T___SINGLEUSE_K67S));
     add(textUCellmin);
 
-    textLabel5.setPosition(0, 288, 136, 25);
+    textLabel5.setPosition(0, 105, 80, 25);
     textLabel5.setColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
     textLabel5.setLinespacing(0);
     textLabel5.setTypedText(touchgfx::TypedText(T___SINGLEUSE_8C55));
     add(textLabel5);
 
-    textLabel6.setPosition(136, 288, 136, 25);
-    textLabel6.setColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
-    textLabel6.setLinespacing(0);
-    textLabel6.setTypedText(touchgfx::TypedText(T___SINGLEUSE_GKH1));
-    add(textLabel6);
-
-    textUCellmax.setPosition(136, 238, 136, 50);
+    textUCellmax.setPosition(144, 105, 64, 25);
     textUCellmax.setColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
     textUCellmax.setLinespacing(0);
     Unicode::snprintf(textUCellmaxBuffer, TEXTUCELLMAX_SIZE, "%s", touchgfx::TypedText(T___SINGLEUSE_MK38).getText());
@@ -104,7 +86,7 @@ Screen3ViewBase::Screen3ViewBase()
     textUCellmax.setTypedText(touchgfx::TypedText(T___SINGLEUSE_DESJ));
     add(textUCellmax);
 
-    textSoC.setPosition(136, 313, 136, 50);
+    textSoC.setPosition(144, 130, 64, 25);
     textSoC.setColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
     textSoC.setLinespacing(0);
     Unicode::snprintf(textSoCBuffer, TEXTSOC_SIZE, "%s", touchgfx::TypedText(T___SINGLEUSE_8XUT).getText());
@@ -112,19 +94,27 @@ Screen3ViewBase::Screen3ViewBase()
     textSoC.setTypedText(touchgfx::TypedText(T___SINGLEUSE_MSDX));
     add(textSoC);
 
-    textLabel8.setPosition(136, 363, 136, 25);
+    textPCM.setPosition(144, 180, 64, 25);
+    textPCM.setColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
+    textPCM.setLinespacing(0);
+    Unicode::snprintf(textPCMBuffer, TEXTPCM_SIZE, "%s", touchgfx::TypedText(T___SINGLEUSE_0GKK).getText());
+    textPCM.setWildcard(textPCMBuffer);
+    textPCM.setTypedText(touchgfx::TypedText(T___SINGLEUSE_S1WL));
+    add(textPCM);
+
+    textLabel8.setPosition(0, 130, 130, 25);
     textLabel8.setColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
     textLabel8.setLinespacing(0);
     textLabel8.setTypedText(touchgfx::TypedText(T___SINGLEUSE_Z7B7));
     add(textLabel8);
 
-    textLabel7.setPosition(0, 363, 136, 25);
-    textLabel7.setColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
-    textLabel7.setLinespacing(0);
-    textLabel7.setTypedText(touchgfx::TypedText(T___SINGLEUSE_BDT1));
-    add(textLabel7);
+    textLabel9.setPosition(0, 180, 130, 25);
+    textLabel9.setColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
+    textLabel9.setLinespacing(0);
+    textLabel9.setTypedText(touchgfx::TypedText(T___SINGLEUSE_T1M3));
+    add(textLabel9);
 
-    textUCellavg.setPosition(0, 313, 136, 50);
+    textUCellavg.setPosition(208, 105, 64, 25);
     textUCellavg.setColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
     textUCellavg.setLinespacing(0);
     Unicode::snprintf(textUCellavgBuffer, TEXTUCELLAVG_SIZE, "%s", touchgfx::TypedText(T___SINGLEUSE_I4P0).getText());

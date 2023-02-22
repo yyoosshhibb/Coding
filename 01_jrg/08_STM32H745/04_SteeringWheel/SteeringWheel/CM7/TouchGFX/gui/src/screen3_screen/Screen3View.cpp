@@ -51,4 +51,7 @@ void Screen3View::updatevalues(BatteryData_t *Data)
 	
 	Unicode::snprintfFloat(textSoCBuffer, TEXTSOC_SIZE, "%.1f", *Data->SoC);
 	textSoC.invalidate();
+	
+	Unicode::snprintfFloat(textPCMBuffer, TEXTPCM_SIZE, "%.1f", *Data->PCM_State);
+	textSoC.invalidate();
 }

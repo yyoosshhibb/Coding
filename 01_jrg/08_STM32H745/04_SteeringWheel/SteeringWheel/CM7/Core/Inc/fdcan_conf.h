@@ -8,8 +8,8 @@
 #define FDCAN_TX_DATA	1			//Number of transmitted signals on CAN
 #define FDCAN_TX_MSG	4			//Number of transmitted messages on CAN
 
-#define FDCAN_RX_DATA	92		//Number of received signals on CAN
-#define FDCAN_RX_MSG	19		//Number of received messages on CAN
+#define FDCAN_RX_DATA	109		//Number of received signals on CAN
+#define FDCAN_RX_MSG	21		//Number of received messages on CAN
 
 
 typedef enum{
@@ -107,12 +107,13 @@ extern FDCAN_RX_data_t I_MV_Bat;
 extern FDCAN_RX_data_t LTE_State;
 extern FDCAN_RX_data_t n_Motors[4];
 extern FDCAN_RX_data_t p_Brake[2];				//0 is F, 1 is R
+extern FDCAN_RX_data_t PCM_State;
 extern FDCAN_RX_data_t SoC_HV_Bat;
 extern FDCAN_RX_data_t T_HV_Cell[3];			//min, max, avg
 extern FDCAN_RX_data_t T_Inv[4];
-extern FDCAN_RX_data_t T_LV_Bat;
+extern FDCAN_RX_data_t T_LV_Cells[2];
 extern FDCAN_RX_data_t T_Motors[4];
-extern FDCAN_RX_data_t T_MV_Cell[3];
+extern FDCAN_RX_data_t T_MV_Cells[5];
 extern FDCAN_RX_data_t T_Tire_FL[8];
 extern FDCAN_RX_data_t T_Tire_FR[8];
 extern FDCAN_RX_data_t T_Tire_RL[8];
@@ -122,8 +123,8 @@ extern FDCAN_RX_data_t T_Water;
 extern FDCAN_RX_data_t TS_State;
 extern FDCAN_RX_data_t U_HV_Bat;
 extern FDCAN_RX_data_t U_HV_Cell[2];			//min, max
-extern FDCAN_RX_data_t U_LV_Bat;
-extern FDCAN_RX_data_t U_MV_Bat[3];			//Total, min, max
+extern FDCAN_RX_data_t U_LV_Cells[4];
+extern FDCAN_RX_data_t U_MV_Cells[12];			
 extern FDCAN_RX_data_t x_DP[4];
 extern FDCAN_RX_data_t x_RH[3];
 

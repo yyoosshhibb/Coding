@@ -12,17 +12,17 @@ Screen2ViewBase::Screen2ViewBase()
     add(__background);
 
     box1.setPosition(0, 0, 272, 480);
-    box1.setColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
+    box1.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
     add(box1);
 
     textLabel1.setPosition(0, 142, 136, 24);
-    textLabel1.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
+    textLabel1.setColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
     textLabel1.setLinespacing(0);
     textLabel1.setTypedText(touchgfx::TypedText(T___SINGLEUSE_BSBO));
     add(textLabel1);
 
     textTempHV.setPosition(0, 92, 136, 50);
-    textTempHV.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
+    textTempHV.setColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
     textTempHV.setLinespacing(0);
     Unicode::snprintf(textTempHVBuffer, TEXTTEMPHV_SIZE, "%s", touchgfx::TypedText(T___SINGLEUSE_000G).getText());
     textTempHV.setWildcard(textTempHVBuffer);
@@ -30,13 +30,13 @@ Screen2ViewBase::Screen2ViewBase()
     add(textTempHV);
 
     textLabel2.setPosition(136, 142, 136, 24);
-    textLabel2.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
+    textLabel2.setColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
     textLabel2.setLinespacing(0);
     textLabel2.setTypedText(touchgfx::TypedText(T___SINGLEUSE_7SYJ));
     add(textLabel2);
 
     textTempLV.setPosition(136, 92, 136, 50);
-    textTempLV.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
+    textTempLV.setColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
     textTempLV.setLinespacing(0);
     Unicode::snprintf(textTempLVBuffer, TEXTTEMPLV_SIZE, "%s", touchgfx::TypedText(T___SINGLEUSE_ZRB6).getText());
     textTempLV.setWildcard(textTempLVBuffer);
@@ -44,13 +44,13 @@ Screen2ViewBase::Screen2ViewBase()
     add(textTempLV);
 
     textLabel3.setPosition(0, 216, 136, 24);
-    textLabel3.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
+    textLabel3.setColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
     textLabel3.setLinespacing(0);
     textLabel3.setTypedText(touchgfx::TypedText(T___SINGLEUSE_LAN2));
     add(textLabel3);
 
     textVolHV.setPosition(0, 166, 136, 50);
-    textVolHV.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
+    textVolHV.setColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
     textVolHV.setLinespacing(0);
     Unicode::snprintf(textVolHVBuffer, TEXTVOLHV_SIZE, "%s", touchgfx::TypedText(T___SINGLEUSE_MZIO).getText());
     textVolHV.setWildcard(textVolHVBuffer);
@@ -58,7 +58,7 @@ Screen2ViewBase::Screen2ViewBase()
     add(textVolHV);
 
     textVolLV.setPosition(136, 166, 136, 50);
-    textVolLV.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
+    textVolLV.setColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
     textVolLV.setLinespacing(0);
     Unicode::snprintf(textVolLVBuffer, TEXTVOLLV_SIZE, "%s", touchgfx::TypedText(T___SINGLEUSE_3JLX).getText());
     textVolLV.setWildcard(textVolLVBuffer);
@@ -66,19 +66,19 @@ Screen2ViewBase::Screen2ViewBase()
     add(textVolLV);
 
     textLabel4.setPosition(136, 216, 136, 24);
-    textLabel4.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
+    textLabel4.setColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
     textLabel4.setLinespacing(0);
     textLabel4.setTypedText(touchgfx::TypedText(T___SINGLEUSE_WYRG));
     add(textLabel4);
 
     textLabel5.setPosition(0, 290, 136, 24);
-    textLabel5.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
+    textLabel5.setColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
     textLabel5.setLinespacing(0);
     textLabel5.setTypedText(touchgfx::TypedText(T___SINGLEUSE_TE83));
     add(textLabel5);
 
     textTempMotor.setPosition(0, 240, 136, 50);
-    textTempMotor.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
+    textTempMotor.setColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
     textTempMotor.setLinespacing(0);
     Unicode::snprintf(textTempMotorBuffer, TEXTTEMPMOTOR_SIZE, "%s", touchgfx::TypedText(T___SINGLEUSE_CA5B).getText());
     textTempMotor.setWildcard(textTempMotorBuffer);
@@ -86,7 +86,7 @@ Screen2ViewBase::Screen2ViewBase()
     add(textTempMotor);
 
     textTempInverter.setPosition(136, 240, 136, 50);
-    textTempInverter.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
+    textTempInverter.setColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
     textTempInverter.setLinespacing(0);
     Unicode::snprintf(textTempInverterBuffer, TEXTTEMPINVERTER_SIZE, "%s", touchgfx::TypedText(T___SINGLEUSE_ZAT3).getText());
     textTempInverter.setWildcard(textTempInverterBuffer);
@@ -94,19 +94,19 @@ Screen2ViewBase::Screen2ViewBase()
     add(textTempInverter);
 
     textLabel6.setPosition(136, 290, 136, 24);
-    textLabel6.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
+    textLabel6.setColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
     textLabel6.setLinespacing(0);
     textLabel6.setTypedText(touchgfx::TypedText(T___SINGLEUSE_C524));
     add(textLabel6);
 
     textLabel7.setPosition(0, 364, 136, 24);
-    textLabel7.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
+    textLabel7.setColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
     textLabel7.setLinespacing(0);
     textLabel7.setTypedText(touchgfx::TypedText(T___SINGLEUSE_QPI6));
     add(textLabel7);
 
     textTempWater.setPosition(0, 314, 136, 50);
-    textTempWater.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
+    textTempWater.setColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
     textTempWater.setLinespacing(0);
     Unicode::snprintf(textTempWaterBuffer, TEXTTEMPWATER_SIZE, "%s", touchgfx::TypedText(T___SINGLEUSE_THIH).getText());
     textTempWater.setWildcard(textTempWaterBuffer);
@@ -114,7 +114,7 @@ Screen2ViewBase::Screen2ViewBase()
     add(textTempWater);
 
     textTSState.setPosition(136, 314, 136, 50);
-    textTSState.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
+    textTSState.setColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
     textTSState.setLinespacing(0);
     Unicode::snprintf(textTSStateBuffer, TEXTTSSTATE_SIZE, "%s", touchgfx::TypedText(T___SINGLEUSE_IULO).getText());
     textTSState.setWildcard(textTSStateBuffer);
@@ -122,13 +122,13 @@ Screen2ViewBase::Screen2ViewBase()
     add(textTSState);
 
     textLabel8.setPosition(136, 364, 136, 24);
-    textLabel8.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
+    textLabel8.setColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
     textLabel8.setLinespacing(0);
     textLabel8.setTypedText(touchgfx::TypedText(T___SINGLEUSE_BH3A));
     add(textLabel8);
 
     textErrorTS.setPosition(0, 0, 272, 92);
-    textErrorTS.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
+    textErrorTS.setColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
     textErrorTS.setLinespacing(0);
     Unicode::snprintf(textErrorTSBuffer, TEXTERRORTS_SIZE, "%s", touchgfx::TypedText(T___SINGLEUSE_HNTX).getText());
     textErrorTS.setWildcard(textErrorTSBuffer);
@@ -136,7 +136,7 @@ Screen2ViewBase::Screen2ViewBase()
     add(textErrorTS);
 
     textErrorElse.setPosition(0, 388, 272, 92);
-    textErrorElse.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
+    textErrorElse.setColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
     textErrorElse.setLinespacing(0);
     Unicode::snprintf(textErrorElseBuffer, TEXTERRORELSE_SIZE, "%s", touchgfx::TypedText(T___SINGLEUSE_FE1T).getText());
     textErrorElse.setWildcard(textErrorElseBuffer);

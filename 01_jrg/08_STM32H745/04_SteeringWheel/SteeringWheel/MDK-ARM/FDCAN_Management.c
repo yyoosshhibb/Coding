@@ -228,6 +228,13 @@ void FDCAN_Transmit(FDCAN_HandleTypeDef* hfdcan, uint32_t CAN_ID)
 
 }
 
+void HAL_FDCAN_ErrorCallback(FDCAN_HandleTypeDef *hfdcan)
+{
+	HAL_FDCAN_Stop(hfdcan);
+	//osDelay(1);
+	HAL_FDCAN_Start(hfdcan);
+}
+
 void HAL_FDCAN_RxFifo0Callback(FDCAN_HandleTypeDef *hfdcan, uint32_t RxFifo0ITs)
 {
 	if((RxFifo0ITs & FDCAN_IT_RX_FIFO0_NEW_MESSAGE) != RESET)

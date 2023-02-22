@@ -108,5 +108,10 @@ stm32h745i_disco_cm7\screen5viewbase.o: ../CM7/Core/Inc/GUI_Communication.h
 stm32h745i_disco_cm7\screen5viewbase.o: ../CM7/Core/Inc/Timer_Management.h
 stm32h745i_disco_cm7\screen5viewbase.o: ../cm7/middlewares/st/touchgfx/framework/include/touchgfx/widgets/Box.hpp
 stm32h745i_disco_cm7\screen5viewbase.o: ../cm7/middlewares/st/touchgfx/framework/include/touchgfx/widgets/Image.hpp
+stm32h745i_disco_cm7\screen5viewbase.o: ../cm7/middlewares/st/touchgfx/framework/include/touchgfx/widgets/TextArea.hpp
+stm32h745i_disco_cm7\screen5viewbase.o: ../cm7/middlewares/st/touchgfx/framework/include/touchgfx/TypedText.hpp
+stm32h745i_disco_cm7\screen5viewbase.o: ../cm7/middlewares/st/touchgfx/framework/include/touchgfx/Texts.hpp
+stm32h745i_disco_cm7\screen5viewbase.o: ../cm7/middlewares/st/touchgfx/framework/include/touchgfx/widgets/TextAreaWithWildcard.hpp
 stm32h745i_disco_cm7\screen5viewbase.o: ../cm7/middlewares/st/touchgfx/framework/include/touchgfx/Color.hpp
 stm32h745i_disco_cm7\screen5viewbase.o: ../cm7/touchgfx/generated/images/include/images/BitmapDatabase.hpp
+stm32h745i_disco_cm7\screen5viewbase.o: ../cm7/touchgfx/generated/texts/include/texts/TextKeysAndLanguages.hpp

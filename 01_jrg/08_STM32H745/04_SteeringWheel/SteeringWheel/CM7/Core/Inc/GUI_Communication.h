@@ -38,17 +38,18 @@ typedef struct
 	float 		*TMotorMax;
 	float 		*TInvMax;
 	float 		*TWater;
-	uint8_t		*TSState;
-	uint8_t		*TS_Error;
-	uint8_t		*Error;
+	uint16_t	*TSState;
+	uint16_t	*TS_Error;
+	uint16_t	*Error;
 }HomeData_t;
 
 typedef struct
 {
-	float			*TCells[3];			//min, max, avg
-	float			*UCells[3];			//min, max, avg
+	float			*TCells[3];			//avg, max, min
+	float			*UCells[3];			//max, min, avg
 	float			*dutyFAN;
 	float			*SoC;	
+	float			*PCM_State;
 }BatteryData_t;
 
 typedef struct
@@ -59,32 +60,38 @@ typedef struct
 	float			*Ridehight[3];
 	float			*BrakePressure[2];
 	float			*BrakeBalance;
-	float			*APPS[3];	
+	float			*APPS[2];
 }SuspensionData_t;
 
 typedef struct
 {
 	float			*TVCU;
-	float			*T_Cell_avg;
+	float			*T_LV_Cells[2];
 	float			*I_LVS;
-	float			*U_LVBat_avg;
-	uint8_t		*Ethernet_State;
-	uint8_t		*LTE_State;
-	uint32_t	*CAN_State;
-	uint8_t		*Errors;
+	float			*U_LV_Cells[4];
+	float			*U_MV_Cells[12];
+	float			*T_MV_Cells[5];
+	float			*I_MV_Bat;
+	uint16_t	*Comm;
+	uint16_t	*LVS_Errors;
+	float			*maxDelta;
 }ElectricsData_t;
 
 typedef struct
 {
-}InverterData_t;
+	float			*TireTempFL[8];
+	float			*TireTempFR[8];
+	float			*TireTempRL[8];
+	float			*TireTempRR[8];
+}TireTemps_t;
 
 typedef struct
 {
+	float			*T_Motors[4];
+	float			*T_Inverters[4];
+	float			*n_Motors[4];
+	float			*Error_Inv[4];
 }PowertrainData_t;
-
-typedef struct
-{
-}ActiveAeroData_t;
 
 typedef struct
 {
@@ -93,9 +100,8 @@ typedef struct
 	BatteryData_t				Batterydata;
 	SuspensionData_t		Suspensiondata;
 	ElectricsData_t			Electricsdata;
-	InverterData_t			Inverterdata;
+	TireTemps_t					Tiretemps;
 	PowertrainData_t		Powertraindata;
-	ActiveAeroData_t		ActiveAerodata;
 }GUIMessage_t;
 
 extern GUIMessage_t				msg_send_gui;

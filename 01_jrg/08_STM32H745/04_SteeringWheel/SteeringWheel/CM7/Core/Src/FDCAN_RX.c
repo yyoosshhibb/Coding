@@ -22,12 +22,13 @@ FDCAN_RX_data_t I_MV_Bat;
 FDCAN_RX_data_t LTE_State;
 FDCAN_RX_data_t n_Motors[4];
 FDCAN_RX_data_t p_Brake[2];				//0 is F, 1 is R
+FDCAN_RX_data_t PCM_State;
 FDCAN_RX_data_t SoC_HV_Bat;
 FDCAN_RX_data_t T_HV_Cell[3];			//avg, max, min
 FDCAN_RX_data_t T_Inv[4];
-FDCAN_RX_data_t T_LV_Bat;
+FDCAN_RX_data_t T_LV_Cells[2];
 FDCAN_RX_data_t T_Motors[4];
-FDCAN_RX_data_t T_MV_Cell[3];
+FDCAN_RX_data_t T_MV_Cells[5];
 FDCAN_RX_data_t T_Tire_FL[8];
 FDCAN_RX_data_t T_Tire_FR[8];
 FDCAN_RX_data_t T_Tire_RL[8];
@@ -37,8 +38,8 @@ FDCAN_RX_data_t T_Water;
 FDCAN_RX_data_t TS_State;
 FDCAN_RX_data_t U_HV_Bat;
 FDCAN_RX_data_t U_HV_Cell[2];			//max, min
-FDCAN_RX_data_t U_LV_Bat;
-FDCAN_RX_data_t U_MV_Bat[3];			//Total, min, max
+FDCAN_RX_data_t U_LV_Cells[4];
+FDCAN_RX_data_t U_MV_Cells[12];		//Cells from 1 to 12
 FDCAN_RX_data_t x_DP[4];
 FDCAN_RX_data_t x_RH[3];
 
@@ -245,8 +246,8 @@ void FDCAN_RX_def()
 	FDCAN_Data_Rx[nbSignals] = &Error_LVS;
 	nbSignals++;
 	
-	Ethernet_State.CAN_length = RX_LENGTH8;
-	Ethernet_State.CAN_length_dec = 8;
+	Ethernet_State.CAN_length = RX_LENGTH4;
+	Ethernet_State.CAN_length_dec = 4;
 	Ethernet_State.CAN_id = 0x300;
 	Ethernet_State.CAN_startbit = 8;
 	Ethernet_State.Endianness = Motorola;
@@ -254,6 +255,17 @@ void FDCAN_RX_def()
 	Ethernet_State.Offset = 0;
 	Ethernet_State.Signed = VALUE_UNSIGNED;
 	FDCAN_Data_Rx[nbSignals] = &Ethernet_State;
+	nbSignals++;
+	
+	LTE_State.CAN_length = RX_LENGTH4;
+	LTE_State.CAN_length_dec = 4;
+	LTE_State.CAN_id = 0x300;
+	LTE_State.CAN_startbit = 12;
+	LTE_State.Endianness = Motorola;
+	LTE_State.Factor = 1;
+	LTE_State.Offset = 0;
+	LTE_State.Signed = VALUE_UNSIGNED;
+	FDCAN_Data_Rx[nbSignals] = &LTE_State;
 	nbSignals++;
 	
 	I_LV_Bat.CAN_length = RX_LENGTH8;
@@ -266,16 +278,16 @@ void FDCAN_RX_def()
 	I_LV_Bat.Signed = VALUE_UNSIGNED;
 	FDCAN_Data_Rx[nbSignals] = &I_LV_Bat;
 	nbSignals++;
-	
-	LTE_State.CAN_length = RX_LENGTH8;
-	LTE_State.CAN_length_dec = 8;
-	LTE_State.CAN_id = 0x300;
-	LTE_State.CAN_startbit = 24;
-	LTE_State.Endianness = Motorola;
-	LTE_State.Factor = 1;
-	LTE_State.Offset = 0;
-	LTE_State.Signed = VALUE_UNSIGNED;
-	FDCAN_Data_Rx[nbSignals] = &LTE_State;
+		
+	Error_CAN.CAN_length = RX_LENGTH8;
+	Error_CAN.CAN_length_dec = 8;
+	Error_CAN.CAN_id = 0x300;
+	Error_CAN.CAN_startbit = 24;
+	Error_CAN.Endianness = Motorola;
+	Error_CAN.Factor = 1;
+	Error_CAN.Offset = 0;
+	Error_CAN.Signed = VALUE_UNSIGNED;
+	FDCAN_Data_Rx[nbSignals] = &Error_CAN;
 	nbSignals++;
 	
 	T_VCU.CAN_length = RX_LENGTH8;
@@ -288,69 +300,99 @@ void FDCAN_RX_def()
 	T_VCU.Signed = VALUE_UNSIGNED;
 	FDCAN_Data_Rx[nbSignals] = &T_VCU;
 	nbSignals++;
+//	
+//	U_LV_Bat.CAN_length = RX_LENGTH8;
+//	U_LV_Bat.CAN_length_dec = 8;
+//	U_LV_Bat.CAN_id = 0x300;
+//	U_LV_Bat.CAN_startbit = 40;
+//	U_LV_Bat.Endianness = Motorola;
+//	U_LV_Bat.Factor = 0.1;
+//	U_LV_Bat.Offset = 0;
+//	U_LV_Bat.Signed = VALUE_UNSIGNED;
+//	FDCAN_Data_Rx[nbSignals] = &U_LV_Bat;
+//	nbSignals++;
 	
-	U_LV_Bat.CAN_length = RX_LENGTH8;
-	U_LV_Bat.CAN_length_dec = 8;
-	U_LV_Bat.CAN_id = 0x300;
-	U_LV_Bat.CAN_startbit = 40;
-	U_LV_Bat.Endianness = Motorola;
-	U_LV_Bat.Factor = 0.1;
-	U_LV_Bat.Offset = 0;
-	U_LV_Bat.Signed = VALUE_UNSIGNED;
-	FDCAN_Data_Rx[nbSignals] = &U_LV_Bat;
-	nbSignals++;
+	for(i=0; i<2; i++)
+	{
+		T_LV_Cells[i].CAN_length = RX_LENGTH8;
+		T_LV_Cells[i].CAN_length_dec = 8;
+		T_LV_Cells[i].CAN_id = 0x300;
+		T_LV_Cells[i].CAN_startbit = 40+8*i;
+		T_LV_Cells[i].Endianness = Motorola;
+		T_LV_Cells[i].Factor = 0.25;
+		T_LV_Cells[i].Offset = 0;
+		T_LV_Cells[i].Signed = VALUE_UNSIGNED;
+		FDCAN_Data_Rx[nbSignals] = &T_LV_Cells[i];
+		nbSignals++;
+	}
 	
-	Error_CAN.CAN_length = RX_LENGTH8;
-	Error_CAN.CAN_length_dec = 8;
-	Error_CAN.CAN_id = 0x300;
-	Error_CAN.CAN_startbit = 48;
-	Error_CAN.Endianness = Motorola;
-	Error_CAN.Factor = 1;
-	Error_CAN.Offset = 0;
-	Error_CAN.Signed = VALUE_UNSIGNED;
-	FDCAN_Data_Rx[nbSignals] = &Error_CAN;
-	nbSignals++;
+	for(i=0; i<4; i++)
+	{
+		U_LV_Cells[i].CAN_length = RX_LENGTH8;
+		U_LV_Cells[i].CAN_length_dec = 8;
+		U_LV_Cells[i].CAN_id = 0x310;
+		U_LV_Cells[i].CAN_startbit = 8*i;
+		U_LV_Cells[i].Endianness = Motorola;
+		U_LV_Cells[i].Factor = 0.25;
+		U_LV_Cells[i].Offset = 0;
+		U_LV_Cells[i].Signed = VALUE_UNSIGNED;
+		FDCAN_Data_Rx[nbSignals] = &U_LV_Cells[i];
+		nbSignals++;
+	}
+	
+	for(i=0; i<4; i++)
+	{
+		U_MV_Cells[i].CAN_length = RX_LENGTH8;
+		U_MV_Cells[i].CAN_length_dec = 8;
+		U_MV_Cells[i].CAN_id = 0x310;
+		U_MV_Cells[i].CAN_startbit = 40+8*i;
+		U_MV_Cells[i].Endianness = Motorola;
+		U_MV_Cells[i].Factor = 0.25;
+		U_MV_Cells[i].Offset = 0;
+		U_MV_Cells[i].Signed = VALUE_UNSIGNED;
+		FDCAN_Data_Rx[nbSignals] = &U_MV_Cells[i];
+		nbSignals++;
+	}
+	
+	for(i=0; i<8; i++)
+	{
+		U_MV_Cells[i+4].CAN_length = RX_LENGTH8;
+		U_MV_Cells[i+4].CAN_length_dec = 8;
+		U_MV_Cells[i+4].CAN_id = 0x320;
+		U_MV_Cells[i+4].CAN_startbit = 8*i;
+		U_MV_Cells[i+4].Endianness = Motorola;
+		U_MV_Cells[i+4].Factor = 0.25;
+		U_MV_Cells[i+4].Offset = 0;
+		U_MV_Cells[i+4].Signed = VALUE_UNSIGNED;
+		FDCAN_Data_Rx[nbSignals] = &U_MV_Cells[i+4];
+		nbSignals++;
+	}
+	
+	for(i=0; i<4; i++)
+	{
+		T_MV_Cells[i+4].CAN_length = RX_LENGTH8;
+		T_MV_Cells[i+4].CAN_length_dec = 8;
+		T_MV_Cells[i+4].CAN_id = 0x330;
+		T_MV_Cells[i+4].CAN_startbit = 8*i;
+		T_MV_Cells[i+4].Endianness = Motorola;
+		T_MV_Cells[i+4].Factor = 0.25;
+		T_MV_Cells[i+4].Offset = 0;
+		T_MV_Cells[i+4].Signed = VALUE_UNSIGNED;
+		FDCAN_Data_Rx[nbSignals] = &T_MV_Cells[i];
+		nbSignals++;
+	}
+	
 	
 	I_MV_Bat.CAN_length = RX_LENGTH16;
 	I_MV_Bat.CAN_length_dec = 16;
-	I_MV_Bat.CAN_id = 0x400;
-	I_MV_Bat.CAN_startbit = 0;
+	I_MV_Bat.CAN_id = 0x330;
+	I_MV_Bat.CAN_startbit = 40;
 	I_MV_Bat.Endianness = Motorola;
 	I_MV_Bat.Factor = 0.01;
 	I_MV_Bat.Offset = 0;
 	I_MV_Bat.Signed = VALUE_UNSIGNED;
 	FDCAN_Data_Rx[nbSignals] = &I_MV_Bat;
 	nbSignals++;
-	
-	for(i=0; i<3; i++)
-	{
-		T_MV_Cell[i].CAN_length = RX_LENGTH8;
-		T_MV_Cell[i].CAN_length_dec = 8;
-		T_MV_Cell[i].CAN_id = 0x400;
-		T_MV_Cell[i].CAN_startbit = 16+8*i;
-		T_MV_Cell[i].Endianness = Motorola;
-		T_MV_Cell[i].Factor = 0.25;
-		T_MV_Cell[i].Offset = 0;
-		T_MV_Cell[i].Signed = VALUE_UNSIGNED;
-		FDCAN_Data_Rx[nbSignals] = &T_MV_Cell[i];
-		nbSignals++;
-	}
-	
-	for(i=0; i<3; i++)
-	{
-		U_MV_Bat[i].CAN_length = RX_LENGTH8;
-		U_MV_Bat[i].CAN_length_dec = 8;
-		U_MV_Bat[i].CAN_id = 0x400;
-		U_MV_Bat[i].CAN_startbit = 40+8*i;
-		U_MV_Bat[i].Endianness = Motorola;
-		U_MV_Bat[i].Factor = 0.02;
-		U_MV_Bat[i].Offset = 0;
-		U_MV_Bat[i].Signed = VALUE_UNSIGNED;
-		FDCAN_Data_Rx[nbSignals] = &U_MV_Bat[i];
-		nbSignals++;
-	}
-	
-	U_MV_Bat[0].Factor = 0.25;
 	
 	d_FAN_HV_Bat.CAN_length = RX_LENGTH8;
 	d_FAN_HV_Bat.CAN_length_dec = 8;
@@ -399,26 +441,26 @@ void FDCAN_RX_def()
 	FDCAN_Data_Rx[nbSignals] = &T_Water;
 	nbSignals++;
 	
-	T_LV_Bat.CAN_length = RX_LENGTH8;
-	T_LV_Bat.CAN_length_dec = 8;
-	T_LV_Bat.CAN_id = 0x500;
-	T_LV_Bat.CAN_startbit = 40;
-	T_LV_Bat.Endianness = Motorola;
-	T_LV_Bat.Factor = 0.25;
-	T_LV_Bat.Offset = 0;
-	T_LV_Bat.Signed = VALUE_UNSIGNED;
-	FDCAN_Data_Rx[nbSignals] = &T_LV_Bat;
-	nbSignals++;
-	
 	TS_State.CAN_length = RX_LENGTH8;
 	TS_State.CAN_length_dec = 8;
 	TS_State.CAN_id = 0x500;
-	TS_State.CAN_startbit = 48;
+	TS_State.CAN_startbit = 40;
 	TS_State.Endianness = Motorola;
 	TS_State.Factor = 1;
 	TS_State.Offset = 0;
 	TS_State.Signed = VALUE_UNSIGNED;
 	FDCAN_Data_Rx[nbSignals] = &TS_State;
+	nbSignals++;
+	
+	PCM_State.CAN_length = RX_LENGTH8;
+	PCM_State.CAN_length_dec = 8;
+	PCM_State.CAN_id = 0x500;
+	PCM_State.CAN_startbit = 48;
+	PCM_State.Endianness = Motorola;
+	PCM_State.Factor = 0.392156862745098;
+	PCM_State.Offset = 0;
+	PCM_State.Signed = VALUE_UNSIGNED;
+	FDCAN_Data_Rx[nbSignals] = &PCM_State;
 	nbSignals++;
 	
 	for(i=0; i<4; i++)

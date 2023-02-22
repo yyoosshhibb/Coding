@@ -9,6 +9,8 @@
 #include <gui/screen5_screen/Screen5Presenter.hpp>
 #include <touchgfx/widgets/Box.hpp>
 #include <touchgfx/widgets/Image.hpp>
+#include <touchgfx/widgets/TextArea.hpp>
+#include <touchgfx/widgets/TextAreaWithWildcard.hpp>
 
 class Screen5ViewBase : public touchgfx::View<Screen5Presenter>
 {
@@ -29,6 +31,110 @@ protected:
     touchgfx::Box __background;
     touchgfx::Box box1;
     touchgfx::Image image1;
+    touchgfx::TextArea textArea1;
+    touchgfx::TextAreaWithOneWildcard textTTireFL1;
+    touchgfx::TextAreaWithOneWildcard textTTireFL2;
+    touchgfx::TextAreaWithOneWildcard textTTireFL4;
+    touchgfx::TextAreaWithOneWildcard textTTireFL3;
+    touchgfx::TextAreaWithOneWildcard textTTireFL7;
+    touchgfx::TextAreaWithOneWildcard textTTireFL8;
+    touchgfx::TextAreaWithOneWildcard textTTireFL6;
+    touchgfx::TextAreaWithOneWildcard textTTireFL5;
+    touchgfx::TextAreaWithOneWildcard textTTireFR5;
+    touchgfx::TextAreaWithOneWildcard textTTireFR6;
+    touchgfx::TextAreaWithOneWildcard textTTireFR8;
+    touchgfx::TextAreaWithOneWildcard textTTireFR7;
+    touchgfx::TextAreaWithOneWildcard textTTireFR3;
+    touchgfx::TextAreaWithOneWildcard textTTireFR4;
+    touchgfx::TextAreaWithOneWildcard textTTireFR2;
+    touchgfx::TextAreaWithOneWildcard textTTireFR1;
+    touchgfx::TextArea textArea1_1;
+    touchgfx::TextArea textArea1_1_1;
+    touchgfx::TextAreaWithOneWildcard textTTireRR1;
+    touchgfx::TextAreaWithOneWildcard textTTireRR2;
+    touchgfx::TextAreaWithOneWildcard textTTireRR4;
+    touchgfx::TextAreaWithOneWildcard textTTireRR3;
+    touchgfx::TextAreaWithOneWildcard textTTireRR7;
+    touchgfx::TextAreaWithOneWildcard textTTireRR8;
+    touchgfx::TextAreaWithOneWildcard textTTireRR6;
+    touchgfx::TextAreaWithOneWildcard textTTireRR5;
+    touchgfx::TextAreaWithOneWildcard textTTireRL5;
+    touchgfx::TextAreaWithOneWildcard textTTireRL6;
+    touchgfx::TextAreaWithOneWildcard textTTireRL8;
+    touchgfx::TextAreaWithOneWildcard textTTireRL7;
+    touchgfx::TextAreaWithOneWildcard textTTireRL3;
+    touchgfx::TextAreaWithOneWildcard textTTireRL4;
+    touchgfx::TextAreaWithOneWildcard textTTireRL2;
+    touchgfx::TextAreaWithOneWildcard textTTireRL1;
+    touchgfx::TextArea textArea1_2;
+
+    /*
+     * Wildcard Buffers
+     */
+    static const uint16_t TEXTTTIREFL1_SIZE = 10;
+    touchgfx::Unicode::UnicodeChar textTTireFL1Buffer[TEXTTTIREFL1_SIZE];
+    static const uint16_t TEXTTTIREFL2_SIZE = 10;
+    touchgfx::Unicode::UnicodeChar textTTireFL2Buffer[TEXTTTIREFL2_SIZE];
+    static const uint16_t TEXTTTIREFL4_SIZE = 10;
+    touchgfx::Unicode::UnicodeChar textTTireFL4Buffer[TEXTTTIREFL4_SIZE];
+    static const uint16_t TEXTTTIREFL3_SIZE = 10;
+    touchgfx::Unicode::UnicodeChar textTTireFL3Buffer[TEXTTTIREFL3_SIZE];
+    static const uint16_t TEXTTTIREFL7_SIZE = 10;
+    touchgfx::Unicode::UnicodeChar textTTireFL7Buffer[TEXTTTIREFL7_SIZE];
+    static const uint16_t TEXTTTIREFL8_SIZE = 10;
+    touchgfx::Unicode::UnicodeChar textTTireFL8Buffer[TEXTTTIREFL8_SIZE];
+    static const uint16_t TEXTTTIREFL6_SIZE = 10;
+    touchgfx::Unicode::UnicodeChar textTTireFL6Buffer[TEXTTTIREFL6_SIZE];
+    static const uint16_t TEXTTTIREFL5_SIZE = 10;
+    touchgfx::Unicode::UnicodeChar textTTireFL5Buffer[TEXTTTIREFL5_SIZE];
+    static const uint16_t TEXTTTIREFR5_SIZE = 10;
+    touchgfx::Unicode::UnicodeChar textTTireFR5Buffer[TEXTTTIREFR5_SIZE];
+    static const uint16_t TEXTTTIREFR6_SIZE = 10;
+    touchgfx::Unicode::UnicodeChar textTTireFR6Buffer[TEXTTTIREFR6_SIZE];
+    static const uint16_t TEXTTTIREFR8_SIZE = 10;
+    touchgfx::Unicode::UnicodeChar textTTireFR8Buffer[TEXTTTIREFR8_SIZE];
+    static const uint16_t TEXTTTIREFR7_SIZE = 10;
+    touchgfx::Unicode::UnicodeChar textTTireFR7Buffer[TEXTTTIREFR7_SIZE];
+    static const uint16_t TEXTTTIREFR3_SIZE = 10;
+    touchgfx::Unicode::UnicodeChar textTTireFR3Buffer[TEXTTTIREFR3_SIZE];
+    static const uint16_t TEXTTTIREFR4_SIZE = 10;
+    touchgfx::Unicode::UnicodeChar textTTireFR4Buffer[TEXTTTIREFR4_SIZE];
+    static const uint16_t TEXTTTIREFR2_SIZE = 10;
+    touchgfx::Unicode::UnicodeChar textTTireFR2Buffer[TEXTTTIREFR2_SIZE];
+    static const uint16_t TEXTTTIREFR1_SIZE = 10;
+    touchgfx::Unicode::UnicodeChar textTTireFR1Buffer[TEXTTTIREFR1_SIZE];
+    static const uint16_t TEXTTTIRERR1_SIZE = 10;
+    touchgfx::Unicode::UnicodeChar textTTireRR1Buffer[TEXTTTIRERR1_SIZE];
+    static const uint16_t TEXTTTIRERR2_SIZE = 10;
+    touchgfx::Unicode::UnicodeChar textTTireRR2Buffer[TEXTTTIRERR2_SIZE];
+    static const uint16_t TEXTTTIRERR4_SIZE = 10;
+    touchgfx::Unicode::UnicodeChar textTTireRR4Buffer[TEXTTTIRERR4_SIZE];
+    static const uint16_t TEXTTTIRERR3_SIZE = 10;
+    touchgfx::Unicode::UnicodeChar textTTireRR3Buffer[TEXTTTIRERR3_SIZE];
+    static const uint16_t TEXTTTIRERR7_SIZE = 10;
+    touchgfx::Unicode::UnicodeChar textTTireRR7Buffer[TEXTTTIRERR7_SIZE];
+    static const uint16_t TEXTTTIRERR8_SIZE = 10;
+    touchgfx::Unicode::UnicodeChar textTTireRR8Buffer[TEXTTTIRERR8_SIZE];
+    static const uint16_t TEXTTTIRERR6_SIZE = 10;
+    touchgfx::Unicode::UnicodeChar textTTireRR6Buffer[TEXTTTIRERR6_SIZE];
+    static const uint16_t TEXTTTIRERR5_SIZE = 10;
+    touchgfx::Unicode::UnicodeChar textTTireRR5Buffer[TEXTTTIRERR5_SIZE];
+    static const uint16_t TEXTTTIRERL5_SIZE = 10;
+    touchgfx::Unicode::UnicodeChar textTTireRL5Buffer[TEXTTTIRERL5_SIZE];
+    static const uint16_t TEXTTTIRERL6_SIZE = 10;
+    touchgfx::Unicode::UnicodeChar textTTireRL6Buffer[TEXTTTIRERL6_SIZE];
+    static const uint16_t TEXTTTIRERL8_SIZE = 10;
+    touchgfx::Unicode::UnicodeChar textTTireRL8Buffer[TEXTTTIRERL8_SIZE];
+    static const uint16_t TEXTTTIRERL7_SIZE = 10;
+    touchgfx::Unicode::UnicodeChar textTTireRL7Buffer[TEXTTTIRERL7_SIZE];
+    static const uint16_t TEXTTTIRERL3_SIZE = 10;
+    touchgfx::Unicode::UnicodeChar textTTireRL3Buffer[TEXTTTIRERL3_SIZE];
+    static const uint16_t TEXTTTIRERL4_SIZE = 10;
+    touchgfx::Unicode::UnicodeChar textTTireRL4Buffer[TEXTTTIRERL4_SIZE];
+    static const uint16_t TEXTTTIRERL2_SIZE = 10;
+    touchgfx::Unicode::UnicodeChar textTTireRL2Buffer[TEXTTTIRERL2_SIZE];
+    static const uint16_t TEXTTTIRERL1_SIZE = 10;
+    touchgfx::Unicode::UnicodeChar textTTireRL1Buffer[TEXTTTIRERL1_SIZE];
 
 private:
 

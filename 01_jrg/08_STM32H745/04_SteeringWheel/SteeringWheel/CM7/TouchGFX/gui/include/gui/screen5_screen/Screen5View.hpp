@@ -12,7 +12,7 @@ public:
     virtual void setupScreen();
     virtual void tearDownScreen();
 		virtual void nextpage(uint8_t page);
-		virtual void updatevalues(InverterData_t *data);
+		virtual void updatevalues(TireTemps_t *Data);
 protected:
 };
 

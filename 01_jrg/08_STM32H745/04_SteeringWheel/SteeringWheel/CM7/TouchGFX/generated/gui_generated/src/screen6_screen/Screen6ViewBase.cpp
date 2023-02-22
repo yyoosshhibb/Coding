@@ -4,6 +4,7 @@
 #include <gui_generated/screen6_screen/Screen6ViewBase.hpp>
 #include <touchgfx/Color.hpp>
 #include <images/BitmapDatabase.hpp>
+#include <texts/TextKeysAndLanguages.hpp>
 
 Screen6ViewBase::Screen6ViewBase()
 {
@@ -18,6 +19,158 @@ Screen6ViewBase::Screen6ViewBase()
     image1.setXY(16, 5);
     image1.setBitmap(touchgfx::Bitmap(BITMAP_JOANNEUM_RACING_POWERTRAIN_ID));
     add(image1);
+
+    textTMotor3.setPosition(106, 105, 80, 25);
+    textTMotor3.setColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
+    textTMotor3.setLinespacing(0);
+    Unicode::snprintf(textTMotor3Buffer, TEXTTMOTOR3_SIZE, "%s", touchgfx::TypedText(T___SINGLEUSE_HKUT).getText());
+    textTMotor3.setWildcard(textTMotor3Buffer);
+    textTMotor3.setTypedText(touchgfx::TypedText(T___SINGLEUSE_P7T4));
+    add(textTMotor3);
+
+    textTMotor4.setPosition(186, 105, 80, 25);
+    textTMotor4.setColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
+    textTMotor4.setLinespacing(0);
+    Unicode::snprintf(textTMotor4Buffer, TEXTTMOTOR4_SIZE, "%s", touchgfx::TypedText(T___SINGLEUSE_FUUD).getText());
+    textTMotor4.setWildcard(textTMotor4Buffer);
+    textTMotor4.setTypedText(touchgfx::TypedText(T___SINGLEUSE_DJFH));
+    add(textTMotor4);
+
+    textTMotor2.setPosition(186, 80, 80, 25);
+    textTMotor2.setColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
+    textTMotor2.setLinespacing(0);
+    Unicode::snprintf(textTMotor2Buffer, TEXTTMOTOR2_SIZE, "%s", touchgfx::TypedText(T___SINGLEUSE_LYTB).getText());
+    textTMotor2.setWildcard(textTMotor2Buffer);
+    textTMotor2.setTypedText(touchgfx::TypedText(T___SINGLEUSE_CZY5));
+    add(textTMotor2);
+
+    textTMotor1.setPosition(106, 80, 80, 25);
+    textTMotor1.setColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
+    textTMotor1.setLinespacing(0);
+    Unicode::snprintf(textTMotor1Buffer, TEXTTMOTOR1_SIZE, "%s", touchgfx::TypedText(T___SINGLEUSE_4WSM).getText());
+    textTMotor1.setWildcard(textTMotor1Buffer);
+    textTMotor1.setTypedText(touchgfx::TypedText(T___SINGLEUSE_SZZK));
+    add(textTMotor1);
+
+    textLabel1.setPosition(6, 93, 100, 37);
+    textLabel1.setColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
+    textLabel1.setLinespacing(0);
+    textLabel1.setTypedText(touchgfx::TypedText(T___SINGLEUSE_IV61));
+    add(textLabel1);
+
+    textLabel3.setPosition(6, 193, 100, 37);
+    textLabel3.setColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
+    textLabel3.setLinespacing(0);
+    textLabel3.setTypedText(touchgfx::TypedText(T___SINGLEUSE_B8GY));
+    add(textLabel3);
+
+    textTInv1.setPosition(106, 180, 80, 25);
+    textTInv1.setColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
+    textTInv1.setLinespacing(0);
+    Unicode::snprintf(textTInv1Buffer, TEXTTINV1_SIZE, "%s", touchgfx::TypedText(T___SINGLEUSE_2HAN).getText());
+    textTInv1.setWildcard(textTInv1Buffer);
+    textTInv1.setTypedText(touchgfx::TypedText(T___SINGLEUSE_KQBZ));
+    add(textTInv1);
+
+    textTInv2.setPosition(186, 180, 80, 25);
+    textTInv2.setColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
+    textTInv2.setLinespacing(0);
+    Unicode::snprintf(textTInv2Buffer, TEXTTINV2_SIZE, "%s", touchgfx::TypedText(T___SINGLEUSE_HQKY).getText());
+    textTInv2.setWildcard(textTInv2Buffer);
+    textTInv2.setTypedText(touchgfx::TypedText(T___SINGLEUSE_DGUN));
+    add(textTInv2);
+
+    textTInv4.setPosition(186, 205, 80, 25);
+    textTInv4.setColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
+    textTInv4.setLinespacing(0);
+    Unicode::snprintf(textTInv4Buffer, TEXTTINV4_SIZE, "%s", touchgfx::TypedText(T___SINGLEUSE_E4U0).getText());
+    textTInv4.setWildcard(textTInv4Buffer);
+    textTInv4.setTypedText(touchgfx::TypedText(T___SINGLEUSE_Q8QJ));
+    add(textTInv4);
+
+    textTInv3.setPosition(106, 205, 80, 25);
+    textTInv3.setColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
+    textTInv3.setLinespacing(0);
+    Unicode::snprintf(textTInv3Buffer, TEXTTINV3_SIZE, "%s", touchgfx::TypedText(T___SINGLEUSE_6KHL).getText());
+    textTInv3.setWildcard(textTInv3Buffer);
+    textTInv3.setTypedText(touchgfx::TypedText(T___SINGLEUSE_KN6H));
+    add(textTInv3);
+
+    textLabel2.setPosition(6, 143, 100, 37);
+    textLabel2.setColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
+    textLabel2.setLinespacing(0);
+    textLabel2.setTypedText(touchgfx::TypedText(T___SINGLEUSE_A68J));
+    add(textLabel2);
+
+    textnMotor1.setPosition(106, 130, 80, 25);
+    textnMotor1.setColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
+    textnMotor1.setLinespacing(0);
+    Unicode::snprintf(textnMotor1Buffer, TEXTNMOTOR1_SIZE, "%s", touchgfx::TypedText(T___SINGLEUSE_TMDP).getText());
+    textnMotor1.setWildcard(textnMotor1Buffer);
+    textnMotor1.setTypedText(touchgfx::TypedText(T___SINGLEUSE_B5RP));
+    add(textnMotor1);
+
+    textnMotor2.setPosition(186, 130, 80, 25);
+    textnMotor2.setColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
+    textnMotor2.setLinespacing(0);
+    Unicode::snprintf(textnMotor2Buffer, TEXTNMOTOR2_SIZE, "%s", touchgfx::TypedText(T___SINGLEUSE_BVG1).getText());
+    textnMotor2.setWildcard(textnMotor2Buffer);
+    textnMotor2.setTypedText(touchgfx::TypedText(T___SINGLEUSE_77JK));
+    add(textnMotor2);
+
+    textnMotor4.setPosition(186, 155, 80, 25);
+    textnMotor4.setColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
+    textnMotor4.setLinespacing(0);
+    Unicode::snprintf(textnMotor4Buffer, TEXTNMOTOR4_SIZE, "%s", touchgfx::TypedText(T___SINGLEUSE_LMHI).getText());
+    textnMotor4.setWildcard(textnMotor4Buffer);
+    textnMotor4.setTypedText(touchgfx::TypedText(T___SINGLEUSE_XCTS));
+    add(textnMotor4);
+
+    textnMotor3.setPosition(106, 155, 80, 25);
+    textnMotor3.setColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
+    textnMotor3.setLinespacing(0);
+    Unicode::snprintf(textnMotor3Buffer, TEXTNMOTOR3_SIZE, "%s", touchgfx::TypedText(T___SINGLEUSE_7Y7W).getText());
+    textnMotor3.setWildcard(textnMotor3Buffer);
+    textnMotor3.setTypedText(touchgfx::TypedText(T___SINGLEUSE_5R88));
+    add(textnMotor3);
+
+    textEInv.setPosition(106, 255, 80, 25);
+    textEInv.setColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
+    textEInv.setLinespacing(0);
+    Unicode::snprintf(textEInvBuffer, TEXTEINV_SIZE, "%s", touchgfx::TypedText(T___SINGLEUSE_F7MZ).getText());
+    textEInv.setWildcard(textEInvBuffer);
+    textEInv.setTypedText(touchgfx::TypedText(T___SINGLEUSE_9QQ9));
+    add(textEInv);
+
+    textEInv4.setPosition(186, 255, 80, 25);
+    textEInv4.setColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
+    textEInv4.setLinespacing(0);
+    Unicode::snprintf(textEInv4Buffer, TEXTEINV4_SIZE, "%s", touchgfx::TypedText(T___SINGLEUSE_M177).getText());
+    textEInv4.setWildcard(textEInv4Buffer);
+    textEInv4.setTypedText(touchgfx::TypedText(T___SINGLEUSE_ZLMI));
+    add(textEInv4);
+
+    textEInv2.setPosition(186, 230, 80, 25);
+    textEInv2.setColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
+    textEInv2.setLinespacing(0);
+    Unicode::snprintf(textEInv2Buffer, TEXTEINV2_SIZE, "%s", touchgfx::TypedText(T___SINGLEUSE_LJEN).getText());
+    textEInv2.setWildcard(textEInv2Buffer);
+    textEInv2.setTypedText(touchgfx::TypedText(T___SINGLEUSE_PV4L));
+    add(textEInv2);
+
+    textEInv1.setPosition(106, 230, 80, 25);
+    textEInv1.setColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
+    textEInv1.setLinespacing(0);
+    Unicode::snprintf(textEInv1Buffer, TEXTEINV1_SIZE, "%s", touchgfx::TypedText(T___SINGLEUSE_4VQW).getText());
+    textEInv1.setWildcard(textEInv1Buffer);
+    textEInv1.setTypedText(touchgfx::TypedText(T___SINGLEUSE_A64U));
+    add(textEInv1);
+
+    textLabel3_1.setPosition(6, 243, 100, 37);
+    textLabel3_1.setColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
+    textLabel3_1.setLinespacing(0);
+    textLabel3_1.setTypedText(touchgfx::TypedText(T___SINGLEUSE_KWW0));
+    add(textLabel3_1);
 }
 
 Screen6ViewBase::~Screen6ViewBase()

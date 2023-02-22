@@ -33,19 +33,17 @@ protected:
     touchgfx::Image image1;
     touchgfx::TextAreaWithOneWildcard textTCellmin;
     touchgfx::TextArea textLabel1;
-    touchgfx::TextArea textLabel2;
     touchgfx::TextAreaWithOneWildcard textTCellmax;
     touchgfx::TextAreaWithOneWildcard textDutyFan;
     touchgfx::TextArea textLabel4;
-    touchgfx::TextArea textLabel3;
     touchgfx::TextAreaWithOneWildcard textTCellavg;
     touchgfx::TextAreaWithOneWildcard textUCellmin;
     touchgfx::TextArea textLabel5;
-    touchgfx::TextArea textLabel6;
     touchgfx::TextAreaWithOneWildcard textUCellmax;
     touchgfx::TextAreaWithOneWildcard textSoC;
+    touchgfx::TextAreaWithOneWildcard textPCM;
     touchgfx::TextArea textLabel8;
-    touchgfx::TextArea textLabel7;
+    touchgfx::TextArea textLabel9;
     touchgfx::TextAreaWithOneWildcard textUCellavg;
     touchgfx::TextArea textArea1;
 
@@ -66,6 +64,8 @@ protected:
     touchgfx::Unicode::UnicodeChar textUCellmaxBuffer[TEXTUCELLMAX_SIZE];
     static const uint16_t TEXTSOC_SIZE = 10;
     touchgfx::Unicode::UnicodeChar textSoCBuffer[TEXTSOC_SIZE];
+    static const uint16_t TEXTPCM_SIZE = 10;
+    touchgfx::Unicode::UnicodeChar textPCMBuffer[TEXTPCM_SIZE];
     static const uint16_t TEXTUCELLAVG_SIZE = 10;
     touchgfx::Unicode::UnicodeChar textUCellavgBuffer[TEXTUCELLAVG_SIZE];
 
