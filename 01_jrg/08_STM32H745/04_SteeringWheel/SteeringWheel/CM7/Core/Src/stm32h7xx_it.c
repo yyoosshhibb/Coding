@@ -33,7 +33,6 @@
 
 /* Private define ------------------------------------------------------------*/
 /* USER CODE BEGIN PD */
-#define FLAG_NEXT_PAGE	0x10
 
 /* USER CODE END PD */
 
@@ -113,6 +112,7 @@ void MemManage_Handler(void)
   while (1)
   {
     /* USER CODE BEGIN W1_MemoryManagement_IRQn 0 */
+		
     /* USER CODE END W1_MemoryManagement_IRQn 0 */
   }
 }
@@ -257,7 +257,8 @@ void HAL_GPIO_EXTI_Callback(uint16_t GPIO_PIN)
 	if(GPIO_PIN == USER_BTN_Pin)
 	{
 		msg_send_gui.pageno++;
-		osDelay(10);
+		osThreadFlagsSet(id_task_write_flash, FLAG_WRITE_MEM);
+		//osDelay(10);
 	}
 }
 

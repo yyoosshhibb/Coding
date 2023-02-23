@@ -41,6 +41,7 @@
 /* Private macro -------------------------------------------------------------*/
 /* USER CODE BEGIN PM */
 
+
 /* USER CODE END PM */
 
 /* Private variables ---------------------------------------------------------*/
@@ -106,6 +107,10 @@ int main(void)
 
   HAL_Init();
   SystemClock_Config();
+	
+	HAL_NVIC_SetPriorityGrouping(NVIC_PRIORITYGROUP_4);
+	
+	
   MX_GPIO_Init();
   MX_QUADSPI_Init();
   MX_FMC_Init();
@@ -137,6 +142,9 @@ int main(void)
 	
 	id_task_timer = osThreadNew(Task_Timer, NULL, NULL);
 	osThreadSetPriority(id_task_timer, osPriorityAboveNormal);
+	
+	id_task_write_flash = osThreadNew(task_write_flash, NULL, NULL);
+	osThreadSetPriority(id_task_write_flash, osPriorityHigh);
 
   osKernelStart();
 
@@ -555,7 +563,7 @@ static void MX_GPIO_Init(void)
   HAL_GPIO_Init(GPIOJ, &GPIO_InitStruct);
 
   /* EXTI interrupt init*/
-  HAL_NVIC_SetPriority(EXTI15_10_IRQn, 5, 0);
+  HAL_NVIC_SetPriority(EXTI15_10_IRQn, 10, 0);
   HAL_NVIC_EnableIRQ(EXTI15_10_IRQn);
 
 }

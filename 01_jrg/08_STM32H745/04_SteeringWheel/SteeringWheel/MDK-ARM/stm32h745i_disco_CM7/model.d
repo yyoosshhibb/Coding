@@ -58,8 +58,11 @@ stm32h745i_disco_cm7\model.o: ../Middlewares/Third_Party/FreeRTOS/Source/include
 stm32h745i_disco_cm7\model.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/list.h
 stm32h745i_disco_cm7\model.o: ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2/cmsis_os2.h
 stm32h745i_disco_cm7\model.o: ../CM7/TouchGFX/App/app_touchgfx.h
+stm32h745i_disco_cm7\model.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\string.h
+stm32h745i_disco_cm7\model.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdio.h
 stm32h745i_disco_cm7\model.o: ../CM7/Core/Inc/main_user.h
 stm32h745i_disco_cm7\model.o: ../CM7/Core/Inc/fdcan_conf.h
 stm32h745i_disco_cm7\model.o: ../CM7/Core/Inc/HW_Def.h
 stm32h745i_disco_cm7\model.o: ../CM7/Core/Inc/GUI_Communication.h
 stm32h745i_disco_cm7\model.o: ../CM7/Core/Inc/Timer_Management.h
+stm32h745i_disco_cm7\model.o: ../CM7/Core/Inc/memory_management.h

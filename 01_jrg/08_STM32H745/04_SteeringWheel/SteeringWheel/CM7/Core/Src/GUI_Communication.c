@@ -13,6 +13,8 @@ void SendToGUI()
 	int i;
 	
 	msg_send_gui.pageno = 0;
+	
+	flash_read_boot();
 
 	msg_send_gui.Homedata.VoltageHV = &U_HV_Bat.Value;
 	msg_send_gui.Homedata.TempHV = &T_HV_Cell[1].Value;
