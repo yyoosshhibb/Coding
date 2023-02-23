@@ -1701,3 +1701,327 @@ Command-line arguments:  -os win32 -ws win32 -arch x86_64 D:\Dokumente\GitHub\So
 
 !ENTRY org.eclipse.cdt.core 1 0 2023-02-19 11:53:56.684
 !MESSAGE Indexed 'FreeRTOSTest_CM7' (42 sources, 121 headers) in 3,12 sec: 13.371 declarations; 97.094 references; 0 unresolved inclusions; 1 syntax errors; 7 unresolved names (0,0063 %)
+!SESSION 2023-02-23 11:16:48.328 -----------------------------------------------
+eclipse.buildId=Version 1.11.2
+java.version=11.0.16
+java.vendor=Eclipse Adoptium
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=de_DE
+Framework arguments:  D:\Dokumente\GitHub\Software\bldc-master\bldc-master\.project
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 D:\Dokumente\GitHub\Software\bldc-master\bldc-master\.project
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 4 4 2023-02-23 11:16:57.413
+!MESSAGE CubeMX plugin appears to be active, Log4j initialization might be too late.
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 1 1 2023-02-23 11:16:57.584
+!MESSAGE Log4j initialized with config file D:\Dokumente\GitHub\Software\01_jrg\08_STM32H745\01_Tutorials\.metadata\.log4j.xml
+
+!ENTRY com.st.stm32cube.ide.mcu.ide 1 1 2023-02-23 11:17:14.814
+!MESSAGE Started RMI Server, listening on port 41337
+
+!ENTRY org.eclipse.core.resources 4 2 2023-02-23 11:18:41.206
+!MESSAGE Problems occurred when invoking code from plug-in: "org.eclipse.core.resources".
+!STACK 1
+org.eclipse.core.runtime.CoreException: Location not specified by New_Builder
+	at org.eclipse.core.externaltools.internal.launchConfigurations.ExternalToolsCoreUtil.abort(ExternalToolsCoreUtil.java:56)
+	at org.eclipse.core.externaltools.internal.launchConfigurations.ExternalToolsCoreUtil.getLocation(ExternalToolsCoreUtil.java:74)
+	at org.eclipse.core.externaltools.internal.launchConfigurations.ProgramLaunchDelegate.launch(ProgramLaunchDelegate.java:66)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:803)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:716)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:711)
+	at org.eclipse.core.externaltools.internal.model.ExternalToolBuilder.launchBuild(ExternalToolBuilder.java:183)
+	at org.eclipse.core.externaltools.internal.model.ExternalToolBuilder.doBuildBasedOnScope(ExternalToolBuilder.java:171)
+	at org.eclipse.core.externaltools.internal.model.ExternalToolBuilder.build(ExternalToolBuilder.java:90)
+	at org.eclipse.core.internal.events.BuildManager$2.run(BuildManager.java:860)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:45)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:232)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:281)
+	at org.eclipse.core.internal.events.BuildManager$1.run(BuildManager.java:334)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:45)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:337)
+	at org.eclipse.core.internal.events.BuildManager.basicBuildLoop(BuildManager.java:392)
+	at org.eclipse.core.internal.events.BuildManager.build(BuildManager.java:417)
+	at org.eclipse.core.internal.resources.Workspace.buildInternal(Workspace.java:517)
+	at org.eclipse.core.internal.resources.Workspace.build(Workspace.java:413)
+	at org.eclipse.ui.actions.BuildAction$1.runInWorkspace(BuildAction.java:291)
+	at org.eclipse.core.internal.resources.InternalWorkspaceJob.run(InternalWorkspaceJob.java:42)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+!SUBENTRY 1 org.eclipse.core.externaltools 4 0 2023-02-23 11:18:41.207
+!MESSAGE Location not specified by New_Builder
+!SUBENTRY 1 org.eclipse.core.externaltools 4 0 2023-02-23 11:18:41.207
+!MESSAGE Location not specified by New_Builder
+
+!ENTRY org.eclipse.core.resources 4 75 2023-02-23 11:18:41.213
+!MESSAGE Errors occurred during the build.
+!SUBENTRY 1 org.eclipse.core.externaltools 4 75 2023-02-23 11:18:41.213
+!MESSAGE Errors running builder 'Integrated External Tool Builder' on project 'bldc-master'.
+!STACK 1
+org.eclipse.core.runtime.CoreException: Location not specified by New_Builder
+	at org.eclipse.core.externaltools.internal.launchConfigurations.ExternalToolsCoreUtil.abort(ExternalToolsCoreUtil.java:56)
+	at org.eclipse.core.externaltools.internal.launchConfigurations.ExternalToolsCoreUtil.getLocation(ExternalToolsCoreUtil.java:74)
+	at org.eclipse.core.externaltools.internal.launchConfigurations.ProgramLaunchDelegate.launch(ProgramLaunchDelegate.java:66)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:803)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:716)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:711)
+	at org.eclipse.core.externaltools.internal.model.ExternalToolBuilder.launchBuild(ExternalToolBuilder.java:183)
+	at org.eclipse.core.externaltools.internal.model.ExternalToolBuilder.doBuildBasedOnScope(ExternalToolBuilder.java:171)
+	at org.eclipse.core.externaltools.internal.model.ExternalToolBuilder.build(ExternalToolBuilder.java:90)
+	at org.eclipse.core.internal.events.BuildManager$2.run(BuildManager.java:860)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:45)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:232)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:281)
+	at org.eclipse.core.internal.events.BuildManager$1.run(BuildManager.java:334)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:45)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:337)
+	at org.eclipse.core.internal.events.BuildManager.basicBuildLoop(BuildManager.java:392)
+	at org.eclipse.core.internal.events.BuildManager.build(BuildManager.java:417)
+	at org.eclipse.core.internal.resources.Workspace.buildInternal(Workspace.java:517)
+	at org.eclipse.core.internal.resources.Workspace.build(Workspace.java:413)
+	at org.eclipse.ui.actions.BuildAction$1.runInWorkspace(BuildAction.java:291)
+	at org.eclipse.core.internal.resources.InternalWorkspaceJob.run(InternalWorkspaceJob.java:42)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+!SUBENTRY 2 org.eclipse.core.externaltools 4 0 2023-02-23 11:18:41.213
+!MESSAGE Location not specified by New_Builder
+!SUBENTRY 1 org.eclipse.core.externaltools 4 0 2023-02-23 11:18:41.213
+!MESSAGE Location not specified by New_Builder
+
+!ENTRY org.eclipse.core.resources 4 566 2023-02-23 11:19:20.787
+!MESSAGE Workspace was not properly initialized or has already shutdown.
+!SESSION 2023-02-23 11:21:19.717 -----------------------------------------------
+eclipse.buildId=Version 1.11.2
+java.version=11.0.16
+java.vendor=Eclipse Adoptium
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=de_DE
+Framework arguments:  D:\Dokumente\GitHub\Software\bldc-master\bldc-master\.project
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 D:\Dokumente\GitHub\Software\bldc-master\bldc-master\.project
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 4 4 2023-02-23 11:21:22.898
+!MESSAGE CubeMX plugin appears to be active, Log4j initialization might be too late.
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 1 1 2023-02-23 11:21:22.944
+!MESSAGE Log4j initialized with config file D:\Dokumente\GitHub\Software\01_jrg\08_STM32H745\01_Tutorials\.metadata\.log4j.xml
+
+!ENTRY com.st.stm32cube.ide.mcu.ide 1 1 2023-02-23 11:21:27.267
+!MESSAGE Started RMI Server, listening on port 41337
+
+!ENTRY org.eclipse.core.resources 4 2 2023-02-23 11:22:49.297
+!MESSAGE Problems occurred when invoking code from plug-in: "org.eclipse.core.resources".
+!STACK 1
+org.eclipse.core.runtime.CoreException: Exception occurred executing command line.
+	at org.eclipse.debug.core.DebugPlugin.exec(DebugPlugin.java:962)
+	at org.eclipse.core.externaltools.internal.launchConfigurations.ProgramLaunchDelegate.launch(ProgramLaunchDelegate.java:103)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:803)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:716)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:711)
+	at org.eclipse.core.externaltools.internal.model.ExternalToolBuilder.launchBuild(ExternalToolBuilder.java:183)
+	at org.eclipse.core.externaltools.internal.model.ExternalToolBuilder.doBuildBasedOnScope(ExternalToolBuilder.java:171)
+	at org.eclipse.core.externaltools.internal.model.ExternalToolBuilder.build(ExternalToolBuilder.java:90)
+	at org.eclipse.core.internal.events.BuildManager$2.run(BuildManager.java:860)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:45)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:232)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:281)
+	at org.eclipse.core.internal.events.BuildManager$1.run(BuildManager.java:334)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:45)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:337)
+	at org.eclipse.core.internal.events.BuildManager.basicBuildLoop(BuildManager.java:392)
+	at org.eclipse.core.internal.events.BuildManager.build(BuildManager.java:417)
+	at org.eclipse.core.internal.resources.Workspace.buildInternal(Workspace.java:517)
+	at org.eclipse.core.internal.resources.Workspace.build(Workspace.java:413)
+	at org.eclipse.ui.actions.BuildAction$1.runInWorkspace(BuildAction.java:291)
+	at org.eclipse.core.internal.resources.InternalWorkspaceJob.run(InternalWorkspaceJob.java:42)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+Caused by: java.io.IOException: Cannot run program "D:\Dokumente\GitHub\Software\bldc-master\bldc-master\main.c" (in directory "D:\Dokumente\GitHub\Software\bldc-master\bldc-master"): CreateProcess error=193, %1 ist keine zulässige Win32-Anwendung
+	at java.base/java.lang.ProcessBuilder.start(ProcessBuilder.java:1128)
+	at java.base/java.lang.ProcessBuilder.start(ProcessBuilder.java:1071)
+	at java.base/java.lang.Runtime.exec(Runtime.java:592)
+	at org.eclipse.debug.core.DebugPlugin.exec(DebugPlugin.java:958)
+	... 21 more
+Caused by: java.io.IOException: CreateProcess error=193, %1 ist keine zulässige Win32-Anwendung
+	at java.base/java.lang.ProcessImpl.create(Native Method)
+	at java.base/java.lang.ProcessImpl.<init>(ProcessImpl.java:492)
+	at java.base/java.lang.ProcessImpl.start(ProcessImpl.java:153)
+	at java.base/java.lang.ProcessBuilder.start(ProcessBuilder.java:1107)
+	... 24 more
+!SUBENTRY 1 org.eclipse.debug.core 4 125 2023-02-23 11:22:49.298
+!MESSAGE Exception occurred executing command line.
+!STACK 0
+java.io.IOException: Cannot run program "D:\Dokumente\GitHub\Software\bldc-master\bldc-master\main.c" (in directory "D:\Dokumente\GitHub\Software\bldc-master\bldc-master"): CreateProcess error=193, %1 ist keine zulässige Win32-Anwendung
+	at java.base/java.lang.ProcessBuilder.start(ProcessBuilder.java:1128)
+	at java.base/java.lang.ProcessBuilder.start(ProcessBuilder.java:1071)
+	at java.base/java.lang.Runtime.exec(Runtime.java:592)
+	at org.eclipse.debug.core.DebugPlugin.exec(DebugPlugin.java:958)
+	at org.eclipse.core.externaltools.internal.launchConfigurations.ProgramLaunchDelegate.launch(ProgramLaunchDelegate.java:103)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:803)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:716)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:711)
+	at org.eclipse.core.externaltools.internal.model.ExternalToolBuilder.launchBuild(ExternalToolBuilder.java:183)
+	at org.eclipse.core.externaltools.internal.model.ExternalToolBuilder.doBuildBasedOnScope(ExternalToolBuilder.java:171)
+	at org.eclipse.core.externaltools.internal.model.ExternalToolBuilder.build(ExternalToolBuilder.java:90)
+	at org.eclipse.core.internal.events.BuildManager$2.run(BuildManager.java:860)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:45)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:232)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:281)
+	at org.eclipse.core.internal.events.BuildManager$1.run(BuildManager.java:334)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:45)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:337)
+	at org.eclipse.core.internal.events.BuildManager.basicBuildLoop(BuildManager.java:392)
+	at org.eclipse.core.internal.events.BuildManager.build(BuildManager.java:417)
+	at org.eclipse.core.internal.resources.Workspace.buildInternal(Workspace.java:517)
+	at org.eclipse.core.internal.resources.Workspace.build(Workspace.java:413)
+	at org.eclipse.ui.actions.BuildAction$1.runInWorkspace(BuildAction.java:291)
+	at org.eclipse.core.internal.resources.InternalWorkspaceJob.run(InternalWorkspaceJob.java:42)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+Caused by: java.io.IOException: CreateProcess error=193, %1 ist keine zulässige Win32-Anwendung
+	at java.base/java.lang.ProcessImpl.create(Native Method)
+	at java.base/java.lang.ProcessImpl.<init>(ProcessImpl.java:492)
+	at java.base/java.lang.ProcessImpl.start(ProcessImpl.java:153)
+	at java.base/java.lang.ProcessBuilder.start(ProcessBuilder.java:1107)
+	... 24 more
+!SUBENTRY 1 org.eclipse.debug.core 4 125 2023-02-23 11:22:49.298
+!MESSAGE Exception occurred executing command line.
+!STACK 0
+java.io.IOException: Cannot run program "D:\Dokumente\GitHub\Software\bldc-master\bldc-master\main.c" (in directory "D:\Dokumente\GitHub\Software\bldc-master\bldc-master"): CreateProcess error=193, %1 ist keine zulässige Win32-Anwendung
+	at java.base/java.lang.ProcessBuilder.start(ProcessBuilder.java:1128)
+	at java.base/java.lang.ProcessBuilder.start(ProcessBuilder.java:1071)
+	at java.base/java.lang.Runtime.exec(Runtime.java:592)
+	at org.eclipse.debug.core.DebugPlugin.exec(DebugPlugin.java:958)
+	at org.eclipse.core.externaltools.internal.launchConfigurations.ProgramLaunchDelegate.launch(ProgramLaunchDelegate.java:103)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:803)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:716)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:711)
+	at org.eclipse.core.externaltools.internal.model.ExternalToolBuilder.launchBuild(ExternalToolBuilder.java:183)
+	at org.eclipse.core.externaltools.internal.model.ExternalToolBuilder.doBuildBasedOnScope(ExternalToolBuilder.java:171)
+	at org.eclipse.core.externaltools.internal.model.ExternalToolBuilder.build(ExternalToolBuilder.java:90)
+	at org.eclipse.core.internal.events.BuildManager$2.run(BuildManager.java:860)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:45)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:232)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:281)
+	at org.eclipse.core.internal.events.BuildManager$1.run(BuildManager.java:334)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:45)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:337)
+	at org.eclipse.core.internal.events.BuildManager.basicBuildLoop(BuildManager.java:392)
+	at org.eclipse.core.internal.events.BuildManager.build(BuildManager.java:417)
+	at org.eclipse.core.internal.resources.Workspace.buildInternal(Workspace.java:517)
+	at org.eclipse.core.internal.resources.Workspace.build(Workspace.java:413)
+	at org.eclipse.ui.actions.BuildAction$1.runInWorkspace(BuildAction.java:291)
+	at org.eclipse.core.internal.resources.InternalWorkspaceJob.run(InternalWorkspaceJob.java:42)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+Caused by: java.io.IOException: CreateProcess error=193, %1 ist keine zulässige Win32-Anwendung
+	at java.base/java.lang.ProcessImpl.create(Native Method)
+	at java.base/java.lang.ProcessImpl.<init>(ProcessImpl.java:492)
+	at java.base/java.lang.ProcessImpl.start(ProcessImpl.java:153)
+	at java.base/java.lang.ProcessBuilder.start(ProcessBuilder.java:1107)
+	... 24 more
+
+!ENTRY org.eclipse.core.resources 4 75 2023-02-23 11:22:49.304
+!MESSAGE Errors occurred during the build.
+!SUBENTRY 1 org.eclipse.core.externaltools 4 75 2023-02-23 11:22:49.305
+!MESSAGE Errors running builder 'Integrated External Tool Builder' on project 'bldc-master'.
+!STACK 1
+org.eclipse.core.runtime.CoreException: Exception occurred executing command line.
+	at org.eclipse.debug.core.DebugPlugin.exec(DebugPlugin.java:962)
+	at org.eclipse.core.externaltools.internal.launchConfigurations.ProgramLaunchDelegate.launch(ProgramLaunchDelegate.java:103)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:803)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:716)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:711)
+	at org.eclipse.core.externaltools.internal.model.ExternalToolBuilder.launchBuild(ExternalToolBuilder.java:183)
+	at org.eclipse.core.externaltools.internal.model.ExternalToolBuilder.doBuildBasedOnScope(ExternalToolBuilder.java:171)
+	at org.eclipse.core.externaltools.internal.model.ExternalToolBuilder.build(ExternalToolBuilder.java:90)
+	at org.eclipse.core.internal.events.BuildManager$2.run(BuildManager.java:860)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:45)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:232)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:281)
+	at org.eclipse.core.internal.events.BuildManager$1.run(BuildManager.java:334)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:45)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:337)
+	at org.eclipse.core.internal.events.BuildManager.basicBuildLoop(BuildManager.java:392)
+	at org.eclipse.core.internal.events.BuildManager.build(BuildManager.java:417)
+	at org.eclipse.core.internal.resources.Workspace.buildInternal(Workspace.java:517)
+	at org.eclipse.core.internal.resources.Workspace.build(Workspace.java:413)
+	at org.eclipse.ui.actions.BuildAction$1.runInWorkspace(BuildAction.java:291)
+	at org.eclipse.core.internal.resources.InternalWorkspaceJob.run(InternalWorkspaceJob.java:42)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+Caused by: java.io.IOException: Cannot run program "D:\Dokumente\GitHub\Software\bldc-master\bldc-master\main.c" (in directory "D:\Dokumente\GitHub\Software\bldc-master\bldc-master"): CreateProcess error=193, %1 ist keine zulässige Win32-Anwendung
+	at java.base/java.lang.ProcessBuilder.start(ProcessBuilder.java:1128)
+	at java.base/java.lang.ProcessBuilder.start(ProcessBuilder.java:1071)
+	at java.base/java.lang.Runtime.exec(Runtime.java:592)
+	at org.eclipse.debug.core.DebugPlugin.exec(DebugPlugin.java:958)
+	... 21 more
+Caused by: java.io.IOException: CreateProcess error=193, %1 ist keine zulässige Win32-Anwendung
+	at java.base/java.lang.ProcessImpl.create(Native Method)
+	at java.base/java.lang.ProcessImpl.<init>(ProcessImpl.java:492)
+	at java.base/java.lang.ProcessImpl.start(ProcessImpl.java:153)
+	at java.base/java.lang.ProcessBuilder.start(ProcessBuilder.java:1107)
+	... 24 more
+!SUBENTRY 2 org.eclipse.debug.core 4 125 2023-02-23 11:22:49.305
+!MESSAGE Exception occurred executing command line.
+!STACK 0
+java.io.IOException: Cannot run program "D:\Dokumente\GitHub\Software\bldc-master\bldc-master\main.c" (in directory "D:\Dokumente\GitHub\Software\bldc-master\bldc-master"): CreateProcess error=193, %1 ist keine zulässige Win32-Anwendung
+	at java.base/java.lang.ProcessBuilder.start(ProcessBuilder.java:1128)
+	at java.base/java.lang.ProcessBuilder.start(ProcessBuilder.java:1071)
+	at java.base/java.lang.Runtime.exec(Runtime.java:592)
+	at org.eclipse.debug.core.DebugPlugin.exec(DebugPlugin.java:958)
+	at org.eclipse.core.externaltools.internal.launchConfigurations.ProgramLaunchDelegate.launch(ProgramLaunchDelegate.java:103)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:803)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:716)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:711)
+	at org.eclipse.core.externaltools.internal.model.ExternalToolBuilder.launchBuild(ExternalToolBuilder.java:183)
+	at org.eclipse.core.externaltools.internal.model.ExternalToolBuilder.doBuildBasedOnScope(ExternalToolBuilder.java:171)
+	at org.eclipse.core.externaltools.internal.model.ExternalToolBuilder.build(ExternalToolBuilder.java:90)
+	at org.eclipse.core.internal.events.BuildManager$2.run(BuildManager.java:860)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:45)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:232)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:281)
+	at org.eclipse.core.internal.events.BuildManager$1.run(BuildManager.java:334)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:45)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:337)
+	at org.eclipse.core.internal.events.BuildManager.basicBuildLoop(BuildManager.java:392)
+	at org.eclipse.core.internal.events.BuildManager.build(BuildManager.java:417)
+	at org.eclipse.core.internal.resources.Workspace.buildInternal(Workspace.java:517)
+	at org.eclipse.core.internal.resources.Workspace.build(Workspace.java:413)
+	at org.eclipse.ui.actions.BuildAction$1.runInWorkspace(BuildAction.java:291)
+	at org.eclipse.core.internal.resources.InternalWorkspaceJob.run(InternalWorkspaceJob.java:42)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+Caused by: java.io.IOException: CreateProcess error=193, %1 ist keine zulässige Win32-Anwendung
+	at java.base/java.lang.ProcessImpl.create(Native Method)
+	at java.base/java.lang.ProcessImpl.<init>(ProcessImpl.java:492)
+	at java.base/java.lang.ProcessImpl.start(ProcessImpl.java:153)
+	at java.base/java.lang.ProcessBuilder.start(ProcessBuilder.java:1107)
+	... 24 more
+!SUBENTRY 1 org.eclipse.debug.core 4 125 2023-02-23 11:22:49.305
+!MESSAGE Exception occurred executing command line.
+!STACK 0
+java.io.IOException: Cannot run program "D:\Dokumente\GitHub\Software\bldc-master\bldc-master\main.c" (in directory "D:\Dokumente\GitHub\Software\bldc-master\bldc-master"): CreateProcess error=193, %1 ist keine zulässige Win32-Anwendung
+	at java.base/java.lang.ProcessBuilder.start(ProcessBuilder.java:1128)
+	at java.base/java.lang.ProcessBuilder.start(ProcessBuilder.java:1071)
+	at java.base/java.lang.Runtime.exec(Runtime.java:592)
+	at org.eclipse.debug.core.DebugPlugin.exec(DebugPlugin.java:958)
+	at org.eclipse.core.externaltools.internal.launchConfigurations.ProgramLaunchDelegate.launch(ProgramLaunchDelegate.java:103)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:803)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:716)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:711)
+	at org.eclipse.core.externaltools.internal.model.ExternalToolBuilder.launchBuild(ExternalToolBuilder.java:183)
+	at org.eclipse.core.externaltools.internal.model.ExternalToolBuilder.doBuildBasedOnScope(ExternalToolBuilder.java:171)
+	at org.eclipse.core.externaltools.internal.model.ExternalToolBuilder.build(ExternalToolBuilder.java:90)
+	at org.eclipse.core.internal.events.BuildManager$2.run(BuildManager.java:860)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:45)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:232)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:281)
+	at org.eclipse.core.internal.events.BuildManager$1.run(BuildManager.java:334)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:45)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:337)
+	at org.eclipse.core.internal.events.BuildManager.basicBuildLoop(BuildManager.java:392)
+	at org.eclipse.core.internal.events.BuildManager.build(BuildManager.java:417)
+	at org.eclipse.core.internal.resources.Workspace.buildInternal(Workspace.java:517)
+	at org.eclipse.core.internal.resources.Workspace.build(Workspace.java:413)
+	at org.eclipse.ui.actions.BuildAction$1.runInWorkspace(BuildAction.java:291)
+	at org.eclipse.core.internal.resources.InternalWorkspaceJob.run(InternalWorkspaceJob.java:42)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+Caused by: java.io.IOException: CreateProcess error=193, %1 ist keine zulässige Win32-Anwendung
+	at java.base/java.lang.ProcessImpl.create(Native Method)
+	at java.base/java.lang.ProcessImpl.<init>(ProcessImpl.java:492)
+	at java.base/java.lang.ProcessImpl.start(ProcessImpl.java:153)
+	at java.base/java.lang.ProcessBuilder.start(ProcessBuilder.java:1107)
+	... 24 more
+
+!ENTRY org.eclipse.core.resources 4 566 2023-02-23 11:25:13.320
+!MESSAGE Workspace was not properly initialized or has already shutdown.
