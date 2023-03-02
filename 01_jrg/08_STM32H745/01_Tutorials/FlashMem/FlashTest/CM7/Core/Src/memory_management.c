@@ -220,12 +220,12 @@ uint32_t Flash_Write_Data (uint32_t StartSectorAddress, uint32_t *data, uint16_t
 
 	  EraseInitStruct.NbSectors     = (EndSector - StartSector) + 1;
 
-		FLASH_Erase_Sector(EraseInitStruct.Sector, EraseInitStruct.Banks, FLASH_VOLTAGE_RANGE_3);
+		//FLASH_Erase_Sector(EraseInitStruct.Sector, EraseInitStruct.Banks, FLASH_VOLTAGE_RANGE_3);
 		//__disable_irq();
-	  //if (HAL_FLASHEx_Erase(&EraseInitStruct, &SECTORError) != HAL_OK)
-	  //{
-		//  return HAL_FLASH_GetError ();
-	  //}
+	  if (HAL_FLASHEx_Erase(&EraseInitStruct, &SECTORError) != HAL_OK)
+	  {
+		  return HAL_FLASH_GetError ();
+	  }
 		
 		//while(HAL_FLASHEx_Erase(&EraseInitStruct, &SECTORError) != HAL_OK)
 		//{

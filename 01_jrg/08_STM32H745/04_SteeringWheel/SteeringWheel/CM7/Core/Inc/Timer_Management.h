@@ -11,7 +11,6 @@
 #include "HW_Def.h"
 
 extern osThreadId_t id_task_timer;
-
 extern uint32_t	Timer_ms;
 
 #define FLAG_TIMER_TICK 0x10
@@ -31,6 +30,8 @@ extern uint32_t	Timer_ms;
 void TIM15_IRQHandler(void);
 void Task_Timer(void);
 void MX_TIM15_Init(void);
+void MX_TIM8_Init(void);
+void HAL_TIM_MspPostInit(TIM_HandleTypeDef* timHandle);
 
 
 

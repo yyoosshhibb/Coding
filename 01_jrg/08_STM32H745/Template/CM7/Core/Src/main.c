@@ -55,61 +55,79 @@ extern osThreadId_t id_task_timer;
 
 extern TIM_HandleTypeDef htim15;
 
+uint32_t value;
+
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
 void SystemClock_Config(void);
 void MX_FREERTOS_Init(void);
 
-void app_main (void *argument)
-{
-	CAN_RX_Q = osMessageQueueNew(20,sizeof(FDCAN_RxQueue_Frame_t),NULL);
-	CAN_Q = osMessageQueueNew(20, 1, NULL);
+/* USER CODE BEGIN PFP */
 
-	id_task_CAN_RX = osThreadNew(TASK_FDCAN_RX, NULL, NULL);
-	osThreadSetPriority(id_task_CAN_RX,osPriorityNormal);
+/* USER CODE END PFP */
 
-	id_task_CAN_TX = osThreadNew(TASK_FDCAN_TX, NULL, NULL);
-	osThreadSetPriority(id_task_CAN_TX,osPriorityNormal);
+/* Private user code ---------------------------------------------------------*/
+/* USER CODE BEGIN 0 */
 
-	id_task_timer = osThreadNew(Task_Timer, NULL, NULL);
-	osThreadSetPriority(id_task_timer, osPriorityHigh);
+/* USER CODE END 0 */
 
-	id_task_LED1 = osThreadNew(toggle_LED1, NULL, NULL);
-	osThreadSetPriority(id_task_LED1,osPriorityNormal);
-
-	MX_GPIO_Init();
-	MX_FDCAN1_Init();
-	FDCAN_RX_Init();
-	MX_TIM15_Init();
-
-
-
-	while(1)
-	{
-
-	}
-
-}
-
+/**
+  * @brief  The application entry point.
+  * @retval int
+  */
 int main(void)
 {
+  /* USER CODE BEGIN 1 */
 
+  /* USER CODE END 1 */
+/* USER CODE BEGIN Boot_Mode_Sequence_0 */
+  value = 0;
+/* USER CODE END Boot_Mode_Sequence_0 */
 
   /* Enable I-Cache---------------------------------------------------------*/
   SCB_EnableICache();
 
   /* Enable D-Cache---------------------------------------------------------*/
   SCB_EnableDCache();
+
+/* USER CODE BEGIN Boot_Mode_Sequence_1 */
+  /* Wait until CPU2 boots and enters in stop mode or timeout*/
+
+/* USER CODE END Boot_Mode_Sequence_1 */
+  /* MCU Configuration--------------------------------------------------------*/
+
+  /* Reset of all peripherals, Initializes the Flash interface and the Systick. */
   HAL_Init();
 
+  /* USER CODE BEGIN Init */
+
+  /* USER CODE END Init */
+
+  /* Configure the system clock */
   SystemClock_Config();
-  HAL_NVIC_SetPriorityGrouping(NVIC_PRIORITYGROUP_4);
+/* USER CODE BEGIN Boot_Mode_Sequence_2 */
+/* When system initialization is finished, Cortex-M7 will release Cortex-M4 by means of
+HSEM notification */
+/*HW semaphore Clock enable*/
+/* USER CODE END Boot_Mode_Sequence_2 */
 
+  /* USER CODE BEGIN SysInit */
+
+  /* USER CODE END SysInit */
+
+  /* Initialize all configured peripherals */
+  MX_GPIO_Init();
+  //MX_FDCAN1_Init();
+  /* USER CODE BEGIN 2 */
+
+  /* USER CODE END 2 */
+
+  /* Init scheduler */
   osKernelInitialize();  /* Call init function for freertos objects (in freertos.c) */
-  osThreadNew(app_main, NULL, NULL);    // Create application main thread
-  osThreadSetPriority(app_main,osPriorityNormal);
+  MX_FREERTOS_Init();
 
+  /* Start scheduler */
   osKernelStart();
 
   /* We should never get here as control is now taken by the scheduler */

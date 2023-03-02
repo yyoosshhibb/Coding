@@ -17,6 +17,7 @@ Section Cross References
     startup_stm32h745xx_cm7.o(RESET) refers to port.o(.emb_text) for SVC_Handler
     startup_stm32h745xx_cm7.o(RESET) refers to stm32h7xx_it_1.o(i.DebugMon_Handler) for DebugMon_Handler
     startup_stm32h745xx_cm7.o(RESET) refers to cmsis_os2.o(i.SysTick_Handler) for SysTick_Handler
+    startup_stm32h745xx_cm7.o(RESET) refers to stm32h7xx_it_1.o(i.EXTI15_10_IRQHandler) for EXTI15_10_IRQHandler
     startup_stm32h745xx_cm7.o(RESET) refers to timer.o(i.TIM15_IRQHandler) for TIM15_IRQHandler
     startup_stm32h745xx_cm7.o(RESET) refers to stm32h7xx_it_1.o(i.TIM17_IRQHandler) for TIM17_IRQHandler
     startup_stm32h745xx_cm7.o(.text) refers (Special) to heapauxi.o(.text) for __use_two_region_memory
@@ -119,36 +120,23 @@ Section Cross References
     main_1.o(i.SystemClock_Config) refers to stm32h7xx_hal_rcc_1.o(i.HAL_RCC_OscConfig) for HAL_RCC_OscConfig
     main_1.o(i.SystemClock_Config) refers to stm32h7xx_hal_rcc.o(i.HAL_RCC_ClockConfig) for HAL_RCC_ClockConfig
     main_1.o(i.SystemClock_Config) refers to stm32h7xx_hal_rcc_1.o(i.HAL_RCC_ClockConfig) for HAL_RCC_ClockConfig
-    main_1.o(i.app_main) refers to cmsis_os2.o(i.osMessageQueueNew) for osMessageQueueNew
-    main_1.o(i.app_main) refers to cmsis_os2.o(i.osThreadNew) for osThreadNew
-    main_1.o(i.app_main) refers to cmsis_os2.o(i.osThreadSetPriority) for osThreadSetPriority
-    main_1.o(i.app_main) refers to gpio_1.o(i.MX_GPIO_Init) for MX_GPIO_Init
-    main_1.o(i.app_main) refers to fdcan_ll_management.o(i.MX_FDCAN1_Init) for MX_FDCAN1_Init
-    main_1.o(i.app_main) refers to fdcan.o(i.MX_FDCAN1_Init) for MX_FDCAN1_Init
-    main_1.o(i.app_main) refers to fdcan_ll_management.o(i.FDCAN_RX_Init) for FDCAN_RX_Init
-    main_1.o(i.app_main) refers to timer.o(i.MX_TIM15_Init) for MX_TIM15_Init
-    main_1.o(i.app_main) refers to fdcan_ll_management.o(.data) for CAN_RX_Q
-    main_1.o(i.app_main) refers to fdcan_ll_management.o(i.TASK_FDCAN_RX) for TASK_FDCAN_RX
-    main_1.o(i.app_main) refers to fdcan_ll_management.o(i.TASK_FDCAN_TX) for TASK_FDCAN_TX
-    main_1.o(i.app_main) refers to timer.o(i.Task_Timer) for Task_Timer
-    main_1.o(i.app_main) refers to timer.o(.data) for id_task_timer
-    main_1.o(i.app_main) refers to gpio_1.o(i.toggle_LED1) for toggle_LED1
-    main_1.o(i.app_main) refers to gpio_1.o(.data) for id_task_LED1
     main_1.o(i.main) refers to stm32h7xx_hal.o(i.HAL_Init) for HAL_Init
     main_1.o(i.main) refers to stm32h7xx_hal_1.o(i.HAL_Init) for HAL_Init
     main_1.o(i.main) refers to main_1.o(i.SystemClock_Config) for SystemClock_Config
-    main_1.o(i.main) refers to stm32h7xx_hal_cortex.o(i.HAL_NVIC_SetPriorityGrouping) for HAL_NVIC_SetPriorityGrouping
-    main_1.o(i.main) refers to stm32h7xx_hal_cortex_1.o(i.HAL_NVIC_SetPriorityGrouping) for HAL_NVIC_SetPriorityGrouping
+    main_1.o(i.main) refers to gpio_1.o(i.MX_GPIO_Init) for MX_GPIO_Init
     main_1.o(i.main) refers to cmsis_os2.o(i.osKernelInitialize) for osKernelInitialize
-    main_1.o(i.main) refers to cmsis_os2.o(i.osThreadNew) for osThreadNew
-    main_1.o(i.main) refers to cmsis_os2.o(i.osThreadSetPriority) for osThreadSetPriority
+    main_1.o(i.main) refers to freertos.o(i.MX_FREERTOS_Init) for MX_FREERTOS_Init
     main_1.o(i.main) refers to cmsis_os2.o(i.osKernelStart) for osKernelStart
-    main_1.o(i.main) refers to main_1.o(i.app_main) for app_main
+    main_1.o(i.main) refers to main_1.o(.data) for .data
     gpio_1.o(i.MX_GPIO_Init) refers to rt_memclr_w.o(.text) for __aeabi_memclr4
     gpio_1.o(i.MX_GPIO_Init) refers to stm32h7xx_hal_gpio.o(i.HAL_GPIO_WritePin) for HAL_GPIO_WritePin
     gpio_1.o(i.MX_GPIO_Init) refers to stm32h7xx_hal_gpio_1.o(i.HAL_GPIO_WritePin) for HAL_GPIO_WritePin
     gpio_1.o(i.MX_GPIO_Init) refers to stm32h7xx_hal_gpio.o(i.HAL_GPIO_Init) for HAL_GPIO_Init
     gpio_1.o(i.MX_GPIO_Init) refers to stm32h7xx_hal_gpio_1.o(i.HAL_GPIO_Init) for HAL_GPIO_Init
+    gpio_1.o(i.MX_GPIO_Init) refers to stm32h7xx_hal_cortex.o(i.HAL_NVIC_SetPriority) for HAL_NVIC_SetPriority
+    gpio_1.o(i.MX_GPIO_Init) refers to stm32h7xx_hal_cortex_1.o(i.HAL_NVIC_SetPriority) for HAL_NVIC_SetPriority
+    gpio_1.o(i.MX_GPIO_Init) refers to stm32h7xx_hal_cortex.o(i.HAL_NVIC_EnableIRQ) for HAL_NVIC_EnableIRQ
+    gpio_1.o(i.MX_GPIO_Init) refers to stm32h7xx_hal_cortex_1.o(i.HAL_NVIC_EnableIRQ) for HAL_NVIC_EnableIRQ
     gpio_1.o(i.toggle_LED1) refers to cmsis_os2.o(i.osThreadFlagsWait) for osThreadFlagsWait
     gpio_1.o(i.toggle_LED1) refers to stm32h7xx_hal_gpio.o(i.HAL_GPIO_TogglePin) for HAL_GPIO_TogglePin
     gpio_1.o(i.toggle_LED1) refers to stm32h7xx_hal_gpio_1.o(i.HAL_GPIO_TogglePin) for HAL_GPIO_TogglePin
@@ -156,24 +144,15 @@ Section Cross References
     gpio_1.o(i.toggle_LED2) refers to stm32h7xx_hal_gpio.o(i.HAL_GPIO_TogglePin) for HAL_GPIO_TogglePin
     gpio_1.o(i.toggle_LED2) refers to stm32h7xx_hal_gpio_1.o(i.HAL_GPIO_TogglePin) for HAL_GPIO_TogglePin
     gpio_1.o(i.toggle_LED2) refers to cmsis_os2.o(i.osDelay) for osDelay
-    fdcan.o(i.HAL_FDCAN_MspDeInit) refers to stm32h7xx_hal_gpio.o(i.HAL_GPIO_DeInit) for HAL_GPIO_DeInit
-    fdcan.o(i.HAL_FDCAN_MspDeInit) refers to stm32h7xx_hal_gpio_1.o(i.HAL_GPIO_DeInit) for HAL_GPIO_DeInit
-    fdcan.o(i.HAL_FDCAN_MspInit) refers to rt_memclr_w.o(.text) for __aeabi_memclr4
-    fdcan.o(i.HAL_FDCAN_MspInit) refers to stm32h7xx_hal_rcc_ex.o(i.HAL_RCCEx_PeriphCLKConfig) for HAL_RCCEx_PeriphCLKConfig
-    fdcan.o(i.HAL_FDCAN_MspInit) refers to stm32h7xx_hal_rcc_ex_1.o(i.HAL_RCCEx_PeriphCLKConfig) for HAL_RCCEx_PeriphCLKConfig
-    fdcan.o(i.HAL_FDCAN_MspInit) refers to main_1.o(i.Error_Handler) for Error_Handler
-    fdcan.o(i.HAL_FDCAN_MspInit) refers to stm32h7xx_hal_gpio.o(i.HAL_GPIO_Init) for HAL_GPIO_Init
-    fdcan.o(i.HAL_FDCAN_MspInit) refers to stm32h7xx_hal_gpio_1.o(i.HAL_GPIO_Init) for HAL_GPIO_Init
-    fdcan.o(i.MX_FDCAN1_Init) refers to stm32h7xx_hal_fdcan.o(i.HAL_FDCAN_Init) for HAL_FDCAN_Init
-    fdcan.o(i.MX_FDCAN1_Init) refers to stm32h7xx_hal_fdcan_1.o(i.HAL_FDCAN_Init) for HAL_FDCAN_Init
-    fdcan.o(i.MX_FDCAN1_Init) refers to main_1.o(i.Error_Handler) for Error_Handler
-    fdcan.o(i.MX_FDCAN1_Init) refers to fdcan.o(.bss) for .bss
     freertos.o(i.MX_FREERTOS_Init) refers to cmsis_os2.o(i.osThreadNew) for osThreadNew
     freertos.o(i.MX_FREERTOS_Init) refers to freertos.o(.constdata) for .constdata
     freertos.o(i.MX_FREERTOS_Init) refers to freertos.o(i.StartDefaultTask) for StartDefaultTask
     freertos.o(i.MX_FREERTOS_Init) refers to freertos.o(.data) for .data
     freertos.o(i.StartDefaultTask) refers to cmsis_os2.o(i.osDelay) for osDelay
     freertos.o(.constdata) refers to freertos.o(.conststring) for .conststring
+    stm32h7xx_it_1.o(i.EXTI15_10_IRQHandler) refers to stm32h7xx_hal_gpio.o(i.HAL_GPIO_EXTI_IRQHandler) for HAL_GPIO_EXTI_IRQHandler
+    stm32h7xx_it_1.o(i.EXTI15_10_IRQHandler) refers to stm32h7xx_hal_gpio_1.o(i.HAL_GPIO_EXTI_IRQHandler) for HAL_GPIO_EXTI_IRQHandler
+    stm32h7xx_it_1.o(i.HAL_GPIO_EXTI_Callback) refers to main_1.o(.data) for value
     stm32h7xx_it_1.o(i.TIM17_IRQHandler) refers to stm32h7xx_hal_tim.o(i.HAL_TIM_IRQHandler) for HAL_TIM_IRQHandler
     stm32h7xx_it_1.o(i.TIM17_IRQHandler) refers to stm32h7xx_hal_tim_1.o(i.HAL_TIM_IRQHandler) for HAL_TIM_IRQHandler
     stm32h7xx_it_1.o(i.TIM17_IRQHandler) refers to stm32h7xx_hal_timebase_tim.o(.bss) for htim17
@@ -205,7 +184,8 @@ Section Cross References
     stm32h7xx_hal_fdcan.o(i.HAL_FDCAN_AddMessageToTxFifoQ) refers to stm32h7xx_hal_fdcan.o(i.FDCAN_CopyMessageToRAM) for FDCAN_CopyMessageToRAM
     stm32h7xx_hal_fdcan.o(i.HAL_FDCAN_DeInit) refers to stm32h7xx_hal_fdcan.o(i.HAL_FDCAN_Stop) for HAL_FDCAN_Stop
     stm32h7xx_hal_fdcan.o(i.HAL_FDCAN_DeInit) refers to stm32h7xx_hal_fdcan_1.o(i.HAL_FDCAN_Stop) for HAL_FDCAN_Stop
-    stm32h7xx_hal_fdcan.o(i.HAL_FDCAN_DeInit) refers to fdcan.o(i.HAL_FDCAN_MspDeInit) for HAL_FDCAN_MspDeInit
+    stm32h7xx_hal_fdcan.o(i.HAL_FDCAN_DeInit) refers to stm32h7xx_hal_fdcan.o(i.HAL_FDCAN_MspDeInit) for HAL_FDCAN_MspDeInit
+    stm32h7xx_hal_fdcan.o(i.HAL_FDCAN_DeInit) refers to stm32h7xx_hal_fdcan_1.o(i.HAL_FDCAN_MspDeInit) for HAL_FDCAN_MspDeInit
     stm32h7xx_hal_fdcan.o(i.HAL_FDCAN_EnterPowerDownMode) refers to stm32h7xx_hal.o(i.HAL_GetTick) for HAL_GetTick
     stm32h7xx_hal_fdcan.o(i.HAL_FDCAN_EnterPowerDownMode) refers to stm32h7xx_hal_1.o(i.HAL_GetTick) for HAL_GetTick
     stm32h7xx_hal_fdcan.o(i.HAL_FDCAN_ExitPowerDownMode) refers to stm32h7xx_hal.o(i.HAL_GetTick) for HAL_GetTick
@@ -245,7 +225,8 @@ Section Cross References
     stm32h7xx_hal_fdcan.o(i.HAL_FDCAN_IRQHandler) refers to stm32h7xx_hal_fdcan.o(i.HAL_FDCAN_ErrorCallback) for HAL_FDCAN_ErrorCallback
     stm32h7xx_hal_fdcan.o(i.HAL_FDCAN_IRQHandler) refers to stm32h7xx_hal_fdcan_1.o(i.HAL_FDCAN_ErrorCallback) for HAL_FDCAN_ErrorCallback
     stm32h7xx_hal_fdcan.o(i.HAL_FDCAN_Init) refers to rt_memcpy_w.o(.text) for __aeabi_memcpy4
-    stm32h7xx_hal_fdcan.o(i.HAL_FDCAN_Init) refers to fdcan.o(i.HAL_FDCAN_MspInit) for HAL_FDCAN_MspInit
+    stm32h7xx_hal_fdcan.o(i.HAL_FDCAN_Init) refers to stm32h7xx_hal_fdcan.o(i.HAL_FDCAN_MspInit) for HAL_FDCAN_MspInit
+    stm32h7xx_hal_fdcan.o(i.HAL_FDCAN_Init) refers to stm32h7xx_hal_fdcan_1.o(i.HAL_FDCAN_MspInit) for HAL_FDCAN_MspInit
     stm32h7xx_hal_fdcan.o(i.HAL_FDCAN_Init) refers to stm32h7xx_hal.o(i.HAL_GetTick) for HAL_GetTick
     stm32h7xx_hal_fdcan.o(i.HAL_FDCAN_Init) refers to stm32h7xx_hal_1.o(i.HAL_GetTick) for HAL_GetTick
     stm32h7xx_hal_fdcan.o(i.HAL_FDCAN_Init) refers to stm32h7xx_hal_fdcan.o(i.FDCAN_CalcultateRamBlockAddresses) for FDCAN_CalcultateRamBlockAddresses
@@ -362,8 +343,7 @@ Section Cross References
     stm32h7xx_hal_flash_ex.o(i.HAL_FLASHEx_OBProgram) refers to stm32h7xx_hal_flash.o(i.FLASH_WaitForLastOperation) for FLASH_WaitForLastOperation
     stm32h7xx_hal_flash_ex.o(i.HAL_FLASHEx_OBProgram) refers to stm32h7xx_hal_flash_ex.o(i.FLASH_OB_UserConfig) for FLASH_OB_UserConfig
     stm32h7xx_hal_flash_ex.o(i.HAL_FLASHEx_OBProgram) refers to stm32h7xx_hal_flash.o(.bss) for pFlash
-    stm32h7xx_hal_gpio.o(i.HAL_GPIO_EXTI_IRQHandler) refers to stm32h7xx_hal_gpio.o(i.HAL_GPIO_EXTI_Callback) for HAL_GPIO_EXTI_Callback
-    stm32h7xx_hal_gpio.o(i.HAL_GPIO_EXTI_IRQHandler) refers to stm32h7xx_hal_gpio_1.o(i.HAL_GPIO_EXTI_Callback) for HAL_GPIO_EXTI_Callback
+    stm32h7xx_hal_gpio.o(i.HAL_GPIO_EXTI_IRQHandler) refers to stm32h7xx_it_1.o(i.HAL_GPIO_EXTI_Callback) for HAL_GPIO_EXTI_Callback
     stm32h7xx_hal_hsem.o(i.HAL_HSEM_IRQHandler) refers to stm32h7xx_hal_hsem.o(i.HAL_HSEM_FreeCallback) for HAL_HSEM_FreeCallback
     stm32h7xx_hal_dma.o(i.DMA_CalcBaseAndBitshift) refers to stm32h7xx_hal_dma.o(.constdata) for .constdata
     stm32h7xx_hal_dma.o(i.HAL_DMA_Abort) refers to stm32h7xx_hal.o(i.HAL_GetTick) for HAL_GetTick
@@ -1751,7 +1731,8 @@ Section Cross References
     stm32h7xx_hal_fdcan_1.o(i.HAL_FDCAN_AddMessageToTxFifoQ) refers to stm32h7xx_hal_fdcan_1.o(i.FDCAN_CopyMessageToRAM) for FDCAN_CopyMessageToRAM
     stm32h7xx_hal_fdcan_1.o(i.HAL_FDCAN_DeInit) refers to stm32h7xx_hal_fdcan.o(i.HAL_FDCAN_Stop) for HAL_FDCAN_Stop
     stm32h7xx_hal_fdcan_1.o(i.HAL_FDCAN_DeInit) refers to stm32h7xx_hal_fdcan_1.o(i.HAL_FDCAN_Stop) for HAL_FDCAN_Stop
-    stm32h7xx_hal_fdcan_1.o(i.HAL_FDCAN_DeInit) refers to fdcan.o(i.HAL_FDCAN_MspDeInit) for HAL_FDCAN_MspDeInit
+    stm32h7xx_hal_fdcan_1.o(i.HAL_FDCAN_DeInit) refers to stm32h7xx_hal_fdcan.o(i.HAL_FDCAN_MspDeInit) for HAL_FDCAN_MspDeInit
+    stm32h7xx_hal_fdcan_1.o(i.HAL_FDCAN_DeInit) refers to stm32h7xx_hal_fdcan_1.o(i.HAL_FDCAN_MspDeInit) for HAL_FDCAN_MspDeInit
     stm32h7xx_hal_fdcan_1.o(i.HAL_FDCAN_EnterPowerDownMode) refers to stm32h7xx_hal.o(i.HAL_GetTick) for HAL_GetTick
     stm32h7xx_hal_fdcan_1.o(i.HAL_FDCAN_EnterPowerDownMode) refers to stm32h7xx_hal_1.o(i.HAL_GetTick) for HAL_GetTick
     stm32h7xx_hal_fdcan_1.o(i.HAL_FDCAN_ExitPowerDownMode) refers to stm32h7xx_hal.o(i.HAL_GetTick) for HAL_GetTick
@@ -1791,15 +1772,15 @@ Section Cross References
     stm32h7xx_hal_fdcan_1.o(i.HAL_FDCAN_IRQHandler) refers to stm32h7xx_hal_fdcan.o(i.HAL_FDCAN_ErrorCallback) for HAL_FDCAN_ErrorCallback
     stm32h7xx_hal_fdcan_1.o(i.HAL_FDCAN_IRQHandler) refers to stm32h7xx_hal_fdcan_1.o(i.HAL_FDCAN_ErrorCallback) for HAL_FDCAN_ErrorCallback
     stm32h7xx_hal_fdcan_1.o(i.HAL_FDCAN_Init) refers to rt_memcpy_w.o(.text) for __aeabi_memcpy4
-    stm32h7xx_hal_fdcan_1.o(i.HAL_FDCAN_Init) refers to fdcan.o(i.HAL_FDCAN_MspInit) for HAL_FDCAN_MspInit
+    stm32h7xx_hal_fdcan_1.o(i.HAL_FDCAN_Init) refers to stm32h7xx_hal_fdcan.o(i.HAL_FDCAN_MspInit) for HAL_FDCAN_MspInit
+    stm32h7xx_hal_fdcan_1.o(i.HAL_FDCAN_Init) refers to stm32h7xx_hal_fdcan_1.o(i.HAL_FDCAN_MspInit) for HAL_FDCAN_MspInit
     stm32h7xx_hal_fdcan_1.o(i.HAL_FDCAN_Init) refers to stm32h7xx_hal.o(i.HAL_GetTick) for HAL_GetTick
     stm32h7xx_hal_fdcan_1.o(i.HAL_FDCAN_Init) refers to stm32h7xx_hal_1.o(i.HAL_GetTick) for HAL_GetTick
     stm32h7xx_hal_fdcan_1.o(i.HAL_FDCAN_Init) refers to stm32h7xx_hal_fdcan_1.o(i.FDCAN_CalcultateRamBlockAddresses) for FDCAN_CalcultateRamBlockAddresses
     stm32h7xx_hal_fdcan_1.o(i.HAL_FDCAN_Init) refers to stm32h7xx_hal_fdcan_1.o(.constdata) for .constdata
     stm32h7xx_hal_fdcan_1.o(i.HAL_FDCAN_TT_ConfigOperation) refers to stm32h7xx_hal.o(i.HAL_GetTick) for HAL_GetTick
     stm32h7xx_hal_fdcan_1.o(i.HAL_FDCAN_TT_ConfigOperation) refers to stm32h7xx_hal_1.o(i.HAL_GetTick) for HAL_GetTick
-    stm32h7xx_hal_gpio_1.o(i.HAL_GPIO_EXTI_IRQHandler) refers to stm32h7xx_hal_gpio.o(i.HAL_GPIO_EXTI_Callback) for HAL_GPIO_EXTI_Callback
-    stm32h7xx_hal_gpio_1.o(i.HAL_GPIO_EXTI_IRQHandler) refers to stm32h7xx_hal_gpio_1.o(i.HAL_GPIO_EXTI_Callback) for HAL_GPIO_EXTI_Callback
+    stm32h7xx_hal_gpio_1.o(i.HAL_GPIO_EXTI_IRQHandler) refers to stm32h7xx_it_1.o(i.HAL_GPIO_EXTI_Callback) for HAL_GPIO_EXTI_Callback
     stm32h7xx_hal_pwr_1.o(i.HAL_PWR_EnterSTANDBYMode) refers to stm32h7xx_hal_cortex.o(i.HAL_GetCurrentCPUID) for HAL_GetCurrentCPUID
     stm32h7xx_hal_pwr_1.o(i.HAL_PWR_EnterSTANDBYMode) refers to stm32h7xx_hal_cortex_1.o(i.HAL_GetCurrentCPUID) for HAL_GetCurrentCPUID
     stm32h7xx_hal_pwr_1.o(i.HAL_PWR_EnterSTOPMode) refers to stm32h7xx_hal_cortex.o(i.HAL_GetCurrentCPUID) for HAL_GetCurrentCPUID

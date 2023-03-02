@@ -5,10 +5,10 @@
 <h2>Tool Versions:</h2>
 IDE-Version: µVision V5.29.0.0
 Copyright (C) 2019 ARM Ltd and ARM Germany GmbH. All rights reserved.
-License Information: Jo Bau, -, LIC=21ERA-1V8JA-PZRWB-2BQYN-RK7DR-LKBXM
+License Information: Johannes Yoshi, -, LIC=S5IJJ-U4D3C-YCVJ1-CNFES-NN00B-T0AEV
  
 Tool Versions:
-Toolchain:       MDK-ARM Plus  Version: 5.29.0.0
+Toolchain:       MDK-ARM Professional  Version: 5.29.0.0
 Toolchain Path:  C:\Keil_v5\ARM\ARMCC\Bin
 C Compiler:      Armcc.exe V5.06 update 6 (build 750)
 Assembler:       Armasm.exe V5.06 update 6 (build 750)
@@ -21,95 +21,233 @@ Target DLL:      STLink\ST-LINKIII-KEIL_SWO.dll V3.0.7.0
 Dialog DLL:      TCM.DLL V1.36.5.0
  
 <h2>Project:</h2>
-D:\Dokumente\GitHub\Software\01_jrg\08_STM32H745\Template\MDK-ARM\Template.uvprojx
-Project File Date:  02/13/2023
+C:\Users\Yoshi\Documents\GitHub\Software\01_jrg\08_STM32H745\Template\MDK-ARM\Template.uvprojx
+Project File Date:  02/24/2023
 
 <h2>Output:</h2>
 *** Using Compiler 'V5.06 update 6 (build 750)', folder: 'C:\Keil_v5\ARM\ARMCC\Bin'
 Build target 'Template_CM7'
-compiling freertos.c...
+compiling FDCAN_RX.c...
+.\RTE\_Template_CM7\Pre_Include_Global.h(14): warning:  #47-D: incompatible redefinition of macro "USE_HAL_DRIVER" 
+  #define USE_HAL_DRIVER
+FDCAN_RX.c: 1 warning, 0 errors
 compiling FDCAN_TX.c...
+.\RTE\_Template_CM7\Pre_Include_Global.h(14): warning:  #47-D: incompatible redefinition of macro "USE_HAL_DRIVER" 
+  #define USE_HAL_DRIVER
 FDCAN_TX.c(24): warning:  #177-D: variable "j"  was declared but never referenced
   	int i, j;
-FDCAN_TX.c: 1 warning, 0 errors
+FDCAN_TX.c: 2 warnings, 0 errors
+compiling freertos.c...
+.\RTE\_Template_CM7\Pre_Include_Global.h(14): warning:  #47-D: incompatible redefinition of macro "USE_HAL_DRIVER" 
+  #define USE_HAL_DRIVER
+../CM7/Core/Src/freertos.c: 1 warning, 0 errors
 compiling FDCAN_LL_Management.c...
+.\RTE\_Template_CM7\Pre_Include_Global.h(14): warning:  #47-D: incompatible redefinition of macro "USE_HAL_DRIVER" 
+  #define USE_HAL_DRIVER
 FDCAN_LL_Management.c(242): warning:  #167-D: argument of type "uint8_t (*)[8]" is incompatible with parameter of type "uint8_t *"
   	HAL_FDCAN_AddMessageToTxFifoQ(&hfdcan1, &HeaderTX, &Data);
 FDCAN_LL_Management.c(276): warning:  #177-D: variable "j"  was declared but never referenced
   	int i, j, k;
-FDCAN_LL_Management.c: 2 warnings, 0 errors
-compiling main.c...
-../CM7/Core/Src/main.c(69): warning:  #167-D: argument of type "void (*)(void)" is incompatible with parameter of type "osThreadFunc_t"
-  	id_task_CAN_RX = osThreadNew(TASK_FDCAN_RX, NULL, NULL);
-../CM7/Core/Src/main.c(72): warning:  #167-D: argument of type "void (*)(void)" is incompatible with parameter of type "osThreadFunc_t"
-  	id_task_CAN_TX = osThreadNew(TASK_FDCAN_TX, NULL, NULL);
-../CM7/Core/Src/main.c(75): warning:  #167-D: argument of type "void (*)(void)" is incompatible with parameter of type "osThreadFunc_t"
-  	id_task_timer = osThreadNew(Task_Timer, NULL, NULL);
-../CM7/Core/Src/main.c(78): warning:  #167-D: argument of type "void (*)(void)" is incompatible with parameter of type "osThreadFunc_t"
-  	id_task_LED1 = osThreadNew(toggle_LED1, NULL, NULL);
-../CM7/Core/Src/main.c(84): warning:  #223-D: function "MX_TIM15_Init" declared implicitly
-  	MX_TIM15_Init();
-../CM7/Core/Src/main.c: 5 warnings, 0 errors
-compiling gpio.c...
-../CM7/Core/Src/gpio.c(78): warning:  #177-D: variable "i"  was declared but never referenced
-  	int i = 0;
-../CM7/Core/Src/gpio.c: 1 warning, 0 errors
-compiling stm32h7xx_it.c...
-compiling FDCAN_RX.c...
-compiling stm32h7xx_hal_timebase_tim.c...
-compiling stm32h7xx_hal_msp.c...
-compiling stm32h7xx_hal_cortex.c...
-compiling fdcan.c...
+FDCAN_LL_Management.c: 3 warnings, 0 errors
 compiling Timer.c...
-compiling stm32h7xx_hal_pwr.c...
-compiling stm32h7xx_hal_rcc.c...
-compiling stm32h7xx_hal_fdcan.c...
-compiling stm32h7xx_hal_flash_ex.c...
-compiling stm32h7xx_hal_flash.c...
-compiling stm32h7xx_hal_rcc_ex.c...
-compiling stm32h7xx_hal_gpio.c...
-compiling stm32h7xx_hal_mdma.c...
-compiling stm32h7xx_hal_hsem.c...
-compiling croutine.c...
-compiling event_groups.c...
-compiling list.c...
-compiling stm32h7xx_hal_i2c_ex.c...
-compiling stm32h7xx_hal_dma_ex.c...
-compiling queue.c...
-compiling stream_buffer.c...
-compiling timers.c...
-compiling tasks.c...
-compiling heap_4.c...
-compiling port.c...
-compiling stm32h7xx_hal_tim_ex.c...
-compiling stm32h7xx_hal_i2c.c...
-compiling stm32h7xx_hal_pwr_ex.c...
-compiling stm32h7xx_hal_dma.c...
-compiling stm32h7xx_hal.c...
-compiling stm32h7xx_hal_exti.c...
-compiling stm32h7xx_hal.c...
-compiling stm32h7xx_hal_pwr.c...
+.\RTE\_Template_CM7\Pre_Include_Global.h(14): warning:  #47-D: incompatible redefinition of macro "USE_HAL_DRIVER" 
+  #define USE_HAL_DRIVER
+Timer.c: 1 warning, 0 errors
+compiling gpio.c...
+.\RTE\_Template_CM7\Pre_Include_Global.h(14): warning:  #47-D: incompatible redefinition of macro "USE_HAL_DRIVER" 
+  #define USE_HAL_DRIVER
+../CM7/Core/Src/gpio.c(89): warning:  #177-D: variable "i"  was declared but never referenced
+  	int i = 0;
+../CM7/Core/Src/gpio.c: 2 warnings, 0 errors
+compiling main.c...
+.\RTE\_Template_CM7\Pre_Include_Global.h(14): warning:  #47-D: incompatible redefinition of macro "USE_HAL_DRIVER" 
+  #define USE_HAL_DRIVER
+../CM7/Core/Src/main.c: 1 warning, 0 errors
+compiling stm32h7xx_hal_msp.c...
+.\RTE\_Template_CM7\Pre_Include_Global.h(14): warning:  #47-D: incompatible redefinition of macro "USE_HAL_DRIVER" 
+  #define USE_HAL_DRIVER
+../CM7/Core/Src/stm32h7xx_hal_msp.c: 1 warning, 0 errors
+compiling stm32h7xx_hal_timebase_tim.c...
+.\RTE\_Template_CM7\Pre_Include_Global.h(14): warning:  #47-D: incompatible redefinition of macro "USE_HAL_DRIVER" 
+  #define USE_HAL_DRIVER
+../CM7/Core/Src/stm32h7xx_hal_timebase_tim.c: 1 warning, 0 errors
 compiling stm32h7xx_hal_cortex.c...
-compiling system_stm32h7xx_dualcore_boot_cm4_cm7.c...
-compiling stm32h7xx_hal_tim.c...
-compiling cmsis_os2.c...
+.\RTE\_Template_CM7\Pre_Include_Global.h(14): warning:  #47-D: incompatible redefinition of macro "USE_HAL_DRIVER" 
+  #define USE_HAL_DRIVER
+../Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_cortex.c: 1 warning, 0 errors
+compiling stm32h7xx_it.c...
+.\RTE\_Template_CM7\Pre_Include_Global.h(14): warning:  #47-D: incompatible redefinition of macro "USE_HAL_DRIVER" 
+  #define USE_HAL_DRIVER
+../CM7/Core/Src/stm32h7xx_it.c: 1 warning, 0 errors
+compiling stm32h7xx_hal_rcc_ex.c...
+.\RTE\_Template_CM7\Pre_Include_Global.h(14): warning:  #47-D: incompatible redefinition of macro "USE_HAL_DRIVER" 
+  #define USE_HAL_DRIVER
+../Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_rcc_ex.c: 1 warning, 0 errors
 compiling stm32h7xx_hal_rcc.c...
-compiling stm32h7xx_hal_pwr_ex.c...
+.\RTE\_Template_CM7\Pre_Include_Global.h(14): warning:  #47-D: incompatible redefinition of macro "USE_HAL_DRIVER" 
+  #define USE_HAL_DRIVER
+../Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_rcc.c: 1 warning, 0 errors
+compiling stm32h7xx_hal_fdcan.c...
+.\RTE\_Template_CM7\Pre_Include_Global.h(14): warning:  #47-D: incompatible redefinition of macro "USE_HAL_DRIVER" 
+  #define USE_HAL_DRIVER
+../Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_fdcan.c: 1 warning, 0 errors
+compiling stm32h7xx_hal_flash.c...
+.\RTE\_Template_CM7\Pre_Include_Global.h(14): warning:  #47-D: incompatible redefinition of macro "USE_HAL_DRIVER" 
+  #define USE_HAL_DRIVER
+../Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_flash.c: 1 warning, 0 errors
+compiling stm32h7xx_hal_hsem.c...
+.\RTE\_Template_CM7\Pre_Include_Global.h(14): warning:  #47-D: incompatible redefinition of macro "USE_HAL_DRIVER" 
+  #define USE_HAL_DRIVER
+../Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_hsem.c: 1 warning, 0 errors
 compiling stm32h7xx_hal_gpio.c...
+.\RTE\_Template_CM7\Pre_Include_Global.h(14): warning:  #47-D: incompatible redefinition of macro "USE_HAL_DRIVER" 
+  #define USE_HAL_DRIVER
+../Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_gpio.c: 1 warning, 0 errors
+compiling stm32h7xx_hal_dma_ex.c...
+.\RTE\_Template_CM7\Pre_Include_Global.h(14): warning:  #47-D: incompatible redefinition of macro "USE_HAL_DRIVER" 
+  #define USE_HAL_DRIVER
+../Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_dma_ex.c: 1 warning, 0 errors
+compiling stm32h7xx_hal_flash_ex.c...
+.\RTE\_Template_CM7\Pre_Include_Global.h(14): warning:  #47-D: incompatible redefinition of macro "USE_HAL_DRIVER" 
+  #define USE_HAL_DRIVER
+../Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_flash_ex.c: 1 warning, 0 errors
+compiling stm32h7xx_hal_dma.c...
+.\RTE\_Template_CM7\Pre_Include_Global.h(14): warning:  #47-D: incompatible redefinition of macro "USE_HAL_DRIVER" 
+  #define USE_HAL_DRIVER
+../Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_dma.c: 1 warning, 0 errors
+compiling stm32h7xx_hal_mdma.c...
+.\RTE\_Template_CM7\Pre_Include_Global.h(14): warning:  #47-D: incompatible redefinition of macro "USE_HAL_DRIVER" 
+  #define USE_HAL_DRIVER
+../Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_mdma.c: 1 warning, 0 errors
+compiling stm32h7xx_hal_pwr.c...
+.\RTE\_Template_CM7\Pre_Include_Global.h(14): warning:  #47-D: incompatible redefinition of macro "USE_HAL_DRIVER" 
+  #define USE_HAL_DRIVER
+../Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_pwr.c: 1 warning, 0 errors
+compiling stm32h7xx_hal_pwr_ex.c...
+.\RTE\_Template_CM7\Pre_Include_Global.h(14): warning:  #47-D: incompatible redefinition of macro "USE_HAL_DRIVER" 
+  #define USE_HAL_DRIVER
+../Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_pwr_ex.c: 1 warning, 0 errors
+compiling stm32h7xx_hal.c...
+.\RTE\_Template_CM7\Pre_Include_Global.h(14): warning:  #47-D: incompatible redefinition of macro "USE_HAL_DRIVER" 
+  #define USE_HAL_DRIVER
+../Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal.c: 1 warning, 0 errors
+compiling stm32h7xx_hal_i2c_ex.c...
+.\RTE\_Template_CM7\Pre_Include_Global.h(14): warning:  #47-D: incompatible redefinition of macro "USE_HAL_DRIVER" 
+  #define USE_HAL_DRIVER
+../Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_i2c_ex.c: 1 warning, 0 errors
+compiling stm32h7xx_hal_exti.c...
+.\RTE\_Template_CM7\Pre_Include_Global.h(14): warning:  #47-D: incompatible redefinition of macro "USE_HAL_DRIVER" 
+  #define USE_HAL_DRIVER
+../Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_exti.c: 1 warning, 0 errors
+compiling croutine.c...
+.\RTE\_Template_CM7\Pre_Include_Global.h(14): warning:  #47-D: incompatible redefinition of macro "USE_HAL_DRIVER" 
+  #define USE_HAL_DRIVER
+../Middlewares/Third_Party/FreeRTOS/Source/croutine.c: 1 warning, 0 errors
+compiling event_groups.c...
+.\RTE\_Template_CM7\Pre_Include_Global.h(14): warning:  #47-D: incompatible redefinition of macro "USE_HAL_DRIVER" 
+  #define USE_HAL_DRIVER
+../Middlewares/Third_Party/FreeRTOS/Source/event_groups.c: 1 warning, 0 errors
+compiling list.c...
+.\RTE\_Template_CM7\Pre_Include_Global.h(14): warning:  #47-D: incompatible redefinition of macro "USE_HAL_DRIVER" 
+  #define USE_HAL_DRIVER
+../Middlewares/Third_Party/FreeRTOS/Source/list.c: 1 warning, 0 errors
+compiling stm32h7xx_hal_i2c.c...
+.\RTE\_Template_CM7\Pre_Include_Global.h(14): warning:  #47-D: incompatible redefinition of macro "USE_HAL_DRIVER" 
+  #define USE_HAL_DRIVER
+../Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_i2c.c: 1 warning, 0 errors
+compiling stm32h7xx_hal_tim_ex.c...
+.\RTE\_Template_CM7\Pre_Include_Global.h(14): warning:  #47-D: incompatible redefinition of macro "USE_HAL_DRIVER" 
+  #define USE_HAL_DRIVER
+../Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_tim_ex.c: 1 warning, 0 errors
+compiling system_stm32h7xx_dualcore_boot_cm4_cm7.c...
+.\RTE\_Template_CM7\Pre_Include_Global.h(14): warning:  #47-D: incompatible redefinition of macro "USE_HAL_DRIVER" 
+  #define USE_HAL_DRIVER
+../Common/Src/system_stm32h7xx_dualcore_boot_cm4_cm7.c: 1 warning, 0 errors
+compiling queue.c...
+.\RTE\_Template_CM7\Pre_Include_Global.h(14): warning:  #47-D: incompatible redefinition of macro "USE_HAL_DRIVER" 
+  #define USE_HAL_DRIVER
+../Middlewares/Third_Party/FreeRTOS/Source/queue.c: 1 warning, 0 errors
+compiling timers.c...
+.\RTE\_Template_CM7\Pre_Include_Global.h(14): warning:  #47-D: incompatible redefinition of macro "USE_HAL_DRIVER" 
+  #define USE_HAL_DRIVER
+../Middlewares/Third_Party/FreeRTOS/Source/timers.c: 1 warning, 0 errors
+compiling heap_4.c...
+.\RTE\_Template_CM7\Pre_Include_Global.h(14): warning:  #47-D: incompatible redefinition of macro "USE_HAL_DRIVER" 
+  #define USE_HAL_DRIVER
+../Middlewares/Third_Party/FreeRTOS/Source/portable/MemMang/heap_4.c: 1 warning, 0 errors
+compiling stream_buffer.c...
+.\RTE\_Template_CM7\Pre_Include_Global.h(14): warning:  #47-D: incompatible redefinition of macro "USE_HAL_DRIVER" 
+  #define USE_HAL_DRIVER
+../Middlewares/Third_Party/FreeRTOS/Source/stream_buffer.c: 1 warning, 0 errors
+compiling stm32h7xx_hal_tim.c...
+.\RTE\_Template_CM7\Pre_Include_Global.h(14): warning:  #47-D: incompatible redefinition of macro "USE_HAL_DRIVER" 
+  #define USE_HAL_DRIVER
+../Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_tim.c: 1 warning, 0 errors
+compiling tasks.c...
+.\RTE\_Template_CM7\Pre_Include_Global.h(14): warning:  #47-D: incompatible redefinition of macro "USE_HAL_DRIVER" 
+  #define USE_HAL_DRIVER
+../Middlewares/Third_Party/FreeRTOS/Source/tasks.c: 1 warning, 0 errors
+compiling port.c...
+.\RTE\_Template_CM7\Pre_Include_Global.h(14): warning:  #47-D: incompatible redefinition of macro "USE_HAL_DRIVER" 
+  #define USE_HAL_DRIVER
+../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F/port.c: 1 warning, 0 errors
+compiling cmsis_os2.c...
+.\RTE\_Template_CM7\Pre_Include_Global.h(14): warning:  #47-D: incompatible redefinition of macro "USE_HAL_DRIVER" 
+  #define USE_HAL_DRIVER
+../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2/cmsis_os2.c: 1 warning, 0 errors
+compiling stm32h7xx_hal.c...
+.\RTE\_Template_CM7\Pre_Include_Global.h(14): warning:  #47-D: incompatible redefinition of macro "USE_HAL_DRIVER" 
+  #define USE_HAL_DRIVER
+C:\Users\Yoshi\AppData\Local\Arm\Packs\Keil\STM32H7xx_DFP\3.0.0\Drivers\STM32H7xx_HAL_Driver\Src\stm32h7xx_hal.c: 1 warning, 0 errors
+compiling stm32h7xx_hal_cortex.c...
+.\RTE\_Template_CM7\Pre_Include_Global.h(14): warning:  #47-D: incompatible redefinition of macro "USE_HAL_DRIVER" 
+  #define USE_HAL_DRIVER
+C:\Users\Yoshi\AppData\Local\Arm\Packs\Keil\STM32H7xx_DFP\3.0.0\Drivers\STM32H7xx_HAL_Driver\Src\stm32h7xx_hal_cortex.c: 1 warning, 0 errors
+compiling stm32h7xx_hal_dma_ex.c...
+.\RTE\_Template_CM7\Pre_Include_Global.h(14): warning:  #47-D: incompatible redefinition of macro "USE_HAL_DRIVER" 
+  #define USE_HAL_DRIVER
+C:\Users\Yoshi\AppData\Local\Arm\Packs\Keil\STM32H7xx_DFP\3.0.0\Drivers\STM32H7xx_HAL_Driver\Src\stm32h7xx_hal_dma_ex.c: 1 warning, 0 errors
+compiling stm32h7xx_hal_dma.c...
+.\RTE\_Template_CM7\Pre_Include_Global.h(14): warning:  #47-D: incompatible redefinition of macro "USE_HAL_DRIVER" 
+  #define USE_HAL_DRIVER
+C:\Users\Yoshi\AppData\Local\Arm\Packs\Keil\STM32H7xx_DFP\3.0.0\Drivers\STM32H7xx_HAL_Driver\Src\stm32h7xx_hal_dma.c: 1 warning, 0 errors
+compiling stm32h7xx_hal_gpio.c...
+.\RTE\_Template_CM7\Pre_Include_Global.h(14): warning:  #47-D: incompatible redefinition of macro "USE_HAL_DRIVER" 
+  #define USE_HAL_DRIVER
 C:\Users\Yoshi\AppData\Local\Arm\Packs\Keil\STM32H7xx_DFP\3.0.0\Drivers\STM32H7xx_HAL_Driver\Src\stm32h7xx_hal_gpio.c(125): warning:  #47-D: incompatible redefinition of macro "GPIO_MODE"  (declared at line 286 of "../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_gpio.h")
   #define GPIO_MODE             (0x00000003U)
 C:\Users\Yoshi\AppData\Local\Arm\Packs\Keil\STM32H7xx_DFP\3.0.0\Drivers\STM32H7xx_HAL_Driver\Src\stm32h7xx_hal_gpio.c(127): warning:  #47-D: incompatible redefinition of macro "EXTI_MODE"  (declared at line 296 of "../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_gpio.h")
   #define EXTI_MODE             (0x10000000U)
-C:\Users\Yoshi\AppData\Local\Arm\Packs\Keil\STM32H7xx_DFP\3.0.0\Drivers\STM32H7xx_HAL_Driver\Src\stm32h7xx_hal_gpio.c: 2 warnings, 0 errors
+C:\Users\Yoshi\AppData\Local\Arm\Packs\Keil\STM32H7xx_DFP\3.0.0\Drivers\STM32H7xx_HAL_Driver\Src\stm32h7xx_hal_gpio.c: 3 warnings, 0 errors
 compiling stm32h7xx_hal_fdcan.c...
-compiling stm32h7xx_hal_rcc_ex.c...
-compiling stm32h7xx_hal_dma_ex.c...
-compiling stm32h7xx_hal_dma.c...
+.\RTE\_Template_CM7\Pre_Include_Global.h(14): warning:  #47-D: incompatible redefinition of macro "USE_HAL_DRIVER" 
+  #define USE_HAL_DRIVER
+C:\Users\Yoshi\AppData\Local\Arm\Packs\Keil\STM32H7xx_DFP\3.0.0\Drivers\STM32H7xx_HAL_Driver\Src\stm32h7xx_hal_fdcan.c: 1 warning, 0 errors
+compiling stm32h7xx_hal_pwr.c...
+.\RTE\_Template_CM7\Pre_Include_Global.h(14): warning:  #47-D: incompatible redefinition of macro "USE_HAL_DRIVER" 
+  #define USE_HAL_DRIVER
+C:\Users\Yoshi\AppData\Local\Arm\Packs\Keil\STM32H7xx_DFP\3.0.0\Drivers\STM32H7xx_HAL_Driver\Src\stm32h7xx_hal_pwr.c: 1 warning, 0 errors
+compiling stm32h7xx_hal_pwr_ex.c...
+.\RTE\_Template_CM7\Pre_Include_Global.h(14): warning:  #47-D: incompatible redefinition of macro "USE_HAL_DRIVER" 
+  #define USE_HAL_DRIVER
+C:\Users\Yoshi\AppData\Local\Arm\Packs\Keil\STM32H7xx_DFP\3.0.0\Drivers\STM32H7xx_HAL_Driver\Src\stm32h7xx_hal_pwr_ex.c: 1 warning, 0 errors
+compiling stm32h7xx_hal_rcc.c...
+.\RTE\_Template_CM7\Pre_Include_Global.h(14): warning:  #47-D: incompatible redefinition of macro "USE_HAL_DRIVER" 
+  #define USE_HAL_DRIVER
+C:\Users\Yoshi\AppData\Local\Arm\Packs\Keil\STM32H7xx_DFP\3.0.0\Drivers\STM32H7xx_HAL_Driver\Src\stm32h7xx_hal_rcc.c: 1 warning, 0 errors
 compiling stm32h7xx_hal_tim_ex.c...
+.\RTE\_Template_CM7\Pre_Include_Global.h(14): warning:  #47-D: incompatible redefinition of macro "USE_HAL_DRIVER" 
+  #define USE_HAL_DRIVER
+C:\Users\Yoshi\AppData\Local\Arm\Packs\Keil\STM32H7xx_DFP\3.0.0\Drivers\STM32H7xx_HAL_Driver\Src\stm32h7xx_hal_tim_ex.c: 1 warning, 0 errors
+compiling stm32h7xx_hal_rcc_ex.c...
+.\RTE\_Template_CM7\Pre_Include_Global.h(14): warning:  #47-D: incompatible redefinition of macro "USE_HAL_DRIVER" 
+  #define USE_HAL_DRIVER
+C:\Users\Yoshi\AppData\Local\Arm\Packs\Keil\STM32H7xx_DFP\3.0.0\Drivers\STM32H7xx_HAL_Driver\Src\stm32h7xx_hal_rcc_ex.c: 1 warning, 0 errors
 compiling stm32h7xx_hal_tim.c...
+.\RTE\_Template_CM7\Pre_Include_Global.h(14): warning:  #47-D: incompatible redefinition of macro "USE_HAL_DRIVER" 
+  #define USE_HAL_DRIVER
+C:\Users\Yoshi\AppData\Local\Arm\Packs\Keil\STM32H7xx_DFP\3.0.0\Drivers\STM32H7xx_HAL_Driver\Src\stm32h7xx_hal_tim.c: 1 warning, 0 errors
 linking...
-Template_CM7\Template_CM7.axf: Error: L6200E: Symbol hfdcan1 multiply defined (by fdcan.o and fdcan_ll_management.o).
-Template_CM7\Template_CM7.axf: Error: L6200E: Symbol MX_FDCAN1_Init multiply defined (by fdcan.o and fdcan_ll_management.o).
 Template_CM7\Template_CM7.axf: Error: L6200E: Symbol HAL_FDCAN_ActivateNotification multiply defined (by stm32h7xx_hal_fdcan_1.o and stm32h7xx_hal_fdcan.o).
 Template_CM7\Template_CM7.axf: Error: L6200E: Symbol HAL_FDCAN_AddMessageToTxFifoQ multiply defined (by stm32h7xx_hal_fdcan_1.o and stm32h7xx_hal_fdcan.o).
 Template_CM7\Template_CM7.axf: Error: L6200E: Symbol HAL_FDCAN_ConfigFilter multiply defined (by stm32h7xx_hal_fdcan_1.o and stm32h7xx_hal_fdcan.o).
@@ -132,12 +270,11 @@ Template_CM7\Template_CM7.axf: Error: L6200E: Symbol HAL_TIM_ConfigClockSource m
 Template_CM7\Template_CM7.axf: Error: L6200E: Symbol HAL_TIM_IRQHandler multiply defined (by stm32h7xx_hal_tim_1.o and stm32h7xx_hal_tim.o).
 Template_CM7\Template_CM7.axf: Error: L6200E: Symbol HAL_IncTick multiply defined (by stm32h7xx_hal_1.o and stm32h7xx_hal.o).
 Template_CM7\Template_CM7.axf: Error: L6200E: Symbol HAL_Init multiply defined (by stm32h7xx_hal_1.o and stm32h7xx_hal.o).
-Template_CM7\Template_CM7.axf: Error: L6200E: Symbol HAL_NVIC_SetPriorityGrouping multiply defined (by stm32h7xx_hal_cortex_1.o and stm32h7xx_hal_cortex.o).
 Template_CM7\Template_CM7.axf: Error: L6200E: Symbol HAL_PWREx_ConfigSupply multiply defined (by stm32h7xx_hal_pwr_ex_1.o and stm32h7xx_hal_pwr_ex.o).
 Template_CM7\Template_CM7.axf: Error: L6200E: Symbol HAL_RCC_ClockConfig multiply defined (by stm32h7xx_hal_rcc_1.o and stm32h7xx_hal_rcc.o).
 Template_CM7\Template_CM7.axf: Error: L6200E: Symbol HAL_RCC_OscConfig multiply defined (by stm32h7xx_hal_rcc_1.o and stm32h7xx_hal_rcc.o).
 Template_CM7\Template_CM7.axf: Error: L6200E: Symbol HAL_GPIO_TogglePin multiply defined (by stm32h7xx_hal_gpio_1.o and stm32h7xx_hal_gpio.o).
-Template_CM7\Template_CM7.axf: Error: L6200E: Symbol HAL_GPIO_DeInit multiply defined (by stm32h7xx_hal_gpio_1.o and stm32h7xx_hal_gpio.o).
+Template_CM7\Template_CM7.axf: Error: L6200E: Symbol HAL_GPIO_EXTI_IRQHandler multiply defined (by stm32h7xx_hal_gpio_1.o and stm32h7xx_hal_gpio.o).
 Template_CM7\Template_CM7.axf: Error: L6200E: Symbol HAL_RCC_GetClockConfig multiply defined (by stm32h7xx_hal_rcc_1.o and stm32h7xx_hal_rcc.o).
 Template_CM7\Template_CM7.axf: Error: L6200E: Symbol uwTickPrio multiply defined (by stm32h7xx_hal_1.o and stm32h7xx_hal.o).
 Template_CM7\Template_CM7.axf: Error: L6200E: Symbol __asm___22_stm32h7xx_hal_cortex_c_2992dbc0____REV16 multiply defined (by stm32h7xx_hal_cortex_1.o and stm32h7xx_hal_cortex.o).
@@ -153,6 +290,7 @@ Template_CM7\Template_CM7.axf: Error: L6200E: Symbol HAL_NVIC_GetPendingIRQ mult
 Template_CM7\Template_CM7.axf: Error: L6200E: Symbol HAL_NVIC_GetPriority multiply defined (by stm32h7xx_hal_cortex_1.o and stm32h7xx_hal_cortex.o).
 Template_CM7\Template_CM7.axf: Error: L6200E: Symbol HAL_NVIC_GetPriorityGrouping multiply defined (by stm32h7xx_hal_cortex_1.o and stm32h7xx_hal_cortex.o).
 Template_CM7\Template_CM7.axf: Error: L6200E: Symbol HAL_NVIC_SetPendingIRQ multiply defined (by stm32h7xx_hal_cortex_1.o and stm32h7xx_hal_cortex.o).
+Template_CM7\Template_CM7.axf: Error: L6200E: Symbol HAL_NVIC_SetPriorityGrouping multiply defined (by stm32h7xx_hal_cortex_1.o and stm32h7xx_hal_cortex.o).
 Template_CM7\Template_CM7.axf: Error: L6200E: Symbol HAL_NVIC_SystemReset multiply defined (by stm32h7xx_hal_cortex_1.o and stm32h7xx_hal_cortex.o).
 Template_CM7\Template_CM7.axf: Error: L6200E: Symbol HAL_SYSTICK_CLKSourceConfig multiply defined (by stm32h7xx_hal_cortex_1.o and stm32h7xx_hal_cortex.o).
 Template_CM7\Template_CM7.axf: Error: L6200E: Symbol HAL_SYSTICK_Config multiply defined (by stm32h7xx_hal_cortex_1.o and stm32h7xx_hal_cortex.o).
@@ -237,6 +375,8 @@ Template_CM7\Template_CM7.axf: Error: L6200E: Symbol HAL_FDCAN_ClockCalibrationC
 Template_CM7\Template_CM7.axf: Error: L6200E: Symbol HAL_FDCAN_ErrorCallback multiply defined (by stm32h7xx_hal_fdcan_1.o and stm32h7xx_hal_fdcan.o).
 Template_CM7\Template_CM7.axf: Error: L6200E: Symbol HAL_FDCAN_ErrorStatusCallback multiply defined (by stm32h7xx_hal_fdcan_1.o and stm32h7xx_hal_fdcan.o).
 Template_CM7\Template_CM7.axf: Error: L6200E: Symbol HAL_FDCAN_HighPriorityMessageCallback multiply defined (by stm32h7xx_hal_fdcan_1.o and stm32h7xx_hal_fdcan.o).
+Template_CM7\Template_CM7.axf: Error: L6200E: Symbol HAL_FDCAN_MspDeInit multiply defined (by stm32h7xx_hal_fdcan_1.o and stm32h7xx_hal_fdcan.o).
+Template_CM7\Template_CM7.axf: Error: L6200E: Symbol HAL_FDCAN_MspInit multiply defined (by stm32h7xx_hal_fdcan_1.o and stm32h7xx_hal_fdcan.o).
 Template_CM7\Template_CM7.axf: Error: L6200E: Symbol HAL_FDCAN_RxBufferNewMessageCallback multiply defined (by stm32h7xx_hal_fdcan_1.o and stm32h7xx_hal_fdcan.o).
 Template_CM7\Template_CM7.axf: Error: L6200E: Symbol HAL_FDCAN_RxFifo1Callback multiply defined (by stm32h7xx_hal_fdcan_1.o and stm32h7xx_hal_fdcan.o).
 Template_CM7\Template_CM7.axf: Error: L6200E: Symbol HAL_FDCAN_TT_GlobalTimeCallback multiply defined (by stm32h7xx_hal_fdcan_1.o and stm32h7xx_hal_fdcan.o).
@@ -295,10 +435,9 @@ Template_CM7\Template_CM7.axf: Error: L6200E: Symbol HAL_RCCEx_LSECSS_Callback m
 Template_CM7\Template_CM7.axf: Error: L6200E: Symbol __asm___20_stm32h7xx_hal_gpio_c_ea787061____REV16 multiply defined (by stm32h7xx_hal_gpio_1.o and stm32h7xx_hal_gpio.o).
 Template_CM7\Template_CM7.axf: Error: L6200E: Symbol __asm___20_stm32h7xx_hal_gpio_c_ea787061____REVSH multiply defined (by stm32h7xx_hal_gpio_1.o and stm32h7xx_hal_gpio.o).
 Template_CM7\Template_CM7.axf: Error: L6200E: Symbol __asm___20_stm32h7xx_hal_gpio_c_ea787061____RRX multiply defined (by stm32h7xx_hal_gpio_1.o and stm32h7xx_hal_gpio.o).
-Template_CM7\Template_CM7.axf: Error: L6200E: Symbol HAL_GPIO_EXTI_IRQHandler multiply defined (by stm32h7xx_hal_gpio_1.o and stm32h7xx_hal_gpio.o).
+Template_CM7\Template_CM7.axf: Error: L6200E: Symbol HAL_GPIO_DeInit multiply defined (by stm32h7xx_hal_gpio_1.o and stm32h7xx_hal_gpio.o).
 Template_CM7\Template_CM7.axf: Error: L6200E: Symbol HAL_GPIO_LockPin multiply defined (by stm32h7xx_hal_gpio_1.o and stm32h7xx_hal_gpio.o).
 Template_CM7\Template_CM7.axf: Error: L6200E: Symbol HAL_GPIO_ReadPin multiply defined (by stm32h7xx_hal_gpio_1.o and stm32h7xx_hal_gpio.o).
-Template_CM7\Template_CM7.axf: Error: L6200E: Symbol HAL_GPIO_EXTI_Callback multiply defined (by stm32h7xx_hal_gpio_1.o and stm32h7xx_hal_gpio.o).
 Template_CM7\Template_CM7.axf: Error: L6200E: Symbol __asm___19_stm32h7xx_hal_dma_c_c25f65ec____REV16 multiply defined (by stm32h7xx_hal_dma_1.o and stm32h7xx_hal_dma.o).
 Template_CM7\Template_CM7.axf: Error: L6200E: Symbol __asm___19_stm32h7xx_hal_dma_c_c25f65ec____REVSH multiply defined (by stm32h7xx_hal_dma_1.o and stm32h7xx_hal_dma.o).
 Template_CM7\Template_CM7.axf: Error: L6200E: Symbol __asm___19_stm32h7xx_hal_dma_c_c25f65ec____RRX multiply defined (by stm32h7xx_hal_dma_1.o and stm32h7xx_hal_dma.o).
@@ -595,8 +734,8 @@ Template_CM7\Template_CM7.axf: Error: L6200E: Symbol HAL_TIMEx_HallSensor_MspDeI
 Template_CM7\Template_CM7.axf: Error: L6200E: Symbol HAL_TIMEx_HallSensor_MspInit multiply defined (by stm32h7xx_hal_tim_ex_1.o and stm32h7xx_hal_tim_ex.o).
 Not enough information to list image symbols.
 Not enough information to list load addresses in the image map.
-Finished: 2 information, 0 warning and 485 error messages.
-"Template_CM7\Template_CM7.axf" - 485 Error(s), 11 Warning(s).
+Finished: 2 information, 0 warning and 484 error messages.
+"Template_CM7\Template_CM7.axf" - 484 Error(s), 58 Warning(s).
 
 <h2>Software Packages used:</h2>
 
@@ -656,10 +795,10 @@ Package Vendor: Keil
       Source file:   Drivers\STM32H7xx_HAL_Driver\Src\stm32h7xx_hal_rcc.c
 
    * Component: Keil::Device:STM32Cube HAL:TIM:1.9.0
-      Source file:   Drivers\STM32H7xx_HAL_Driver\Src\stm32h7xx_hal_tim.c
       Source file:   Drivers\STM32H7xx_HAL_Driver\Src\stm32h7xx_hal_tim_ex.c
+      Source file:   Drivers\STM32H7xx_HAL_Driver\Src\stm32h7xx_hal_tim.c
 Target not created.
-Build Time Elapsed:  00:01:41
+Build Time Elapsed:  00:00:15
 </pre>
 </body>
 </html>

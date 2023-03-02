@@ -199,6 +199,7 @@ uint32_t Flash_Write_Data (uint32_t StartSectorAddress, uint32_t *data, uint16_t
 
 	 /* Unlock the Flash to enable the flash control register access *************/
 	  HAL_FLASH_Unlock();
+		//HAL_FLASHEx_Unlock_Bank2();
 
 	  /* Erase the user Flash area */
 
@@ -220,11 +221,11 @@ uint32_t Flash_Write_Data (uint32_t StartSectorAddress, uint32_t *data, uint16_t
 
 	  EraseInitStruct.NbSectors     = (EndSector - StartSector) + 1;
 
-		FLASH_Erase_Sector(EraseInitStruct.Sector, EraseInitStruct.Banks, FLASH_VOLTAGE_RANGE_3);;
-	  //if (HAL_FLASHEx_Erase(&EraseInitStruct, &SECTORError) != HAL_OK)
-	  //{
-		//  return HAL_FLASH_GetError ();
-	  //}
+	  if (HAL_FLASHEx_Erase(&EraseInitStruct, &SECTORError) != HAL_OK)
+	  {
+		  return HAL_FLASH_GetError ();
+	  }
+		
 
 	  /* Program the user Flash area 8 WORDS at a time
 	   * (area defined by FLASH_USER_START_ADDR and FLASH_USER_END_ADDR) ***********/
@@ -245,7 +246,8 @@ uint32_t Flash_Write_Data (uint32_t StartSectorAddress, uint32_t *data, uint16_t
 
 	  /* Lock the Flash to disable the flash control register access (recommended
 	     to protect the FLASH memory against possible unwanted operation) *********/
-	  HAL_FLASH_Lock();
+		 HAL_FLASH_Lock();
+		 //HAL_FLASHEx_Lock_Bank2();
 
 	   return 0;
 }

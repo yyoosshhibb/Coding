@@ -33,9 +33,6 @@
 /* Private define ------------------------------------------------------------*/
 /* USER CODE BEGIN PD */
 
-#ifndef HSEM_ID_0
-#define HSEM_ID_0 (0U) /* HW semaphore 0*/
-#endif
 /* USER CODE END PD */
 
 /* Private macro -------------------------------------------------------------*/
@@ -119,7 +116,9 @@ int main(void)
   MX_DMA2D_Init();
   MX_FDCAN1_Init();
   MX_TouchGFX_Init();
+	MX_TIM8_Init();
 	MX_TIM15_Init();
+	
 
   osKernelInitialize();
 	
