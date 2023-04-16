@@ -44,7 +44,7 @@
 
 /* Private variables ---------------------------------------------------------*/
 /* USER CODE BEGIN PV */
-extern uint32_t value;
+extern uint8_t txMem[];
 extern bool write;
 extern osThreadId_t	id_myTask;
 
@@ -198,7 +198,7 @@ void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin)
 {
 	if(GPIO_Pin == GPIO_PIN_13)
 	{
-		value++;
+		txMem[0]++;
 		osThreadFlagsSet(id_myTask, FLAG_WRITE_MMC);
 		//write = 1;
 	}
