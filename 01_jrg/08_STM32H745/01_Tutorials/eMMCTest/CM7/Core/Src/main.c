@@ -25,7 +25,12 @@
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
-uint8_t read, value;
+#define BUFFER_SIZE            ((uint32_t)0x00040000U) /* 256Ko */
+#define MMC_TIMEOUT            ((uint32_t)0x00100000U)
+#define ADDRESS                ((uint32_t)0x00000400U) /* MMC Address to write/read data */
+
+__attribute__((at(0x24000000))) uint8_t txMem[BUFFER_SIZE];
+__attribute__((at(0x24040000))) uint8_t rxMem[BUFFER_SIZE];
 bool write;
 
 /* USER CODE END Includes */
@@ -58,6 +63,7 @@ static void MPU_Config(void);
 void MX_FREERTOS_Init(void);
 /* USER CODE BEGIN PFP */
 void myTask(void *argument);
+static uint8_t Wait_MMCCARD_Ready(void);
 
 /* USER CODE END PFP */
 
@@ -93,8 +99,8 @@ int main(void)
   HAL_Init();
 
   /* USER CODE BEGIN Init */
-	value = 0;
 	write = 0;
+	txMem[0] = 0;
   /* USER CODE END Init */
 
   /* Configure the system clock */
@@ -202,13 +208,37 @@ void myTask(void *argument)
 		
 		osThreadFlagsWait(FLAG_WRITE_MMC, osFlagsWaitAll, osWaitForever);
 
-		HAL_MMC_WriteBlocks(&hmmc1, &value, 0, 1, 100);
+		if(Wait_MMCCARD_Ready() != HAL_OK)
+		{
+			Error_Handler();
+		}
+		HAL_MMC_WriteBlocks_DMA(&hmmc1, txMem, ADDRESS, 1);
 		state = HAL_MMC_GetCardState(&hmmc1);
-		HAL_MMC_ReadBlocks(&hmmc1, &read, 0, 1, 100);
-		write = false;
+		if(Wait_MMCCARD_Ready() != HAL_OK)
+		{
+			Error_Handler();
+		}
+		HAL_MMC_ReadBlocks_DMA(&hmmc1, rxMem, ADDRESS, 1);
 		
 		osDelay(10);
   }
+}
+
+static uint8_t Wait_MMCCARD_Ready(void)
+{
+  uint32_t loop = MMC_TIMEOUT;
+  
+  /* Wait for the Erasing process is completed */
+  /* Verify that MMC card is ready to use after the Erase */
+  while(loop > 0)
+  {
+    loop--;
+    if(HAL_MMC_GetCardState(&hmmc1) == HAL_MMC_CARD_TRANSFER)
+    {
+        return HAL_OK;
+    }
+  }
+  return HAL_ERROR;
 }
 /* USER CODE END 4 */
 

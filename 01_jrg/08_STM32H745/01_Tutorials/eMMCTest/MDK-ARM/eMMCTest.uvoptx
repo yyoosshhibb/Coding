@@ -300,9 +300,9 @@
         <Bp>
           <Number>0</Number>
           <Type>0</Type>
-          <LineNumber>205</LineNumber>
+          <LineNumber>221</LineNumber>
           <EnabledFlag>1</EnabledFlag>
-          <Address>134234650</Address>
+          <Address>134234222</Address>
           <ByteObject>0</ByteObject>
           <HtxType>0</HtxType>
           <ManyObjects>0</ManyObjects>
@@ -311,14 +311,14 @@
           <BreakIfRCount>1</BreakIfRCount>
           <Filename>../CM7/Core/Src/main.c</Filename>
           <ExecCommand></ExecCommand>
-          <Expression>\\eMMCTest_CM7\../CM7/Core/Src/main.c\205</Expression>
+          <Expression>\\eMMCTest_CM7\../CM7/Core/Src/main.c\221</Expression>
         </Bp>
         <Bp>
           <Number>1</Number>
           <Type>0</Type>
-          <LineNumber>207</LineNumber>
+          <LineNumber>215</LineNumber>
           <EnabledFlag>1</EnabledFlag>
-          <Address>134234688</Address>
+          <Address>134234194</Address>
           <ByteObject>0</ByteObject>
           <HtxType>0</HtxType>
           <ManyObjects>0</ManyObjects>
@@ -327,42 +327,10 @@
           <BreakIfRCount>1</BreakIfRCount>
           <Filename>../CM7/Core/Src/main.c</Filename>
           <ExecCommand></ExecCommand>
-          <Expression>\\eMMCTest_CM7\../CM7/Core/Src/main.c\207</Expression>
+          <Expression>\\eMMCTest_CM7\../CM7/Core/Src/main.c\215</Expression>
         </Bp>
         <Bp>
           <Number>2</Number>
-          <Type>0</Type>
-          <LineNumber>199</LineNumber>
-          <EnabledFlag>1</EnabledFlag>
-          <Address>134219384</Address>
-          <ByteObject>0</ByteObject>
-          <HtxType>0</HtxType>
-          <ManyObjects>0</ManyObjects>
-          <SizeOfObject>0</SizeOfObject>
-          <BreakByAccess>0</BreakByAccess>
-          <BreakIfRCount>1</BreakIfRCount>
-          <Filename>../CM7/Core/Src/stm32h7xx_it.c</Filename>
-          <ExecCommand></ExecCommand>
-          <Expression>\\eMMCTest_CM7\../CM7/Core/Src/stm32h7xx_it.c\199</Expression>
-        </Bp>
-        <Bp>
-          <Number>3</Number>
-          <Type>0</Type>
-          <LineNumber>727</LineNumber>
-          <EnabledFlag>1</EnabledFlag>
-          <Address>134222156</Address>
-          <ByteObject>0</ByteObject>
-          <HtxType>0</HtxType>
-          <ManyObjects>0</ManyObjects>
-          <SizeOfObject>0</SizeOfObject>
-          <BreakByAccess>0</BreakByAccess>
-          <BreakIfRCount>1</BreakIfRCount>
-          <Filename>../Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_mmc.c</Filename>
-          <ExecCommand></ExecCommand>
-          <Expression>\\eMMCTest_CM7\../Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_mmc.c\727</Expression>
-        </Bp>
-        <Bp>
-          <Number>4</Number>
           <Type>0</Type>
           <LineNumber>203</LineNumber>
           <EnabledFlag>1</EnabledFlag>
@@ -373,7 +341,7 @@
           <SizeOfObject>0</SizeOfObject>
           <BreakByAccess>0</BreakByAccess>
           <BreakIfRCount>0</BreakIfRCount>
-          <Filename>../CM7/Core/Src/stm32h7xx_it.c</Filename>
+          <Filename>startup_stm32h745xx_CM7.s</Filename>
           <ExecCommand></ExecCommand>
           <Expression></Expression>
         </Bp>
@@ -382,22 +350,17 @@
         <Ww>
           <count>0</count>
           <WinNumber>1</WinNumber>
-          <ItemText>value</ItemText>
+          <ItemText>hmmc1</ItemText>
         </Ww>
         <Ww>
           <count>1</count>
           <WinNumber>1</WinNumber>
-          <ItemText>read</ItemText>
+          <ItemText>txMem</ItemText>
         </Ww>
         <Ww>
           <count>2</count>
           <WinNumber>1</WinNumber>
-          <ItemText>hmmc1</ItemText>
-        </Ww>
-        <Ww>
-          <count>3</count>
-          <WinNumber>1</WinNumber>
-          <ItemText>write</ItemText>
+          <ItemText>rxMem</ItemText>
         </Ww>
       </WatchWindow1>
       <Tracepoint>

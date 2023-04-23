@@ -21,6 +21,9 @@
 #include "sdmmc.h"
 
 /* USER CODE BEGIN 0 */
+#define BUFFER_SIZE            ((uint32_t)0x00040000U) /* 256Ko */
+#define MMC_TIMEOUT            ((uint32_t)0x00100000U)
+#define ADDRESS                ((uint32_t)0x00000400U) /* MMC Address to write/read data */
 
 /* USER CODE END 0 */
 
