@@ -84,7 +84,7 @@ void SendToGUI()
 	
 	while(1)
 	{
-		osMessageQueueGet(FDCAN_ERROR_Q, &CAN_Error,&priority,10);
+		//osMessageQueueGet(FDCAN_ERROR_Q, &CAN_Error,&priority,10);
 		
 		msg_calc();
 		if(msg_send_gui.pageno < NO_GUI_PAGES){}		//everything is fine

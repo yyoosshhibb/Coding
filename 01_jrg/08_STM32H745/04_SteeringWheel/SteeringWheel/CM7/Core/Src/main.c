@@ -697,3 +697,12 @@ void assert_failed(uint8_t *file, uint32_t line)
   /* USER CODE END 6 */
 }
 #endif /* USE_FULL_ASSERT */
+
+/*
+Hallo liebe Fahrer, never ending Storry: Lenkrad knöpfe und Drehschalter.
+Ich hätte mal einen Vorschlag mit 5 Knöpfen & 1 Drehschalter.
+Drehschalter um Presets (Accel, Skidpad, Autox, Endu) zu wählen bzw parameter in den Presets (Max und Min Leistung, Torque Vectoring Stärke und Active Aero Stärke) anzuwählen und dann mit 2 Buttons zu verändern.
+Um das gewählte Preset zu aktivieren gibts noch einen Button. Wenn man ein Preset aktiviert hat kann ma mitn drehschalter z.B auf max Power gehen, die dann erhöhen und wenn man lange aufn Button zum Preset wählen drückt wirds ins Preset gespeichert.
+Am nächsten Button kann man TS aktivieren, wenn ma auf der Bremse steht in R2D gehen, und TS wieder deaktivieren.
+Letzter button ist beim stehenden Auto um durch die Seiten zu Blättern und wenn man fahrt um DRS zu öffnen
+*/
