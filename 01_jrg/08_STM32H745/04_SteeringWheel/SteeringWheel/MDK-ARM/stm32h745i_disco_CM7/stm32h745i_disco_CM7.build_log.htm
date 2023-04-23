@@ -21,13 +21,13 @@ Target DLL:      STLink\ST-LINKIII-KEIL_SWO.dll V3.0.7.0
 Dialog DLL:      TCM.DLL V1.36.5.0
  
 <h2>Project:</h2>
-C:\Users\Yoshi\Documents\GitHub\Software\01_jrg\08_STM32H745\04_SteeringWheel\SteeringWheel\MDK-ARM\STM32H745I_DISCO.uvprojx
+C:\Users\Yoshi\Documents\GitHub\Software\01_jrg\08_STM32H745\04_SteeringWheel\SteeringWheel\MDK-ARM\stm32h745i_disco.uvprojx
 Project File Date:  02/24/2023
 
 <h2>Output:</h2>
 *** Using Compiler 'V5.06 update 6 (build 750)', folder: 'C:\Keil_v5\ARM\ARMCC\Bin'
 Build target 'STM32H745I_DISCO_CM7'
-compiling Timer_Management.c...
+compiling flash_tasks.c...
 ../CM7/Core/Inc/fdcan_conf.h(145): warning:  #1295-D: Deprecated declaration TASK_FDCAN_RX - give arg types
   void TASK_FDCAN_RX();
 ../CM7/Core/Inc/fdcan_conf.h(146): warning:  #1295-D: Deprecated declaration TASK_FDCAN_TX - give arg types
@@ -36,10 +36,42 @@ compiling Timer_Management.c...
   void SendToGUI();
 ../CM7/Core/Inc/GUI_Communication.h(22): warning:  #1295-D: Deprecated declaration msg_calc - give arg types
   void msg_calc();
-Timer_Management.c: 4 warnings, 0 errors
+../CM7/Core/Inc/flash_task.h(28): warning:  #1-D: last line of file ends without a newline
+  #endif
+flash_tasks.c(35): warning:  #177-D: variable "data"  was declared but never referenced
+  	uint32_t *data = (uint32_t*)&msg_send_gui.pageno;
+flash_tasks.c(47): warning:  #177-D: variable "nwords"  was declared but never referenced
+  	uint16_t nwords = sizeof(configuration_t)/8+1;			//+1 in case sizeof() is not dividable by 8 --> 1 extra word will be written to mem, but who cares?
+flash_tasks.c: 7 warnings, 0 errors
+compiling memory_management.c...
+../CM7/Core/Inc/fdcan_conf.h(145): warning:  #1295-D: Deprecated declaration TASK_FDCAN_RX - give arg types
+  void TASK_FDCAN_RX();
+../CM7/Core/Inc/fdcan_conf.h(146): warning:  #1295-D: Deprecated declaration TASK_FDCAN_TX - give arg types
+  void TASK_FDCAN_TX();
+../CM7/Core/Inc/GUI_Communication.h(21): warning:  #1295-D: Deprecated declaration SendToGUI - give arg types
+  void SendToGUI();
+../CM7/Core/Inc/GUI_Communication.h(22): warning:  #1295-D: Deprecated declaration msg_calc - give arg types
+  void msg_calc();
+memory_management.c: 4 warnings, 0 errors
+compiling main.c...
+../CM7/Core/Inc/fdcan_conf.h(145): warning:  #1295-D: Deprecated declaration TASK_FDCAN_RX - give arg types
+  void TASK_FDCAN_RX();
+../CM7/Core/Inc/fdcan_conf.h(146): warning:  #1295-D: Deprecated declaration TASK_FDCAN_TX - give arg types
+  void TASK_FDCAN_TX();
+../CM7/Core/Inc/GUI_Communication.h(21): warning:  #1295-D: Deprecated declaration SendToGUI - give arg types
+  void SendToGUI();
+../CM7/Core/Inc/GUI_Communication.h(22): warning:  #1295-D: Deprecated declaration msg_calc - give arg types
+  void msg_calc();
+../CM7/Core/Src/main.c(142): warning:  #167-D: argument of type "void (*)(void)" is incompatible with parameter of type "osThreadFunc_t"
+  	id_task_timer = osThreadNew(Task_Timer, NULL, NULL);
+../CM7/Core/Src/main.c(145): warning:  #167-D: argument of type "void (*)(void)" is incompatible with parameter of type "osThreadFunc_t"
+  	id_task_write_flash = osThreadNew(task_write_flash, NULL, NULL);
+../CM7/Core/Src/main.c(99): warning:  #177-D: variable "timeout"  was declared but never referenced
+    int32_t timeout;
+../CM7/Core/Src/main.c: 7 warnings, 0 errors
 linking...
-Program Size: Code=102900 RO-data=896800 RW-data=764 ZI-data=61268  
-"stm32h745i_disco_CM7\stm32h745i_disco_CM7.axf" - 0 Error(s), 4 Warning(s).
+Program Size: Code=102912 RO-data=896800 RW-data=764 ZI-data=61268  
+"stm32h745i_disco_CM7\stm32h745i_disco_CM7.axf" - 0 Error(s), 18 Warning(s).
 
 <h2>Software Packages used:</h2>
 
@@ -62,7 +94,7 @@ Package Vendor: Keil
 <h2>Collection of Component Files used:</h2>
 
    * Component: ARM::CMSIS:CORE:5.5.0
-Build Time Elapsed:  00:00:04
+Build Time Elapsed:  00:00:05
 </pre>
 </body>
 </html>

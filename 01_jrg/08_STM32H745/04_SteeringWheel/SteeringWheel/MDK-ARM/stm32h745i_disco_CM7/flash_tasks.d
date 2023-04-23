@@ -1,5 +1,5 @@
 stm32h745i_disco_cm7\flash_tasks.o: flash_tasks.c
-stm32h745i_disco_cm7\flash_tasks.o: ../CM7/Core/Inc/memory_management.h
+stm32h745i_disco_cm7\flash_tasks.o: ../CM7/Core/Inc/flash_task.h
 stm32h745i_disco_cm7\flash_tasks.o: ../CM7/Core/Inc/HW_Def.h
 stm32h745i_disco_cm7\flash_tasks.o: ../CM7/Core/Inc/main.h
 stm32h745i_disco_cm7\flash_tasks.o: ../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal.h
