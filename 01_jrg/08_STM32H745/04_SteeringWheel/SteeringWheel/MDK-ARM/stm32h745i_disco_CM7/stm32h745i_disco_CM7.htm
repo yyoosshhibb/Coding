@@ -3,7 +3,7 @@
 <title>Static Call Graph - [stm32h745i_disco_CM7\stm32h745i_disco_CM7.axf]</title></head>
 <body><HR>
 <H1>Static Call Graph for image stm32h745i_disco_CM7\stm32h745i_disco_CM7.axf</H1><HR>
-<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 5060750: Last Updated: Fri Apr 21 13:43:46 2023
+<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 5060750: Last Updated: Thu Jun 08 21:45:00 2023
 <BR><P>
 <H3>Maximum Stack Usage =       1056 bytes + Unknown(Functions without stacksize, Cycles, Untraceable Function Pointers)</H3><H3>
 Call chain for Maximum Stack Depth:</H3>
@@ -1574,7 +1574,7 @@ Global Symbols
 <LI><a href="#[34b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;touchgfx::Box::Box()
 <LI><a href="#[36e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;touchgfx::Application::Application()
 <LI><a href="#[311]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;MX_TIM8_Init
-<LI><a href="#[31c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SystemClock_Config
+<LI><a href="#[31b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SystemClock_Config
 <LI><a href="#[30b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;MX_LTDC_Init
 <LI><a href="#[307]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;MX_GPIO_Init
 <LI><a href="#[305]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;MX_FMC_Init
@@ -1970,7 +1970,7 @@ Global Symbols
 <BR>[Called By]<UL><LI><a href="#[311]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;MX_TIM8_Init
 <LI><a href="#[30f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;MX_TIM15_Init
 <LI><a href="#[205]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
-<LI><a href="#[31c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SystemClock_Config
+<LI><a href="#[31b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SystemClock_Config
 <LI><a href="#[30d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;MX_QUADSPI_Init
 <LI><a href="#[30b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;MX_LTDC_Init
 <LI><a href="#[305]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;MX_FMC_Init
@@ -2729,7 +2729,7 @@ Global Symbols
 </UL>
 <BR>[Calls]<UL><LI><a href="#[228]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_GetTick
 </UL>
-<BR>[Called By]<UL><LI><a href="#[31c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SystemClock_Config
+<BR>[Called By]<UL><LI><a href="#[31b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SystemClock_Config
 </UL>
 
 <P><STRONG><a name="[2bb]"></a>HAL_QSPI_AbortCpltCallback</STRONG> (Thumb, 2 bytes, Stack size 0 bytes, stm32h7xx_hal_qspi.o(i.HAL_QSPI_AbortCpltCallback))
@@ -2882,7 +2882,7 @@ Global Symbols
 <LI><a href="#[29b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_InitTick
 <LI><a href="#[228]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_GetTick
 </UL>
-<BR>[Called By]<UL><LI><a href="#[31c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SystemClock_Config
+<BR>[Called By]<UL><LI><a href="#[31b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SystemClock_Config
 </UL>
 
 <P><STRONG><a name="[29d]"></a>HAL_RCC_GetClockConfig</STRONG> (Thumb, 84 bytes, Stack size 16 bytes, stm32h7xx_hal_rcc.o(i.HAL_RCC_GetClockConfig))
@@ -2930,7 +2930,7 @@ Global Symbols
 </UL>
 <BR>[Calls]<UL><LI><a href="#[288]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_GPIO_Init
 </UL>
-<BR>[Called By]<UL><LI><a href="#[31c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SystemClock_Config
+<BR>[Called By]<UL><LI><a href="#[31b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SystemClock_Config
 </UL>
 
 <P><STRONG><a name="[2c9]"></a>HAL_RCC_OscConfig</STRONG> (Thumb, 1322 bytes, Stack size 40 bytes, stm32h7xx_hal_rcc.o(i.HAL_RCC_OscConfig))
@@ -2939,7 +2939,7 @@ Global Symbols
 <BR>[Calls]<UL><LI><a href="#[228]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_GetTick
 <LI><a href="#[2ca]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_GetREVID
 </UL>
-<BR>[Called By]<UL><LI><a href="#[31c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SystemClock_Config
+<BR>[Called By]<UL><LI><a href="#[31b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SystemClock_Config
 </UL>
 
 <P><STRONG><a name="[243]"></a>HAL_SDRAM_DeInit</STRONG> (Thumb, 28 bytes, Stack size 8 bytes, stm32h7xx_hal_sdram.o(i.HAL_SDRAM_DeInit))
@@ -3377,27 +3377,26 @@ Global Symbols
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> startup_stm32h745xx_cm7.o(RESET)
 </UL>
-<P><STRONG><a name="[e5]"></a>SendToGUI</STRONG> (Thumb, 490 bytes, Stack size 16 bytes, gui_communication.o(i.SendToGUI))
-<BR><BR>[Stack]<UL><LI>Max Depth = 152<LI>Call Chain = SendToGUI &rArr; osMessageQueuePut &rArr; xQueueGenericSend &rArr; xTaskResumeAll &rArr; xTaskIncrementTick
+<P><STRONG><a name="[e5]"></a>SendToGUI</STRONG> (Thumb, 476 bytes, Stack size 0 bytes, gui_communication.o(i.SendToGUI))
+<BR><BR>[Stack]<UL><LI>Max Depth = 136<LI>Call Chain = SendToGUI &rArr; osMessageQueuePut &rArr; xQueueGenericSend &rArr; xTaskResumeAll &rArr; xTaskIncrementTick
 </UL>
 <BR>[Calls]<UL><LI><a href="#[28a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;osMessageQueuePut
 <LI><a href="#[315]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;osMessageQueueNew
-<LI><a href="#[317]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;osMessageQueueGet
-<LI><a href="#[319]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;osThreadFlagsWait
+<LI><a href="#[318]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;osThreadFlagsWait
 <LI><a href="#[316]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;flash_read_boot
-<LI><a href="#[318]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;msg_calc
+<LI><a href="#[317]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;msg_calc
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> main.o(i.main)
 </UL>
 <P><STRONG><a name="[24]"></a>SysTick_Handler</STRONG> (Thumb, 26 bytes, Stack size 8 bytes, cmsis_os2.o(i.SysTick_Handler))
 <BR><BR>[Stack]<UL><LI>Max Depth = 40<LI>Call Chain = SysTick_Handler &rArr; xPortSysTickHandler &rArr; xTaskIncrementTick
 </UL>
-<BR>[Calls]<UL><LI><a href="#[31a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xTaskGetSchedulerState
-<LI><a href="#[31b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xPortSysTickHandler
+<BR>[Calls]<UL><LI><a href="#[319]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xTaskGetSchedulerState
+<LI><a href="#[31a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xPortSysTickHandler
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> startup_stm32h745xx_cm7.o(RESET)
 </UL>
-<P><STRONG><a name="[31c]"></a>SystemClock_Config</STRONG> (Thumb, 184 bytes, Stack size 136 bytes, main.o(i.SystemClock_Config))
+<P><STRONG><a name="[31b]"></a>SystemClock_Config</STRONG> (Thumb, 184 bytes, Stack size 136 bytes, main.o(i.SystemClock_Config))
 <BR><BR>[Stack]<UL><LI>Max Depth = 264<LI>Call Chain = SystemClock_Config &rArr; HAL_RCC_ClockConfig &rArr; HAL_InitTick &rArr; HAL_TIM_Base_Init &rArr; TIM_Base_SetConfig
 </UL>
 <BR>[Calls]<UL><LI><a href="#[2c9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_RCC_OscConfig
@@ -3419,9 +3418,9 @@ Global Symbols
 <BR><BR>[Stack]<UL><LI>Max Depth = 192<LI>Call Chain = TASK_FDCAN_RX &rArr; osMessageQueueGet &rArr; xQueueReceive &rArr; xTaskResumeAll &rArr; xTaskIncrementTick
 </UL>
 <BR>[Calls]<UL><LI><a href="#[308]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_GPIO_WritePin
-<LI><a href="#[317]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;osMessageQueueGet
+<LI><a href="#[31c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;osMessageQueueGet
 <LI><a href="#[251]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;FDCAN_RX_Init
-<LI><a href="#[319]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;osThreadFlagsWait
+<LI><a href="#[318]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;osThreadFlagsWait
 <LI><a href="#[31d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_llsr
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> main.o(i.main)
@@ -3430,10 +3429,10 @@ Global Symbols
 <BR><BR>[Stack]<UL><LI>Max Depth = 152<LI>Call Chain = TASK_FDCAN_TX &rArr; osMessageQueuePut &rArr; xQueueGenericSend &rArr; xTaskResumeAll &rArr; xTaskIncrementTick
 </UL>
 <BR>[Calls]<UL><LI><a href="#[28a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;osMessageQueuePut
-<LI><a href="#[317]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;osMessageQueueGet
+<LI><a href="#[31c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;osMessageQueueGet
 <LI><a href="#[31e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_FDCAN_GetError
 <LI><a href="#[257]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;FDCAN_Transmit
-<LI><a href="#[319]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;osThreadFlagsWait
+<LI><a href="#[318]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;osThreadFlagsWait
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> main.o(i.main)
 </UL>
@@ -3479,7 +3478,7 @@ Global Symbols
 <BR><BR>[Stack]<UL><LI>Max Depth = 136<LI>Call Chain = Task_Timer &rArr; osMessageQueuePut &rArr; xQueueGenericSend &rArr; xTaskResumeAll &rArr; xTaskIncrementTick
 </UL>
 <BR>[Calls]<UL><LI><a href="#[28a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;osMessageQueuePut
-<LI><a href="#[319]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;osThreadFlagsWait
+<LI><a href="#[318]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;osThreadFlagsWait
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> main.o(i.main)
 </UL>
@@ -4752,7 +4751,7 @@ Global Symbols
 <P><STRONG><a name="[35e]"></a>Model::tick()</STRONG> (Thumb, 66 bytes, Stack size 912 bytes, model.o(i._ZN5Model4tickEv))
 <BR><BR>[Stack]<UL><LI>Max Depth = 1048<LI>Call Chain = Model::tick() &rArr; osMessageQueueGet &rArr; xQueueReceive &rArr; xTaskResumeAll &rArr; xTaskIncrementTick
 </UL>
-<BR>[Calls]<UL><LI><a href="#[317]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;osMessageQueueGet
+<BR>[Calls]<UL><LI><a href="#[31c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;osMessageQueueGet
 <LI><a href="#[256]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;osThreadFlagsSet
 <LI><a href="#[212]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_memcpy4
 </UL>
@@ -4903,7 +4902,7 @@ Global Symbols
 <P><STRONG><a name="[37a]"></a>touchgfx::OSWrappers::waitForVSync()</STRONG> (Thumb, 32 bytes, Stack size 16 bytes, oswrappers.o(i._ZN8touchgfx10OSWrappers12waitForVSyncEv))
 <BR><BR>[Stack]<UL><LI>Max Depth = 152<LI>Call Chain = touchgfx::OSWrappers::waitForVSync() &rArr; osMessageQueueGet &rArr; xQueueReceive &rArr; xTaskResumeAll &rArr; xTaskIncrementTick
 </UL>
-<BR>[Calls]<UL><LI><a href="#[317]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;osMessageQueueGet
+<BR>[Calls]<UL><LI><a href="#[31c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;osMessageQueueGet
 </UL>
 <BR>[Called By]<UL><LI><a href="#[122]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;touchgfx::HAL::taskEntry()
 </UL>
@@ -6313,12 +6312,12 @@ Global Symbols
 <P><STRONG><a name="[148]"></a>touchgfx::Screen::tearDownScreen()</STRONG> (Thumb, 2 bytes, Stack size 0 bytes, homeviewbase.o(i._ZN8touchgfx6Screen14tearDownScreenEv))
 <BR>[Address Reference Count : 8]<UL><LI> homeviewbase.o(.constdata__ZTV12HomeViewBase)
 <LI> screen2viewbase.o(.constdata__ZTV15Screen2ViewBase)
-<LI> screen.o(.constdata__ZTVN8touchgfx6ScreenE)
 <LI> screen3viewbase.o(.constdata__ZTV15Screen3ViewBase)
 <LI> screen4viewbase.o(.constdata__ZTV15Screen4ViewBase)
 <LI> screen5viewbase.o(.constdata__ZTV15Screen5ViewBase)
 <LI> screen6viewbase.o(.constdata__ZTV15Screen6ViewBase)
 <LI> screen7viewbase.o(.constdata__ZTV15Screen7ViewBase)
+<LI> screen.o(.constdata__ZTVN8touchgfx6ScreenE)
 </UL>
 <P><STRONG><a name="[f9]"></a>touchgfx::Screen::afterTransition()</STRONG> (Thumb, 2 bytes, Stack size 0 bytes, homeview.o(i._ZN8touchgfx6Screen15afterTransitionEv))
 <BR>[Address Reference Count : 15]<UL><LI> homeviewbase.o(.constdata__ZTV12HomeViewBase)
@@ -6330,12 +6329,12 @@ Global Symbols
 <LI> screen5view.o(.constdata__ZTV11Screen5View)
 <LI> screen6view.o(.constdata__ZTV11Screen6View)
 <LI> screen7view.o(.constdata__ZTV11Screen7View)
-<LI> screen.o(.constdata__ZTVN8touchgfx6ScreenE)
 <LI> screen3viewbase.o(.constdata__ZTV15Screen3ViewBase)
 <LI> screen4viewbase.o(.constdata__ZTV15Screen4ViewBase)
 <LI> screen5viewbase.o(.constdata__ZTV15Screen5ViewBase)
 <LI> screen6viewbase.o(.constdata__ZTV15Screen6ViewBase)
 <LI> screen7viewbase.o(.constdata__ZTV15Screen7ViewBase)
+<LI> screen.o(.constdata__ZTVN8touchgfx6ScreenE)
 </UL>
 <P><STRONG><a name="[fc]"></a>touchgfx::Screen::handleDragEvent(const touchgfx::DragEvent&)</STRONG> (Thumb, 200 bytes, Stack size 72 bytes, screen.o(i._ZN8touchgfx6Screen15handleDragEventERKNS_9DragEventE))
 <BR><BR>[Stack]<UL><LI>Max Depth = 96<LI>Call Chain = touchgfx::Screen::handleDragEvent(const touchgfx::DragEvent&) &rArr; touchgfx::Drawable::getAbsoluteRect() const
@@ -6353,12 +6352,12 @@ Global Symbols
 <LI> screen5view.o(.constdata__ZTV11Screen5View)
 <LI> screen6view.o(.constdata__ZTV11Screen6View)
 <LI> screen7view.o(.constdata__ZTV11Screen7View)
-<LI> screen.o(.constdata__ZTVN8touchgfx6ScreenE)
 <LI> screen3viewbase.o(.constdata__ZTV15Screen3ViewBase)
 <LI> screen4viewbase.o(.constdata__ZTV15Screen4ViewBase)
 <LI> screen5viewbase.o(.constdata__ZTV15Screen5ViewBase)
 <LI> screen6viewbase.o(.constdata__ZTV15Screen6ViewBase)
 <LI> screen7viewbase.o(.constdata__ZTV15Screen7ViewBase)
+<LI> screen.o(.constdata__ZTVN8touchgfx6ScreenE)
 </UL>
 <P><STRONG><a name="[fe]"></a>touchgfx::Screen::handleTickEvent()</STRONG> (Thumb, 2 bytes, Stack size 0 bytes, homeview.o(i._ZN8touchgfx6Screen15handleTickEventEv))
 <BR>[Address Reference Count : 15]<UL><LI> homeviewbase.o(.constdata__ZTV12HomeViewBase)
@@ -6370,12 +6369,12 @@ Global Symbols
 <LI> screen5view.o(.constdata__ZTV11Screen5View)
 <LI> screen6view.o(.constdata__ZTV11Screen6View)
 <LI> screen7view.o(.constdata__ZTV11Screen7View)
-<LI> screen.o(.constdata__ZTVN8touchgfx6ScreenE)
 <LI> screen3viewbase.o(.constdata__ZTV15Screen3ViewBase)
 <LI> screen4viewbase.o(.constdata__ZTV15Screen4ViewBase)
 <LI> screen5viewbase.o(.constdata__ZTV15Screen5ViewBase)
 <LI> screen6viewbase.o(.constdata__ZTV15Screen6ViewBase)
 <LI> screen7viewbase.o(.constdata__ZTV15Screen7ViewBase)
+<LI> screen.o(.constdata__ZTVN8touchgfx6ScreenE)
 </UL>
 <P><STRONG><a name="[fb]"></a>touchgfx::Screen::handleClickEvent(const touchgfx::ClickEvent&)</STRONG> (Thumb, 160 bytes, Stack size 56 bytes, screen.o(i._ZN8touchgfx6Screen16handleClickEventERKNS_10ClickEventE))
 <BR><BR>[Stack]<UL><LI>Max Depth = 248<LI>Call Chain = touchgfx::Screen::handleClickEvent(const touchgfx::ClickEvent&) &rArr; touchgfx::Container::getLastChildNear(short, short, touchgfx::Drawable**, short*, short*) &rArr; touchgfx::Container::getLastChild(short, short, touchgfx::Drawable**) &rArr; touchgfx::Rect::intersect(short, short) const
@@ -6393,12 +6392,12 @@ Global Symbols
 <LI> screen5view.o(.constdata__ZTV11Screen5View)
 <LI> screen6view.o(.constdata__ZTV11Screen6View)
 <LI> screen7view.o(.constdata__ZTV11Screen7View)
-<LI> screen.o(.constdata__ZTVN8touchgfx6ScreenE)
 <LI> screen3viewbase.o(.constdata__ZTV15Screen3ViewBase)
 <LI> screen4viewbase.o(.constdata__ZTV15Screen4ViewBase)
 <LI> screen5viewbase.o(.constdata__ZTV15Screen5ViewBase)
 <LI> screen6viewbase.o(.constdata__ZTV15Screen6ViewBase)
 <LI> screen7viewbase.o(.constdata__ZTV15Screen7ViewBase)
+<LI> screen.o(.constdata__ZTVN8touchgfx6ScreenE)
 </UL>
 <P><STRONG><a name="[fd]"></a>touchgfx::Screen::handleGestureEvent(const touchgfx::GestureEvent&)</STRONG> (Thumb, 82 bytes, Stack size 32 bytes, screen.o(i._ZN8touchgfx6Screen18handleGestureEventERKNS_12GestureEventE))
 <BR><BR>[Stack]<UL><LI>Max Depth = 56<LI>Call Chain = touchgfx::Screen::handleGestureEvent(const touchgfx::GestureEvent&) &rArr; touchgfx::Drawable::getAbsoluteRect() const
@@ -6414,12 +6413,12 @@ Global Symbols
 <LI> screen5view.o(.constdata__ZTV11Screen5View)
 <LI> screen6view.o(.constdata__ZTV11Screen6View)
 <LI> screen7view.o(.constdata__ZTV11Screen7View)
-<LI> screen.o(.constdata__ZTVN8touchgfx6ScreenE)
 <LI> screen3viewbase.o(.constdata__ZTV15Screen3ViewBase)
 <LI> screen4viewbase.o(.constdata__ZTV15Screen4ViewBase)
 <LI> screen5viewbase.o(.constdata__ZTV15Screen5ViewBase)
 <LI> screen6viewbase.o(.constdata__ZTV15Screen6ViewBase)
 <LI> screen7viewbase.o(.constdata__ZTV15Screen7ViewBase)
+<LI> screen.o(.constdata__ZTVN8touchgfx6ScreenE)
 </UL>
 <P><STRONG><a name="[350]"></a>touchgfx::Screen::add(touchgfx::Drawable&)</STRONG> (Thumb, 6 bytes, Stack size 0 bytes, homeviewbase.o(i._ZN8touchgfx6Screen3addERNS_8DrawableE))
 <BR><BR>[Stack]<UL><LI>Max Depth = 56 + Unknown Stack Size
@@ -6453,12 +6452,12 @@ Global Symbols
 <LI> screen5view.o(.constdata__ZTV11Screen5View)
 <LI> screen6view.o(.constdata__ZTV11Screen6View)
 <LI> screen7view.o(.constdata__ZTV11Screen7View)
-<LI> screen.o(.constdata__ZTVN8touchgfx6ScreenE)
 <LI> screen3viewbase.o(.constdata__ZTV15Screen3ViewBase)
 <LI> screen4viewbase.o(.constdata__ZTV15Screen4ViewBase)
 <LI> screen5viewbase.o(.constdata__ZTV15Screen5ViewBase)
 <LI> screen6viewbase.o(.constdata__ZTV15Screen6ViewBase)
 <LI> screen7viewbase.o(.constdata__ZTV15Screen7ViewBase)
+<LI> screen.o(.constdata__ZTVN8touchgfx6ScreenE)
 </UL>
 <P><STRONG><a name="[394]"></a>touchgfx::Screen::draw()</STRONG> (Thumb, 40 bytes, Stack size 24 bytes, screen.o(i._ZN8touchgfx6Screen4drawEv))
 <BR><BR>[Stack]<UL><LI>Max Depth = 32<LI>Call Chain = touchgfx::Screen::draw() &rArr; touchgfx::Rect::Rect(short, short, short, short)
@@ -6523,9 +6522,9 @@ Global Symbols
 <P><STRONG><a name="[1b1]"></a>touchgfx::Widget::getLastChild(short, short, touchgfx::Drawable**)</STRONG> (Thumb, 20 bytes, Stack size 0 bytes, homeviewbase.o(i._ZN8touchgfx6Widget12getLastChildEssPPNS_8DrawableE))
 <BR>[Address Reference Count : 5]<UL><LI> homeviewbase.o(.constdata__ZTVN8touchgfx6WidgetE)
 <LI> screen2viewbase.o(.constdata__ZTVN8touchgfx23TextAreaWithOneWildcardE)
-<LI> textarea.o(.constdata__ZTVN8touchgfx8TextAreaE)
 <LI> box.o(.constdata__ZTVN8touchgfx3BoxE)
 <LI> image.o(.constdata__ZTVN8touchgfx5ImageE)
+<LI> textarea.o(.constdata__ZTVN8touchgfx8TextAreaE)
 </UL>
 <P><STRONG><a name="[34d]"></a>touchgfx::Widget::Widget__sub_object()</STRONG> (Thumb, 42 bytes, Stack size 8 bytes, homeviewbase.o(i._ZN8touchgfx6WidgetC2Ev))
 <BR><BR>[Stack]<UL><LI>Max Depth = 8<LI>Call Chain = touchgfx::Widget::Widget__sub_object()
@@ -6718,46 +6717,46 @@ Global Symbols
 <P><STRONG><a name="[1bc]"></a>touchgfx::Drawable::setupDrawChain(const touchgfx::Rect&, touchgfx::Drawable**)</STRONG> (Thumb, 18 bytes, Stack size 0 bytes, homeviewbase.o(i._ZN8touchgfx8Drawable14setupDrawChainERKNS_4RectEPPS0_))
 <BR>[Address Reference Count : 6]<UL><LI> homeviewbase.o(.constdata__ZTVN8touchgfx6WidgetE)
 <LI> screen2viewbase.o(.constdata__ZTVN8touchgfx23TextAreaWithOneWildcardE)
-<LI> textarea.o(.constdata__ZTVN8touchgfx8TextAreaE)
 <LI> box.o(.constdata__ZTVN8touchgfx3BoxE)
 <LI> image.o(.constdata__ZTVN8touchgfx5ImageE)
 <LI> drawable.o(.constdata__ZTVN8touchgfx8DrawableE)
+<LI> textarea.o(.constdata__ZTVN8touchgfx8TextAreaE)
 </UL>
 <P><STRONG><a name="[1ba]"></a>touchgfx::Drawable::handleDragEvent(const touchgfx::DragEvent&)</STRONG> (Thumb, 2 bytes, Stack size 0 bytes, homeviewbase.o(i._ZN8touchgfx8Drawable15handleDragEventERKNS_9DragEventE))
 <BR>[Address Reference Count : 7]<UL><LI> homeviewbase.o(.constdata__ZTVN8touchgfx6WidgetE)
 <LI> screen2viewbase.o(.constdata__ZTVN8touchgfx23TextAreaWithOneWildcardE)
-<LI> textarea.o(.constdata__ZTVN8touchgfx8TextAreaE)
 <LI> box.o(.constdata__ZTVN8touchgfx3BoxE)
 <LI> container.o(.constdata__ZTVN8touchgfx9ContainerE)
 <LI> image.o(.constdata__ZTVN8touchgfx5ImageE)
 <LI> drawable.o(.constdata__ZTVN8touchgfx8DrawableE)
+<LI> textarea.o(.constdata__ZTVN8touchgfx8TextAreaE)
 </UL>
 <P><STRONG><a name="[1bb]"></a>touchgfx::Drawable::handleTickEvent()</STRONG> (Thumb, 2 bytes, Stack size 0 bytes, homeviewbase.o(i._ZN8touchgfx8Drawable15handleTickEventEv))
 <BR>[Address Reference Count : 7]<UL><LI> homeviewbase.o(.constdata__ZTVN8touchgfx6WidgetE)
 <LI> screen2viewbase.o(.constdata__ZTVN8touchgfx23TextAreaWithOneWildcardE)
-<LI> textarea.o(.constdata__ZTVN8touchgfx8TextAreaE)
 <LI> box.o(.constdata__ZTVN8touchgfx3BoxE)
 <LI> container.o(.constdata__ZTVN8touchgfx9ContainerE)
 <LI> image.o(.constdata__ZTVN8touchgfx5ImageE)
 <LI> drawable.o(.constdata__ZTVN8touchgfx8DrawableE)
+<LI> textarea.o(.constdata__ZTVN8touchgfx8TextAreaE)
 </UL>
 <P><STRONG><a name="[1b8]"></a>touchgfx::Drawable::handleClickEvent(const touchgfx::ClickEvent&)</STRONG> (Thumb, 2 bytes, Stack size 0 bytes, homeviewbase.o(i._ZN8touchgfx8Drawable16handleClickEventERKNS_10ClickEventE))
 <BR>[Address Reference Count : 7]<UL><LI> homeviewbase.o(.constdata__ZTVN8touchgfx6WidgetE)
 <LI> screen2viewbase.o(.constdata__ZTVN8touchgfx23TextAreaWithOneWildcardE)
-<LI> textarea.o(.constdata__ZTVN8touchgfx8TextAreaE)
 <LI> box.o(.constdata__ZTVN8touchgfx3BoxE)
 <LI> container.o(.constdata__ZTVN8touchgfx9ContainerE)
 <LI> image.o(.constdata__ZTVN8touchgfx5ImageE)
 <LI> drawable.o(.constdata__ZTVN8touchgfx8DrawableE)
+<LI> textarea.o(.constdata__ZTVN8touchgfx8TextAreaE)
 </UL>
 <P><STRONG><a name="[1b9]"></a>touchgfx::Drawable::handleGestureEvent(const touchgfx::GestureEvent&)</STRONG> (Thumb, 2 bytes, Stack size 0 bytes, homeviewbase.o(i._ZN8touchgfx8Drawable18handleGestureEventERKNS_12GestureEventE))
 <BR>[Address Reference Count : 7]<UL><LI> homeviewbase.o(.constdata__ZTVN8touchgfx6WidgetE)
 <LI> screen2viewbase.o(.constdata__ZTVN8touchgfx23TextAreaWithOneWildcardE)
-<LI> textarea.o(.constdata__ZTVN8touchgfx8TextAreaE)
 <LI> box.o(.constdata__ZTVN8touchgfx3BoxE)
 <LI> container.o(.constdata__ZTVN8touchgfx9ContainerE)
 <LI> image.o(.constdata__ZTVN8touchgfx5ImageE)
 <LI> drawable.o(.constdata__ZTVN8touchgfx8DrawableE)
+<LI> textarea.o(.constdata__ZTVN8touchgfx8TextAreaE)
 </UL>
 <P><STRONG><a name="[3e8]"></a>touchgfx::Drawable::getCachedVisibleRect()</STRONG> (Thumb, 56 bytes, Stack size 24 bytes, screen.o(i._ZN8touchgfx8Drawable20getCachedVisibleRectEv))
 <BR><BR>[Stack]<UL><LI>Max Depth = 32<LI>Call Chain = touchgfx::Drawable::getCachedVisibleRect() &rArr; touchgfx::Rect::Rect(short, short, short, short)
@@ -6770,20 +6769,20 @@ Global Symbols
 <P><STRONG><a name="[1b4]"></a>touchgfx::Drawable::setX(short)</STRONG> (Thumb, 4 bytes, Stack size 0 bytes, homeviewbase.o(i._ZN8touchgfx8Drawable4setXEs))
 <BR>[Address Reference Count : 7]<UL><LI> homeviewbase.o(.constdata__ZTVN8touchgfx6WidgetE)
 <LI> screen2viewbase.o(.constdata__ZTVN8touchgfx23TextAreaWithOneWildcardE)
-<LI> textarea.o(.constdata__ZTVN8touchgfx8TextAreaE)
 <LI> box.o(.constdata__ZTVN8touchgfx3BoxE)
 <LI> container.o(.constdata__ZTVN8touchgfx9ContainerE)
 <LI> image.o(.constdata__ZTVN8touchgfx5ImageE)
 <LI> drawable.o(.constdata__ZTVN8touchgfx8DrawableE)
+<LI> textarea.o(.constdata__ZTVN8touchgfx8TextAreaE)
 </UL>
 <P><STRONG><a name="[1b5]"></a>touchgfx::Drawable::setY(short)</STRONG> (Thumb, 4 bytes, Stack size 0 bytes, homeviewbase.o(i._ZN8touchgfx8Drawable4setYEs))
 <BR>[Address Reference Count : 7]<UL><LI> homeviewbase.o(.constdata__ZTVN8touchgfx6WidgetE)
 <LI> screen2viewbase.o(.constdata__ZTVN8touchgfx23TextAreaWithOneWildcardE)
-<LI> textarea.o(.constdata__ZTVN8touchgfx8TextAreaE)
 <LI> box.o(.constdata__ZTVN8touchgfx3BoxE)
 <LI> container.o(.constdata__ZTVN8touchgfx9ContainerE)
 <LI> image.o(.constdata__ZTVN8touchgfx5ImageE)
 <LI> drawable.o(.constdata__ZTVN8touchgfx8DrawableE)
+<LI> textarea.o(.constdata__ZTVN8touchgfx8TextAreaE)
 </UL>
 <P><STRONG><a name="[351]"></a>touchgfx::Drawable::setXY(short, short)</STRONG> (Thumb, 28 bytes, Stack size 16 bytes, homeviewbase.o(i._ZN8touchgfx8Drawable5setXYEss))
 <BR><BR>[Stack]<UL><LI>Max Depth = 16<LI>Call Chain = touchgfx::Drawable::setXY(short, short)
@@ -7671,8 +7670,8 @@ Global Symbols
 <BR>[Address Reference Count : 1]<UL><LI> texts.o(.constdata__ZTVN8touchgfx4FontE)
 </UL>
 <P><STRONG><a name="[19d]"></a>touchgfx::Font::getBaseline() const</STRONG> (Thumb, 4 bytes, Stack size 0 bytes, cachedfont.o(i._ZNK8touchgfx4Font11getBaselineEv))
-<BR>[Address Reference Count : 3]<UL><LI> texts.o(.constdata__ZTVN8touchgfx4FontE)
-<LI> generatedfont.o(.constdata__ZTVN8touchgfx13GeneratedFontE)
+<BR>[Address Reference Count : 3]<UL><LI> generatedfont.o(.constdata__ZTVN8touchgfx13GeneratedFontE)
+<LI> texts.o(.constdata__ZTVN8touchgfx4FontE)
 <LI> constfont.o(.constdata__ZTVN8touchgfx9ConstFontE)
 </UL>
 <P><STRONG><a name="[1d0]"></a>touchgfx::Font::getGSUBTable() const</STRONG> (Thumb, 4 bytes, Stack size 0 bytes, texts.o(i._ZNK8touchgfx4Font12getGSUBTableEv))
@@ -7685,28 +7684,28 @@ Global Symbols
 </UL>
 <BR>[Calls]<UL><LI><a href="#[42b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;touchgfx::Font::getStringWidthLTR(unsigned char, const unsigned short*, std::__va_list) const
 </UL>
-<BR>[Address Reference Count : 3]<UL><LI> texts.o(.constdata__ZTVN8touchgfx4FontE)
-<LI> generatedfont.o(.constdata__ZTVN8touchgfx13GeneratedFontE)
+<BR>[Address Reference Count : 3]<UL><LI> generatedfont.o(.constdata__ZTVN8touchgfx13GeneratedFontE)
+<LI> texts.o(.constdata__ZTVN8touchgfx4FontE)
 <LI> constfont.o(.constdata__ZTVN8touchgfx9ConstFontE)
 </UL>
 <P><STRONG><a name="[19f]"></a>touchgfx::Font::getBitsPerPixel() const</STRONG> (Thumb, 8 bytes, Stack size 0 bytes, cachedfont.o(i._ZNK8touchgfx4Font15getBitsPerPixelEv))
-<BR>[Address Reference Count : 3]<UL><LI> texts.o(.constdata__ZTVN8touchgfx4FontE)
-<LI> generatedfont.o(.constdata__ZTVN8touchgfx13GeneratedFontE)
+<BR>[Address Reference Count : 3]<UL><LI> generatedfont.o(.constdata__ZTVN8touchgfx13GeneratedFontE)
+<LI> texts.o(.constdata__ZTVN8touchgfx4FontE)
 <LI> constfont.o(.constdata__ZTVN8touchgfx9ConstFontE)
 </UL>
 <P><STRONG><a name="[1a0]"></a>touchgfx::Font::getByteAlignRow() const</STRONG> (Thumb, 6 bytes, Stack size 0 bytes, cachedfont.o(i._ZNK8touchgfx4Font15getByteAlignRowEv))
-<BR>[Address Reference Count : 3]<UL><LI> texts.o(.constdata__ZTVN8touchgfx4FontE)
-<LI> generatedfont.o(.constdata__ZTVN8touchgfx13GeneratedFontE)
+<BR>[Address Reference Count : 3]<UL><LI> generatedfont.o(.constdata__ZTVN8touchgfx13GeneratedFontE)
+<LI> texts.o(.constdata__ZTVN8touchgfx4FontE)
 <LI> constfont.o(.constdata__ZTVN8touchgfx9ConstFontE)
 </UL>
 <P><STRONG><a name="[19b]"></a>touchgfx::Font::getEllipsisChar() const</STRONG> (Thumb, 4 bytes, Stack size 0 bytes, cachedfont.o(i._ZNK8touchgfx4Font15getEllipsisCharEv))
-<BR>[Address Reference Count : 3]<UL><LI> texts.o(.constdata__ZTVN8touchgfx4FontE)
-<LI> generatedfont.o(.constdata__ZTVN8touchgfx13GeneratedFontE)
+<BR>[Address Reference Count : 3]<UL><LI> generatedfont.o(.constdata__ZTVN8touchgfx13GeneratedFontE)
+<LI> texts.o(.constdata__ZTVN8touchgfx4FontE)
 <LI> constfont.o(.constdata__ZTVN8touchgfx9ConstFontE)
 </UL>
 <P><STRONG><a name="[19a]"></a>touchgfx::Font::getFallbackChar() const</STRONG> (Thumb, 4 bytes, Stack size 0 bytes, cachedfont.o(i._ZNK8touchgfx4Font15getFallbackCharEv))
-<BR>[Address Reference Count : 3]<UL><LI> texts.o(.constdata__ZTVN8touchgfx4FontE)
-<LI> generatedfont.o(.constdata__ZTVN8touchgfx13GeneratedFontE)
+<BR>[Address Reference Count : 3]<UL><LI> generatedfont.o(.constdata__ZTVN8touchgfx13GeneratedFontE)
+<LI> texts.o(.constdata__ZTVN8touchgfx4FontE)
 <LI> constfont.o(.constdata__ZTVN8touchgfx9ConstFontE)
 </UL>
 <P><STRONG><a name="[42b]"></a>touchgfx::Font::getStringWidthLTR(unsigned char, const unsigned short*, std::__va_list) const</STRONG> (Thumb, 168 bytes, Stack size 160 bytes, font.o(i._ZNK8touchgfx4Font17getStringWidthLTREhPKtSt9__va_list))
@@ -7727,13 +7726,13 @@ Global Symbols
 <P><STRONG><a name="[199]"></a>touchgfx::Font::getGlyph(unsigned short) const</STRONG> (Thumb, 28 bytes, Stack size 16 bytes, cachedfont.o(i._ZNK8touchgfx4Font8getGlyphEt))
 <BR><BR>[Stack]<UL><LI>Max Depth = 16<LI>Call Chain = touchgfx::Font::getGlyph(unsigned short) const
 </UL>
-<BR>[Address Reference Count : 3]<UL><LI> texts.o(.constdata__ZTVN8touchgfx4FontE)
-<LI> generatedfont.o(.constdata__ZTVN8touchgfx13GeneratedFontE)
+<BR>[Address Reference Count : 3]<UL><LI> generatedfont.o(.constdata__ZTVN8touchgfx13GeneratedFontE)
+<LI> texts.o(.constdata__ZTVN8touchgfx4FontE)
 <LI> constfont.o(.constdata__ZTVN8touchgfx9ConstFontE)
 </UL>
 <P><STRONG><a name="[19e]"></a>touchgfx::Font::getHeight() const</STRONG> (Thumb, 4 bytes, Stack size 0 bytes, cachedfont.o(i._ZNK8touchgfx4Font9getHeightEv))
-<BR>[Address Reference Count : 3]<UL><LI> texts.o(.constdata__ZTVN8touchgfx4FontE)
-<LI> generatedfont.o(.constdata__ZTVN8touchgfx13GeneratedFontE)
+<BR>[Address Reference Count : 3]<UL><LI> generatedfont.o(.constdata__ZTVN8touchgfx13GeneratedFontE)
+<LI> texts.o(.constdata__ZTVN8touchgfx4FontE)
 <LI> constfont.o(.constdata__ZTVN8touchgfx9ConstFontE)
 </UL>
 <P><STRONG><a name="[38a]"></a>touchgfx::Rect::right() const</STRONG> (Thumb, 10 bytes, Stack size 0 bytes, lcd16bpp.o(i._ZNK8touchgfx4Rect5rightEv))
@@ -7943,11 +7942,11 @@ Global Symbols
 </UL>
 <BR>[Address Reference Count : 7]<UL><LI> homeviewbase.o(.constdata__ZTVN8touchgfx6WidgetE)
 <LI> screen2viewbase.o(.constdata__ZTVN8touchgfx23TextAreaWithOneWildcardE)
-<LI> textarea.o(.constdata__ZTVN8touchgfx8TextAreaE)
 <LI> box.o(.constdata__ZTVN8touchgfx3BoxE)
 <LI> container.o(.constdata__ZTVN8touchgfx9ContainerE)
 <LI> image.o(.constdata__ZTVN8touchgfx5ImageE)
 <LI> drawable.o(.constdata__ZTVN8touchgfx8DrawableE)
+<LI> textarea.o(.constdata__ZTVN8touchgfx8TextAreaE)
 </UL>
 <P><STRONG><a name="[1b2]"></a>touchgfx::Drawable::getVisibleRect(touchgfx::Rect&) const</STRONG> (Thumb, 60 bytes, Stack size 16 bytes, drawable.o(i._ZNK8touchgfx8Drawable14getVisibleRectERNS_4RectE))
 <BR><BR>[Stack]<UL><LI>Max Depth = 56<LI>Call Chain = touchgfx::Drawable::getVisibleRect(touchgfx::Rect&) const &rArr; touchgfx::Rect::operator &=(const touchgfx::Rect&) &rArr; touchgfx::Rect::intersect(const touchgfx::Rect&) const
@@ -7957,11 +7956,11 @@ Global Symbols
 </UL>
 <BR>[Address Reference Count : 7]<UL><LI> homeviewbase.o(.constdata__ZTVN8touchgfx6WidgetE)
 <LI> screen2viewbase.o(.constdata__ZTVN8touchgfx23TextAreaWithOneWildcardE)
-<LI> textarea.o(.constdata__ZTVN8touchgfx8TextAreaE)
 <LI> box.o(.constdata__ZTVN8touchgfx3BoxE)
 <LI> container.o(.constdata__ZTVN8touchgfx9ContainerE)
 <LI> image.o(.constdata__ZTVN8touchgfx5ImageE)
 <LI> drawable.o(.constdata__ZTVN8touchgfx8DrawableE)
+<LI> textarea.o(.constdata__ZTVN8touchgfx8TextAreaE)
 </UL>
 <P><STRONG><a name="[1af]"></a>touchgfx::Drawable::invalidateRect(touchgfx::Rect&) const</STRONG> (Thumb, 84 bytes, Stack size 16 bytes, drawable.o(i._ZNK8touchgfx8Drawable14invalidateRectERNS_4RectE))
 <BR><BR>[Stack]<UL><LI>Max Depth = 136 + Unknown Stack Size
@@ -7974,11 +7973,11 @@ Global Symbols
 </UL>
 <BR>[Address Reference Count : 7]<UL><LI> homeviewbase.o(.constdata__ZTVN8touchgfx6WidgetE)
 <LI> screen2viewbase.o(.constdata__ZTVN8touchgfx23TextAreaWithOneWildcardE)
-<LI> textarea.o(.constdata__ZTVN8touchgfx8TextAreaE)
 <LI> box.o(.constdata__ZTVN8touchgfx3BoxE)
 <LI> container.o(.constdata__ZTVN8touchgfx9ContainerE)
 <LI> image.o(.constdata__ZTVN8touchgfx5ImageE)
 <LI> drawable.o(.constdata__ZTVN8touchgfx8DrawableE)
+<LI> textarea.o(.constdata__ZTVN8touchgfx8TextAreaE)
 </UL>
 <P><STRONG><a name="[3e2]"></a>touchgfx::Drawable::getAbsoluteRect() const</STRONG> (Thumb, 48 bytes, Stack size 24 bytes, drawable.o(i._ZNK8touchgfx8Drawable15getAbsoluteRectEv))
 <BR><BR>[Stack]<UL><LI>Max Depth = 24<LI>Call Chain = touchgfx::Drawable::getAbsoluteRect() const
@@ -7998,11 +7997,11 @@ Global Symbols
 <P><STRONG><a name="[1b3]"></a>touchgfx::Drawable::translateRectToAbsolute(touchgfx::Rect&) const</STRONG> (Thumb, 30 bytes, Stack size 0 bytes, drawable.o(i._ZNK8touchgfx8Drawable23translateRectToAbsoluteERNS_4RectE))
 <BR>[Address Reference Count : 7]<UL><LI> homeviewbase.o(.constdata__ZTVN8touchgfx6WidgetE)
 <LI> screen2viewbase.o(.constdata__ZTVN8touchgfx23TextAreaWithOneWildcardE)
-<LI> textarea.o(.constdata__ZTVN8touchgfx8TextAreaE)
 <LI> box.o(.constdata__ZTVN8touchgfx3BoxE)
 <LI> container.o(.constdata__ZTVN8touchgfx9ContainerE)
 <LI> image.o(.constdata__ZTVN8touchgfx5ImageE)
 <LI> drawable.o(.constdata__ZTVN8touchgfx8DrawableE)
+<LI> textarea.o(.constdata__ZTVN8touchgfx8TextAreaE)
 </UL>
 <P><STRONG><a name="[1de]"></a>touchgfx::LCD16bpp::framebufferFormat() const</STRONG> (Thumb, 4 bytes, Stack size 0 bytes, lcd16bpp.o(i._ZNK8touchgfx8LCD16bpp17framebufferFormatEv))
 <BR>[Address Reference Count : 1]<UL><LI> lcd16bpp.o(.constdata__ZTVN8touchgfx8LCD16bppE)
@@ -8422,7 +8421,7 @@ Global Symbols
 <LI><a href="#[298]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_Init
 <LI><a href="#[26c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_DMA2D_Init
 <LI><a href="#[267]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_CRC_Init
-<LI><a href="#[31c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SystemClock_Config
+<LI><a href="#[31b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SystemClock_Config
 <LI><a href="#[bf]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Error_Handler
 <LI><a href="#[30d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;MX_QUADSPI_Init
 <LI><a href="#[30b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;MX_LTDC_Init
@@ -8437,7 +8436,7 @@ Global Symbols
 <BR>[Called By]<UL><LI><a href="#[204]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__rt_entry_main
 </UL>
 
-<P><STRONG><a name="[318]"></a>msg_calc</STRONG> (Thumb, 350 bytes, Stack size 8 bytes, gui_communication.o(i.msg_calc))
+<P><STRONG><a name="[317]"></a>msg_calc</STRONG> (Thumb, 350 bytes, Stack size 8 bytes, gui_communication.o(i.msg_calc))
 <BR><BR>[Stack]<UL><LI>Max Depth = 8<LI>Call Chain = msg_calc
 </UL>
 <BR>[Called By]<UL><LI><a href="#[e5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SendToGUI
@@ -8456,7 +8455,7 @@ Global Symbols
 <BR>[Called By]<UL><LI><a href="#[205]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
 </UL>
 
-<P><STRONG><a name="[317]"></a>osMessageQueueGet</STRONG> (Thumb, 96 bytes, Stack size 24 bytes, cmsis_os2.o(i.osMessageQueueGet))
+<P><STRONG><a name="[31c]"></a>osMessageQueueGet</STRONG> (Thumb, 96 bytes, Stack size 24 bytes, cmsis_os2.o(i.osMessageQueueGet))
 <BR><BR>[Stack]<UL><LI>Max Depth = 136<LI>Call Chain = osMessageQueueGet &rArr; xQueueReceive &rArr; xTaskResumeAll &rArr; xTaskIncrementTick
 </UL>
 <BR>[Calls]<UL><LI><a href="#[438]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xQueueReceiveFromISR
@@ -8464,7 +8463,6 @@ Global Symbols
 </UL>
 <BR>[Called By]<UL><LI><a href="#[e7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TASK_FDCAN_TX
 <LI><a href="#[e6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TASK_FDCAN_RX
-<LI><a href="#[e5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SendToGUI
 <LI><a href="#[37a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;touchgfx::OSWrappers::waitForVSync()
 <LI><a href="#[35e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Model::tick()
 </UL>
@@ -8541,7 +8539,7 @@ Global Symbols
 <LI><a href="#[35e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Model::tick()
 </UL>
 
-<P><STRONG><a name="[319]"></a>osThreadFlagsWait</STRONG> (Thumb, 152 bytes, Stack size 40 bytes, cmsis_os2.o(i.osThreadFlagsWait))
+<P><STRONG><a name="[318]"></a>osThreadFlagsWait</STRONG> (Thumb, 152 bytes, Stack size 40 bytes, cmsis_os2.o(i.osThreadFlagsWait))
 <BR><BR>[Stack]<UL><LI>Max Depth = 100<LI>Call Chain = osThreadFlagsWait &rArr; xTaskNotifyWait &rArr; prvAddCurrentTaskToDelayedList &rArr; vListInsert
 </UL>
 <BR>[Calls]<UL><LI><a href="#[447]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xTaskNotifyWait
@@ -8597,7 +8595,7 @@ Global Symbols
 <P><STRONG><a name="[e9]"></a>task_write_flash</STRONG> (Thumb, 16 bytes, Stack size 0 bytes, flash_tasks.o(i.task_write_flash))
 <BR><BR>[Stack]<UL><LI>Max Depth = 100<LI>Call Chain = task_write_flash &rArr; osThreadFlagsWait &rArr; xTaskNotifyWait &rArr; prvAddCurrentTaskToDelayedList &rArr; vListInsert
 </UL>
-<BR>[Calls]<UL><LI><a href="#[319]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;osThreadFlagsWait
+<BR>[Calls]<UL><LI><a href="#[318]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;osThreadFlagsWait
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> main.o(i.main)
 </UL>
@@ -8873,7 +8871,7 @@ Global Symbols
 <BR>[Called By]<UL><LI><a href="#[437]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vTaskStartScheduler
 </UL>
 
-<P><STRONG><a name="[31b]"></a>xPortSysTickHandler</STRONG> (Thumb, 38 bytes, Stack size 8 bytes, port.o(i.xPortSysTickHandler))
+<P><STRONG><a name="[31a]"></a>xPortSysTickHandler</STRONG> (Thumb, 38 bytes, Stack size 8 bytes, port.o(i.xPortSysTickHandler))
 <BR><BR>[Stack]<UL><LI>Max Depth = 32<LI>Call Chain = xPortSysTickHandler &rArr; xTaskIncrementTick
 </UL>
 <BR>[Calls]<UL><LI><a href="#[47d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xTaskIncrementTick
@@ -8940,7 +8938,7 @@ Global Symbols
 <LI><a href="#[468]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;prvUnlockQueue
 <LI><a href="#[455]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;prvCopyDataToQueue
 <LI><a href="#[465]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xTaskResumeAll
-<LI><a href="#[31a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xTaskGetSchedulerState
+<LI><a href="#[319]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xTaskGetSchedulerState
 <LI><a href="#[464]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vTaskSuspendAll
 <LI><a href="#[452]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vPortExitCritical
 <LI><a href="#[450]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vPortEnterCritical
@@ -8982,12 +8980,12 @@ Global Symbols
 <LI><a href="#[45f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;prvIsQueueEmpty
 <LI><a href="#[454]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;prvCopyDataFromQueue
 <LI><a href="#[465]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xTaskResumeAll
-<LI><a href="#[31a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xTaskGetSchedulerState
+<LI><a href="#[319]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xTaskGetSchedulerState
 <LI><a href="#[464]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vTaskSuspendAll
 <LI><a href="#[452]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vPortExitCritical
 <LI><a href="#[450]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vPortEnterCritical
 </UL>
-<BR>[Called By]<UL><LI><a href="#[317]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;osMessageQueueGet
+<BR>[Called By]<UL><LI><a href="#[31c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;osMessageQueueGet
 <LI><a href="#[460]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;prvProcessReceivedCommands
 </UL>
 
@@ -8999,7 +8997,7 @@ Global Symbols
 <LI><a href="#[454]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;prvCopyDataFromQueue
 </UL>
 <BR>[Called By]<UL><LI><a href="#[37e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;osSemaphoreAcquire
-<LI><a href="#[317]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;osMessageQueueGet
+<LI><a href="#[31c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;osMessageQueueGet
 </UL>
 
 <P><STRONG><a name="[43f]"></a>xQueueSemaphoreTake</STRONG> (Thumb, 376 bytes, Stack size 48 bytes, queue.o(i.xQueueSemaphoreTake))
@@ -9015,7 +9013,7 @@ Global Symbols
 <LI><a href="#[468]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;prvUnlockQueue
 <LI><a href="#[45f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;prvIsQueueEmpty
 <LI><a href="#[465]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xTaskResumeAll
-<LI><a href="#[31a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xTaskGetSchedulerState
+<LI><a href="#[319]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xTaskGetSchedulerState
 <LI><a href="#[464]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vTaskSuspendAll
 <LI><a href="#[452]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vPortExitCritical
 <LI><a href="#[450]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vPortEnterCritical
@@ -9080,7 +9078,7 @@ Global Symbols
 <BR>[Called By]<UL><LI><a href="#[256]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;osThreadFlagsSet
 </UL>
 
-<P><STRONG><a name="[31a]"></a>xTaskGetSchedulerState</STRONG> (Thumb, 22 bytes, Stack size 0 bytes, tasks.o(i.xTaskGetSchedulerState))
+<P><STRONG><a name="[319]"></a>xTaskGetSchedulerState</STRONG> (Thumb, 22 bytes, Stack size 0 bytes, tasks.o(i.xTaskGetSchedulerState))
 <BR><BR>[Called By]<UL><LI><a href="#[43f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xQueueSemaphoreTake
 <LI><a href="#[439]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xQueueReceive
 <LI><a href="#[43e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xQueueGenericSend
@@ -9089,7 +9087,7 @@ Global Symbols
 </UL>
 
 <P><STRONG><a name="[446]"></a>xTaskGetTickCount</STRONG> (Thumb, 6 bytes, Stack size 0 bytes, tasks.o(i.xTaskGetTickCount))
-<BR><BR>[Called By]<UL><LI><a href="#[319]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;osThreadFlagsWait
+<BR><BR>[Called By]<UL><LI><a href="#[318]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;osThreadFlagsWait
 <LI><a href="#[461]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;prvSampleTimeNow
 </UL>
 
@@ -9101,7 +9099,7 @@ Global Symbols
 <LI><a href="#[482]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;prvResetNextTaskUnblockTime
 </UL>
 <BR>[Called By]<UL><LI><a href="#[465]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xTaskResumeAll
-<LI><a href="#[31b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xPortSysTickHandler
+<LI><a href="#[31a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xPortSysTickHandler
 </UL>
 
 <P><STRONG><a name="[447]"></a>xTaskNotifyWait</STRONG> (Thumb, 130 bytes, Stack size 24 bytes, tasks.o(i.xTaskNotifyWait))
@@ -9111,7 +9109,7 @@ Global Symbols
 <LI><a href="#[450]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vPortEnterCritical
 <LI><a href="#[44b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;prvAddCurrentTaskToDelayedList
 </UL>
-<BR>[Called By]<UL><LI><a href="#[319]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;osThreadFlagsWait
+<BR>[Called By]<UL><LI><a href="#[318]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;osThreadFlagsWait
 </UL>
 
 <P><STRONG><a name="[456]"></a>xTaskPriorityDisinherit</STRONG> (Thumb, 116 bytes, Stack size 16 bytes, tasks.o(i.xTaskPriorityDisinherit))
@@ -9182,7 +9180,7 @@ Global Symbols
 </UL>
 <BR>[Calls]<UL><LI><a href="#[43d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xQueueGenericSendFromISR
 <LI><a href="#[43e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xQueueGenericSend
-<LI><a href="#[31a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xTaskGetSchedulerState
+<LI><a href="#[319]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xTaskGetSchedulerState
 </UL>
 <BR>[Called By]<UL><LI><a href="#[467]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;prvSwitchTimerLists
 <LI><a href="#[463]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;prvProcessTimerOrBlockTask
