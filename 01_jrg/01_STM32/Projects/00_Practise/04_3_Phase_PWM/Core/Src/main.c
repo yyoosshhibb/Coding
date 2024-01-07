@@ -89,25 +89,32 @@ int main(void)
   MX_GPIO_Init();
   MX_TIM1_Init();
   /* USER CODE BEGIN 2 */
-
-
-	HAL_TIM_PWM_Start_IT(&htim1, TIM_CHANNEL_1);
-	HAL_TIMEx_PWMN_Start_IT(&htim1, TIM_CHANNEL_1);
-	HAL_TIM_PWM_Start_IT(&htim1, TIM_CHANNEL_2);
-	HAL_TIMEx_PWMN_Start_IT(&htim1, TIM_CHANNEL_2);
-	HAL_TIM_PWM_Start_IT(&htim1, TIM_CHANNEL_3);
-	HAL_TIMEx_PWMN_Start_IT(&htim1, TIM_CHANNEL_3);
 	
-	//HAL_TIM_PWM_Start(&htim1, TIM_CHANNEL_4);
-	//HAL_NVIC_SetPriority(TIM1_CC_IRQn, 0, 0);
+	//TIM1->DIER |= TIM_DIER_CC4IE;						//Enable Interrupt for Capture Compare Channel 4 - set to trigger in V0 (all low side switches on) 
+
+	HAL_TIM_PWM_Start(&htim1, TIM_CHANNEL_1);
+	HAL_TIM_PWM_Start(&htim1, TIM_CHANNEL_2);
+	HAL_TIM_PWM_Start(&htim1, TIM_CHANNEL_3);
+	HAL_TIM_PWM_Start_IT(&htim1, TIM_CHANNEL_4);
 	
-	//HAL_TIM_RegisterCallback(htim1, 
+	HAL_TIMEx_PWMN_Start(&htim1, TIM_CHANNEL_1);
+	HAL_TIMEx_PWMN_Start(&htim1, TIM_CHANNEL_2);
+	HAL_TIMEx_PWMN_Start(&htim1, TIM_CHANNEL_3);
+	
 	
 	float angle = 0;
 	float scale[3];
 	float frequency = 0.01;
 	float pi = 3.14159;
-	int max_value = TIM1->ARR;
+	int min_duty, max_duty;
+	min_duty = 1;
+	max_duty = 99;
+	int counter_value = TIM1->ARR;
+	int min_value = TIM1->ARR * min_duty / 100;
+	int max_value = TIM1->ARR * max_duty / 100;
+	int duty[3];
+	
+	TIM1->CCR4 = TIM1->ARR - (TIM1->BDTR & 0xFF);
 	
   /* USER CODE END 2 */
 
@@ -122,10 +129,19 @@ int main(void)
 		scale[1] = sinf(angle+2*pi/3.0f);
 		scale[2] = sinf(angle+4*pi/3.0f);
 		
-		TIM1->CCR1 = (0.5f + 0.5f*scale[0]) * (float)(max_value);
-		TIM1->CCR2 = (0.5f + 0.5f*scale[1]) * (float)(max_value);
-		TIM1->CCR3 = (0.5f + 0.5f*scale[2]) * (float)(max_value);
+		for(int i=0; i<3; i++)
+		{
+			duty[i] = (int)((0.5f + 0.5f*scale[i]) * (float)(counter_value));
+			if(duty[i] < min_value) duty[i]=min_value;
+			if(duty[i] > max_value) duty[i]=max_value;
+		}
 		
+		//TIM1->CCR1 = duty[0];
+		//TIM1->CCR2 = duty[1];
+		//TIM1->CCR3 = duty[2];
+		TIM1->CCR1 = max_value;
+		TIM1->CCR2 = max_value;
+		TIM1->CCR3 = max_value;
 		angle += frequency;
 		if(angle > 2 * pi)
 		{
@@ -193,10 +209,10 @@ static void MX_TIM1_Init(void)
 
   /* USER CODE BEGIN TIM1_Init 0 */
 
-	int f_sw = 12000;
-	int deadtime = 500;		//ns
+	int f_sw = 20000;
+	int deadtime = 250;		//ns
 	
-	int dead_pulses = deadtime*168/1000;
+	int dead_pulses = (SystemCoreClock/1000) * deadtime / 1000000;					
 	
   /* USER CODE END TIM1_Init 0 */
 
@@ -212,7 +228,7 @@ static void MX_TIM1_Init(void)
   /* USER CODE END TIM1_Init 1 */
   htim1.Instance = TIM1;
   htim1.Init.Prescaler = 0;
-  htim1.Init.CounterMode = TIM_COUNTERMODE_CENTERALIGNED3;
+  htim1.Init.CounterMode = TIM_COUNTERMODE_CENTERALIGNED2;
   htim1.Init.Period = SystemCoreClock/(2*f_sw);
   htim1.Init.ClockDivision = TIM_CLOCKDIVISION_DIV1;
   htim1.Init.RepetitionCounter = 0;
@@ -230,7 +246,7 @@ static void MX_TIM1_Init(void)
   {
     Error_Handler();
   }
-  sMasterConfig.MasterOutputTrigger = TIM_TRGO_UPDATE;
+  sMasterConfig.MasterOutputTrigger = TIM_TRGO_RESET;
   sMasterConfig.MasterSlaveMode = TIM_MASTERSLAVEMODE_DISABLE;
   if (HAL_TIMEx_MasterConfigSynchronization(&htim1, &sMasterConfig) != HAL_OK)
   {
@@ -257,10 +273,15 @@ static void MX_TIM1_Init(void)
   {
     Error_Handler();
   }
+  sConfigOC.Pulse = 0;
+  if (HAL_TIM_PWM_ConfigChannel(&htim1, &sConfigOC, TIM_CHANNEL_4) != HAL_OK)
+  {
+    Error_Handler();
+  }
   sBreakDeadTimeConfig.OffStateRunMode = TIM_OSSR_DISABLE;
   sBreakDeadTimeConfig.OffStateIDLEMode = TIM_OSSI_DISABLE;
   sBreakDeadTimeConfig.LockLevel = TIM_LOCKLEVEL_OFF;
-  sBreakDeadTimeConfig.DeadTime = 0;
+  sBreakDeadTimeConfig.DeadTime = dead_pulses;
   sBreakDeadTimeConfig.BreakState = TIM_BREAK_DISABLE;
   sBreakDeadTimeConfig.BreakPolarity = TIM_BREAKPOLARITY_HIGH;
   sBreakDeadTimeConfig.AutomaticOutput = TIM_AUTOMATICOUTPUT_DISABLE;
